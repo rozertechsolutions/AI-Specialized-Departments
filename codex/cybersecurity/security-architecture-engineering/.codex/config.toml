@@ -1,0 +1,12 @@
+[sandbox_workspace_write]
+network_access = false
+
+[agents]
+max_depth = 1
+max_threads = 5
+
+[approval_policy]
+mode = "on-request"
+
+[features]
+fast_mode = false
