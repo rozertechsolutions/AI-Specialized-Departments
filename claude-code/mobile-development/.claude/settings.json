@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "default",
+    "disableBypassPermissionsMode": "disable",
+    "disableAutoMode": "disable",
+    "deny": [
+      "Read(.env)",
+      "Read(.env.local)",
+      "Read(.env.*.local)",
+      "Read(.env.production)",
+      "Read(.env.staging)",
+      "Read(.env.development)",
+      "Read(.env.test)",
+      "Read(.envrc)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/*.p8)",
+      "Read(**/*.p12)",
+      "Read(**/*.pfx)",
+      "Read(**/*.jks)",
+      "Read(**/*.keystore)",
+      "Read(**/*.mobileprovision)",
+      "Read(**/service-account*.json)",
+      "Read(**/*service-account*.json)",
+      "Read(**/firebase-adminsdk-*.json)",
+      "Read(**/credentials.json)",
+      "Read(**/credentials.yml)",
+      "Read(**/credentials.yaml)",
+      "Read(**/secret.json)",
+      "Read(**/secret.yml)",
+      "Read(**/secret.yaml)",
+      "Read(**/secrets.json)",
+      "Read(**/secrets.yml)",
+      "Read(**/secrets.yaml)",
+      "Read(**/secrets.properties)",
+      "Read(**/.ssh/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.azure/**)",
+      "Read(**/.docker/**)",
+      "Read(**/.kube/**)",
+      "Read(**/.config/gcloud/**)",
+      "Read(.netrc)",
+      "Read(.npmrc)",
+      "Read(.pypirc)",
+      "Read(key.properties)",
+      "Read(keystore.properties)",
+      "Read(local.properties)",
+      "Edit(.env)",
+      "Edit(.env.local)",
+      "Edit(.env.*.local)",
+      "Edit(.env.production)",
+      "Edit(.env.staging)",
+      "Edit(.env.development)",
+      "Edit(.env.test)",
+      "Edit(.envrc)",
+      "Edit(**/*.pem)",
+      "Edit(**/*.key)",
+      "Edit(**/*.p8)",
+      "Edit(**/*.p12)",
+      "Edit(**/*.pfx)",
+      "Edit(**/*.jks)",
+      "Edit(**/*.keystore)",
+      "Edit(**/*.mobileprovision)",
+      "Edit(**/service-account*.json)",
+      "Edit(**/*service-account*.json)",
+      "Edit(**/firebase-adminsdk-*.json)",
+      "Edit(**/credentials.json)",
+      "Edit(**/credentials.yml)",
+      "Edit(**/credentials.yaml)",
+      "Edit(**/secret.json)",
+      "Edit(**/secret.yml)",
+      "Edit(**/secret.yaml)",
+      "Edit(**/secrets.json)",
+      "Edit(**/secrets.yml)",
+      "Edit(**/secrets.yaml)",
+      "Edit(**/secrets.properties)",
+      "Edit(**/.ssh/**)",
+      "Edit(**/.aws/**)",
+      "Edit(**/.azure/**)",
+      "Edit(**/.docker/**)",
+      "Edit(**/.kube/**)",
+      "Edit(**/.config/gcloud/**)",
+      "Edit(.netrc)",
+      "Edit(.npmrc)",
+      "Edit(.pypirc)",
+      "Edit(key.properties)",
+      "Edit(keystore.properties)",
+      "Edit(local.properties)",
+      "Bash(git reset *)",
+      "Bash(git clean *)",
+      "Bash(git restore *)",
+      "Bash(git checkout *)",
+      "Bash(git branch -D *)",
+      "Bash(git config *)",
+      "Bash(git update-ref *)",
+      "PowerShell(git reset *)",
+      "PowerShell(git clean *)",
+      "PowerShell(git restore *)",
+      "PowerShell(git checkout *)",
+      "PowerShell(git branch -D *)",
+      "PowerShell(git config *)",
+      "PowerShell(git update-ref *)"
+    ],
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git add *)",
+      "Bash(git mv *)",
+      "Bash(git pull *)",
+      "Bash(git fetch *)",
+      "Bash(git clone *)",
+      "Bash(git submodule *)",
+      "Bash(git lfs *)",
+      "Bash(git push *)",
+      "Bash(git merge *)",
+      "Bash(git rebase *)",
+      "Bash(git tag *)",
+      "Bash(git branch *)",
+      "Bash(git switch *)",
+      "Bash(git stash *)",
+      "Bash(git cherry-pick *)",
+      "Bash(git revert *)",
+      "Bash(git remote *)",
+      "Bash(git worktree *)",
+      "Bash(git apply *)",
+      "Bash(git am *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(scp *)",
+      "Bash(sftp *)",
+      "Bash(rsync *)",
+      "Bash(npm publish *)",
+      "Bash(pnpm publish *)",
+      "Bash(yarn npm publish *)",
+      "Bash(flutter pub publish *)",
+      "Bash(fastlane *)",
+      "Bash(firebase deploy *)",
+      "Bash(firebase appdistribution:distribute *)",
+      "Bash(gh release *)",
+      "Bash(adb *)",
+      "Bash(bundletool *)",
+      "Bash(xcrun simctl *)",
+      "Bash(ios-deploy *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git add *)",
+      "PowerShell(git mv *)",
+      "PowerShell(git pull *)",
+      "PowerShell(git fetch *)",
+      "PowerShell(git clone *)",
+      "PowerShell(git submodule *)",
+      "PowerShell(git lfs *)",
+      "PowerShell(git push *)",
+      "PowerShell(git merge *)",
+      "PowerShell(git rebase *)",
+      "PowerShell(git tag *)",
+      "PowerShell(git branch *)",
+      "PowerShell(git switch *)",
+      "PowerShell(git stash *)",
+      "PowerShell(git cherry-pick *)",
+      "PowerShell(git revert *)",
+      "PowerShell(git remote *)",
+      "PowerShell(git worktree *)",
+      "PowerShell(git apply *)",
+      "PowerShell(git am *)",
+      "PowerShell(curl *)",
+      "PowerShell(Invoke-WebRequest *)",
+      "PowerShell(Invoke-RestMethod *)",
+      "PowerShell(npm publish *)",
+      "PowerShell(pnpm publish *)",
+      "PowerShell(yarn npm publish *)",
+      "PowerShell(flutter pub publish *)",
+      "PowerShell(fastlane *)",
+      "PowerShell(firebase deploy *)",
+      "PowerShell(firebase appdistribution:distribute *)",
+      "PowerShell(gh release *)",
+      "PowerShell(adb *)",
+      "PowerShell(bundletool *)",
+      "PowerShell(xcrun simctl *)",
+      "PowerShell(ios-deploy *)",
+      "mcp__firebase__*",
+      "mcp__figma__*",
+      "mcp__github__*",
+      "mcp__sentry__*"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "-B",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/secret-and-protected-file-guard.py"
+            ],
+            "timeout": 10,
+            "statusMessage": "Checking protected paths"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "-B",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/dangerous-mobile-command-guard.py"
+            ],
+            "timeout": 10,
+            "statusMessage": "Checking command safety"
+          },
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "-B",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/release-signing-publishing-guard.py"
+            ],
+            "timeout": 10,
+            "statusMessage": "Checking release boundaries"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3",
+            "args": [
+              "-B",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/sensitive-change-review.py"
+            ],
+            "timeout": 10,
+            "statusMessage": "Checking specialist review requirements"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Evaluate whether the current mobile-development task may stop. Use the transcript evidence and this Stop event: $ARGUMENTS. Return {\"ok\": true} only when either (a) the requested scope is complete, every required check passed or is explicitly reported unavailable with a concrete reason, no unresolved tool error or required specialist review remains, no completion claim is fabricated, and no credential, signing, publication, upload, deployment, distribution, or release action remains for Claude; or (b) safe authorized work cannot continue because a specific user-authority, missing-context, or unavailable-tooling blocker is clearly reported, no other safe in-scope work remains, and the response does not claim completion. Human-only release prerequisites may be reported but never performed or represented as complete. If stop_hook_active is true, do not re-block an unchanged user-only or unavailable-infrastructure blocker that is already reported precisely. Otherwise return {\"ok\": false, \"reason\": \"specific remaining work or blocker\"}. Do not treat this judgment as a substitute for tests or independent review.",
+            "timeout": 30,
+            "statusMessage": "Checking completion evidence"
+          }
+        ]
+      }
+    ]
+  }
+}

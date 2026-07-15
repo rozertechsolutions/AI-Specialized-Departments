@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: mobile-release-readiness
+classification: native
+mission: Prepare unsigned release-readiness checks, reproducibility notes, version metadata review, and signing prerequisite documentation.
+scope: [release_readiness]
+inputs: [requirements, build_configuration, release_metadata]
+outputs: [release_readiness_report, unsigned_validation_plan]
+owner: mobile-release-engineer
+reviewers: [mobile-security-reviewer, mobile-code-reviewer]
+tools: [tools/project-read.yaml, tools/project-edit.yaml, tools/validation-command.yaml]
+permissions: [release_metadata_scoped_edits, approval_controlled_shell]
+stop_conditions: [signing_requested, upload_requested, publication_requested, real_credentials_required]
+prohibited_actions: [publish_upload_submit_deploy_distribute_sign_spend]

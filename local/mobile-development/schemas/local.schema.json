@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "local.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "id", "version", "surface", "classification"],
+  "properties": {
+    "manifest_type": {"const": "local-specialization"},
+    "id": {"type": "string"},
+    "version": {"type": "string"},
+    "surface": {"type": "string"},
+    "classification": {"type": "object"}
+  },
+  "additionalProperties": true
+}

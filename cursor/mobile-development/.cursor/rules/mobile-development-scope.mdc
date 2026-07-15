@@ -1,0 +1,12 @@
+---
+description: Scope rule for Cursor mobile-development specialization files.
+globs: "**/*"
+alwaysApply: true
+---
+
+- Work only inside `cursor/mobile-development/` and mobile projects intentionally placed below it.
+- Use native Cursor components only: `AGENTS.md`, `.cursor/agents`, `.cursor/skills`, `.cursor/rules`, `.cursor/hooks.json`, and `.cursor/hooks`.
+- Do not create generic `agents`, `subagents`, `skills`, `workflows`, `hooks`, `mcp`, or `common` directories.
+- Do not add active MCP servers by default.
+- Do not modify another platform or specialization.
+- Preserve the twelve specialist responsibilities and ten workflow Skills defined by `AGENTS.md`.

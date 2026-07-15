@@ -1,0 +1,27 @@
+agent_type = "subagent"
+display_name = "React Native Engineer"
+description = "React Native implementation specialist for TypeScript or JavaScript, navigation, Metro, packages, and JavaScript-side native bridges."
+safety = "neutral"
+system_prompt_id = "react-native-engineer"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "write_file", "edit", "bash"]
+disabled_tools = ["mcp_*"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"
+
+[tools.write_file]
+permission = "ask"
+
+[tools.edit]
+permission = "ask"
+
+[tools.bash]
+permission = "ask"

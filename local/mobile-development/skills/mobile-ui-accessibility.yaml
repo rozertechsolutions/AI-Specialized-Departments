@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: mobile-ui-accessibility
+classification: native
+mission: Review UI, accessibility, adaptive layout, orientation, dynamic text, focus, traversal, localization, interaction conventions, and complete states.
+scope: [ui, accessibility, localization]
+inputs: [requirements, changed_ui_files, screenshots_when_available]
+outputs: [ui_accessibility_findings, state_coverage_matrix]
+owner: mobile-ui-accessibility-reviewer
+reviewers: [mobile-code-reviewer]
+tools: [tools/project-read.yaml]
+permissions: [read_only]
+stop_conditions: [missing_required_visual_evidence, inaccessible_design_requirement]
+prohibited_actions: [modify_files_by_default, fabricate_visual_validation]

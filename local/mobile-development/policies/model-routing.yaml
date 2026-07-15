@@ -1,0 +1,12 @@
+manifest_type: policy
+schema: ../schemas/policy.schema.json
+id: model-routing
+classification: native
+rules:
+  routing_basis: declared_capability_and_explicit_user_consent
+  hardcoded_model_versions: prohibited_unless_required_and_officially_supported
+  remote_use: explicit_consent_required
+  cloud_fallback: prohibited
+  provider_enabled_by_default: false
+  unknown_provider_capability: fail_closed
+  capability_claim_requires_provider_evidence: true

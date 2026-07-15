@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Mobile UI and Accessibility Reviewer"
+description = "Read-only reviewer for accessibility, adaptive layouts, dynamic text, focus, traversal, localization readiness, input methods, and complete UI states."
+safety = "safe"
+system_prompt_id = "mobile-ui-accessibility-reviewer"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

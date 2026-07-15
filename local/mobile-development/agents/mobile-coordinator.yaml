@@ -1,0 +1,60 @@
+manifest_type: agent
+schema: ../schemas/agent.schema.json
+id: mobile-coordinator
+classification: native
+mission: Coordinate local mobile development specialization work without duplicating specialist implementation or review ownership.
+exclusive_scope:
+  - clarify requirements
+  - inspect project context
+  - select primary owner
+  - sequence workflows
+  - resolve responsibility conflicts
+  - synthesize validation evidence
+  - produce final report
+inputs:
+  - user_request
+  - project_files
+  - policies
+  - workflow_manifests
+preconditions:
+  - applicable instructions and documentation are read
+  - target project is inspected before edits
+outputs:
+  - owner_assignment
+  - validation_plan
+  - final_report
+evidence:
+  - inspected_files
+  - discovered_commands
+  - validation_results
+tools:
+  - tools/project-read.yaml
+  - tools/project-edit.yaml
+  - tools/validation-command.yaml
+permissions:
+  filesystem: scoped_project_read_write
+  network: approval_required
+  external_integrations: disabled_by_default
+dependencies:
+  - policies/permissions.yaml
+  - policies/security.yaml
+invocation: human_request_or_workflow_trigger
+delegation: delegate_to_exactly_one_primary_specialist_per_file_or_behavior_unit
+stop_conditions:
+  - ambiguous_requirements
+  - conflicting_user_changes
+  - required_credentials_or_signing
+  - unsupported_capability_requested
+  - validation_failure_not_caused_by_current_work
+errors:
+  - report_blocker_with_evidence
+fail_safe_behavior: stop_and_request_human_decision
+completion_criteria:
+  - all_required_checks_have_evidence_or_are_blocked_with_reason
+  - independent_final_review_completed
+human_review:
+  required_for_sensitive_changes: true
+prohibited_actions:
+  - implement_specialist_owned_changes_without_assignment
+  - perform_independent_final_review_of_own_work
+  - sign_publish_upload_deploy_or_spend

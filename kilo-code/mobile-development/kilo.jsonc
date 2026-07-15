@@ -1,0 +1,66 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    ".kilo/rules/mobile-scope.md",
+    ".kilo/rules/mobile-security-baseline.md",
+    ".kilo/rules/mobile-validation.md",
+    ".kilo/rules/responsibility-matrix.md"
+  ],
+  "plugin": [
+    "./.kilo/plugins/mobile-secret-path-guard.js",
+    "./.kilo/plugins/mobile-shell-safety-guard.js",
+    "./.kilo/plugins/mobile-release-action-guard.js",
+    "./.kilo/plugins/mobile-sensitive-change-guard.js"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow"
+    },
+    "edit": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "write": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "git commit *": "deny",
+      "git push *": "deny",
+      "git pull *": "deny",
+      "git merge *": "deny",
+      "git rebase *": "deny",
+      "git reset *": "deny",
+      "git clean *": "deny",
+      "git checkout *": "deny",
+      "git restore *": "deny",
+      "git switch *": "deny",
+      "git branch *": "deny",
+      "rm *": "deny",
+      "rmdir *": "deny"
+    },
+    "task": {
+      "*": "deny",
+      "mobile-architect": "allow",
+      "android-engineer": "allow",
+      "ios-engineer": "allow",
+      "kmp-engineer": "allow",
+      "flutter-engineer": "allow",
+      "react-native-engineer": "allow",
+      "mobile-test-engineer": "allow",
+      "mobile-security-reviewer": "allow",
+      "mobile-ui-accessibility-reviewer": "allow",
+      "mobile-performance-reviewer": "allow",
+      "mobile-release-engineer": "allow",
+      "mobile-code-reviewer": "allow"
+    }
+  },
+  "mcp": {}
+}
+

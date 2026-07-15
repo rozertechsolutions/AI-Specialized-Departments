@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tool.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "id", "classification", "purpose", "allowed_operations", "denied_operations", "inputs", "outputs", "approval_required", "fail_safe_behavior"],
+  "properties": {
+    "manifest_type": {"const": "tool-contract"},
+    "id": {"type": "string"},
+    "classification": {"enum": ["native", "unsupported"]}
+  },
+  "additionalProperties": true
+}

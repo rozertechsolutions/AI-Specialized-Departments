@@ -1,0 +1,18 @@
+manifest_type: mcp-servers
+schema: ../schemas/mcp-server.schema.json
+classification: native
+servers:
+  - id: local-mobile-project-context
+    enabled: false
+    transport: stdio
+    command: null
+    args: []
+    roots: []
+    tools: []
+    resources: []
+    prompts: []
+    sampling: disabled
+    elicitation: disabled
+    external_writes: prohibited_until_human_approved
+    credentials: not_configured
+    notes: Example only. Supply command, roots, and scopes in a private reviewed configuration.

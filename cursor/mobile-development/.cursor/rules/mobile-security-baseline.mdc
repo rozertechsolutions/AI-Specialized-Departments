@@ -1,0 +1,11 @@
+---
+description: Security baseline for mobile development work.
+globs: "**/*"
+alwaysApply: true
+---
+
+- Never write secrets, tokens, passwords, certificates, private keys, provisioning profiles, keystores, service-account files, private URLs, real endpoints, or real environment values.
+- Require human approval for permissions, entitlements, privacy, network security, deep links, WebViews, analytics, telemetry, dependencies, lockfiles, auth, cryptography, signing, releases, external writes, destructive commands, and financial actions.
+- Review roles are read-only by default.
+- Do not publish, upload, submit, deploy, distribute, sign with real credentials, import credentials, spend money, or run destructive device operations.
+- Treat unavailable infrastructure as unavailable, not successful.

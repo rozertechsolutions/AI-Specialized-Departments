@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "skill.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "id", "classification", "mission", "scope", "inputs", "outputs", "owner", "reviewers", "tools", "permissions", "stop_conditions", "prohibited_actions"],
+  "properties": {
+    "manifest_type": {"const": "skill"},
+    "id": {"type": "string"},
+    "classification": {"enum": ["native", "unsupported"]}
+  },
+  "additionalProperties": true
+}

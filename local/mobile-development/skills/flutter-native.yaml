@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: flutter-native
+classification: native
+mission: Guide Flutter and Dart implementation, widgets, navigation, platform-channel contracts, packages, flavors, state conventions, and tests.
+scope: [flutter]
+inputs: [requirements, flutter_project_files]
+outputs: [flutter_guidance, validation_evidence_requirements]
+owner: flutter-engineer
+reviewers: [mobile-test-engineer, mobile-security-reviewer, mobile-ui-accessibility-reviewer, mobile-code-reviewer]
+tools: [tools/project-read.yaml, tools/project-edit.yaml, tools/validation-command.yaml]
+permissions: [scoped_project_edits, approval_controlled_shell]
+stop_conditions: [missing_flutter_project, package_change_without_approval, native_host_change_required]
+prohibited_actions: [own_substantial_native_host_code, sign_publish_upload_deploy]

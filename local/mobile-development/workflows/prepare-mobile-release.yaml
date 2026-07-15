@@ -1,0 +1,20 @@
+manifest_type: workflow
+schema: ../schemas/workflow.schema.json
+id: prepare-mobile-release
+classification: native
+objective: Prepare unsigned release readiness evidence without signing, publishing, upload, submission, distribution, deployment, spending, or real credentials.
+trigger: manual_human_request_only
+inputs: [release_target, versioning_requirements, variant_or_scheme, validation_scope]
+supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-native]
+preconditions: [manual_initiation_confirmed, no_real_signing_credentials_required]
+primary_owner: mobile-release-engineer
+reviewers: [mobile-security-reviewer, mobile-test-engineer, mobile-code-reviewer]
+steps: [inspect_release_metadata, validate_variants_or_schemes, check_reproducibility, run_unsigned_validation_when_available, document_signing_prerequisites, final_review]
+validation_gates: [no_real_credentials, no_external_upload, unsigned_build_or_blocker, security_review]
+failures: [signing_needed, store_upload_requested, credentials_present_or_required]
+stop_conditions: [publish_upload_submit_deploy_distribute_sign_or_spend_requested]
+evidence: [release_metadata_review, unsigned_command_results, readiness_report]
+outputs: [release_readiness_report]
+acceptance_criteria: [manual_release_readiness_documented, prohibited_actions_not_performed]
+human_approvals: [release_metadata_changes, any_future_distribution_action]
+prohibited_actions: [publish, upload, submit, deploy, distribute, sign, spend]

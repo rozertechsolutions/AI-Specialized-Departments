@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provider.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "id", "classification", "enabled", "provider_kind", "capability_discovery", "configuration", "remote_use_requires_explicit_consent"],
+  "properties": {
+    "manifest_type": {"const": "provider"},
+    "id": {"type": "string"},
+    "classification": {"enum": ["native", "unsupported"]},
+    "enabled": {"const": false}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,21 @@
+manifest_type: agent
+schema: ../schemas/agent.schema.json
+id: mobile-architect
+classification: native
+mission: Govern architecture, modules, dependency direction, state, navigation, shared/platform boundaries, and migrations.
+exclusive_scope: [architecture, modules, dependency_direction, state_ownership, navigation, shared_platform_boundaries, migrations]
+inputs: [requirements, project_structure, dependency_graph, platform_manifests]
+preconditions: [project_context_inspected, existing_architecture_identified]
+outputs: [architecture_findings, ownership_boundaries, migration_risks]
+evidence: [file_references, dependency_references, decision_log]
+tools: [tools/project-read.yaml]
+permissions: {filesystem: read_only, shell: approval_required_read_only, external_integrations: disabled}
+dependencies: [agents/mobile-coordinator.yaml]
+invocation: coordinator_delegation_for_architecture_or_boundary_questions
+delegation: none
+stop_conditions: [requires_public_contract_change, unclear_boundary, destructive_or_release_action]
+errors: [return_findings_to_coordinator]
+fail_safe_behavior: read_only_report
+completion_criteria: [architecture_risk_classified, implementation_owner_identified]
+human_review: required_for_public_contract_or_persistent_format_changes
+prohibited_actions: [complete_feature_implementation, release_approval, final_review]

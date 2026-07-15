@@ -1,0 +1,11 @@
+manifest_type: tool-contract
+schema: ../schemas/tool.schema.json
+id: project-read
+classification: native
+purpose: Read non-sensitive project files needed for inspection, validation planning, and review.
+allowed_operations: [list_files, read_files, inspect_metadata]
+denied_operations: [write_files, delete_files, execute_commands, access_credentials]
+inputs: [reviewed_project_root, path]
+outputs: [file_content_or_metadata]
+approval_required: false
+fail_safe_behavior: deny_path_traversal_or_sensitive_file_access

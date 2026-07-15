@@ -1,0 +1,11 @@
+manifest_type: tool-contract
+schema: ../schemas/tool.schema.json
+id: mcp-gateway
+classification: native
+purpose: Document least-privilege expectations for optional MCP tools when explicitly enabled by a human.
+allowed_operations: [call_reviewed_enabled_mcp_tool]
+denied_operations: [start_server_implicitly, authenticate_implicitly, widen_scope_implicitly, external_write_without_approval]
+inputs: [server_id, tool_name, reviewed_arguments]
+outputs: [tool_result, audit_record]
+approval_required: true
+fail_safe_behavior: deny_disabled_or_unreviewed_server

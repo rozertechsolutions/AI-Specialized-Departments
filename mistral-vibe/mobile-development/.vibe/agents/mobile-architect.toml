@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Mobile Architect"
+description = "Read-only architecture specialist for mobile boundaries, dependencies, state, navigation, sharing, and migrations."
+safety = "safe"
+system_prompt_id = "mobile-architect"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

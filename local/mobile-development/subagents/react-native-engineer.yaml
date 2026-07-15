@@ -1,0 +1,21 @@
+manifest_type: agent
+schema: ../schemas/agent.schema.json
+id: react-native-engineer
+classification: native
+mission: Implement and validate React Native TypeScript/JavaScript, navigation, Metro, package manager, native bridge contracts, and React Native tests.
+exclusive_scope: [react_native_source, typescript_javascript, navigation, metro, package_manager_scripts, js_bridge_contracts, react_native_tests]
+inputs: [requirements, package_manifest, metro_config, rn_sources]
+preconditions: [react_native_project_detected]
+outputs: [react_native_changes, react_native_validation_evidence]
+evidence: [typecheck_results, lint_results, test_results, metro_review, bridge_review]
+tools: [tools/project-read.yaml, tools/project-edit.yaml, tools/validation-command.yaml]
+permissions: {filesystem: scoped_project_read_write, shell: approval_required, external_integrations: disabled}
+dependencies: [policies/security.yaml, policies/approvals.yaml]
+invocation: coordinator_delegation_for_react_native_units
+delegation: none
+stop_conditions: [dependency_change_requires_approval, native_module_change_required, signing_requested]
+errors: [return_blocker_to_coordinator]
+fail_safe_behavior: stop_before_sensitive_or_native_boundary_change
+completion_criteria: [react_native_scope_satisfied, relevant_react_native_checks_run_or_blocked]
+human_review: required_for_dependencies_native_bridges_permissions_or_release_changes
+prohibited_actions: [own_substantial_native_modules, sign_publish_upload_deploy]

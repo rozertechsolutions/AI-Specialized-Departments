@@ -1,0 +1,20 @@
+manifest_type: workflow
+schema: ../schemas/workflow.schema.json
+id: add-mobile-tests
+classification: native
+objective: Add or improve mobile tests at the correct level without changing production behavior merely to pass tests.
+trigger: human_request_or_validation_gap
+inputs: [behavior_under_test, changed_files, existing_test_patterns]
+supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-native]
+preconditions: [test_framework_detected, deterministic_inputs_available]
+primary_owner: mobile-test-engineer
+reviewers: [coordinator_selected_platform_engineer, mobile-code-reviewer]
+steps: [inspect_existing_tests, select_test_level, add_fixtures, implement_tests, run_targeted_tests, report_gaps]
+validation_gates: [determinism, regression_coverage, no_production_behavior_change]
+failures: [missing_test_framework, flaky_infrastructure, required_simulator_unavailable]
+stop_conditions: [destructive_device_operation_required, paid_or_external_service_needed]
+evidence: [test_files, command_results, unavailable_reason]
+outputs: [test_changes, evidence_report]
+acceptance_criteria: [tests_cover_requested_behavior_or_gap_reported]
+human_approvals: [long_running_or_external_tests]
+prohibited_actions: [weaken_tests, disable_validation, fabricate_test_success]

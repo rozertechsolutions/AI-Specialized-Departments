@@ -1,0 +1,27 @@
+# Secret-bearing and signing material.
+.env
+.env.*
+!.env.example
+**/*.keystore
+**/*.jks
+**/*.p12
+**/*.p8
+**/*.mobileprovision
+**/*.cer
+**/*.pem
+**/*.key
+**/fastlane/Appfile
+**/fastlane/Matchfile
+**/fastlane/*.json
+
+# Generated or bulky mobile outputs.
+**/build/
+**/.gradle/
+**/DerivedData/
+**/.dart_tool/
+**/Pods/
+**/node_modules/
+**/.expo/
+**/.metro/
+**/coverage/
+

@@ -1,0 +1,16 @@
+manifest_type: provider
+schema: ../schemas/provider.schema.json
+id: openai-compatible
+classification: native
+enabled: false
+provider_kind: compatible_api
+official_docs: null
+capability_discovery: required_at_runtime
+configuration:
+  endpoint: null
+  model: null
+  api_key: null
+  context_length: null
+  hardware_limits: null
+remote_use_requires_explicit_consent: true
+notes: No endpoint, model, API key, cloud fallback, or compatibility level is assumed.

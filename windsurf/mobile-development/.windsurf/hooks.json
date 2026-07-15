@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "pre_write_code": [
+      {
+        "command": "python3 .windsurf/hooks/scope_guard.py",
+        "powershell": "python .windsurf\\hooks\\scope_guard.py",
+        "show_output": true
+      },
+      {
+        "command": "python3 .windsurf/hooks/secret_guard.py",
+        "powershell": "python .windsurf\\hooks\\secret_guard.py",
+        "show_output": true
+      }
+    ],
+    "pre_run_command": [
+      {
+        "command": "python3 .windsurf/hooks/command_guard.py",
+        "powershell": "python .windsurf\\hooks\\command_guard.py",
+        "show_output": true
+      }
+    ],
+    "pre_mcp_tool_use": [
+      {
+        "command": "python3 .windsurf/hooks/mcp_guard.py",
+        "powershell": "python .windsurf\\hooks\\mcp_guard.py",
+        "show_output": true
+      }
+    ]
+  }
+}

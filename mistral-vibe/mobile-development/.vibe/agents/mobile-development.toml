@@ -1,0 +1,35 @@
+agent_type = "agent"
+display_name = "Mobile Development"
+description = "Safe coordinator for Android, iOS, Kotlin Multiplatform, Flutter, React Native, and mixed mobile work."
+safety = "neutral"
+system_prompt_id = "mobile-development"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = [
+  "grep",
+  "read_file",
+  "skill",
+  "todo",
+  "ask_user_question",
+  "task",
+]
+disabled_tools = ["mcp_*"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"
+
+[tools.todo]
+permission = "always"
+
+[tools.ask_user_question]
+permission = "always"
+
+[tools.task]
+permission = "ask"
+allowlist = []

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mcp-server.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "classification", "servers"],
+  "properties": {
+    "manifest_type": {"const": "mcp-servers"},
+    "classification": {"enum": ["native", "unsupported"]},
+    "servers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "enabled", "transport", "credentials"],
+        "properties": {
+          "enabled": {"const": false}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

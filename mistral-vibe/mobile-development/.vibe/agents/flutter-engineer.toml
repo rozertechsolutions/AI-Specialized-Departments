@@ -1,0 +1,27 @@
+agent_type = "subagent"
+display_name = "Flutter Engineer"
+description = "Flutter implementation specialist for Dart, widgets, navigation, state, packages, flavors, and Flutter-side platform channels."
+safety = "neutral"
+system_prompt_id = "flutter-engineer"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "write_file", "edit", "bash"]
+disabled_tools = ["mcp_*"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"
+
+[tools.write_file]
+permission = "ask"
+
+[tools.edit]
+permission = "ask"
+
+[tools.bash]
+permission = "ask"

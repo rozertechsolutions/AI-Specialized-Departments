@@ -1,0 +1,20 @@
+manifest_type: workflow
+schema: ../schemas/workflow.schema.json
+id: fix-mobile-bug
+classification: native
+objective: Reproduce, isolate, and fix a mobile bug with regression coverage and scoped validation.
+trigger: human_request_or_bug_report
+inputs: [bug_description, reproduction_steps, expected_behavior, actual_behavior]
+supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-native]
+preconditions: [bug_scope_inspected, owner_selected]
+primary_owner: coordinator_selected_platform_engineer
+reviewers: [mobile-test-engineer, mobile-code-reviewer]
+steps: [inspect_recent_context, reproduce_or_explain_blocker, identify_root_cause, implement_scoped_fix, add_regression_test, validate_fix]
+validation_gates: [reproduction_evidence_or_blocker, regression_test_or_reason, targeted_checks]
+failures: [cannot_reproduce, missing_environment, unrelated_preexisting_failure]
+stop_conditions: [requires_behavior_change_outside_scope, production_credentials_needed]
+evidence: [root_cause_notes, changed_files, command_results]
+outputs: [bug_fix, regression_evidence]
+acceptance_criteria: [bug_resolved_or_blocked_with_evidence, no_unrelated_changes]
+human_approvals: [public_contract_or_persistent_format_change]
+prohibited_actions: [hide_error_with_broad_fallback, weaken_validation]

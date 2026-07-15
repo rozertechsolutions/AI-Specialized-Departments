@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: mobile-security
+classification: native
+mission: Review mobile security and privacy risks across auth, secure storage, transport, permissions, cryptography, WebViews, deep links, logs, telemetry, and dependencies.
+scope: [security, privacy]
+inputs: [requirements, changed_files, manifests, dependencies]
+outputs: [security_findings, human_review_flags]
+owner: mobile-security-reviewer
+reviewers: [mobile-code-reviewer]
+tools: [tools/project-read.yaml]
+permissions: [read_only]
+stop_conditions: [secret_detected, production_credentials_needed, external_auth_requested]
+prohibited_actions: [modify_files_by_default, approve_sensitive_change_without_human_review]

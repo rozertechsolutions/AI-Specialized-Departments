@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: kmp-shared
+classification: native
+mission: Guide Kotlin Multiplatform shared logic, source-set boundaries, targets, dependency placement, expect/actual, interoperability, and tests.
+scope: [kotlin-multiplatform]
+inputs: [requirements, kmp_project_files]
+outputs: [kmp_guidance, source_set_boundary_decisions, validation_evidence_requirements]
+owner: kmp-engineer
+reviewers: [mobile-test-engineer, mobile-security-reviewer, mobile-code-reviewer]
+tools: [tools/project-read.yaml, tools/project-edit.yaml, tools/validation-command.yaml]
+permissions: [scoped_project_edits, approval_controlled_shell]
+stop_conditions: [missing_kmp_project, unclear_source_set_boundary, dependency_change_without_approval]
+prohibited_actions: [own_native_ui, sign_publish_upload_deploy]

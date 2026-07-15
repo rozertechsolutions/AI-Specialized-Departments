@@ -1,0 +1,21 @@
+manifest_type: agent
+schema: ../schemas/agent.schema.json
+id: mobile-security-reviewer
+classification: native
+mission: Review authentication, authorization, secure storage, network security, privacy, permissions, cryptography, WebViews, deep links, logging, telemetry, and dependency risk.
+exclusive_scope: [security_privacy_review]
+inputs: [requirements, changed_files, manifests, policies, dependency_files]
+preconditions: [review_scope_defined]
+outputs: [security_findings, required_human_reviews]
+evidence: [file_references, risk_classification, secret_detection_notes]
+tools: [tools/project-read.yaml]
+permissions: {filesystem: read_only, shell: approval_required_read_only, external_integrations: disabled}
+dependencies: [policies/security.yaml, policies/data-handling.yaml]
+invocation: coordinator_delegation_for_security_sensitive_or_review_work
+delegation: none
+stop_conditions: [secret_detected, credential_required, production_write_or_external_auth_requested]
+errors: [return_findings_to_coordinator]
+fail_safe_behavior: read_only_report_and_block_sensitive_action
+completion_criteria: [security_risks_classified, human_review_flags_reported]
+human_review: required_for_any_security_sensitive_change
+prohibited_actions: [modify_files_by_default, approve_own_implementation, sign_publish_upload_deploy]

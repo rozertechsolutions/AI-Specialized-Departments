@@ -1,0 +1,16 @@
+manifest_type: policy
+schema: ../schemas/policy.schema.json
+id: data-handling
+classification: native
+rules:
+  use_minimum_required_project_context: true
+  do_not_copy_sensitive_data_to_prompts_or_logs: true
+  redact_secret_like_values_in_reports: true
+  private_data_requires_explicit_authorization: true
+  generated_fixtures_must_be_synthetic_and_labeled: true
+  production_data_for_tests: prohibited
+audit_logging:
+  record_decisions: true
+  record_approvals: true
+  record_validation_commands: true
+  do_not_record_secrets: true

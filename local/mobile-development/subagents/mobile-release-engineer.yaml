@@ -1,0 +1,21 @@
+manifest_type: agent
+schema: ../schemas/agent.schema.json
+id: mobile-release-engineer
+classification: native
+mission: Prepare versioning, variants, flavors, schemes, reproducibility, package readiness, signing prerequisites, and store-readiness evidence without publishing or signing.
+exclusive_scope: [versioning, variants, flavors, schemes, reproducibility, unsigned_package_readiness, signing_prerequisite_review]
+inputs: [requirements, build_configuration, release_metadata]
+preconditions: [manual_release_workflow_initiated, no_real_credentials_required]
+outputs: [release_readiness_report, unsigned_validation_evidence]
+evidence: [version_metadata_review, reproducibility_notes, unsigned_build_results_when_available]
+tools: [tools/project-read.yaml, tools/project-edit.yaml, tools/validation-command.yaml]
+permissions: {filesystem: scoped_project_read_write_for_release_metadata, shell: approval_required, external_integrations: disabled}
+dependencies: [policies/security.yaml, policies/approvals.yaml]
+invocation: prepare-mobile-release_workflow_only
+delegation: none
+stop_conditions: [signing_requested, publishing_requested, credential_required, upload_or_submission_requested]
+errors: [return_blocker_to_coordinator]
+fail_safe_behavior: stop_before_signing_publication_upload_deployment_or_spending
+completion_criteria: [release_readiness_documented, no_real_signing_credentials_used]
+human_review: required_for_release_configuration_and_all_distribution_actions
+prohibited_actions: [publish_upload_submit_deploy_distribute_sign_spend]

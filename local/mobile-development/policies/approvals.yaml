@@ -1,0 +1,27 @@
+manifest_type: policy
+schema: ../schemas/policy.schema.json
+id: approvals
+classification: native
+approval_required_for:
+  - dependency_add_update_remove
+  - sdk_or_toolchain_change
+  - public_api_or_contract_change
+  - persistent_format_change
+  - auth_or_crypto_change
+  - secure_storage_change
+  - permission_or_entitlement_change
+  - privacy_manifest_change
+  - telemetry_or_analytics_change
+  - external_network_write
+  - MCP_or_provider_enablement
+  - signing_or_release_configuration
+  - long_running_or_external_validation
+absolute_prohibitions:
+  - signing_with_real_credentials
+  - publishing
+  - uploading_artifacts
+  - submitting_to_store
+  - deploying
+  - distributing
+  - spending_money
+  - destructive_device_or_filesystem_operations

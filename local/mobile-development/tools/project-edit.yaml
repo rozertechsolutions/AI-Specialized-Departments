@@ -1,0 +1,11 @@
+manifest_type: tool-contract
+schema: ../schemas/tool.schema.json
+id: project-edit
+classification: native
+purpose: Edit scoped project files only after owner assignment and context inspection.
+allowed_operations: [create_file, modify_file]
+denied_operations: [delete_files_without_explicit_approval, chmod, credential_write, generated_unrelated_churn]
+inputs: [reviewed_project_root, approved_scope, patch]
+outputs: [changed_files]
+approval_required: false
+fail_safe_behavior: stop_on_scope_or_user_change_conflict

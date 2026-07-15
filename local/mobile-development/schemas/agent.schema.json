@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "id", "classification", "mission", "exclusive_scope", "inputs", "preconditions", "outputs", "evidence", "tools", "permissions", "dependencies", "invocation", "delegation", "stop_conditions", "errors", "fail_safe_behavior", "completion_criteria", "human_review", "prohibited_actions"],
+  "properties": {
+    "manifest_type": {"const": "agent"},
+    "id": {"type": "string"},
+    "classification": {"enum": ["native", "unsupported"]},
+    "mission": {"type": "string"}
+  },
+  "additionalProperties": true
+}

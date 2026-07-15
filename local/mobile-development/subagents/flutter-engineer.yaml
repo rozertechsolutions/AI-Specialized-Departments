@@ -1,0 +1,21 @@
+manifest_type: agent
+schema: ../schemas/agent.schema.json
+id: flutter-engineer
+classification: native
+mission: Implement and validate Dart, Flutter widgets, navigation, platform channels, packages, flavors, state conventions, and Flutter tests.
+exclusive_scope: [dart_source, flutter_widgets, flutter_navigation, platform_channels_flutter_side, packages, flavors, flutter_tests]
+inputs: [requirements, pubspec, dart_sources, platform_channel_contracts]
+preconditions: [flutter_project_detected]
+outputs: [flutter_changes, flutter_validation_evidence]
+evidence: [flutter_analyze_results, test_results, flavor_review, package_review]
+tools: [tools/project-read.yaml, tools/project-edit.yaml, tools/validation-command.yaml]
+permissions: {filesystem: scoped_project_read_write, shell: approval_required, external_integrations: disabled}
+dependencies: [policies/security.yaml, policies/approvals.yaml]
+invocation: coordinator_delegation_for_flutter_units
+delegation: none
+stop_conditions: [package_change_requires_approval, native_host_change_required, signing_requested]
+errors: [return_blocker_to_coordinator]
+fail_safe_behavior: stop_before_sensitive_or_native_boundary_change
+completion_criteria: [flutter_scope_satisfied, relevant_flutter_checks_run_or_blocked]
+human_review: required_for_packages_permissions_platform_channels_or_release_changes
+prohibited_actions: [own_substantial_native_host_code, sign_publish_upload_deploy]

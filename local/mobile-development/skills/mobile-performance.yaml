@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: mobile-performance
+classification: native
+mission: Review and plan measurement for startup, rendering, memory, leaks, battery, background work, network/storage efficiency, and binary size.
+scope: [performance]
+inputs: [requirements, changed_files, profiling_data_when_available]
+outputs: [performance_findings, measurement_plan]
+owner: mobile-performance-reviewer
+reviewers: [mobile-code-reviewer]
+tools: [tools/project-read.yaml, tools/validation-command.yaml]
+permissions: [read_only, approval_controlled_shell]
+stop_conditions: [measurement_infrastructure_unavailable, destructive_device_operation_required]
+prohibited_actions: [claim_improvement_without_measurement, modify_files_by_default]

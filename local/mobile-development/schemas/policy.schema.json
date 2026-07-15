@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "policy.schema.json",
+  "type": "object",
+  "required": ["manifest_type", "id", "classification"],
+  "properties": {
+    "manifest_type": {"const": "policy"},
+    "id": {"type": "string"},
+    "classification": {"enum": ["native", "unsupported"]}
+  },
+  "additionalProperties": true
+}

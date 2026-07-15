@@ -1,0 +1,20 @@
+manifest_type: workflow
+schema: ../schemas/workflow.schema.json
+id: add-mobile-screen
+classification: native
+objective: Add a mobile UI screen following existing navigation, state, accessibility, localization, and adaptive-layout conventions.
+trigger: human_request
+inputs: [screen_requirements, navigation_target, states, design_context]
+supported_technologies: [android, ios, flutter, react-native, kotlin-multiplatform]
+preconditions: [ui_framework_detected, navigation_convention_identified]
+primary_owner: coordinator_selected_ui_platform_engineer
+reviewers: [mobile-ui-accessibility-reviewer, mobile-test-engineer, mobile-code-reviewer]
+steps: [inspect_ui_patterns, define_states, implement_screen, wire_navigation, add_ui_or_snapshot_tests_when_available, review_accessibility]
+validation_gates: [loading_empty_error_state_coverage, adaptive_layout_review, accessibility_review, ui_tests_or_reason]
+failures: [missing_design_decision, unavailable_ui_test_infrastructure]
+stop_conditions: [navigation_contract_change_without_approval, permissions_or_privacy_change]
+evidence: [changed_ui_files, state_matrix, validation_results]
+outputs: [screen_implementation, ui_validation_report]
+acceptance_criteria: [screen_states_complete, accessible_and_adaptive_or_limitations_reported]
+human_approvals: [new_navigation_contracts, visible_product_behavior_changes]
+prohibited_actions: [invent_product_copy_or_api_behavior, fabricate_visual_validation]
