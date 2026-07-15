@@ -1,0 +1,7 @@
+{
+  "skill-default-locations": true,
+  "command-default-locations": true,
+  "agent-default-location": true,
+  "mcp-default-locations": false,
+  "auto-update": false
+}
