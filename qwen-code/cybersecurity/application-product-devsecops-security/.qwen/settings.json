@@ -1,0 +1,83 @@
+{
+  "general": {
+    "enableAutoUpdate": false
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "model": {
+    "maxSubagentDepth": 1
+  },
+  "memory": {
+    "enableManagedAutoMemory": false,
+    "enableManagedAutoDream": false,
+    "enableAutoSkill": false,
+    "autoSkillConfirm": true,
+    "enableTeamMemory": false,
+    "enableTeamMemorySync": false
+  },
+  "tools": {
+    "approvalMode": "default",
+    "shell": {
+      "enableInteractiveShell": false
+    },
+    "computerUse": {
+      "enabled": false
+    }
+  },
+  "permissions": {
+    "ask": [
+      "Edit",
+      "Write",
+      "Bash",
+      "Agent",
+      "WebFetch"
+    ],
+    "deny": [
+      "Read(/**/.git/**)",
+      "Edit(/**/.git/**)",
+      "Read(/**/.env)",
+      "Edit(/**/.env)",
+      "Read(/**/.env.local)",
+      "Edit(/**/.env.local)",
+      "Read(/**/*.pem)",
+      "Edit(/**/*.pem)",
+      "Read(/**/*.key)",
+      "Edit(/**/*.key)",
+      "Read(/**/*.p12)",
+      "Edit(/**/*.p12)",
+      "Read(/**/*.pfx)",
+      "Edit(/**/*.pfx)"
+    ]
+  },
+  "slashCommands": {
+    "disabled": [
+      "mcp",
+      "extensions",
+      "channel",
+      "serve"
+    ]
+  },
+  "mcp": {
+    "allowed": [],
+    "excluded": [
+      "*"
+    ]
+  },
+  "security": {
+    "folderTrust": {
+      "enabled": true
+    }
+  },
+  "telemetry": {
+    "enabled": false,
+    "logPrompts": false,
+    "includeSensitiveSpanAttributes": false
+  },
+  "experimental": {
+    "cron": false,
+    "agentTeam": false,
+    "artifact": false
+  },
+  "disableAllHooks": true
+}
