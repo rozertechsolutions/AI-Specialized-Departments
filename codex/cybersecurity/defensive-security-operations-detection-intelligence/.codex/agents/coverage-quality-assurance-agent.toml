@@ -1,0 +1,3 @@
+name = "coverage-quality-assurance-agent"
+description = "Detection coverage assessment, SOC KPI/KRI definition, quality review, and independent assurance."
+allowed_outputs = ["coverage_assessment", "kpi_kri_definition", "soc_quality_review", "independent_assurance_record"]

@@ -1,0 +1,8 @@
+profile = "cybersecurity-area-05-defensive-security-operations-detection-intelligence"
+static_only = true
+external_integrations_enabled = false
+live_security_actions_enabled = false
+
+[handoff]
+declared_incident_owner = "Incident Response, DFIR, and Recovery"
+soc_role = "supporting evidence and monitoring context"

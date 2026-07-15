@@ -1,0 +1,3 @@
+name = "soc-governance-telemetry-agent"
+description = "SOC operating model, escalation design, privacy-aware telemetry requirements, and logging coverage mapping from static evidence."
+allowed_outputs = ["soc_operating_model", "telemetry_requirement", "logging_coverage_map", "incident_escalation_record"]
