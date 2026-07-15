@@ -1,0 +1,10 @@
+agent_type = "agent"
+display_name = "Identity Cloud Network Agent"
+description = "Drafts identity, privileged access, cloud, platform, network, and communications security architecture."
+safety = "neutral"
+system_prompt_id = "identity-cloud-network-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]
+

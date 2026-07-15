@@ -1,0 +1,10 @@
+agent_type = "agent"
+display_name = "Enterprise Solution Architecture Agent"
+description = "Reviews enterprise, solution, platform, endpoint, and workspace architecture for secure reusable patterns."
+safety = "neutral"
+system_prompt_id = "enterprise-solution-architecture-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]
+

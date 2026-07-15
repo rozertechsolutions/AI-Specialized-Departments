@@ -1,0 +1,10 @@
+agent_type = "agent"
+display_name = "Data Container Automation Agent"
+description = "Drafts data protection, cryptography, key handling, container, Kubernetes, IaC, and automation architecture."
+safety = "neutral"
+system_prompt_id = "data-container-automation-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]
+

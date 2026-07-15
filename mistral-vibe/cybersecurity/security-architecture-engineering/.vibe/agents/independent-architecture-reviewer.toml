@@ -1,0 +1,10 @@
+agent_type = "agent"
+display_name = "Independent Architecture Reviewer"
+description = "Independently reviews architecture artifacts for evidence quality, unsupported claims, gaps, and approval needs."
+safety = "neutral"
+system_prompt_id = "independent-architecture-reviewer"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]
+

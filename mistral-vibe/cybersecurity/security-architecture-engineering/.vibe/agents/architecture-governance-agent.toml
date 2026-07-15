@@ -1,0 +1,10 @@
+agent_type = "agent"
+display_name = "Architecture Governance Agent"
+description = "Drafts security architecture governance, reference models, standards mappings, decision records, and review gates."
+safety = "neutral"
+system_prompt_id = "architecture-governance-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]
+

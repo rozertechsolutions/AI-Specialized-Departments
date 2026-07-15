@@ -1,0 +1,29 @@
+agent_type = "agent"
+display_name = "Security Architecture Coordinator"
+description = "Safe coordinator for cybersecurity security architecture and engineering design, review, documentation, patterns, and assurance."
+safety = "neutral"
+system_prompt_id = "security-architecture-coordinator"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "todo", "ask_user_question", "task"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"
+
+[tools.todo]
+permission = "always"
+
+[tools.ask_user_question]
+permission = "always"
+
+[tools.task]
+permission = "ask"
+allowlist = []
+
