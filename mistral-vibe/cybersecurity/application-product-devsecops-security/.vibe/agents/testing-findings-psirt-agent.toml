@@ -1,0 +1,9 @@
+agent_type = "agent"
+display_name = "Testing Findings PSIRT Agent"
+description = "Testing governance, finding triage, remediation validation planning, and PSIRT coordination specialist."
+safety = "neutral"
+system_prompt_id = "testing-findings-psirt-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]

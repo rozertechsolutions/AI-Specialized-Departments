@@ -1,0 +1,9 @@
+agent_type = "agent"
+display_name = "Secure Design Code Review Agent"
+description = "Secure design and static secure code-review guidance specialist."
+safety = "neutral"
+system_prompt_id = "secure-design-code-review-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]

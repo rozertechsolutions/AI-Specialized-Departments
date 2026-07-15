@@ -1,0 +1,9 @@
+agent_type = "agent"
+display_name = "Requirements Threat Modeling Agent"
+description = "Security requirements, threat modeling, abuse-case, trust-boundary, and mitigation backlog specialist."
+safety = "neutral"
+system_prompt_id = "requirements-threat-modeling-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "ask_user_question"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit", "task"]

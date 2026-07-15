@@ -1,0 +1,13 @@
+agent_type = "agent"
+display_name = "Application Product DevSecOps Security Coordinator"
+description = "Coordinator for secure SDLC, product security, DevSecOps, PSIRT, and assurance work using static evidence."
+safety = "neutral"
+system_prompt_id = "application-product-devsecops-security-coordinator"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill", "todo", "ask_user_question", "task"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.task]
+permission = "ask"
+allowlist = []
