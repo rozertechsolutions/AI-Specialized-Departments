@@ -1,0 +1,8 @@
+# Native Sources
+
+- Kilo Code docs: https://kilocode.ai/docs/llms.txt
+- Kilo Code AGENTS.md guidance: https://kilocode.ai/docs/features/agents-md
+- Kilo Code custom rules: https://kilocode.ai/docs/features/custom-rules
+- Kilo Code custom subagents: https://kilocode.ai/docs/features/custom-subagents
+
+These sources support the native use of project instructions, configuration, custom rules, custom subagents, Agent Skills, file ignore controls, and permission boundaries.

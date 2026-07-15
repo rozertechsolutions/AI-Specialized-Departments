@@ -1,0 +1,63 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    ".kilo/rules/appsec-scope.md",
+    ".kilo/rules/static-review-boundaries.md",
+    ".kilo/rules/evidence-and-human-approval.md",
+    ".kilo/rules/responsibility-matrix.md"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow",
+      "*secret*": "ask",
+      "*credential*": "ask",
+      "*private-key*": "ask"
+    },
+    "edit": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "write": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "rg *": "allow",
+      "find *": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "sed *": "allow",
+      "git commit *": "deny",
+      "git push *": "deny",
+      "git pull *": "deny",
+      "git merge *": "deny",
+      "git rebase *": "deny",
+      "git reset *": "deny",
+      "git clean *": "deny",
+      "git checkout *": "deny",
+      "git restore *": "deny",
+      "git switch *": "deny",
+      "git branch *": "deny",
+      "rm *": "deny",
+      "rmdir *": "deny"
+    },
+    "task": {
+      "*": "deny",
+      "product-security-governance-agent": "allow",
+      "requirements-threat-modeling-agent": "allow",
+      "secure-design-code-review-agent": "allow",
+      "supply-chain-ci-release-agent": "allow",
+      "testing-findings-psirt-agent": "allow",
+      "independent-appsec-reviewer": "allow"
+    }
+  },
+  "mcp": {}
+}
