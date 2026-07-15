@@ -1,0 +1,8 @@
+---
+description: Cybersecurity Area 05 defensive security operations rules
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+Stay within defensive operations design and review. Separate evidence, inference, confidence, owner, privacy impact, escalation path, and human decision. Do not perform live security actions or claim production execution.
