@@ -1,0 +1,9 @@
+name: cybersecurity-area-06-incident-response-dfir-recovery
+static_only: true
+provider: user_configured
+runtime: user_configured
+model: user_configured
+external_integrations_enabled: false
+tools_enabled: false
+human_authority_required: true
+independent_review_required_for_critical_outputs: true

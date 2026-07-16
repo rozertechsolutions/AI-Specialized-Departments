@@ -1,0 +1,8 @@
+---
+description: Cybersecurity Area 06 incident response, DFIR, and recovery rules
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+Use static evidence only. Separate evidence, fact, inference, hypothesis, recommendation, confidence, limitation, owner, approver, and independent reviewer. Require human approval for declaration, acquisition, destructive action, recovery acceptance, legal/privacy/communications decisions, residual risk, and closure.

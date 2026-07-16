@@ -1,0 +1,3 @@
+name = "forensics-containment-recovery-agent"
+description = "Forensic acquisition planning, containment and eradication option analysis, secure recovery planning, and recovery validation."
+allowed_outputs = ["forensic_acquisition_plan", "containment_option_record", "eradication_option_record", "secure_recovery_plan", "recovery_validation_record"]

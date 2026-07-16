@@ -1,0 +1,7 @@
+{
+  "instructions": ["AGENTS.md"],
+  "tools": {
+    "bash": false,
+    "webfetch": false
+  }
+}

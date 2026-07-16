@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Scenario Crisis Review"
+description = "Static scenario playbooks, crisis handoff, tabletop, post-incident review, corrective action, and assurance."
+safety = "safe"
+system_prompt_id = "scenario-crisis-review"
+disabled_tools = ["bash", "write_file", "search_replace"]

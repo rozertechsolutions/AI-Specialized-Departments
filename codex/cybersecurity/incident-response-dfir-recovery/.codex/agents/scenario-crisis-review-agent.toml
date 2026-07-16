@@ -1,0 +1,3 @@
+name = "scenario-crisis-review-agent"
+description = "Scenario playbooks, crisis handoff, tabletop exercises, post-incident review, corrective action, and independent assurance."
+allowed_outputs = ["scenario_playbook", "crisis_handoff_record", "tabletop_package", "after_action_report", "post_incident_review", "corrective_action_register", "assurance_record"]
