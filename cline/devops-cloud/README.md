@@ -5,3 +5,5 @@ This package implements section 01, Leadership and Architecture, for the platfor
 Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
 
 Section 02 adds Cline rules, Skill, and workflow procedures for static cloud foundation and infrastructure design.
+
+Section 03 adds Cline rules, Skill, and workflow procedures for static CI/CD and release engineering.

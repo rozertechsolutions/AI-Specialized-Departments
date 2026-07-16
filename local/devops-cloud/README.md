@@ -14,3 +14,5 @@ This local package is provider-independent. Providers, runtimes, models, endpoin
 - Specialist implementation details are routed to later sections instead of duplicated here.
 
 Section 02 adds provider-independent cloud foundation and infrastructure specs for landing zones, IaC, networks, managed services, lifecycle, safety gates, and human review.
+
+Section 03 adds provider-independent CI/CD and release-engineering specs for pipelines, artifacts, release strategies, progressive delivery, rollback, and DORA metrics.

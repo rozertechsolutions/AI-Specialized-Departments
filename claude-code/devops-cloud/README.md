@@ -5,3 +5,5 @@ This package implements section 01, Leadership and Architecture, for the platfor
 Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
 
 Section 02 adds Claude Code subagents, Skill, and workflow references for cloud foundations and infrastructure design. All commands remain denied or human-gated; no infrastructure tooling is executed.
+
+Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.

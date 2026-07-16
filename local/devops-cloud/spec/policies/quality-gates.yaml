@@ -10,3 +10,8 @@ rules:
 - State, drift, rollback and ownership are explicit.
 - No credentials, real account IDs, private endpoints or environment-specific values are committed.
 - Every provider-specific choice is justified and isolated.
+
+- Every release path is reproducible, traceable and reversible.
+- Rollback is designed before release readiness is accepted.
+- Artifacts are immutable and promoted rather than rebuilt where practical.
+- No pipeline or deployment is claimed to have run.

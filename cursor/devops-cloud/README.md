@@ -8,3 +8,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Cursor coverage uses AGENTS.md, project rules, and workflow references. Dedicated role files are intentionally omitted because the current repository package uses rules rather than confirmed project-scoped subagent files.
 
 Section 02 adds Cursor rules and workflow procedures. Role contracts are represented in persistent instructions rather than unsupported custom agent files.
+
+Section 03 adds Cursor rules and workflow references for static CI/CD and release engineering.

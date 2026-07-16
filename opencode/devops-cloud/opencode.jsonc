@@ -1,11 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "agent": {
-    "devops-cloud-orchestrator": {"mode": "subagent", "prompt": "{file:./.opencode/agents/devops-cloud-orchestrator.md}", "permission": {"edit": "ask", "bash": "deny"}},
+    "ci-cd-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/ci-cd-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
     "cloud-and-platform-architect": {"mode": "subagent", "prompt": "{file:./.opencode/agents/cloud-and-platform-architect.md}", "permission": {"edit": "ask", "bash": "deny"}},
     "cloud-foundation-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/cloud-foundation-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
-    "infrastructure-as-code-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/infrastructure-as-code-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
     "cloud-network-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/cloud-network-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
-    "cloud-runtime-managed-services-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/cloud-runtime-managed-services-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}}
+    "cloud-runtime-managed-services-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/cloud-runtime-managed-services-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
+    "devops-cloud-orchestrator": {"mode": "subagent", "prompt": "{file:./.opencode/agents/devops-cloud-orchestrator.md}", "permission": {"edit": "ask", "bash": "deny"}},
+    "infrastructure-as-code-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/infrastructure-as-code-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
+    "release-and-deployment-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/release-and-deployment-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}}
   }
 }

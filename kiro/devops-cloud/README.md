@@ -8,3 +8,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Kiro coverage uses steering and workflow references. Hooks, Powers, MCP, and executable specs are intentionally omitted for section 01 because no execution or external integration is needed.
 
 Section 02 adds Kiro steering and workflow references. Hooks, Powers, MCP, and executable specs remain omitted because section 02 requires no execution or external integration.
+
+Section 03 adds Kiro steering and workflow references for static CI/CD and release engineering.

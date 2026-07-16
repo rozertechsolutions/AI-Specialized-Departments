@@ -5,3 +5,5 @@ This package implements section 01, Leadership and Architecture, for the platfor
 Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
 
 Section 02 adds Vibe subagents, prompts, Skill, and workflow references for static cloud foundation and infrastructure design.
+
+Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.

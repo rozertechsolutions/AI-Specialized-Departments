@@ -15,3 +15,9 @@ def test_cloud_foundation_quality_gates_are_static():
 ".join(ROLE_INSTRUCTIONS.values())
     assert "Do not authenticate to cloud accounts" in text
     assert "State, drift, rollback" in text
+
+def test_ci_cd_release_engineering_static_contracts():
+    from devops_cloud_department.ci_cd_release_engineering import QUALITY_GATES, ROLE_INSTRUCTIONS
+    assert 'ci-cd-engineer' in ROLE_INSTRUCTIONS
+    assert 'release-and-deployment-engineer' in ROLE_INSTRUCTIONS
+    assert 'No pipeline or deployment is claimed to have run' in QUALITY_GATES

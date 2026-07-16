@@ -8,3 +8,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Warp coverage uses AGENTS.md rules and project skills. No cloud-agent configuration, MCP, or external tool profile is fabricated for this static section.
 
 Section 02 adds Warp rules, project Skill, and workflow references for static cloud foundation and infrastructure design.
+
+Section 03 adds Warp project Skill and workflow references for static CI/CD and release engineering.
