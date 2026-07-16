@@ -12,3 +12,5 @@ Section 02 adds cloud foundation and infrastructure import material for landing 
 Section 03 adds importable CI/CD and release-engineering guidance, skill procedures, static workflows, and human-review controls.
 
 Section 04 adds importable container, orchestration, and platform-product guidance with static workflows and human-review controls.
+
+Section 05 adds importable SRE, observability, and operations guidance with static workflows and human-review controls.

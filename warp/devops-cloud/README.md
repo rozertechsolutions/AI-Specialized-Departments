@@ -12,3 +12,5 @@ Section 02 adds Warp rules, project Skill, and workflow references for static cl
 Section 03 adds Warp project Skill and workflow references for static CI/CD and release engineering.
 
 Section 04 adds Warp project Skill and workflow references for static containers and platform engineering.
+
+Section 05 adds Warp Skill and workflow references for static SRE and observability work.

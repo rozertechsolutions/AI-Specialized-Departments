@@ -27,3 +27,9 @@ def test_containers_platform_engineering_static_contracts():
     assert 'container-and-orchestration-engineer' in ROLE_INSTRUCTIONS
     assert 'platform-product-and-developer-experience-engineer' in ROLE_INSTRUCTIONS
     assert 'The platform is treated as a product with measurable users and outcomes' in QUALITY_GATES
+
+def test_sre_observability_operations_static_contracts():
+    from devops_cloud_department.sre_observability_operations import QUALITY_GATES, ROLE_INSTRUCTIONS
+    assert 'site-reliability-engineer' in ROLE_INSTRUCTIONS
+    assert 'observability-engineer' in ROLE_INSTRUCTIONS
+    assert 'Alerts are actionable, owned and tied to service objectives' in QUALITY_GATES

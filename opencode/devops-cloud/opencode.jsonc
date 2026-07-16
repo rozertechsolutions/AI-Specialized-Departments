@@ -9,7 +9,9 @@
     "container-and-orchestration-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/container-and-orchestration-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
     "devops-cloud-orchestrator": {"mode": "subagent", "prompt": "{file:./.opencode/agents/devops-cloud-orchestrator.md}", "permission": {"edit": "ask", "bash": "deny"}},
     "infrastructure-as-code-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/infrastructure-as-code-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
+    "observability-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/observability-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
     "platform-product-and-developer-experience-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/platform-product-and-developer-experience-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
-    "release-and-deployment-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/release-and-deployment-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}}
+    "release-and-deployment-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/release-and-deployment-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}},
+    "site-reliability-engineer": {"mode": "subagent", "prompt": "{file:./.opencode/agents/site-reliability-engineer.md}", "permission": {"edit": "ask", "bash": "deny"}}
   }
 }

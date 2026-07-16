@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Site Reliability Engineer"
+description = "Owns SLIs, SLOs, error budgets, operational readiness, on-call design, incident operations, postmortems, toil reduction and reliability improvement."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "site-reliability-engineer"

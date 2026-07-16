@@ -18,3 +18,5 @@ Section 02 adds provider-independent cloud foundation and infrastructure specs f
 Section 03 adds provider-independent CI/CD and release-engineering specs for pipelines, artifacts, release strategies, progressive delivery, rollback, and DORA metrics.
 
 Section 04 adds provider-independent container, orchestration, internal platform, golden path, and platform product specs.
+
+Section 05 adds provider-independent SRE, observability, incident, postmortem, runbook, and toil-reduction specs.

@@ -9,3 +9,5 @@ Section 02 adds Junie guidelines, Skill, and workflow procedures for static clou
 Section 03 adds Junie Skill and workflow references for static CI/CD and release engineering.
 
 Section 04 adds Junie Skill and workflow references for static containers and platform engineering.
+
+Section 05 adds Junie Skill and workflow references for static SRE and observability work.

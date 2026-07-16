@@ -9,3 +9,5 @@ Section 02 adds Gemini CLI memory, agent, Skill, and workflow references for sta
 Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.
 
 Section 04 adds native Containers and Platform Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported.
+
+Section 05 adds native SRE, Observability and Operations roles, skill, workflow procedures, safety gates, and human-review controls where supported.

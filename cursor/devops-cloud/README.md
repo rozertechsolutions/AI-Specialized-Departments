@@ -12,3 +12,5 @@ Section 02 adds Cursor rules and workflow procedures. Role contracts are represe
 Section 03 adds Cursor rules and workflow references for static CI/CD and release engineering.
 
 Section 04 adds Cursor rules and workflow references for static containers and platform engineering.
+
+Section 05 adds Cursor rules and workflow references for static SRE and observability work.

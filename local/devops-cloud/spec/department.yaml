@@ -6,12 +6,11 @@ sections:
 - 02-cloud-foundation-infrastructure
 - 03-ci-cd-release-engineering
 - 04-containers-platform-engineering
+- 05-sre-observability-operations
 scope:
-- request intake, classification, prioritization, and routing
-- cloud, hybrid, multicloud, and platform architecture
-- cloud foundations, infrastructure, networking, managed services, and lifecycle
-- CI/CD design, release engineering, artifact flow, rollback, and DORA metrics
-- containers, orchestration, internal developer platforms, golden paths, service catalogs, and platform product management
+- request intake, architecture, cloud foundations, infrastructure, networking, managed services, and lifecycle
+- CI/CD design, release engineering, containers, orchestration, platform product management, and developer experience
+- SRE, observability, operations, incidents, postmortems, runbooks, and toil reduction
 roles:
 - devops-cloud-orchestrator
 - cloud-and-platform-architect
@@ -23,16 +22,20 @@ roles:
 - release-and-deployment-engineer
 - container-and-orchestration-engineer
 - platform-product-and-developer-experience-engineer
+- site-reliability-engineer
+- observability-engineer
 skills:
 - leadership-architecture
 - cloud-foundation-infrastructure
 - ci-cd-release-engineering
 - containers-platform-engineering
+- sre-observability-operations
 workflows:
 - leadership-architecture
 - cloud-foundation-infrastructure
 - ci-cd-release-engineering
 - containers-platform-engineering
+- sre-observability-operations
 policies:
 - safety
 - quality-gates

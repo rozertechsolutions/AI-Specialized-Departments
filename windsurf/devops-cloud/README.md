@@ -12,3 +12,5 @@ Section 02 adds Windsurf rules and workflow procedures for static cloud foundati
 Section 03 adds Windsurf rules and workflow references for static CI/CD and release engineering.
 
 Section 04 adds Windsurf rules and workflow references for static containers and platform engineering.
+
+Section 05 adds Windsurf rules and workflow references for static SRE and observability work.

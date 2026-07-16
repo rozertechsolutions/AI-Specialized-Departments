@@ -20,3 +20,8 @@ rules:
 - Kubernetes ownership, limits, probes, disruption and lifecycle concerns are explicit.
 - Self-service has policy boundaries and human approval for sensitive actions.
 - The platform is treated as a product with measurable users and outcomes.
+
+- SLOs are user- or service-outcome based and measurable.
+- Alerts are actionable, owned and tied to service objectives.
+- Runbooks define prerequisites, diagnosis, safe actions, rollback and escalation.
+- Postmortems are evidence-based, blameless and action-oriented.
