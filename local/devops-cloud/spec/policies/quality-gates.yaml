@@ -15,3 +15,8 @@ rules:
 - Rollback is designed before release readiness is accepted.
 - Artifacts are immutable and promoted rather than rebuilt where practical.
 - No pipeline or deployment is claimed to have run.
+
+- Images are minimal, reproducible, non-root where applicable and free of embedded secrets.
+- Kubernetes ownership, limits, probes, disruption and lifecycle concerns are explicit.
+- Self-service has policy boundaries and human approval for sensitive actions.
+- The platform is treated as a product with measurable users and outcomes.

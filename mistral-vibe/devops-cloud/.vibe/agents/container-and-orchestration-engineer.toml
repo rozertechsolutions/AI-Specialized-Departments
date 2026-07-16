@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Container and Orchestration Engineer"
+description = "Owns OCI images, Docker/Compose configuration, registries, Kubernetes workload/orchestration design, Helm, Kustomize and cluster-facing workload standards."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "container-and-orchestration-engineer"

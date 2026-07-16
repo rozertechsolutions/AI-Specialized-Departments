@@ -10,3 +10,5 @@ Use the `project/` files as Project setup material and upload the knowledge file
 Section 02 adds cloud foundation and infrastructure import material for landing zones, IaC design, cloud networking, managed services, lifecycle, safety gates, and human-review controls.
 
 Section 03 adds importable CI/CD and release-engineering guidance, skill procedures, static workflows, and human-review controls.
+
+Section 04 adds importable container, orchestration, and platform-product guidance with static workflows and human-review controls.

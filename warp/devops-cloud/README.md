@@ -10,3 +10,5 @@ Warp coverage uses AGENTS.md rules and project skills. No cloud-agent configurat
 Section 02 adds Warp rules, project Skill, and workflow references for static cloud foundation and infrastructure design.
 
 Section 03 adds Warp project Skill and workflow references for static CI/CD and release engineering.
+
+Section 04 adds Warp project Skill and workflow references for static containers and platform engineering.

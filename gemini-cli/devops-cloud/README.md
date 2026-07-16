@@ -7,3 +7,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Section 02 adds Gemini CLI memory, agent, Skill, and workflow references for static foundation and infrastructure design.
 
 Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.
+
+Section 04 adds native Containers and Platform Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported.

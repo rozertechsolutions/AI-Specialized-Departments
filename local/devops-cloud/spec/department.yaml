@@ -5,14 +5,13 @@ sections:
 - 01-leadership-architecture
 - 02-cloud-foundation-infrastructure
 - 03-ci-cd-release-engineering
+- 04-containers-platform-engineering
 scope:
 - request intake, classification, prioritization, and routing
 - cloud, hybrid, multicloud, and platform architecture
-- landing zones, organizations, accounts, subscriptions, projects, and environment isolation
-- declarative infrastructure design, modules, state, drift, rollback, and configuration management
-- cloud networking, DNS, load balancing, connectivity, service endpoints, and segmentation
-- managed runtime services, resource lifecycle, tagging, ownership, and decommissioning
-- CI/CD design, pipeline architecture, artifact flow, release strategy, progressive delivery, rollback, and DORA metrics
+- cloud foundations, infrastructure, networking, managed services, and lifecycle
+- CI/CD design, release engineering, artifact flow, rollback, and DORA metrics
+- containers, orchestration, internal developer platforms, golden paths, service catalogs, and platform product management
 roles:
 - devops-cloud-orchestrator
 - cloud-and-platform-architect
@@ -22,14 +21,18 @@ roles:
 - cloud-runtime-managed-services-engineer
 - ci-cd-engineer
 - release-and-deployment-engineer
+- container-and-orchestration-engineer
+- platform-product-and-developer-experience-engineer
 skills:
 - leadership-architecture
 - cloud-foundation-infrastructure
 - ci-cd-release-engineering
+- containers-platform-engineering
 workflows:
 - leadership-architecture
 - cloud-foundation-infrastructure
 - ci-cd-release-engineering
+- containers-platform-engineering
 policies:
 - safety
 - quality-gates

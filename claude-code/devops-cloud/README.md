@@ -7,3 +7,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Section 02 adds Claude Code subagents, Skill, and workflow references for cloud foundations and infrastructure design. All commands remain denied or human-gated; no infrastructure tooling is executed.
 
 Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.
+
+Section 04 adds native Containers and Platform Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported.

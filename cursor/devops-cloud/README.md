@@ -10,3 +10,5 @@ Cursor coverage uses AGENTS.md, project rules, and workflow references. Dedicate
 Section 02 adds Cursor rules and workflow procedures. Role contracts are represented in persistent instructions rather than unsupported custom agent files.
 
 Section 03 adds Cursor rules and workflow references for static CI/CD and release engineering.
+
+Section 04 adds Cursor rules and workflow references for static containers and platform engineering.

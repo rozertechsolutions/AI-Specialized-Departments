@@ -21,3 +21,9 @@ def test_ci_cd_release_engineering_static_contracts():
     assert 'ci-cd-engineer' in ROLE_INSTRUCTIONS
     assert 'release-and-deployment-engineer' in ROLE_INSTRUCTIONS
     assert 'No pipeline or deployment is claimed to have run' in QUALITY_GATES
+
+def test_containers_platform_engineering_static_contracts():
+    from devops_cloud_department.containers_platform_engineering import QUALITY_GATES, ROLE_INSTRUCTIONS
+    assert 'container-and-orchestration-engineer' in ROLE_INSTRUCTIONS
+    assert 'platform-product-and-developer-experience-engineer' in ROLE_INSTRUCTIONS
+    assert 'The platform is treated as a product with measurable users and outcomes' in QUALITY_GATES

@@ -7,3 +7,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Section 02 adds Junie guidelines, Skill, and workflow procedures for static cloud foundation and infrastructure design.
 
 Section 03 adds Junie Skill and workflow references for static CI/CD and release engineering.
+
+Section 04 adds Junie Skill and workflow references for static containers and platform engineering.

@@ -7,3 +7,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Section 02 adds Cline rules, Skill, and workflow procedures for static cloud foundation and infrastructure design.
 
 Section 03 adds Cline rules, Skill, and workflow procedures for static CI/CD and release engineering.
+
+Section 04 adds Cline rules, Skill, and workflow procedures for static containers and platform engineering.

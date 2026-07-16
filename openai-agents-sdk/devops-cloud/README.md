@@ -16,3 +16,5 @@ The source is a minimal static SDK package definition. It is not installed, serv
 Section 02 adds static SDK role definitions and skill/workflow constants for cloud foundation and infrastructure design. The package remains uninstalled and unexecuted.
 
 Section 03 adds static SDK constants for CI/CD and release-engineering roles, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
+
+Section 04 adds static SDK constants for containers and platform-engineering roles, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.

@@ -10,3 +10,5 @@ Windsurf coverage uses Cascade rules and workflows. MCP and hooks are omitted be
 Section 02 adds Windsurf rules and workflow procedures for static cloud foundation and infrastructure design.
 
 Section 03 adds Windsurf rules and workflow references for static CI/CD and release engineering.
+
+Section 04 adds Windsurf rules and workflow references for static containers and platform engineering.

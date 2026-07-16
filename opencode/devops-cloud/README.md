@@ -7,3 +7,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 Section 02 adds OpenCode subagents, command workflow, and Skill guidance for static cloud foundation and infrastructure design.
 
 Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.
+
+Section 04 adds native Containers and Platform Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported.

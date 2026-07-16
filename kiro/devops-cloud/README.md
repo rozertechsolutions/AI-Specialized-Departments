@@ -10,3 +10,5 @@ Kiro coverage uses steering and workflow references. Hooks, Powers, MCP, and exe
 Section 02 adds Kiro steering and workflow references. Hooks, Powers, MCP, and executable specs remain omitted because section 02 requires no execution or external integration.
 
 Section 03 adds Kiro steering and workflow references for static CI/CD and release engineering.
+
+Section 04 adds Kiro steering and workflow references for static containers and platform engineering.
