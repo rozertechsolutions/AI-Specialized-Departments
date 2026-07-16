@@ -1,18 +1,29 @@
 schema_version: '1.0'
 id: devops-cloud
 name: DevOps and Cloud
-section: 01-leadership-architecture
+sections:
+- 01-leadership-architecture
+- 02-cloud-foundation-infrastructure
 scope:
 - request intake, classification, prioritization, and routing
 - cloud, hybrid, multicloud, and platform architecture
-- ADRs, technology selection, standards, guardrails, exceptions, and handoffs
+- landing zones, organizations, accounts, subscriptions, projects, and environment isolation
+- declarative infrastructure design, modules, state, drift, rollback, and configuration management
+- cloud networking, DNS, load balancing, connectivity, service endpoints, and segmentation
+- managed runtime services, resource lifecycle, tagging, ownership, and decommissioning
 roles:
 - devops-cloud-orchestrator
 - cloud-and-platform-architect
+- cloud-foundation-engineer
+- infrastructure-as-code-engineer
+- cloud-network-engineer
+- cloud-runtime-managed-services-engineer
 skills:
 - leadership-architecture
+- cloud-foundation-infrastructure
 workflows:
 - leadership-architecture
+- cloud-foundation-infrastructure
 policies:
 - safety
 - quality-gates

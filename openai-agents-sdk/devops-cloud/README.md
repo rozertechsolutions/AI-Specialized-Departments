@@ -12,3 +12,5 @@ The source is a minimal static SDK package definition. It is not installed, serv
 - No provider or product is selected without explicit requirements.
 - Every architecture decision records context, alternatives, tradeoffs, risks, owner, review status, and trigger for reconsideration.
 - Specialist implementation details are routed to later sections instead of duplicated here.
+
+Section 02 adds static SDK role definitions and skill/workflow constants for cloud foundation and infrastructure design. The package remains uninstalled and unexecuted.

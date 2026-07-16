@@ -5,3 +5,8 @@ rules:
 - every ADR records context, alternatives, tradeoffs, risks, owner, and review status
 - provider selection requires explicit requirements and tradeoff analysis
 - specialist implementation detail is routed to later sections
+
+- Infrastructure is declarative, reproducible and idempotent where applicable.
+- State, drift, rollback and ownership are explicit.
+- No credentials, real account IDs, private endpoints or environment-specific values are committed.
+- Every provider-specific choice is justified and isolated.

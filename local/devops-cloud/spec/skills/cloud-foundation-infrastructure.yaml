@@ -1,0 +1,12 @@
+schema_version: '1.0'
+id: cloud-foundation-infrastructure
+capabilities:
+- landing-zone-design
+- infrastructure-as-code-design
+- iac-module-review
+- state-and-drift-strategy
+- cloud-network-design
+- managed-service-selection
+- resource-lifecycle-and-decommissioning
+runtime_execution: false
+external_integrations_enabled: false

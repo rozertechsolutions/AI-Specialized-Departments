@@ -12,3 +12,5 @@ This local package is provider-independent. Providers, runtimes, models, endpoin
 - No provider or product is selected without explicit requirements.
 - Every architecture decision records context, alternatives, tradeoffs, risks, owner, review status, and trigger for reconsideration.
 - Specialist implementation details are routed to later sections instead of duplicated here.
+
+Section 02 adds provider-independent cloud foundation and infrastructure specs for landing zones, IaC, networks, managed services, lifecycle, safety gates, and human review.

@@ -6,3 +6,5 @@ Native mechanisms in this package represent persistent instructions, supported r
 
 
 Windsurf coverage uses Cascade rules and workflows. MCP and hooks are omitted because section 01 requires no external integration or execution.
+
+Section 02 adds Windsurf rules and workflow procedures for static cloud foundation and infrastructure design.

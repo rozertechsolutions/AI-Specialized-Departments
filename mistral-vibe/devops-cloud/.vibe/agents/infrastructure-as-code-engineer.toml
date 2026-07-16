@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Infrastructure as Code Engineer"
+description = "Owns declarative infrastructure design, modules, state, drift, idempotency, configuration management, and infrastructure change plans."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "infrastructure-as-code-engineer"
