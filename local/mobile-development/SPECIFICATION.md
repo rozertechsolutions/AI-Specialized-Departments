@@ -42,6 +42,12 @@ The coordinator owns scope, sequencing, delegation, conflict resolution, validat
 
 Workflows orchestrate processes. Skills provide reusable domain capability only. A process must not be duplicated across commands, prompts, hooks, skills, or agents.
 
+The reusable domain Skills include `mobile-architecture` for architecture review support and `mobile-code-review` for independent final review support. Workflows reference code review only when independent final review is required; implementation owners never review their own work.
+
+## Cross-File Checks
+
+JSON Schema validation confirms local manifest shape only. The host must separately verify that referenced `schema`, `tools`, `agents`, `subagents`, `skills`, `workflows`, policy files, and provider or MCP examples exist, remain inside `local/mobile-development/`, and match the referenced IDs. Missing or ambiguous references fail closed.
+
 ## Evidence and Completion
 
 Every workflow must classify completion criteria as `required`, `conditionally-required`, or `not-applicable` with a reason. Claims about compilation, testing, linting, security, accessibility, localization, or performance require evidence from discovered project commands or are reported as unavailable.

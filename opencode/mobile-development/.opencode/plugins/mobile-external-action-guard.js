@@ -1,6 +1,6 @@
 "use strict";
 
-const externalActionPattern = /\b(fastlane\s+(deliver|pilot|supply|upload|release)|gradle\s+publish|gradlew\s+publish|xcodebuild\s+-exportArchive|notarytool|altool|firebase\s+(appdistribution|crashlytics:symbols:upload)|sentry-cli\s+(releases|upload)|eas\s+(submit|update)|appcenter\s+distribute|npm\s+publish|yarn\s+npm\s+publish|pod\s+trunk\s+push)\b/i;
+const externalActionPattern = /\b(fastlane\s+(deliver|pilot|supply|upload|release)|gradle(w)?\s+.*(publish|upload|deploy|bundleRelease|assembleRelease)|\.\/gradlew\s+.*(publish|upload|deploy|bundleRelease|assembleRelease)|xcodebuild\s+.*(archive|-exportArchive)|notarytool|altool|firebase\s+(deploy|appdistribution|crashlytics:symbols:upload)|sentry-cli\s+(releases|upload)|eas\s+(submit|build|update)|appcenter\s+distribute|npm\s+publish|yarn\s+npm\s+publish|pod\s+trunk\s+push)\b/i;
 const signingPattern = /\b(codesign|security\s+import|keytool\s+-genkey|jarsigner|apksigner\s+sign|xcodebuild\b.*CODE_SIGN_IDENTITY=|--signing-key|--keystore|--provisioning-profile)\b/i;
 const networkWritePattern = /\b(curl|wget|http|gh|git)\b.*\b(-X\s*(POST|PUT|PATCH|DELETE)|--request\s*(POST|PUT|PATCH|DELETE)|upload|release|deploy|publish|submit)\b/i;
 

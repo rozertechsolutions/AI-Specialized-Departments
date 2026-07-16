@@ -47,7 +47,17 @@ Each workflow declares triggers, supported technologies, preconditions, ordered 
 
 ## Runtime Notes
 
-The package declares the SDK dependency but does not install dependencies or run OpenAI API calls during import. Host applications must inject project tools through `ToolHost` and approval decisions through `ApprovalProvider`.
+The package declares the SDK dependency but does not install dependencies or run OpenAI API calls during import. Host applications must inject project tools through `ToolHost`.
+
+`run_workflow()` wraps the host in `GuardedToolHost`, passes an `SDKWorkflowContext` to `Runner.run`, and exposes three SDK function tools:
+
+- `read_project_file`
+- `edit_project_file`
+- `run_validation_command`
+
+The edit and validation tools require SDK approval interruptions. Tool input and output guardrails wrap every host function tool. Agent-level input guardrails attach to the coordinator, and output guardrails attach to the final coordinator boundary.
+
+Human-in-the-loop helpers in `runtime.py` expose pending approval interruptions, run-state serialization, explicit approve/reject operations, and resume through the SDK `Runner`. The package never auto-approves interrupted tool calls.
 
 Use `OPENAI_AGENTS_MODEL` to select a model at runtime. No model is hardcoded.
 
@@ -62,6 +72,9 @@ Network-free tests cover:
 - secret redaction and detection
 - completion criteria classification
 - package import without live API calls
+- SDK wiring for coordinator guardrails, function-tool guardrails, agent-as-tool approval, host context, pending interruptions, and bounded runner execution
+
+The tests are offline and use deterministic fakes for SDK wiring. They are provided for manual execution by a host developer; this static package generation task did not run them.
 
 Official documentation consulted:
 

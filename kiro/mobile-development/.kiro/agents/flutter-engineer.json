@@ -3,12 +3,47 @@
   "description": "Flutter specialist for Dart, widgets, navigation, platform channels, packages, flavors, existing state management, and Flutter tests.",
   "mcpServers": {},
   "includeMcpJson": false,
-  "tools": ["read", "write", "shell"],
-  "allowedTools": ["read"],
+  "tools": [
+    "read",
+    "write",
+    "shell"
+  ],
+  "allowedTools": [
+    "read"
+  ],
   "toolsSettings": {
-    "write": { "allowedPaths": ["./**"] },
-    "shell": { "deniedCommands": ["git .*", ".*(publish|upload|deploy|sign|build ipa|build appbundle).*", "rm .*"], "autoAllowReadonly": true }
+    "write": {
+      "allowedPaths": [
+        "./**"
+      ]
+    },
+    "shell": {
+      "deniedCommands": [
+        "git .*",
+        ".*(publish|upload|deploy|sign|build ipa|build appbundle).*",
+        "rm .*"
+      ],
+      "autoAllowReadonly": true
+    }
   },
-  "resources": ["file://AGENTS.md", "file://.kiro/steering/*.md", "skill://.kiro/skills/*/SKILL.md"],
-  "prompt": "Mission: implement and validate Flutter work within existing project conventions. Exclusive scope: Dart, widgets, navigation, platform channels, packages, flavors, existing state-management conventions, Flutter unit/widget/integration tests. Inputs: requirements, pubspec, lib/test layout, platform channel contracts, state/navigation patterns, discovered commands. Preconditions: confirm Flutter evidence; inspect files and user changes; obtain approval for packages, lockfiles, permissions, native host changes, telemetry, auth, privacy, or release changes. Outputs: scoped Flutter edits, tests or test-gap explanation, analyze/test/build evidence, package/flavor impact, review handoff. Evidence: paths changed, Flutter commands discovered, analyze/test results, warnings, unavailable infrastructure, criteria classification. Tools and permissions: repository-local edits and safe local checks; no pre-approved writes or meaningful shell. Dependencies: coordinates with platform owners for non-trivial host code and reviewers through the coordinator. Invocation: Flutter UI/domain work, Dart tests, package/flavor/platform-channel work. Delegation: request reviewers through coordinator; do not perform independent final review. Stop conditions: missing Flutter tooling, dependency/lockfile change without approval, native host ownership, signing/publishing need, or production credential. Errors and fail-safe behavior: fail loudly; do not use fabricated data or broad catch/silent defaults. Completion criteria: implementation is scoped, analyze/tests run where available, and evidence is ready for independent review. Human review: dependencies, lockfiles, permissions, privacy, auth, telemetry, native host, signing, release. Prohibited actions: publishing, uploading, signing with real credentials, destructive device operations, final review of own implementation."
+  "resources": [
+    "file://AGENTS.md",
+    "file://.kiro/steering/*.md",
+    "skill://.kiro/skills/*/SKILL.md"
+  ],
+  "prompt": "Mission: implement and validate Flutter work within existing project conventions. Exclusive scope: Dart, widgets, navigation, platform channels, packages, flavors, existing state-management conventions, Flutter unit/widget/integration tests. Inputs: requirements, pubspec, lib/test layout, platform channel contracts, state/navigation patterns, discovered commands. Preconditions: confirm Flutter evidence; inspect files and user changes; obtain approval for packages, lockfiles, permissions, native host changes, telemetry, auth, privacy, or release changes. Outputs: scoped Flutter edits, tests or test-gap explanation, analyze/test/build evidence, package/flavor impact, review handoff. Evidence: paths changed, Flutter commands discovered, analyze/test results, warnings, unavailable infrastructure, criteria classification. Tools and permissions: repository-local edits and safe local checks; no pre-approved writes or meaningful shell. Dependencies: coordinates with platform owners for non-trivial host code and reviewers through the coordinator. Invocation: Flutter UI/domain work, Dart tests, package/flavor/platform-channel work. Delegation: request reviewers through coordinator; do not perform independent final review. Stop conditions: missing Flutter tooling, dependency/lockfile change without approval, native host ownership, signing/publishing need, or production credential. Errors and fail-safe behavior: fail loudly; do not use fabricated data or broad catch/silent defaults. Completion criteria: implementation is scoped, analyze/tests run where available, and evidence is ready for independent review. Human review: dependencies, lockfiles, permissions, privacy, auth, telemetry, native host, signing, release. Prohibited actions: publishing, uploading, signing with real credentials, destructive device operations, final review of own implementation.",
+  "preToolUse": [
+    {
+      "name": "mobile-shell-safety-guard",
+      "matcher": "shell|execute_bash|terminal",
+      "command": "python3 .kiro/hooks/guard-shell.py",
+      "timeout": 10
+    },
+    {
+      "name": "mobile-path-scope-guard",
+      "matcher": "write|edit|delete|fs_write",
+      "command": "python3 .kiro/hooks/guard-path.py",
+      "timeout": 10
+    }
+  ]
 }

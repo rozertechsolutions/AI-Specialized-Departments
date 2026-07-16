@@ -1,0 +1,167 @@
+{
+  "$schema": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
+  "general": {
+    "defaultApprovalMode": "default",
+    "checkpointing": {
+      "enabled": true
+    },
+    "plan": {
+      "enabled": true
+    }
+  },
+  "billing": {
+    "overageStrategy": "never"
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "telemetry": {
+    "enabled": false,
+    "logPrompts": false
+  },
+  "tools": {
+    "confirmationRequired": [
+      "write_file",
+      "replace",
+      "run_shell_command"
+    ],
+    "core": [
+      "read_file",
+      "glob",
+      "grep_search",
+      "list_directory",
+      "write_file",
+      "replace",
+      "ask_user",
+      "write_todos",
+      "activate_skill",
+      "run_shell_command(pwd)",
+      "run_shell_command(ls)",
+      "run_shell_command(find)",
+      "run_shell_command(rg)",
+      "run_shell_command(git status)",
+      "run_shell_command(git diff)",
+      "run_shell_command(git log)",
+      "run_shell_command(git show)",
+      "run_shell_command(git ls-files)",
+      "run_shell_command(git grep)",
+      "run_shell_command(./gradlew)",
+      "run_shell_command(gradlew.bat)",
+      "run_shell_command(gradle)",
+      "run_shell_command(xcodebuild)",
+      "run_shell_command(swift build)",
+      "run_shell_command(swift test)",
+      "run_shell_command(swift package)",
+      "run_shell_command(flutter analyze)",
+      "run_shell_command(flutter test)",
+      "run_shell_command(flutter build)",
+      "run_shell_command(flutter create)",
+      "run_shell_command(flutter clean)",
+      "run_shell_command(flutter doctor)",
+      "run_shell_command(dart analyze)",
+      "run_shell_command(dart test)",
+      "run_shell_command(dart format)",
+      "run_shell_command(npm test)",
+      "run_shell_command(npm run lint)",
+      "run_shell_command(npm run test)",
+      "run_shell_command(npm run typecheck)",
+      "run_shell_command(npm run build)",
+      "run_shell_command(npm run clean)",
+      "run_shell_command(pnpm test)",
+      "run_shell_command(pnpm lint)",
+      "run_shell_command(pnpm typecheck)",
+      "run_shell_command(pnpm build)",
+      "run_shell_command(pnpm clean)",
+      "run_shell_command(yarn test)",
+      "run_shell_command(yarn lint)",
+      "run_shell_command(yarn typecheck)",
+      "run_shell_command(yarn build)",
+      "run_shell_command(yarn clean)",
+      "run_shell_command(react-native doctor)",
+      "run_shell_command(react-native config)",
+      "run_shell_command(detekt)",
+      "run_shell_command(ktlint)",
+      "run_shell_command(eslint)",
+      "run_shell_command(tsc)",
+      "run_shell_command(jest)",
+      "run_shell_command(vitest)",
+      "run_shell_command(maestro test)"
+    ],
+    "shell": {
+      "enableInteractiveShell": false
+    }
+  },
+  "security": {
+    "disableYoloMode": true,
+    "disableAlwaysAllow": true,
+    "enablePermanentToolApproval": false,
+    "autoAddToPolicyByDefault": false,
+    "blockGitExtensions": true,
+    "folderTrust": {
+      "enabled": true
+    },
+    "environmentVariableRedaction": {
+      "enabled": true,
+      "allowed": [],
+      "blocked": []
+    }
+  },
+  "advanced": {
+    "ignoreLocalEnv": true
+  },
+  "skills": {
+    "enabled": true,
+    "disabled": []
+  },
+  "hooksConfig": {
+    "enabled": true,
+    "disabled": [],
+    "notifications": true
+  },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "^(read_file|write_file|replace|run_shell_command)$",
+        "sequential": true,
+        "hooks": [
+          {
+            "name": "secret-and-protected-file-guard",
+            "type": "command",
+            "command": "python3 .gemini/hooks/secret-and-protected-file-guard.py",
+            "timeout": 5000,
+            "description": "Blocks real secrets and protected credential or signing paths."
+          },
+          {
+            "name": "dangerous-mobile-command-guard",
+            "type": "command",
+            "command": "python3 .gemini/hooks/dangerous-mobile-command-guard.py",
+            "timeout": 5000,
+            "description": "Blocks destructive, obfuscated, chained, or scope-escaping shell commands."
+          },
+          {
+            "name": "release-signing-publishing-guard",
+            "type": "command",
+            "command": "python3 .gemini/hooks/release-signing-publishing-guard.py",
+            "timeout": 5000,
+            "description": "Blocks signing, publication, upload, distribution, deployment, and store submission."
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": "^(write_file|replace)$",
+        "sequential": true,
+        "hooks": [
+          {
+            "name": "sensitive-change-review",
+            "type": "command",
+            "command": "python3 .gemini/hooks/sensitive-change-review.py",
+            "timeout": 5000,
+            "description": "Adds mandatory specialist-review context for meaningful sensitive changes."
+          }
+        ]
+      }
+    ]
+  }
+}

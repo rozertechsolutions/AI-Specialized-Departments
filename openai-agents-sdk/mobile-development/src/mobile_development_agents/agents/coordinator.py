@@ -4,6 +4,9 @@ from typing import Any
 
 from mobile_development_agents.agents import build_all_specialists
 from mobile_development_agents.config import MobileAgentsConfig
+from mobile_development_agents.guardrails.input import build_sdk_input_guardrail
+from mobile_development_agents.guardrails.output import build_sdk_output_guardrail
+from mobile_development_agents.tools.sdk_tools import build_project_function_tools
 from mobile_development_agents.workflows.registry import WORKFLOW_SPECS
 
 
@@ -41,14 +44,18 @@ def build_coordinator_agent(config: MobileAgentsConfig | None = None) -> Any:
         agent.as_tool(
             tool_name=name.replace("-", "_"),
             tool_description=f"Run {name} for its exclusive mobile responsibility.",
+            needs_approval=name in {"mobile-release-engineer", "mobile-code-reviewer"},
         )
         for name, agent in specialists.items()
     ]
+    tools.extend(build_project_function_tools())
     workflow_names = ", ".join(WORKFLOW_SPECS)
     kwargs: dict[str, Any] = {
         "name": "mobile-development-coordinator",
         "instructions": f"{COORDINATOR_INSTRUCTIONS}\nSupported workflows: {workflow_names}",
         "tools": tools,
+        "input_guardrails": [build_sdk_input_guardrail()],
+        "output_guardrails": [build_sdk_output_guardrail()],
     }
     if resolved.model:
         kwargs["model"] = resolved.model

@@ -15,7 +15,8 @@ def load_payload() -> str:
     try:
         data = json.loads(raw)
     except json.JSONDecodeError:
-        return raw
+        print("Blocked malformed shell hook input.", file=sys.stderr)
+        sys.exit(2)
     values = []
     stack = [data]
     while stack:

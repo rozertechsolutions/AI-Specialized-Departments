@@ -28,6 +28,8 @@ This specialization is configured for Devin Desktop Cascade when `windsurf/mobil
 
 The configuration does not contain secrets, tokens, endpoints, signing credentials, provisioning profiles, keystores, certificates, or service-account files. Hooks block suspicious secret writes, out-of-scope file writes, risky shell commands, publishing/signing/deployment commands, and MCP tool use by default.
 
+Static hook tests are provided in `.windsurf/hooks/tests/test_hooks.py` for manual execution with `python3 -m unittest discover -s .windsurf/hooks/tests`. They are dependency-free and were not executed during static generation.
+
 ## Limitations
 
 Cascade must load this directory as a workspace root for workspace Skills and hooks to resolve from `.windsurf/`. Android, iOS, KMP, Flutter, and React Native build commands are discovered inside the target mobile application repository at task time; this specialization does not claim build, test, security, accessibility, performance, or release evidence without running the relevant project commands.

@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [bug_scope_inspected, owner_selected]
 primary_owner: coordinator_selected_platform_engineer
 reviewers: [mobile-test-engineer, mobile-code-reviewer]
-steps: [inspect_recent_context, reproduce_or_explain_blocker, identify_root_cause, implement_scoped_fix, add_regression_test, validate_fix]
+steps: [inspect_recent_context, reproduce_or_explain_blocker, identify_root_cause, implement_scoped_fix, add_regression_test, validate_fix, apply_mobile_code_review_skill]
 validation_gates: [reproduction_evidence_or_blocker, regression_test_or_reason, targeted_checks]
 failures: [cannot_reproduce, missing_environment, unrelated_preexisting_failure]
 stop_conditions: [requires_behavior_change_outside_scope, production_credentials_needed]

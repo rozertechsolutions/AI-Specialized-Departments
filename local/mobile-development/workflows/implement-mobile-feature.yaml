@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [project_inspected, owner_selected, acceptance_criteria_clear]
 primary_owner: coordinator_selected_platform_engineer
 reviewers: [mobile-test-engineer, mobile-security-reviewer, mobile-ui-accessibility-reviewer, mobile-code-reviewer]
-steps: [inspect_context, partition_units, implement_smallest_complete_change, add_or_update_tests, run_targeted_checks, run_independent_review]
+steps: [inspect_context, partition_units, implement_smallest_complete_change, add_or_update_tests, run_targeted_checks, apply_mobile_code_review_skill, run_independent_review]
 validation_gates: [requirements_traceability, compilation_when_available, tests_when_available, security_review, accessibility_review_for_ui]
 failures: [ambiguous_behavior, conflicting_changes, unavailable_required_tooling]
 stop_conditions: [public_contract_change_without_approval, credentials_required, unsupported_capability]

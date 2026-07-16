@@ -47,3 +47,10 @@ class WorkflowRequest:
 
     def requires_technology(self, technology: MobileTechnology) -> bool:
         return technology in self.technologies
+
+
+@dataclass(slots=True)
+class SDKWorkflowContext:
+    request: WorkflowRequest
+    tool_host: object | None = None
+    approval_audit: list[str] = field(default_factory=list)

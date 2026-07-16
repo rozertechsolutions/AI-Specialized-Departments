@@ -2,11 +2,41 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "workflow.schema.json",
   "type": "object",
-  "required": ["manifest_type", "id", "classification", "objective", "trigger", "inputs", "supported_technologies", "preconditions", "primary_owner", "reviewers", "steps", "validation_gates", "failures", "stop_conditions", "evidence", "outputs", "acceptance_criteria", "human_approvals", "prohibited_actions"],
+  "required": ["manifest_type", "schema", "id", "classification", "objective", "trigger", "inputs", "supported_technologies", "preconditions", "primary_owner", "reviewers", "steps", "validation_gates", "failures", "stop_conditions", "evidence", "outputs", "acceptance_criteria", "human_approvals", "prohibited_actions"],
   "properties": {
     "manifest_type": {"const": "workflow"},
-    "id": {"type": "string"},
-    "classification": {"enum": ["native", "unsupported"]}
+    "schema": {"type": "string", "pattern": "^\\.\\./schemas/workflow\\.schema\\.json$"},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "classification": {"enum": ["native", "unsupported"]},
+    "objective": {"type": "string", "minLength": 1},
+    "trigger": {"type": "string", "minLength": 1},
+    "inputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "supported_technologies": {
+      "type": "array",
+      "items": {"enum": ["android", "ios", "kotlin-multiplatform", "flutter", "react-native"]},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "preconditions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "primary_owner": {"type": "string", "pattern": "^[a-z0-9_]+(?:-[a-z0-9_]+)*$"},
+    "reviewers": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9_]+(?:-[a-z0-9_]+)*$"}, "uniqueItems": true},
+    "steps": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "validation_gates": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "failures": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "stop_conditions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "evidence": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "outputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "acceptance_criteria": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "human_approvals": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "prohibited_actions": {"$ref": "#/$defs/nonEmptyStringArray"}
   },
-  "additionalProperties": true
+  "$defs": {
+    "nonEmptyStringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
 }

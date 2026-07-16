@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: mobile-code-review
+classification: native
+mission: Reuse independent final mobile code review for correctness, maintainability, regression risk, error handling, conventions, and validation evidence.
+scope: [independent_final_review, correctness, regression_risk, maintainability, validation_evidence]
+inputs: [requirements, changed_files, validation_evidence, specialist_reports]
+outputs: [review_findings, residual_risks, test_gap_notes, completion_blockers]
+owner: mobile-code-reviewer
+reviewers: []
+tools: [tools/project-read.yaml]
+permissions: [read_only]
+stop_conditions: [reviewer_implemented_same_work, insufficient_evidence, unresolved_required_failure]
+prohibited_actions: [review_own_implementation, modify_files, approve_release_publication]

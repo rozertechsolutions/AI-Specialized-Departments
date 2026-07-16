@@ -5,7 +5,7 @@
 - Surface: OpenCode project configuration for `opencode/mobile-development/`.
 - Local CLI version: unavailable; `opencode` was not installed on `PATH` during setup on 2026-07-15.
 - Documentation verified on 2026-07-15 from official OpenCode Rules, Agents, Agent Skills, Plugins, Tools, and MCP servers documentation.
-- Native components used: `AGENTS.md`, `opencode.jsonc`, `.opencode/agents/*.md`, `.opencode/skills/*/SKILL.md`, and `.opencode/plugins/*.js`.
+- Native components used: `AGENTS.md`, `opencode.jsonc`, `.opencode/agents/*.md`, `.opencode/skills/*/SKILL.md`, `.opencode/plugins/*.js`, and dependency-free plugin tests under `.opencode/plugins/tests/`.
 - Unsupported components omitted: generic `agents/`, `subagents/`, `skills/`, `workflows/`, `hooks/`, `mcp/`; active MCP servers; slash-command workflow duplicates; real external integrations; signing, publication, upload, deployment, destructive device operations, credential import, and spending.
 
 ## Scope
@@ -80,6 +80,8 @@ Never include secrets, tokens, passwords, certificates, private keys, provisioni
 Require human control before changes to authentication, authorization, privacy, manifests, entitlements, network security, deep links, WebViews, analytics, telemetry, dependencies, lockfiles, build/signing configuration, external writes, credential import, destructive commands, publishing, deployment, and financial actions.
 
 OpenCode MCP entries remain disabled. Do not enable or authenticate MCP without explicit user approval after describing exposed data, requested scope, possible external writes, and approval behavior.
+
+Plugin tests are provided for manual execution with `node --test .opencode/plugins/tests/mobile-guards.test.js`. They use only `node:test` and `node:assert` and were not executed during static generation.
 
 ## Verification
 

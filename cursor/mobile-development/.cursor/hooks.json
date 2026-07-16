@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "python3 .cursor/hooks/guard-shell.py",
+        "failClosed": true
+      }
+    ],
+    "beforeMCPExecution": [
+      {
+        "command": "python3 .cursor/hooks/guard-mcp.py",
+        "failClosed": true
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "python3 .cursor/hooks/guard-file-edit.py",
+        "failClosed": true
+      }
+    ],
+    "subagentStart": [
+      {
+        "command": "python3 .cursor/hooks/guard-subagent.py",
+        "failClosed": true
+      }
+    ]
+  }
+}

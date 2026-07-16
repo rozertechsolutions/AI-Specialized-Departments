@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [read_only_scope_confirmed]
 primary_owner: mobile-security-reviewer
 reviewers: [mobile-code-reviewer]
-steps: [inspect_scope, review_secrets_and_protected_files, review_auth_storage_transport_permissions, classify_findings, report_human_reviews]
+steps: [inspect_scope, review_secrets_and_protected_files, review_auth_storage_transport_permissions, classify_findings, apply_mobile_code_review_skill, report_human_reviews]
 validation_gates: [no_mutation, findings_have_file_references, secret_handling_policy_applied]
 failures: [secret_detected, missing_sensitive_file_authorization]
 stop_conditions: [credential_access_requested, production_system_access_requested]

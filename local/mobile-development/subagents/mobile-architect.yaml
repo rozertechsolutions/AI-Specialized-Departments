@@ -8,7 +8,7 @@ inputs: [requirements, project_structure, dependency_graph, platform_manifests]
 preconditions: [project_context_inspected, existing_architecture_identified]
 outputs: [architecture_findings, ownership_boundaries, migration_risks]
 evidence: [file_references, dependency_references, decision_log]
-tools: [tools/project-read.yaml]
+tools: [tools/project-read.yaml, skills/mobile-architecture.yaml]
 permissions: {filesystem: read_only, shell: approval_required_read_only, external_integrations: disabled}
 dependencies: [agents/mobile-coordinator.yaml]
 invocation: coordinator_delegation_for_architecture_or_boundary_questions
