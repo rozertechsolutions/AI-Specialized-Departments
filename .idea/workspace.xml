@@ -4,52 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca5b4c6b-b9c8-4c51-b616-0f1e05b5aefe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/custom-gpt-setup.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/knowledge/department-charter.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/knowledge/quality-gates.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/knowledge/security-and-human-review.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/project-instructions.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/accessibility-performance-seo/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/architecture-decision/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/backend-api-auth/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/dependency-supply-chain-review/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/frontend-delivery/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/release-readiness/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/security-privacy-review/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/stack-discovery/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/skills/testing-browser-compatibility/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatgpt/web-development/workspace-agent-setup.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/accessibility-performance-seo-reviewer.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/backend-api-specialist.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/frontend-specialist.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/quality-release-reviewer.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/security-privacy-reviewer.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/web-architecture-specialist.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/agents/web-development-lead.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/accessibility-performance-seo/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/architecture-decision/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/backend-api-auth/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/dependency-supply-chain-review/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/frontend-delivery/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/release-readiness/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/security-privacy-review/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/stack-discovery/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/testing-browser-compatibility/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-audit-accessibility-performance-seo/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-debug-web-regression/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-implement-web-change/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-plan-web-change/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-review-api-and-auth/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-review-dependencies/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-review-security-and-privacy/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.claude/skills/workflow-verify-release-readiness/SKILL.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/.mcp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/CLAUDE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/claude-code/web-development/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="ca5b4c6b-b9c8-4c51-b616-0f1e05b5aefe" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,8 +66,11 @@
       <recent name="$PROJECT_DIR$/chatgpt" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cline" />
-      <recent name="$PROJECT_DIR$/claude" />
+      <recent name="$PROJECT_DIR$/windsurf" />
+      <recent name="$PROJECT_DIR$/warp" />
+      <recent name="$PROJECT_DIR$/qwen-code" />
+      <recent name="$PROJECT_DIR$/opencode" />
+      <recent name="$PROJECT_DIR$/openai-agents-sdk" />
     </key>
   </component>
   <component name="RunManager">
