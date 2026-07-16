@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Software Architect"
+description = "Define boundaries, contracts, architecture decisions, compatibility, migration strategy, and technical trade-offs."
+safety = "safe"
+system_prompt_id = "software-architect"
+enabled_tools = ["grep", "read_file"]

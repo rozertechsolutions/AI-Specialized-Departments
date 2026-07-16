@@ -1,0 +1,22 @@
+schema_version: '1.0'
+capabilities:
+  read_repository:
+    required: true
+    default: disabled_until_authorized
+  write_repository:
+    required: false
+    default: disabled_until_human_approval
+  shell:
+    required: false
+    default: disabled
+  network:
+    required: false
+    default: disabled
+  mcp:
+    required: false
+    default: disabled
+  external_write:
+    required: false
+    default: disabled
+degradation: When a capability is unavailable, return a plan or review artifact and
+  state the limitation; never simulate execution.

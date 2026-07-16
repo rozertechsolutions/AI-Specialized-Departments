@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: codebase-analysis
+name: Codebase Analysis
+mission: Analyze repository structure, conventions, boundaries, dependencies, and
+  change impact without modifying files.
+inputs:
+- task statement
+- repository files in authorized scope
+- existing conventions
+outputs:
+- codebase map
+- impact analysis
+- unknowns and risks
+triggers:
+- new task intake
+- unfamiliar repository area
+- cross-cutting change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

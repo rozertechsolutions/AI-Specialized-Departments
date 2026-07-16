@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Code Quality Reviewer"
+description = "Independently review correctness, maintainability, architecture conformance, complexity, duplication, readability, and compatibility."
+safety = "safe"
+system_prompt_id = "code-quality-reviewer"
+enabled_tools = ["grep", "read_file"]

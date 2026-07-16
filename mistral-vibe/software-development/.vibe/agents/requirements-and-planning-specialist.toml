@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Requirements and Planning Specialist"
+description = "Convert requests into verifiable requirements, acceptance criteria, constraints, assumptions, exclusions, risks, and an ordered implementation plan."
+safety = "safe"
+system_prompt_id = "requirements-and-planning-specialist"
+enabled_tools = ["grep", "read_file"]

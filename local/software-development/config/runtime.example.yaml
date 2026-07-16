@@ -1,0 +1,12 @@
+schema_version: '1.0'
+runtime:
+  enabled: false
+  provider: null
+  model: null
+  permissions:
+    read_repository: ask
+    write_repository: ask
+    shell: deny
+    network: deny
+    external_write: deny
+  integrations: []

@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: test-strategy-and-validation
+name: Test Strategy and Validation
+mission: Define appropriate unit, integration, contract, system, regression, and edge-case
+  validation.
+inputs:
+- requirements
+- risk classification
+- implementation diff
+outputs:
+- test strategy
+- evidence matrix
+- untested limitations
+triggers:
+- new behavior
+- bug fix
+- architecture or dependency change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

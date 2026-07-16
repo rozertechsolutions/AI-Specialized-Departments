@@ -1,0 +1,23 @@
+schema_version: '1.0'
+id: release-readiness-assessment
+name: Release Readiness Assessment
+mission: Evaluate whether a change is ready for human-controlled release without publishing,
+  deploying, signing, or submitting it.
+inputs:
+- requirements and evidence
+- reviews
+- documentation
+- known risks
+outputs:
+- readiness verdict
+- blocking issues
+- human decision packet
+triggers:
+- release candidate
+- completed feature set
+- maintenance release
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: technical-implementation-planning
+name: Technical Implementation Planning
+mission: Produce an ordered, scoped plan with dependencies, review points, rollback
+  considerations, and validation evidence.
+inputs:
+- approved requirements
+- codebase analysis
+- risk classification
+outputs:
+- implementation plan
+- validation plan
+- approval checkpoints
+triggers:
+- implementation task
+- migration
+- multi-file change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

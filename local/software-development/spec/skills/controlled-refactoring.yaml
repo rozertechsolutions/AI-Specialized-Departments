@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: controlled-refactoring
+name: Controlled Refactoring
+mission: Improve internal design without unintended behavior changes, using explicit
+  invariants and regression evidence.
+inputs:
+- refactoring objective
+- behavioral invariants
+- affected code
+outputs:
+- refactored code
+- invariant evidence
+- remaining risks
+triggers:
+- technical debt
+- maintainability issue
+- approved internal redesign
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

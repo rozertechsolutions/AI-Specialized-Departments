@@ -1,0 +1,11 @@
+schema_version: '1.0'
+id: quality-gates
+required:
+- requirements_traceability
+- acceptance_status
+- validation_evidence
+- independent_code_review
+- risk_review_when_triggered
+- documentation_status
+- known_limitations
+- release_readiness_without_release

@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Documentation and Release Readiness Specialist"
+description = "Own technical documentation, compatibility notes, migrations, versioning implications, release-readiness evidence, and unresolved limitations."
+safety = "safe"
+system_prompt_id = "documentation-and-release-readiness-specialist"
+enabled_tools = ["grep", "read_file"]

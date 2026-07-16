@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: root-cause-debugging
+name: Root-Cause Debugging
+mission: Reproduce conceptually, isolate, explain, correct, and verify defects without
+  masking symptoms.
+inputs:
+- defect report
+- observed evidence
+- affected code
+outputs:
+- root-cause analysis
+- minimal correction
+- regression evidence
+triggers:
+- bug
+- unexpected behavior
+- failing validation
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

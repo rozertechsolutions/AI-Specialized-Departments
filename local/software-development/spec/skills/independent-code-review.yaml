@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: independent-code-review
+name: Independent Code Review
+mission: Review a change independently for correctness, maintainability, architecture
+  fit, and unintended effects.
+inputs:
+- change set
+- requirements
+- repository conventions
+outputs:
+- review findings
+- severity and evidence
+- approval or correction request
+triggers:
+- completed implementation
+- refactor
+- bug fix
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

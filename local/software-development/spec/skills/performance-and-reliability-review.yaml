@@ -1,0 +1,23 @@
+schema_version: '1.0'
+id: performance-and-reliability-review
+name: Performance and Reliability Review
+mission: Assess complexity, resource use, concurrency, failure handling, resilience,
+  observability assumptions, and data integrity.
+inputs:
+- change set
+- performance or reliability goals
+- runtime assumptions
+outputs:
+- risk findings
+- measurement plan
+- remediation recommendations
+triggers:
+- hot path
+- concurrency
+- persistence
+- failure-handling change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

@@ -1,0 +1,31 @@
+schema_version: '1.0'
+id: new-feature-development
+name: New Feature Development
+purpose: Deliver a new capability from requirements through independent review and
+  release-readiness assessment.
+risk_triggers:
+- public behavior
+- new data flow
+- new dependency
+- architecture boundary
+stages:
+- intake
+- requirements
+- analysis
+- risk_classification
+- design_if_applicable
+- plan
+- human_checkpoint
+- implementation_if_applicable
+- validation
+- independent_code_review
+- engineering_risk_review_if_triggered
+- documentation
+- release_readiness
+- close
+completion_requires:
+- traceability
+- validation_evidence_or_not_run
+- independent_review
+- documented_risks
+- human_release_decision

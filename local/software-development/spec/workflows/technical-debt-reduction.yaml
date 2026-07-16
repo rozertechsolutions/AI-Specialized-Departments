@@ -1,0 +1,30 @@
+schema_version: '1.0'
+id: technical-debt-reduction
+name: Technical-Debt Reduction
+purpose: Reduce prioritized debt with bounded scope, preserved behavior, and measurable
+  maintainability benefit.
+risk_triggers:
+- wide change surface
+- architecture drift
+- weak test safety net
+stages:
+- intake
+- requirements
+- analysis
+- risk_classification
+- design_if_applicable
+- plan
+- human_checkpoint
+- implementation_if_applicable
+- validation
+- independent_code_review
+- engineering_risk_review_if_triggered
+- documentation
+- release_readiness
+- close
+completion_requires:
+- traceability
+- validation_evidence_or_not_run
+- independent_review
+- documented_risks
+- human_release_decision

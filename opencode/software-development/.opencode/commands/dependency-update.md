@@ -1,0 +1,55 @@
+---
+description: Assess necessity and supply-chain risk before a controlled dependency change.
+---
+
+# Dependency Update
+
+## Purpose
+
+Assess necessity and supply-chain risk before a controlled dependency change.
+
+## Entry conditions
+
+- A named human-requested objective exists.
+- The authorized repository scope is known.
+- The expected behavior or maintenance objective can be expressed as acceptance criteria.
+
+## Risk triggers
+
+- new transitive dependencies
+- major version
+- license change
+- security advisory
+
+Any trigger requires Engineering Risk Reviewer participation and may require explicit human approval before implementation.
+
+## Stages
+
+1. **Intake — Software Development Lead:** confirm objective, scope, exclusions, constraints, and ownership.
+2. **Requirements — Requirements and Planning Specialist:** define requirements, acceptance criteria, assumptions, and unresolved questions.
+3. **Analysis — appropriate specialist:** inspect only necessary context and identify dependencies and impact.
+4. **Risk classification — Software Development Lead:** select required reviews and approval checkpoints.
+5. **Design — Software Architect when applicable:** document boundaries, contracts, alternatives, compatibility, and migration implications.
+6. **Plan — Requirements and Planning Specialist:** produce ordered changes, validation strategy, review points, and rollback considerations.
+7. **Human checkpoint:** obtain explicit approval for sensitive, irreversible, dependency, architecture, contract, migration, or scope-changing decisions.
+8. **Implementation — Implementation and Maintenance Engineer:** make only approved changes and record evidence.
+9. **Validation — Test and Quality Engineer:** assess acceptance, regression, edge cases, and every unexecuted check.
+10. **Independent code review — Code Quality Reviewer:** review correctness, maintainability, architecture fit, and unintended effects.
+11. **Independent risk review — Engineering Risk Reviewer when triggered:** review security, supply chain, performance, concurrency, reliability, and data integrity.
+12. **Documentation — Documentation and Release Readiness Specialist:** update technical, migration, compatibility, and versioning documentation.
+13. **Readiness — Documentation and Release Readiness Specialist:** issue a readiness verdict without releasing, deploying, publishing, signing, or submitting.
+14. **Close — Software Development Lead:** aggregate evidence, blockers, limitations, and required human decisions.
+
+## Stop conditions
+
+Stop and escalate on missing approval, conflicting requirements, secret exposure, unsupported behavior, unbounded scope, unavailable evidence, failed critical validation, or any requested action outside the authorized repository scope.
+
+## Completion evidence
+
+- Requirement-to-change traceability.
+- Acceptance and validation matrix.
+- Independent review outcomes.
+- Risk findings and remediation status.
+- Documentation and compatibility status.
+- Explicit list of tests/checks not run.
+- Human-controlled release-readiness verdict.

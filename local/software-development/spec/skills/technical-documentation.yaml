@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: technical-documentation
+name: Technical Documentation
+mission: Produce precise architecture, API, maintenance, migration, and operational
+  documentation from verified facts.
+inputs:
+- verified implementation
+- decisions
+- known limitations
+outputs:
+- updated documentation
+- migration notes
+- maintenance guidance
+triggers:
+- public contract change
+- architecture change
+- release preparation
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

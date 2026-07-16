@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Test and Quality Engineer"
+description = "Define and evaluate applicable test strategy, regression coverage, edge cases, acceptance evidence, and explicitly untested areas."
+safety = "safe"
+system_prompt_id = "test-and-quality-engineer"
+enabled_tools = ["grep", "read_file"]

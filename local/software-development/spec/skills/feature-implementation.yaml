@@ -1,0 +1,20 @@
+schema_version: '1.0'
+id: feature-implementation
+name: Feature Implementation
+mission: Implement an approved feature while preserving scope, conventions, compatibility,
+  and traceability.
+inputs:
+- approved plan
+- acceptance criteria
+- authorized files
+outputs:
+- scoped changes
+- implementation notes
+- validation evidence
+triggers:
+- approved feature plan
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

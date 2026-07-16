@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: requirements-decomposition
+name: Requirements Decomposition
+mission: Transform a request into precise requirements, acceptance criteria, constraints,
+  assumptions, exclusions, and risks.
+inputs:
+- user request
+- available product context
+- known constraints
+outputs:
+- requirements set
+- acceptance criteria
+- clarification and risk list
+triggers:
+- ambiguous request
+- new feature
+- behavior change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

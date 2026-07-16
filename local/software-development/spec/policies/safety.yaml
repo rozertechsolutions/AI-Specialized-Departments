@@ -1,0 +1,13 @@
+schema_version: '1.0'
+id: safety
+default: deny
+prohibited:
+- secret_exposure
+- silent_scope_expansion
+- automatic_destructive_action
+- automatic_git_mutation
+- automatic_external_write
+- automatic_release
+- automatic_deployment
+- automatic_signing
+- automatic_publication

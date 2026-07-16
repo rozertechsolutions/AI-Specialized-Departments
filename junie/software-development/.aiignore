@@ -1,0 +1,10 @@
+.env
+.env.*
+**/*secret*
+**/*credential*
+**/*.pem
+**/*.key
+**/node_modules/**
+**/build/**
+**/dist/**
+**/target/**

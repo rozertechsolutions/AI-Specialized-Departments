@@ -1,0 +1,101 @@
+# Software Development safety policy. No command is auto-approved.
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "rm -rf"
+decision = "deny"
+priority = 100
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "git push"
+decision = "deny"
+priority = 101
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "git commit"
+decision = "deny"
+priority = 102
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "git reset --hard"
+decision = "deny"
+priority = 103
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "npm publish"
+decision = "deny"
+priority = 104
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "pnpm publish"
+decision = "deny"
+priority = 105
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "yarn publish"
+decision = "deny"
+priority = 106
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "docker push"
+decision = "deny"
+priority = 107
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "kubectl apply"
+decision = "deny"
+priority = 108
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "terraform apply"
+decision = "deny"
+priority = 109
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "gcloud deploy"
+decision = "deny"
+priority = 110
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "aws deploy"
+decision = "deny"
+priority = 111
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "az deployment"
+decision = "deny"
+priority = 112
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "release"
+decision = "deny"
+priority = 113
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "sign"
+decision = "deny"
+priority = 114
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "notarize"
+decision = "deny"
+priority = 115
+
+[[rule]]
+toolName = "run_shell_command"
+decision = "ask_user"
+priority = 1

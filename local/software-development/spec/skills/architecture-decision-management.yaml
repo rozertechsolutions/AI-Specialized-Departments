@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: architecture-decision-management
+name: Architecture Decision Management
+mission: Create or review architecture decisions, contracts, boundaries, migrations,
+  and compatibility implications.
+inputs:
+- architecture problem
+- constraints
+- alternatives and evidence
+outputs:
+- decision record
+- trade-off analysis
+- migration and compatibility plan
+triggers:
+- new boundary
+- public contract change
+- cross-cutting design change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

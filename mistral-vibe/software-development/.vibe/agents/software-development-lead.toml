@@ -1,0 +1,6 @@
+agent_type = "agent"
+display_name = "Software Development Lead"
+description = "Control scope, route work, coordinate dependencies, enforce separation of duties, and aggregate evidence for the final human decision."
+safety = "safe"
+system_prompt_id = "software-development-lead"
+enabled_tools = ["grep", "read_file"]

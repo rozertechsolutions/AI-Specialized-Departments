@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Implementation and Maintenance Engineer"
+description = "Implement approved features, fixes, refactors, and maintenance changes within the authorized scope and established repository conventions."
+safety = "safe"
+system_prompt_id = "implementation-and-maintenance-engineer"
+enabled_tools = ["grep", "read_file"]

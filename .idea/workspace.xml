@@ -4,7 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca5b4c6b-b9c8-4c51-b616-0f1e05b5aefe" name="Changes" comment="" />
+    <list default="true" id="ca5b4c6b-b9c8-4c51-b616-0f1e05b5aefe" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/agents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/guardrails.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/orchestrator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/policies.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/skills.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/src/software_development_department/workflows.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/tests/test_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/openai-agents-sdk/software-development/tests/test_policies.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/rules/00-software-development-core.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/rules/10-safety-and-human-review.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/rules/20-quality-and-completion.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/architecture-decision-management/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/codebase-analysis/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/controlled-refactoring/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/dependency-and-supply-chain-review/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/feature-implementation/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/independent-code-review/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/performance-and-reliability-review/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/release-readiness-assessment/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/requirements-decomposition/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/root-cause-debugging/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/secure-software-review/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/technical-documentation/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/technical-implementation-planning/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/skills/test-strategy-and-validation/SKILL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/api-or-library-evolution.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/architecture-change.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/bug-investigation-and-correction.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/controlled-refactoring.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/dependency-update.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/maintenance-and-compatibility-update.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/new-feature-development.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/performance-and-reliability-improvement.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/release-readiness-review.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/security-remediation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/.windsurf/workflows/technical-debt-reduction.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/AGENTS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/windsurf/software-development/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,9 +95,9 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "feature/web-development",
+    "git-widget-placeholder": "feature/software-development",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/azerva/Desktop/AI-Specialized-Departments",
+    "last_opened_file_path": "/Users/azerva/Desktop/AI-Specialized-Departments/openai-agents-sdk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +105,19 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/openai-agents-sdk" />
+      <recent name="$PROJECT_DIR$/windsurf" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/codex" />
+      <recent name="$PROJECT_DIR$/cursor" />
+      <recent name="$PROJECT_DIR$/gemini-cli" />
+      <recent name="$PROJECT_DIR$/github-copilot" />
+      <recent name="$PROJECT_DIR$/junie" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" IS_LOCATION_SIMULATION_SUPPORTED="false" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" DEVELOPMENT_TEAM="" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <embedded_app_extension_list />

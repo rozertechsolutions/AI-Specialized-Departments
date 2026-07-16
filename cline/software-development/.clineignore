@@ -1,0 +1,13 @@
+# Sensitive and generated content. Review for each repository.
+.env
+.env.*
+**/*secret*
+**/*credential*
+**/*.pem
+**/*.key
+**/node_modules/**
+**/build/**
+**/dist/**
+**/target/**
+**/.gradle/**
+**/.idea/**/workspace.xml

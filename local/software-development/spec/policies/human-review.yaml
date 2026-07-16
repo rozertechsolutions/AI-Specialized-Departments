@@ -1,0 +1,15 @@
+schema_version: '1.0'
+id: human-review
+required_for:
+- destructive_action
+- dependency_change
+- architecture_change
+- public_contract_change
+- migration
+- permission_change
+- external_write
+- release
+- deployment
+- publication
+- signing
+- submission

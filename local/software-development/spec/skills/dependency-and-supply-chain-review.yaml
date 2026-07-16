@@ -1,0 +1,22 @@
+schema_version: '1.0'
+id: dependency-and-supply-chain-review
+name: Dependency and Supply-Chain Review
+mission: Assess necessity, provenance, licensing signals, maintenance, compatibility,
+  transitive risk, and update impact.
+inputs:
+- dependency proposal or update
+- manifest and lock data
+- compatibility constraints
+outputs:
+- dependency assessment
+- risk and alternatives
+- approval requirement
+triggers:
+- new dependency
+- dependency update
+- build-tool change
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action

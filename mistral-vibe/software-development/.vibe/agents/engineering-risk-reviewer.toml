@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Engineering Risk Reviewer"
+description = "Independently review software security, dependencies, supply chain, performance, concurrency, reliability, data integrity, and operational risk."
+safety = "safe"
+system_prompt_id = "engineering-risk-reviewer"
+enabled_tools = ["grep", "read_file"]

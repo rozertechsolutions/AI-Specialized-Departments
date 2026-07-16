@@ -1,0 +1,24 @@
+schema_version: '1.0'
+id: engineering-risk-reviewer
+name: Engineering Risk Reviewer
+mission: Independently review software security, dependencies, supply chain, performance,
+  concurrency, reliability, data integrity, and operational risk.
+owns:
+- software-security review
+- dependency and supply-chain review
+- performance and reliability review
+- data-integrity and concurrency risk
+excludes:
+- general style review as primary owner
+- implementing the remediations it approves
+- claiming external scan results
+review_only: true
+required_capabilities:
+- read_repository
+optional_capabilities: []
+human_review:
+- destructive_action
+- external_action
+- architecture_change
+- dependency_change
+- release_action

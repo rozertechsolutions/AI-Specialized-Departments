@@ -1,0 +1,23 @@
+schema_version: '1.0'
+id: secure-software-review
+name: Secure Software Review
+mission: Review trust boundaries, input handling, authorization assumptions, secret
+  exposure, unsafe defaults, and common software weaknesses.
+inputs:
+- change set
+- trust assumptions
+- data flows
+outputs:
+- security findings
+- risk severity
+- required remediation
+triggers:
+- external input
+- authentication or authorization
+- sensitive data
+- new dependency
+failure_behavior: stop_and_report
+prohibited:
+- invent_evidence
+- expose_secrets
+- automatic_external_action
