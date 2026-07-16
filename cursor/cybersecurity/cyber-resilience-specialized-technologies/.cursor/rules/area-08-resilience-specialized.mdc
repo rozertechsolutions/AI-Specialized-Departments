@@ -1,8 +1,0 @@
----
-description: Cybersecurity Area 08 cyber resilience and specialized technology rules
-globs:
-  - "**/*"
-alwaysApply: true
----
-
-Use static evidence only. Separate evidence, fact, inference, hypothesis, recommendation, confidence, limitation, owner, approver, and independent reviewer. Require qualified specialist review for high-impact OT/ICS, IoT, AI, hardware, firmware, cryptographic, or safety-relevant conclusions.

@@ -1,8 +1,0 @@
----
-name: findings-retest-assurance
-description: Use for findings, evidence manifests, cleanup plans, retest plans, validation records, report reviews, and assurance.
----
-
-# Findings Retest Assurance
-
-Mission/scope: finding quality, evidence minimization, severity/impact/confidence, remediation, cleanup, retest, validation, report review, assurance. Inputs: evidence, scope, affected placeholders, preconditions, impact, confidence basis, remediation evidence, cleanup inventory, retest authorization, criteria, report draft, reviewer independence. Preconditions: provenance preserved, no sensitive data required, renewed retest authorization, independent reviewer for critical outputs. Output: finding, evidence manifest, cleanup plan, retest plan, validation record, report, assurance. Allowed tools/permissions: supplied files only, read-only. Dependencies: assessment lead, target owner, remediation owner, legal, privacy, vulnerability program owner, SOC, incident response, reviewer. Stop: unsupported impact, excessive sensitive evidence, missing provenance, missing cleanup evidence, expired authorization, publication request, self-review closure, scope expansion. Failure: evidence gap, safety issue, unsupported conclusion, missing review, human decision. Completion: findings, observations, hypotheses, business-risk decisions, remediation, retest criteria, cleanup evidence, residual risk, confidence, limitations, decisions, approval state. Human review: high-impact finding, severity override, publication, cleanup confirmation, retest closure, risk acceptance, report release. Prohibited: data extraction, publication, severity inflation, cleanup execution, unauthorized retest, production change.

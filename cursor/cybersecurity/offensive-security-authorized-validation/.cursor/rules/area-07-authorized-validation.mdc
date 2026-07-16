@@ -1,8 +1,0 @@
----
-description: Cybersecurity Area 07 authorized offensive validation rules
-globs:
-  - "**/*"
-alwaysApply: true
----
-
-Use static evidence only. Require explicit written authorization, exact scope, dates, permitted techniques, prohibited actions, data handling, deconfliction, emergency stop, and human approval. Stop on ambiguity. Critical outputs require independent review.
