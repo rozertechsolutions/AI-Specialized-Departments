@@ -4,9 +4,9 @@
 
 - Local detection: no `kiro` or `kiro-cli` executable was available in this workspace on 2026-07-15.
 - Selected surface: Kiro CLI workspace custom agents using JSON files in `.kiro/agents/`, because the current official CLI documentation defines this format for workspace-scoped custom agents.
-- Native components used: `AGENTS.md`, `.kiro/agents/*.json`, `.kiro/skills/*/SKILL.md`, `.kiro/steering/mobile-development.md`, `.kiro/hooks/*.json`, and `.kiro/hooks/*.py`.
+- Native components used: `AGENTS.md`, `.kiro/agents/*.json`, `.kiro/skills/*/SKILL.md`, `.kiro/steering/mobile-development.md`, and embedded `preToolUse` hook declarations that invoke `.kiro/hooks/*.py` guards.
 - Official Kiro documentation checked on 2026-07-15: CLI custom agents, CLI agent configuration reference, IDE subagents, IDE and CLI Agent Skills, steering, and hooks.
-- Unsupported or omitted: duplicate IDE Markdown subagent definitions, generic Kiro Specs, Powers, active MCP servers, project MCP configuration, real external integrations, signing, publication, upload, deployment, destructive device operations, credential import, and real signing material.
+- Unsupported or omitted: duplicate IDE Markdown subagent definitions, generic Kiro Specs, Powers, CLI 3.0 Early Access standalone hook files, active MCP servers, project MCP configuration, real external integrations, signing, publication, upload, deployment, destructive device operations, credential import, and real signing material.
 
 ## Scope
 
@@ -73,6 +73,8 @@ Never include secrets, tokens, passwords, private keys, certificates, provisioni
 Require human control for authentication/authorization changes, privacy, manifests, entitlements, network security, deep links, WebViews, analytics, telemetry, dependencies, lockfiles, build/signing configuration, external writes, credential import, destructive commands, publishing, deployment, and financial actions.
 
 MCP remains inactive by default. No MCP server is configured in this specialization. Before enabling or authenticating MCP, explain exposed data, requested scopes, possible external writes, approval behavior, and rollback.
+
+Static hook tests are provided in `.kiro/hooks/tests/test_hooks.py` for manual execution with `python3 -m unittest discover -s .kiro/hooks/tests`; they are dependency-free and were not executed during static generation.
 
 ## Validation
 

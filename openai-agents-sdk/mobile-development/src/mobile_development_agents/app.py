@@ -5,13 +5,15 @@ from typing import Any
 
 from mobile_development_agents.agents.definitions import ROLE_SPECS
 from mobile_development_agents.config import MobileAgentsConfig
-from mobile_development_agents.context import MobileTechnology, WorkflowRequest
+from mobile_development_agents.context import MobileTechnology, SDKWorkflowContext, WorkflowRequest
 from mobile_development_agents.outputs import (
     CompletionCriterion,
     CriterionStatus,
     WorkflowResult,
     WorkflowState,
 )
+from mobile_development_agents.tools.approvals import DenyByDefaultApprovalProvider
+from mobile_development_agents.tools.contracts import GuardedToolHost, ToolHost
 from mobile_development_agents.workflows.registry import WorkflowSpec, get_workflow
 
 
@@ -100,21 +102,37 @@ def dry_run_workflow(request: WorkflowRequest) -> WorkflowResult:
     )
 
 
-async def run_workflow(request: WorkflowRequest, config: MobileAgentsConfig | None = None) -> Any:
+async def run_workflow(
+    request: WorkflowRequest,
+    config: MobileAgentsConfig | None = None,
+    host: ToolHost | None = None,
+) -> Any:
     routed = route_workflow(request)
     if routed.validation_issues:
         return dry_run_workflow(request)
     configure_sdk(config)
-    from agents import Runner
+    from agents import RunConfig, Runner, ToolExecutionConfig
     from mobile_development_agents.agents.coordinator import build_coordinator_agent
+    from mobile_development_agents.runtime import pending_approval_interruptions
 
     coordinator = build_coordinator_agent(config)
+    guarded_host = GuardedToolHost(host, DenyByDefaultApprovalProvider()) if host is not None else None
+    context = SDKWorkflowContext(request=request, tool_host=guarded_host)
     prompt = (
         f"Execute workflow {routed.spec.name}. Primary owner: {routed.primary_owner}. "
         f"Reviewers: {', '.join(routed.reviewers)}. Objective: {request.objective}. "
         "Do not publish, sign, upload, deploy, spend money, activate integrations, or fabricate evidence."
     )
-    return await Runner.run(coordinator, prompt)
+    run_config = RunConfig(
+        workflow_name="mobile-development",
+        tracing_disabled=(config or MobileAgentsConfig.from_env()).tracing_disabled,
+        tool_execution=ToolExecutionConfig(pre_approval_tool_input_guardrails=True),
+    )
+    result = await Runner.run(coordinator, prompt, context=context, run_config=run_config, max_turns=12)
+    interruptions = pending_approval_interruptions(result)
+    if interruptions:
+        return result
+    return result
 
 
 def responsibility_matrix() -> dict[str, dict[str, str | bool]]:

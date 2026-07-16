@@ -11,7 +11,8 @@ raw = sys.stdin.read()
 try:
     data = json.loads(raw) if raw else {}
 except json.JSONDecodeError:
-    data = {"raw": raw}
+    print("Blocked malformed path hook input.", file=sys.stderr)
+    sys.exit(2)
 
 strings = []
 stack = [data]
@@ -32,7 +33,7 @@ for value in strings:
     paths.extend(match.group(1).strip().strip("\"'") for match in candidate_pattern.finditer(value))
 
 secret_markers = re.compile(
-    r"(?i)(\.env|id_rsa|id_dsa|id_ecdsa|id_ed25519|keystore|\.jks|\.p12|\.pem|\.key|mobileprovision|provisioning|certificate|service-account|google-services\.json|googleservice-info\.plist)"
+    r"(?i)(\.env|id_rsa|id_dsa|id_ecdsa|id_ed25519|keystore|\.jks|\.p12|\.pem|\.key|mobileprovision|provisioning|certificate|service-account)"
 )
 
 for path in paths:

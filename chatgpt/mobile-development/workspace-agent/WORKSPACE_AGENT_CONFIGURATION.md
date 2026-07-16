@@ -24,7 +24,7 @@ Attach the files in `workspace-agent/FILES_MANIFEST.md`.
 
 ## Skills
 
-Do not attach generated Skill packages from this repository. If workspace Skills are available, create the ten workflow Skills manually in the native Skill editor or with `skill-creator`, using `knowledge/QUALITY_AND_COMPLETION_STANDARDS.md` as source.
+If workspace Skills are available and approved, attach or install only the reviewed workflow Skill packages from `skills/`. Package each Skill as one top-level directory containing its `SKILL.md`; do not attach the entire repository.
 
 ## Tools And Apps
 

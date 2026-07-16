@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fix/mobile-development" />
+        <entry key="$PROJECT_DIR$" value="feature/mobile-development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,7 +50,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "feature/web-development",
+    "git-widget-placeholder": "fix/mobile-development",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/azerva/Desktop/AI-Specialized-Departments",
     "node.js.detected.package.eslint": "true",

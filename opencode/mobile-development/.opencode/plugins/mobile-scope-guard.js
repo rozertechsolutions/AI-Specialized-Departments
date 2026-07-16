@@ -18,7 +18,7 @@ function values(input) {
 }
 
 function isPathLike(value) {
-  return value.startsWith("/") || value.startsWith("./") || value.startsWith("../") || /^[A-Za-z]:[\\/]/.test(value);
+  return value.includes("/") || value.includes("\\") || value.startsWith(".") || /^[A-Za-z]:[\\/]/.test(value);
 }
 
 exports.MobileScopeGuard = async () => ({
@@ -30,6 +30,9 @@ exports.MobileScopeGuard = async () => ({
     const allowed = path.resolve(cwd);
     for (const raw of values(output && output.args)) {
       if (!isPathLike(raw)) continue;
+      if (raw.includes("\0")) {
+        throw new Error("Blocked null-byte path.");
+      }
       const resolved = path.resolve(cwd, raw);
       if (resolved !== allowed && !resolved.startsWith(allowed + path.sep)) {
         throw new Error(`Blocked out-of-scope mobile-development path: ${raw}`);

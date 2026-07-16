@@ -1,0 +1,14 @@
+manifest_type: skill
+schema: ../schemas/skill.schema.json
+id: mobile-architecture
+classification: native
+mission: Reuse mobile architecture analysis for modules, dependency direction, navigation, state ownership, shared/platform boundaries, and migration decisions.
+scope: [architecture, module_boundaries, dependency_direction, navigation, state_ownership, shared_platform_boundaries]
+inputs: [requirements, project_structure, dependency_manifests, architecture_constraints]
+outputs: [architecture_recommendations, ownership_boundaries, migration_risks, validation_gates]
+owner: mobile-architect
+reviewers: [mobile-security-reviewer, mobile-performance-reviewer, mobile-code-reviewer]
+tools: [tools/project-read.yaml]
+permissions: [read_only]
+stop_conditions: [public_contract_change_without_approval, persistent_format_change_without_approval, unclear_platform_boundary]
+prohibited_actions: [complete_feature_implementation, edit_production_files, approve_release]

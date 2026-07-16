@@ -2,12 +2,42 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "agent.schema.json",
   "type": "object",
-  "required": ["manifest_type", "id", "classification", "mission", "exclusive_scope", "inputs", "preconditions", "outputs", "evidence", "tools", "permissions", "dependencies", "invocation", "delegation", "stop_conditions", "errors", "fail_safe_behavior", "completion_criteria", "human_review", "prohibited_actions"],
+  "required": ["manifest_type", "schema", "id", "classification", "mission", "exclusive_scope", "inputs", "preconditions", "outputs", "evidence", "tools", "permissions", "dependencies", "invocation", "delegation", "stop_conditions", "errors", "fail_safe_behavior", "completion_criteria", "human_review", "prohibited_actions"],
   "properties": {
     "manifest_type": {"const": "agent"},
-    "id": {"type": "string"},
+    "schema": {"type": "string", "pattern": "^\\.\\./schemas/agent\\.schema\\.json$"},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "classification": {"enum": ["native", "unsupported"]},
-    "mission": {"type": "string"}
+    "mission": {"type": "string", "minLength": 1},
+    "exclusive_scope": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "inputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "preconditions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "outputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "evidence": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "tools": {"type": "array", "items": {"type": "string", "pattern": "^(tools|skills)/[A-Za-z0-9_.-]+\\.ya?ml$"}, "minItems": 1, "uniqueItems": true},
+    "permissions": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "dependencies": {"type": "array", "items": {"type": "string", "pattern": "^(agents|subagents|policies)/[A-Za-z0-9_.-]+\\.ya?ml$"}, "uniqueItems": true},
+    "invocation": {"type": "string", "minLength": 1},
+    "delegation": {"type": "string", "minLength": 1},
+    "stop_conditions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "errors": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "fail_safe_behavior": {"type": "string", "minLength": 1},
+    "completion_criteria": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "human_review": {
+      "oneOf": [
+        {"type": "string", "minLength": 1},
+        {"type": "object", "minProperties": 1, "additionalProperties": {"type": "boolean"}}
+      ]
+    },
+    "prohibited_actions": {"$ref": "#/$defs/nonEmptyStringArray"}
   },
-  "additionalProperties": true
+  "$defs": {
+    "nonEmptyStringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
 }

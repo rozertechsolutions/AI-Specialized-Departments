@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [manual_initiation_confirmed, no_real_signing_credentials_required]
 primary_owner: mobile-release-engineer
 reviewers: [mobile-security-reviewer, mobile-test-engineer, mobile-code-reviewer]
-steps: [inspect_release_metadata, validate_variants_or_schemes, check_reproducibility, run_unsigned_validation_when_available, document_signing_prerequisites, final_review]
+steps: [inspect_release_metadata, validate_variants_or_schemes, check_reproducibility, run_unsigned_validation_when_available, document_signing_prerequisites, apply_mobile_code_review_skill, final_review]
 validation_gates: [no_real_credentials, no_external_upload, unsigned_build_or_blocker, security_review]
 failures: [signing_needed, store_upload_requested, credentials_present_or_required]
 stop_conditions: [publish_upload_submit_deploy_distribute_sign_or_spend_requested]

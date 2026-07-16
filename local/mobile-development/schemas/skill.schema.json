@@ -2,11 +2,30 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "skill.schema.json",
   "type": "object",
-  "required": ["manifest_type", "id", "classification", "mission", "scope", "inputs", "outputs", "owner", "reviewers", "tools", "permissions", "stop_conditions", "prohibited_actions"],
+  "required": ["manifest_type", "schema", "id", "classification", "mission", "scope", "inputs", "outputs", "owner", "reviewers", "tools", "permissions", "stop_conditions", "prohibited_actions"],
   "properties": {
     "manifest_type": {"const": "skill"},
-    "id": {"type": "string"},
-    "classification": {"enum": ["native", "unsupported"]}
+    "schema": {"type": "string", "pattern": "^\\.\\./schemas/skill\\.schema\\.json$"},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "classification": {"enum": ["native", "unsupported"]},
+    "mission": {"type": "string", "minLength": 1},
+    "scope": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "inputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "outputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "owner": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "reviewers": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "uniqueItems": true},
+    "tools": {"type": "array", "items": {"type": "string", "pattern": "^(tools|skills)/[A-Za-z0-9_.-]+\\.ya?ml$"}, "minItems": 1, "uniqueItems": true},
+    "permissions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "stop_conditions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "prohibited_actions": {"$ref": "#/$defs/nonEmptyStringArray"}
   },
-  "additionalProperties": true
+  "$defs": {
+    "nonEmptyStringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
 }

@@ -8,7 +8,7 @@ inputs: [changed_files, requirements, validation_evidence, specialist_reports]
 preconditions: [implementation_complete, reviewer_did_not_implement_changes]
 outputs: [final_review_findings, residual_risks]
 evidence: [file_references, test_gap_notes, regression_risks]
-tools: [tools/project-read.yaml]
+tools: [tools/project-read.yaml, skills/mobile-code-review.yaml]
 permissions: {filesystem: read_only, shell: approval_required_read_only, external_integrations: disabled}
 dependencies: [agents/mobile-coordinator.yaml]
 invocation: required_after_implementation_before_completion

@@ -9,7 +9,7 @@ supported_technologies: [android, ios, flutter, react-native, kotlin-multiplatfo
 preconditions: [ui_framework_detected, navigation_convention_identified]
 primary_owner: coordinator_selected_ui_platform_engineer
 reviewers: [mobile-ui-accessibility-reviewer, mobile-test-engineer, mobile-code-reviewer]
-steps: [inspect_ui_patterns, define_states, implement_screen, wire_navigation, add_ui_or_snapshot_tests_when_available, review_accessibility]
+steps: [inspect_ui_patterns, define_states, implement_screen, wire_navigation, add_ui_or_snapshot_tests_when_available, review_accessibility, apply_mobile_code_review_skill]
 validation_gates: [loading_empty_error_state_coverage, adaptive_layout_review, accessibility_review, ui_tests_or_reason]
 failures: [missing_design_decision, unavailable_ui_test_infrastructure]
 stop_conditions: [navigation_contract_change_without_approval, permissions_or_privacy_change]

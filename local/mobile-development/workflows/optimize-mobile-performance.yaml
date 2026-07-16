@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [metric_defined, measurement_method_available_or_blocker_reported]
 primary_owner: coordinator_selected_platform_engineer
 reviewers: [mobile-performance-reviewer, mobile-code-reviewer]
-steps: [define_metric, collect_baseline_when_available, implement_scoped_change, remeasure, compare_results, review_regression_risk]
+steps: [define_metric, collect_baseline_when_available, implement_scoped_change, remeasure, compare_results, review_regression_risk, apply_mobile_code_review_skill]
 validation_gates: [baseline_or_blocker, post_change_measurement_or_blocker, no_unrelated_regression]
 failures: [measurement_unavailable, noisy_results, destructive_device_operation_required]
 stop_conditions: [claim_without_measurement, battery_or_background_tradeoff_without_review]

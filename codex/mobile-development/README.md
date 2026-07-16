@@ -34,9 +34,9 @@ Generic `agents/`, `subagents/`, `skills/`, `hooks/`, `mcp/`, and `workflows/` d
 
 All MCP servers in `.codex/config.toml` are disabled by default, optional, non-required, restricted to read-oriented tools, and use the `prompt` mode to require approval for every tool call. Enabling a server is a deliberate local action: change only that server's `enabled` value to `true`, satisfy its prerequisite, restart Codex, authenticate if required, and inspect the resulting tools with `/mcp`. Never commit credentials or authenticated session material.
 
-- **Firebase** uses the official `firebase-tools` MCP command. It requires Node.js, npm, and an authenticated Firebase CLI session. The configured `npx -y firebase-tools@latest` launcher may download and execute the current package when the server is deliberately enabled, so that network/package action requires separate human approval and package review. Its allowlist is limited to project/app metadata, security-rule inspection, Firebase resources, and Crashlytics reads. It can expose project metadata and crash data that may contain personal or production information.
+- **Firebase** uses a user-installed `firebase` CLI from `PATH`. It requires Node.js, npm, and an authenticated Firebase CLI session prepared outside this repository. No package is downloaded by cloning or by the disabled template. Its allowlist is limited to project/app metadata, security-rule inspection, Firebase resources, and Crashlytics reads. It can expose project metadata and crash data that may contain personal or production information.
 - **Figma** uses `https://mcp.figma.com/mcp` with OAuth. Its allowlist covers design context, metadata, screenshots, variables, and existing Code Connect mappings. It can disclose private product designs and assets.
-- **GitHub** uses `https://api.githubcopilot.com/mcp/`. It expects a least-privilege token through the local `GITHUB_PAT_TOKEN` environment variable; the value is never stored here. Its allowlist covers repository file and pull-request reads. It can disclose private repository content available to the token.
+- **GitHub** uses `https://api.githubcopilot.com/mcp/`. It expects a least-privilege token through the local `GITHUB_PERSONAL_ACCESS_TOKEN` environment variable; the value is never stored here. Its allowlist covers repository file and pull-request reads. It can disclose private repository content available to the token.
 - **Sentry** uses `https://mcp.sentry.dev/mcp` with OAuth. Its allowlist covers organization/project discovery and issue, event, and trace reads. Telemetry can contain personal data, source context, request data, or production identifiers.
 
 Enable only the server needed for the current task, minimize account scope, review each approval request, and disable the server again when it is no longer needed.
@@ -51,6 +51,7 @@ Enable only the server needed for the current task, minimize account scope, revi
 - Workflows are implemented as Skills because Codex has no separate native `workflows/` file format.
 - No model is pinned. Custom agents inherit the user's supported model and reasoning configuration.
 - No MCP server is contacted during installation or validation of this specialization.
+- Static hook tests are provided in `.codex/hooks/tests/test_hooks.py` for manual execution with `python3 -m unittest discover -s .codex/hooks/tests`; they were not executed during static generation.
 
 ## Official references
 

@@ -70,6 +70,10 @@ Sensitive permission, entitlement, authentication, deep-link, WebView, network-s
 - Do not add a dependency unless necessary, compatible, maintained, licensed appropriately, and approved when the request does not already require it.
 - Treat MCP configuration as optional and pending user approval. Do not depend on MCP availability for baseline work.
 
-Launch Claude Code from this specialization directory so project configuration is discovered. Hooks require Python 3 available as `python3`. MCP entries are declarations only: each server requires separate workspace-trust and activation approval, GitHub requires `GITHUB_PAT`, and approving Firebase may let `npx` download `firebase-tools`; never contact or approve a server automatically.
+Launch Claude Code from this specialization directory so project configuration is discovered. Hooks require Python 3 available as `python3`.
+
+MCP entries are disabled open-source templates. Project settings reject `firebase`, `figma`, `github`, and `sentry` from `.mcp.json` by default through `disabledMcpjsonServers`; cloning the repository does not start, authenticate, health-check, install, trust, or approve any MCP server. To activate one manually, remove only that server ID from `disabledMcpjsonServers` in a private reviewed setting, trust the workspace in Claude Code, inspect `/mcp`, and approve the server explicitly. To deactivate again, restore the server ID in `disabledMcpjsonServers` or reject/remove it through Claude Code.
+
+Prerequisites are user-installed and outside this repository: Firebase requires a `firebase` CLI available on `PATH` or `FIREBASE_CLI` pointing to a reviewed executable; GitHub token-based activation uses `GITHUB_PERSONAL_ACCESS_TOKEN`; remote OAuth servers such as Figma and Sentry require user-controlled `/mcp` authentication. No mutable package reference or implicit package installation remains.
 
 Stop and surface the exact blocker when required context, authority, tooling, evidence, or human approval is missing.

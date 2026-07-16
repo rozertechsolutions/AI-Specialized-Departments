@@ -29,6 +29,8 @@ Upload:
 
 Use knowledge for reference only. Keep rules and behavior in Instructions.
 
+Do not upload `skills/` folders as GPT knowledge. Skills are a separate native surface for eligible accounts and must be installed through the Skills interface.
+
 ## Recommended Model
 
 Do not hardcode a model. Leave the recommended model unset unless the GPT builder requires one or the account owner selects an available current ChatGPT model.

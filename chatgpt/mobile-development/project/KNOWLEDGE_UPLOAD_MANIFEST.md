@@ -12,4 +12,4 @@ Upload these files as ChatGPT Project sources when configuring the Mobile Develo
 
 Do not upload secrets, credentials, private repositories, signing files, provisioning profiles, keystores, service-account files, local `.env` files, production data, or private endpoints as knowledge.
 
-Do not upload generated Skill packages from this repository; none are provided.
+Do not upload Skill folders as ordinary project knowledge. If Skills are enabled, package and upload each reviewed workflow Skill through ChatGPT's native Skill upload flow instead.

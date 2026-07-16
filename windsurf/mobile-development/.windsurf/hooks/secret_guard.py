@@ -6,7 +6,7 @@ import sys
 
 SECRET_FILE_RE = re.compile(
     r"(^|/)(\.env(\.|$)|.*\.(keystore|jks|p12|pfx|pem|key|mobileprovision|cer|crt)$|"
-    r"google-services\.json$|GoogleService-Info\.plist$|service-account.*\.json$)",
+    r"service-account.*\.json$)",
     re.IGNORECASE,
 )
 SECRET_VALUE_RE = re.compile(

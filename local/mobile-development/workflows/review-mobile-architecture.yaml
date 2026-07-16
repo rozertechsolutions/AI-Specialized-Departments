@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [read_only_scope_confirmed]
 primary_owner: mobile-architect
 reviewers: [mobile-security-reviewer, mobile-performance-reviewer, mobile-code-reviewer]
-steps: [inspect_structure, map_dependencies, identify_boundaries, classify_risks, recommend_smallest_valid_change]
+steps: [apply_mobile_architecture_skill, inspect_structure, map_dependencies, identify_boundaries, classify_risks, recommend_smallest_valid_change]
 validation_gates: [file_references, no_mutation, responsibility_boundaries]
 failures: [missing_project_context, conflicting_architecture_evidence]
 stop_conditions: [implementation_requested_without_owner_selection]

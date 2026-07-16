@@ -17,8 +17,8 @@ network_access = false
 # Tool allowlists are read-oriented, and every exposed call requires approval.
 
 [mcp_servers.firebase]
-command = "npx"
-args = ["-y", "firebase-tools@latest", "mcp", "--only", "firestore,storage,crashlytics"]
+command = "firebase"
+args = ["mcp", "--only", "firestore,storage,crashlytics"]
 enabled = false
 required = false
 enabled_tools = [
@@ -53,7 +53,7 @@ tool_timeout_sec = 60
 
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
-bearer_token_env_var = "GITHUB_PAT_TOKEN"
+bearer_token_env_var = "GITHUB_PERSONAL_ACCESS_TOKEN"
 enabled = false
 required = false
 enabled_tools = [

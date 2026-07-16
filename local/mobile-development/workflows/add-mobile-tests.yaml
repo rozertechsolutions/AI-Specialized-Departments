@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [test_framework_detected, deterministic_inputs_available]
 primary_owner: mobile-test-engineer
 reviewers: [coordinator_selected_platform_engineer, mobile-code-reviewer]
-steps: [inspect_existing_tests, select_test_level, add_fixtures, implement_tests, run_targeted_tests, report_gaps]
+steps: [inspect_existing_tests, select_test_level, add_fixtures, implement_tests, run_targeted_tests, apply_mobile_code_review_skill, report_gaps]
 validation_gates: [determinism, regression_coverage, no_production_behavior_change]
 failures: [missing_test_framework, flaky_infrastructure, required_simulator_unavailable]
 stop_conditions: [destructive_device_operation_required, paid_or_external_service_needed]

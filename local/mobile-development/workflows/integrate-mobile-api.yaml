@@ -9,7 +9,7 @@ supported_technologies: [android, ios, kotlin-multiplatform, flutter, react-nati
 preconditions: [api_contract_available, no_real_secret_in_repo, owner_selected]
 primary_owner: coordinator_selected_platform_engineer
 reviewers: [mobile-security-reviewer, mobile-test-engineer, mobile-code-reviewer]
-steps: [inspect_networking_patterns, validate_contract, implement_client_boundary, handle_errors_and_cancellation, add_tests, review_security]
+steps: [inspect_networking_patterns, validate_contract, implement_client_boundary, handle_errors_and_cancellation, add_tests, review_security, apply_mobile_code_review_skill]
 validation_gates: [auth_review, network_failure_states, offline_or_cache_policy, tests]
 failures: [missing_api_contract, credentials_required, private_endpoint_requested]
 stop_conditions: [production_write_needed, auth_or_privacy_change_without_human_review]
