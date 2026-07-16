@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Cloud Security Controls Engineer"
+description = "Owns technical cloud IAM, secrets controls, policy as code, cloud configuration hardening and least-privilege patterns inside DevOps workflows."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "cloud-security-controls-engineer"

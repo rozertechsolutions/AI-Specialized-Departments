@@ -1,0 +1,10 @@
+schema_version: '1.0'
+id: resilience-disaster-recovery
+workflows:
+- resilience-assessment
+- backup-and-restore-design
+- disaster-recovery-plan
+- recovery-exercise-plan
+- failover-readiness-review
+- recovery-gap-remediation
+static_only: true

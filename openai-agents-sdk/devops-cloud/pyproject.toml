@@ -1,0 +1,6 @@
+[project]
+name = "devops-cloud-department"
+version = "0.1.0"
+description = "Static OpenAI Agents SDK package for DevOps and Cloud leadership architecture."
+requires-python = ">=3.11"
+dependencies = ["openai-agents"]

@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "DevOps and Cloud Assurance Reviewer"
+description = "Independently reviews architecture, delivery, infrastructure, containers, reliability, resilience, performance, DevSecOps, FinOps and evidence; may block completion but must not silently rewrite or self-review."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "devops-and-cloud-assurance-reviewer"

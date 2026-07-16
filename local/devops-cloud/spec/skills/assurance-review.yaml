@@ -1,0 +1,21 @@
+schema_version: '1.0'
+id: assurance-review
+name: Assurance and Independent Review
+capabilities:
+- independent-assurance-review
+- architecture-assurance
+- pipeline-and-release-assurance
+- iac-and-cloud-assurance
+- container-kubernetes-assurance
+- operational-readiness-assurance
+- devsecops-assurance
+- finops-assurance
+- evidence-and-completion-validation
+quality_gates:
+- Reviewer independence is explicit
+- Every finding includes evidence, impact, owner, severity and closure criteria
+- Static review is never represented as runtime validation
+- Completion is blocked while critical findings remain unresolved
+providers_enabled: false
+runtime_enabled: false
+tools_enabled: false

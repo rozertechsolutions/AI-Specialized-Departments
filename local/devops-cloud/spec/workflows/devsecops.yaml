@@ -1,0 +1,11 @@
+schema_version: '1.0'
+id: devsecops
+workflows:
+- secure-pipeline-design
+- security-gate-review
+- iac-container-kubernetes-security-review
+- sbom-and-provenance-workflow
+- secret-exposure-response-plan
+- security-finding-remediation
+- devsecops-exception-approval
+static_only: true

@@ -1,0 +1,12 @@
+schema_version: '1.0'
+id: resilience-disaster-recovery
+capabilities:
+- resilience-architecture
+- rto-rpo-definition
+- backup-restore-strategy
+- disaster-recovery-plan
+- failover-failback-review
+- chaos-experiment-design
+- recovery-evidence-review
+runtime_execution: false
+external_integrations_enabled: false

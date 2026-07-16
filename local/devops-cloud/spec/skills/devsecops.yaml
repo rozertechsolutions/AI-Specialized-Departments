@@ -1,0 +1,13 @@
+schema_version: '1.0'
+id: devsecops
+capabilities:
+- devsecops-control-design
+- pipeline-security-review
+- cloud-iam-and-secrets-review
+- policy-as-code-design
+- container-and-kubernetes-security-review
+- sbom-and-provenance-design
+- software-supply-chain-assessment
+- security-exception-review
+runtime_execution: false
+external_integrations_enabled: false

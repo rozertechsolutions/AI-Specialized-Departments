@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Cloud and Platform Architect"
+description = "Section 01 Cloud and Platform Architect role."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "cloud-and-platform-architect"

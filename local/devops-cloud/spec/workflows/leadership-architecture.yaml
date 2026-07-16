@@ -1,0 +1,9 @@
+schema_version: '1.0'
+id: leadership-architecture
+workflows:
+- new-devops-cloud-request
+- cloud-target-architecture
+- technology-selection
+- architecture-exception-review
+- cross-section-dependency-resolution
+static_only: true

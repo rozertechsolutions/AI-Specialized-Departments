@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Cloud Sustainability and Efficiency Analyst"
+description = "Owns measurable resource-efficiency and sustainability analysis, carbon-aware tradeoffs and evidence-based sustainability recommendations."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "cloud-sustainability-and-efficiency-analyst"

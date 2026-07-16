@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Resilience and Disaster Recovery Engineer"
+description = "Owns availability patterns, backup/restore, RTO/RPO, disaster recovery, failover/failback, resilience testing strategy and recovery evidence."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "resilience-and-disaster-recovery-engineer"

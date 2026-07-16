@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Cloud Network Engineer"
+description = "Owns VPC/VNet design, subnets, routing, DNS, load balancing, ingress/egress, connectivity, and cloud network segmentation."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "cloud-network-engineer"

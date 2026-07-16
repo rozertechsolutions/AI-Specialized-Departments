@@ -1,0 +1,12 @@
+schema_version: '1.0'
+id: performance-capacity-efficiency
+capabilities:
+- performance-requirements
+- workload-model-design
+- load-test-plan
+- capacity-planning
+- autoscaling-design
+- bottleneck-analysis
+- resource-efficiency-review
+runtime_execution: false
+external_integrations_enabled: false

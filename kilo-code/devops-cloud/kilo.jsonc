@@ -1,0 +1,7 @@
+{
+  "$schema": "https://kilo.ai/schemas/kilo.json",
+  "permissions": {
+    "default": "ask",
+    "deny": ["docker", "kubectl", "terraform", "tofu", "pulumi", "ansible", "helm", "aws", "az", "gcloud"]
+  }
+}

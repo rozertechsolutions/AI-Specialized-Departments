@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Software Supply Chain Security Engineer"
+description = "Owns dependency and artifact integrity, SBOM, provenance, signing, verification, build isolation and software supply-chain controls."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "software-supply-chain-security-engineer"

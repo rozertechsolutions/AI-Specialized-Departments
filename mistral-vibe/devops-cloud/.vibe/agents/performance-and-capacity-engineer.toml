@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Performance and Capacity Engineer"
+description = "Owns performance requirements, workload models, load/stress/soak test design, bottleneck analysis, capacity planning, autoscaling strategy and technical resource efficiency."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "performance-and-capacity-engineer"

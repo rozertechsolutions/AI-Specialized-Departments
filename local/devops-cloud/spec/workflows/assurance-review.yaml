@@ -1,0 +1,10 @@
+schema_version: '1.0'
+id: assurance-review
+name: Assurance and Independent Review workflows
+workflows:
+- section-assurance-review
+- cross-section-consistency-review
+- finding-and-remediation-cycle
+- waiver-review
+- final-operational-readiness-gate
+execution_enabled: false

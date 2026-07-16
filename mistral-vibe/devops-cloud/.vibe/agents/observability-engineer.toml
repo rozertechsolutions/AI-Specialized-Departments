@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Observability Engineer"
+description = "Owns telemetry architecture, logs, metrics, traces, profiles, dashboards, actionable alerting, correlation, retention and observability data quality."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "observability-engineer"

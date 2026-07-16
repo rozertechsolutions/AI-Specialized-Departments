@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "DevSecOps Engineer"
+description = "Owns secure delivery controls, pipeline security requirements, security gate placement, findings routing and developer-facing remediation workflows."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "devsecops-engineer"

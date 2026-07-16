@@ -1,0 +1,70 @@
+schema_version: '1.0'
+id: devops-cloud
+name: DevOps and Cloud
+sections:
+- 01-leadership-architecture
+- 02-cloud-foundation-infrastructure
+- 03-ci-cd-release-engineering
+- 04-containers-platform-engineering
+- 05-sre-observability-operations
+- 06-resilience-disaster-recovery
+- 07-performance-capacity-efficiency
+- 08-devsecops
+- 09-finops-sustainability
+- 10-assurance-review
+scope:
+- request intake, architecture, cloud foundations, infrastructure, networking, managed services, and lifecycle
+- CI/CD, release engineering, containers, orchestration, platform product management, SRE, observability, and operations
+- resilience, disaster recovery, backup/restore, RTO/RPO, performance, capacity, autoscaling, and resource efficiency
+- DevSecOps, cloud security controls, software supply chain security, policy evidence, and secure delivery guardrails
+- FinOps, cost allocation, budgets, forecasts, unit economics, optimization recommendations, technology value, and measurable sustainability
+- independent assurance, cross-section consistency, evidence validation, findings, waivers, completion gates, and operational readiness review
+roles:
+- devops-cloud-orchestrator
+- cloud-and-platform-architect
+- cloud-foundation-engineer
+- infrastructure-as-code-engineer
+- cloud-network-engineer
+- cloud-runtime-managed-services-engineer
+- ci-cd-engineer
+- release-and-deployment-engineer
+- container-and-orchestration-engineer
+- platform-product-and-developer-experience-engineer
+- site-reliability-engineer
+- observability-engineer
+- resilience-and-disaster-recovery-engineer
+- performance-and-capacity-engineer
+- devsecops-engineer
+- cloud-security-controls-engineer
+- software-supply-chain-security-engineer
+- finops-engineer
+- cloud-sustainability-and-efficiency-analyst
+- devops-and-cloud-assurance-reviewer
+skills:
+- leadership-architecture
+- cloud-foundation-infrastructure
+- ci-cd-release-engineering
+- containers-platform-engineering
+- sre-observability-operations
+- resilience-disaster-recovery
+- performance-capacity-efficiency
+- devsecops
+- finops-sustainability
+- assurance-review
+workflows:
+- leadership-architecture
+- cloud-foundation-infrastructure
+- ci-cd-release-engineering
+- containers-platform-engineering
+- sre-observability-operations
+- resilience-disaster-recovery
+- performance-capacity-efficiency
+- devsecops
+- finops-sustainability
+- assurance-review
+policies:
+- safety
+- quality-gates
+providers_enabled: false
+runtime_enabled: false
+tools_enabled: false

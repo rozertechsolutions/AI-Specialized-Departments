@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(docker:*)",
+      "Bash(kubectl:*)",
+      "Bash(terraform:*)",
+      "Bash(tofu:*)",
+      "Bash(pulumi:*)",
+      "Bash(ansible:*)",
+      "Bash(helm:*)",
+      "Bash(jenkins:*)",
+      "Bash(aws:*)",
+      "Bash(az:*)",
+      "Bash(gcloud:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/*secret*)",
+      "Read(./**/*credential*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)"
+    ]
+  }
+}

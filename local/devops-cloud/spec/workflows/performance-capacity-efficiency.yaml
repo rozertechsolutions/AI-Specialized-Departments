@@ -1,0 +1,10 @@
+schema_version: '1.0'
+id: performance-capacity-efficiency
+workflows:
+- performance-readiness
+- load-test-design
+- capacity-review
+- autoscaling-review
+- performance-regression-analysis
+- resource-efficiency-improvement
+static_only: true

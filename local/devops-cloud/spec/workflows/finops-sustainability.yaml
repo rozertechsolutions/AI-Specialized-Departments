@@ -1,0 +1,12 @@
+schema_version: '1.0'
+id: finops-sustainability
+name: FinOps and Sustainability workflows
+workflows:
+- finops-baseline
+- cost-anomaly-response
+- rightsizing-review
+- budget-and-forecast-cycle
+- commitment-recommendation
+- technology-value-review
+- sustainability-assessment
+execution_enabled: false

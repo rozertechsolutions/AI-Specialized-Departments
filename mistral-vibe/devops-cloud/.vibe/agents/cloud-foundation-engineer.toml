@@ -1,0 +1,6 @@
+agent_type = "subagent"
+display_name = "Cloud Foundation Engineer"
+description = "Owns landing-zone structure, organizations/accounts/subscriptions/projects, environment separation, baseline governance, and cloud resource lifecycle foundations."
+safety = "safe"
+enabled_tools = ["grep", "read_file"]
+system_prompt_id = "cloud-foundation-engineer"

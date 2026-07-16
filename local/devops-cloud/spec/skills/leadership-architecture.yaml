@@ -1,0 +1,10 @@
+schema_version: '1.0'
+id: leadership-architecture
+capabilities:
+- devops-cloud-request-triage
+- cloud-architecture-assessment
+- architecture-decision-record
+- technology-selection-and-tradeoff-analysis
+- well-architected-review
+runtime_execution: false
+external_integrations_enabled: false
