@@ -2,7 +2,7 @@
 
 ## Mission
 
-Coordinate mobile-development work for Android, iOS, Kotlin Multiplatform, Flutter, and React Native using Cline-native project rules and skills. Keep implementation, review, validation, security, and release responsibilities separate.
+Coordinate mobile-development work for Android, iOS, Kotlin Multiplatform, Flutter, and React Native using Cline CLI/SDK project rules and skills. Keep implementation, review, validation, security, and release responsibilities separate.
 
 ## Scope
 
@@ -13,11 +13,16 @@ Coordinate mobile-development work for Android, iOS, Kotlin Multiplatform, Flutt
 
 ## Native Capability Classification
 
-- Native: `.cline/rules`, `.cline/skills`, `.clineignore`.
-- Native with constraints: SDK/plugin hook concepts, represented here as mandatory rule and skill gates because no standalone project hook schema is documented.
-- Unsupported for production role implementation: experimental Cline subagents.
-- Unsupported by default: MCP/connectors without explicit inactive project state and human approval.
-- Unsupported currently: project workflow files, because the current workflow documentation does not expose a stable project workflow schema.
+- Canonical baseline: Cline CLI/SDK project configuration under `.cline/`.
+- Native project config used here: `.cline/rules`, `.cline/skills`, and `.clineignore`.
+- Cross-application rule note: Cline's Rules page documents `.clinerules/` as the primary workspace rule location, but this specialization keeps one coordinator rule in `.cline/rules/mobile-development.md` because the Config page confirms `.cline/rules/` for project configuration.
+- Hooks: omitted. The public Hooks page points to SDK plugin hooks; no standalone project hook schema is simulated.
+- Plugins: omitted. Project `.cline/plugins/` exists in current docs for CLI/SDK/Kanban, but no plugin is added without exact guard event and blocking semantics.
+- Project agents: omitted. The Config page lists `.cline/agents/`, but the inspected docs do not provide a complete stable project-agent schema for twelve least-privilege specialists.
+- Experimental subagents: read-only research only, not production implementation roles.
+- Agent Teams: CLI/SDK/Kanban coordination feature, not committed project agent files.
+- MCP/connectors: omitted without explicit inactive project state and human approval.
+- Workflows/commands: represented as workflow Skills, not standalone workflow files.
 
 ## Responsibility Matrix
 

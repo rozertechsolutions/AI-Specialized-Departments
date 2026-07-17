@@ -8,7 +8,7 @@ import os
 import posixpath
 import re
 import shlex
-from typing import List, Optional, Sequence, Tuple
+from typing import Any, List, Mapping, Optional, Sequence, Tuple
 
 from hook_common import (
     HookInputError,
@@ -404,6 +404,37 @@ def uses_inline_interpreter(base: str, args: Sequence[str]) -> bool:
     return False
 
 
+def package_mutation_reason(base: str, args: Sequence[str]) -> Optional[str]:
+    package_commands = {
+        "npm": {"install", "i", "ci", "add", "update", "upgrade", "dedupe", "link", "uninstall", "remove", "rm"},
+        "pnpm": {"install", "i", "add", "update", "upgrade", "link", "remove", "rm"},
+        "yarn": {"install", "add", "up", "upgrade", "link", "remove"},
+        "bun": {"install", "add", "update", "upgrade", "remove"},
+        "pod": {"install", "update"},
+        "bundle": {"install", "update", "add"},
+        "gem": {"install", "update", "uninstall"},
+        "pip": {"install", "uninstall"},
+        "pip3": {"install", "uninstall"},
+    }
+    blocked = package_commands.get(base)
+    if blocked:
+        for arg in args:
+            lowered = arg.lower()
+            if lowered == "run":
+                return None
+            if lowered.startswith("-"):
+                continue
+            if lowered in blocked:
+                return f"package dependency mutation is blocked: {base} {lowered}"
+
+    python = bool(re.fullmatch(r"python\d*(?:\.\d+)?(?:\.exe)?", base))
+    if python and len(args) >= 3 and args[0] == "-m" and command_basename(args[1]) in {"pip", "pip3"}:
+        subcommand = args[2].lower()
+        if subcommand in {"install", "uninstall"}:
+            return f"package dependency mutation is blocked: python -m {command_basename(args[1])} {subcommand}"
+    return None
+
+
 def validate_segment(
     tokens: Sequence[str], root: str, cwd: str, *, shell_tool: str
 ) -> Optional[str]:
@@ -445,6 +476,9 @@ def validate_segment(
     if reason:
         return reason
     reason = validate_generic_paths([*assignments, *args], root, cwd)
+    if reason:
+        return reason
+    reason = package_mutation_reason(base, args)
     if reason:
         return reason
 
@@ -611,6 +645,21 @@ def command_reason(command: str, root: str, cwd: str, *, shell_tool: str) -> Opt
     return None
 
 
+def shell_command_reason(
+    shell_tool: str, payload: Mapping[str, Any], root: str, cwd: str
+) -> Optional[str]:
+    """Return the deterministic policy failure for one shell tool payload."""
+    if shell_tool not in {"Bash", "PowerShell"}:
+        raise HookInputError("expected a Bash or PowerShell tool")
+    command = payload.get("command")
+    if not isinstance(command, str):
+        raise HookInputError("shell command is required")
+    cwd_check = normalize_target(cwd, root, cwd=root)
+    if cwd_check.traversal or not cwd_check.within_root:
+        return "working directory is outside project scope"
+    return command_reason(command, root, cwd, shell_tool=shell_tool)
+
+
 def main() -> int:
     try:
         event = read_event()
@@ -621,15 +670,9 @@ def main() -> int:
         }:
             raise HookInputError("expected a PreToolUse Bash or PowerShell event")
         payload = tool_input(event)
-        command = payload.get("command")
-        if not isinstance(command, str):
-            raise HookInputError("shell command is required")
         root = project_root(event)
         cwd = event.get("cwd") if isinstance(event.get("cwd"), str) else root
-        cwd_check = normalize_target(cwd, root, cwd=root)
-        if cwd_check.traversal or not cwd_check.within_root:
-            return emit_pretool_decision("deny", "Dangerous-command guard blocked a working directory outside project scope.")
-        reason = command_reason(command, root, cwd, shell_tool=shell_tool)
+        reason = shell_command_reason(shell_tool, payload, root, cwd)
         if reason:
             return emit_pretool_decision("deny", f"Dangerous-command guard blocked the operation: {reason}.")
         return 0

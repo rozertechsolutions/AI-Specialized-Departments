@@ -85,10 +85,17 @@ test("scope guard blocks traversal, absolute outside paths, Windows paths, and n
   try {
     await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "../outside.txt" } });
     await assertBlocks(MobileScopeGuard, { tool: "edit" }, { args: { file: "/tmp/outside.txt" } });
-    await assertBlocks(MobileScopeGuard, { tool: "apply_patch" }, { args: { patch: "src/../../outside.txt" } });
     await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "C:\\Users\\name\\.ssh\\id_rsa" } });
+    await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "C:/Users/name/.ssh/id_rsa" } });
+    await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "\\\\server\\share\\secret.txt" } });
+    await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "\\\\?\\C:\\Users\\name\\secret.txt" } });
+    await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: '"src/main.kt"' } });
+    await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "src/My File.kt" } });
     await assertBlocks(MobileScopeGuard, { tool: "write" }, { args: { path: "src/main.kt\0" } });
+    await assertBlocks(MobileScopeGuard, { tool: "apply_patch" }, { args: { patch: "*** Begin Patch\n*** Update File: ../outside.txt\n*** End Patch" } });
     await assertAllows(MobileScopeGuard, { tool: "write" }, { args: { path: "src/main.kt" } });
+    await assertAllows(MobileScopeGuard, { tool: "apply_patch" }, { args: { patch: "*** Begin Patch\n*** Update File: src/main.kt\n*** End Patch" } });
+    await assertAllows(MobileScopeGuard, { tool: "apply_patch" }, { args: { path: "src/patch-target.kt", patch: "content without headers ../not-a-target" } });
     await assertAllows(MobileScopeGuard, { tool: "bash" }, { args: { command: "python3 -m unittest" } });
   } finally {
     process.chdir(cwd);
@@ -96,10 +103,24 @@ test("scope guard blocks traversal, absolute outside paths, Windows paths, and n
 });
 
 test("secret guard blocks real secrets but allows placeholders and public mobile client config", async () => {
+  for (const marker of [
+    "-----BEGIN PRIVATE KEY-----",
+    "-----BEGIN RSA PRIVATE KEY-----",
+    "-----BEGIN EC PRIVATE KEY-----",
+    "-----BEGIN OPENSSH PRIVATE KEY-----",
+    "-----BEGIN DSA PRIVATE KEY-----",
+    "-----BEGIN ENCRYPTED PRIVATE KEY-----",
+  ]) {
+    await assertBlocks(MobileSecretGuard, { tool: "apply_patch" }, { args: { patch: marker } });
+  }
   await assertBlocks(MobileSecretGuard, { tool: "write" }, { args: { content: 'api_key="realistic-secret-value-12345"' } });
-  await assertBlocks(MobileSecretGuard, { tool: "apply_patch" }, { args: { patch: "-----BEGIN PRIVATE KEY-----" } });
+  await assertBlocks(MobileSecretGuard, { tool: "write" }, { args: { content: "client_secret=realistic-secret-value-12345" } });
+  await assertBlocks(MobileSecretGuard, { tool: "write" }, { args: { content: "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.abcdefghijklmnopqrstuvwxyz123456.abcdefghijklmnopqrstuvwxyz123456" } });
   await assertBlocks(MobileSecretGuard, { tool: "bash" }, { args: { command: "echo ghp_abcdefghijklmnopqrstuvwxyz1234567890" } });
   await assertAllows(MobileSecretGuard, { tool: "write" }, { args: { content: "API_KEY=${OPENAI_API_KEY}\nTOKEN=YOUR_ACCESS_TOKEN" } });
+  await assertAllows(MobileSecretGuard, { tool: "write" }, { args: { content: "CLIENT_SECRET=YOUR_CLIENT_SECRET\nPRIVATE_KEY=${PRIVATE_KEY}" } });
   await assertAllows(MobileSecretGuard, { tool: "write" }, { args: { file: "google-services.json", content: '{"current_key":"AIzaSyDUMMYEXAMPLEPLACEHOLDER123456789"}' } });
   await assertAllows(MobileSecretGuard, { tool: "write" }, { args: { file: "GoogleService-Info.plist", content: "<key>API_KEY</key><string>YOUR_API_KEY</string>" } });
+  await assertAllows(MobileSecretGuard, { tool: "write" }, { args: { file: "AppleService-Info.plist", content: "<key>CLIENT_ID</key><string>com.example.public-client</string>" } });
+  await assertAllows(MobileSecretGuard, { tool: "write" }, { args: { content: "-----BEGIN CERTIFICATE-----\nPUBLIC-CERTIFICATE-PLACEHOLDER\n-----END CERTIFICATE-----" } });
 });
