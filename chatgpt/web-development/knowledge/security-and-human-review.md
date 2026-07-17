@@ -1,10 +1,15 @@
-# Web Security and Human-Review Policy
+# Web Security And Human-Review Reference
 
-## Mandatory human approval
-Require explicit human approval before any action involving production, external systems, authentication or authorization behavior, cryptography, secrets, personal or sensitive data, database migrations, dependency changes, third-party scripts, analytics or tracking, payment or billing, infrastructure, DNS, certificates, signing, publication, deployment, merge, release or destructive operations.
+This file is factual reference material for Project sources or GPT Knowledge. It records the security and human-review baseline for this Web Development specialization.
 
-## Default-deny external capability
-No MCP server, connector, remote tool, browser automation, shell execution, plugin, provider, model endpoint or external integration is enabled by this package. Empty configuration objects are intentional. Users must review and configure integrations themselves.
+## Human-Review Categories
 
-## Review expectations
-Use least privilege, secure defaults, defense in depth, server-side authorization, explicit validation, minimized data collection, bounded retention, safe logging, robust error handling and documented residual risk. A reviewer cannot approve their own implementation.
+Explicit human review is required before actions or changes involving production, external systems, authentication, authorization, cryptography, secrets, personal or sensitive data, database migrations, dependency changes, third-party scripts, analytics, tracking, payment or billing, infrastructure, DNS, certificates, signing, publication, deployment, merge, release, spending, or destructive operations.
+
+## Default External Capability State
+
+This package includes no enabled MCP server, connector, App, remote tool, browser automation, shell command, plugin authentication, provider endpoint, action schema, credential, or external integration. Optional integrations are manually configured by the user or workspace administrator and are outside this static package.
+
+## Review Expectations
+
+The preferred security posture is least privilege, secure defaults, defense in depth, server-side authorization, explicit validation, minimized data collection, bounded retention, safe logging, robust error handling, documented residual risk, and independent review for sensitive changes.
