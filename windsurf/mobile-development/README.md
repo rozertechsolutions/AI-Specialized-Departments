@@ -28,6 +28,10 @@ This specialization is configured for Devin Desktop Cascade when `windsurf/mobil
 
 The configuration does not contain secrets, tokens, endpoints, signing credentials, provisioning profiles, keystores, certificates, or service-account files. Hooks block suspicious secret writes, out-of-scope file writes, risky shell commands, publishing/signing/deployment commands, and MCP tool use by default.
 
+Cascade is the selected native product surface for this specialization. The `/prepare-mobile-release` Workflow is readiness-only: publication, upload, submission, deployment, distribution, store-facing Fastlane actions, signing with real credentials, and credential import are blocked by policy and hooks. Safe local validation such as tests, lint, static analysis, and non-publishing checks remains possible when explicitly approved and discovered from the target project.
+
+Cloning this repository does not execute hooks. Cascade evaluates the workspace hook configuration only when `windsurf/mobile-development/` is opened as the workspace root and a matching Cascade action occurs.
+
 Static hook tests are provided in `.windsurf/hooks/tests/test_hooks.py` for manual execution with `python3 -m unittest discover -s .windsurf/hooks/tests`. They are dependency-free and were not executed during static generation.
 
 ## Limitations

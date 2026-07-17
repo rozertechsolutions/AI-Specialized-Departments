@@ -4,8 +4,8 @@
 
 - Local detection: no `kiro` or `kiro-cli` executable was available in this workspace on 2026-07-15.
 - Selected surface: Kiro CLI workspace custom agents using JSON files in `.kiro/agents/`, because the current official CLI documentation defines this format for workspace-scoped custom agents.
-- Native components used: `AGENTS.md`, `.kiro/agents/*.json`, `.kiro/skills/*/SKILL.md`, `.kiro/steering/mobile-development.md`, and embedded `preToolUse` hook declarations that invoke `.kiro/hooks/*.py` guards.
-- Official Kiro documentation checked on 2026-07-15: CLI custom agents, CLI agent configuration reference, IDE subagents, IDE and CLI Agent Skills, steering, and hooks.
+- Native components used: `AGENTS.md`, `.kiro/agents/*.json`, `.kiro/skills/*/SKILL.md`, `.kiro/steering/mobile-development.md`, and embedded custom-agent `hooks.preToolUse` declarations that invoke `.kiro/hooks/*.py` guards.
+- Official Kiro documentation checked on 2026-07-17: CLI custom agents, CLI agent configuration reference, CLI hooks, CLI built-in tools, IDE subagents, IDE and CLI Agent Skills, and steering.
 - Unsupported or omitted: duplicate IDE Markdown subagent definitions, generic Kiro Specs, Powers, CLI 3.0 Early Access standalone hook files, active MCP servers, project MCP configuration, real external integrations, signing, publication, upload, deployment, destructive device operations, credential import, and real signing material.
 
 ## Scope
@@ -72,7 +72,9 @@ Never include secrets, tokens, passwords, private keys, certificates, provisioni
 
 Require human control for authentication/authorization changes, privacy, manifests, entitlements, network security, deep links, WebViews, analytics, telemetry, dependencies, lockfiles, build/signing configuration, external writes, credential import, destructive commands, publishing, deployment, and financial actions.
 
-MCP remains inactive by default. No MCP server is configured in this specialization. Before enabling or authenticating MCP, explain exposed data, requested scopes, possible external writes, approval behavior, and rollback.
+Hooks are embedded under each custom agent's `hooks` object. No mixed-generation standalone hook manifest is used. Cloning this repository does not execute hooks; Kiro CLI evaluates the configured hooks only when an agent invokes a matching tool.
+
+MCP remains inactive by default. No MCP server is configured in this specialization, `mcpServers` stays empty, and `includeMcpJson` stays `false` so workspace/user MCP inheritance is disabled. Before enabling or authenticating MCP, explain exposed data, requested scopes, possible external writes, approval behavior, and rollback.
 
 Static hook tests are provided in `.kiro/hooks/tests/test_hooks.py` for manual execution with `python3 -m unittest discover -s .kiro/hooks/tests`; they are dependency-free and were not executed during static generation.
 

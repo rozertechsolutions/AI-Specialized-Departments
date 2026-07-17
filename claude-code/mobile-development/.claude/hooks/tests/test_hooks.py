@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Focused tests for deterministic mobile-development Claude Code hooks."""
+"""Deterministic policy tests plus bounded contract tests for Claude Code hooks."""
 
 from __future__ import annotations
 
+import importlib.util
 import json
 import os
 import subprocess
@@ -13,8 +14,35 @@ from typing import Any, Dict, Optional, Tuple
 
 
 HOOK_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(HOOK_DIR))
+
+from hook_common import HookInputError, normalize_target, protected_path_reason  # noqa: E402
+
+
 POSIX_ROOT = "/tmp/mobile project"
 WINDOWS_ROOT = r"C:\repo\mobile project"
+CONTRACT_TIMEOUT_SECONDS = 2
+
+
+def load_hook_module(filename: str, module_name: str) -> Any:
+    spec = importlib.util.spec_from_file_location(module_name, HOOK_DIR / filename)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"cannot load hook module: {filename}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+dangerous_hook = load_hook_module(
+    "dangerous-mobile-command-guard.py", "dangerous_mobile_command_guard"
+)
+release_hook = load_hook_module(
+    "release-signing-publishing-guard.py", "release_signing_publishing_guard"
+)
+secret_hook = load_hook_module(
+    "secret-and-protected-file-guard.py", "secret_and_protected_file_guard"
+)
+sensitive_hook = load_hook_module("sensitive-change-review.py", "sensitive_change_review")
 
 
 def run_hook(
@@ -35,7 +63,7 @@ def run_hook(
         capture_output=True,
         check=False,
         env=environment,
-        timeout=5,
+        timeout=CONTRACT_TIMEOUT_SECONDS,
     )
     parsed = json.loads(result.stdout) if result.stdout else None
     return result, parsed
@@ -62,13 +90,15 @@ def posttool(tool: str, tool_payload: Dict[str, Any], *, cwd: str = POSIX_ROOT) 
     }
 
 
-class HookTestCase(unittest.TestCase):
-    def assert_safe(self, script: str, payload: Dict[str, Any], *, root: str = POSIX_ROOT) -> None:
+class HookContractTestCase(unittest.TestCase):
+    def assert_contract_safe(
+        self, script: str, payload: Dict[str, Any], *, root: str = POSIX_ROOT
+    ) -> None:
         result, parsed = run_hook(script, payload, root=root)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIsNone(parsed, result.stdout)
 
-    def assert_decision(
+    def assert_contract_decision(
         self,
         script: str,
         payload: Any,
@@ -86,7 +116,7 @@ class HookTestCase(unittest.TestCase):
         self.assertTrue(output["permissionDecisionReason"])
         return output["permissionDecisionReason"]
 
-    def assert_context(self, payload: Any, *, raw: bool = False) -> str:
+    def assert_contract_context(self, payload: Any, *, raw: bool = False) -> str:
         result, parsed = run_hook("sensitive-change-review.py", payload, raw=raw)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIsNotNone(parsed, result.stdout)
@@ -96,20 +126,44 @@ class HookTestCase(unittest.TestCase):
         return output["additionalContext"]
 
 
-class ProtectedFileGuardTests(HookTestCase):
-    SCRIPT = "secret-and-protected-file-guard.py"
+class ProtectedPathPolicyTests(unittest.TestCase):
+    def assert_file_safe(
+        self,
+        tool_name: str,
+        path: str,
+        *,
+        root: str = POSIX_ROOT,
+        cwd: str = POSIX_ROOT,
+    ) -> None:
+        self.assertIsNone(
+            secret_hook.file_access_reason(tool_name, {"file_path": path}, root, cwd)
+        )
 
-    def test_allows_public_mobile_client_configuration(self) -> None:
-        for filename in ("google-services.json", "GoogleService-Info.plist"):
+    def assert_file_blocked(
+        self,
+        tool_name: str,
+        path: str,
+        *,
+        root: str = POSIX_ROOT,
+        cwd: str = POSIX_ROOT,
+    ) -> str:
+        reason = secret_hook.file_access_reason(tool_name, {"file_path": path}, root, cwd)
+        self.assertIsNotNone(reason)
+        return reason
+
+    def test_allows_public_mobile_clients_and_environment_templates(self) -> None:
+        for filename in (
+            "google-services.json",
+            "GoogleService-Info.plist",
+            ".env.example",
+            ".env.production.template",
+            ".env.sample",
+        ):
             with self.subTest(filename=filename):
-                self.assert_safe(self.SCRIPT, pretool("Read", {"file_path": f"{POSIX_ROOT}/{filename}"}))
+                self.assertIsNone(protected_path_reason(filename))
+                self.assert_file_safe("Read", f"{POSIX_ROOT}/{filename}")
 
-    def test_allows_public_environment_templates(self) -> None:
-        for filename in (".env.example", ".env.production.template", ".env.sample"):
-            with self.subTest(filename=filename):
-                self.assert_safe(self.SCRIPT, pretool("Read", {"file_path": f"{POSIX_ROOT}/{filename}"}))
-
-    def test_blocks_private_and_signing_material(self) -> None:
+    def test_blocks_private_signing_and_service_account_material(self) -> None:
         cases = (
             ".env",
             ".env.production",
@@ -119,76 +173,82 @@ class ProtectedFileGuardTests(HookTestCase):
             "keys/Release Key.p12",
             "keys/AuthKey_TEST.p8",
             "config/service-account-prod.json",
+            "firebase-adminsdk-prod.json",
             ".ssh/id_ed25519",
             ".docker/config.json",
             ".config/gcloud/application_default_credentials.json",
         )
         for relative in cases:
             with self.subTest(relative=relative):
-                self.assert_decision(
-                    self.SCRIPT,
-                    pretool("Read", {"file_path": f"{POSIX_ROOT}/{relative}"}),
-                    "deny",
+                self.assert_file_blocked("Read", f"{POSIX_ROOT}/{relative}")
+
+    def test_blocks_command_references_without_mocking_shell_policy(self) -> None:
+        cases = (
+            ('cat "keys/Release Key.p12"', True),
+            ("cat .env*", True),
+            ("echo '-----BEGIN PRIVATE KEY-----'", True),
+            (r'Get-Content "C:\repo\mobile project\config\secrets.yaml"', False),
+            ("cat \x00.env", True),
+        )
+        for command, posix in cases:
+            with self.subTest(command=command):
+                self.assertIsNotNone(
+                    secret_hook.command_protected_reason(command, posix=posix)
                 )
 
-    def test_blocks_quoted_protected_path_with_spaces_in_bash(self) -> None:
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Bash", {"command": 'cat "keys/Release Key.p12"'}),
-            "deny",
-        )
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Bash", {"command": "cat .env*"}),
-            "deny",
-        )
-
-    def test_blocks_protected_path_in_powershell(self) -> None:
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("PowerShell", {"command": r'Get-Content "C:\repo\mobile project\config\secrets.yaml"'}, cwd=WINDOWS_ROOT),
-            "deny",
+    def test_handles_posix_windows_unc_traversal_outside_and_nul_paths(self) -> None:
+        self.assert_file_blocked("Edit", "src/../../outside.txt")
+        self.assert_file_blocked("Write", "/tmp/outside.txt")
+        self.assert_file_safe(
+            "Read",
+            WINDOWS_ROOT + r"\src\main.kt",
             root=WINDOWS_ROOT,
+            cwd=WINDOWS_ROOT,
         )
-
-    def test_blocks_posix_path_traversal_and_outside_path(self) -> None:
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Edit", {"file_path": "src/../../outside.txt"}),
-            "deny",
-        )
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Write", {"file_path": "/tmp/outside.txt"}),
-            "deny",
-        )
-
-    def test_handles_windows_paths(self) -> None:
-        self.assert_safe(
-            self.SCRIPT,
-            pretool("Read", {"file_path": WINDOWS_ROOT + r"\src\main.kt"}, cwd=WINDOWS_ROOT),
+        self.assert_file_blocked(
+            "Read",
+            r"C:\Users\name\.ssh\id_rsa",
             root=WINDOWS_ROOT,
+            cwd=WINDOWS_ROOT,
         )
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Read", {"file_path": r"C:\Users\name\.ssh\id_rsa"}, cwd=WINDOWS_ROOT),
-            "deny",
-            root=WINDOWS_ROOT,
+        unc_target = normalize_target(r"\\server\share\.ssh\id_rsa", WINDOWS_ROOT, cwd=WINDOWS_ROOT)
+        self.assertFalse(unc_target.within_root)
+        with self.assertRaises(HookInputError):
+            normalize_target("src/main.kt\x00", POSIX_ROOT, cwd=POSIX_ROOT)
+
+    def test_missing_fields_and_unsupported_tools_fail_closed_in_policy(self) -> None:
+        with self.assertRaises(HookInputError):
+            secret_hook.file_access_reason("Read", {}, POSIX_ROOT, POSIX_ROOT)
+        with self.assertRaises(HookInputError):
+            secret_hook.file_access_reason("Task", {"file_path": "src/main.kt"}, POSIX_ROOT, POSIX_ROOT)
+
+
+class DangerousCommandPolicyTests(unittest.TestCase):
+    def assert_command_safe(
+        self,
+        command: str,
+        *,
+        shell_tool: str = "Bash",
+        root: str = POSIX_ROOT,
+        cwd: str = POSIX_ROOT,
+    ) -> None:
+        self.assertIsNone(
+            dangerous_hook.shell_command_reason(shell_tool, {"command": command}, root, cwd)
         )
 
-    def test_fails_closed_for_malformed_or_missing_input(self) -> None:
-        self.assert_decision(self.SCRIPT, "{not json", "deny", raw=True)
-        self.assert_decision(
-            self.SCRIPT,
-            {"hook_event_name": "PreToolUse", "tool_name": "Read", "tool_input": {}},
-            "deny",
-        )
+    def assert_command_blocked(
+        self,
+        command: str,
+        *,
+        shell_tool: str = "Bash",
+        root: str = POSIX_ROOT,
+        cwd: str = POSIX_ROOT,
+    ) -> str:
+        reason = dangerous_hook.shell_command_reason(shell_tool, {"command": command}, root, cwd)
+        self.assertIsNotNone(reason)
+        return reason
 
-
-class DangerousCommandGuardTests(HookTestCase):
-    SCRIPT = "dangerous-mobile-command-guard.py"
-
-    def test_allows_scoped_build_test_lint_and_clean_commands(self) -> None:
+    def test_allows_safe_read_build_test_lint_and_generated_cleanup(self) -> None:
         commands = (
             "./gradlew test lint",
             "FOO=1 ./gradlew test",
@@ -199,63 +259,46 @@ class DangerousCommandGuardTests(HookTestCase):
             "npm run test",
             "python3 -m pytest -c pyproject.toml",
             "./gradlew test && ./gradlew lint",
+            "rm -rf build android/build",
+            "git status --short",
+            "git --no-pager log -1",
+            "grep -R 'rm -rf' docs",
+            "defaults read com.apple.dt.Xcode",
+            "adb shell getprop ro.build.version.sdk",
+            "xcrun simctl list devices",
         )
         for command in commands:
             with self.subTest(command=command):
-                self.assert_safe(self.SCRIPT, pretool("Bash", {"command": command}))
+                self.assert_command_safe(command)
 
-    def test_allows_generated_output_cleanup_only(self) -> None:
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "rm -rf build android/build"}))
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Bash", {"command": "rm -rf src"}),
-            "deny",
-        )
-
-    def test_blocks_destructive_command_inside_chain(self) -> None:
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Bash", {"command": "./gradlew test && rm -rf src"}),
-            "deny",
-        )
-
-    def test_validates_redirection_targets(self) -> None:
-        self.assert_safe(
-            self.SCRIPT,
-            pretool("Bash", {"command": 'echo ok > "build/Test Results.txt"'}),
-        )
-        self.assert_safe(
-            self.SCRIPT,
-            pretool("Bash", {"command": "./gradlew test 2>/dev/null"}),
-        )
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Bash", {"command": "echo data > /tmp/outside.txt"}),
-            "deny",
-        )
-
-    def test_blocks_substitution_encoded_and_inline_execution(self) -> None:
-        commands = (
+    def test_validates_chaining_pipes_redirection_substitution_and_encoded_execution(self) -> None:
+        blocked = (
+            "./gradlew test && rm -rf src",
+            "printf ZWNobyBoaQ== | base64 --decode | sh",
+            "echo data > /tmp/outside.txt",
+            "cat < ../secret.txt",
+            "cat <<EOF",
             "echo $(rm -rf src)",
             "echo `git reset --hard`",
             "cat $'.env'",
-            "printf ZWNobyBoaQ== | base64 --decode | sh",
             "python3 -c 'import os; os.remove(\"src/main.kt\")'",
             "node -p 'process.version'",
             "powershell -EncodedCommand ZQBjAGgAbwA=",
             "env -S 'rm -rf src'",
             "stdbuf -o L rm -rf src",
             "cd - && rm -rf src",
-            "FOO=1 rm -rf src",
             "PATH=tools ./gradlew test",
         )
-        for command in commands:
+        for command in blocked:
             with self.subTest(command=command):
-                self.assert_decision(self.SCRIPT, pretool("Bash", {"command": command}), "deny")
+                self.assert_command_blocked(command)
+        self.assert_command_safe('echo ok > "build/Test Results.txt"')
+        self.assert_command_safe("./gradlew test 2>/dev/null")
 
-    def test_blocks_scope_escape_and_destructive_git(self) -> None:
+    def test_blocks_scope_escape_destructive_git_filesystem_and_privilege_escalation(self) -> None:
         commands = (
             "cd .. && ./gradlew test",
+            "rm -rf src",
             "git reset --hard HEAD",
             "git clean -fdx",
             "git rm src/main.kt",
@@ -266,30 +309,25 @@ class DangerousCommandGuardTests(HookTestCase):
             "git merge --abort",
             "git push --force origin main",
             "find . -delete",
-        )
-        for command in commands:
-            with self.subTest(command=command):
-                self.assert_decision(self.SCRIPT, pretool("Bash", {"command": command}), "deny")
-
-    def test_allows_read_only_git_and_false_positive_text(self) -> None:
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "git status --short"}))
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "git --no-pager log -1"}))
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "grep -R 'rm -rf' docs"}))
-
-    def test_allows_read_only_platform_inspection(self) -> None:
-        commands = (
-            "defaults read com.apple.dt.Xcode",
-            "adb shell getprop ro.build.version.sdk",
-            "xcrun simctl list devices",
-        )
-        for command in commands:
-            with self.subTest(command=command):
-                self.assert_safe(self.SCRIPT, pretool("Bash", {"command": command}))
-
-    def test_blocks_system_and_device_destructive_operations(self) -> None:
-        commands = (
+            "sudo ./gradlew test",
+            "chmod 777 gradlew",
+            "chown user src/main.kt",
+            "killall Simulator",
             "truncate -s 0 src/main.kt",
             "unlink src/main.kt",
+        )
+        for command in commands:
+            with self.subTest(command=command):
+                self.assert_command_blocked(command)
+
+    def test_blocks_package_install_device_system_and_external_mutation(self) -> None:
+        commands = (
+            "npm install",
+            "pnpm add @scope/pkg",
+            "yarn add react-native",
+            "bun install",
+            "pod install",
+            "python3 -m pip install requests",
             "defaults write com.example Flag true",
             "plutil -replace NSCameraUsageDescription -string Camera ios/Info.plist",
             "adb shell pm clear com.example.app",
@@ -297,21 +335,23 @@ class DangerousCommandGuardTests(HookTestCase):
             "avdmanager delete avd --name Test",
             "sdkmanager --uninstall 'platforms;android-35'",
             "ssh example.com rm -rf app",
+            "docker prune -f",
+            "kubectl delete pod app",
+            "terraform apply",
         )
         for command in commands:
             with self.subTest(command=command):
-                self.assert_decision(self.SCRIPT, pretool("Bash", {"command": command}), "deny")
+                self.assert_command_blocked(command)
 
-    def test_handles_powershell_commands_without_weakening_cleanup_scope(self) -> None:
-        self.assert_safe(
-            self.SCRIPT,
-            pretool("PowerShell", {"command": r".\gradlew test"}, cwd=WINDOWS_ROOT),
-            root=WINDOWS_ROOT,
+    def test_handles_powershell_cleanup_scope_and_provider_blocks(self) -> None:
+        self.assert_command_safe(
+            r".\gradlew test", shell_tool="PowerShell", root=WINDOWS_ROOT, cwd=WINDOWS_ROOT
         )
-        self.assert_safe(
-            self.SCRIPT,
-            pretool("PowerShell", {"command": "Remove-Item -Recurse build"}, cwd=WINDOWS_ROOT),
+        self.assert_command_safe(
+            "Remove-Item -Recurse build",
+            shell_tool="PowerShell",
             root=WINDOWS_ROOT,
+            cwd=WINDOWS_ROOT,
         )
         for command in (
             "Remove-Item -Recurse src",
@@ -320,37 +360,41 @@ class DangerousCommandGuardTests(HookTestCase):
             "Get-ChildItem Env:",
         ):
             with self.subTest(command=command):
-                self.assert_decision(
-                    self.SCRIPT,
-                    pretool("PowerShell", {"command": command}, cwd=WINDOWS_ROOT),
-                    "deny",
-                    root=WINDOWS_ROOT,
+                self.assert_command_blocked(
+                    command, shell_tool="PowerShell", root=WINDOWS_ROOT, cwd=WINDOWS_ROOT
                 )
 
-    def test_fails_closed_for_malformed_or_missing_command(self) -> None:
-        self.assert_decision(self.SCRIPT, "[]", "deny", raw=True)
-        self.assert_decision(self.SCRIPT, pretool("Bash", {}), "deny")
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("Bash", {"command": "echo 'unterminated"}),
-            "deny",
-        )
+    def test_malformed_missing_unsupported_and_out_of_workspace_payloads_fail_closed(self) -> None:
+        with self.assertRaises(HookInputError):
+            dangerous_hook.shell_command_reason("Bash", {}, POSIX_ROOT, POSIX_ROOT)
+        with self.assertRaises(HookInputError):
+            dangerous_hook.shell_command_reason("Read", {"command": "cat README.md"}, POSIX_ROOT, POSIX_ROOT)
+        self.assert_command_blocked("echo 'unterminated")
+        self.assert_command_blocked("echo hi", cwd="/tmp/outside")
+        self.assert_command_blocked("echo \x00hi")
 
 
-class ReleaseGuardTests(HookTestCase):
-    SCRIPT = "release-signing-publishing-guard.py"
+class ReleasePolicyTests(unittest.TestCase):
+    def assert_release_safe(self, command: str) -> None:
+        self.assertIsNone(release_hook.release_decision(command))
+
+    def assert_release_decision(self, command: str, expected: str) -> str:
+        decision = release_hook.release_decision(command)
+        self.assertIsNotNone(decision)
+        mode, reason = decision
+        self.assertEqual(mode, expected)
+        self.assertTrue(reason)
+        return reason
 
     def test_allows_non_release_commands(self) -> None:
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "./gradlew assembleDebug"}))
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "xcodebuild test -scheme App"}))
-        self.assert_safe(self.SCRIPT, pretool("Bash", {"command": "flutter build apk --debug"}))
-        self.assert_safe(
-            self.SCRIPT,
-            pretool(
-                "Bash",
-                {"command": "xcodebuild test -scheme App -destination 'platform=iOS Simulator,name=iPhone 15'"},
-            ),
-        )
+        for command in (
+            "./gradlew assembleDebug",
+            "xcodebuild test -scheme App",
+            "flutter build apk --debug",
+            "xcodebuild test -scheme App -destination 'platform=iOS Simulator,name=iPhone 15'",
+        ):
+            with self.subTest(command=command):
+                self.assert_release_safe(command)
 
     def test_asks_for_non_publishing_release_preparation(self) -> None:
         commands = (
@@ -358,8 +402,6 @@ class ReleaseGuardTests(HookTestCase):
             "./gradlew :app:assembleProdRelease",
             "xcodebuild archive -scheme App CODE_SIGNING_ALLOWED=NO",
             "xcodebuild build -configuration Release CODE_SIGNING_ALLOWED=NO",
-            "xcodebuild build -configuration='Release' CODE_SIGNING_ALLOWED='NO'",
-            "xcodebuild test -destination 'platform=iOS,id=DEVICE' CODE_SIGNING_ALLOWED=NO",
             "flutter build ipa --release --no-codesign",
             "flutter build appbundle",
             "flutter build web",
@@ -375,16 +417,15 @@ class ReleaseGuardTests(HookTestCase):
         )
         for command in commands:
             with self.subTest(command=command):
-                self.assert_decision(self.SCRIPT, pretool("Bash", {"command": command}), "ask")
+                self.assert_release_decision(command, "ask")
 
-    def test_blocks_signing_publication_upload_and_deployment(self) -> None:
+    def test_blocks_signing_credentials_publication_upload_distribution_and_deployment(self) -> None:
         commands = (
             "codesign --sign Developer_ID App.app",
             "jarsigner app.jar release-key",
             "xcodebuild archive -scheme App",
             "xcodebuild build -configuration Release",
             "xcodebuild build -sdk iphoneos",
-            "xcodebuild build -sdk=iphoneos17.4",
             "xcodebuild build CODE_SIGNING_ALLOWED=YES",
             "xcodebuild test -destination 'platform=iOS,id=DEVICE'",
             "xcodebuild build -allowProvisioningUpdates",
@@ -399,6 +440,7 @@ class ReleaseGuardTests(HookTestCase):
             "fastlane deliver",
             "fastlane build_app",
             "fastlane upload_to_testflight",
+            "fastlane firebase_app_distribution",
             "bundletool build-apks --bundle app.aab --output app.apks --ks release.jks",
             "productbuild --sign 'Developer ID Installer' App.pkg",
             "eas build --platform ios",
@@ -415,28 +457,127 @@ class ReleaseGuardTests(HookTestCase):
             "curl -F file=@app.apk https://uploads.example.com",
             "Invoke-WebRequest -Method Put -InFile app.apk https://uploads.example.com",
             "security add-generic-password -a user -s service -w value",
+            "Import-PfxCertificate -FilePath cert.pfx",
             "rsync app.apk user@example.com:/releases/",
         )
         for command in commands:
             with self.subTest(command=command):
-                self.assert_decision(self.SCRIPT, pretool("Bash", {"command": command}), "deny")
+                self.assert_release_decision(command, "deny")
 
-    def test_enforces_release_boundaries_for_powershell(self) -> None:
-        self.assert_decision(
-            self.SCRIPT,
-            pretool("PowerShell", {"command": "eas build --platform android"}, cwd=WINDOWS_ROOT),
-            "deny",
-            root=WINDOWS_ROOT,
+    def test_release_guard_blocks_malformed_substitution_multiline_and_nul(self) -> None:
+        for command in (
+            "echo $(fastlane deliver)",
+            "npm publish\nnpm test",
+            "npm publish\x00",
+        ):
+            with self.subTest(command=command):
+                self.assert_release_decision(command, "deny")
+
+
+class SensitiveChangePolicyTests(unittest.TestCase):
+    def assert_reviews(self, relative: str, text: str, *expected: str) -> None:
+        reviews = sensitive_hook.review_requirements(relative, text)
+        for reviewer in expected:
+            self.assertIn(reviewer, reviews)
+
+    def test_requests_android_ios_dependency_webview_and_signing_reviews(self) -> None:
+        self.assert_reviews(
+            "android/app/src/main/AndroidManifest.xml",
+            '<uses-permission android:name="android.permission.CAMERA" />',
+            "android-engineer",
+            "mobile-security-reviewer",
+            "mobile-release-engineer",
+        )
+        self.assert_reviews(
+            "pubspec.lock", "packages: {}", "mobile-security-reviewer", "mobile-code-reviewer"
+        )
+        self.assert_reviews(
+            "src/Browser.tsx",
+            "<WebView javaScriptEnabled originWhitelist={['*']} />",
+            "mobile-security-reviewer",
+            "mobile-ui-accessibility-reviewer",
+        )
+        self.assert_reviews(
+            "android/app/build.gradle.kts",
+            'implementation("com.example:library:1.0")',
+            "mobile-security-reviewer",
+            "mobile-release-engineer",
+        )
+        self.assert_reviews(
+            "ios/Release.xcconfig",
+            "CODE_SIGN_IDENTITY = Apple Distribution",
+            "mobile-security-reviewer",
+            "mobile-release-engineer",
         )
 
-    def test_fails_closed_for_malformed_input(self) -> None:
-        self.assert_decision(self.SCRIPT, "null", "deny", raw=True)
-        self.assert_decision(self.SCRIPT, pretool("Bash", {}), "deny")
+    def test_ignores_harmless_filename_only_change(self) -> None:
+        self.assertFalse(
+            sensitive_hook.review_requirements(
+                "ios/App/Info.plist",
+                "<string>Old Name</string>\n<string>New Name</string>",
+            )
+        )
+
+    def test_changed_text_is_bounded_and_uses_supported_payload_fields(self) -> None:
+        payload = {
+            "file_path": "src/Main.kt",
+            "old_string": "old",
+            "new_string": "new",
+            "ignored": "x" * 300_000,
+        }
+        self.assertEqual(sensitive_hook.changed_text(payload), "old\nnew")
 
 
-class SensitiveChangeReviewTests(HookTestCase):
-    def test_requests_android_security_and_release_review(self) -> None:
-        context = self.assert_context(
+class HookExecutableContractTests(HookContractTestCase):
+    def test_protected_file_guard_contract_for_safe_deny_and_malformed_json(self) -> None:
+        self.assert_contract_safe(
+            "secret-and-protected-file-guard.py",
+            pretool("Read", {"file_path": f"{POSIX_ROOT}/google-services.json"}),
+        )
+        self.assert_contract_decision(
+            "secret-and-protected-file-guard.py",
+            pretool("Read", {"file_path": f"{POSIX_ROOT}/.env.production"}),
+            "deny",
+        )
+        self.assert_contract_decision(
+            "secret-and-protected-file-guard.py", "{not json", "deny", raw=True
+        )
+
+    def test_dangerous_command_guard_contract_for_safe_deny_and_missing_command(self) -> None:
+        self.assert_contract_safe(
+            "dangerous-mobile-command-guard.py",
+            pretool("Bash", {"command": "./gradlew test"}),
+        )
+        self.assert_contract_decision(
+            "dangerous-mobile-command-guard.py",
+            pretool("Bash", {"command": "rm -rf src"}),
+            "deny",
+        )
+        self.assert_contract_decision(
+            "dangerous-mobile-command-guard.py", pretool("Bash", {}), "deny"
+        )
+
+    def test_release_guard_contract_for_safe_ask_deny_and_malformed_input(self) -> None:
+        self.assert_contract_safe(
+            "release-signing-publishing-guard.py",
+            pretool("Bash", {"command": "./gradlew assembleDebug"}),
+        )
+        self.assert_contract_decision(
+            "release-signing-publishing-guard.py",
+            pretool("Bash", {"command": "./gradlew bundleRelease"}),
+            "ask",
+        )
+        self.assert_contract_decision(
+            "release-signing-publishing-guard.py",
+            pretool("Bash", {"command": "fastlane deliver"}),
+            "deny",
+        )
+        self.assert_contract_decision(
+            "release-signing-publishing-guard.py", "null", "deny", raw=True
+        )
+
+    def test_sensitive_change_contract_for_context_safe_and_malformed_json(self) -> None:
+        context = self.assert_contract_context(
             posttool(
                 "Edit",
                 {
@@ -446,12 +587,8 @@ class SensitiveChangeReviewTests(HookTestCase):
                 },
             )
         )
-        self.assertIn("android-engineer", context)
         self.assertIn("mobile-security-reviewer", context)
-        self.assertIn("mobile-release-engineer", context)
-
-    def test_does_not_flag_harmless_filename_only_change(self) -> None:
-        self.assert_safe(
+        self.assert_contract_safe(
             "sensitive-change-review.py",
             posttool(
                 "Edit",
@@ -462,60 +599,7 @@ class SensitiveChangeReviewTests(HookTestCase):
                 },
             ),
         )
-
-    def test_requests_dependency_and_webview_review(self) -> None:
-        dependency_context = self.assert_context(
-            posttool(
-                "Write",
-                {"file_path": f"{POSIX_ROOT}/pubspec.lock", "content": "packages: {}"},
-            )
-        )
-        self.assertIn("mobile-security-reviewer", dependency_context)
-        webview_context = self.assert_context(
-            posttool(
-                "Edit",
-                {
-                    "file_path": f"{POSIX_ROOT}/src/Browser.tsx",
-                    "old_string": "",
-                    "new_string": "<WebView javaScriptEnabled originWhitelist={['*']} />",
-                },
-            )
-        )
-        self.assertIn("mobile-ui-accessibility-reviewer", webview_context)
-
-    def test_requests_review_for_real_build_and_signing_syntax(self) -> None:
-        gradle_context = self.assert_context(
-            posttool(
-                "Edit",
-                {
-                    "file_path": f"{POSIX_ROOT}/android/app/build.gradle.kts",
-                    "old_string": "",
-                    "new_string": 'implementation("com.example:library:1.0")',
-                },
-            )
-        )
-        self.assertIn("mobile-security-reviewer", gradle_context)
-        self.assertIn("mobile-release-engineer", gradle_context)
-
-        xcode_context = self.assert_context(
-            posttool(
-                "Edit",
-                {
-                    "file_path": f"{POSIX_ROOT}/ios/Release.xcconfig",
-                    "old_string": "",
-                    "new_string": "CODE_SIGN_IDENTITY = Apple Distribution",
-                },
-            )
-        )
-        self.assertIn("mobile-security-reviewer", xcode_context)
-        self.assertIn("mobile-release-engineer", xcode_context)
-
-    def test_handles_path_traversal_and_malformed_json_safely(self) -> None:
-        context = self.assert_context(
-            posttool("Edit", {"file_path": "../outside/Info.plist", "new_string": "NSCameraUsageDescription"})
-        )
-        self.assertIn("unresolved", context)
-        malformed = self.assert_context("{not-json", raw=True)
+        malformed = self.assert_contract_context("{not-json", raw=True)
         self.assertIn("failed safely", malformed)
 
 

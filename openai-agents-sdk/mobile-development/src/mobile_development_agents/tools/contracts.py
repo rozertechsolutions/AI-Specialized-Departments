@@ -5,11 +5,16 @@ from typing import Protocol
 
 from mobile_development_agents.context import ActionRisk
 from mobile_development_agents.policies.security import (
+    contains_secret,
     redact_secrets,
     validate_relative_project_path,
     validate_shell_command,
 )
-from mobile_development_agents.tools.approvals import ApprovalProvider, ApprovalRequest, require_approval
+from mobile_development_agents.tools.approvals import (
+    ApprovalProvider,
+    ApprovalRequest,
+    require_approval,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,7 +38,7 @@ class ToolHost(Protocol):
 @dataclass(slots=True)
 class GuardedToolHost:
     host: ToolHost
-    approvals: ApprovalProvider
+    approvals: ApprovalProvider | None = None
 
     def read_project_file(self, path: str) -> ToolResult:
         findings = validate_relative_project_path(path)
@@ -46,10 +51,13 @@ class GuardedToolHost:
         findings = validate_relative_project_path(path)
         if any(f.blocked for f in findings):
             return ToolResult(False, "; ".join(f.message for f in findings), "path guard")
-        require_approval(
-            self.approvals,
-            ApprovalRequest("edit project file", ActionRisk.PROJECT_EDIT, f"edit {path}"),
-        )
+        if contains_secret(content):
+            return ToolResult(False, "Edit content appears to contain a secret.", "secret guard")
+        if self.approvals is not None:
+            require_approval(
+                self.approvals,
+                ApprovalRequest("edit project file", ActionRisk.PROJECT_EDIT, f"edit {path}"),
+            )
         result = self.host.edit_project_file(path, content)
         return ToolResult(result.ok, redact_secrets(result.output), result.evidence)
 

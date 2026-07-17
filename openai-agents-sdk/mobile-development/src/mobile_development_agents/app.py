@@ -12,7 +12,6 @@ from mobile_development_agents.outputs import (
     WorkflowResult,
     WorkflowState,
 )
-from mobile_development_agents.tools.approvals import DenyByDefaultApprovalProvider
 from mobile_development_agents.tools.contracts import GuardedToolHost, ToolHost
 from mobile_development_agents.workflows.registry import WorkflowSpec, get_workflow
 
@@ -116,7 +115,7 @@ async def run_workflow(
     from mobile_development_agents.runtime import pending_approval_interruptions
 
     coordinator = build_coordinator_agent(config)
-    guarded_host = GuardedToolHost(host, DenyByDefaultApprovalProvider()) if host is not None else None
+    guarded_host = GuardedToolHost(host) if host is not None else None
     context = SDKWorkflowContext(request=request, tool_host=guarded_host)
     prompt = (
         f"Execute workflow {routed.spec.name}. Primary owner: {routed.primary_owner}. "

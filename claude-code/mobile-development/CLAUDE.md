@@ -72,6 +72,10 @@ Sensitive permission, entitlement, authentication, deep-link, WebView, network-s
 
 Launch Claude Code from this specialization directory so project configuration is discovered. Hooks require Python 3 available as `python3`.
 
+Hook tests are intentionally split between fast in-process policy tests and a minimal set of executable contract tests. The pure tests import deterministic hook functions directly; the contract tests invoke each hook executable only to verify Claude Code stdin/stdout/stderr/exit-code behavior with short explicit timeouts. Manual runtime checks for maintainers, not executed by static correction tasks, are:
+
+- `python3 -m unittest discover -s .claude/hooks/tests`
+
 MCP entries are disabled open-source templates. Project settings reject `firebase`, `figma`, `github`, and `sentry` from `.mcp.json` by default through `disabledMcpjsonServers`; cloning the repository does not start, authenticate, health-check, install, trust, or approve any MCP server. To activate one manually, remove only that server ID from `disabledMcpjsonServers` in a private reviewed setting, trust the workspace in Claude Code, inspect `/mcp`, and approve the server explicitly. To deactivate again, restore the server ID in `disabledMcpjsonServers` or reject/remove it through Claude Code.
 
 Prerequisites are user-installed and outside this repository: Firebase requires a `firebase` CLI available on `PATH` or `FIREBASE_CLI` pointing to a reviewed executable; GitHub token-based activation uses `GITHUB_PERSONAL_ACCESS_TOKEN`; remote OAuth servers such as Figma and Sentry require user-controlled `/mcp` authentication. No mutable package reference or implicit package installation remains.

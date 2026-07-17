@@ -19,6 +19,9 @@
 firebase-service-account*.json
 service-account*.json
 
+# Public mobile client config remains visible for review.
+# Do not ignore google-services.json or GoogleService-Info.plist globally.
+
 # Dependencies and package caches
 node_modules/
 **/node_modules/
