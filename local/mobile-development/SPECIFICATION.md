@@ -20,6 +20,23 @@ The `local/` platform is intentionally model/runtime independent. Ollama, LM Stu
 
 Higher-precedence user/runtime configuration may supply provider endpoints, model IDs, roots, or credentials, but this repository must not contain them.
 
+## Extensibility Policy
+
+Extensibility is allowed only in documented extension locations. Unknown top-level core properties are rejected by schema validation so provider, runtime, or host-specific metadata cannot collide with Local Mobile semantics.
+
+Extensible schemas and locations:
+
+- `local.schema.json`: optional `extensions` for host metadata about discovery or embedding. Core scope, lifecycle, validation, capability negotiation, precedence, and references remain strictly validated.
+- `hook.schema.json`: optional manifest-level and per-hook `extensions` for host hook metadata. Hook mode, source mutation, network use, event type, file name, and fail-safe behavior remain strictly validated.
+- `mcp-server.schema.json`: optional manifest-level and per-server `extensions` for reviewed MCP host metadata. Server examples must remain disabled, sampling and elicitation must remain disabled, external writes require human approval, and credentials must remain `not_configured`.
+- `policy.schema.json`: optional `extensions` for policy metadata, plus `rules`, `guards`, and `audit_logging` maps for policy-specific rule names. Policy identity, classification, approval lists, prohibitions, protected material, and human-control lists remain strictly validated.
+- `provider.schema.json`: optional `extensions` for provider metadata and an extensible `configuration` object for provider/runtime-specific settings such as endpoint, model, executable, context length, and hardware limits. Provider examples must remain disabled, capability discovery must be runtime-based, remote use must require explicit consent, and explicit credential placeholders such as `api_key` must remain null.
+- `tool.schema.json`: optional `extensions` for host metadata about tool contracts. Tool identity, purpose, allowed and denied operations, inputs, outputs, approval requirement, and fail-safe behavior remain strictly validated.
+
+Extension keys must be namespaced with `x_`, `provider_`, `runtime_`, `host_`, or `vendor_`. Core field names are reserved outside those extension objects, preventing naming collisions and accidental override of Local Mobile semantics.
+
+Extensions are metadata only. They cannot override required security, permission, approval, provider, MCP, hook, policy, or fail-safe semantics. If an extension conflicts with a core field, the core field wins and the host must fail closed when the conflict creates ambiguity.
+
 ## Native Capability Classification
 
 Native:

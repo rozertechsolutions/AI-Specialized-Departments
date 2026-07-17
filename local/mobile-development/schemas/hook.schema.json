@@ -2,17 +2,39 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "hook.schema.json",
   "type": "object",
-  "required": ["manifest_type", "classification", "hooks", "fail_safe_behavior"],
+  "required": ["manifest_type", "schema", "classification", "hooks", "fail_safe_behavior"],
   "properties": {
     "manifest_type": {"const": "hooks"},
+    "schema": {"type": "string", "pattern": "^\\.\\./schemas/hook\\.schema\\.json$"},
     "classification": {"enum": ["native", "unsupported"]},
     "hooks": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "file", "event", "mode", "modifies_source", "uses_network"]
-      }
+        "required": ["id", "file", "event", "mode", "modifies_source", "uses_network"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "file": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+\\.py$"},
+          "event": {"enum": ["before_command", "before_file_access", "before_patch"]},
+          "mode": {"const": "inspect_only"},
+          "modifies_source": {"const": false},
+          "uses_network": {"const": false},
+          "extensions": {"$ref": "#/$defs/extensions"}
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "fail_safe_behavior": {"type": "string", "minLength": 1},
+    "extensions": {"$ref": "#/$defs/extensions"}
+  },
+  "$defs": {
+    "extensions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^(x|provider|runtime|host|vendor)_[A-Za-z0-9][A-Za-z0-9_.-]*$"},
+      "additionalProperties": true
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }

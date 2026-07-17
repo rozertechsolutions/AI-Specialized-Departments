@@ -2,11 +2,40 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "policy.schema.json",
   "type": "object",
-  "required": ["manifest_type", "id", "classification"],
+  "required": ["manifest_type", "schema", "id", "classification"],
   "properties": {
     "manifest_type": {"const": "policy"},
+    "schema": {"type": "string", "pattern": "^\\.\\./schemas/policy\\.schema\\.json$"},
     "id": {"type": "string"},
-    "classification": {"enum": ["native", "unsupported"]}
+    "classification": {"enum": ["native", "unsupported"]},
+    "approval_required_for": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "absolute_prohibitions": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "protected_material": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "rules": {"$ref": "#/$defs/policyMap"},
+    "guards": {"$ref": "#/$defs/policyMap"},
+    "audit_logging": {"$ref": "#/$defs/policyMap"},
+    "human_control_required_for": {"$ref": "#/$defs/nonEmptyStringArray"},
+    "extensions": {"$ref": "#/$defs/extensions"}
   },
-  "additionalProperties": true
+  "$defs": {
+    "nonEmptyStringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "policyMap": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": ["boolean", "string", "number"]
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^(x|provider|runtime|host|vendor)_[A-Za-z0-9][A-Za-z0-9_.-]*$"},
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
 }

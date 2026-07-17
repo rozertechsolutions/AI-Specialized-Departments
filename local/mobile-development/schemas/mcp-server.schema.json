@@ -2,9 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "mcp-server.schema.json",
   "type": "object",
-  "required": ["manifest_type", "classification", "servers"],
+  "required": ["manifest_type", "schema", "classification", "servers"],
   "properties": {
     "manifest_type": {"const": "mcp-servers"},
+    "schema": {"type": "string", "pattern": "^\\.\\./schemas/mcp-server\\.schema\\.json$"},
     "classification": {"enum": ["native", "unsupported"]},
     "servers": {
       "type": "array",
@@ -12,11 +13,33 @@
         "type": "object",
         "required": ["id", "enabled", "transport", "credentials"],
         "properties": {
-          "enabled": {"const": false}
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "enabled": {"const": false},
+          "transport": {"enum": ["stdio", "http", "sse"]},
+          "command": {"type": ["string", "null"]},
+          "args": {"type": "array", "items": {"type": "string"}},
+          "roots": {"type": "array", "items": {"type": "string"}},
+          "tools": {"type": "array", "items": {"type": "string"}},
+          "resources": {"type": "array", "items": {"type": "string"}},
+          "prompts": {"type": "array", "items": {"type": "string"}},
+          "sampling": {"const": "disabled"},
+          "elicitation": {"const": "disabled"},
+          "external_writes": {"const": "prohibited_until_human_approved"},
+          "credentials": {"const": "not_configured"},
+          "notes": {"type": "string", "minLength": 1},
+          "extensions": {"$ref": "#/$defs/extensions"}
         },
-        "additionalProperties": true
+        "additionalProperties": false
       }
+    },
+    "extensions": {"$ref": "#/$defs/extensions"}
+  },
+  "$defs": {
+    "extensions": {
+      "type": "object",
+      "propertyNames": {"pattern": "^(x|provider|runtime|host|vendor)_[A-Za-z0-9][A-Za-z0-9_.-]*$"},
+      "additionalProperties": true
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }
