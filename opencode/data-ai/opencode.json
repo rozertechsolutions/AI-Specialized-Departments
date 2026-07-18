@@ -1,0 +1,41 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "ask",
+    "bash": "deny",
+    "webfetch": "deny",
+    "edit": "ask"
+  },
+  "agent": {
+    "data-ai-orchestrator": {
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/data-ai-orchestrator.md}",
+      "permission": { "edit": "ask", "bash": "deny", "webfetch": "deny" }
+    },
+    "data-ai-solution-governance-reviewer": {
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/data-ai-solution-governance-reviewer.md}",
+      "permission": { "edit": "deny", "bash": "deny", "webfetch": "deny" }
+    },
+    "data-architecture-dataset-reviewer": {
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/data-architecture-dataset-reviewer.md}",
+      "permission": { "edit": "deny", "bash": "deny", "webfetch": "deny" }
+    },
+    "data-platform-analytics-reviewer": {
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/data-platform-analytics-reviewer.md}",
+      "permission": { "edit": "deny", "bash": "deny", "webfetch": "deny" }
+    },
+    "ml-genai-evaluation-reviewer": {
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/ml-genai-evaluation-reviewer.md}",
+      "permission": { "edit": "deny", "bash": "deny", "webfetch": "deny" }
+    },
+    "ops-risk-assurance-reviewer": {
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/ops-risk-assurance-reviewer.md}",
+      "permission": { "edit": "deny", "bash": "deny", "webfetch": "deny" }
+    }
+  }
+}
