@@ -1,19 +1,14 @@
-# Native Configuration Sources
+# Native Sources
 
-Official sources checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Cline Config: `https://docs.cline.bot/getting-started/config`.
-- Cline Rules: `https://docs.cline.bot/customization/cline-rules`.
-- Cline Skills: `https://docs.cline.bot/customization/skills`.
-- Cline Subagents: `https://docs.cline.bot/features/subagents`.
-- Cline Hooks: `https://docs.cline.bot/customization/hooks`.
-- Cline `.clineignore`: `https://docs.cline.bot/customization/clineignore`.
+Official sources consulted:
 
-## Current native surface
+- Cline documentation: Rules.
+- Cline documentation: Skills.
+- Cline documentation: Workflows.
+- Cline documentation: Hooks.
+- Cline documentation: Subagents.
+- Cline documentation: MCP and configuration.
 
-Cline supports project configuration under `.cline/`, including project rules, skills, hooks, agents, plugins, and cron specs. Rules provide persistent instructions. Skills are directories with required `SKILL.md` files and YAML frontmatter. Subagents are experimental read-only research agents that cannot edit files, access MCP servers, use the browser, or spawn nested subagents.
-
-## Implementation decision
-
-This package uses project rules and project Skills only. Hooks and plugins are omitted because they can execute code. MCP and connectors are omitted because this area must not connect external systems. Project agent definitions are omitted because the stable role behavior needed here is covered by rules and Skills, while documented subagents are read-only research behavior rather than persistent production role files.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

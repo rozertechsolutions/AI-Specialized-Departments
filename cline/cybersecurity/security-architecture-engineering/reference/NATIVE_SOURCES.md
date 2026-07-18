@@ -1,14 +1,14 @@
-# Native Source Verification
+# Native Sources
 
-Official sources checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Cline config: `https://docs.cline.bot/getting-started/config`
-- Cline rules: `https://docs.cline.bot/customization/cline-rules`
-- Cline Skills: `https://docs.cline.bot/customization/skills`
-- Cline subagents: `https://docs.cline.bot/features/subagents`
+Official sources consulted:
 
-## Decisions
+- Cline documentation: Rules.
+- Cline documentation: Skills.
+- Cline documentation: Workflows.
+- Cline documentation: Hooks.
+- Cline documentation: Subagents.
+- Cline documentation: MCP and configuration.
 
-- Workspace rule instructions are represented with a Cline rule file.
-- Project Skills are represented under `.cline/skills/<skill-name>/SKILL.md`.
-- Hooks, MCP, plugins, cron, connectors, command permissions, and executable artifacts are omitted because this static package must not run code or connect tools.
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

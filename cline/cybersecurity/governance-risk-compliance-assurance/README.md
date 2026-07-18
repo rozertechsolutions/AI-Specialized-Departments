@@ -1,17 +1,14 @@
-# Cybersecurity Governance, Risk, Compliance & Assurance for Cline
+# Governance, Risk, Compliance, and Assurance
 
-This package defines Cline project configuration for Cybersecurity Governance, Risk, Compliance & Assurance.
+This package is a static, organization-neutral cybersecurity configuration for Governance, Risk, Compliance, and Assurance. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Native mechanisms used
+## Professional Coverage
 
-- `.cline/rules/grc-governance.md` for persistent project instructions.
-- `.cline/skills/*/SKILL.md` for reusable, on-demand procedures and workflow support.
+- Workflows covered: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+- Native roles: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+- Reusable Skills or procedures: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-## Unsupported or omitted mechanisms
+## Evidence Standard
 
-No hooks, plugins, MCP configuration, cron jobs, scripts, or project agent definitions are included. Cline subagents are treated as optional read-only research behavior controlled by Cline, not as persistent role definitions in this package.
-
-## Safety baseline
-
-This area must not approve strategy, publish policy, accept risk, grant exceptions, approve suppliers, make final legal determinations, claim compliance or certification, close critical findings by self-review, contact external parties, scan systems, retrieve secrets, connect to security tools, or modify live systems.
-
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.
