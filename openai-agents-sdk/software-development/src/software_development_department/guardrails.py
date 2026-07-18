@@ -2,30 +2,36 @@ from __future__ import annotations
 
 from agents import GuardrailFunctionOutput, RunContextWrapper, input_guardrail, output_guardrail
 
-from .policies import requires_human_approval
+from .models import LeadFinalRecord, ProposedToolAction
+from .policies import action_requires_human_approval, final_record_is_supported, keyword_mentions_are_allowed
 
 
 @input_guardrail
-async def sensitive_action_guardrail(
+async def legitimate_task_guardrail(
     context: RunContextWrapper[object], agent: object, input_data: str | list[object]
 ) -> GuardrailFunctionOutput:
     text = input_data if isinstance(input_data, str) else repr(input_data)
-    triggered = requires_human_approval(text)
+    allowed = keyword_mentions_are_allowed(text)
     return GuardrailFunctionOutput(
-        output_info={"requires_human_approval": triggered},
-        tripwire_triggered=triggered,
+        output_info={"keyword_mentions_allowed": allowed},
+        tripwire_triggered=not allowed,
+    )
+
+
+def proposed_action_guardrail(action: ProposedToolAction) -> GuardrailFunctionOutput:
+    needs_approval = action_requires_human_approval(action)
+    return GuardrailFunctionOutput(
+        output_info={"requires_human_approval": needs_approval, "action_type": action.action_type.value},
+        tripwire_triggered=needs_approval,
     )
 
 
 @output_guardrail
-async def unsupported_completion_claim_guardrail(
+async def evidence_and_self_review_guardrail(
     context: RunContextWrapper[object], agent: object, output_data: object
 ) -> GuardrailFunctionOutput:
-    text = repr(output_data).casefold()
-    suspicious = any(phrase in text for phrase in (
-        "tests passed" , "build succeeded", "deployed successfully", "released successfully"
-    )) and "evidence" not in text
+    supported = isinstance(output_data, LeadFinalRecord) and final_record_is_supported(output_data)
     return GuardrailFunctionOutput(
-        output_info={"unsupported_completion_claim": suspicious},
-        tripwire_triggered=suspicious,
+        output_info={"typed_final_record": isinstance(output_data, LeadFinalRecord), "evidence_supported": supported},
+        tripwire_triggered=not supported,
     )
