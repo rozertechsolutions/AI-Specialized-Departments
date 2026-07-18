@@ -1,17 +1,14 @@
-# Native Source Verification
+# Native Sources
 
-Official sources checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Gemini CLI README: `https://github.com/google-gemini/gemini-cli`
-- Configuration: `https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/configuration.md`
-- Context files: `https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/gemini-md.md`
-- Subagents: `https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/subagents.md`
-- Skills: `https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/skills.md`
+Official sources consulted:
 
-## Decisions
+- Official google-gemini/gemini-cli documentation index.
+- Gemini CLI configuration reference.
+- Gemini CLI extensions documentation.
+- Gemini CLI Agent Skills documentation.
+- Gemini CLI subagents documentation.
+- Gemini CLI hooks and MCP documentation.
 
-- `GEMINI.md` is used for project context.
-- `.gemini/agents/*.md` is used for project subagents.
-- `.gemini/skills/*/SKILL.md` is used for reusable Skills.
-- MCP, tool discovery commands, shell wrappers, and executable automation are omitted because this static package must not execute or connect anything.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.
