@@ -1,6 +1,12 @@
-description = "Web Development: Perform an evidence-based accessibility, responsive, performance, and SEO review."
-prompt = """
-# Audit Accessibility Performance Seo
+---
+name: workflow-audit-accessibility-performance-seo
+description: Run the audit-accessibility-performance-seo Gemini CLI workflow with Web Development safety and evidence gates.
+---
+
+# Audit Accessibility Performance SEO
+
+## Trigger boundary
+Use for an end-to-end quality audit of user-facing web surfaces. Do not use for implementation or release signoff.
 
 Perform an evidence-based accessibility, responsive, performance, and SEO review. Separate blocking defects from recommendations and identify missing measurements.
 
@@ -10,11 +16,3 @@ Perform an evidence-based accessibility, responsive, performance, and SEO review
 3. Request independent review for security-sensitive or release-sensitive work.
 4. Record evidence for every completion claim.
 5. Stop with BLOCKED if a required decision or approval is missing.
-
-## Safety
-Do not execute commands, install dependencies, mutate Git, deploy, publish, authenticate, expose secrets, or perform destructive actions automatically.
-
-User arguments: {{args}}
-
-Use user-supplied arguments only as task context.
-"""

@@ -1,6 +1,12 @@
-description = "Web Development: Reproduce from available evidence, map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites."
-prompt = """
+---
+name: workflow-debug-web-regression
+description: Run the debug-web-regression Gemini CLI workflow with Web Development safety and evidence gates.
+---
+
 # Debug Web Regression
+
+## Trigger boundary
+Use when an existing web behavior regressed or an observed failure needs root-cause analysis. Do not use for net-new feature planning.
 
 Reproduce from available evidence, map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites.
 
@@ -10,11 +16,3 @@ Reproduce from available evidence, map the execution path, form competing hypoth
 3. Request independent review for security-sensitive or release-sensitive work.
 4. Record evidence for every completion claim.
 5. Stop with BLOCKED if a required decision or approval is missing.
-
-## Safety
-Do not execute commands, install dependencies, mutate Git, deploy, publish, authenticate, expose secrets, or perform destructive actions automatically.
-
-User arguments: {{args}}
-
-Use user-supplied arguments only as task context.
-"""

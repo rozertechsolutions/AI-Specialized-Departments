@@ -1,6 +1,12 @@
-description = "Web Development: Evaluate every proposed dependency or third-party script for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost."
-prompt = """
+---
+name: workflow-review-dependencies
+description: Run the review-dependencies Gemini CLI workflow with Web Development safety and evidence gates.
+---
+
 # Review Dependencies
+
+## Trigger boundary
+Use when dependency metadata, package manager files, external scripts, SDKs, plugins, or CDN assets change. Do not use to approve a package without evidence.
 
 Evaluate every proposed dependency or third-party script for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
 
@@ -10,11 +16,3 @@ Evaluate every proposed dependency or third-party script for necessity, provenan
 3. Request independent review for security-sensitive or release-sensitive work.
 4. Record evidence for every completion claim.
 5. Stop with BLOCKED if a required decision or approval is missing.
-
-## Safety
-Do not execute commands, install dependencies, mutate Git, deploy, publish, authenticate, expose secrets, or perform destructive actions automatically.
-
-User arguments: {{args}}
-
-Use user-supplied arguments only as task context.
-"""
