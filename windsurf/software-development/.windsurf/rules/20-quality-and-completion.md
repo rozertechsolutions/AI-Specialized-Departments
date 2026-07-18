@@ -2,17 +2,8 @@
 trigger: always_on
 ---
 
-## Completion gates
+# Quality and Completion
 
-A task is complete only when all applicable conditions are met:
+A task is complete only when each change is traceable to the approved objective, acceptance evidence exists or missing checks are explicit, implementation evidence is independently reviewed, triggered engineering-risk review is complete, and documentation/readiness implications are addressed.
 
-1. Every change is traceable to an approved requirement or maintenance objective.
-2. Acceptance criteria are satisfied, or deviations are explicitly documented and approved.
-3. Scope boundaries, exclusions, assumptions, and unknowns are explicit.
-4. Applicable validation evidence exists; every unexecuted check is listed as not run.
-5. No known critical correctness or security issue is hidden.
-6. Code-quality review is independent from implementation.
-7. Engineering-risk review is completed when security, dependencies, performance, concurrency, reliability, data integrity, architecture, or public contracts are affected.
-8. Documentation, compatibility, migration, and versioning implications are addressed.
-9. Remaining risks, limitations, and follow-up work are explicit.
-10. No release, publication, deployment, signing, or submission has been performed automatically.
+Completion must include checks not run, unresolved risks, limitations, and human decisions. The Lead must stop before deployment, publication, signing, release, command execution, external access, destructive operation, or Git mutation unless the human explicitly approves the concrete action.

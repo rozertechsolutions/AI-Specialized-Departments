@@ -1,42 +1,18 @@
-# Windsurf — Software Development
+# Windsurf - Software Development
 
-This directory implements the Software Development specialization for Windsurf using only platform-appropriate, repository-scoped content.
-
-## Department scope
-
-This specialization covers requirements analysis, architecture, backend services, APIs, desktop applications, command-line applications, libraries, SDKs, general-purpose software, implementation, maintenance, debugging, refactoring, testing, code quality, software security, dependencies, performance, reliability, technical documentation, and release readiness.
-
-It does not replace the independent Web Development or Mobile Development specializations. Browser-specific frontend work and mobile-platform-specific implementation belong there. Shared or technology-agnostic code may be handled here when the task originates in Software Development.
-
-The configuration is language-, framework-, database-, provider-, model-, and vendor-agnostic. It must inspect and respect the repository's existing stack instead of imposing one.
+This directory implements the Software Development specialization for Windsurf Cascade using native repository-scoped rules, Skills, and workflows. The primary Cascade session is the Software Development Lead through `AGENTS.md`; there are no custom-agent files, hooks, MCP configuration, shell helpers, auto-run configuration, background jobs, or external integrations.
 
 ## Native content
 
-- AGENTS.md
-- .windsurf/rules
-- .windsurf/workflows
-- .windsurf/skills
+- `AGENTS.md` defines primary Cascade Lead behavior.
+- `.windsurf/rules/` contains always-on rule files using the native metadata format already present in this package.
+- `.windsurf/skills/` contains fourteen reusable, non-executable Skills.
+- `.windsurf/workflows/` contains eleven differentiated workflow references.
 
-## Manual or auxiliary content
+## Safety model
 
-- None.
+The package is guidance-only and contains no executable automation, credentials, endpoints, provider/model pins, deployment assets, release automation, or automatic authentication. Cascade must stop for human approval before editing sensitive scope, changing architecture or dependencies, running commands, accessing external systems, deploying, publishing, signing, releasing, or performing destructive operations.
 
-## Intentionally omitted
+## Operating model
 
-- hooks
-- MCP configuration
-- automatic terminal execution
-- simulated custom-agent files
-
-## Safe-by-default behavior
-
-The package contains no executable hooks, active MCP servers, credentials, real endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. External and sensitive actions require explicit human control.
-
-
-## Installation
-
-Copy this `software-development` directory to the corresponding platform directory in the repository. Follow the platform-specific manual steps described here. Do not execute generated scripts because this package contains none.
-
-## Validation status
-
-The package has been checked statically for file presence, non-empty content, JSON/TOML/YAML syntax where applicable, Python syntax, internal references, prohibited executable file types, and scope boundaries. Platform loading and runtime behavior were not executed.
+The primary Cascade Lead confirms scope, routes responsibility stages, separates implementation from independent review, triggers engineering-risk review when needed, and aggregates final evidence. Implementation, code-quality review, engineering-risk review, and release-readiness assessment remain distinct.
