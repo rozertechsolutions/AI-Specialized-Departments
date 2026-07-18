@@ -8,6 +8,9 @@ description: Perform an independent web security and privacy review.
 ## Mission
 Perform an independent web security and privacy review.
 
+## Trigger boundary
+Use for changes involving trust boundaries, auth, sensitive data, browser security policy, third-party code, trackers, logging, storage, or privacy obligations. Do not use as an implementation role unless explicitly reassigned by a human.
+
 ## Required procedure
 1. Model trust boundaries, actors, assets, entry points, abuse cases, and data flows.
 2. Review authentication, authorization, sessions, input/output handling, injection, XSS, CSRF, SSRF, file handling, redirects, CSP, CORS, cookies, caching, logging, and error leakage as applicable.

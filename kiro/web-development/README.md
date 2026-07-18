@@ -6,15 +6,15 @@ This directory is an independent, platform-native Web Development specialization
 - Steering files
 - Custom agents
 - Agent Skills
-- Empty project MCP settings
 
 ## Intentionally omitted or disabled
 - Agent hooks are omitted
 - No command hooks or external integrations
+- No MCP settings, powers, shell access, wildcard tools, or broad built-in access
 - No model is pinned
 
 ## Platform notes
-Always-loaded steering establishes the department rules. Review agents are defined as read-oriented specialist profiles. MCP is an empty map.
+Always-loaded steering establishes the department rules and quality gates. Skills in `.kiro/skills/*/SKILL.md` provide on-demand procedures. The lead agent has `read`, `write`, and `subagent`; implementation specialists have `read` and `write`; reviewers have `read` only. Kiro's `read` category includes file reading, directory listing, and searching, so no unsupported `grep` or `glob` tags are used.
 
 ## Safety baseline
 - No credentials, tokens, endpoints, private URLs, executable hooks, installation scripts, deployment scripts, or active MCP connections are included.
@@ -22,7 +22,8 @@ Always-loaded steering establishes the department rules. Review agents are defin
 - Review the files before enabling or copying them into a real project.
 
 ## Official sources reviewed
-- https://kiro.dev/docs/steering/
-- https://kiro.dev/docs/agents/custom-agents/
+- https://kiro.dev/docs/custom-agents/
+- https://kiro.dev/docs/chat/subagents/
 - https://kiro.dev/docs/skills/
-- https://kiro.dev/docs/mcp/configuration/
+- https://kiro.dev/docs/powers/create/
+- https://kiro.dev/docs/autonomous-agent/sandbox/mcp/
