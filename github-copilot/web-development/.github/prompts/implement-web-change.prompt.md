@@ -1,11 +1,19 @@
 ---
 description: Web Development implement web change workflow
-agent: web-development-lead
 ---
 
 # Implement Web Change
 
 Validate scope, use the relevant specialist role, make only requested repository changes, preserve native conventions, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
+
+## Expected input
+Requested behavior, acceptance criteria, affected files or surfaces, prohibited changes, and verification expectations.
+
+## Recommended agent
+Use `web-development-lead` for multi-surface work, `frontend-specialist` for browser-facing changes, or `backend-api-specialist` for server/API changes.
+
+## Output and evidence
+Return changed files, behavior, direct verification evidence, unresolved risks, required reviews, and checks marked PASS, FAIL, BLOCKED, NOT APPLICABLE, or NOT EXECUTED.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

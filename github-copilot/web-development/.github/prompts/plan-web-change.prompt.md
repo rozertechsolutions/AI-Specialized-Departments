@@ -1,11 +1,19 @@
 ---
 description: Web Development plan web change workflow
-agent: web-development-lead
 ---
 
 # Plan Web Change
 
 Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+
+## Expected input
+Goal, constraints, affected product surfaces, known risks, deadline or sequencing needs, and any prohibited changes.
+
+## Recommended agent
+Use `web-development-lead` for coordination or `web-architecture-specialist` when material architecture decisions are expected.
+
+## Output and evidence
+Return confirmed facts, assumptions, decision points, phased plan, required reviews, validation gates, and checks marked PASS, FAIL, BLOCKED, NOT APPLICABLE, or NOT EXECUTED.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

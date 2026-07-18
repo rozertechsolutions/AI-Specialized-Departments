@@ -1,11 +1,19 @@
 ---
 description: Web Development review api and auth workflow
-agent: web-development-lead
 ---
 
 # Review Api And Auth
 
 Review API contracts, validation, authentication, authorization, session and token handling, data access, rate limits, error leakage, and negative tests. Return findings without self-approval.
+
+## Expected input
+API routes, auth/session behavior, data flows, contracts, relevant files, and expected negative paths.
+
+## Recommended agent
+Use `backend-api-specialist` for implementation review context, and require `security-privacy-reviewer` for sensitive or authz-impacting changes.
+
+## Output and evidence
+Return findings with severity, affected files or flows, evidence, remediation criteria, residual risk, and checks marked PASS, FAIL, BLOCKED, NOT APPLICABLE, or NOT EXECUTED.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
