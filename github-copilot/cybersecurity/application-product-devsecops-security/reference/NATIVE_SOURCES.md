@@ -1,14 +1,14 @@
-# Native Source Verification
+# Native Sources
 
-Official GitHub Docs checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Repository custom instructions: `https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions`
-- Cloud agent environment customization: `https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment`
-- Cloud agent MCP: `https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/extend-cloud-agent-with-mcp`
+Official sources consulted:
 
-## Decisions
+- GitHub Docs: repository custom instructions.
+- GitHub Docs: custom agents configuration.
+- GitHub Docs: Agent Skills.
+- GitHub Docs: prompt files.
+- GitHub Docs: hooks for Copilot coding agent.
+- GitHub Docs: customization cheat sheet.
 
-- `.github/copilot-instructions.md` is used for repository custom instructions.
-- `.github/agents/*.agent.md` and `.github/skills/*/SKILL.md` are used for native Copilot agent customization.
-- MCP, Actions workflows, environment setup, hooks, executable scripts, and external integrations are omitted because this package is static and must not execute or connect anything.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.
