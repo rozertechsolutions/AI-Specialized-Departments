@@ -2,6 +2,12 @@
 
 Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, BLOCKED, or NOT APPLICABLE. Never deploy or publish.
 
+## Expected input
+Acceptance criteria, changed files, role handoffs, review outcomes, validation evidence, known exclusions, and release constraints.
+
+## Output and evidence
+Return final PASS, FAIL, or BLOCKED verdict with gate-by-gate evidence, unresolved risks, required human approvals, and NOT EXECUTED checks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

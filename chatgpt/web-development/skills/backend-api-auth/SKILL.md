@@ -19,6 +19,7 @@ Plan or review backend, API, authentication, authorization, session, and persist
 - Current API routes or schemas, auth/session model, storage model, user roles, trust boundaries, error contract, integration requirements, and relevant files or logs.
 
 ## Procedure
+
 1. Define inputs, validation, authorization, side effects, idempotency, errors, observability, and data retention.
 2. Enforce authorization server-side; never trust client claims.
 3. Use secure cookie, token, CORS, CSRF, rate-limit, and secret-handling practices appropriate to the stack.

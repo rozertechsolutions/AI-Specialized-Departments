@@ -14,5 +14,7 @@ Validate scope, use the relevant specialist role, make only requested repository
 ## Safety
 Do not execute commands, install dependencies, mutate Git, deploy, publish, authenticate, expose secrets, or perform destructive actions automatically.
 
-Use any user-supplied arguments only as task context.
+User arguments: {{args}}
+
+Use user-supplied arguments only as task context.
 """

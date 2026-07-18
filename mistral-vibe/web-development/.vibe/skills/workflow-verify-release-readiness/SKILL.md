@@ -1,11 +1,23 @@
 ---
 name: workflow-verify-release-readiness
-description: Run the verify-release-readiness workflow with evidence and safety gates.
+description: "Guide release-readiness verification without deploying or publishing."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Verify Release Readiness
 
-Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, BLOCKED, or NOT APPLICABLE. Never deploy or publish.
+Use this slash-command Skill to guide release-readiness verification. Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, BLOCKED, or NOT APPLICABLE. Never deploy or publish.
+
+## Expected input
+Acceptance criteria, changed files, role handoffs, review outcomes, validation evidence, known exclusions, and release constraints.
+
+## Expected output
+Final PASS, FAIL, or BLOCKED verdict with gate-by-gate evidence, unresolved risks, required human approvals, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

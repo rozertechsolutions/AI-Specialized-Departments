@@ -8,6 +8,9 @@ description: Create a proportionate architecture decision for a web change.
 ## Mission
 Create a proportionate architecture decision for a web change.
 
+## Trigger boundary
+Use when a material design choice affects boundaries, contracts, rendering strategy, data flow, migration, or rollback. Do not use for routine implementation details that already follow existing patterns.
+
 ## Required procedure
 1. Start from verified requirements and the discovered stack.
 2. Compare at least two viable approaches when the decision is material.

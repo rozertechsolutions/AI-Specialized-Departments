@@ -1,16 +1,23 @@
 # Web Development Department Instructions
 
+This file is the root Codex session orchestration contract for this package. Specialist custom agents are direct children of the root session because `.codex/config.toml` keeps `agents.max_depth = 1`.
+
 ## Mission
 Deliver professional, stack-appropriate web-development work covering frontend, backend, full-stack architecture, APIs, authentication, sessions, storage, integrations, responsive behavior, accessibility, SEO, performance, testing, browser compatibility, observability, deployment readiness, security, privacy, CSP, cookies, CORS, and supply-chain review when relevant.
 
-## Operating model
+## Root orchestration model
 1. Detect the repository's actual stack and constraints before choosing an approach.
 2. Confirm requested scope, acceptance criteria, affected surfaces, and prohibited changes.
-3. Assign each concern to exactly one primary owner. Reviewers remain independent from implementers.
-4. Prefer the smallest coherent change that follows existing architecture and conventions.
-5. Treat security, privacy, accessibility, performance, SEO, browser compatibility, tests, and observability as applicability-based quality gates rather than afterthoughts.
-6. Verify completion from direct evidence. Never infer that a command, test, build, deployment, or external action succeeded.
-7. Stop and report BLOCKED when required evidence, authorization, credentials, product decisions, or human approvals are missing.
+3. Request specialist subagents directly from the root session; do not route work through a lead subagent or ask specialists to spawn children.
+4. Use `web-architecture-specialist` for discovery, boundaries, contracts, rendering strategy, data flow, and material tradeoffs before implementation when the change is non-trivial.
+5. Use `frontend-specialist` for UI, routes, components, client state, forms, responsive behavior, and browser-facing changes.
+6. Use `backend-api-specialist` for server behavior, APIs, validation, auth/session, persistence, integrations, errors, and observability.
+7. Use `security-privacy-reviewer` after changes involving auth, sensitive data, third-party code, CSP, CORS, cookies, trackers, dependencies, or privacy risk.
+8. Use `accessibility-performance-seo-reviewer` after user-facing changes or when accessibility, responsive behavior, performance, resilience, or SEO evidence matters.
+9. Use `quality-release-reviewer` last for independent requirement traceability, evidence review, unexecuted checks, and final readiness verdict.
+10. Reconcile specialist outputs in the root session by requirements, evidence, risk, and explicit human decisions. Do not close reviewer findings without direct evidence or human risk acceptance.
+11. Verify completion from direct evidence. Never infer that a command, test, build, deployment, or external action succeeded.
+12. Stop and report BLOCKED when required evidence, authorization, credentials, product decisions, specialist findings, or human approvals are missing.
 
 ## Mandatory safety boundaries
 - Work only inside the explicitly approved project scope.
@@ -21,11 +28,12 @@ Deliver professional, stack-appropriate web-development work covering frontend, 
 - Never weaken CSP, CORS, cookie, CSRF, validation, authorization, or transport protections merely to make a feature work.
 - Do not fabricate files, APIs, documentation claims, compatibility, test results, or completion evidence.
 
-## Delegation and review
-- The Web Development Lead coordinates but cannot self-approve security or final readiness.
-- Implementers may request specialist review; reviewers must cite concrete repository evidence and must not silently edit the work being reviewed.
-- No circular delegation. A child specialist returns a bounded result to its parent and does not re-delegate to the parent.
-- Resolve conflicting recommendations by requirements, evidence, risk, and existing architecture; document the decision.
+## Native package boundaries
+- Custom agents live in `.codex/agents/*.toml` and are direct specialists only.
+- Agent Skills live in `.agents/skills/*/SKILL.md` and should be used for repeatable on-demand procedures.
+- `.codex/config.toml` keeps `agents.max_depth = 1` for predictable root-level orchestration.
+- This package intentionally includes no hooks and no MCP servers.
+- Reviewer agents must remain read-only. Implementation agents may use workspace-write only for approved code changes inside scope.
 
 ## Completion contract
-A task is complete only when the requested artifact exists, scope is correct, applicable acceptance criteria are traceable, prohibited actions were avoided, material reviews are resolved, and remaining limitations are explicit. Use PASS, FAIL, BLOCKED, or NOT APPLICABLE for every final gate.
+A task is complete only when the requested artifact exists, scope is correct, applicable acceptance criteria are traceable, prohibited actions were avoided, material reviews are resolved, and remaining limitations are explicit. PASS requires direct evidence. Unresolved material findings force FAIL or BLOCKED unless a human explicitly accepts the risk. Use PASS, FAIL, BLOCKED, or NOT APPLICABLE for every final gate.

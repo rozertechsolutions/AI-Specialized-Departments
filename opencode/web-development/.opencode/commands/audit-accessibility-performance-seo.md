@@ -1,11 +1,18 @@
 ---
-description: Web Development audit accessibility performance seo workflow
+description: Guide accessibility, responsive, performance, and SEO review through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Audit Accessibility Performance Seo
 
-Perform an evidence-based accessibility, responsive, performance, and SEO review. Separate blocking defects from recommendations and identify missing measurements.
+Coordinate an evidence-based accessibility, responsive, performance, and SEO review. The lead may invoke `accessibility-performance-seo-reviewer` through the Task tool and must keep final reconciliation in the primary context.
+
+## Expected input
+Files, feature area, URL or component names, acceptance criteria, supported browsers, and any measurements already available.
+
+## Required output
+Return prioritized findings with severity, affected users, evidence, acceptance criteria, measurement gaps, unresolved risks, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

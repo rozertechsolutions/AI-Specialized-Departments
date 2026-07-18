@@ -19,6 +19,7 @@ Produce a final, evidence-based release-readiness assessment. This Skill never d
 - Requirements, implementation summary, changed files, test/build/browser/security/accessibility/performance evidence, deployment plan, rollback plan, monitoring plan, and unresolved findings.
 
 ## Procedure
+
 1. Trace requirements to implementation and verification evidence.
 2. Confirm security, privacy, accessibility, performance, SEO, tests, browser support, observability, migration, rollback, and documentation status as applicable.
 3. Block readiness for unresolved critical findings, missing required evidence, secret exposure, or unauthorized scope changes.

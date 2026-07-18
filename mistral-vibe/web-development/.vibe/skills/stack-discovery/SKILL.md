@@ -1,12 +1,21 @@
 ---
 name: stack-discovery
-description: Detect and document the actual web stack before proposing changes.
+description: "Detect and document the actual web stack before proposing changes."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Stack Discovery
 
 ## Mission
 Detect and document the actual web stack before proposing changes.
+
+## Vibe invocation
+Invoke with `/stack-discovery` before planning or implementing changes in an unfamiliar repository. This Skill is read-only discovery guidance.
 
 ## Required procedure
 1. Inspect only files within the approved project scope.

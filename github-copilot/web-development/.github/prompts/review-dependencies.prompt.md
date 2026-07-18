@@ -1,11 +1,19 @@
 ---
 description: Web Development review dependencies workflow
-agent: web-development-lead
 ---
 
 # Review Dependencies
 
 Evaluate every proposed dependency or third-party script for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
+
+## Expected input
+Package names, version changes, lockfile or manifest changes, external scripts, SDKs, plugins, CDN assets, and intended use.
+
+## Recommended agent
+Use `security-privacy-reviewer` for independent supply-chain risk review.
+
+## Output and evidence
+Return approve, reject, or human-review-required with evidence, affected files, runtime impact, unresolved risk, and checks marked PASS, FAIL, BLOCKED, NOT APPLICABLE, or NOT EXECUTED.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

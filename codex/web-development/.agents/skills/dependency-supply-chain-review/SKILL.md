@@ -8,6 +8,9 @@ description: Review proposed or changed web dependencies and third-party code.
 ## Mission
 Review proposed or changed web dependencies and third-party code.
 
+## Trigger boundary
+Use before adding, upgrading, replacing, removing, or externally loading packages, scripts, SDKs, build plugins, or CDN assets. Do not use when no dependency or third-party executable input is changing.
+
 ## Required procedure
 1. Confirm necessity, maintenance status, licensing compatibility, provenance, transitive impact, bundle/runtime cost, and known security concerns using authoritative sources.
 2. Reject dependency additions that duplicate existing capability without clear value.

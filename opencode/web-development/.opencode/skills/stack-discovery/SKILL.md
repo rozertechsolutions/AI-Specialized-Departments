@@ -8,6 +8,9 @@ description: Detect and document the actual web stack before proposing changes.
 ## Mission
 Detect and document the actual web stack before proposing changes.
 
+## OpenCode invocation
+Load this Skill through OpenCode's native `skill` tool before planning or implementation in an unfamiliar repository. This Skill is read-only discovery guidance.
+
 ## Required procedure
 1. Inspect only files within the approved project scope.
 2. Identify languages, frameworks, package managers, runtime versions, build systems, test tools, deployment descriptors, browser targets, and existing conventions from evidence.

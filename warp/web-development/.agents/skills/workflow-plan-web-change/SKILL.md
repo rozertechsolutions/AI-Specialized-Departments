@@ -1,11 +1,17 @@
 ---
 name: workflow-plan-web-change
-description: Run the plan-web-change workflow without automatic terminal execution.
+description: Guide web change planning for local Warp agents.
 ---
 
 # Plan Web Change
 
-Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+Guide planning in the active local Warp conversation. Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+
+## Expected input
+Goal, constraints, affected product surfaces, known risks, prohibited changes, and required approvals.
+
+## Required output
+Confirmed facts, assumptions, decision points, role ownership, phased plan, validation gates, required reviews, unresolved risks, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

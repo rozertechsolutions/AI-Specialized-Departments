@@ -7,6 +7,9 @@ description: Run the review-security-and-privacy Web Development workflow with e
 
 Perform an independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings.
 
+## Trigger boundary
+Use for an independent security or privacy gate after relevant design or implementation work. Do not use as a substitute for human risk acceptance.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

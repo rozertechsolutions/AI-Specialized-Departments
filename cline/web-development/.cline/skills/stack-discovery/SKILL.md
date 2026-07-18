@@ -1,12 +1,22 @@
 ---
 name: stack-discovery
-description: Detect and document the actual web stack before proposing changes.
+description: Identify the actual web stack, tools, architecture, conventions, constraints, and unknowns before planning or changing a project.
 ---
 
 # Stack Discovery
 
 ## Mission
 Detect and document the actual web stack before proposing changes.
+
+## Use when
+- The stack, framework, package manager, build system, test tools, routes, deployment model, or conventions are unknown.
+- A recommendation depends on current architecture or tooling.
+
+## Do not use when
+- The stack and relevant constraints are already verified from current evidence.
+
+## Inputs
+File tree, package/config files, source snippets, lockfiles, framework config, deployment descriptors, README excerpts, test output, or user-provided project facts.
 
 ## Required procedure
 1. Inspect only files within the approved project scope.
@@ -21,6 +31,12 @@ Detect and document the actual web stack before proposing changes.
 - List files or components affected or reviewed.
 - State which quality gates are PASS, FAIL, BLOCKED, or NOT APPLICABLE.
 - Do not claim execution or success without direct evidence.
+
+## Stop and failure behavior
+Return BLOCKED when the user has not provided enough project evidence to identify the stack safely.
+
+## Review requirements
+Report stack inventory, architecture map, constraints, conventions, risks, unknowns, and recommended next Skill or Plan/Act transition.
 
 ## Prohibited actions
 - No installation, command execution, Git mutation, deployment, publication, authentication, secret handling, spending, signing, or destructive operation without exact human authorization.

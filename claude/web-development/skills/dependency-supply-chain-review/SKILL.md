@@ -1,6 +1,6 @@
 ---
 name: dependency-supply-chain-review
-description: Review proposed or changed web dependencies and third-party code.
+description: Use to review proposed or changed dependencies, package scripts, CDN assets, trackers, SDKs, and other third-party web code.
 ---
 
 # Dependency Supply Chain Review

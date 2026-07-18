@@ -1,11 +1,23 @@
 ---
 name: workflow-review-security-and-privacy
-description: Run the review-security-and-privacy workflow with evidence and safety gates.
+description: "Guide independent security, privacy, CSP, cookie, CORS, tracker, and dependency review."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Review Security And Privacy
 
-Perform an independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings.
+Use this slash-command Skill to guide independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings. Do not edit the implementation under review.
+
+## Expected input
+Changed files, trust boundaries, data types, auth/session behavior, third-party services, browser policies, and logging/storage behavior.
+
+## Expected output
+Findings ordered by severity, exploit conditions, evidence, remediation criteria, residual risk, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

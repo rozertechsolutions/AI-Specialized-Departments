@@ -1,11 +1,23 @@
 ---
 name: workflow-debug-web-regression
-description: Run the debug-web-regression workflow with evidence and safety gates.
+description: "Guide web regression debugging with evidence, hypotheses, and safety gates."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Debug Web Regression
 
-Reproduce from available evidence, map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites.
+Use this slash-command Skill to guide regression debugging from available evidence. Map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites. This Skill does not execute reproduction steps by itself.
+
+## Expected input
+Observed behavior, expected behavior, changed files or commits, environment, reproduction steps, and relevant logs or screenshots.
+
+## Expected output
+Confirmed facts, hypotheses rejected, root cause evidence, minimal fix plan, regression checks, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

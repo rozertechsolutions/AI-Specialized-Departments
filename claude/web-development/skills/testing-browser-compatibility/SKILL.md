@@ -1,6 +1,6 @@
 ---
 name: testing-browser-compatibility
-description: Define and assess risk-based tests and browser compatibility.
+description: Use to define or review risk-based web tests, acceptance coverage, regression checks, and browser/device compatibility evidence.
 ---
 
 # Testing Browser Compatibility

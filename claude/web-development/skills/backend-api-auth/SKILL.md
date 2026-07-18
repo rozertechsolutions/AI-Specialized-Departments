@@ -1,9 +1,9 @@
 ---
 name: backend-api-auth
-description: Plan or implement backend, API, authentication, session, and persistence work.
+description: Use for backend, API, authentication, authorization, session, validation, persistence, integration, and server error-handling work.
 ---
 
-# Backend Api Auth
+# Backend, API, And Auth
 
 ## Mission
 Plan or implement backend, API, authentication, session, and persistence work.

@@ -4,13 +4,16 @@
 Deliver professional, stack-appropriate web-development work covering frontend, backend, full-stack architecture, APIs, authentication, sessions, storage, integrations, responsive behavior, accessibility, SEO, performance, testing, browser compatibility, observability, deployment readiness, security, privacy, CSP, cookies, CORS, and supply-chain review when relevant.
 
 ## Operating model
-1. Detect the repository's actual stack and constraints before choosing an approach.
-2. Confirm requested scope, acceptance criteria, affected surfaces, and prohibited changes.
-3. Assign each concern to exactly one primary owner. Reviewers remain independent from implementers.
-4. Prefer the smallest coherent change that follows existing architecture and conventions.
-5. Treat security, privacy, accessibility, performance, SEO, browser compatibility, tests, and observability as applicability-based quality gates rather than afterthoughts.
-6. Verify completion from direct evidence. Never infer that a command, test, build, deployment, or external action succeeded.
-7. Stop and report BLOCKED when required evidence, authorization, credentials, product decisions, or human approvals are missing.
+1. Apply these instructions when Vibe loads this project-level `AGENTS.md` from a trusted folder.
+2. Detect the repository's actual stack and constraints before choosing an approach.
+3. Confirm requested scope, acceptance criteria, affected surfaces, prohibited changes, and whether the active Vibe agent can safely perform the work.
+4. Use project Skills in `.vibe/skills/` as on-demand slash-command guidance for repeatable workflows and reviews.
+5. Delegate only to the custom agents declared in `.vibe/agents/` or to Vibe's documented built-in read-only `explore` subagent when delegation is useful.
+6. Assign each concern to exactly one primary owner. Reviewers remain independent from implementers and must not self-approve their own changes.
+7. Prefer the smallest coherent change that follows existing architecture and conventions.
+8. Treat security, privacy, accessibility, performance, SEO, browser compatibility, tests, and observability as applicability-based quality gates rather than afterthoughts.
+9. Verify completion from direct evidence. Never infer that a command, test, build, deployment, integration, browser check, or platform load succeeded.
+10. Stop and report BLOCKED when required evidence, authorization, credentials, product decisions, or human approvals are missing.
 
 ## Mandatory safety boundaries
 - Work only inside the explicitly approved project scope.
@@ -22,10 +25,16 @@ Deliver professional, stack-appropriate web-development work covering frontend, 
 - Do not fabricate files, APIs, documentation claims, compatibility, test results, or completion evidence.
 
 ## Delegation and review
-- The Web Development Lead coordinates but cannot self-approve security or final readiness.
-- Implementers may request specialist review; reviewers must cite concrete repository evidence and must not silently edit the work being reviewed.
+- The `web-development-coordinator` agent coordinates scope and delegation but cannot self-approve security or final readiness.
+- Specialist subagents return bounded text-only findings to the parent session. They must cite concrete repository evidence and must not silently edit the work being reviewed.
 - No circular delegation. A child specialist returns a bounded result to its parent and does not re-delegate to the parent.
 - Resolve conflicting recommendations by requirements, evidence, risk, and existing architecture; document the decision.
+
+## Vibe-native activation
+- Select `web-development-coordinator` for project planning, routing, and review orchestration.
+- Use Skills as slash commands for repeatable workflows, for example `/workflow-plan-web-change` or `/security-privacy-review`.
+- Use reviewer Skills or reviewer subagents for independent review. Keep reviewers read-only unless a human explicitly reassigns implementation authority.
+- Report runtime, build, test, browser, connector, MCP, and integration checks as NOT EXECUTED when they were not directly performed.
 
 ## Completion contract
 A task is complete only when the requested artifact exists, scope is correct, applicable acceptance criteria are traceable, prohibited actions were avoided, material reviews are resolved, and remaining limitations are explicit. Use PASS, FAIL, BLOCKED, or NOT APPLICABLE for every final gate.

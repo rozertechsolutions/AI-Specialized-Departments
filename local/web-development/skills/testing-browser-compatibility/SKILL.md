@@ -8,6 +8,9 @@ description: Define and assess risk-based tests and browser compatibility.
 ## Mission
 Define and assess risk-based tests and browser compatibility.
 
+## Trigger boundaries
+Use this skill only when mapping, reviewing, or reporting tests and browser compatibility evidence. Do not use it to invent coverage thresholds, execute unauthorized checks, change implementation, approve release readiness, or configure runtime/provider/model behavior.
+
 ## Required procedure
 1. Map acceptance criteria to unit, integration, contract, component, end-to-end, accessibility, security, and regression checks as applicable.
 2. Use the repository’s existing tools and supported browser policy; do not invent coverage thresholds.

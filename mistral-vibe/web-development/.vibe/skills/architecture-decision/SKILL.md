@@ -1,12 +1,21 @@
 ---
 name: architecture-decision
-description: Create a proportionate architecture decision for a web change.
+description: "Create a proportionate architecture decision for a web change."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Architecture Decision
 
 ## Mission
 Create a proportionate architecture decision for a web change.
+
+## Vibe invocation
+Invoke with `/architecture-decision` for material interface, rendering, data-flow, integration, migration, rollback, or full-stack trade-off decisions. This Skill produces a decision record in the conversation only.
 
 ## Required procedure
 1. Start from verified requirements and the discovered stack.

@@ -1,11 +1,17 @@
 ---
 name: workflow-verify-release-readiness
-description: Run the verify-release-readiness workflow without automatic terminal execution.
+description: Guide release-readiness verification for local Warp agents without deploying.
 ---
 
 # Verify Release Readiness
 
-Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, BLOCKED, or NOT APPLICABLE. Never deploy or publish.
+Guide release-readiness verification. Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, or BLOCKED. Never deploy, publish, tag, merge, submit, or create an Oz cloud run.
+
+## Expected input
+Acceptance criteria, changed files, role handoffs, review outcomes, validation evidence, known exclusions, and release constraints.
+
+## Required output
+Final PASS, FAIL, or BLOCKED verdict with gate-by-gate evidence, unresolved risks, required human approvals, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

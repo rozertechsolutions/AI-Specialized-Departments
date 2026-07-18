@@ -1,11 +1,17 @@
 ---
 name: workflow-review-api-and-auth
-description: Run the review-api-and-auth workflow without automatic terminal execution.
+description: Guide API and auth review for local Warp agents.
 ---
 
 # Review Api And Auth
 
-Review API contracts, validation, authentication, authorization, session and token handling, data access, rate limits, error leakage, and negative tests. Return findings without self-approval.
+Guide API, authentication, authorization, session, token, data-access, rate-limit, error-leakage, and negative-path review. Return findings without self-approval. This Skill does not run tests by itself.
+
+## Expected input
+API routes, auth/session behavior, data flows, contracts, relevant files, and expected negative paths.
+
+## Required output
+Findings with severity, affected files or flows, evidence, remediation criteria, residual risk, required reviews, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

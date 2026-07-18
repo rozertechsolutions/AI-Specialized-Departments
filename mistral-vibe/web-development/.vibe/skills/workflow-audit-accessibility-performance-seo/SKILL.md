@@ -1,11 +1,23 @@
 ---
 name: workflow-audit-accessibility-performance-seo
-description: Run the audit-accessibility-performance-seo workflow with evidence and safety gates.
+description: "Guide the accessibility, performance, responsive, and SEO audit workflow with evidence and safety gates."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Audit Accessibility Performance Seo
 
-Perform an evidence-based accessibility, responsive, performance, and SEO review. Separate blocking defects from recommendations and identify missing measurements.
+Use this slash-command Skill to guide an evidence-based accessibility, responsive, performance, and SEO review. Separate blocking defects from recommendations and identify missing measurements. This Skill coordinates review steps; it is not a deterministic command and does not execute measurements by itself.
+
+## Expected input
+Files, feature area, URL or component names, acceptance criteria, supported browsers, and any measurements already available.
+
+## Expected output
+Prioritized findings with severity, evidence, affected users, acceptance criteria, measurement gaps, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

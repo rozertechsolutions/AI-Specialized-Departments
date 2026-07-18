@@ -8,6 +8,20 @@ description: Plan or implement backend, API, authentication, session, and persis
 ## Mission
 Plan or implement backend, API, authentication, session, and persistence work.
 
+## Invocation and surface
+- Cascade: Invoke with `@backend-api-auth` or allow Cascade to select it for scoped backend, API, authentication, session, validation, authorization, persistence, or server-side behavior work.
+- Devin Local: Compatible as a project skill; invoke with `/backend-api-auth` when using Devin Local.
+- Not a migration runner, secrets manager, MCP connector, external integration installer, deployment workflow, or custom agent.
+
+## Inputs and preconditions
+API routes, contracts, auth/session expectations, data flows, persistence constraints, affected files, prohibited changes, and required human-review points.
+
+## Expected output and evidence
+Contract impact, validation and authorization behavior, data integrity notes, migration or rollback impact, changed or proposed files, required reviews, evidence, risks, and NOT EXECUTED checks.
+
+## Stop conditions
+Stop with BLOCKED for unclear contracts, missing authorization decisions, unsafe persistence assumptions, migration risk without approval, or sensitive-data uncertainty.
+
 ## Required procedure
 1. Define inputs, validation, authorization, side effects, idempotency, errors, observability, and data retention.
 2. Enforce authorization server-side; never trust client claims.
@@ -23,5 +37,5 @@ Plan or implement backend, API, authentication, session, and persistence work.
 - Do not claim execution or success without direct evidence.
 
 ## Prohibited actions
-- No installation, command execution, Git mutation, deployment, publication, authentication, secret handling, spending, signing, or destructive operation without exact human authorization.
+- Do not run commands, install packages, mutate Git state, deploy, publish, authenticate, handle secrets, spend money, sign artifacts, or perform destructive operations without exact human authorization.
 - No unsupported technology assumptions or fabricated completion evidence.

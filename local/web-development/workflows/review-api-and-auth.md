@@ -2,6 +2,12 @@
 
 Review API contracts, validation, authentication, authorization, session and token handling, data access, rate limits, error leakage, and negative tests. Return findings without self-approval.
 
+## Expected input
+API routes, auth/session behavior, data flows, contracts, relevant files, and expected negative paths.
+
+## Output and evidence
+Return findings with severity, affected files or flows, evidence, remediation criteria, residual risk, and NOT EXECUTED checks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

@@ -19,6 +19,7 @@ Assess dependency and third-party code risk before adoption or release. This Ski
 - Package or third-party name, version or proposed range, intended use, current alternatives in the project, license requirements, runtime target, bundle/performance constraints, and repository evidence.
 
 ## Procedure
+
 1. Confirm necessity, maintenance status, licensing compatibility, provenance, transitive impact, bundle/runtime cost, and known security concerns using authoritative sources.
 2. Reject dependency additions that duplicate existing capability without clear value.
 3. Do not install packages or execute package-manager commands automatically.

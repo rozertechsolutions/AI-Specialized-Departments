@@ -1,12 +1,21 @@
 ---
 name: accessibility-performance-seo
-description: Assess accessibility, performance, responsive behavior, and SEO as one user-facing quality review.
+description: "Assess accessibility, performance, responsive behavior, and SEO as one user-facing quality review."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Accessibility Performance Seo
 
 ## Mission
 Assess accessibility, performance, responsive behavior, and SEO as one user-facing quality review.
+
+## Vibe invocation
+Invoke with `/accessibility-performance-seo` when a user asks for or a workflow requires independent accessibility, responsive, performance, SEO, or metadata review. This is an evidence review Skill, not a command runner.
 
 ## Required procedure
 1. Apply WCAG-oriented semantic, keyboard, focus, name/role/value, contrast, zoom, motion, and error-identification checks where applicable.

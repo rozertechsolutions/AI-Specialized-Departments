@@ -19,6 +19,7 @@ Create or review a proportionate architecture decision for a web change. This Sk
 - Requirement, constraints, affected surfaces, current architecture evidence, non-goals, deadlines, risk tolerance, and any required platform or framework decisions.
 
 ## Procedure
+
 1. Start from verified requirements and the discovered stack.
 2. Compare at least two viable approaches when the decision is material.
 3. Evaluate correctness, security, accessibility, performance, maintainability, migration cost, operability, and reversibility.

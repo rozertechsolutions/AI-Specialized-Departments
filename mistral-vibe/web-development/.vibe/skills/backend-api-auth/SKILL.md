@@ -1,12 +1,24 @@
 ---
 name: backend-api-auth
-description: Plan or implement backend, API, authentication, session, and persistence work.
+description: "Plan or implement backend, API, authentication, session, and persistence work."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - write_file
+  - edit
+  - search_replace
+  - ask_user_question
 ---
 
 # Backend Api Auth
 
 ## Mission
 Plan or implement backend, API, authentication, session, and persistence work.
+
+## Vibe invocation
+Invoke with `/backend-api-auth` for scoped backend, API, authentication, session, validation, persistence, or server-side behavior work. Use only after scope, approval, and human-review requirements are clear.
 
 ## Required procedure
 1. Define inputs, validation, authorization, side effects, idempotency, errors, observability, and data retention.

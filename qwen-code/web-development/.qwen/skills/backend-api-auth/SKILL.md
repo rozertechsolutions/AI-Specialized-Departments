@@ -8,6 +8,9 @@ description: Plan or implement backend, API, authentication, session, and persis
 ## Mission
 Plan or implement backend, API, authentication, session, and persistence work.
 
+## Qwen Code invocation
+Load this Skill through Qwen Code Agent Skills for scoped backend, API, authentication, session, persistence, validation, authorization, or server-side behavior work.
+
 ## Required procedure
 1. Define inputs, validation, authorization, side effects, idempotency, errors, observability, and data retention.
 2. Enforce authorization server-side; never trust client claims.

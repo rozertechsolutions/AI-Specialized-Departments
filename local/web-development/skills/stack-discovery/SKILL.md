@@ -8,6 +8,9 @@ description: Detect and document the actual web stack before proposing changes.
 ## Mission
 Detect and document the actual web stack before proposing changes.
 
+## Trigger boundaries
+Use this skill only for evidence-based stack discovery inside the approved project scope. Do not use it to execute tools, install dependencies, modify files, select a provider/model/runtime, or approve implementation decisions.
+
 ## Required procedure
 1. Inspect only files within the approved project scope.
 2. Identify languages, frameworks, package managers, runtime versions, build systems, test tools, deployment descriptors, browser targets, and existing conventions from evidence.

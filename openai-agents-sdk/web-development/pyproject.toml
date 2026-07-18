@@ -7,7 +7,10 @@ name = "ai-specialized-departments-web-development"
 version = "0.1.0"
 description = "Provider-neutral Web Development department configuration for the OpenAI Agents SDK."
 requires-python = ">=3.10"
-dependencies = ["openai-agents>=0.9.0"]
+dependencies = ["openai-agents==0.18.3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0,<9.0"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/web_development_department"]

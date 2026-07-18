@@ -8,6 +8,9 @@ description: Plan or implement backend, API, authentication, session, and persis
 ## Mission
 Plan or implement backend, API, authentication, session, and persistence work.
 
+## Trigger boundary
+Use when work changes server behavior, API contracts, authentication, authorization, sessions, cookies, CORS, persistence, integrations, or backend error handling. Do not use for browser-only presentation work.
+
 ## Required procedure
 1. Define inputs, validation, authorization, side effects, idempotency, errors, observability, and data retention.
 2. Enforce authorization server-side; never trust client claims.

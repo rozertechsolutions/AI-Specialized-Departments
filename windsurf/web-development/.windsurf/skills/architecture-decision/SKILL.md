@@ -8,6 +8,20 @@ description: Create a proportionate architecture decision for a web change.
 ## Mission
 Create a proportionate architecture decision for a web change.
 
+## Invocation and surface
+- Cascade: Invoke with `@architecture-decision` or allow Cascade to select it for material web architecture, rendering, interface, data-flow, integration, migration, or rollback decisions.
+- Devin Local: Compatible as a project skill; invoke with `/architecture-decision` when using Devin Local.
+- Not a custom subagent, hidden reviewer, workflow, hook, MCP server, deployment tool, or architecture generator.
+
+## Inputs and preconditions
+Confirmed requirements, discovered stack, affected files or interfaces, constraints, alternatives, operational concerns, migration concerns, and approval boundaries.
+
+## Expected output and evidence
+Decision, alternatives considered, rationale, consequences, affected interfaces, migration and rollback notes, evidence, unresolved risks, and NOT EXECUTED checks.
+
+## Stop conditions
+Stop with BLOCKED when requirements, interface ownership, migration authority, sensitive behavior, or required human approvals are unclear.
+
 ## Required procedure
 1. Start from verified requirements and the discovered stack.
 2. Compare at least two viable approaches when the decision is material.
@@ -23,5 +37,5 @@ Create a proportionate architecture decision for a web change.
 - Do not claim execution or success without direct evidence.
 
 ## Prohibited actions
-- No installation, command execution, Git mutation, deployment, publication, authentication, secret handling, spending, signing, or destructive operation without exact human authorization.
+- Do not run commands, install packages, mutate Git state, deploy, publish, authenticate, handle secrets, spend money, sign artifacts, or perform destructive operations without exact human authorization.
 - No unsupported technology assumptions or fabricated completion evidence.

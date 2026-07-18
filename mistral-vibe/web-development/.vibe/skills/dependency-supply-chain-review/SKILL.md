@@ -1,12 +1,21 @@
 ---
 name: dependency-supply-chain-review
-description: Review proposed or changed web dependencies and third-party code.
+description: "Review proposed or changed web dependencies and third-party code."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Dependency Supply Chain Review
 
 ## Mission
 Review proposed or changed web dependencies and third-party code.
+
+## Vibe invocation
+Invoke with `/dependency-supply-chain-review` when dependencies, lockfiles, third-party scripts, SDKs, build plugins, or CDN assets are proposed or changed. Do not install packages from this Skill.
 
 ## Required procedure
 1. Confirm necessity, maintenance status, licensing compatibility, provenance, transitive impact, bundle/runtime cost, and known security concerns using authoritative sources.

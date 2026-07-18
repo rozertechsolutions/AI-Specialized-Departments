@@ -1,12 +1,21 @@
 ---
 name: release-readiness
-description: Produce a human-reviewable release-readiness assessment without deploying.
+description: "Produce a human-reviewable release-readiness assessment without deploying."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Release Readiness
 
 ## Mission
 Produce a human-reviewable release-readiness assessment without deploying.
+
+## Vibe invocation
+Invoke with `/release-readiness` only after implementation and required reviews have evidence. This Skill never deploys, publishes, tags, merges, or submits.
 
 ## Required procedure
 1. Trace requirements to implementation and verification evidence.

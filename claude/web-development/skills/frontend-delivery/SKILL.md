@@ -1,6 +1,6 @@
 ---
 name: frontend-delivery
-description: Plan or implement frontend work within the repository’s native stack.
+description: Use for frontend planning, implementation guidance, or review covering UI, routes, components, forms, state, and responsive behavior.
 ---
 
 # Frontend Delivery

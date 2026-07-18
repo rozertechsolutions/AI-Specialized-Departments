@@ -19,6 +19,7 @@ Detect and document the actual web stack before recommending or changing anythin
 - File tree, package/config files, source snippets, lockfiles, framework config, deployment descriptors, README excerpts, test output, or user-provided project facts.
 
 ## Procedure
+
 1. Inspect only files within the approved project scope.
 2. Identify languages, frameworks, package managers, runtime versions, build systems, test tools, deployment descriptors, browser targets, and existing conventions from evidence.
 3. Distinguish confirmed facts from assumptions and unresolved questions.

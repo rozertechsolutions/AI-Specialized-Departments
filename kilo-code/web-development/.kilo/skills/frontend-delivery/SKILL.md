@@ -8,6 +8,9 @@ description: Plan or implement frontend work within the repository’s native st
 ## Mission
 Plan or implement frontend work within the repository’s native stack.
 
+## Trigger boundary
+Use for browser-facing routes, components, styling, forms, state, responsive behavior, client-side performance, or browser API work. Do not use for server authority, persistence, or independent quality approval.
+
 ## Required procedure
 1. Preserve semantic HTML, keyboard access, focus behavior, responsive layout, localization readiness, and browser compatibility.
 2. Keep state ownership explicit and avoid duplicating server authority on the client.

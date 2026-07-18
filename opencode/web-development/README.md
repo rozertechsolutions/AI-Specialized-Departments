@@ -4,18 +4,21 @@ This directory is an independent, platform-native Web Development specialization
 
 ## Native components included
 - AGENTS.md instructions
-- Project configuration with disabled sharing and empty MCP
+- Project configuration with disabled sharing and current `permission` rules
 - Custom agents
 - Agent Skills
 - Custom commands
 
 ## Intentionally omitted or disabled
-- No plugins or custom tools
+- No MCP, plugins or custom tools
 - No model is pinned
-- Bash and editing require approval by default
+- Bash, web fetch/search, external directories and MCP-style integrations are denied
+- Editing is denied globally and allowed only by primary lead or implementation specialists through agent permission overrides
 
 ## Platform notes
-OpenCode permissions are set to ask before bash, edit and web fetch. Reviewer agents deny edits and bash. Automatic sharing is disabled.
+Verified against OpenCode docs last updated July 17, 2026 and accessed on 2026-07-18. OpenCode uses `AGENTS.md` for project rules, `.opencode/agents/*.md` for Markdown agents, `.opencode/commands/*.md` for custom slash commands, `.opencode/skills/*/SKILL.md` for Agent Skills, and `permission` for current approval policy.
+
+`web-development-lead` is the only primary custom agent. Commands target that primary agent with `subtask: false` so the lead keeps coordinator context. The lead may invoke only the approved specialist subagents through the native `task` permission allow-list. Reviewer agents deny edits, bash, external directories, web fetch/search and nested task delegation.
 
 ## Safety baseline
 - No credentials, tokens, endpoints, private URLs, executable hooks, installation scripts, deployment scripts, or active MCP connections are included.

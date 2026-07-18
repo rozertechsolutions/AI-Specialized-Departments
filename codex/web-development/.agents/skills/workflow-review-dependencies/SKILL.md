@@ -7,6 +7,9 @@ description: Run the review-dependencies Web Development workflow with explicit 
 
 Evaluate every proposed dependency or third-party script for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
 
+## Trigger boundary
+Use when dependency metadata, package manager files, external scripts, SDKs, plugins, or CDN assets change. Do not use to approve a package without evidence.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

@@ -8,6 +8,18 @@ description: Detect and document the actual web stack before proposing changes.
 ## Mission
 Detect and document the actual web stack before proposing changes.
 
+## Warp invocation
+Invoke manually as `/stack-discovery` or let the local Warp agent load it before planning or implementation in an unfamiliar repository.
+
+## Inputs
+Approved project scope, available file evidence, known constraints, and user-stated goals.
+
+## Expected output
+Stack inventory, architecture map, conventions, constraints, assumptions, unresolved questions, and NOT EXECUTED checks.
+
+## Stop conditions
+Stop with BLOCKED when the approved scope is unclear or evidence is insufficient to identify the stack safely.
+
 ## Required procedure
 1. Inspect only files within the approved project scope.
 2. Identify languages, frameworks, package managers, runtime versions, build systems, test tools, deployment descriptors, browser targets, and existing conventions from evidence.
@@ -23,5 +35,5 @@ Detect and document the actual web stack before proposing changes.
 - Do not claim execution or success without direct evidence.
 
 ## Prohibited actions
-- No installation, command execution, Git mutation, deployment, publication, authentication, secret handling, spending, signing, or destructive operation without exact human authorization.
+- Do not run commands, install packages, mutate Git state, deploy, publish, authenticate, handle secrets, spend money, sign artifacts, or perform destructive operations without exact human authorization.
 - No unsupported technology assumptions or fabricated completion evidence.

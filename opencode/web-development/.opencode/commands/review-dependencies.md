@@ -1,11 +1,18 @@
 ---
-description: Web Development review dependencies workflow
+description: Guide web dependency and third-party supply-chain review through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Review Dependencies
 
-Evaluate every proposed dependency or third-party script for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
+Coordinate review of proposed dependencies, lockfiles, third-party scripts, SDKs, build plugins, and CDN assets for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
+
+## Expected input
+Package names, version changes, lockfile or manifest changes, external scripts, SDKs, plugins, CDN assets, and intended use.
+
+## Required output
+Return approve, reject, or human-review-required with evidence, affected files, runtime impact, unresolved risk, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

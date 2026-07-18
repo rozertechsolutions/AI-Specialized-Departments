@@ -1,11 +1,18 @@
 ---
-description: Web Development implement web change workflow
+description: Guide scoped web implementation through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Implement Web Change
 
-Validate scope, use the relevant specialist role, make only requested repository changes, preserve native conventions, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
+Guide scoped web implementation. The primary lead may coordinate `frontend-specialist`, `backend-api-specialist`, or `web-architecture-specialist`, but independent reviewers must remain separate before final readiness.
+
+## Expected input
+Requested behavior, acceptance criteria, affected files or surfaces, prohibited changes, and verification expectations.
+
+## Required output
+Return changed files or proposed changes, behavior, direct evidence, required reviews, unresolved risks, human approvals, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

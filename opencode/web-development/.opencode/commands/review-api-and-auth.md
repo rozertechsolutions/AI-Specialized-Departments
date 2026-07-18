@@ -1,11 +1,18 @@
 ---
-description: Web Development review api and auth workflow
+description: Guide API and auth review through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Review Api And Auth
 
-Review API contracts, validation, authentication, authorization, session and token handling, data access, rate limits, error leakage, and negative tests. Return findings without self-approval.
+Coordinate API, authentication, authorization, session, token, data-access, rate-limit, error-leakage, and negative-path review. The lead may invoke `backend-api-specialist` and `security-privacy-reviewer` as separate subagents.
+
+## Expected input
+API routes, auth/session behavior, data flows, contracts, relevant files, and expected negative paths.
+
+## Required output
+Return findings with severity, affected files or flows, evidence, remediation criteria, residual risk, required reviews, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

@@ -1,9 +1,9 @@
 ---
 name: accessibility-performance-seo
-description: Assess accessibility, performance, responsive behavior, and SEO as one user-facing quality review.
+description: Use for independent accessibility, performance, responsive behavior, resilience, and SEO review before a web change is accepted or released.
 ---
 
-# Accessibility Performance Seo
+# Accessibility, Performance, And SEO
 
 ## Mission
 Assess accessibility, performance, responsive behavior, and SEO as one user-facing quality review.

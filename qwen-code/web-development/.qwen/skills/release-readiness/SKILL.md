@@ -8,6 +8,9 @@ description: Produce a human-reviewable release-readiness assessment without dep
 ## Mission
 Produce a human-reviewable release-readiness assessment without deploying.
 
+## Qwen Code invocation
+Load this Skill through Qwen Code Agent Skills only after implementation and required reviews have evidence. This Skill never deploys, publishes, tags, merges, or submits.
+
 ## Required procedure
 1. Trace requirements to implementation and verification evidence.
 2. Confirm security, privacy, accessibility, performance, SEO, tests, browser support, observability, migration, rollback, and documentation status as applicable.

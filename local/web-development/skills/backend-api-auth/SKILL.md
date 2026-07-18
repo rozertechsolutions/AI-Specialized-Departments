@@ -8,6 +8,9 @@ description: Plan or implement backend, API, authentication, session, and persis
 ## Mission
 Plan or implement backend, API, authentication, session, and persistence work.
 
+## Trigger boundaries
+Use this skill only for scoped backend, API, authentication, session, persistence, validation, or server-side behavior work in an already selected project/runtime context. Do not use it for client presentation ownership, independent security approval, release approval, deployment, publication, or provider/model selection.
+
 ## Required procedure
 1. Define inputs, validation, authorization, side effects, idempotency, errors, observability, and data retention.
 2. Enforce authorization server-side; never trust client claims.

@@ -8,6 +8,9 @@ description: Produce a human-reviewable release-readiness assessment without dep
 ## Mission
 Produce a human-reviewable release-readiness assessment without deploying.
 
+## Trigger boundary
+Use after implementation and required reviews when deciding whether the web change is ready for human release action. Do not use to deploy, publish, tag, merge, or approve unresolved risk.
+
 ## Required procedure
 1. Trace requirements to implementation and verification evidence.
 2. Confirm security, privacy, accessibility, performance, SEO, tests, browser support, observability, migration, rollback, and documentation status as applicable.

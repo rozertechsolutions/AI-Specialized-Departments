@@ -1,6 +1,5 @@
 {
-  "mcpServers": {},
   "model": {
-    "maxSubagentDepth": 1
+    "maxSubagentDepth": 2
   }
 }

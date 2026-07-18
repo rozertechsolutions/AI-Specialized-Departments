@@ -8,6 +8,9 @@ description: Produce a human-reviewable release-readiness assessment without dep
 ## Mission
 Produce a human-reviewable release-readiness assessment without deploying.
 
+## Trigger boundaries
+Use this skill only for final readiness assessment after implementation and required reviews have evidence. Do not use it to implement fixes, override unresolved findings, deploy, publish, tag, merge, sign, submit, or configure runtime/provider/model behavior.
+
 ## Required procedure
 1. Trace requirements to implementation and verification evidence.
 2. Confirm security, privacy, accessibility, performance, SEO, tests, browser support, observability, migration, rollback, and documentation status as applicable.

@@ -1,11 +1,26 @@
 ---
 name: workflow-implement-web-change
-description: Run the implement-web-change workflow with evidence and safety gates.
+description: "Guide scoped web implementation work with evidence, reviews, and safety gates."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - write_file
+  - edit
+  - search_replace
+  - ask_user_question
 ---
 
 # Implement Web Change
 
-Validate scope, use the relevant specialist role, make only requested repository changes, preserve native conventions, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
+Use this slash-command Skill to guide scoped web implementation after approval boundaries are clear. Preserve native conventions, make only requested repository changes, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
+
+## Expected input
+Requested behavior, acceptance criteria, affected files or surfaces, prohibited changes, selected Vibe agent, and verification expectations.
+
+## Expected output
+Changed files, behavior, direct verification evidence, unresolved risks, required reviews, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

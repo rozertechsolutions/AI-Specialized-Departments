@@ -1,11 +1,23 @@
 ---
 name: workflow-review-dependencies
-description: Run the review-dependencies workflow with evidence and safety gates.
+description: "Guide dependency and third-party web supply-chain review."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Review Dependencies
 
-Evaluate every proposed dependency or third-party script for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
+Use this slash-command Skill to guide dependency and third-party script review for necessity, provenance, maintenance, license, security, transitive impact, and runtime or bundle cost. Do not install anything.
+
+## Expected input
+Package names, version changes, lockfile or manifest changes, external scripts, SDKs, plugins, CDN assets, and intended use.
+
+## Expected output
+Approve, reject, or human-review-required with evidence, affected files, runtime impact, unresolved risk, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

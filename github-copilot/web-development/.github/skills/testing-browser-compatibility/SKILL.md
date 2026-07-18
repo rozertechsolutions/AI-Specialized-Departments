@@ -8,6 +8,9 @@ description: Define and assess risk-based tests and browser compatibility.
 ## Mission
 Define and assess risk-based tests and browser compatibility.
 
+## Trigger boundary
+Use when mapping acceptance criteria to verification, browser coverage, regression risk, or unexecuted checks. Do not use to claim tests passed without direct command or browser evidence.
+
 ## Required procedure
 1. Map acceptance criteria to unit, integration, contract, component, end-to-end, accessibility, security, and regression checks as applicable.
 2. Use the repository’s existing tools and supported browser policy; do not invent coverage thresholds.

@@ -2,6 +2,12 @@
 
 Reproduce from available evidence, map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites.
 
+## Expected input
+Observed behavior, expected behavior, changed files or commits, environment, reproduction steps, and relevant logs or screenshots.
+
+## Output and evidence
+Return confirmed facts, hypotheses rejected, root cause evidence, minimal fix plan, regression checks, and NOT EXECUTED checks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

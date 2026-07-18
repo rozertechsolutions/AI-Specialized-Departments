@@ -8,6 +8,9 @@ description: Perform an independent web security and privacy review.
 ## Mission
 Perform an independent web security and privacy review.
 
+## Trigger boundaries
+Use this skill only for independent security, privacy, trust-boundary, data-flow, auth, browser-policy, tracker, logging, or sensitive-data review. Do not use it to implement the change under review, accept business risk, deploy, publish, or configure runtime/provider/model behavior.
+
 ## Required procedure
 1. Model trust boundaries, actors, assets, entry points, abuse cases, and data flows.
 2. Review authentication, authorization, sessions, input/output handling, injection, XSS, CSRF, SSRF, file handling, redirects, CSP, CORS, cookies, caching, logging, and error leakage as applicable.

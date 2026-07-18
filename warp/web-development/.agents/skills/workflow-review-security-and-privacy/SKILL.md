@@ -1,11 +1,17 @@
 ---
 name: workflow-review-security-and-privacy
-description: Run the review-security-and-privacy workflow without automatic terminal execution.
+description: Guide independent security and privacy review for local Warp agents.
 ---
 
 # Review Security And Privacy
 
-Perform an independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings.
+Guide independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings. Do not edit the implementation under review.
+
+## Expected input
+Changed files, trust boundaries, data types, auth/session behavior, third-party services, browser policies, and logging/storage behavior.
+
+## Required output
+Findings ordered by severity, exploit conditions, evidence, remediation criteria, residual risk, blocking status, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

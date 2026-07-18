@@ -1,0 +1,22 @@
+agent_type = "agent"
+display_name = "Web Development Coordinator"
+description = "Coordinates scoped web-development work, delegates to project subagents, and reports evidence without self-approving reviews."
+safety = "safe"
+system_prompt_id = "web-development-coordinator"
+enabled_tools = ["read", "read_file", "grep", "ask_user_question", "task"]
+disabled_tools = ["write_file", "edit", "search_replace", "bash", "mcp_*", "connector_*"]
+
+[tools.read]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.grep]
+permission = "always"
+
+[tools.ask_user_question]
+permission = "always"
+
+[tools.task]
+permission = "ask"

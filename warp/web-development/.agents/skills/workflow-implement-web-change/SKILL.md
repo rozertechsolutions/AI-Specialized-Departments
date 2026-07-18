@@ -1,11 +1,17 @@
 ---
 name: workflow-implement-web-change
-description: Run the implement-web-change workflow without automatic terminal execution.
+description: Guide scoped web implementation for local Warp agents.
 ---
 
 # Implement Web Change
 
-Validate scope, use the relevant specialist role, make only requested repository changes, preserve native conventions, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
+Guide scoped web implementation after approval boundaries are clear. Preserve native conventions, make only requested repository changes, record evidence, and stop before deployment, publication, Git mutation, terminal command execution, or external side effects.
+
+## Expected input
+Requested behavior, acceptance criteria, affected files or surfaces, prohibited changes, and verification expectations.
+
+## Required output
+Changed files or proposed changes, behavior, direct verification evidence, required reviews, unresolved risks, required human approvals, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

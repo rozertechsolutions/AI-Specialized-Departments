@@ -1,11 +1,23 @@
 ---
 name: workflow-review-api-and-auth
-description: Run the review-api-and-auth workflow with evidence and safety gates.
+description: "Guide API, authentication, authorization, session, and negative-path review."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Review Api And Auth
 
-Review API contracts, validation, authentication, authorization, session and token handling, data access, rate limits, error leakage, and negative tests. Return findings without self-approval.
+Use this slash-command Skill to guide API, authentication, authorization, session, token, data-access, rate-limit, error-leakage, and negative-test review. Return findings without self-approval. This Skill does not run tests by itself.
+
+## Expected input
+API routes, auth/session behavior, data flows, contracts, relevant files, and expected negative paths.
+
+## Expected output
+Findings with severity, affected files or flows, evidence, remediation criteria, residual risk, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

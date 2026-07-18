@@ -1,12 +1,24 @@
 ---
 name: frontend-delivery
-description: Plan or implement frontend work within the repository’s native stack.
+description: "Plan or implement frontend work within the repository's native stack."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - write_file
+  - edit
+  - search_replace
+  - ask_user_question
 ---
 
 # Frontend Delivery
 
 ## Mission
 Plan or implement frontend work within the repository’s native stack.
+
+## Vibe invocation
+Invoke with `/frontend-delivery` for scoped frontend planning or implementation after the repository stack, acceptance criteria, and approval boundaries are clear.
 
 ## Required procedure
 1. Preserve semantic HTML, keyboard access, focus behavior, responsive layout, localization readiness, and browser compatibility.

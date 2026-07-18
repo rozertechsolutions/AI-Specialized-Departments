@@ -7,6 +7,9 @@ description: Run the verify-release-readiness workflow with Web Development safe
 
 Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, BLOCKED, or NOT APPLICABLE. Never deploy or publish.
 
+## Trigger boundary
+Use as the final static release-readiness workflow after implementation and applicable reviews. Do not use to perform release actions.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

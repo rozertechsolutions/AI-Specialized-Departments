@@ -1,12 +1,21 @@
 ---
 name: testing-browser-compatibility
-description: Define and assess risk-based tests and browser compatibility.
+description: "Define and assess risk-based tests and browser compatibility."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Testing Browser Compatibility
 
 ## Mission
 Define and assess risk-based tests and browser compatibility.
+
+## Vibe invocation
+Invoke with `/testing-browser-compatibility` to map or review test and browser-compatibility evidence. Mark checks NOT EXECUTED when direct results are unavailable.
 
 ## Required procedure
 1. Map acceptance criteria to unit, integration, contract, component, end-to-end, accessibility, security, and regression checks as applicable.

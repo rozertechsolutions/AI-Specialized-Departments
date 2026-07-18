@@ -8,6 +8,9 @@ description: Detect and document the actual web stack before proposing changes.
 ## Mission
 Detect and document the actual web stack before proposing changes.
 
+## Trigger boundary
+Use at the start of unclear or non-trivial work when the stack, tooling, ownership, or constraints are not already verified from repository evidence. Do not use to make changes.
+
 ## Required procedure
 1. Inspect only files within the approved project scope.
 2. Identify languages, frameworks, package managers, runtime versions, build systems, test tools, deployment descriptors, browser targets, and existing conventions from evidence.

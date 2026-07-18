@@ -1,11 +1,19 @@
 ---
 description: Web Development review security and privacy workflow
-agent: web-development-lead
 ---
 
 # Review Security And Privacy
 
 Perform an independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings.
+
+## Expected input
+Changed files, trust boundaries, data types, auth/session behavior, third-party services, browser policies, and logging/storage behavior.
+
+## Recommended agent
+Use `security-privacy-reviewer` directly and keep the review read-only.
+
+## Output and evidence
+Return findings ordered by severity, exploit conditions, evidence, remediation criteria, residual risk, and checks marked PASS, FAIL, BLOCKED, NOT APPLICABLE, or NOT EXECUTED.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

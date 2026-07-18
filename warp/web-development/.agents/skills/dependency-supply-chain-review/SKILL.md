@@ -8,6 +8,18 @@ description: Review proposed or changed web dependencies and third-party code.
 ## Mission
 Review proposed or changed web dependencies and third-party code.
 
+## Warp invocation
+Invoke manually as `/dependency-supply-chain-review` or let the local Warp agent load it when dependencies, lockfiles, third-party scripts, SDKs, build plugins, or CDN assets are proposed or changed.
+
+## Inputs
+Package names, version changes, lockfile or manifest changes, external scripts, SDKs, plugins, CDN assets, and intended use.
+
+## Expected output
+Approve, reject, or human-review-required with evidence, affected files, runtime or bundle impact, unresolved risk, and NOT EXECUTED checks.
+
+## Stop conditions
+Stop with BLOCKED when provenance, license, security, maintenance, or human-review evidence is unavailable for a required dependency decision.
+
 ## Required procedure
 1. Confirm necessity, maintenance status, licensing compatibility, provenance, transitive impact, bundle/runtime cost, and known security concerns using authoritative sources.
 2. Reject dependency additions that duplicate existing capability without clear value.
@@ -23,5 +35,5 @@ Review proposed or changed web dependencies and third-party code.
 - Do not claim execution or success without direct evidence.
 
 ## Prohibited actions
-- No installation, command execution, Git mutation, deployment, publication, authentication, secret handling, spending, signing, or destructive operation without exact human authorization.
+- Do not run commands, install packages, mutate Git state, deploy, publish, authenticate, handle secrets, spend money, sign artifacts, or perform destructive operations without exact human authorization.
 - No unsupported technology assumptions or fabricated completion evidence.

@@ -8,6 +8,9 @@ description: Review proposed or changed web dependencies and third-party code.
 ## Mission
 Review proposed or changed web dependencies and third-party code.
 
+## Trigger boundaries
+Use this skill only for proposed or changed dependencies, third-party scripts, SDKs, plugins, build tools, CDN assets, or supply-chain risk review. Do not use it to install packages, select a runtime/provider/model, approve unrelated architecture, or perform release approval.
+
 ## Required procedure
 1. Confirm necessity, maintenance status, licensing compatibility, provenance, transitive impact, bundle/runtime cost, and known security concerns using authoritative sources.
 2. Reject dependency additions that duplicate existing capability without clear value.

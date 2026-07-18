@@ -15,11 +15,11 @@ Use this guide only where ChatGPT Workspace Agents are available for the user's 
 | --- | --- |
 | Name | Web Development Department |
 | Description | Plans, reviews, and supports web-development work with strict safety, evidence, and human-review boundaries. |
-| Instructions | Paste `project-instructions.md`, then add workspace-specific policy if approved. |
+| Instructions | Paste `project-instructions.md` when the Workspace Agent is the primary surface, then add workspace-specific policy if approved. |
 | Files | Add the files in `knowledge/` as controlled reference material. |
-| Skills | Attach the Skills in `skills/` only if Builder skills are available and the workspace allows them. Review each Skill before use. |
+| Skills | Attach the Skills in `skills/` only if Skills are available in the agent builder and the workspace allows them. Review each Skill before use. |
 | Apps and connectors | Disabled by default. Add only reviewed Apps with least-privilege access. |
-| Tools, schedules, API triggers, Slack | Disabled by default unless the workspace owner approves the exact use case, permissions, and external effects. |
+| Custom MCPs, tools, schedules, API triggers, Slack | Disabled by default unless the workspace owner approves the exact use case, permissions, and external effects. |
 
 ## Setup Steps
 

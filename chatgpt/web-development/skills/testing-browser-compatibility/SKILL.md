@@ -19,6 +19,7 @@ Define or review risk-based tests and browser compatibility evidence. This Skill
 - Requirements, changed behavior, current test files or output, supported browsers/devices, risk areas, affected routes/APIs/components, and known incidents or regressions.
 
 ## Procedure
+
 1. Map acceptance criteria to unit, integration, contract, component, end-to-end, accessibility, security, and regression checks as applicable.
 2. Use the repository’s existing tools and supported browser policy; do not invent coverage thresholds.
 3. Include negative paths, authorization boundaries, race conditions, retries, time zones, localization, and responsive states where relevant.

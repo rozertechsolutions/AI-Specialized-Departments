@@ -1,12 +1,21 @@
 ---
 name: security-privacy-review
-description: Perform an independent web security and privacy review.
+description: "Perform an independent web security and privacy review."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
 ---
 
 # Security Privacy Review
 
 ## Mission
 Perform an independent web security and privacy review.
+
+## Vibe invocation
+Invoke with `/security-privacy-review` for independent security, privacy, auth, browser-policy, trust-boundary, secret, logging, tracker, or sensitive-data review. Do not edit the implementation under review.
 
 ## Required procedure
 1. Model trust boundaries, actors, assets, entry points, abuse cases, and data flows.

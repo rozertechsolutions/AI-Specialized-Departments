@@ -1,11 +1,24 @@
 ---
 name: workflow-plan-web-change
-description: Run the plan-web-change workflow with evidence and safety gates.
+description: "Guide web change planning with stack discovery, ownership, risks, and verification gates."
+user-invocable: true
+allowed-tools:
+  - read
+  - read_file
+  - grep
+  - ask_user_question
+  - task
 ---
 
 # Plan Web Change
 
-Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+Use this slash-command Skill to guide planning. Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+
+## Expected input
+Goal, constraints, affected product surfaces, known risks, selected Vibe agent, and prohibited changes.
+
+## Expected output
+Confirmed facts, assumptions, decision points, role ownership, phased plan, required reviews, validation gates, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

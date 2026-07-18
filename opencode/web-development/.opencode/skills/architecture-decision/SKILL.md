@@ -8,6 +8,9 @@ description: Create a proportionate architecture decision for a web change.
 ## Mission
 Create a proportionate architecture decision for a web change.
 
+## OpenCode invocation
+Load this Skill through OpenCode's native `skill` tool for material web architecture, rendering, interface, data-flow, migration, rollback, or integration decisions.
+
 ## Required procedure
 1. Start from verified requirements and the discovered stack.
 2. Compare at least two viable approaches when the decision is material.

@@ -14,5 +14,7 @@ Trace requirements to repository evidence, verify all required reviews, list unr
 ## Safety
 Do not execute commands, install dependencies, mutate Git, deploy, publish, authenticate, expose secrets, or perform destructive actions automatically.
 
-Use any user-supplied arguments only as task context.
+User arguments: {{args}}
+
+Use user-supplied arguments only as task context.
 """

@@ -7,6 +7,9 @@ description: Run the audit-accessibility-performance-seo workflow with Web Devel
 
 Perform an evidence-based accessibility, responsive, performance, and SEO review. Separate blocking defects from recommendations and identify missing measurements.
 
+## Trigger boundary
+Use for an end-to-end quality audit of user-facing web surfaces. Do not use for implementation or release signoff.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

@@ -19,6 +19,7 @@ Perform an independent security and privacy review. Reviewers cite evidence and 
 - Relevant files, routes, data flow, trust boundaries, roles, auth/session model, storage, logs, third-party integrations, privacy requirements, and known threat assumptions.
 
 ## Procedure
+
 1. Model trust boundaries, actors, assets, entry points, abuse cases, and data flows.
 2. Review authentication, authorization, sessions, input/output handling, injection, XSS, CSRF, SSRF, file handling, redirects, CSP, CORS, cookies, caching, logging, and error leakage as applicable.
 3. Check privacy purpose, minimization, retention, consent, trackers, and sensitive-data exposure.
