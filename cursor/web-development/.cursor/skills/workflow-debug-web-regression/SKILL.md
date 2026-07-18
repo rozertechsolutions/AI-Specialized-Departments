@@ -7,6 +7,9 @@ description: Run the debug-web-regression workflow with Web Development safety a
 
 Reproduce from available evidence, map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites.
 
+## Trigger boundary
+Use when an existing web behavior regressed or an observed failure needs root-cause analysis. Do not use for net-new feature planning.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

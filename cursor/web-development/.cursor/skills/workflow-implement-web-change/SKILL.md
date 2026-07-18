@@ -7,6 +7,9 @@ description: Run the implement-web-change workflow with Web Development safety a
 
 Validate scope, use the relevant specialist role, make only requested repository changes, preserve native conventions, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
 
+## Trigger boundary
+Use when the user has authorized a concrete web implementation task. Do not use for planning-only, review-only, or deployment tasks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.
