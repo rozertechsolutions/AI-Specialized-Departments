@@ -1,18 +1,21 @@
 ---
-description: Aggregate evidence, reviews, documentation, migrations, and risks for a human release decision.
+description: Aggregate readiness evidence and stop before publication, deployment, signing, or release.
 ---
 
 # Release-Readiness Review
 
 ## Purpose
 
-Aggregate evidence, reviews, documentation, migrations, and risks for a human release decision.
+Aggregate readiness evidence and stop before publication, deployment, signing, or release.
 
-## Entry conditions
+## Workflow-specific gates
 
-- A named human-requested objective exists.
-- The authorized repository scope is known.
-- The expected behavior or maintenance objective can be expressed as acceptance criteria.
+- acceptance evidence
+- unresolved defects and risks
+- documentation, changelog, and migration readiness
+- artifact and version implications
+- rollback readiness
+- explicit stop before publication, deployment, signing, or release
 
 ## Risk triggers
 
@@ -21,35 +24,35 @@ Aggregate evidence, reviews, documentation, migrations, and risks for a human re
 - unreviewed change
 - incomplete documentation
 
-Any trigger requires Engineering Risk Reviewer participation and may require explicit human approval before implementation.
+Any trigger requires Lead classification, possible human approval, and Engineering Risk Reviewer participation where relevant.
 
-## Stages
+## Prompt-only workflow
 
-1. **Intake — Software Development Lead:** confirm objective, scope, exclusions, constraints, and ownership.
-2. **Requirements — Requirements and Planning Specialist:** define requirements, acceptance criteria, assumptions, and unresolved questions.
-3. **Analysis — appropriate specialist:** inspect only necessary context and identify dependencies and impact.
-4. **Risk classification — Software Development Lead:** select required reviews and approval checkpoints.
-5. **Design — Software Architect when applicable:** document boundaries, contracts, alternatives, compatibility, and migration implications.
-6. **Plan — Requirements and Planning Specialist:** produce ordered changes, validation strategy, review points, and rollback considerations.
-7. **Human checkpoint:** obtain explicit approval for sensitive, irreversible, dependency, architecture, contract, migration, or scope-changing decisions.
-8. **Implementation — Implementation and Maintenance Engineer:** make only approved changes and record evidence.
-9. **Validation — Test and Quality Engineer:** assess acceptance, regression, edge cases, and every unexecuted check.
-10. **Independent code review — Code Quality Reviewer:** review correctness, maintainability, architecture fit, and unintended effects.
-11. **Independent risk review — Engineering Risk Reviewer when triggered:** review security, supply chain, performance, concurrency, reliability, and data integrity.
-12. **Documentation — Documentation and Release Readiness Specialist:** update technical, migration, compatibility, and versioning documentation.
-13. **Readiness — Documentation and Release Readiness Specialist:** issue a readiness verdict without releasing, deploying, publishing, signing, or submitting.
-14. **Close — Software Development Lead:** aggregate evidence, blockers, limitations, and required human decisions.
+Route this command through the primary Software Development Lead in `AGENTS.md`. The Lead may use specialist subagents for bounded evidence, but specialists must return to the Lead, cannot recursively delegate, cannot expand scope, and cannot claim final completion.
+
+## Common gates
+
+1. Lead confirms objective, authorized scope, constraints, exclusions, and approval requirements.
+2. Requirements and Planning Specialist defines requirements, acceptance criteria, assumptions, and plan when needed.
+3. Software Architect provides boundaries, contracts, alternatives, migrations, and compatibility evidence when triggered.
+4. Implementation and Maintenance Engineer performs only approved edits and records implementation evidence.
+5. Test and Quality Engineer records validation evidence and checks not run.
+6. Code Quality Reviewer performs independent review after implementation.
+7. Engineering Risk Reviewer reviews security, dependency, performance, reliability, data-integrity, or operational risk when triggered.
+8. Documentation and Release Readiness Specialist records documentation, migration, compatibility, versioning, and readiness evidence.
+9. Lead aggregates evidence, blockers, limitations, and human decisions.
 
 ## Stop conditions
 
-Stop and escalate on missing approval, conflicting requirements, secret exposure, unsupported behavior, unbounded scope, unavailable evidence, failed critical validation, or any requested action outside the authorized repository scope.
+Stop on missing approval, conflicting requirements, secret exposure, unsupported platform behavior, unbounded scope, insufficient evidence, self-review, circular delegation, or any requested Bash, web, Git, MCP, deployment, publication, signing, release, submission, account, credential, purchase, spending, or external communication action.
 
 ## Completion evidence
 
 - Requirement-to-change traceability.
-- Acceptance and validation matrix.
-- Independent review outcomes.
-- Risk findings and remediation status.
-- Documentation and compatibility status.
-- Explicit list of tests/checks not run.
-- Human-controlled release-readiness verdict.
+- Workflow-specific evidence listed above.
+- Validation evidence and checks not run.
+- Independent code-quality review.
+- Engineering-risk review when triggered.
+- Documentation, compatibility, migration, versioning, and readiness status.
+- Human decisions and unresolved limitations.
+- Lead-controlled final summary with no automatic release, deployment, publication, signing, submission, or Git mutation.

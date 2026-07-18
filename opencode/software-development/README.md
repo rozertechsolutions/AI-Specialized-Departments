@@ -1,43 +1,29 @@
-# OpenCode — Software Development
+# OpenCode - Software Development
 
-This directory implements the Software Development specialization for OpenCode using only platform-appropriate, repository-scoped content.
-
-## Department scope
-
-This specialization covers requirements analysis, architecture, backend services, APIs, desktop applications, command-line applications, libraries, SDKs, general-purpose software, implementation, maintenance, debugging, refactoring, testing, code quality, software security, dependencies, performance, reliability, technical documentation, and release readiness.
-
-It does not replace the independent Web Development or Mobile Development specializations. Browser-specific frontend work and mobile-platform-specific implementation belong there. Shared or technology-agnostic code may be handled here when the task originates in Software Development.
-
-The configuration is language-, framework-, database-, provider-, model-, and vendor-agnostic. It must inspect and respect the repository's existing stack instead of imposing one.
+This directory implements the Software Development specialization for OpenCode using repository-scoped native content. The primary OpenCode session is the Software Development Lead through `AGENTS.md`; there is intentionally no `.opencode/agents/software-development-lead.md` subagent.
 
 ## Native content
 
-- AGENTS.md
-- opencode.jsonc project permissions
-- .opencode/agents
-- .opencode/skills
-- .opencode/commands
+- `AGENTS.md` defines the primary Software Development Lead behavior.
+- `opencode.jsonc` sets explicit project permissions: broad fallback ask, Bash denied, web fetch denied, edits ask.
+- `.opencode/agents/` contains seven specialist subagents.
+- `.opencode/skills/` contains fourteen preserved capability Skills.
+- `.opencode/commands/` contains eleven prompt-only workflow commands.
 
-## Manual or auxiliary content
+## Permission rationale
 
-- None.
+OpenCode tools may otherwise be broadly available, so this package uses explicit least-privilege permissions. Planners, architects, testers, reviewers, risk reviewers, and documentation/release specialists deny edit, Bash, and web. The implementation specialist may request edits only after the primary Lead has approved scope; it still denies Bash, web, Git, MCP, deployment, publication, signing, release, and external actions.
+
+The project configuration contains no MCP server, provider pin, model pin, endpoint, credential, plugin, hook, global path, script, wrapper, launcher, deployment automation, publication automation, signing automation, release automation, or executable asset.
+
+## Operating model
+
+Commands and user requests route through the primary Lead. The Lead may call specialists for bounded responsibilities, but specialists return evidence to the Lead, cannot recursively delegate, cannot expand scope, and cannot claim final completion. Implementation, code-quality review, engineering-risk review, and release-readiness assessment remain distinct.
+
+Human approval is mandatory before destructive, sensitive, external, architectural, dependency, permission, trust-boundary, migration, or irreversible actions. Final completion must list validation evidence, checks not run, independent review outcomes, risk findings when triggered, documentation/readiness status, limitations, and human decisions.
 
 ## Intentionally omitted
 
-- MCP configuration
-- hooks
-- automatic shell/web access
-- global configuration or provider/model credentials
-
-## Safe-by-default behavior
-
-The package contains no executable hooks, active MCP servers, credentials, real endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. External and sensitive actions require explicit human control.
-
-
-## Installation
-
-Copy this `software-development` directory to the corresponding platform directory in the repository. Follow the platform-specific manual steps described here. Do not execute generated scripts because this package contains none.
-
-## Validation status
-
-The package has been checked statically for file presence, non-empty content, JSON/TOML/YAML syntax where applicable, Python syntax, internal references, prohibited executable file types, and scope boundaries. Platform loading and runtime behavior were not executed.
+- `.opencode/agents/software-development-lead.md`
+- MCP configuration, plugins, hooks, scripts, wrappers, global paths, provider/model pins, endpoints, and credentials
+- Bash, web, Git, deployment, publication, signing, release, submission, account, purchase, spending, or external communication authority
