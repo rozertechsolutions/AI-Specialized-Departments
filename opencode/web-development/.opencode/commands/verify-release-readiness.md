@@ -1,11 +1,18 @@
 ---
-description: Web Development verify release readiness workflow
+description: Guide release-readiness verification through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Verify Release Readiness
 
-Trace requirements to repository evidence, verify all required reviews, list unresolved risks, and issue PASS, FAIL, BLOCKED, or NOT APPLICABLE. Never deploy or publish.
+Coordinate release-readiness verification. The lead must invoke `quality-release-reviewer` after required implementation and independent review evidence exists. Never deploy or publish.
+
+## Expected input
+Acceptance criteria, changed files, role handoffs, review outcomes, validation evidence, known exclusions, and release constraints.
+
+## Required output
+Return final PASS, FAIL, or BLOCKED verdict with gate-by-gate evidence, unresolved risks, required human approvals, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

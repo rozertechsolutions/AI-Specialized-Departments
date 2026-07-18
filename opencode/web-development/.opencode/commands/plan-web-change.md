@@ -1,11 +1,18 @@
 ---
-description: Web Development plan web change workflow
+description: Guide web change planning through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Plan Web Change
 
-Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+Guide planning in the primary lead context. Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
+
+## Expected input
+Goal, constraints, affected product surfaces, known risks, prohibited changes, and required approvals.
+
+## Required output
+Return confirmed facts, assumptions, decision points, role ownership, phased plan, validation gates, required reviews, unresolved risks, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

@@ -1,11 +1,18 @@
 ---
-description: Web Development debug web regression workflow
+description: Guide web regression debugging through the primary web lead.
 agent: web-development-lead
+subtask: false
 ---
 
 # Debug Web Regression
 
-Reproduce from available evidence, map the execution path, form competing hypotheses, isolate the root cause, propose the smallest fix, define regression checks, and avoid speculative broad rewrites.
+Guide regression debugging from available evidence. The lead may invoke specialists only when their bounded analysis is needed and must keep root-cause reconciliation in the primary context.
+
+## Expected input
+Observed behavior, expected behavior, changed files or commits, environment, reproduction steps, and relevant logs or screenshots.
+
+## Required output
+Return confirmed facts, rejected hypotheses, root cause evidence, minimal fix plan, regression checks, unresolved risks, and NOT EXECUTED checks.
 
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.

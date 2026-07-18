@@ -8,6 +8,9 @@ description: Review proposed or changed web dependencies and third-party code.
 ## Mission
 Review proposed or changed web dependencies and third-party code.
 
+## OpenCode invocation
+Load this Skill through OpenCode's native `skill` tool when dependencies, lockfiles, third-party scripts, SDKs, build plugins, or CDN assets are proposed or changed. Do not install packages from this Skill.
+
 ## Required procedure
 1. Confirm necessity, maintenance status, licensing compatibility, provenance, transitive impact, bundle/runtime cost, and known security concerns using authoritative sources.
 2. Reject dependency additions that duplicate existing capability without clear value.

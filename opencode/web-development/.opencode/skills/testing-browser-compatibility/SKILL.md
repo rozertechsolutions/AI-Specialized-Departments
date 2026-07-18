@@ -8,6 +8,9 @@ description: Define and assess risk-based tests and browser compatibility.
 ## Mission
 Define and assess risk-based tests and browser compatibility.
 
+## OpenCode invocation
+Load this Skill through OpenCode's native `skill` tool to map or review test and browser-compatibility evidence. Mark checks NOT EXECUTED when direct results are unavailable.
+
 ## Required procedure
 1. Map acceptance criteria to unit, integration, contract, component, end-to-end, accessibility, security, and regression checks as applicable.
 2. Use the repository’s existing tools and supported browser policy; do not invent coverage thresholds.

@@ -8,6 +8,9 @@ description: Plan or implement frontend work within the repository’s native st
 ## Mission
 Plan or implement frontend work within the repository’s native stack.
 
+## OpenCode invocation
+Load this Skill through OpenCode's native `skill` tool for scoped frontend planning or implementation after stack, acceptance criteria, and approval boundaries are clear.
+
 ## Required procedure
 1. Preserve semantic HTML, keyboard access, focus behavior, responsive layout, localization readiness, and browser compatibility.
 2. Keep state ownership explicit and avoid duplicating server authority on the client.
