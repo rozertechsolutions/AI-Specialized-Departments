@@ -1,42 +1,30 @@
-# ChatGPT — Software Development
+# ChatGPT - Software Development
 
-This directory implements the Software Development specialization for ChatGPT using only platform-appropriate, repository-scoped content.
+This directory is a static manual source package for configuring a ChatGPT Software Development specialization.
 
-## Department scope
+## Native and Conditional Surfaces
 
-This specialization covers requirements analysis, architecture, backend services, APIs, desktop applications, command-line applications, libraries, SDKs, general-purpose software, implementation, maintenance, debugging, refactoring, testing, code quality, software security, dependencies, performance, reliability, technical documentation, and release readiness.
+- `project/project-instructions.md` and `project/knowledge/` are the primary Project source material.
+- `custom-gpt/` is optional source material for manually configured Custom GPTs when supported by the account and workspace.
+- `skills/` contains static Skill source packages only when ChatGPT Skills are available for the account or workspace.
+- `workspace-agent/` is a conditional manual Workspace Agent specification for supported workspaces.
+- `apps-connectors/` is policy source only; it does not enable or configure integrations.
 
-It does not replace the independent Web Development or Mobile Development specializations. Browser-specific frontend work and mobile-platform-specific implementation belong there. Shared or technology-agnostic code may be handled here when the task originates in Software Development.
+No file in this repository is automatically loaded by ChatGPT. Copy or attach only the surfaces supported by the target account, plan, administrator policy, and current product behavior.
 
-The configuration is language-, framework-, database-, provider-, model-, and vendor-agnostic. It must inspect and respect the repository's existing stack instead of imposing one.
+## Department Scope
 
-## Native content
+The package covers fourteen capability areas: requirements analysis, architecture, implementation and maintenance, defect correction, controlled refactoring, testing, code quality, engineering risk, software security, dependencies and supply chain, performance and reliability, API/library evolution, technical documentation, and release readiness.
 
-- Project instructions and project knowledge source files
-- Custom GPT source instructions and capability policy
-- ChatGPT Skill source packages where the account/workspace supports Skills
+## Safety Defaults
 
-## Manual or auxiliary content
+The package contains no executable hooks, scripts, MCP configuration, permission manifests, active connectors, credentials, endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. Human approval is required for destructive, sensitive, external, architectural, dependency, permission, trust-boundary, migration, public-contract, Git, deployment, publication, signing, submission, and release actions.
 
-- Workspace Agent definition and apps/connectors policy require manual product configuration
-- Repository files are source material and are not auto-loaded by ChatGPT
+## Usage
 
-## Intentionally omitted
+1. Create or update a ChatGPT Project manually.
+2. Paste `project/project-instructions.md` into Project instructions.
+3. Add selected files from `project/knowledge/` as Project knowledge.
+4. Optionally adapt `custom-gpt/`, `skills/`, `workspace-agent/`, and `apps-connectors/` only when those surfaces are available and approved.
 
-- repository agent files
-- local hooks
-- repository MCP configuration
-- automatic UI configuration or authentication
-
-## Safe-by-default behavior
-
-The package contains no executable hooks, active MCP servers, credentials, real endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. External and sensitive actions require explicit human control.
-
-Project, GPT, Skill, Workspace Agent, and connector availability can vary by plan and workspace policy. Import only the surfaces available to the target account.
-## Installation
-
-Copy this `software-development` directory to the corresponding platform directory in the repository. Follow the platform-specific manual steps described here. Do not execute generated scripts because this package contains none.
-
-## Validation status
-
-The package has been checked statically for file presence, non-empty content, JSON/TOML/YAML syntax where applicable, Python syntax, internal references, prohibited executable file types, and scope boundaries. Platform loading and runtime behavior were not executed.
+Runtime loading, product acceptance, connector behavior, and Skill availability have not been executed or verified from this repository.
