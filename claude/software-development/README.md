@@ -1,42 +1,26 @@
-# Claude — Software Development
+# Claude - Software Development
 
-This directory implements the Software Development specialization for Claude using only platform-appropriate, repository-scoped content.
+This directory is a static manual source package for configuring a Claude Project Software Development specialization. It is intentionally separate from Claude Code.
 
-## Department scope
+## Native and Conditional Surfaces
 
-This specialization covers requirements analysis, architecture, backend services, APIs, desktop applications, command-line applications, libraries, SDKs, general-purpose software, implementation, maintenance, debugging, refactoring, testing, code quality, software security, dependencies, performance, reliability, technical documentation, and release readiness.
+- `project/project-instructions.md` and `project/knowledge/` are the primary Claude Project source material.
+- `project/review-checklists.md` provides manual review checklists for Claude Project knowledge.
+- `skills/` contains static Skill source packages only when Claude Skills are available for the account or workspace.
+- `connectors/` is policy source only; it does not enable or configure integrations.
 
-It does not replace the independent Web Development or Mobile Development specializations. Browser-specific frontend work and mobile-platform-specific implementation belong there. Shared or technology-agnostic code may be handled here when the task originates in Software Development.
+No file in this repository is automatically loaded by Claude. Copy or attach only the surfaces supported by the target account, plan, administrator policy, and current product behavior.
 
-The configuration is language-, framework-, database-, provider-, model-, and vendor-agnostic. It must inspect and respect the repository's existing stack instead of imposing one.
+## Department Scope
 
-## Native content
+The package covers fourteen capability areas: requirements analysis, architecture, implementation and maintenance, defect correction, controlled refactoring, testing, code quality, engineering risk, software security, dependencies and supply chain, performance and reliability, API/library evolution, technical documentation, and release readiness.
 
-- Claude Project instructions and project knowledge
-- Claude Skill source packages where supported
-- Connector policy for manual configuration
+## Omitted Claude Code Surfaces
 
-## Manual or auxiliary content
+This target must not contain `CLAUDE.md`, `.claude/`, repository subagents, commands, hooks, settings, MCP configuration, local shell automation, or automatic connector authentication.
 
-- Skills and connectors must be uploaded/configured manually
-- These files are intentionally separate from Claude Code
+## Safety Defaults
 
-## Intentionally omitted
+The package contains no executable hooks, scripts, active MCP configuration, credentials, endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. Human approval is required for destructive, sensitive, external, architectural, dependency, permission, trust-boundary, migration, public-contract, Git, deployment, publication, signing, submission, and release actions.
 
-- CLAUDE.md and .claude repository files
-- local hooks or shell commands
-- repository subagents
-- automatic connector authentication
-
-## Safe-by-default behavior
-
-The package contains no executable hooks, active MCP servers, credentials, real endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. External and sensitive actions require explicit human control.
-
-
-## Installation
-
-Copy this `software-development` directory to the corresponding platform directory in the repository. Follow the platform-specific manual steps described here. Do not execute generated scripts because this package contains none.
-
-## Validation status
-
-The package has been checked statically for file presence, non-empty content, JSON/TOML/YAML syntax where applicable, Python syntax, internal references, prohibited executable file types, and scope boundaries. Platform loading and runtime behavior were not executed.
+Runtime loading, product acceptance, connector behavior, and Skill availability have not been executed or verified from this repository.
