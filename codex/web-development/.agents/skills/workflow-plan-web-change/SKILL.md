@@ -7,6 +7,9 @@ description: Run the plan-web-change Web Development workflow with explicit safe
 
 Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
 
+## Trigger boundary
+Use when scope, approach, ownership, or verification strategy must be settled before edits. Do not use after implementation has started except to re-plan a blocked change.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

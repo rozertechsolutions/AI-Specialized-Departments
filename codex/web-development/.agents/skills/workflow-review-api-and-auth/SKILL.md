@@ -7,6 +7,9 @@ description: Run the review-api-and-auth Web Development workflow with explicit 
 
 Review API contracts, validation, authentication, authorization, session and token handling, data access, rate limits, error leakage, and negative tests. Return findings without self-approval.
 
+## Trigger boundary
+Use for independent review of backend contracts, auth, sessions, cookies, CORS, validation, or data access. Do not use for frontend-only changes with no server trust boundary.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

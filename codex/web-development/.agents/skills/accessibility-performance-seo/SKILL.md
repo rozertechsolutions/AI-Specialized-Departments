@@ -8,6 +8,9 @@ description: Assess accessibility, performance, responsive behavior, and SEO as 
 ## Mission
 Assess accessibility, performance, responsive behavior, and SEO as one user-facing quality review.
 
+## Trigger boundary
+Use when a user-facing change needs independent quality review across accessibility, rendering, responsiveness, performance, resilience, or search metadata. Do not use for implementation work or final release approval.
+
 ## Required procedure
 1. Apply WCAG-oriented semantic, keyboard, focus, name/role/value, contrast, zoom, motion, and error-identification checks where applicable.
 2. Review critical rendering, asset weight, caching, loading strategy, Core Web Vitals risks, and performance budgets.
