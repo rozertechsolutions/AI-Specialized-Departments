@@ -8,6 +8,20 @@ description: Define and assess risk-based tests and browser compatibility.
 ## Mission
 Define and assess risk-based tests and browser compatibility.
 
+## Invocation and surface
+- Cascade: Invoke with `@testing-browser-compatibility` or allow Cascade to select it to map or review test and browser-compatibility evidence.
+- Devin Local: Compatible as a project skill; invoke with `/testing-browser-compatibility` when using Devin Local.
+- Not a test runner, browser preview, App Deploy, hook, MCP server, or external automation.
+
+## Inputs and preconditions
+Acceptance criteria, changed files, supported browsers, risk areas, available validation evidence, known exclusions, and prohibited operations.
+
+## Expected output and evidence
+Risk-based test matrix, browser compatibility expectations, evidence status, gaps, residual risk, and NOT EXECUTED checks.
+
+## Stop conditions
+Stop with BLOCKED when required tests or browser evidence are missing for a PASS claim.
+
 ## Required procedure
 1. Map acceptance criteria to unit, integration, contract, component, end-to-end, accessibility, security, and regression checks as applicable.
 2. Use the repository’s existing tools and supported browser policy; do not invent coverage thresholds.
@@ -23,5 +37,5 @@ Define and assess risk-based tests and browser compatibility.
 - Do not claim execution or success without direct evidence.
 
 ## Prohibited actions
-- No installation, command execution, Git mutation, deployment, publication, authentication, secret handling, spending, signing, or destructive operation without exact human authorization.
+- Do not run commands, install packages, mutate Git state, deploy, publish, authenticate, handle secrets, spend money, sign artifacts, or perform destructive operations without exact human authorization.
 - No unsupported technology assumptions or fabricated completion evidence.
