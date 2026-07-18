@@ -1,25 +1,14 @@
-# Cursor Cybersecurity Governance, Risk, Compliance & Assurance
+# Governance, Risk, Compliance, and Assurance
 
-This package defines a Cursor-native Cybersecurity GRC & Assurance workspace using nested instructions, project rules, subagents, and Agent Skills.
+This package is a static, organization-neutral cybersecurity configuration for Governance, Risk, Compliance, and Assurance. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Native Components
+## Professional Coverage
 
-- `AGENTS.md`: area-level coordinator instructions.
-- `.cursor/rules/grc-governance.mdc`: always-applied project rule for scope, safety, and evidence discipline.
-- `.cursor/agents/*.md`: specialist subagents with deterministic ownership.
-- `.cursor/skills/*/SKILL.md`: reusable GRC workflows packaged as Agent Skills.
-- `reference/NATIVE_SOURCES.md`: official Cursor sources and native/omitted component decisions.
+- Workflows covered: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+- Native roles: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+- Reusable Skills or procedures: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-No hooks, MCP servers, commands, plugins, scripts, or live integrations are included.
+## Evidence Standard
 
-## Use
-
-Ask Cursor Agent to work inside this directory and select the relevant Skill or subagent by task:
-
-- Governance, policy, control mapping, compliance gaps: `governance-policy-frameworks`.
-- Risk statements, risk register, treatments, exceptions, remediation governance: `risk-exceptions-remediation`.
-- Evidence, assurance readiness, findings, third-party risk, maturity, executive reporting: `assurance-third-party-reporting`.
-- Independent quality review: `independent-assurance-review`.
-
-All outputs require explicit evidence provenance, assumptions, limitations, residual risk, and human approval state.
-
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

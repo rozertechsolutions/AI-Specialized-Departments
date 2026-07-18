@@ -1,17 +1,14 @@
-# Cursor Cybersecurity Security Architecture Engineering
+# Security Architecture and Engineering
 
-This package configures Cursor-native static guidance for Cybersecurity Area 02: Security Architecture Engineering.
+This package is a static, organization-neutral cybersecurity configuration for Security Architecture and Engineering. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Native Artifacts
+## Professional Coverage
 
-- `AGENTS.md` defines area scope, mission, routing, safety boundaries, and structured output requirements.
-- `.cursor/rules/security-architecture-engineering.mdc` applies Cursor workspace rules for scope and safety.
-- `.cursor/agents/*.md` defines specialized read-only agents for architecture governance, solution architecture, identity/cloud/network, data/container/automation, and independent review.
-- `.cursor/skills/*/SKILL.md` defines reusable static workflows for architecture review, reference patterns, identity/cloud/network/data design, and container/IaC/automation review.
-- `reference/NATIVE_SOURCES.md` records official Cursor documentation checked for native feature support.
+- Workflows covered: security architecture review, reference architecture design, identity and privileged-access architecture review, cloud and platform review, network segmentation review, data-protection and cryptography review, container, Kubernetes, and IaC review, security-control pattern design, architecture-remediation validation.
+- Native roles: architecture-governance-agent, enterprise-solution-architecture-agent, identity-cloud-network-agent, data-container-automation-agent, independent-architecture-reviewer.
+- Reusable Skills or procedures: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-## Scope Boundaries
+## Evidence Standard
 
-The package supports design, review, documentation, governance, and independent assurance of security architectures. It does not approve architectures, accept risk, publish standards, deploy controls, operate production systems, authenticate to services, run scans, or manage incidents.
-
-Use the structured output header in `AGENTS.md` for every deliverable and route high-impact artifacts to the independent reviewer.
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.
