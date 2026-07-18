@@ -1,16 +1,14 @@
-# Native Source Verification
+# Native Sources
 
-Official sources checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Claude Code settings: `https://code.claude.com/docs/en/settings`
-- Claude Code subagents: `https://code.claude.com/docs/en/sub-agents`
-- Claude Code Skills: `https://code.claude.com/docs/en/skills`
-- Claude Code MCP: `https://code.claude.com/docs/en/mcp`
+Official sources consulted:
 
-## Decisions
+- Claude Code documentation: Overview.
+- Claude Code documentation: Settings.
+- Claude Code documentation: Subagents.
+- Claude Code documentation: Skills.
+- Claude Code documentation: Hooks.
+- Claude Code documentation: MCP.
 
-- `CLAUDE.md` provides repository-scoped instructions.
-- `.claude/agents/*.md` provides project subagents.
-- `.claude/skills/*/SKILL.md` provides reusable Skills.
-- MCP, hooks, and executable commands are omitted because this static package must not connect, execute, scan, or authenticate.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.
