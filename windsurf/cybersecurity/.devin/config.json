@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "read",
+      "grep",
+      "glob"
+    ],
+    "ask": [
+      "edit",
+      "Write(**)"
+    ],
+    "deny": [
+      "exec",
+      "Fetch(*)",
+      "mcp__*",
+      "Write(../**)",
+      "Write(.env*)",
+      "Write(**/.env*)"
+    ]
+  }
+}
