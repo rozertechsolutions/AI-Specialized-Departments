@@ -1,7 +1,15 @@
 # Native Sources
 
-- Kiro steering: https://kiro.dev/docs/steering/
-- Kiro skills: https://kiro.dev/docs/skills/
-- Kiro CLI custom agents: https://kiro.dev/docs/cli/custom-agents/
+Documentation review date: 2026-07-18.
 
-These sources support steering guidance, project Skills, and custom agent definitions used by this static package.
+Official sources consulted:
+
+- Kiro Docs: Steering.
+- Kiro Docs: Agent Skills.
+- Kiro Docs: Custom subagents.
+- Kiro Docs: Specs.
+- Kiro Docs: Hooks.
+- Kiro Docs: MCP.
+- Kiro CLI custom-agent configuration reference.
+
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

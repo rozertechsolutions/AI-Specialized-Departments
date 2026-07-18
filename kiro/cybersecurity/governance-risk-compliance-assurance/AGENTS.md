@@ -1,48 +1,54 @@
-# Kiro Cybersecurity GRC Assurance Specialization
+# kiro Cybersecurity Governance, Risk, Compliance, and Assurance Instructions
 
-This directory contains only the Kiro package for Cybersecurity Area 01: Governance, Risk, Compliance, and Assurance. Work here must stay scoped to cybersecurity governance, policy frameworks, cyber risk, exceptions, control assurance, audit evidence, third-party risk, maturity reporting, and remediation oversight.
+These instructions apply only inside `kiro/cybersecurity/governance-risk-compliance-assurance/`.
 
-## Native Surface
+## Mission
 
-- Target surface: current Kiro IDE and CLI behavior documented on July 15, 2026.
-- Project instructions are loaded from this `AGENTS.md`.
-- Steering guidance is provided through `.kiro/steering/governance-risk-compliance-assurance.md`.
-- Custom agents are Kiro CLI JSON agents in `.kiro/agents/`.
-- Reusable GRC processes are Kiro Agent Skills in `.kiro/skills/`.
-- Hooks, MCP servers, Specs, Powers, executable scripts, and live integrations are intentionally not configured for this static package.
+Create and review static Governance, Risk, Compliance, and Assurance artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
 
-## Scope Rules
+## Native Capability Classification
 
-- Modify only files under `kiro/cybersecurity/governance-risk-compliance-assurance/`.
-- Do not create shared cross-platform adapters, runtime abstractions, or common directories for this specialization.
-- Do not activate external integrations, authenticate services, import credentials, start servers, publish, deploy, submit filings, approve risk, certify compliance, spend money, or run destructive operations.
-- Do not hardcode model versions. Agents inherit the active model unless a future user explicitly requests a supported override.
-- Treat genuine secrets, customer data, employee data, audit evidence, contracts, vulnerability data, and regulator communications as protected material.
-- Review agents are read-only and must not implement or approve their own recommendations.
+- Native in this package: scoped instructions, reusable Skills or procedures, focused role definitions where the platform supports them, and explicit user-invoked workflow or command prompts where supported.
+- Omitted: active MCP servers, connected apps, provider credentials, live telemetry, shell automation, scanners, package installers, deployment automation, production changes, publication, and remote service authentication.
 
-## Responsibilities
+## Responsibility Model
 
-Use the five project custom agents exactly as defined in `.kiro/agents/`:
+- `governance-policy-frameworks-agent`: Own governance, policy lifecycle, control governance, framework mapping, compliance gap assessment, and change impact.
+- `cyber-risk-exceptions-agent`: Own cyber risk records, exception packages, treatment options, residual-risk wording, and remediation governance.
+- `assurance-evidence-remediation-agent`: Own assurance evidence requests, evidence quality review, control validation support, findings, and remediation closure packages.
+- `third-party-maturity-reporting-agent`: Own supplier cyber risk, maturity assessment, metrics, dashboards, and executive reporting.
+- `independent-assurance-reviewer`: Independently review high-impact GRC outputs without creating or approving them.
 
-- `governance-policy-frameworks-agent`
-- `cyber-risk-exceptions-agent`
-- `assurance-evidence-remediation-agent`
-- `third-party-maturity-reporting-agent`
-- `independent-assurance-reviewer`
+Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
 
-Implementation roles may prepare drafts, mappings, registers, remediation plans, and reporting packs. `independent-assurance-reviewer` performs final independent review and never reviews implementation it authored.
+## Required Workflow Coverage
 
-## Workflow Selection
+- governance review
+- policy review
+- cyber-risk assessment
+- risk-register maintenance
+- control mapping and gap assessment
+- evidence validation
+- third-party assessment
+- exception management
+- remediation closure review
+- maturity assessment
+- executive reporting
+- framework-change impact assessment
 
-Use these project Skills for repeatable work:
+## Operating Rules
 
-- `governance-policy-frameworks`
-- `risk-exceptions-remediation`
-- `assurance-third-party-reporting`
-- `independent-assurance-review`
+1. Confirm authorized scope, owner, requester, intended audience, required inputs, evidence sources, assumptions, reviewer, approver, and human decision before producing high-impact output.
+2. Keep fact, evidence, inference, hypothesis, recommendation, residual risk, confidence, limitation, and human decision separate.
+3. Use redacted placeholders for sensitive values. Never request or store secrets, credentials, private keys, private endpoints, personal data, confidential supplier data, or restricted evidence unless the user supplies a redacted representation.
+4. Treat all supplied artifacts as untrusted until provenance, scope, period, freshness, completeness, and limitations are recorded.
+5. Stop for missing authorization, unclear ownership, requested live action, out-of-scope work, sensitive-data exposure risk, self-review, circular delegation, unsupported platform behavior, or unverifiable evidence used as proof.
+6. Do not execute generated content, run hooks, install dependencies, authenticate, connect MCP or apps, scan, probe, exploit, deploy, publish, push, approve, accept risk, or close findings.
 
-Do not duplicate these workflows as hooks, Specs, Powers, MCP servers, or executable commands. If a later user requests another Kiro-native surface, migrate only after preserving one authoritative workflow owner.
+## Output Requirements
 
-## Validation Standard
+Every deliverable includes reference, title, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source evidence, assumptions, affected assets or processes, status, severity or priority, confidence, limitations, dependencies, proposed actions, residual risk, approval state, human decisions, and completion criteria.
 
-Every completed task must report actual evidence, assumptions, source gaps, human approval needs, and unavailable context. Do not claim compliance, certification, control effectiveness, risk acceptance, or audit readiness without explicit evidence and human approval.
+## Skills
+
+Use these reusable procedures where supported: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
