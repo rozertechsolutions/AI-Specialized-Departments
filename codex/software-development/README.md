@@ -1,43 +1,17 @@
-# Codex — Software Development
+# Codex - Software Development
 
-This directory implements the Software Development specialization for Codex using only platform-appropriate, repository-scoped content.
+This directory configures Codex for the Software Development specialization.
 
-## Department scope
+## Native Surfaces
 
-This specialization covers requirements analysis, architecture, backend services, APIs, desktop applications, command-line applications, libraries, SDKs, general-purpose software, implementation, maintenance, debugging, refactoring, testing, code quality, software security, dependencies, performance, reliability, technical documentation, and release readiness.
+- `AGENTS.md` makes the primary Codex session the Software Development Lead.
+- `.codex/config.toml` is project-scoped, model-neutral, endpoint-neutral, approval-gated, and network-disabled with `[agents].max_depth = 1`.
+- `.codex/agents/` contains seven specialist agents; there is intentionally no Lead agent.
+- `.agents/skills/` contains static reusable Skills.
+- `docs/workflows/` contains auxiliary workflow references, not an auto-loaded workflow engine.
 
-It does not replace the independent Web Development or Mobile Development specializations. Browser-specific frontend work and mobile-platform-specific implementation belong there. Shared or technology-agnostic code may be handled here when the task originates in Software Development.
+## Safety Model
 
-The configuration is language-, framework-, database-, provider-, model-, and vendor-agnostic. It must inspect and respect the repository's existing stack instead of imposing one.
+The primary session plans, routes, requests approvals, aggregates evidence, and reports completion. Specialists return bounded evidence to the primary session, cannot recursively delegate, cannot expand scope, and cannot claim final completion. Planning, architecture, testing, code-quality, engineering-risk, and release-readiness specialists are read-only. The implementation specialist is limited to approval-gated workspace edits and has no network, unrestricted shell, external service, Git mutation, deployment, publication, signing, or release authority.
 
-## Native content
-
-- AGENTS.md project instructions
-- .codex/config.toml project configuration
-- .codex/agents custom agents
-- .agents/skills project Skills
-
-## Manual or auxiliary content
-
-- docs/workflows is supporting documentation
-
-## Intentionally omitted
-
-- hooks
-- active MCP servers
-- experimental command rules
-- global configuration
-- model or endpoint pinning
-
-## Safe-by-default behavior
-
-The package contains no executable hooks, active MCP servers, credentials, real endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. External and sensitive actions require explicit human control.
-
-
-## Installation
-
-Copy this `software-development` directory to the corresponding platform directory in the repository. Follow the platform-specific manual steps described here. Do not execute generated scripts because this package contains none.
-
-## Validation status
-
-The package has been checked statically for file presence, non-empty content, JSON/TOML/YAML syntax where applicable, Python syntax, internal references, prohibited executable file types, and scope boundaries. Platform loading and runtime behavior were not executed.
+No hooks, MCP entries, scripts, executable helpers, model/provider pins, endpoint pins, credentials, or user-global paths are included.
