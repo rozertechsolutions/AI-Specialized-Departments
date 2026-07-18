@@ -1,20 +1,54 @@
 ---
 name: independent-architecture-assurance
-description: Use for independent quality review of security architecture packages, decision records, findings, remediation evidence, and approval readiness.
+description: Reusable Security Architecture and Engineering procedure for independent architecture assurance using static evidence, human approval gates, and independent review.
 ---
 
 # Independent Architecture Assurance
 
-Objective: provide a read-only quality review before human approval or decision.
+## Use Cases
 
-Primary owner: `independent-architecture-reviewer`.
+Use this Skill for Security Architecture and Engineering work related to independent architecture assurance, including the applicable workflows: security architecture review, reference architecture design, identity and privileged-access architecture review, cloud and platform review, network segmentation review, data-protection and cryptography review, container, Kubernetes, and IaC review, security-control pattern design, architecture-remediation validation.
 
-Workflow:
+## Required Inputs
 
-1. Confirm the reviewer did not create the artifact under review.
-2. Check scope, exclusions, source versions, evidence provenance, and decision clarity.
-3. Validate that findings, severity, confidence, dependencies, and residual risk are supported by evidence or clearly marked as inference.
-4. Identify contradictions, missing boundaries, unowned actions, human-only decisions, and unsupported approval claims.
-5. Return required corrections and approval-readiness status without approving the artifact.
+- Authorized scope, explicit exclusions, accountable human owner, requester, intended audience, and decision needed.
+- Supplied static evidence with provenance, source period, freshness, completeness, and limitations.
+- Relevant constraints, assumptions, dependencies, approval requirements, and reviewer independence.
 
-Stop for request to approve, accept, close, publish, deploy, change production, or self-review.
+## Preconditions
+
+The task is repository-local or based on supplied static evidence. No live system action, authentication, external connection, scan, exploit, deployment, publication, or authoritative approval is requested.
+
+## Procedure
+
+1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
+2. Select one primary role from: architecture-governance-agent, enterprise-solution-architecture-agent, identity-cloud-network-agent, data-container-automation-agent, independent-architecture-reviewer.
+3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
+4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
+5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
+6. Route high-impact, closure, exception, external-facing, or executive outputs to an independent reviewer that did not create the artifact.
+7. Return a completion record with residual risk, confidence, limitations, open questions, and blocked validations.
+
+## Structured Outputs
+
+Return the artifact plus an evidence table, decision log, stop-condition review, independent-review requirement, and completion criteria. Include owners and approvers as role placeholders, not real identities.
+
+## Quality Checks
+
+Verify native-surface compatibility, professional coverage, evidence traceability, least-privilege behavior, no unsupported tool claims, no self-review, no circular delegation, no real secrets, no live-action claim, and no fabricated validation.
+
+## Stop And Escalation Conditions
+
+Stop for missing authorization, unredacted sensitive material, unsupported legal or compliance conclusion, requested live action, evidence gaps that affect a conclusion, self-review, conflict of interest, or a human-only approval request.
+
+## Failure Behavior
+
+Return a blocker with the missing input, affected output, risk of proceeding, safe next step, and exact human approval or evidence needed. Do not silently continue with assumptions.
+
+## Human Review Gates
+
+Human review is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, or critical finding closure.
+
+## Prohibited Actions
+
+Do not execute code, run tools, install dependencies, authenticate, connect MCP/apps, scan, probe, exploit, deploy, publish, push, alter live records, approve decisions, accept risk, close findings, or claim validation without evidence.
