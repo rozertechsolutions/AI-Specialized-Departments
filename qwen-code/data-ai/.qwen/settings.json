@@ -1,0 +1,89 @@
+{
+  "general": {
+    "enableAutoUpdate": false
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "model": {
+    "maxSubagentDepth": 1
+  },
+  "memory": {
+    "enableManagedAutoMemory": false,
+    "enableManagedAutoDream": false,
+    "enableAutoSkill": false,
+    "autoSkillConfirm": true,
+    "enableTeamMemory": false,
+    "enableTeamMemorySync": false
+  },
+  "tools": {
+    "approvalMode": "default",
+    "shell": {
+      "enableInteractiveShell": false
+    },
+    "computerUse": {
+      "enabled": false
+    }
+  },
+  "permissions": {
+    "ask": [
+      "Agent",
+      "Edit"
+    ],
+    "deny": [
+      "Bash",
+      "Shell",
+      "WebFetch",
+      "WebSearch",
+      "MCP",
+      "Read(/**/.git/**)",
+      "Edit(/**/.git/**)",
+      "Read(/**/.env)",
+      "Edit(/**/.env)",
+      "Read(/**/*.pem)",
+      "Edit(/**/*.pem)",
+      "Read(/**/*.key)",
+      "Edit(/**/*.key)"
+    ]
+  },
+  "slashCommands": {
+    "disabled": [
+      "mcp",
+      "extensions"
+    ]
+  },
+  "mcp": {
+    "allowed": [],
+    "excluded": [
+      "*"
+    ]
+  },
+  "telemetry": {
+    "enabled": false,
+    "logPrompts": false,
+    "includeSensitiveSpanAttributes": false
+  },
+  "experimental": {
+    "cron": false,
+    "agentTeam": false,
+    "artifact": false
+  },
+  "disableAllHooks": false,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^(Read|ReadFile|Grep|Glob|ListFiles|Write|WriteFile|Edit|EditFile|Bash|Shell|WebFetch|WebSearch|read_file|read_many_files|grep_search|glob|list_directory|write_file|edit|run_shell_command)$",
+        "sequential": true,
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$QWEN_PROJECT_DIR/.qwen/hooks/data-ai-safety-guard.py\"",
+            "name": "data-ai-safety-guard",
+            "description": "Block secret, shell, web, MCP, protected path, and high-impact Data/AI actions.",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}
