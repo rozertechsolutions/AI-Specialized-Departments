@@ -1,28 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/software-development/policy.schema.json",
-  "title": "policy",
+  "$id": "https://example.invalid/software-development/provider-example.schema.json",
+  "title": "provider-example",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schema_version",
     "id",
     "version",
-    "name",
-    "mission",
-    "scope",
-    "inputs",
-    "outputs",
-    "permissions",
-    "dependencies",
-    "invocation",
-    "delegation",
-    "stop_conditions",
-    "failure_behavior",
-    "completion_criteria",
-    "human_review",
-    "prohibited_actions",
-    "rules"
+    "providers"
   ],
   "properties": {
     "schema_version": {
@@ -34,54 +20,60 @@
     "version": {
       "$ref": "#/$defs/version"
     },
-    "name": {
-      "$ref": "#/$defs/nonEmptyString"
-    },
-    "mission": {
-      "$ref": "#/$defs/nonEmptyString"
-    },
-    "scope": {
-      "$ref": "#/$defs/stringList"
-    },
-    "inputs": {
-      "$ref": "#/$defs/stringList"
-    },
-    "outputs": {
-      "$ref": "#/$defs/stringList"
-    },
-    "permissions": {
-      "$ref": "#/$defs/permissions"
-    },
-    "dependencies": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/identifier"
-      },
-      "uniqueItems": true
-    },
-    "invocation": {
-      "$ref": "#/$defs/stringList"
-    },
-    "delegation": {
-      "$ref": "#/$defs/delegation"
-    },
-    "stop_conditions": {
-      "$ref": "#/$defs/stringList"
-    },
-    "failure_behavior": {
-      "$ref": "#/$defs/nonEmptyString"
-    },
-    "completion_criteria": {
-      "$ref": "#/$defs/stringList"
-    },
-    "human_review": {
-      "$ref": "#/$defs/humanReview"
-    },
-    "prohibited_actions": {
-      "$ref": "#/$defs/stringList"
-    },
-    "rules": {
-      "$ref": "#/$defs/stringList"
+    "providers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "state",
+          "type",
+          "endpoint",
+          "model",
+          "credentials",
+          "tools",
+          "notes"
+        ],
+        "properties": {
+          "state": {
+            "$ref": "#/$defs/providerState"
+          },
+          "type": {
+            "$ref": "#/$defs/nonEmptyString"
+          },
+          "endpoint": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 0
+          },
+          "model": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 0
+          },
+          "credentials": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 0
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/toolType"
+            },
+            "maxItems": 0
+          },
+          "notes": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
     }
   },
   "$defs": {

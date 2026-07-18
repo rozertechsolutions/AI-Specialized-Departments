@@ -1,12 +1,26 @@
-schema_version: '1.0'
-runtime:
-  enabled: false
-  provider: null
-  model: null
-  permissions:
-    read_repository: ask
-    write_repository: ask
-    shell: deny
-    network: deny
-    external_write: deny
-  integrations: []
+{
+  "schema_version": "1.0",
+  "id": "runtime-example",
+  "version": "1.0",
+  "runtime": {
+    "state": "disabled",
+    "provider": null,
+    "model": null,
+    "permissions": {
+      "write_repository": "deny",
+      "shell": "deny",
+      "network": "deny",
+      "external_write": "deny",
+      "mcp": "deny",
+      "browser": "deny",
+      "git": "deny",
+      "deployment": "deny",
+      "publication": "deny",
+      "signing": "deny",
+      "release": "deny",
+      "read_repository": "ask"
+    },
+    "integrations": [],
+    "notes": "Illustrative only; no runtime, provider, model, tool, integration, or external service is enabled by default."
+  }
+}

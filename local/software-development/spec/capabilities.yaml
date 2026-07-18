@@ -1,22 +1,105 @@
-schema_version: '1.0'
-capabilities:
-  read_repository:
-    required: true
-    default: disabled_until_authorized
-  write_repository:
-    required: false
-    default: disabled_until_human_approval
-  shell:
-    required: false
-    default: disabled
-  network:
-    required: false
-    default: disabled
-  mcp:
-    required: false
-    default: disabled
-  external_write:
-    required: false
-    default: disabled
-degradation: When a capability is unavailable, return a plan or review artifact and
-  state the limitation; never simulate execution.
+{
+  "schema_version": "1.0",
+  "id": "software-development-capabilities",
+  "version": "1.0",
+  "capabilities": [
+    {
+      "id": "codebase-analysis",
+      "name": "Codebase Analysis",
+      "support": "supported",
+      "description": "Provider-neutral codebase analysis capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "requirements-decomposition",
+      "name": "Requirements Decomposition",
+      "support": "supported",
+      "description": "Provider-neutral requirements decomposition capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "technical-implementation-planning",
+      "name": "Technical Implementation Planning",
+      "support": "supported",
+      "description": "Provider-neutral technical implementation planning capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "architecture-decision-management",
+      "name": "Architecture Decision Management",
+      "support": "supported",
+      "description": "Provider-neutral architecture decision management capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "feature-implementation",
+      "name": "Feature Implementation",
+      "support": "supported",
+      "description": "Provider-neutral feature implementation capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "controlled-refactoring",
+      "name": "Controlled Refactoring",
+      "support": "supported",
+      "description": "Provider-neutral controlled refactoring capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "root-cause-debugging",
+      "name": "Root-Cause Debugging",
+      "support": "supported",
+      "description": "Provider-neutral root-cause debugging capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "test-strategy-and-validation",
+      "name": "Test Strategy and Validation",
+      "support": "supported",
+      "description": "Provider-neutral test strategy and validation capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "independent-code-review",
+      "name": "Independent Code Review",
+      "support": "supported",
+      "description": "Provider-neutral independent code review capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "secure-software-review",
+      "name": "Secure Software Review",
+      "support": "supported",
+      "description": "Provider-neutral secure software review capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "dependency-and-supply-chain-review",
+      "name": "Dependency and Supply-Chain Review",
+      "support": "supported",
+      "description": "Provider-neutral dependency and supply-chain review capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "performance-and-reliability-review",
+      "name": "Performance and Reliability Review",
+      "support": "supported",
+      "description": "Provider-neutral performance and reliability review capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "technical-documentation",
+      "name": "Technical Documentation",
+      "support": "supported",
+      "description": "Provider-neutral technical documentation capability.",
+      "owned_by": "software-development-lead"
+    },
+    {
+      "id": "release-readiness-assessment",
+      "name": "Release Readiness Assessment",
+      "support": "supported",
+      "description": "Provider-neutral release readiness assessment capability.",
+      "owned_by": "software-development-lead"
+    }
+  ]
+}

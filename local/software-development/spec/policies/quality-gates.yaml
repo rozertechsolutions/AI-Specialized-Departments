@@ -1,11 +1,92 @@
-schema_version: '1.0'
-id: quality-gates
-required:
-- requirements_traceability
-- acceptance_status
-- validation_evidence
-- independent_code_review
-- risk_review_when_triggered
-- documentation_status
-- known_limitations
-- release_readiness_without_release
+{
+  "schema_version": "1.0",
+  "id": "quality-gates",
+  "version": "1.0",
+  "name": "Quality Gates Policy",
+  "mission": "Define quality gates policy for inert local runtimes.",
+  "scope": [
+    "software-development specialization"
+  ],
+  "inputs": [
+    "task statement",
+    "authorized scope",
+    "repository context when provided"
+  ],
+  "outputs": [
+    "evidence-based result",
+    "assumptions and limitations",
+    "checks not run"
+  ],
+  "permissions": {
+    "write_repository": "deny",
+    "shell": "deny",
+    "network": "deny",
+    "external_write": "deny",
+    "mcp": "deny",
+    "browser": "deny",
+    "git": "deny",
+    "deployment": "deny",
+    "publication": "deny",
+    "signing": "deny",
+    "release": "deny",
+    "read_repository": "ask"
+  },
+  "dependencies": [],
+  "invocation": [
+    "manual or runtime-selected use only",
+    "no provider selected by default"
+  ],
+  "delegation": {
+    "allowed": false,
+    "targets": [],
+    "max_depth": 0,
+    "rules": [
+      "return evidence to the lead",
+      "do not delegate recursively"
+    ]
+  },
+  "stop_conditions": [
+    "conflicting requirements",
+    "missing approval",
+    "secret exposure risk",
+    "insufficient evidence",
+    "scope expansion"
+  ],
+  "failure_behavior": "Stop safely and report the unresolved blocker without fabricating results.",
+  "completion_criteria": [
+    "traceable output",
+    "explicit limitations",
+    "human-review requirements satisfied"
+  ],
+  "human_review": {
+    "required_for": [
+      "destructive actions",
+      "sensitive data",
+      "external access",
+      "architecture changes",
+      "dependency changes",
+      "permission changes",
+      "trust-boundary changes",
+      "migrations",
+      "public contracts",
+      "irreversible actions"
+    ],
+    "approver": "human operator",
+    "evidence_required": true
+  },
+  "prohibited_actions": [
+    "automatic deployment",
+    "automatic publication",
+    "automatic release",
+    "automatic signing",
+    "credential exposure",
+    "unapproved external access"
+  ],
+  "gates": [
+    "requirements traceability",
+    "validation evidence",
+    "independent review",
+    "risk review when triggered",
+    "release stop"
+  ]
+}

@@ -1,22 +1,92 @@
-schema_version: '1.0'
-id: controlled-refactoring
-name: Controlled Refactoring
-mission: Improve internal design without unintended behavior changes, using explicit
-  invariants and regression evidence.
-inputs:
-- refactoring objective
-- behavioral invariants
-- affected code
-outputs:
-- refactored code
-- invariant evidence
-- remaining risks
-triggers:
-- technical debt
-- maintainability issue
-- approved internal redesign
-failure_behavior: stop_and_report
-prohibited:
-- invent_evidence
-- expose_secrets
-- automatic_external_action
+{
+  "schema_version": "1.0",
+  "id": "controlled-refactoring",
+  "version": "1.0",
+  "name": "Controlled Refactoring",
+  "mission": "Provide the controlled refactoring capability for inert local runtimes.",
+  "scope": [
+    "software-development specialization"
+  ],
+  "inputs": [
+    "task statement",
+    "authorized scope",
+    "repository context when provided"
+  ],
+  "outputs": [
+    "evidence-based result",
+    "assumptions and limitations",
+    "checks not run"
+  ],
+  "permissions": {
+    "write_repository": "deny",
+    "shell": "deny",
+    "network": "deny",
+    "external_write": "deny",
+    "mcp": "deny",
+    "browser": "deny",
+    "git": "deny",
+    "deployment": "deny",
+    "publication": "deny",
+    "signing": "deny",
+    "release": "deny",
+    "read_repository": "ask"
+  },
+  "dependencies": [],
+  "invocation": [
+    "manual or runtime-selected use only",
+    "no provider selected by default"
+  ],
+  "delegation": {
+    "allowed": false,
+    "targets": [],
+    "max_depth": 0,
+    "rules": [
+      "return evidence to the lead",
+      "do not delegate recursively"
+    ]
+  },
+  "stop_conditions": [
+    "conflicting requirements",
+    "missing approval",
+    "secret exposure risk",
+    "insufficient evidence",
+    "scope expansion"
+  ],
+  "failure_behavior": "Stop safely and report the unresolved blocker without fabricating results.",
+  "completion_criteria": [
+    "traceable output",
+    "explicit limitations",
+    "human-review requirements satisfied"
+  ],
+  "human_review": {
+    "required_for": [
+      "destructive actions",
+      "sensitive data",
+      "external access",
+      "architecture changes",
+      "dependency changes",
+      "permission changes",
+      "trust-boundary changes",
+      "migrations",
+      "public contracts",
+      "irreversible actions"
+    ],
+    "approver": "human operator",
+    "evidence_required": true
+  },
+  "prohibited_actions": [
+    "automatic deployment",
+    "automatic publication",
+    "automatic release",
+    "automatic signing",
+    "credential exposure",
+    "unapproved external access"
+  ],
+  "capability": "controlled-refactoring",
+  "procedure": [
+    "confirm scope",
+    "gather minimum evidence",
+    "apply role-specific method",
+    "return evidence and limitations"
+  ]
+}

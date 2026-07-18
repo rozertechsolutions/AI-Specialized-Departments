@@ -1,55 +1,147 @@
-schema_version: '1.0'
-id: software-development
-name: Software Development
-scope:
-- requirements and planning
-- architecture and technical design
-- backend, APIs, desktop, CLI, libraries and SDKs
-- implementation, maintenance, debugging and refactoring
-- testing and quality engineering
-- software security, dependencies, performance and reliability
-- documentation and release readiness
-exclusions:
-- browser-specific web implementation
-- mobile-platform-specific implementation
-- automatic release, deployment, signing or publication
-roles:
-- software-development-lead
-- requirements-and-planning-specialist
-- software-architect
-- implementation-and-maintenance-engineer
-- test-and-quality-engineer
-- code-quality-reviewer
-- engineering-risk-reviewer
-- documentation-and-release-readiness-specialist
-skills:
-- codebase-analysis
-- requirements-decomposition
-- technical-implementation-planning
-- architecture-decision-management
-- feature-implementation
-- controlled-refactoring
-- root-cause-debugging
-- test-strategy-and-validation
-- independent-code-review
-- secure-software-review
-- dependency-and-supply-chain-review
-- performance-and-reliability-review
-- technical-documentation
-- release-readiness-assessment
-workflows:
-- new-feature-development
-- bug-investigation-and-correction
-- controlled-refactoring
-- architecture-change
-- api-or-library-evolution
-- dependency-update
-- security-remediation
-- performance-and-reliability-improvement
-- technical-debt-reduction
-- maintenance-and-compatibility-update
-- release-readiness-review
-policies:
-- safety
-- human-review
-- quality-gates
+{
+  "schema_version": "1.0",
+  "id": "software-development",
+  "version": "1.0",
+  "name": "Software Development",
+  "mission": "Define the provider-independent Software Development department.",
+  "scope": [
+    "software-development specialization"
+  ],
+  "inputs": [
+    "task statement",
+    "authorized scope",
+    "repository context when provided"
+  ],
+  "outputs": [
+    "evidence-based result",
+    "assumptions and limitations",
+    "checks not run"
+  ],
+  "permissions": {
+    "write_repository": "deny",
+    "shell": "deny",
+    "network": "deny",
+    "external_write": "deny",
+    "mcp": "deny",
+    "browser": "deny",
+    "git": "deny",
+    "deployment": "deny",
+    "publication": "deny",
+    "signing": "deny",
+    "release": "deny",
+    "read_repository": "ask"
+  },
+  "dependencies": [],
+  "invocation": [
+    "manual or runtime-selected use only",
+    "no provider selected by default"
+  ],
+  "delegation": {
+    "allowed": false,
+    "targets": [],
+    "max_depth": 0,
+    "rules": [
+      "return evidence to the lead",
+      "do not delegate recursively"
+    ]
+  },
+  "stop_conditions": [
+    "conflicting requirements",
+    "missing approval",
+    "secret exposure risk",
+    "insufficient evidence",
+    "scope expansion"
+  ],
+  "failure_behavior": "Stop safely and report the unresolved blocker without fabricating results.",
+  "completion_criteria": [
+    "traceable output",
+    "explicit limitations",
+    "human-review requirements satisfied"
+  ],
+  "human_review": {
+    "required_for": [
+      "destructive actions",
+      "sensitive data",
+      "external access",
+      "architecture changes",
+      "dependency changes",
+      "permission changes",
+      "trust-boundary changes",
+      "migrations",
+      "public contracts",
+      "irreversible actions"
+    ],
+    "approver": "human operator",
+    "evidence_required": true
+  },
+  "prohibited_actions": [
+    "automatic deployment",
+    "automatic publication",
+    "automatic release",
+    "automatic signing",
+    "credential exposure",
+    "unapproved external access"
+  ],
+  "roles": [
+    "software-development-lead",
+    "requirements-and-planning-specialist",
+    "software-architect",
+    "implementation-and-maintenance-engineer",
+    "test-and-quality-engineer",
+    "code-quality-reviewer",
+    "engineering-risk-reviewer",
+    "documentation-and-release-readiness-specialist"
+  ],
+  "skills": [
+    "codebase-analysis",
+    "requirements-decomposition",
+    "technical-implementation-planning",
+    "architecture-decision-management",
+    "feature-implementation",
+    "controlled-refactoring",
+    "root-cause-debugging",
+    "test-strategy-and-validation",
+    "independent-code-review",
+    "secure-software-review",
+    "dependency-and-supply-chain-review",
+    "performance-and-reliability-review",
+    "technical-documentation",
+    "release-readiness-assessment"
+  ],
+  "workflows": [
+    "new-feature-development",
+    "bug-investigation-and-correction",
+    "controlled-refactoring",
+    "architecture-change",
+    "api-or-library-evolution",
+    "dependency-update",
+    "security-remediation",
+    "performance-and-reliability-improvement",
+    "technical-debt-reduction",
+    "maintenance-and-compatibility-update",
+    "release-readiness-review"
+  ],
+  "policies": [
+    "safety",
+    "human-review",
+    "quality-gates"
+  ],
+  "capabilities": [
+    "codebase-analysis",
+    "requirements-decomposition",
+    "technical-implementation-planning",
+    "architecture-decision-management",
+    "feature-implementation",
+    "controlled-refactoring",
+    "root-cause-debugging",
+    "test-strategy-and-validation",
+    "independent-code-review",
+    "secure-software-review",
+    "dependency-and-supply-chain-review",
+    "performance-and-reliability-review",
+    "technical-documentation",
+    "release-readiness-assessment"
+  ],
+  "provider_state": "disabled",
+  "runtime_state": "disabled"
+}

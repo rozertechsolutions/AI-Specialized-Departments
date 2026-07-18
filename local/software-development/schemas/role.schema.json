@@ -1,38 +1,276 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/schemas/role.schema.json",
+  "$id": "https://example.invalid/software-development/role.schema.json",
+  "title": "role",
   "type": "object",
+  "additionalProperties": false,
   "required": [
     "schema_version",
     "id",
+    "version",
     "name",
     "mission",
+    "scope",
+    "inputs",
+    "outputs",
+    "permissions",
+    "dependencies",
+    "invocation",
+    "delegation",
+    "stop_conditions",
+    "failure_behavior",
+    "completion_criteria",
+    "human_review",
+    "prohibited_actions",
     "owns",
     "excludes"
   ],
   "properties": {
     "schema_version": {
-      "type": "string"
+      "$ref": "#/$defs/version"
     },
     "id": {
-      "type": "string"
+      "$ref": "#/$defs/identifier"
+    },
+    "version": {
+      "$ref": "#/$defs/version"
     },
     "name": {
-      "type": "string"
+      "$ref": "#/$defs/nonEmptyString"
     },
     "mission": {
-      "type": "string"
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "scope": {
+      "$ref": "#/$defs/stringList"
+    },
+    "inputs": {
+      "$ref": "#/$defs/stringList"
+    },
+    "outputs": {
+      "$ref": "#/$defs/stringList"
+    },
+    "permissions": {
+      "$ref": "#/$defs/permissions"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/identifier"
+      },
+      "uniqueItems": true
+    },
+    "invocation": {
+      "$ref": "#/$defs/stringList"
+    },
+    "delegation": {
+      "$ref": "#/$defs/delegation"
+    },
+    "stop_conditions": {
+      "$ref": "#/$defs/stringList"
+    },
+    "failure_behavior": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "completion_criteria": {
+      "$ref": "#/$defs/stringList"
+    },
+    "human_review": {
+      "$ref": "#/$defs/humanReview"
+    },
+    "prohibited_actions": {
+      "$ref": "#/$defs/stringList"
     },
     "owns": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "$ref": "#/$defs/stringList"
     },
     "excludes": {
+      "$ref": "#/$defs/stringList"
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+$"
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stringList": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "#/$defs/nonEmptyString"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "permissionDecision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "ask",
+        "deny"
+      ]
+    },
+    "componentState": {
+      "type": "string",
+      "enum": [
+        "disabled",
+        "manual",
+        "available",
+        "unsupported"
+      ]
+    },
+    "toolType": {
+      "type": "string",
+      "enum": [
+        "read",
+        "write",
+        "shell",
+        "network",
+        "browser",
+        "mcp",
+        "git",
+        "deployment",
+        "publication",
+        "signing",
+        "release"
+      ]
+    },
+    "providerState": {
+      "type": "string",
+      "enum": [
+        "disabled",
+        "unselected",
+        "manual"
+      ]
+    },
+    "capabilitySupport": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "conditional",
+        "unsupported"
+      ]
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "read_repository",
+        "write_repository",
+        "shell",
+        "network",
+        "external_write",
+        "mcp",
+        "browser",
+        "git",
+        "deployment",
+        "publication",
+        "signing",
+        "release"
+      ],
+      "properties": {
+        "read_repository": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "write_repository": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "shell": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "network": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "external_write": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "mcp": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "browser": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "git": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "deployment": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "publication": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "signing": {
+          "$ref": "#/$defs/permissionDecision"
+        },
+        "release": {
+          "$ref": "#/$defs/permissionDecision"
+        }
+      }
+    },
+    "humanReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_for",
+        "approver",
+        "evidence_required"
+      ],
+      "properties": {
+        "required_for": {
+          "$ref": "#/$defs/stringList"
+        },
+        "approver": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "evidence_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "delegation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed",
+        "targets",
+        "max_depth",
+        "rules"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "boolean"
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "uniqueItems": true
+        },
+        "max_depth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "rules": {
+          "$ref": "#/$defs/stringList"
+        }
       }
     }
   }

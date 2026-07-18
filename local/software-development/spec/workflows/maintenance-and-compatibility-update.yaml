@@ -1,29 +1,114 @@
-schema_version: '1.0'
-id: maintenance-and-compatibility-update
-name: Maintenance and Compatibility Update
-purpose: Perform bounded maintenance while preserving supported environments and contracts.
-risk_triggers:
-- runtime compatibility
-- toolchain change
-- platform support change
-stages:
-- intake
-- requirements
-- analysis
-- risk_classification
-- design_if_applicable
-- plan
-- human_checkpoint
-- implementation_if_applicable
-- validation
-- independent_code_review
-- engineering_risk_review_if_triggered
-- documentation
-- release_readiness
-- close
-completion_requires:
-- traceability
-- validation_evidence_or_not_run
-- independent_review
-- documented_risks
-- human_release_decision
+{
+  "schema_version": "1.0",
+  "id": "maintenance-and-compatibility-update",
+  "version": "1.0",
+  "name": "Maintenance And Compatibility Update",
+  "mission": "Execute the maintenance and compatibility update workflow as inert guidance.",
+  "scope": [
+    "software-development specialization"
+  ],
+  "inputs": [
+    "task statement",
+    "authorized scope",
+    "repository context when provided"
+  ],
+  "outputs": [
+    "evidence-based result",
+    "assumptions and limitations",
+    "checks not run"
+  ],
+  "permissions": {
+    "write_repository": "deny",
+    "shell": "deny",
+    "network": "deny",
+    "external_write": "deny",
+    "mcp": "deny",
+    "browser": "deny",
+    "git": "deny",
+    "deployment": "deny",
+    "publication": "deny",
+    "signing": "deny",
+    "release": "deny",
+    "read_repository": "ask"
+  },
+  "dependencies": [],
+  "invocation": [
+    "manual or runtime-selected use only",
+    "no provider selected by default"
+  ],
+  "delegation": {
+    "allowed": false,
+    "targets": [],
+    "max_depth": 0,
+    "rules": [
+      "return evidence to the lead",
+      "do not delegate recursively"
+    ]
+  },
+  "stop_conditions": [
+    "conflicting requirements",
+    "missing approval",
+    "secret exposure risk",
+    "insufficient evidence",
+    "scope expansion"
+  ],
+  "failure_behavior": "Stop safely and report the unresolved blocker without fabricating results.",
+  "completion_criteria": [
+    "traceable output",
+    "explicit limitations",
+    "human-review requirements satisfied"
+  ],
+  "human_review": {
+    "required_for": [
+      "destructive actions",
+      "sensitive data",
+      "external access",
+      "architecture changes",
+      "dependency changes",
+      "permission changes",
+      "trust-boundary changes",
+      "migrations",
+      "public contracts",
+      "irreversible actions"
+    ],
+    "approver": "human operator",
+    "evidence_required": true
+  },
+  "prohibited_actions": [
+    "automatic deployment",
+    "automatic publication",
+    "automatic release",
+    "automatic signing",
+    "credential exposure",
+    "unapproved external access"
+  ],
+  "purpose": "Execute the maintenance and compatibility update workflow as inert guidance.",
+  "risk_level": "medium",
+  "stages": [
+    "intake",
+    "requirements",
+    "analysis",
+    "risk classification",
+    "planning",
+    "human checkpoint",
+    "implementation if approved",
+    "validation",
+    "independent review",
+    "documentation",
+    "release-readiness stop"
+  ],
+  "workflow_specific_gates": [
+    "supported environments",
+    "compatibility matrix",
+    "migrations and deprecations",
+    "data or config impact",
+    "fallback"
+  ],
+  "evidence": [
+    "requirements traceability",
+    "validation evidence",
+    "independent review findings",
+    "checks not run",
+    "human decisions"
+  ]
+}

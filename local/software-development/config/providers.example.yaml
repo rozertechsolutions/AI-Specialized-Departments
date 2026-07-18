@@ -1,9 +1,16 @@
-schema_version: '1.0'
-providers:
-  example-local-runtime:
-    enabled: false
-    type: user_selected
-    endpoint: null
-    model: null
-    credentials: null
-    tools: []
+{
+  "schema_version": "1.0",
+  "id": "provider-examples",
+  "version": "1.0",
+  "providers": {
+    "example-provider": {
+      "state": "disabled",
+      "type": "user-selected",
+      "endpoint": null,
+      "model": null,
+      "credentials": null,
+      "tools": [],
+      "notes": "Illustrative only; no provider, endpoint, model, credential, or tool is selected by default."
+    }
+  }
+}

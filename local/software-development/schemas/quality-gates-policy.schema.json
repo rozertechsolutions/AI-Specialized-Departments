@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/software-development/policy.schema.json",
-  "title": "policy",
+  "$id": "https://example.invalid/software-development/quality-gates-policy.schema.json",
+  "title": "quality-gates-policy",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -22,7 +22,7 @@
     "completion_criteria",
     "human_review",
     "prohibited_actions",
-    "rules"
+    "gates"
   ],
   "properties": {
     "schema_version": {
@@ -80,7 +80,7 @@
     "prohibited_actions": {
       "$ref": "#/$defs/stringList"
     },
-    "rules": {
+    "gates": {
       "$ref": "#/$defs/stringList"
     }
   },

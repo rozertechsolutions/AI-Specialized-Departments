@@ -1,23 +1,92 @@
-schema_version: '1.0'
-id: release-readiness-assessment
-name: Release Readiness Assessment
-mission: Evaluate whether a change is ready for human-controlled release without publishing,
-  deploying, signing, or submitting it.
-inputs:
-- requirements and evidence
-- reviews
-- documentation
-- known risks
-outputs:
-- readiness verdict
-- blocking issues
-- human decision packet
-triggers:
-- release candidate
-- completed feature set
-- maintenance release
-failure_behavior: stop_and_report
-prohibited:
-- invent_evidence
-- expose_secrets
-- automatic_external_action
+{
+  "schema_version": "1.0",
+  "id": "release-readiness-assessment",
+  "version": "1.0",
+  "name": "Release Readiness Assessment",
+  "mission": "Provide the release readiness assessment capability for inert local runtimes.",
+  "scope": [
+    "software-development specialization"
+  ],
+  "inputs": [
+    "task statement",
+    "authorized scope",
+    "repository context when provided"
+  ],
+  "outputs": [
+    "evidence-based result",
+    "assumptions and limitations",
+    "checks not run"
+  ],
+  "permissions": {
+    "write_repository": "deny",
+    "shell": "deny",
+    "network": "deny",
+    "external_write": "deny",
+    "mcp": "deny",
+    "browser": "deny",
+    "git": "deny",
+    "deployment": "deny",
+    "publication": "deny",
+    "signing": "deny",
+    "release": "deny",
+    "read_repository": "ask"
+  },
+  "dependencies": [],
+  "invocation": [
+    "manual or runtime-selected use only",
+    "no provider selected by default"
+  ],
+  "delegation": {
+    "allowed": false,
+    "targets": [],
+    "max_depth": 0,
+    "rules": [
+      "return evidence to the lead",
+      "do not delegate recursively"
+    ]
+  },
+  "stop_conditions": [
+    "conflicting requirements",
+    "missing approval",
+    "secret exposure risk",
+    "insufficient evidence",
+    "scope expansion"
+  ],
+  "failure_behavior": "Stop safely and report the unresolved blocker without fabricating results.",
+  "completion_criteria": [
+    "traceable output",
+    "explicit limitations",
+    "human-review requirements satisfied"
+  ],
+  "human_review": {
+    "required_for": [
+      "destructive actions",
+      "sensitive data",
+      "external access",
+      "architecture changes",
+      "dependency changes",
+      "permission changes",
+      "trust-boundary changes",
+      "migrations",
+      "public contracts",
+      "irreversible actions"
+    ],
+    "approver": "human operator",
+    "evidence_required": true
+  },
+  "prohibited_actions": [
+    "automatic deployment",
+    "automatic publication",
+    "automatic release",
+    "automatic signing",
+    "credential exposure",
+    "unapproved external access"
+  ],
+  "capability": "release-readiness-assessment",
+  "procedure": [
+    "confirm scope",
+    "gather minimum evidence",
+    "apply role-specific method",
+    "return evidence and limitations"
+  ]
+}
