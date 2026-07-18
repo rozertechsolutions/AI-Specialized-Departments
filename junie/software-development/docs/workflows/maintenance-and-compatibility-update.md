@@ -1,50 +1,38 @@
 # Maintenance and Compatibility Update
 
+Identifier: `maintenance-and-compatibility-update`
+
 ## Purpose
 
-Perform bounded maintenance while preserving supported environments and contracts.
+Keep supported environments and contracts working during maintenance.
 
-## Entry conditions
+## Common Lifecycle
 
-- A named human-requested objective exists.
-- The authorized repository scope is known.
-- The expected behavior or maintenance objective can be expressed as acceptance criteria.
+- Main Junie agent confirms scope, constraints, exclusions, approvals, and applicable Skill/workflow guidance.
+- Requirements and Planning defines acceptance evidence and routing.
+- Implementation occurs only after required human approvals.
+- Test and Quality records validation evidence and checks not run.
+- Code Quality and Engineering Risk reviews remain independent from implementation.
+- Documentation and Release Readiness returns a human decision packet and stops before release actions.
 
-## Risk triggers
+## Workflow-Specific Gates
 
-- runtime compatibility
-- toolchain change
-- platform support change
+- supported environment and contract matrix
+- migration, deprecation, data, and configuration implications
+- fallback behavior
+- compatibility evidence
+- explicit non-goals for unrelated modernization
 
-Any trigger requires Engineering Risk Reviewer participation and may require explicit human approval before implementation.
+## Required Evidence
 
-## Stages
+- scope and requirement traceability
+- approvals needed or obtained
+- validation performed and checks not run
+- independent review findings
+- unresolved limitations and human decisions
 
-1. **Intake — Software Development Lead:** confirm objective, scope, exclusions, constraints, and ownership.
-2. **Requirements — Requirements and Planning Specialist:** define requirements, acceptance criteria, assumptions, and unresolved questions.
-3. **Analysis — appropriate specialist:** inspect only necessary context and identify dependencies and impact.
-4. **Risk classification — Software Development Lead:** select required reviews and approval checkpoints.
-5. **Design — Software Architect when applicable:** document boundaries, contracts, alternatives, compatibility, and migration implications.
-6. **Plan — Requirements and Planning Specialist:** produce ordered changes, validation strategy, review points, and rollback considerations.
-7. **Human checkpoint:** obtain explicit approval for sensitive, irreversible, dependency, architecture, contract, migration, or scope-changing decisions.
-8. **Implementation — Implementation and Maintenance Engineer:** make only approved changes and record evidence.
-9. **Validation — Test and Quality Engineer:** assess acceptance, regression, edge cases, and every unexecuted check.
-10. **Independent code review — Code Quality Reviewer:** review correctness, maintainability, architecture fit, and unintended effects.
-11. **Independent risk review — Engineering Risk Reviewer when triggered:** review security, supply chain, performance, concurrency, reliability, and data integrity.
-12. **Documentation — Documentation and Release Readiness Specialist:** update technical, migration, compatibility, and versioning documentation.
-13. **Readiness — Documentation and Release Readiness Specialist:** issue a readiness verdict without releasing, deploying, publishing, signing, or submitting.
-14. **Close — Software Development Lead:** aggregate evidence, blockers, limitations, and required human decisions.
+## Junie Routing
 
-## Stop conditions
-
-Stop and escalate on missing approval, conflicting requirements, secret exposure, unsupported behavior, unbounded scope, unavailable evidence, failed critical validation, or any requested action outside the authorized repository scope.
-
-## Completion evidence
-
-- Requirement-to-change traceability.
-- Acceptance and validation matrix.
-- Independent review outcomes.
-- Risk findings and remediation status.
-- Documentation and compatibility status.
-- Explicit list of tests/checks not run.
-- Human-controlled release-readiness verdict.
+- The main Junie agent remains Software Development Lead and routes work through responsibility phases rather than repository subagents.
+- Use `.junie/skills/` for reusable procedures; this workflow file is auxiliary unless Junie natively loads it in the target environment.
+- Request human approval before sensitive scope, architecture/dependency changes, edits, command execution, external access, destructive operations, Git actions, deployment, publication, signing, submission, or release.
