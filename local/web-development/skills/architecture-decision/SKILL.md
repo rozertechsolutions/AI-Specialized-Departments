@@ -8,6 +8,9 @@ description: Create a proportionate architecture decision for a web change.
 ## Mission
 Create a proportionate architecture decision for a web change.
 
+## Trigger boundaries
+Use this skill only for material web architecture, interface, data-flow, migration, rollback, or trade-off decisions. Do not use it for pixel-level implementation, final security approval, release approval, deployment, publication, or provider/model selection.
+
 ## Required procedure
 1. Start from verified requirements and the discovered stack.
 2. Compare at least two viable approaches when the decision is material.

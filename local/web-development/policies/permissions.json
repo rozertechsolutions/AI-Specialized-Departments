@@ -1,5 +1,6 @@
 {
   "schemaVersion": 1,
+  "nonEnforcementDisclaimer": "This file is declarative policy only. A separate user-selected runtime must implement enforcement.",
   "default": "deny",
   "capabilities": {
     "readWorkspace": "ask",
@@ -14,6 +15,31 @@
     "publish": "deny",
     "destructiveActions": "deny"
   },
+  "leastPrivilegeCategories": {
+    "implementationRoles": [
+      "readWorkspace",
+      "writeWorkspace"
+    ],
+    "reviewerRoles": [
+      "readWorkspace"
+    ],
+    "leadRole": [
+      "readWorkspace",
+      "delegateWithinSpecification"
+    ]
+  },
+  "explicitDeniedOperations": [
+    "executeCommands",
+    "installDependencies",
+    "gitMutation",
+    "deploy",
+    "publish",
+    "mcp",
+    "externalIntegrations",
+    "destructiveActions",
+    "credentialUse",
+    "secretExposure"
+  ],
   "humanApprovalRequired": [
     "authentication",
     "authorization",

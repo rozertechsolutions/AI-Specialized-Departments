@@ -2,6 +2,12 @@
 
 Perform an evidence-based accessibility, responsive, performance, and SEO review. Separate blocking defects from recommendations and identify missing measurements.
 
+## Expected input
+Files, feature area, URL or component names, acceptance criteria, and any measurements already available.
+
+## Output and evidence
+Return prioritized findings with severity, evidence, affected users, acceptance criteria, measurement gaps, and NOT EXECUTED checks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

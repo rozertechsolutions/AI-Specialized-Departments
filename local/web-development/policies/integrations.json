@@ -1,8 +1,22 @@
 {
   "schemaVersion": 1,
+  "nonRuntimeStatus": "declarative-only",
+  "enabled": false,
   "providers": [],
   "models": [],
   "tools": [],
   "mcpServers": [],
-  "enabled": false
+  "externalEndpoints": [],
+  "commands": [],
+  "tokens": [],
+  "autoApproval": false,
+  "disabledExamples": [
+    {
+      "kind": "provider",
+      "name": "local-model-provider-example",
+      "enabled": false,
+      "binding": "user-selected-runtime-required",
+      "notes": "A downstream runtime may map this concept to Ollama, LM Studio, or another provider, but this specification does not choose one."
+    }
+  ]
 }

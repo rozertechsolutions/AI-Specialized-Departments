@@ -2,6 +2,12 @@
 
 Validate scope, use the relevant specialist role, make only requested repository changes, preserve native conventions, record evidence, and stop before deployment, publication, Git mutation, or external side effects.
 
+## Expected input
+Requested behavior, acceptance criteria, affected files or surfaces, prohibited changes, selected downstream runtime, and verification expectations.
+
+## Output and evidence
+Return changed files, behavior, direct verification evidence, unresolved risks, required reviews, and NOT EXECUTED checks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

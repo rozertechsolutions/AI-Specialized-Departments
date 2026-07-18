@@ -2,6 +2,12 @@
 
 Perform an independent threat, security, privacy, CSP, cookie, CORS, tracker, and dependency review. Block completion for unresolved material findings.
 
+## Expected input
+Changed files, trust boundaries, data types, auth/session behavior, third-party services, browser policies, and logging/storage behavior.
+
+## Output and evidence
+Return findings ordered by severity, exploit conditions, evidence, remediation criteria, residual risk, and NOT EXECUTED checks. Do not edit the implementation under review.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.

@@ -2,6 +2,12 @@
 
 Discover the stack and requirements, define ownership, compare material approaches, identify risks, and produce an implementation plan with explicit verification gates. Do not modify files during planning.
 
+## Expected input
+Goal, constraints, affected product surfaces, known risks, downstream runtime capabilities, and prohibited changes.
+
+## Output and evidence
+Return confirmed facts, assumptions, decision points, role ownership, phased plan, required reviews, validation gates, and NOT EXECUTED checks.
+
 ## Gates
 1. Verify inputs, scope, stack, and applicable risks.
 2. Produce or inspect only the approved artifacts.
