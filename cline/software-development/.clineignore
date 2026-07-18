@@ -1,13 +1,31 @@
-# Sensitive and generated content. Review for each repository.
+# Sensitive local configuration and credentials
 .env
 .env.*
+**/.env
+**/.env.*
 **/*secret*
 **/*credential*
+**/*token*
+**/id_rsa*
 **/*.pem
 **/*.key
+**/*.p12
+**/*.pfx
+
+# Generated dependencies and build output
 **/node_modules/**
+**/.pnpm-store/**
+**/vendor/**
 **/build/**
 **/dist/**
 **/target/**
+**/coverage/**
 **/.gradle/**
+**/.pytest_cache/**
+**/.mypy_cache/**
+**/__pycache__/**
+**/.ruff_cache/**
+
+# Local IDE state
 **/.idea/**/workspace.xml
+**/.vscode/**/workspaceStorage/**

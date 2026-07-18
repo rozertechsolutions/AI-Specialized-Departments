@@ -1,14 +1,14 @@
-## Completion gates
+# Cline Quality and Completion
 
-A task is complete only when all applicable conditions are met:
+A task is complete only when:
 
-1. Every change is traceable to an approved requirement or maintenance objective.
-2. Acceptance criteria are satisfied, or deviations are explicitly documented and approved.
-3. Scope boundaries, exclusions, assumptions, and unknowns are explicit.
-4. Applicable validation evidence exists; every unexecuted check is listed as not run.
-5. No known critical correctness or security issue is hidden.
-6. Code-quality review is independent from implementation.
-7. Engineering-risk review is completed when security, dependencies, performance, concurrency, reliability, data integrity, architecture, or public contracts are affected.
-8. Documentation, compatibility, migration, and versioning implications are addressed.
-9. Remaining risks, limitations, and follow-up work are explicit.
-10. No release, publication, deployment, signing, or submission has been performed automatically.
+1. Requirements, scope, assumptions, exclusions, and acceptance criteria are explicit.
+2. Changes are limited to approved scope and existing repository conventions.
+3. Validation evidence or checks not run are listed clearly.
+4. Independent code-quality review follows implementation.
+5. Engineering-risk review occurs when security, dependencies, performance, concurrency, reliability, data integrity, architecture, or public contracts are affected.
+6. Documentation, migration, compatibility, and versioning implications are addressed.
+7. Remaining risks, limitations, and human decisions are explicit.
+8. Release readiness is assessed without publishing, deploying, signing, submitting, or releasing.
+
+The same phase must not both implement a substantive change and independently certify it.

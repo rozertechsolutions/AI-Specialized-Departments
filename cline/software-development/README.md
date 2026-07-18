@@ -1,43 +1,20 @@
-# Cline — Software Development
+# Cline - Software Development
 
-This directory implements the Software Development specialization for Cline using only platform-appropriate, repository-scoped content.
+This directory configures Cline for the Software Development specialization.
 
-## Department scope
+## Native Surfaces
 
-This specialization covers requirements analysis, architecture, backend services, APIs, desktop applications, command-line applications, libraries, SDKs, general-purpose software, implementation, maintenance, debugging, refactoring, testing, code quality, software security, dependencies, performance, reliability, technical documentation, and release readiness.
+- `.clinerules/` contains project rules for the main Cline session.
+- `.cline/skills/` contains static reusable Skills.
+- `.cline/workflows/` contains prompt-only workflow references.
+- `.clineignore` protects secrets, credentials, generated outputs, and heavy irrelevant artifacts.
 
-It does not replace the independent Web Development or Mobile Development specializations. Browser-specific frontend work and mobile-platform-specific implementation belong there. Shared or technology-agnostic code may be handled here when the task originates in Software Development.
+## Lead Model
 
-The configuration is language-, framework-, database-, provider-, model-, and vendor-agnostic. It must inspect and respect the repository's existing stack instead of imposing one.
+The main Cline session is the Software Development Lead. It starts non-trivial work in Plan mode, requests human approval before Act mode, performs approved edits in Act mode, and then separates implementation evidence from independent code-quality, engineering-risk, and release-readiness review.
 
-## Native content
+Built-in Cline subagents are optional read-only research helpers. They may read, search, list, and use read-only Skills only; they must not edit, use browser tools, use MCP, spawn nested subagents, or claim final completion. This package intentionally does not create `.cline/agents/`.
 
-- .clinerules project rules
-- .cline/skills Skills
-- .cline/workflows workflows
-- .clineignore scope protection
+## Safety Defaults
 
-## Manual or auxiliary content
-
-- None.
-
-## Intentionally omitted
-
-- hooks
-- plugins
-- MCP configuration
-- automatic Act-mode execution
-- undocumented agent schema
-
-## Safe-by-default behavior
-
-The package contains no executable hooks, active MCP servers, credentials, real endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. External and sensitive actions require explicit human control.
-
-
-## Installation
-
-Copy this `software-development` directory to the corresponding platform directory in the repository. Follow the platform-specific manual steps described here. Do not execute generated scripts because this package contains none.
-
-## Validation status
-
-The package has been checked statically for file presence, non-empty content, JSON/TOML/YAML syntax where applicable, Python syntax, internal references, prohibited executable file types, and scope boundaries. Platform loading and runtime behavior were not executed.
+No hooks, plugins, MCP configuration, Auto Approve/YOLO settings, shell helpers, credentials, endpoints, deployment automation, publication automation, signing automation, release automation, or automatic authentication are included. Human approval is required for edits, commands, browser use, external access, Git mutation, destructive actions, deployment, publication, signing, submission, and release.
