@@ -1,13 +1,13 @@
 ---
-name: governance-policy-frameworks
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for governance policy frameworks using static evidence, human approval gates, and independent review.
+name: incident-readiness-triage
+description: Reusable Incident Response, DFIR, and Recovery procedure for incident readiness triage using static evidence, human approval gates, and independent review.
 ---
 
-# Governance Policy Frameworks
+# Incident Readiness Triage
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to governance policy frameworks, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Incident Response, DFIR, and Recovery work related to incident readiness triage, including the applicable workflows: incident-readiness review, incident triage and declaration support, active-incident coordination plan, evidence-preservation plan, forensic-acquisition plan, containment and eradication options, secure-recovery plan, ransomware coordination, data-exposure coordination, tabletop exercise, post-incident review.
 
 ## Required Inputs
 
@@ -22,7 +22,7 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: incident-command-evidence-agent, forensics-containment-recovery-agent, scenario-crisis-review-agent, post-incident-corrective-action-agent, independent-incident-recovery-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
@@ -55,15 +55,15 @@ Do not execute code, run tools, install dependencies, authenticate, connect MCP/
 
 
 ---
-name: risk-exceptions-remediation
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for risk exceptions remediation using static evidence, human approval gates, and independent review.
+name: evidence-forensics-planning
+description: Reusable Incident Response, DFIR, and Recovery procedure for evidence forensics planning using static evidence, human approval gates, and independent review.
 ---
 
-# Risk Exceptions Remediation
+# Evidence Forensics Planning
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to risk exceptions remediation, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Incident Response, DFIR, and Recovery work related to evidence forensics planning, including the applicable workflows: incident-readiness review, incident triage and declaration support, active-incident coordination plan, evidence-preservation plan, forensic-acquisition plan, containment and eradication options, secure-recovery plan, ransomware coordination, data-exposure coordination, tabletop exercise, post-incident review.
 
 ## Required Inputs
 
@@ -78,7 +78,7 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: incident-command-evidence-agent, forensics-containment-recovery-agent, scenario-crisis-review-agent, post-incident-corrective-action-agent, independent-incident-recovery-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
@@ -111,15 +111,15 @@ Do not execute code, run tools, install dependencies, authenticate, connect MCP/
 
 
 ---
-name: assurance-third-party-reporting
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for assurance third party reporting using static evidence, human approval gates, and independent review.
+name: containment-recovery-coordination
+description: Reusable Incident Response, DFIR, and Recovery procedure for containment recovery coordination using static evidence, human approval gates, and independent review.
 ---
 
-# Assurance Third Party Reporting
+# Containment Recovery Coordination
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to assurance third party reporting, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Incident Response, DFIR, and Recovery work related to containment recovery coordination, including the applicable workflows: incident-readiness review, incident triage and declaration support, active-incident coordination plan, evidence-preservation plan, forensic-acquisition plan, containment and eradication options, secure-recovery plan, ransomware coordination, data-exposure coordination, tabletop exercise, post-incident review.
 
 ## Required Inputs
 
@@ -134,7 +134,7 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: incident-command-evidence-agent, forensics-containment-recovery-agent, scenario-crisis-review-agent, post-incident-corrective-action-agent, independent-incident-recovery-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
@@ -167,15 +167,15 @@ Do not execute code, run tools, install dependencies, authenticate, connect MCP/
 
 
 ---
-name: independent-assurance-review
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for independent assurance review using static evidence, human approval gates, and independent review.
+name: scenario-tabletop-post-incident
+description: Reusable Incident Response, DFIR, and Recovery procedure for scenario tabletop post incident using static evidence, human approval gates, and independent review.
 ---
 
-# Independent Assurance Review
+# Scenario Tabletop Post Incident
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to independent assurance review, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Incident Response, DFIR, and Recovery work related to scenario tabletop post incident, including the applicable workflows: incident-readiness review, incident triage and declaration support, active-incident coordination plan, evidence-preservation plan, forensic-acquisition plan, containment and eradication options, secure-recovery plan, ransomware coordination, data-exposure coordination, tabletop exercise, post-incident review.
 
 ## Required Inputs
 
@@ -190,7 +190,63 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: incident-command-evidence-agent, forensics-containment-recovery-agent, scenario-crisis-review-agent, post-incident-corrective-action-agent, independent-incident-recovery-reviewer.
+3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
+4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
+5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
+6. Route high-impact, closure, exception, external-facing, or executive outputs to an independent reviewer that did not create the artifact.
+7. Return a completion record with residual risk, confidence, limitations, open questions, and blocked validations.
+
+## Structured Outputs
+
+Return the artifact plus an evidence table, decision log, stop-condition review, independent-review requirement, and completion criteria. Include owners and approvers as role placeholders, not real identities.
+
+## Quality Checks
+
+Verify native-surface compatibility, professional coverage, evidence traceability, least-privilege behavior, no unsupported tool claims, no self-review, no circular delegation, no real secrets, no live-action claim, and no fabricated validation.
+
+## Stop And Escalation Conditions
+
+Stop for missing authorization, unredacted sensitive material, unsupported legal or compliance conclusion, requested live action, evidence gaps that affect a conclusion, self-review, conflict of interest, or a human-only approval request.
+
+## Failure Behavior
+
+Return a blocker with the missing input, affected output, risk of proceeding, safe next step, and exact human approval or evidence needed. Do not silently continue with assumptions.
+
+## Human Review Gates
+
+Human review is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, or critical finding closure.
+
+## Prohibited Actions
+
+Do not execute code, run tools, install dependencies, authenticate, connect MCP/apps, scan, probe, exploit, deploy, publish, push, alter live records, approve decisions, accept risk, close findings, or claim validation without evidence.
+
+
+---
+name: independent-incident-recovery-assurance
+description: Reusable Incident Response, DFIR, and Recovery procedure for independent incident recovery assurance using static evidence, human approval gates, and independent review.
+---
+
+# Independent Incident Recovery Assurance
+
+## Use Cases
+
+Use this Skill for Incident Response, DFIR, and Recovery work related to independent incident recovery assurance, including the applicable workflows: incident-readiness review, incident triage and declaration support, active-incident coordination plan, evidence-preservation plan, forensic-acquisition plan, containment and eradication options, secure-recovery plan, ransomware coordination, data-exposure coordination, tabletop exercise, post-incident review.
+
+## Required Inputs
+
+- Authorized scope, explicit exclusions, accountable human owner, requester, intended audience, and decision needed.
+- Supplied static evidence with provenance, source period, freshness, completeness, and limitations.
+- Relevant constraints, assumptions, dependencies, approval requirements, and reviewer independence.
+
+## Preconditions
+
+The task is repository-local or based on supplied static evidence. No live system action, authentication, external connection, scan, exploit, deployment, publication, or authoritative approval is requested.
+
+## Procedure
+
+1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
+2. Select one primary role from: incident-command-evidence-agent, forensics-containment-recovery-agent, scenario-crisis-review-agent, post-incident-corrective-action-agent, independent-incident-recovery-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.

@@ -1,10 +1,10 @@
-# openai-agents-sdk Cybersecurity Security Architecture and Engineering Instructions
+# openai-agents-sdk Cybersecurity Defensive Security Operations, Detection, and Intelligence Instructions
 
-These instructions apply only inside `openai-agents-sdk/cybersecurity/security-architecture-engineering/`.
+These instructions apply only inside `openai-agents-sdk/cybersecurity/defensive-security-operations-detection-intelligence/`.
 
 ## Mission
 
-Create and review static Security Architecture and Engineering artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
+Create and review static Defensive Security Operations, Detection, and Intelligence artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
 
 ## Native Capability Classification
 
@@ -13,25 +13,27 @@ Create and review static Security Architecture and Engineering artifacts using t
 
 ## Responsibility Model
 
-- `architecture-governance-agent`: Own architecture governance, standards, decision records, design gates, and reference model stewardship.
-- `enterprise-solution-architecture-agent`: Own enterprise and solution security architecture, trust boundaries, data flows, dependencies, and control placement.
-- `identity-cloud-network-agent`: Own identity, privileged access, cloud guardrails, network segmentation, endpoint, and workspace architecture.
-- `data-container-automation-agent`: Own data protection, cryptography, secrets, container, Kubernetes, IaC, and safe automation architecture.
-- `independent-architecture-reviewer`: Independently review high-impact architecture packages and remediation evidence.
+- `soc-governance-telemetry-agent`: Own SOC operating model, service boundaries, escalation, telemetry requirements, and logging coverage.
+- `detection-triage-hunting-agent`: Own detection lifecycle, supplied-alert triage, case-analysis methods, threat-hunt design, and coverage mapping.
+- `intelligence-malware-automation-agent`: Own threat-intelligence assessments, defensive malware-analysis planning, and SOAR playbook design with approval gates.
+- `coverage-quality-assurance-agent`: Own SOC metrics, detection quality, adversary-behavior mapping, and independent quality review.
+- `incident-escalation-reviewer`: Independently review escalation handoffs and ensure declared incidents transfer to incident response.
 
 Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
 
 ## Required Workflow Coverage
 
-- security architecture review
-- reference architecture design
-- identity and privileged-access architecture review
-- cloud and platform review
-- network segmentation review
-- data-protection and cryptography review
-- container, Kubernetes, and IaC review
-- security-control pattern design
-- architecture-remediation validation
+- SOC operating-model review
+- telemetry-source onboarding design
+- detection design and review
+- supplied-alert triage
+- threat-hunt planning
+- threat-intelligence assessment
+- defensive malware-analysis planning
+- SOAR playbook design
+- detection-coverage assessment
+- SOC quality review
+- incident escalation
 
 ## Operating Rules
 
@@ -48,4 +50,4 @@ Every deliverable includes reference, title, purpose, authorized scope, exclusio
 
 ## Skills
 
-Use these reusable procedures where supported: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.
+Use these reusable procedures where supported: soc-telemetry-governance, detection-triage-hunting, intelligence-malware-automation, coverage-quality-assurance, incident-escalation-handoff.

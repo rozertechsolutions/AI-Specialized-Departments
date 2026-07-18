@@ -1,9 +1,39 @@
-"""Static Area 08 OpenAI Agents SDK definitions."""
-
-from .agents import assurance_transition_governance_agent, resilience_recovery_core_agent, specialized_technology_review_agent
+from .registry import (
+    ACTIVE_EXTERNAL_ACTIONS_ENABLED,
+    AREA_SLUG,
+    MCP_ENABLED,
+    TOOLS_ENABLED,
+    TRACING_DISABLED_BY_DEFAULT,
+    AssessmentOutput,
+    EvidenceRecord,
+    FindingRecord,
+    GuardrailDecision,
+    HumanApprovalGate,
+    approval_gates,
+    build_coordinator,
+    evaluate_static_request,
+    input_guardrails,
+    output_guardrails,
+    role_specs,
+    workflow_specs,
+)
 
 __all__ = [
-    "resilience_recovery_core_agent",
-    "specialized_technology_review_agent",
-    "assurance_transition_governance_agent",
+    "ACTIVE_EXTERNAL_ACTIONS_ENABLED",
+    "AREA_SLUG",
+    "MCP_ENABLED",
+    "TOOLS_ENABLED",
+    "TRACING_DISABLED_BY_DEFAULT",
+    "AssessmentOutput",
+    "EvidenceRecord",
+    "FindingRecord",
+    "GuardrailDecision",
+    "HumanApprovalGate",
+    "approval_gates",
+    "build_coordinator",
+    "evaluate_static_request",
+    "input_guardrails",
+    "output_guardrails",
+    "role_specs",
+    "workflow_specs",
 ]

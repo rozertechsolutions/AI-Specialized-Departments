@@ -1,9 +1,39 @@
-"""Static Area 06 OpenAI Agents SDK definitions."""
-
-from .agents import incident_command_evidence_agent, forensics_containment_recovery_agent, scenario_crisis_review_agent
+from .registry import (
+    ACTIVE_EXTERNAL_ACTIONS_ENABLED,
+    AREA_SLUG,
+    MCP_ENABLED,
+    TOOLS_ENABLED,
+    TRACING_DISABLED_BY_DEFAULT,
+    AssessmentOutput,
+    EvidenceRecord,
+    FindingRecord,
+    GuardrailDecision,
+    HumanApprovalGate,
+    approval_gates,
+    build_coordinator,
+    evaluate_static_request,
+    input_guardrails,
+    output_guardrails,
+    role_specs,
+    workflow_specs,
+)
 
 __all__ = [
-    "incident_command_evidence_agent",
-    "forensics_containment_recovery_agent",
-    "scenario_crisis_review_agent",
+    "ACTIVE_EXTERNAL_ACTIONS_ENABLED",
+    "AREA_SLUG",
+    "MCP_ENABLED",
+    "TOOLS_ENABLED",
+    "TRACING_DISABLED_BY_DEFAULT",
+    "AssessmentOutput",
+    "EvidenceRecord",
+    "FindingRecord",
+    "GuardrailDecision",
+    "HumanApprovalGate",
+    "approval_gates",
+    "build_coordinator",
+    "evaluate_static_request",
+    "input_guardrails",
+    "output_guardrails",
+    "role_specs",
+    "workflow_specs",
 ]

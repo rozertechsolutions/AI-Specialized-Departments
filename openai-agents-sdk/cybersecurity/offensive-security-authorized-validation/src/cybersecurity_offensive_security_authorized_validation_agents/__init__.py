@@ -1,9 +1,39 @@
-"""Static Area 07 OpenAI Agents SDK definitions."""
-
-from .agents import authorization_assessment_planning_agent, emulation_purple_safety_agent, findings_retest_assurance_agent
+from .registry import (
+    ACTIVE_EXTERNAL_ACTIONS_ENABLED,
+    AREA_SLUG,
+    MCP_ENABLED,
+    TOOLS_ENABLED,
+    TRACING_DISABLED_BY_DEFAULT,
+    AssessmentOutput,
+    EvidenceRecord,
+    FindingRecord,
+    GuardrailDecision,
+    HumanApprovalGate,
+    approval_gates,
+    build_coordinator,
+    evaluate_static_request,
+    input_guardrails,
+    output_guardrails,
+    role_specs,
+    workflow_specs,
+)
 
 __all__ = [
-    "authorization_assessment_planning_agent",
-    "emulation_purple_safety_agent",
-    "findings_retest_assurance_agent",
+    "ACTIVE_EXTERNAL_ACTIONS_ENABLED",
+    "AREA_SLUG",
+    "MCP_ENABLED",
+    "TOOLS_ENABLED",
+    "TRACING_DISABLED_BY_DEFAULT",
+    "AssessmentOutput",
+    "EvidenceRecord",
+    "FindingRecord",
+    "GuardrailDecision",
+    "HumanApprovalGate",
+    "approval_gates",
+    "build_coordinator",
+    "evaluate_static_request",
+    "input_guardrails",
+    "output_guardrails",
+    "role_specs",
+    "workflow_specs",
 ]

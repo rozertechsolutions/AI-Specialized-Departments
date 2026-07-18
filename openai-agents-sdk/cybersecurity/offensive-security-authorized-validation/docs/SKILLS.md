@@ -1,13 +1,13 @@
 ---
-name: governance-policy-frameworks
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for governance policy frameworks using static evidence, human approval gates, and independent review.
+name: authorization-scope-roe
+description: Reusable Offensive Security Authorized Validation procedure for authorization scope roe using static evidence, human approval gates, and independent review.
 ---
 
-# Governance Policy Frameworks
+# Authorization Scope Roe
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to governance policy frameworks, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Offensive Security Authorized Validation work related to authorization scope roe, including the applicable workflows: authorization and scoping, rules-of-engagement review, penetration-test planning, adversary-emulation campaign design, Purple Team exercise design, social-engineering assessment planning, offensive finding documentation, BAS design, cleanup assurance, authorized retest planning, offensive quality and safety review.
 
 ## Required Inputs
 
@@ -22,7 +22,7 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: authorization-assessment-planning-agent, emulation-purple-safety-agent, findings-retest-assurance-agent, white-team-deconfliction-agent, independent-offensive-safety-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
@@ -55,15 +55,15 @@ Do not execute code, run tools, install dependencies, authenticate, connect MCP/
 
 
 ---
-name: risk-exceptions-remediation
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for risk exceptions remediation using static evidence, human approval gates, and independent review.
+name: assessment-campaign-planning
+description: Reusable Offensive Security Authorized Validation procedure for assessment campaign planning using static evidence, human approval gates, and independent review.
 ---
 
-# Risk Exceptions Remediation
+# Assessment Campaign Planning
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to risk exceptions remediation, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Offensive Security Authorized Validation work related to assessment campaign planning, including the applicable workflows: authorization and scoping, rules-of-engagement review, penetration-test planning, adversary-emulation campaign design, Purple Team exercise design, social-engineering assessment planning, offensive finding documentation, BAS design, cleanup assurance, authorized retest planning, offensive quality and safety review.
 
 ## Required Inputs
 
@@ -78,7 +78,7 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: authorization-assessment-planning-agent, emulation-purple-safety-agent, findings-retest-assurance-agent, white-team-deconfliction-agent, independent-offensive-safety-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
@@ -111,15 +111,15 @@ Do not execute code, run tools, install dependencies, authenticate, connect MCP/
 
 
 ---
-name: assurance-third-party-reporting
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for assurance third party reporting using static evidence, human approval gates, and independent review.
+name: purple-bas-social-governance
+description: Reusable Offensive Security Authorized Validation procedure for purple bas social governance using static evidence, human approval gates, and independent review.
 ---
 
-# Assurance Third Party Reporting
+# Purple Bas Social Governance
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to assurance third party reporting, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Offensive Security Authorized Validation work related to purple bas social governance, including the applicable workflows: authorization and scoping, rules-of-engagement review, penetration-test planning, adversary-emulation campaign design, Purple Team exercise design, social-engineering assessment planning, offensive finding documentation, BAS design, cleanup assurance, authorized retest planning, offensive quality and safety review.
 
 ## Required Inputs
 
@@ -134,7 +134,7 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: authorization-assessment-planning-agent, emulation-purple-safety-agent, findings-retest-assurance-agent, white-team-deconfliction-agent, independent-offensive-safety-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
@@ -167,15 +167,15 @@ Do not execute code, run tools, install dependencies, authenticate, connect MCP/
 
 
 ---
-name: independent-assurance-review
-description: Reusable Governance, Risk, Compliance, and Assurance procedure for independent assurance review using static evidence, human approval gates, and independent review.
+name: findings-cleanup-retest-assurance
+description: Reusable Offensive Security Authorized Validation procedure for findings cleanup retest assurance using static evidence, human approval gates, and independent review.
 ---
 
-# Independent Assurance Review
+# Findings Cleanup Retest Assurance
 
 ## Use Cases
 
-Use this Skill for Governance, Risk, Compliance, and Assurance work related to independent assurance review, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+Use this Skill for Offensive Security Authorized Validation work related to findings cleanup retest assurance, including the applicable workflows: authorization and scoping, rules-of-engagement review, penetration-test planning, adversary-emulation campaign design, Purple Team exercise design, social-engineering assessment planning, offensive finding documentation, BAS design, cleanup assurance, authorized retest planning, offensive quality and safety review.
 
 ## Required Inputs
 
@@ -190,7 +190,63 @@ The task is repository-local or based on supplied static evidence. No live syste
 ## Procedure
 
 1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
-2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+2. Select one primary role from: authorization-assessment-planning-agent, emulation-purple-safety-agent, findings-retest-assurance-agent, white-team-deconfliction-agent, independent-offensive-safety-reviewer.
+3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
+4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
+5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
+6. Route high-impact, closure, exception, external-facing, or executive outputs to an independent reviewer that did not create the artifact.
+7. Return a completion record with residual risk, confidence, limitations, open questions, and blocked validations.
+
+## Structured Outputs
+
+Return the artifact plus an evidence table, decision log, stop-condition review, independent-review requirement, and completion criteria. Include owners and approvers as role placeholders, not real identities.
+
+## Quality Checks
+
+Verify native-surface compatibility, professional coverage, evidence traceability, least-privilege behavior, no unsupported tool claims, no self-review, no circular delegation, no real secrets, no live-action claim, and no fabricated validation.
+
+## Stop And Escalation Conditions
+
+Stop for missing authorization, unredacted sensitive material, unsupported legal or compliance conclusion, requested live action, evidence gaps that affect a conclusion, self-review, conflict of interest, or a human-only approval request.
+
+## Failure Behavior
+
+Return a blocker with the missing input, affected output, risk of proceeding, safe next step, and exact human approval or evidence needed. Do not silently continue with assumptions.
+
+## Human Review Gates
+
+Human review is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, or critical finding closure.
+
+## Prohibited Actions
+
+Do not execute code, run tools, install dependencies, authenticate, connect MCP/apps, scan, probe, exploit, deploy, publish, push, alter live records, approve decisions, accept risk, close findings, or claim validation without evidence.
+
+
+---
+name: independent-offensive-safety-review
+description: Reusable Offensive Security Authorized Validation procedure for independent offensive safety review using static evidence, human approval gates, and independent review.
+---
+
+# Independent Offensive Safety Review
+
+## Use Cases
+
+Use this Skill for Offensive Security Authorized Validation work related to independent offensive safety review, including the applicable workflows: authorization and scoping, rules-of-engagement review, penetration-test planning, adversary-emulation campaign design, Purple Team exercise design, social-engineering assessment planning, offensive finding documentation, BAS design, cleanup assurance, authorized retest planning, offensive quality and safety review.
+
+## Required Inputs
+
+- Authorized scope, explicit exclusions, accountable human owner, requester, intended audience, and decision needed.
+- Supplied static evidence with provenance, source period, freshness, completeness, and limitations.
+- Relevant constraints, assumptions, dependencies, approval requirements, and reviewer independence.
+
+## Preconditions
+
+The task is repository-local or based on supplied static evidence. No live system action, authentication, external connection, scan, exploit, deployment, publication, or authoritative approval is requested.
+
+## Procedure
+
+1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
+2. Select one primary role from: authorization-assessment-planning-agent, emulation-purple-safety-agent, findings-retest-assurance-agent, white-team-deconfliction-agent, independent-offensive-safety-reviewer.
 3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
 4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
 5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
