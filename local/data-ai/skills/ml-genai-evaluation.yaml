@@ -1,0 +1,8 @@
+id: ml-genai-evaluation
+description: Evaluate ML, GenAI, RAG, agent, and AI application behavior against quality, safety, groundedness, and readiness criteria.
+procedure:
+  - Define model/application contract, inputs, outputs, fallback, abstention, latency/cost limits, and human controls.
+  - Review features, evaluation data, leakage controls, representative slices, baselines, thresholds, calibration, and documentation.
+  - Check RAG provenance, retrieval relevance, coverage, groundedness, citation correctness, conflicts, and stale-source behavior.
+  - Check agent tool allowlists, contracts, delegation bounds, stop limits, idempotency, approval boundaries, and recoverability.
+outputs: [evaluation gaps, safety risks, release blockers, PASS_FAIL_BLOCKED status]

@@ -1,0 +1,4 @@
+id: pipeline-analytics-quality
+owner: data-platform-analytics-reviewer
+steps: [run pipeline-analytics-quality, review observability, validate metrics, report readiness]
+gates: [owners defined, lineage present, quality rules defined, reproducible evidence present]

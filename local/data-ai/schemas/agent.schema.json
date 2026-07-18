@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "role", "kind", "permissions", "responsibilities", "outputs", "prohibited_actions"],
+  "properties": {
+    "id": { "type": "string" },
+    "role": { "type": "string" },
+    "kind": { "enum": ["coordinator", "reviewer", "assurance"] },
+    "permissions": { "type": "object" },
+    "responsibilities": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "prohibited_actions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

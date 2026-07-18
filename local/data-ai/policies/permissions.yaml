@@ -1,0 +1,5 @@
+id: permissions
+rules:
+  - Providers, runtimes, models, endpoints, tools, vector stores, storage backends, shell, network, filesystem writes, MCP, and production access are disabled by default.
+  - Human approval is required before external, destructive, irreversible, expensive, publishing, deployment, signing, submission, credentialed, or production actions.
+  - Independent reviewers may inspect provided evidence but must not build or approve their own work.

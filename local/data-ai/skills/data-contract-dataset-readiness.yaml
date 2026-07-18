@@ -1,0 +1,8 @@
+id: data-contract-dataset-readiness
+description: Review data contracts, semantic models, sourcing, annotation, synthetic data controls, lineage, and dataset acceptance.
+procedure:
+  - Verify ownership, provenance, permitted use, retention, consent, classification, and access policy.
+  - Review schemas, contracts, semantic definitions, identifiers, lineage, and versioning.
+  - Assess labeling, annotation quality, deduplication, synthetic controls, representativeness, and splits.
+  - Check leakage, contamination, missingness, freshness, completeness, consistency, and bias-sensitive slices.
+outputs: [contract gaps, dataset risks, acceptance decision, PASS_FAIL_BLOCKED status]

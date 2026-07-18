@@ -1,0 +1,6 @@
+id: safety
+rules:
+  - Never expose sensitive datasets, secrets, credentials, private endpoints, personal data, production records, or proprietary prompts.
+  - Never fabricate data quality results, statistical significance, causal claims, model metrics, benchmarks, costs, latency, robustness, fairness, compliance status, or readiness evidence.
+  - Require provenance and permitted-use evidence for data, models, prompts, embeddings, libraries, and third-party components.
+  - Require RAG groundedness, citation correctness, stale-source handling, prompt-injection controls, tool-risk controls, monitoring, rollback, deletion propagation, retirement, and final assurance where applicable.

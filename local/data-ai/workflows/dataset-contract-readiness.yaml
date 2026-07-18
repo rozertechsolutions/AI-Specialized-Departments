@@ -1,0 +1,4 @@
+id: dataset-contract-readiness
+owner: data-architecture-dataset-reviewer
+steps: [run data-contract-dataset-readiness, verify provenance, assess quality, report acceptance]
+gates: [allowed use proven, contracts complete, leakage checked, acceptance thresholds defined]

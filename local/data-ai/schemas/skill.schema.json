@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "description", "procedure", "outputs"],
+  "properties": {
+    "id": { "type": "string" },
+    "description": { "type": "string" },
+    "procedure": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

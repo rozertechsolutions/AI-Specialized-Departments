@@ -1,0 +1,8 @@
+id: use-case-risk-triage
+description: Triage Data and AI use cases for value, feasibility, alternatives to AI, impact, risk, and lifecycle ownership.
+procedure:
+  - State outcome, users, value hypothesis, adoption objective, lifecycle owner, and metrics.
+  - Compare non-AI, analytics, rules-based, workflow, and human-process alternatives.
+  - Classify sensitivity, decision impact, privacy, third-party exposure, and production blast radius.
+  - Define evidence, monitoring, rollback, retirement, and human approval gates.
+outputs: [risk classification, required owners, evidence checklist, PASS_FAIL_BLOCKED status]

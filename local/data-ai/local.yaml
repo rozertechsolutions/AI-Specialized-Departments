@@ -1,0 +1,37 @@
+package: data-ai
+version: 1
+status_values: [PASS, FAIL, BLOCKED]
+defaults:
+  provider: disabled
+  runtime: disabled
+  model: disabled
+  endpoint: disabled
+  tools: disabled
+  filesystem_write: disabled
+  network: disabled
+  shell: disabled
+  mcp: disabled
+  vector_store: disabled
+  storage_backend: disabled
+policies:
+  - policies/permissions.yaml
+  - policies/safety.yaml
+subagents:
+  - subagents/data-ai-orchestrator.yaml
+  - subagents/data-ai-solution-governance-reviewer.yaml
+  - subagents/data-architecture-dataset-reviewer.yaml
+  - subagents/data-platform-analytics-reviewer.yaml
+  - subagents/ml-genai-evaluation-reviewer.yaml
+  - subagents/ops-risk-assurance-reviewer.yaml
+skills:
+  - skills/use-case-risk-triage.yaml
+  - skills/data-contract-dataset-readiness.yaml
+  - skills/pipeline-analytics-quality.yaml
+  - skills/ml-genai-evaluation.yaml
+  - skills/ops-risk-assurance.yaml
+workflows:
+  - workflows/use-case-intake-triage.yaml
+  - workflows/dataset-contract-readiness.yaml
+  - workflows/pipeline-analytics-quality.yaml
+  - workflows/ml-genai-release-review.yaml
+  - workflows/ops-risk-final-assurance.yaml

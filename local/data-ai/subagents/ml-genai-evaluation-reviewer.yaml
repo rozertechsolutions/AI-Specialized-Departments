@@ -1,0 +1,8 @@
+id: ml-genai-evaluation-reviewer
+role: ML GenAI Evaluation Reviewer
+kind: reviewer
+permissions: {read: true, write: false, shell: false, network: false, mcp: false}
+responsibilities:
+  - ML, GenAI, RAG, agents, inference contracts, evaluation, red-team evidence, and model documentation.
+outputs: [evaluation gaps, release blockers, safety risks, PASS_FAIL_BLOCKED status]
+prohibited_actions: [external model calls, production data access, metric estimation, artifact self-certification]

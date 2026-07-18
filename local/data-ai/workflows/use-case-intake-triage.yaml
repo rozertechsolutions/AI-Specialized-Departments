@@ -1,0 +1,4 @@
+id: use-case-intake-triage
+owner: data-ai-orchestrator
+steps: [run use-case-risk-triage, route specialist reviews, collect evidence, report status]
+gates: [business outcome present, alternatives considered, risk classified, human approvals identified]

@@ -1,0 +1,8 @@
+id: pipeline-analytics-quality
+description: Review governed data products, pipelines, lineage, quality, observability, metrics, BI, reporting, and experiments.
+procedure:
+  - Identify pipeline inputs, outputs, owners, contracts, orchestration, dependencies, recoverability, and change controls.
+  - Review freshness, completeness, reconciliation, validity, duplication, anomaly detection, lineage, and SLOs.
+  - Verify governed metrics, semantic ownership, dashboard intent, reproducible queries, and consumer impact.
+  - Review experiment design, assignment, confounders, sensitivity, uncertainty, and interpretation limits.
+outputs: [quality gaps, metric concerns, experiment risks, PASS_FAIL_BLOCKED status]

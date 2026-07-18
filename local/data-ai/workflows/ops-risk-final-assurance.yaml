@@ -1,0 +1,4 @@
+id: ops-risk-final-assurance
+owner: ops-risk-assurance-reviewer
+steps: [run ops-risk-assurance, verify monitoring and rollback, assess risk acceptance, issue final status]
+gates: [separation of duties preserved, residual risk explicit, approvals present, evidence retained]

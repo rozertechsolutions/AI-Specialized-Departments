@@ -1,0 +1,8 @@
+id: ops-risk-assurance
+description: Assess MLOps, LLMOps, monitoring, incidents, rollback, retirement, responsible AI, supplier risk, and final assurance readiness.
+procedure:
+  - Verify reproducibility, artifact tracking, release-candidate identity, configuration, and change approval evidence.
+  - Review monitoring for quality, drift, provider behavior, performance, cost/capacity, safety, bias, feedback, and incidents.
+  - Check rollback, graceful degradation, corrective action, deletion propagation, retirement, and evidence retention.
+  - Assess fairness, explainability, privacy, licensing, misuse, provider risk, legal escalation, and risk acceptance.
+outputs: [assurance findings, residual risk, approval needs, PASS_FAIL_BLOCKED status]

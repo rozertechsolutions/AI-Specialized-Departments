@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["package", "version", "defaults", "policies", "subagents", "skills", "workflows"],
+  "properties": {
+    "package": { "const": "data-ai" },
+    "version": { "type": "integer", "minimum": 1 },
+    "status_values": { "type": "array", "items": { "enum": ["PASS", "FAIL", "BLOCKED"] } },
+    "defaults": { "type": "object" },
+    "policies": { "type": "array", "items": { "type": "string" } },
+    "subagents": { "type": "array", "items": { "type": "string" } },
+    "skills": { "type": "array", "items": { "type": "string" } },
+    "workflows": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

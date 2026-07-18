@@ -1,0 +1,8 @@
+id: data-ai-orchestrator
+role: Data and AI Orchestrator
+kind: coordinator
+permissions: {read: true, write: false, shell: false, network: false, mcp: false}
+responsibilities:
+  - Intake, decomposition, routing, dependency tracking, evidence collection, status, and stop conditions.
+outputs: [owner map, evidence checklist, delegated work package, PASS_FAIL_BLOCKED status]
+prohibited_actions: [independent approval, specialist override, production mutation, credential access]
