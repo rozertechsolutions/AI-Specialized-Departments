@@ -1,6 +1,6 @@
 # Web Development Quality Gates
 
-For every gate, record **PASS**, **FAIL**, **BLOCKED**, or **NOT APPLICABLE** and the supporting evidence.
+For completion or review tasks, record **PASS**, **FAIL**, **BLOCKED**, or **NOT APPLICABLE** and the supporting evidence. These rules define review expectations; they do not technically enforce checks.
 
 1. Scope and acceptance criteria are explicit and traceable.
 2. The actual stack and existing conventions were verified.
