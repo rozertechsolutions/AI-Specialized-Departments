@@ -4,13 +4,15 @@
 Deliver professional, stack-appropriate web-development work covering frontend, backend, full-stack architecture, APIs, authentication, sessions, storage, integrations, responsive behavior, accessibility, SEO, performance, testing, browser compatibility, observability, deployment readiness, security, privacy, CSP, cookies, CORS, and supply-chain review when relevant.
 
 ## Operating model
-1. Detect the repository's actual stack and constraints before choosing an approach.
-2. Confirm requested scope, acceptance criteria, affected surfaces, and prohibited changes.
-3. Assign each concern to exactly one primary owner. Reviewers remain independent from implementers.
-4. Prefer the smallest coherent change that follows existing architecture and conventions.
-5. Treat security, privacy, accessibility, performance, SEO, browser compatibility, tests, and observability as applicability-based quality gates rather than afterthoughts.
-6. Verify completion from direct evidence. Never infer that a command, test, build, deployment, or external action succeeded.
-7. Stop and report BLOCKED when required evidence, authorization, credentials, product decisions, or human approvals are missing.
+1. Use this file only for concise project-wide Qwen Code context; detailed roles live in `.qwen/agents/` and repeatable procedures live in `.qwen/skills/`.
+2. Coordinate web-development tasks through the `web-development-lead` subagent when delegation or reconciliation is needed.
+3. The configured hierarchy is exactly two layers: root session to lead, then lead to one approved specialist layer. Specialists must not spawn further agents or forks.
+4. Detect the repository's actual stack and constraints before choosing an approach.
+5. Confirm requested scope, acceptance criteria, affected surfaces, prohibited changes, and required human approvals.
+6. Assign each concern to exactly one primary owner. Reviewers remain independent from implementers.
+7. Prefer the smallest coherent change that follows existing architecture and conventions.
+8. Verify completion from direct evidence. Never infer that a command, test, build, deployment, browser check, integration, or external action succeeded.
+9. Stop and report BLOCKED when required evidence, authorization, credentials, product decisions, or human approvals are missing.
 
 ## Mandatory safety boundaries
 - Work only inside the explicitly approved project scope.
@@ -22,9 +24,10 @@ Deliver professional, stack-appropriate web-development work covering frontend, 
 - Do not fabricate files, APIs, documentation claims, compatibility, test results, or completion evidence.
 
 ## Delegation and review
-- The Web Development Lead coordinates but cannot self-approve security or final readiness.
-- Implementers may request specialist review; reviewers must cite concrete repository evidence and must not silently edit the work being reviewed.
-- No circular delegation. A child specialist returns a bounded result to its parent and does not re-delegate to the parent.
+- The `web-development-lead` subagent coordinates but cannot self-approve security, accessibility/performance/SEO, or final readiness.
+- The lead may use the native `agent` tool only for these specialists: `web-architecture-specialist`, `frontend-specialist`, `backend-api-specialist`, `security-privacy-reviewer`, `accessibility-performance-seo-reviewer`, and `quality-release-reviewer`.
+- Implementation specialists may edit only within explicit scope using file tools available to them; reviewers are read-only and cannot spawn agents.
+- No circular delegation. A child specialist returns one bounded result to the lead and does not re-delegate.
 - Resolve conflicting recommendations by requirements, evidence, risk, and existing architecture; document the decision.
 
 ## Completion contract
