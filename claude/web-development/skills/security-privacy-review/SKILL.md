@@ -1,6 +1,6 @@
 ---
 name: security-privacy-review
-description: Perform an independent web security and privacy review.
+description: Use for independent web security and privacy review covering auth, data flows, CSP, CORS, cookies, secrets, trackers, and sensitive flows.
 ---
 
 # Security Privacy Review

@@ -1,6 +1,6 @@
 ---
 name: release-readiness
-description: Produce a human-reviewable release-readiness assessment without deploying.
+description: Use for a final web release-readiness verdict based on requirements, evidence, risks, approvals, rollback, and unexecuted checks.
 ---
 
 # Release Readiness

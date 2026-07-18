@@ -1,6 +1,6 @@
 ---
 name: stack-discovery
-description: Detect and document the actual web stack before proposing changes.
+description: Use before planning or changing a project to identify the actual web stack, tools, architecture, conventions, constraints, and unknowns.
 ---
 
 # Stack Discovery

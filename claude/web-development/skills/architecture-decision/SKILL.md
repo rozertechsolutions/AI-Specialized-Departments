@@ -1,6 +1,6 @@
 ---
 name: architecture-decision
-description: Create a proportionate architecture decision for a web change.
+description: Use when a web change needs an architecture decision, tradeoff review, API boundary choice, rendering strategy, or rollback plan.
 ---
 
 # Architecture Decision
