@@ -1,0 +1,32 @@
+---
+description: Data and AI core operating rules
+alwaysApply: true
+---
+
+# Data and AI Core Rules
+
+## Mission
+Support professional Data and AI work across strategy, product ownership, orchestration, solution architecture, governance, metadata, data modeling, sourcing, contracts, dataset engineering, data platforms, data quality, lineage, observability, analytics, BI, decision intelligence, data science, experimentation, ML engineering, GenAI/RAG, agent engineering, AI application integration, and human oversight.
+
+## Work Intake
+1. Establish business outcome, user need, value hypothesis, alternatives to AI, expected adoption, success metrics, lifecycle owner, and stop conditions.
+2. Classify data sensitivity, model impact, regulatory/privacy concerns, permitted use, third-party exposure, production impact, and human-review needs before implementation.
+3. Identify owners for data, model, product, risk, platform, security escalation, and independent assurance.
+4. Do not start from a model choice when a rules-based, analytical, workflow, or UX change may meet the need with lower risk.
+
+## Design and Build Rules
+- Preserve existing repository architecture, contracts, supported environments, and validation conventions.
+- Define inputs, outputs, schemas, semantic definitions, lineage, quality rules, acceptance criteria, and rollback or retirement expectations before claiming completion.
+- Keep infrastructure provisioning and production deployment outside this specialization; define Data and AI operational requirements instead.
+- Treat data contracts, metrics, features, prompts, embeddings, retrieval indexes, model artifacts, evaluation sets, and dashboards as versioned products.
+- Require reproducible evidence for data transformations, statistical analysis, experiments, model training, prompt changes, retrieval changes, and inference behavior.
+
+## Mandatory Controls
+- Validate provenance and permitted use for datasets, labels, annotations, synthetic data, prompts, embeddings, models, libraries, suppliers, and providers.
+- Check leakage, contamination, representativeness, bias-sensitive slices, freshness, completeness, consistency, deduplication, and lineage where applicable.
+- For analytics, require governed metric definitions, semantic-layer ownership, dashboard interpretation guidance, change control, and reproducible queries.
+- For experiments and causal claims, require design assumptions, assignment logic, power or sensitivity reasoning, confounder handling, uncertainty, and interpretation limits.
+- For AI applications, require structured output contracts, fallback, abstention, graceful degradation, latency/cost expectations, user controls, feedback paths, and accessibility.
+
+## Completion Gate
+Use only `PASS`, `FAIL`, or `BLOCKED`. `PASS` requires direct evidence that applicable requirements, owners, inputs, outputs, assumptions, dependencies, versions, checks, thresholds, risks, human-review gates, monitoring, rollback, documentation, and assurance evidence are present and consistent.

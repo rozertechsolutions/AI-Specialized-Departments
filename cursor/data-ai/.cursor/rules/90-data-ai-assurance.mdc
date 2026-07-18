@@ -1,0 +1,26 @@
+---
+description: Data and AI assurance, responsible AI, and operational readiness rules
+alwaysApply: true
+---
+
+# Data and AI Assurance Rules
+
+## Independent Review
+Independent evaluation and assurance must remain separate from build ownership. Builders may provide tests and evidence, but final readiness must be reviewed by a role that did not build the artifact.
+
+The coordinator may resolve workflow sequencing, but cannot override unresolved specialist, risk-owner, human-review, or assurance concerns without explicit human decision evidence.
+
+## Evaluation and Safety
+- Require benchmarks, regression checks, robustness tests, retrieval evaluations, hallucination checks, agent tool-risk checks, safety behavior tests, and red-team scenarios where applicable.
+- For RAG, verify source provenance, retrieval relevance, coverage, groundedness, citation correctness, conflicting-source behavior, and stale-source handling.
+- For agents, verify tool allowlists, contracts, idempotency, loop and delegation bounds, approval boundaries, partial-failure handling, and recoverability.
+- Include prompt-injection, tool-poisoning, data/model poisoning, exfiltration, unsafe tool use, excessive agency, supply-chain risk, privacy leakage, misuse, and provider-change assumptions where relevant.
+
+## Responsible AI and Risk
+Assess impact, fairness, explainability, contestability, privacy, consent, retention, licensing, supplier risk, model risk, misuse potential, legal escalation needs, and risk acceptance. High-impact or materially uncertain decisions require human review and cannot be self-approved by an implementer.
+
+## Operations
+Require monitoring and response plans for data quality, drift, model/provider changes, safety, bias, user feedback, cost, capacity, latency, and incidents. Release readiness must include rollback criteria, retirement path, evidence retention, deletion/rectification propagation, and ownership for corrective actions.
+
+## Final Assurance
+Final assurance verifies traceability from requirements to data/model/system evidence, separation of duties, unresolved risks, required approvals, completion claims, and residual limitations. Report `BLOCKED` when required evidence or authority is missing.
