@@ -16,6 +16,7 @@ def build_project_function_tools() -> list[object]:
         from agents import RunContextWrapper, function_tool
     except ImportError as exc:
         raise RuntimeError("Install openai-agents to build SDK function tools.") from exc
+    globals()["RunContextWrapper"] = RunContextWrapper
 
     from mobile_development_agents.guardrails.tools import build_sdk_tool_guardrails
 
