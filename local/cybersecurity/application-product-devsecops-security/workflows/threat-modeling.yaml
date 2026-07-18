@@ -1,0 +1,6 @@
+name: threat-modeling
+description: Provider-neutral static workflow for Application, Product, and DevSecOps Security.
+procedure_ref: ../skills/threat-modeling/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

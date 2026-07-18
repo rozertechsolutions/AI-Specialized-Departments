@@ -1,5 +1,11 @@
-# Output Schemas
+# Output Schemas For Defensive Security Operations, Detection, and Intelligence
 
-Every output should include reference, title, authorized scope, owner, independent reviewer, approver when applicable, dates or review period, source provenance, assumptions, evidence, affected assets or data, status, severity or priority where applicable, confidence, limitations, dependencies, actions, residual risk, human decisions, approval state, and completion criteria.
+Use these fields for every substantive output:
 
-Use this for SOC operating models, telemetry requirements, coverage maps, detection specifications, validation plans, triage records, hunt plans, intelligence assessments, malware-analysis plans, SOAR designs, SOC metrics, quality reviews, escalation records, and independent assurance records.
+- Reference, title, purpose, authorized scope, explicit exclusions, owner, creator, independent reviewer, approver, dates, source period, and intended audience.
+- Evidence inventory with provenance, freshness, completeness, limitations, and evidence state.
+- Findings classified as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+- Impact, severity or priority, confidence, assumptions, dependencies, residual risk, open questions, and human decisions.
+- Approval state, completion criteria, independent-review result, and prohibited actions avoided.
+
+Do not claim execution, remediation, control effectiveness, recovery, scan, test, integration, deployment, publication, or closure unless supplied evidence proves it and a human owner has authority.

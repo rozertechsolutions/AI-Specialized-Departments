@@ -1,13 +1,14 @@
-# Warp Governance, Risk, Compliance, and Assurance
+# Governance, Risk, Compliance, and Assurance
 
-This package defines a native Warp workspace for Cybersecurity Area 01: Governance, Risk, Compliance, and Assurance.
+This package is a static, organization-neutral cybersecurity configuration for Governance, Risk, Compliance, and Assurance. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Native Components
+## Professional Coverage
 
-- `AGENTS.md`: Warp project rules, role routing, controls, and completion criteria.
-- `.warp/skills/*/SKILL.md`: reusable Warp Skills for the area.
-- `reference/NATIVE_SOURCES.md`: official Warp documentation checked during creation.
+- Workflows covered: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+- Native roles: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+- Reusable Skills or procedures: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-## Operating Model
+## Evidence Standard
 
-Warp project rules define the coordinator and specialist roles. Warp Skills define the repeatable procedures. No cloud agent schedules, integrations, active MCP servers, executable hooks, profile files, uploads, notifications, or external writes are included in this static package.
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

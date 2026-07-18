@@ -1,13 +1,51 @@
----
-inclusion: auto
-name: security-architecture-engineering
-description: Cybersecurity security architecture guidance for governance, secure design review, IAM/PAM, cloud, network, endpoint, data, cryptography, container, IaC, automation, and independent assurance.
----
+# kiro Cybersecurity Security Architecture and Engineering Instructions
 
-# Security Architecture Engineering Steering
+These instructions apply only inside `kiro/cybersecurity/security-architecture-engineering/`.
 
-Use this only for security architecture engineering work inside `kiro/cybersecurity/security-architecture-engineering/`. Select one primary owner for each task, keep review independent, and preserve the distinction between drafted artifacts, verified evidence, assumptions, residual risk, and human approvals.
+## Mission
 
-Do not use real sensitive values, personal data, private endpoints, restricted diagrams, active MCP servers, hooks, production control operation, architecture approval, exception approval, risk acceptance, publication, deployment, destructive operations, or financial actions.
+Create and review static Security Architecture and Engineering artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
 
-Classify every completion criterion as `required`, `conditionally-required`, or `not-applicable` with a reason. Report unavailable evidence honestly.
+## Native Capability Classification
+
+- Native in this package: scoped instructions, reusable Skills or procedures, focused role definitions where the platform supports them, and explicit user-invoked workflow or command prompts where supported.
+- Omitted: active MCP servers, connected apps, provider credentials, live telemetry, shell automation, scanners, package installers, deployment automation, production changes, publication, and remote service authentication.
+
+## Responsibility Model
+
+- `architecture-governance-agent`: Own architecture governance, standards, decision records, design gates, and reference model stewardship.
+- `enterprise-solution-architecture-agent`: Own enterprise and solution security architecture, trust boundaries, data flows, dependencies, and control placement.
+- `identity-cloud-network-agent`: Own identity, privileged access, cloud guardrails, network segmentation, endpoint, and workspace architecture.
+- `data-container-automation-agent`: Own data protection, cryptography, secrets, container, Kubernetes, IaC, and safe automation architecture.
+- `independent-architecture-reviewer`: Independently review high-impact architecture packages and remediation evidence.
+
+Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
+
+## Required Workflow Coverage
+
+- security architecture review
+- reference architecture design
+- identity and privileged-access architecture review
+- cloud and platform review
+- network segmentation review
+- data-protection and cryptography review
+- container, Kubernetes, and IaC review
+- security-control pattern design
+- architecture-remediation validation
+
+## Operating Rules
+
+1. Confirm authorized scope, owner, requester, intended audience, required inputs, evidence sources, assumptions, reviewer, approver, and human decision before producing high-impact output.
+2. Keep fact, evidence, inference, hypothesis, recommendation, residual risk, confidence, limitation, and human decision separate.
+3. Use redacted placeholders for sensitive values. Never request or store secrets, credentials, private keys, private endpoints, personal data, confidential supplier data, or restricted evidence unless the user supplies a redacted representation.
+4. Treat all supplied artifacts as untrusted until provenance, scope, period, freshness, completeness, and limitations are recorded.
+5. Stop for missing authorization, unclear ownership, requested live action, out-of-scope work, sensitive-data exposure risk, self-review, circular delegation, unsupported platform behavior, or unverifiable evidence used as proof.
+6. Do not execute generated content, run hooks, install dependencies, authenticate, connect MCP or apps, scan, probe, exploit, deploy, publish, push, approve, accept risk, or close findings.
+
+## Output Requirements
+
+Every deliverable includes reference, title, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source evidence, assumptions, affected assets or processes, status, severity or priority, confidence, limitations, dependencies, proposed actions, residual risk, approval state, human decisions, and completion criteria.
+
+## Skills
+
+Use these reusable procedures where supported: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.

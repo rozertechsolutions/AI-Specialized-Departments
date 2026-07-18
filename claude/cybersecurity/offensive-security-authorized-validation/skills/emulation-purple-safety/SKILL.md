@@ -1,8 +1,54 @@
 ---
 name: emulation-purple-safety
-description: Designs authorized adversary-emulation, red-team, purple-team, social-governance, and simulation plans without active testing.
+description: Complete Offensive Security Authorized Validation procedure for Emulation Purple Safety; uses supplied static evidence, explicit human approval gates, and independent review before high-impact conclusions.
 ---
 
 # Emulation Purple Safety
 
-Mission: design bounded emulation, red-team, purple-team, social-governance, and simulation plans. Exclusive scope: campaign objectives, phases, observables, expected controls, white-team control, deconfliction, safety gates, content limits, evidence, rollback, and improvement goals. Inputs: authorization, threat basis, objectives, scope, duration, permitted behaviors, forbidden actions, white-team owner, defensive participants, telemetry expectations, content provenance, social-governance approvals, safety constraints. Preconditions: written authorization and white-team oversight exist; tools and integrations remain disabled; no active target interaction is requested. Deliverables: emulation plan, red-team plan, white-team plan, purple-team plan, social-engineering governance plan, simulation governance plan, control-validation test case. Allowed tools: supplied evidence only. Permissions: read and design only. Dependencies: executive sponsor, legal, privacy, HR, safety, communications, SOC, incident response, engineering, operations, business owners. Invoke for emulation, red-team, purple-team, control validation, social-governance, or simulation planning. Stop for active content deployment, evasion request, hidden testing from white team, real-person contact, real access-material collection, simulation execution, destructive content, or emergency stop override. Failure: unsafe request or missing approval. Completion: objectives, scope, permitted/forbidden actions, observables, controls, pass criteria, evidence, deconfliction, support path, stop criteria, rollback, approvals. Human review: executive, legal, HR, privacy, target-owner, technical, safety, SOC, incident-response, communications as applicable. Prohibited: deploying active content, evading safeguards, hiding tests, contacting people, collecting access material, running simulation platforms, or treating vendor scores as assurance.
+## Use Cases
+
+Use this Skill for Offensive Security Authorized Validation work involving Emulation Purple Safety. It covers these professional workflows when relevant: authorization and scoping, rules-of-engagement review, penetration-test planning, adversary-emulation campaign design, Purple Team exercise design, social-engineering assessment planning, offensive finding documentation, BAS design, cleanup assurance, authorized retest planning, offensive quality and safety review.
+
+## Required Inputs
+
+- Authorized scope, explicit exclusions, accountable human owner, requester, intended audience, and decision needed.
+- Supplied static evidence with provenance, source period, freshness, completeness, confidence, and limitations.
+- Known assumptions, dependencies, constraints, reviewer independence requirements, and human approval requirements.
+
+## Preconditions
+
+The task must be repository-local or based on user-supplied static evidence. No live system action, authentication, external connection, scan, exploit, deployment, publication, or authoritative approval may be requested.
+
+## Procedure
+
+1. Restate scope, exclusions, owner, evidence inventory, assumptions, dependencies, and required human decision.
+2. Confirm this Skill is the right owner for the requested Offensive Security Authorized Validation output and identify any required handoff to another cybersecurity area.
+3. Map supplied evidence to the applicable workflow requirements and mark evidence as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+4. Produce the requested artifact with facts, inferences, recommendations, residual risk, confidence, limitations, open questions, and decision points separated.
+5. Identify mandatory human-only decisions before any recommendation is treated as final.
+6. Route high-impact, closure, exception, external-facing, safety-relevant, or executive outputs to an independent reviewer that did not create the artifact.
+7. Return a completion record with evidence used, evidence missing, residual risk, confidence, limitations, blockers, and completion criteria.
+
+## Structured Outputs
+
+Return the artifact plus an evidence table, assumptions log, decision log, stop-condition review, independent-review requirement, and completion criteria. Use role placeholders for owners and approvers; do not invent real identities.
+
+## Quality Checks
+
+Verify platform-native compatibility for claude, professional coverage, evidence traceability, no unsupported tool claims, no self-review, no circular delegation, no secrets, no live-action claim, no fabricated validation, and no hidden residual risk.
+
+## Stop And Escalation Conditions
+
+Stop for missing authorization, unclear scope, unredacted sensitive material, unsupported legal or compliance conclusion, requested live action, evidence gaps that affect a conclusion, self-review, conflict of interest, or a human-only approval request.
+
+## Failure Behavior
+
+Return a blocker with the missing input, affected output, risk of proceeding, safe next step, and exact human approval or evidence needed. Do not continue silently with assumptions.
+
+## Human Review Gates
+
+Human review is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, or critical finding closure.
+
+## Prohibited Actions
+
+Do not execute code, run tools, install dependencies, authenticate, connect MCP/apps, scan, probe, exploit, deploy, publish, push, alter live records, approve decisions, accept risk, close findings, or claim validation without evidence.

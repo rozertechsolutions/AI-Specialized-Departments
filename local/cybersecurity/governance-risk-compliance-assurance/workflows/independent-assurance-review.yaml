@@ -1,18 +1,6 @@
-manifest_type: workflow
-schema: ../schemas/workflow.schema.json
-id: independent-assurance-review
-classification: native
-purpose: Provide independent read-only review before GRC artifacts are treated as complete.
-owner: independent-assurance-reviewer
-skills: [skills/independent-assurance-review.yaml]
-steps:
-  - confirm_reviewer_independence
-  - verify_scope_and_acceptance_criteria
-  - compare_claims_to_evidence
-  - flag_unsupported_conclusions_and_approval_gaps
-  - order_findings_by_severity
-  - report_readiness_and_required_human_decisions
-outputs: [severity_ordered_findings, evidence_gaps, residual_risk, approval_requirements, readiness_recommendation]
-completion_criteria: [self_review_excluded, findings_sourced, approval_requirements_explicit, unavailable_evidence_reported]
-human_review: [final_acceptance, external_use, risk_acceptance, audit_signoff, compliance_claims]
-prohibited_actions: [implement_changes, approve_risk, certify_compliance, close_findings]
+name: independent-assurance-review
+description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
+procedure_ref: ../skills/independent-assurance-review/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

@@ -1,10 +1,21 @@
-name: cybersecurity-area-07-offensive-security-authorized-validation
-static_only: true
-provider: user_configured
-runtime: user_configured
-model: user_configured
-external_integrations_enabled: false
-active_testing_enabled: false
-tools_enabled: false
-human_authorization_required: true
-independent_review_required_for_critical_outputs: true
+schema_version: 1
+specialization: cybersecurity
+area: offensive-security-authorized-validation
+provider_neutral: true
+runtime_binding: none
+active_integrations: false
+mcp_servers: []
+permissions:
+  read_static_evidence: allowed
+  write_static_artifacts: requires_explicit_task_scope
+  shell: denied
+  network: denied
+  live_system_actions: denied
+human_approval_required_for:
+  - risk_acceptance
+  - policy_publication
+  - architecture_approval
+  - release_or_closure_decision
+  - incident_declaration_or_closure
+  - offensive_authorization
+  - external_distribution

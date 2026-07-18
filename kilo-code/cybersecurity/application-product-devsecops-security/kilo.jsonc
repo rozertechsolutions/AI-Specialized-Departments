@@ -1,9 +1,7 @@
 {
   "$schema": "https://app.kilo.ai/config.json",
   "instructions": [
-    ".kilo/rules/appsec-scope.md",
-    ".kilo/rules/static-review-boundaries.md",
-    ".kilo/rules/evidence-and-human-approval.md",
+    ".kilo/rules/application-product-devsecops-security.md",
     ".kilo/rules/responsibility-matrix.md"
   ],
   "permission": {

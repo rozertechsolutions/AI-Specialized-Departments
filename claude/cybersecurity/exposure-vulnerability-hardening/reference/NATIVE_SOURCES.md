@@ -1,13 +1,12 @@
-# Native Source Verification
+# Native Sources
 
-Official sources checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Claude Projects: `https://support.claude.com/en/articles/9517075-what-are-projects`
-- Claude custom connectors using remote MCP: `https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp`
-- Claude documentation index: `https://docs.claude.com/llms.txt`
+Official sources consulted:
 
-## Decisions
+- Anthropic Help Center: What are Projects.
+- Anthropic documentation: Skills.
+- Anthropic Help Center: Connectors.
+- Anthropic Claude apps release notes.
 
-- Claude Project instructions and project knowledge are represented as copy-ready repository artifacts.
-- Connectors and MCP are omitted because this static package must not connect or authenticate external tools.
-- Claude Code repository files are omitted because this platform is Claude web/desktop Projects, not Claude Code.
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

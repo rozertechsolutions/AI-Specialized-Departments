@@ -1,0 +1,6 @@
+name: purple-bas-social-governance
+description: Provider-neutral static workflow for Offensive Security Authorized Validation.
+procedure_ref: ../skills/purple-bas-social-governance/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

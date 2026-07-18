@@ -1,47 +1,11 @@
-# Structured Architecture Outputs
+# Output Schemas For Security Architecture and Engineering
 
-## Common Fields
+Use these fields for every substantive output:
 
-Every output should include:
+- Reference, title, purpose, authorized scope, explicit exclusions, owner, creator, independent reviewer, approver, dates, source period, and intended audience.
+- Evidence inventory with provenance, freshness, completeness, limitations, and evidence state.
+- Findings classified as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+- Impact, severity or priority, confidence, assumptions, dependencies, residual risk, open questions, and human decisions.
+- Approval state, completion criteria, independent-review result, and prohibited actions avoided.
 
-- Unique reference:
-- Title and purpose:
-- Authorized scope:
-- Owner:
-- Independent reviewer:
-- Approver or decision forum:
-- Dates and review period:
-- Source and provenance:
-- Assumptions:
-- Evidence:
-- Affected assets, systems, identities, applications, data, suppliers, controls, or requirements:
-- Status:
-- Severity or priority:
-- Confidence:
-- Limitations:
-- Dependencies:
-- Remediation, treatment, recovery, or improvement actions:
-- Residual risk:
-- Human decisions:
-- Approval state:
-- Completion criteria:
-
-## Output Types
-
-- Security architecture principles.
-- Architecture decision record.
-- System security context and trust-boundary model.
-- Security architecture review record.
-- Security requirement specification.
-- Reference security architecture.
-- Identity and privileged-access architecture.
-- Cloud security architecture review.
-- Network segmentation and communications design.
-- Endpoint security architecture.
-- Data-protection and cryptographic architecture.
-- Key and certificate lifecycle architecture.
-- Container, Kubernetes, and IaC architecture review.
-- Security engineering control pattern.
-- Architecture finding and remediation record.
-- Architecture validation plan.
-- Independent architecture assurance record.
+Do not claim execution, remediation, control effectiveness, recovery, scan, test, integration, deployment, publication, or closure unless supplied evidence proves it and a human owner has authority.

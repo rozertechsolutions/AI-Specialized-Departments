@@ -1,17 +1,14 @@
-# Native Configuration Sources
+# Native Sources
 
-Official sources checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Claude Code settings: `https://code.claude.com/docs/en/settings`.
-- Claude Code subagents: `https://code.claude.com/docs/en/sub-agents`.
-- Claude Code skills: `https://code.claude.com/docs/en/skills`.
-- Claude Code MCP: `https://code.claude.com/docs/en/mcp`.
+Official sources consulted:
 
-## Current native surface
+- Claude Code documentation: Overview.
+- Claude Code documentation: Settings.
+- Claude Code documentation: Subagents.
+- Claude Code documentation: Skills.
+- Claude Code documentation: Hooks.
+- Claude Code documentation: MCP.
 
-Claude Code supports project memory through `CLAUDE.md` or `.claude/CLAUDE.md`, project subagents in `.claude/agents/`, project Skills in `.claude/skills/<skill-name>/SKILL.md`, project settings in `.claude/settings.json`, hooks through settings, and project MCP servers through `.mcp.json`.
-
-## Implementation decision
-
-This package uses project memory, project subagents, and project Skills. It omits hooks because lifecycle commands would create executable behavior. It omits `.mcp.json` because this area must not connect external tools, and project MCP servers require user approval before use. It omits settings because no permission widening or tool configuration is required for the static package.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

@@ -1,0 +1,6 @@
+name: reference-and-control-patterns
+description: Provider-neutral static workflow for Security Architecture and Engineering.
+procedure_ref: ../skills/reference-and-control-patterns/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

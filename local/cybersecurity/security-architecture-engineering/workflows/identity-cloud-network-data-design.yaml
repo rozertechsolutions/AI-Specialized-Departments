@@ -1,0 +1,6 @@
+name: identity-cloud-network-data-design
+description: Provider-neutral static workflow for Security Architecture and Engineering.
+procedure_ref: ../skills/identity-cloud-network-data-design/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

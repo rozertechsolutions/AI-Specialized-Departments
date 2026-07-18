@@ -1,18 +1,6 @@
-manifest_type: workflow
-schema: ../schemas/workflow.schema.json
-id: assurance-third-party-reporting
-classification: native
-purpose: Prepare assurance, evidence, third-party risk, maturity, executive status, and remediation reporting outputs.
-owner: assurance-evidence-remediation-agent
-skills: [skills/assurance-third-party-reporting.yaml, skills/independent-assurance-review.yaml]
-steps:
-  - confirm_audience_reporting_period_and_scope
-  - map_controls_vendors_or_metrics_to_evidence
-  - classify_evidence_available_missing_stale_inferred_or_not_applicable
-  - document_gaps_owners_due_dates_and_escalations
-  - prepare_status_or_reporting_pack
-  - request_independent_assurance_review
-outputs: [evidence_request_list, assurance_status, vendor_risk_summary, maturity_score_rationale, remediation_dashboard_narrative, reviewer_findings]
-completion_criteria: [each_claim_sourced_or_labeled, each_gap_owned_when_available, external_claims_flagged_for_approval]
-human_review: [audit_readiness_claim, vendor_decision, maturity_score_external_use, customer_or_regulator_report]
-prohibited_actions: [certify_effectiveness, approve_vendor, distribute_external_report]
+name: assurance-third-party-reporting
+description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
+procedure_ref: ../skills/assurance-third-party-reporting/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

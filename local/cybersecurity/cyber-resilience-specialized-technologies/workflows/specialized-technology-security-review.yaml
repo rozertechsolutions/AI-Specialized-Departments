@@ -1,0 +1,6 @@
+name: specialized-technology-security-review
+description: Provider-neutral static workflow for Cyber Resilience and Specialized Technologies.
+procedure_ref: ../skills/specialized-technology-security-review/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

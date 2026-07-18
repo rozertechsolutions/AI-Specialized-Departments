@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Defensive Security Operations, Detection, and Intelligence Artifact",
+  "type": "object",
+  "required": [
+    "reference",
+    "scope",
+    "evidence",
+    "classification",
+    "human_review"
+  ],
+  "properties": {
+    "reference": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "classification": {
+      "enum": [
+        "confirmed",
+        "probable",
+        "hypothetical",
+        "not_reproduced",
+        "false_positive",
+        "accepted_risk",
+        "insufficient_evidence",
+        "not_applicable"
+      ]
+    },
+    "human_review": {
+      "type": "boolean"
+    }
+  }
+}

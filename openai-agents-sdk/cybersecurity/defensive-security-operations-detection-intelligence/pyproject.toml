@@ -1,0 +1,9 @@
+[project]
+name = "cybersecurity-defensive-security-operations-detection-intelligence-agents"
+version = "0.1.0"
+description = "Static OpenAI Agents SDK wiring for Defensive Security Operations, Detection, and Intelligence."
+requires-python = ">=3.11"
+dependencies = ["openai-agents", "pydantic"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

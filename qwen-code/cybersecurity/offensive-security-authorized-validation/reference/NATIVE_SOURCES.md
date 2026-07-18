@@ -1,7 +1,14 @@
 # Native Sources
 
-- Qwen Code README: https://github.com/QwenLM/qwen-code/blob/main/README.md
-- Qwen Code memory: https://github.com/QwenLM/qwen-code/blob/main/docs/users/features/memory.md
-- Qwen Code sub-agents: https://github.com/QwenLM/qwen-code/blob/main/docs/users/features/sub-agents.md
-- Qwen Code Skills: https://github.com/QwenLM/qwen-code/blob/main/docs/users/features/skills.md
-- Qwen Code settings: https://github.com/QwenLM/qwen-code/blob/main/docs/users/configuration/settings.md
+Documentation review date: 2026-07-18.
+
+Official sources consulted:
+
+- Qwen Code Docs: Agent Skills.
+- Qwen Code Docs: Subagents.
+- Qwen Code Docs: Commands.
+- Qwen Code Docs: Hooks.
+- Qwen Code Docs: MCP.
+- Qwen Code Docs: Extensions.
+
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

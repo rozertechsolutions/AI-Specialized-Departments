@@ -1,13 +1,14 @@
-# Native Kilo Code Sources
+# Native Sources
 
-Official Kilo Code documentation checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Documentation index: `https://kilocode.ai/docs/llms.txt`
-- AGENTS.md customization: `https://kilocode.ai/docs/customize/agents-md`
-- Custom rules: `https://kilocode.ai/docs/customize/custom-rules`
-- Custom subagents: `https://kilocode.ai/docs/customize/custom-subagents`
-- Agent Skills: `https://kilocode.ai/docs/customize/skills`
-- Workflows: `https://kilocode.ai/docs/customize/workflows`
-- Ignore file: `https://kilocode.ai/docs/customize/context/kilocodeignore`
+Official sources consulted:
 
-Implementation decision: use `AGENTS.md`, `kilo.jsonc`, `.kilocodeignore`, `.kilo/rules/*.md`, `.kilo/agents/*.md`, and `.kilo/skills/*/SKILL.md`. Omit MCP servers, plugins, workflows, slash commands, shell automation, external integrations, authentication, scans, deployment, publication, and live-system actions because this package is static guidance only.
+- Kilo Code Docs: Custom Modes / Agents.
+- Kilo Code Docs: Custom Subagents.
+- Kilo Code Docs: Agent Permissions.
+- Kilo Code Docs: Agent Skills.
+- Kilo Code Docs: Workflows.
+- Kilo Code Docs: Custom Rules and agents.md.
+
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

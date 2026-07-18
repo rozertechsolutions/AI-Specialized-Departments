@@ -1,28 +1,11 @@
-# Output Schemas
+# Output Schemas For Application, Product, and DevSecOps Security
 
-Every formal output should include:
+Use these fields for every substantive output:
 
-- Unique reference
-- Title and purpose
-- Authorized scope
-- Owner
-- Independent reviewer
-- Approver when applicable
-- Dates and review period
-- Source and provenance
-- Assumptions
-- Evidence
-- Affected assets, applications, identities, data, suppliers, controls, requirements, or systems
-- Status
-- Severity or priority when applicable
-- Confidence
-- Limitations
-- Dependencies
-- Remediation, treatment, recovery, or improvement actions
-- Residual risk
-- Human decisions
-- Approval state
-- Completion criteria
+- Reference, title, purpose, authorized scope, explicit exclusions, owner, creator, independent reviewer, approver, dates, source period, and intended audience.
+- Evidence inventory with provenance, freshness, completeness, limitations, and evidence state.
+- Findings classified as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+- Impact, severity or priority, confidence, assumptions, dependencies, residual risk, open questions, and human decisions.
+- Approval state, completion criteria, independent-review result, and prohibited actions avoided.
 
-Supported records include secure-SDLC matrix, requirement specification, threat model, abuse-case register, design review, static code finding, dependency assessment, SBOM and provenance record, CI/CD review, testing strategy, finding triage, release readiness, vulnerability intake, PSIRT coordination, disclosure decision support, remediation validation, and independent assurance.
-
+Do not claim execution, remediation, control effectiveness, recovery, scan, test, integration, deployment, publication, or closure unless supplied evidence proves it and a human owner has authority.

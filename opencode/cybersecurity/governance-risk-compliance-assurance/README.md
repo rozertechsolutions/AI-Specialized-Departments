@@ -1,19 +1,14 @@
-# OpenCode Governance, Risk, Compliance, and Assurance
+# Governance, Risk, Compliance, and Assurance
 
-This package defines a native OpenCode workspace for Cybersecurity Area 01: Governance, Risk, Compliance, and Assurance.
+This package is a static, organization-neutral cybersecurity configuration for Governance, Risk, Compliance, and Assurance. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Native Components
+## Professional Coverage
 
-- `AGENTS.md`: operating instructions, routing, controls, and completion criteria.
-- `opencode.jsonc`: OpenCode project configuration with least-privilege permissions and inactive external integrations.
-- `.opencode/agents/*.md`: five specialist subagents for the area.
-- `.opencode/skills/*/SKILL.md`: reusable governance, risk, assurance, and independent review workflows.
-- `reference/NATIVE_SOURCES.md`: official OpenCode documentation checked during creation.
+- Workflows covered: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+- Native roles: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+- Reusable Skills or procedures: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-## Operating Model
+## Evidence Standard
 
-The primary OpenCode agent coordinates work and delegates to one specialist owner at a time. Review agents remain read-only and cannot approve their own work. External systems, MCP servers, plugins, scheduled actions, and executable hooks are intentionally omitted from this static package.
-
-## Delivery Rules
-
-Use this package for policy framework alignment, cyber risk registers, exception governance, control evidence, remediation tracking, third-party assurance, maturity reporting, and independent review. Keep outputs evidence-based, cite source artifacts, preserve user changes, and require human approval for any action that could change live systems, governance records, access rights, contractual commitments, or external communications.
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

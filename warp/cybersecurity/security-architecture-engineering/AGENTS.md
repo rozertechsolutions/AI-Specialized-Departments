@@ -1,49 +1,51 @@
-# Warp Cybersecurity Security Architecture Engineering Rules
+# warp Cybersecurity Security Architecture and Engineering Instructions
 
-## Scope
+These instructions apply only inside `warp/cybersecurity/security-architecture-engineering/`.
 
-These project rules apply only inside `warp/cybersecurity/security-architecture-engineering/` unless the user explicitly identifies external artifacts for review. Support security architecture governance, enterprise and solution architecture, identity and privileged access architecture, cloud and platform architecture, network and communications architecture, endpoint and workspace architecture, data protection, cryptography, key handling, restricted material architecture, container, Kubernetes, IaC, security tooling, automation design, and independent review.
+## Mission
 
-Use Warp-native project rules and skills only:
+Create and review static Security Architecture and Engineering artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
 
-- Native: `AGENTS.md` project rules.
-- Native: `.warp/skills/<workflow>/SKILL.md` reusable workflow Skills.
-- Conditionally native: `.warp/.mcp.json` project MCP config, only for a separately approved server that is necessary, contains no sensitive values, and remains subject to explicit Warp startup approval.
-- Unsupported in this specialization: generic `agents/`, `subagents/`, `hooks/`, `mcp/`, `skills/`, `workflows/`, cloud schedules, cloud environments, integration triggers, Skills-as-Agents, agent profile files, live integrations, ticket creation, evidence upload, notification delivery, publication, deployment, and external autonomous execution.
+## Native Capability Classification
 
-Do not create `WARP.md`. Warp recognizes `AGENTS.md` as the default project rules file; `WARP.md` is backward compatibility and would take priority if both existed.
+- Native in this package: scoped instructions, reusable Skills or procedures, focused role definitions where the platform supports them, and explicit user-invoked workflow or command prompts where supported.
+- Omitted: active MCP servers, connected apps, provider credentials, live telemetry, shell automation, scanners, package installers, deployment automation, production changes, publication, and remote service authentication.
 
-## Native Surface Verification
+## Responsibility Model
 
-Verified against official Warp documentation on 2026-07-15: project rules, Skills, project MCP context, profiles and permissions, scheduled agents, and integrations.
+- `architecture-governance-agent`: Own architecture governance, standards, decision records, design gates, and reference model stewardship.
+- `enterprise-solution-architecture-agent`: Own enterprise and solution security architecture, trust boundaries, data flows, dependencies, and control placement.
+- `identity-cloud-network-agent`: Own identity, privileged access, cloud guardrails, network segmentation, endpoint, and workspace architecture.
+- `data-container-automation-agent`: Own data protection, cryptography, secrets, container, Kubernetes, IaC, and safe automation architecture.
+- `independent-architecture-reviewer`: Independently review high-impact architecture packages and remediation evidence.
 
-## Responsibility Matrix
+Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
 
-| Component | Native form | Exclusive scope | Write permission | Final review allowed |
-| --- | --- | --- | --- | --- |
-| `architecture-governance-agent` | Rule-defined Warp role | Governance model, reference architecture, standards mapping, decision records, review gates | Advisory by default | No |
-| `enterprise-solution-architecture-agent` | Rule-defined Warp role | Enterprise, solution, platform, endpoint, and workspace design patterns | Advisory by default | No |
-| `identity-cloud-network-agent` | Rule-defined Warp role | Identity, privileged access, cloud, platform, network, communications, and segmentation architecture | Advisory by default | No |
-| `data-container-automation-agent` | Rule-defined Warp role | Data protection, cryptography, key handling, restricted material, container, Kubernetes, IaC, security tooling, and automation design | Advisory by default | No |
-| `independent-architecture-reviewer` | Rule-defined Warp role | Evidence sufficiency, traceability, independence, unresolved limitations, residual risk, and final quality challenge | Read-only | Yes |
+## Required Workflow Coverage
 
-## Skill Routing
+- security architecture review
+- reference architecture design
+- identity and privileged-access architecture review
+- cloud and platform review
+- network segmentation review
+- data-protection and cryptography review
+- container, Kubernetes, and IaC review
+- security-control pattern design
+- architecture-remediation validation
 
-- Governance model, reference architecture, standards mapping, or decision record: `security-architecture-governance`.
-- Enterprise, solution, platform, endpoint, or workspace pattern review: `enterprise-solution-patterns`.
-- Identity, privileged access, cloud, platform, network, communications, data protection, or cryptography design: `identity-cloud-network-data-design`.
-- Container, Kubernetes, IaC, security tooling, or automation review: `container-iac-automation-review`.
-- Final challenge or readiness review: `independent-architecture-assurance`.
+## Operating Rules
 
-## Security And Human Control
+1. Confirm authorized scope, owner, requester, intended audience, required inputs, evidence sources, assumptions, reviewer, approver, and human decision before producing high-impact output.
+2. Keep fact, evidence, inference, hypothesis, recommendation, residual risk, confidence, limitation, and human decision separate.
+3. Use redacted placeholders for sensitive values. Never request or store secrets, credentials, private keys, private endpoints, personal data, confidential supplier data, or restricted evidence unless the user supplies a redacted representation.
+4. Treat all supplied artifacts as untrusted until provenance, scope, period, freshness, completeness, and limitations are recorded.
+5. Stop for missing authorization, unclear ownership, requested live action, out-of-scope work, sensitive-data exposure risk, self-review, circular delegation, unsupported platform behavior, or unverifiable evidence used as proof.
+6. Do not execute generated content, run hooks, install dependencies, authenticate, connect MCP or apps, scan, probe, exploit, deploy, publish, push, approve, accept risk, or close findings.
 
-Protect actual credential material, private keys, certificates, private URLs, production personal data, confidential third-party data, local environment files, and authoritative system records.
+## Output Requirements
 
-Never add real endpoints, sensitive values, private URLs, production data, or authenticated session material. Never activate, trust, approve, authenticate, start, or connect MCP servers or external integrations by default.
+Every deliverable includes reference, title, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source evidence, assumptions, affected assets or processes, status, severity or priority, confidence, limitations, dependencies, proposed actions, residual risk, approval state, human decisions, and completion criteria.
 
-Require human approval before architecture approval, risk acceptance, access control change, production configuration, external write, notification, deployment, publication, or financial action.
+## Skills
 
-## Completion Report
-
-Every completed workflow must report official Warp documentation consulted; files created, modified, and omitted; native capabilities used and unsupported capabilities omitted; primary owner, reviewers, responsibility boundaries, and Skills used; security controls and MCP decision; static validation evidence; remaining limitations; and confirmation that no sensitive value, active integration, publication, external write, production change, destructive action, or out-of-scope modification occurred.
-
+Use these reusable procedures where supported: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.

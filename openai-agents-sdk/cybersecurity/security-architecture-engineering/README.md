@@ -1,45 +1,14 @@
-# OpenAI Agents SDK Security Architecture Engineering
+# Security Architecture and Engineering
 
-This specialization implements a native Python package for the OpenAI Agents SDK. It coordinates Cybersecurity Area 02: Security Architecture and Engineering while keeping production changes, control operation, formal approval, and risk acceptance under human authority.
+This package is a static, organization-neutral cybersecurity configuration for Security Architecture and Engineering. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Verified Surface
+## Professional Coverage
 
-- Platform: OpenAI Agents SDK for Python.
-- Native capabilities used: `Agent`, `Runner`, agents-as-tools, handoff-ready role boundaries, guardrail-style validators, typed workflow routing, and tracing controls.
-- Unsupported or intentionally omitted: active MCP connections, hosted web/file/code-interpreter tools, daemon/UI/server processes, external connectors, provider setup, credential import, risk acceptance, architecture approval, compliance certification, deployment, live configuration, production operation, and destructive actions.
+- Workflows covered: security architecture review, reference architecture design, identity and privileged-access architecture review, cloud and platform review, network segmentation review, data-protection and cryptography review, container, Kubernetes, and IaC review, security-control pattern design, architecture-remediation validation.
+- Native roles: architecture-governance-agent, enterprise-solution-architecture-agent, identity-cloud-network-agent, data-container-automation-agent, independent-architecture-reviewer.
+- Reusable Skills or procedures: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-## Responsibility Model
+## Evidence Standard
 
-The coordinator owns routing and synthesis. The five specialists preserve exclusive responsibility boundaries:
-
-1. `architecture-governance-agent`
-2. `enterprise-solution-architecture-agent`
-3. `identity-cloud-network-agent`
-4. `data-container-automation-agent`
-5. `independent-architecture-reviewer`
-
-Review roles are read-only by default. Drafting roles do not perform their own independent final review. `independent-architecture-reviewer` is the final independent reviewer and never reviews its own work.
-
-## Workflows
-
-- `security-architecture-governance`
-- `enterprise-solution-patterns`
-- `identity-cloud-network-data-design`
-- `container-iac-automation-review`
-- `independent-architecture-assurance`
-
-Each workflow declares triggers, ordered steps, validation gates, stop conditions, evidence requirements, outputs, acceptance criteria, human approvals, and prohibited actions.
-
-## Runtime Notes
-
-The package declares the SDK dependency but does not install dependencies or run OpenAI API calls during import. Use `OPENAI_AGENTS_MODEL` to select a model at runtime. No model is hardcoded.
-
-Official documentation consulted:
-
-- https://openai.github.io/openai-agents-python/
-- https://openai.github.io/openai-agents-python/agents/
-- https://openai.github.io/openai-agents-python/tools/
-- https://openai.github.io/openai-agents-python/handoffs/
-- https://openai.github.io/openai-agents-python/guardrails/
-- https://openai.github.io/openai-agents-python/tracing/
-
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

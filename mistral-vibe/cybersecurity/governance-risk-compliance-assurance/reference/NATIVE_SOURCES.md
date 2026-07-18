@@ -1,13 +1,14 @@
-# Native Configuration Sources
+# Native Sources
 
-Reviewed before creating this Mistral Vibe package on July 15, 2026.
+Documentation review date: 2026-07-18.
 
-- `https://docs.mistral.ai/vibe/choose-chat-work-code` confirmed Vibe Work, Chat, and Code modes; Code is the mode for codebase, terminal, IDE, and coding-session work.
-- `https://docs.mistral.ai/vibe/work/skills` confirmed Skills as reusable instructions and resources that load progressively in Vibe Work.
-- `https://docs.mistral.ai/vibe/code/cli/agents` confirmed custom project agents in `./.vibe/agents/*.toml`, `agent_type = "agent"`, `agent_type = "subagent"`, `system_prompt_id`, subagent delegation, and `AGENTS.md` support.
-- `https://docs.mistral.ai/vibe/code/cli/configuration` confirmed project `.vibe/config.toml`, default agent, skills, tool filters, MCP server configuration, and configuration precedence.
-- `https://docs.mistral.ai/vibe/code/cli/skills` confirmed project Skills in `./.vibe/skills/`, `SKILL.md` frontmatter, `user-invocable`, `allowed-tools`, and Skill filtering.
+Official sources consulted:
 
-Included native artifacts: `AGENTS.md`, `.vibe/config.toml`, `.vibe/agents/`, `.vibe/prompts/`, `.vibe/skills/`, and `reference/`.
+- Mistral Docs: Vibe Code overview.
+- Mistral Docs: Agents.
+- Mistral Docs: Configuration.
+- Mistral Docs: Safety, approvals, and permissions.
+- Mistral Docs: Skills.
+- Mistral Docs: MCP servers.
 
-Omitted native artifacts: MCP servers, connectors, hooks, custom tools, executable scripts, provider/model configuration, telemetry overrides, remote sessions, and scheduled tasks.
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

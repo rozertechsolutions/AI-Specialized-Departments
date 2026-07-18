@@ -1,0 +1,6 @@
+name: soc-telemetry-governance
+description: Provider-neutral static workflow for Defensive Security Operations, Detection, and Intelligence.
+procedure_ref: ../skills/soc-telemetry-governance/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

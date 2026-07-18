@@ -1,25 +1,54 @@
 ---
 name: assurance-third-party-reporting
-description: Use for control evidence, assurance requests, remediation validation, third-party assurance, maturity scoring, and executive reporting.
-compatibility: opencode
-metadata:
-  owner: assurance-evidence-remediation-agent
+description: Reusable Governance, Risk, Compliance, and Assurance procedure for assurance third party reporting using static evidence, human approval gates, and independent review.
 ---
 
-# assurance-third-party-reporting
+# Assurance Third Party Reporting
 
-- Objective: prepare evidence-backed assurance, third-party, maturity, and reporting outputs.
-- Trigger: user asks for evidence matrix, assurance response, remediation closure pack, supplier summary, maturity dashboard, or committee report.
-- Inputs: control objective, evidence period, source artifacts, findings, supplier assessment, maturity scale, reporting audience, prior-period data.
-- Primary owner: `assurance-evidence-remediation-agent`.
-- Reviewers: `third-party-maturity-reporting-agent` for supplier or dashboard work; `independent-assurance-reviewer` for final challenge.
-- Steps: define evidence period; inventory artifacts; map evidence to controls or findings; assess sufficiency; identify remediation status; apply maturity criteria; draft audience-fit narrative; disclose limitations.
-- Conditional steps: route supplier scoring and dashboard narrative to `third-party-maturity-reporting-agent`.
-- Validation gates: evidence period is clear; each claim has source support; ratings follow defined criteria; issue status has owner and validation basis.
-- Failures: stop on unsupported effectiveness claim, missing period, conflicting evidence, or requested audit opinion.
-- Stop conditions: evidence upload, live issue closure, external report submission, supplier contact, or publication.
-- Evidence: source artifact, control or supplier identifier, period, finding, owner, status, rating criterion, and remaining gap.
-- Outputs: evidence matrix, assurance response draft, remediation closure checklist, supplier summary, maturity report, dashboard narrative.
-- Acceptance criteria: every material claim is traceable, rating limitations are visible, and unavailable evidence is clearly marked.
-- Human approvals: audit response, issue closure, supplier status change, committee submission, and external communication.
-- Prohibited actions: uploading evidence, changing third-party records, publishing reports, or asserting effectiveness without support.
+## Use Cases
+
+Use this Skill for Governance, Risk, Compliance, and Assurance work related to assurance third party reporting, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+
+## Required Inputs
+
+- Authorized scope, explicit exclusions, accountable human owner, requester, intended audience, and decision needed.
+- Supplied static evidence with provenance, source period, freshness, completeness, and limitations.
+- Relevant constraints, assumptions, dependencies, approval requirements, and reviewer independence.
+
+## Preconditions
+
+The task is repository-local or based on supplied static evidence. No live system action, authentication, external connection, scan, exploit, deployment, publication, or authoritative approval is requested.
+
+## Procedure
+
+1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
+2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
+4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
+5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
+6. Route high-impact, closure, exception, external-facing, or executive outputs to an independent reviewer that did not create the artifact.
+7. Return a completion record with residual risk, confidence, limitations, open questions, and blocked validations.
+
+## Structured Outputs
+
+Return the artifact plus an evidence table, decision log, stop-condition review, independent-review requirement, and completion criteria. Include owners and approvers as role placeholders, not real identities.
+
+## Quality Checks
+
+Verify native-surface compatibility, professional coverage, evidence traceability, least-privilege behavior, no unsupported tool claims, no self-review, no circular delegation, no real secrets, no live-action claim, and no fabricated validation.
+
+## Stop And Escalation Conditions
+
+Stop for missing authorization, unredacted sensitive material, unsupported legal or compliance conclusion, requested live action, evidence gaps that affect a conclusion, self-review, conflict of interest, or a human-only approval request.
+
+## Failure Behavior
+
+Return a blocker with the missing input, affected output, risk of proceeding, safe next step, and exact human approval or evidence needed. Do not silently continue with assumptions.
+
+## Human Review Gates
+
+Human review is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, or critical finding closure.
+
+## Prohibited Actions
+
+Do not execute code, run tools, install dependencies, authenticate, connect MCP/apps, scan, probe, exploit, deploy, publish, push, alter live records, approve decisions, accept risk, close findings, or claim validation without evidence.

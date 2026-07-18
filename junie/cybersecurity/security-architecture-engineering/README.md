@@ -1,16 +1,14 @@
-# Junie Cybersecurity Security Architecture Engineering
+# Security Architecture and Engineering
 
-This package configures Junie-native static guidance for Cybersecurity Area 02: Security Architecture Engineering.
+This package is a static, organization-neutral cybersecurity configuration for Security Architecture and Engineering. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Native Artifacts
+## Professional Coverage
 
-- `.junie/AGENTS.md` defines area scope, mission, routing, safety boundaries, and structured output requirements.
-- `.junie/config.json` describes the static area package.
-- `.junie/agents/*.md` defines custom subagents for architecture governance, solution architecture, identity/cloud/network, data/container/automation, and independent review.
-- `.junie/skills/*/SKILL.md` defines reusable skills for architecture review, reference patterns, identity/cloud/network/data design, container/IaC/automation review, and independent architecture assurance.
-- `.junie/commands/*.md` provides thin command entry points that route to the matching skill.
-- `reference/NATIVE_SOURCES.md` records official Junie documentation checked for native feature support.
+- Workflows covered: security architecture review, reference architecture design, identity and privileged-access architecture review, cloud and platform review, network segmentation review, data-protection and cryptography review, container, Kubernetes, and IaC review, security-control pattern design, architecture-remediation validation.
+- Native roles: architecture-governance-agent, enterprise-solution-architecture-agent, identity-cloud-network-agent, data-container-automation-agent, independent-architecture-reviewer.
+- Reusable Skills or procedures: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-## Scope Boundaries
+## Evidence Standard
 
-The package supports design, review, documentation, governance, and independent assurance of security architectures. It does not approve architectures, accept risk, publish standards, deploy controls, operate production systems, authenticate to services, run scans, or manage incidents.
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

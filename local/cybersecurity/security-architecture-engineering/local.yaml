@@ -1,62 +1,21 @@
-manifest_type: local-specialization
-schema: schemas/local.schema.json
-id: ai-specialized-departments.local.cybersecurity.security-architecture-engineering
-version: 1.0.0
-surface: project-defined-local
-status: native
-scope:
-  root: local/cybersecurity/security-architecture-engineering
-  domain: cybersecurity
-  area: security-architecture-engineering
-  forbidden_paths:
-    - common
-classification:
-  native:
-    - yaml_manifests
-    - json_schemas
-    - static_reference_documents
-    - least_privilege_tool_contracts
-  unsupported:
-    - runtime_daemon
-    - provider_client
-    - model_downloader
-    - universal_adapter
-    - shared_cross_platform_runtime
-    - autonomous_loop
-    - active_external_integrations
-    - mcp_activation
-    - executable_hooks_or_scripts
-    - risk_acceptance_or_certification
-precedence:
-  - policies
-  - schemas
-  - tools
-  - agents
-  - subagents
-  - skills
-  - workflows
-delegation:
-  coordinator: agents/security-architecture-coordinator.yaml
-  specialists_directory: subagents
-  max_depth: 1
-  final_review: independent-architecture-reviewer
-  self_review_prohibited: true
-capability_negotiation:
-  provider_routing: capability-based
-  remote_use_requires_explicit_consent: true
-  no_silent_cloud_fallback: true
-  unknown_capability_behavior: fail_closed
-lifecycle:
-  discovery: validate_manifests_before_use
-  activation: human_initiated
-  external_integrations_default: disabled
-  audit_logging: required_for_decisions_and_approvals
-validation:
-  schema_directory: schemas
-  static_only: true
-  malformed_security_config: fail_closed
-references:
-  official_documentation:
-    - https://modelcontextprotocol.io/docs/getting-started/intro
-    - https://agentskills.io/specification
-
+schema_version: 1
+specialization: cybersecurity
+area: security-architecture-engineering
+provider_neutral: true
+runtime_binding: none
+active_integrations: false
+mcp_servers: []
+permissions:
+  read_static_evidence: allowed
+  write_static_artifacts: requires_explicit_task_scope
+  shell: denied
+  network: denied
+  live_system_actions: denied
+human_approval_required_for:
+  - risk_acceptance
+  - policy_publication
+  - architecture_approval
+  - release_or_closure_decision
+  - incident_declaration_or_closure
+  - offensive_authorization
+  - external_distribution

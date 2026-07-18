@@ -1,37 +1,51 @@
-# Mistral Vibe Security Architecture Engineering Instructions
+# mistral-vibe Cybersecurity Security Architecture and Engineering Instructions
 
-These instructions apply only inside `mistral-vibe/cybersecurity/security-architecture-engineering/` and cybersecurity security architecture artifacts intentionally placed below it. Keep work scoped to architecture governance, enterprise and solution design, identity and privileged access design, cloud and platform architecture, network and communications architecture, endpoint and workspace architecture, data protection, cryptography, key handling, restricted material architecture, container, Kubernetes, IaC, reusable security engineering patterns, automation design, and independent architecture review.
+These instructions apply only inside `mistral-vibe/cybersecurity/security-architecture-engineering/`.
 
-Start Vibe with this directory as the working directory so project `.vibe/` configuration, agents, prompts, and Skills are discovered.
+## Mission
 
-## Native Surface
+Create and review static Security Architecture and Engineering artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
 
-- Vibe Code project configuration: `.vibe/config.toml`.
-- User-facing coordinator: `.vibe/agents/security-architecture-coordinator.toml` with `.vibe/prompts/security-architecture-coordinator.md`.
-- Delegation-only subagents: `.vibe/agents/*-agent.toml` and `.vibe/agents/independent-architecture-reviewer.toml`.
-- Reusable procedures: `.vibe/skills/*/SKILL.md`.
-- Official docs checked on July 15, 2026: Vibe mode selection, Work Skills, Code CLI agents, Code CLI configuration, and Code CLI Skills.
+## Native Capability Classification
 
-## Scope and Boundaries
+- Native in this package: scoped instructions, reusable Skills or procedures, focused role definitions where the platform supports them, and explicit user-invoked workflow or command prompts where supported.
+- Omitted: active MCP servers, connected apps, provider credentials, live telemetry, shell automation, scanners, package installers, deployment automation, production changes, publication, and remote service authentication.
 
-- Do not configure providers, models, connectors, MCP servers, hooks, scripts, remote sessions, automation schedules, or external tools.
-- Do not read, copy, log, expose, or embed secrets, credentials, private keys, customer data, employee data, vulnerability details, restricted design details, or regulator communications unless the user explicitly supplies and authorizes the material for the task.
-- Do not approve architecture, accept risk, waive controls, certify compliance, deploy, configure, operate production controls, publish, submit filings, spend money, or perform destructive operations.
-- Treat unsupported evidence as unavailable. Never turn missing evidence into a pass.
+## Responsibility Model
 
-## Delegation
+- `architecture-governance-agent`: Own architecture governance, standards, decision records, design gates, and reference model stewardship.
+- `enterprise-solution-architecture-agent`: Own enterprise and solution security architecture, trust boundaries, data flows, dependencies, and control placement.
+- `identity-cloud-network-agent`: Own identity, privileged access, cloud guardrails, network segmentation, endpoint, and workspace architecture.
+- `data-container-automation-agent`: Own data protection, cryptography, secrets, container, Kubernetes, IaC, and safe automation architecture.
+- `independent-architecture-reviewer`: Independently review high-impact architecture packages and remediation evidence.
 
-Use only these project subagents:
+Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
 
-- `architecture-governance-agent`
-- `enterprise-solution-architecture-agent`
-- `identity-cloud-network-agent`
-- `data-container-automation-agent`
-- `independent-architecture-reviewer`
+## Required Workflow Coverage
 
-Assign exactly one primary owner per deliverable. Drafting roles do not perform their own independent final review.
+- security architecture review
+- reference architecture design
+- identity and privileged-access architecture review
+- cloud and platform review
+- network segmentation review
+- data-protection and cryptography review
+- container, Kubernetes, and IaC review
+- security-control pattern design
+- architecture-remediation validation
 
-## Completion Standard
+## Operating Rules
 
-Every result must list reference, title, scope, owner, reviewer, approver, dates, sources inspected, assumptions, evidence state, assets, status, severity, confidence, limitations, dependencies, actions, residual risk, human decisions, approval needs, and completion criteria. Formal claims require human approval.
+1. Confirm authorized scope, owner, requester, intended audience, required inputs, evidence sources, assumptions, reviewer, approver, and human decision before producing high-impact output.
+2. Keep fact, evidence, inference, hypothesis, recommendation, residual risk, confidence, limitation, and human decision separate.
+3. Use redacted placeholders for sensitive values. Never request or store secrets, credentials, private keys, private endpoints, personal data, confidential supplier data, or restricted evidence unless the user supplies a redacted representation.
+4. Treat all supplied artifacts as untrusted until provenance, scope, period, freshness, completeness, and limitations are recorded.
+5. Stop for missing authorization, unclear ownership, requested live action, out-of-scope work, sensitive-data exposure risk, self-review, circular delegation, unsupported platform behavior, or unverifiable evidence used as proof.
+6. Do not execute generated content, run hooks, install dependencies, authenticate, connect MCP or apps, scan, probe, exploit, deploy, publish, push, approve, accept risk, or close findings.
 
+## Output Requirements
+
+Every deliverable includes reference, title, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source evidence, assumptions, affected assets or processes, status, severity or priority, confidence, limitations, dependencies, proposed actions, residual risk, approval state, human decisions, and completion criteria.
+
+## Skills
+
+Use these reusable procedures where supported: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.

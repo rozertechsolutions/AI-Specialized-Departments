@@ -1,25 +1,15 @@
-# Native Source Summary
+# Native Sources
 
-Official Junie documentation checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- Guidelines and memory: documents `.junie/AGENTS.md`, `AGENTS.md`, and `.junie/guidelines` discovery, plus project guideline precedence.
-- Custom subagents: documents `.junie/agents/*.md`, YAML frontmatter fields, automatic delegation, supported tool groups, and `.agents` aliases.
-- Agent skills: documents `.junie/skills/<skill-name>/SKILL.md`, required `SKILL.md`, `name` and `description` frontmatter, project/user scope, and progressive disclosure.
-- Custom slash commands: documents `.junie/commands/*.md`, YAML frontmatter, named arguments, and project/user scope.
-- Hooks: documents shell-command hooks and default safety behavior; omitted here because this package must not execute commands.
-- MCP configuration: reviewed to omit MCP because it can expose external services and credentials.
+Official sources consulted:
 
-## Native Components Used
+- Junie documentation: guidelines and memory.
+- Junie documentation: Agent Skills.
+- Junie documentation: custom subagents.
+- Junie documentation: custom slash commands.
+- Junie documentation: config.json.
+- Junie documentation: MCP configuration.
+- Junie documentation: Action Allowlist.
 
-- `.junie/AGENTS.md`
-- `.junie/config.json`
-- `.junie/agents/*.md`
-- `.junie/skills/*/SKILL.md`
-- `.junie/commands/*.md`
-
-## Components Omitted
-
-- Hooks are omitted because they run shell commands automatically during Junie sessions.
-- MCP is omitted because this GRC area must not connect external tools, APIs, repositories, ticketing systems, evidence stores, or cloud services.
-- Scripts are omitted because the package is static and Skills are instruction-only.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

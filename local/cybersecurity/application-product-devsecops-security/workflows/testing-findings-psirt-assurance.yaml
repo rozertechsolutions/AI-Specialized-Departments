@@ -1,0 +1,6 @@
+name: testing-findings-psirt-assurance
+description: Provider-neutral static workflow for Application, Product, and DevSecOps Security.
+procedure_ref: ../skills/testing-findings-psirt-assurance/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

@@ -1,0 +1,6 @@
+name: supply-chain-ci-release-review
+description: Provider-neutral static workflow for Application, Product, and DevSecOps Security.
+procedure_ref: ../skills/supply-chain-ci-release-review/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

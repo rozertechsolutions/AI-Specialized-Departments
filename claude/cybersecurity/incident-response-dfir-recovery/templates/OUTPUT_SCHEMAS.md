@@ -1,5 +1,11 @@
-# Output Schemas
+# Output Schemas For Incident Response, DFIR, and Recovery
 
-Common fields: reference, title, purpose, scope, owner, independent reviewer, approver, dates, review period, sources, provenance, assumptions, evidence, affected assets/systems/identities/applications/data/suppliers/controls/requirements, status, severity, priority, confidence, limitations, dependencies, actions, residual risk, human decisions, approval state, and completion criteria.
+Use these fields for every substantive output:
 
-Artifact types: incident response plan; severity and classification model; role and authority matrix; scenario playbook; intake and declaration record; action and decision log; incident timeline; evidence preservation plan; evidence manifest and chain-of-custody record; forensic acquisition plan; containment and eradication option record; secure recovery plan; recovery-validation record; crisis and specialist handoff record; tabletop exercise package and after-action report; post-incident review; corrective-action register; independent incident assurance record.
+- Reference, title, purpose, authorized scope, explicit exclusions, owner, creator, independent reviewer, approver, dates, source period, and intended audience.
+- Evidence inventory with provenance, freshness, completeness, limitations, and evidence state.
+- Findings classified as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+- Impact, severity or priority, confidence, assumptions, dependencies, residual risk, open questions, and human decisions.
+- Approval state, completion criteria, independent-review result, and prohibited actions avoided.
+
+Do not claim execution, remediation, control effectiveness, recovery, scan, test, integration, deployment, publication, or closure unless supplied evidence proves it and a human owner has authority.

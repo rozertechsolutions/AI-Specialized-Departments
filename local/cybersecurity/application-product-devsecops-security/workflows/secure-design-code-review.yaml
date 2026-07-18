@@ -1,11 +1,6 @@
-manifest_type: workflow
-schema: ../schemas/workflow.schema.json
-id: secure-design-code-review
-purpose: Produce secure design and static code-review findings with validation criteria.
-owner: secure-design-code-review-agent
-skills: [skills/secure-design-code-review.yaml, skills/independent-appsec-review.yaml]
-steps: [confirm_artifacts, review_security_controls, document_findings, define_validation_criteria, request_independent_review]
-outputs: [design_findings, code_review_findings, remediation_options, validation_criteria, reviewer_findings]
-completion_criteria: [evidence_cited, severity_rationale_recorded, residual_risk_listed, closure_requires_human]
-human_review: [finding_acceptance, closure_decision]
-prohibited_actions: [run_code, run_test, close_finding]
+name: secure-design-code-review
+description: Provider-neutral static workflow for Application, Product, and DevSecOps Security.
+procedure_ref: ../skills/secure-design-code-review/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

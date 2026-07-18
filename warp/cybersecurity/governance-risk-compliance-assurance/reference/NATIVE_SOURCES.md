@@ -1,17 +1,14 @@
-# Native Configuration Sources
+# Native Sources
 
-These official sources define the native Warp mechanisms used by this package. Review them again before installation because product behavior can change.
+Documentation review date: 2026-07-18.
 
-- `https://docs.warp.dev/agent-platform/capabilities/rules/`
-- `https://docs.warp.dev/agent-platform/capabilities/skills/`
-- `https://docs.warp.dev/agent-platform/agent-context/model-context-protocol-mcp/`
-- `https://docs.warp.dev/agent-platform/capabilities/profiles-and-permissions/`
-- `https://docs.warp.dev/oz/quickstart/scheduled-agents/`
-- `https://docs.warp.dev/oz/quickstart/integrations/`
+Official sources consulted:
 
-## Decisions
+- Warp Docs: Agents overview.
+- Warp Docs: Rules.
+- Warp Docs: Skills.
+- Warp Docs: MCP.
+- Warp Docs: Oz Platform overview.
+- Warp Docs: agent permissions and environments.
 
-- `AGENTS.md` is used because Warp project rules use `AGENTS.md` by default.
-- `.warp/skills/*/SKILL.md` is used because Warp scans supported project Skill directories, including `.warp/skills/`.
-- `.warp/.mcp.json` is omitted because no approved project MCP server is needed for this static package.
-- Cloud schedules, integrations, profiles, executable hooks, and external automations are omitted because they are not static repository-local governance artifacts for this package.
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

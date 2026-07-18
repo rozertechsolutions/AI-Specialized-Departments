@@ -1,18 +1,6 @@
-manifest_type: workflow
-schema: ../schemas/workflow.schema.json
-id: governance-policy-frameworks
-classification: native
-purpose: Create traceable cybersecurity governance, policy, standards, ownership, and framework mapping artifacts.
-owner: governance-policy-frameworks-agent
-skills: [skills/governance-policy-frameworks.yaml, skills/independent-assurance-review.yaml]
-steps:
-  - confirm_scope_and_authoritative_sources
-  - map_requirements_to_controls
-  - separate_evidence_from_inference
-  - draft_ownership_and_governance_cadence
-  - prepare_gap_and_decision_log
-  - request_independent_assurance_review
-outputs: [policy_draft, control_crosswalk, raci, gap_register, decision_log, reviewer_findings]
-completion_criteria: [all_mappings_have_source, all_inferences_flagged, approval_needs_listed, independent_review_complete_or_required]
-human_review: [policy_approval, compliance_claims, external_distribution]
-prohibited_actions: [approve_policy, certify_compliance, provide_legal_advice]
+name: governance-policy-frameworks
+description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
+procedure_ref: ../skills/governance-policy-frameworks/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

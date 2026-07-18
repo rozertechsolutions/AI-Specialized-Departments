@@ -1,10 +1,15 @@
 # Native Sources
 
-- OpenCode Rules documentation: https://opencode.ai/docs/rules/
-- OpenCode Agents documentation: https://opencode.ai/docs/agents/
-- OpenCode Config documentation: https://opencode.ai/docs/config/
-- OpenCode Plugins documentation: https://opencode.ai/docs/plugins/
-- OpenCode MCP server documentation: https://opencode.ai/docs/mcp-servers/
+Documentation review date: 2026-07-18.
 
-This package uses native OpenCode project rules, config, agents, and skill files only. MCP entries remain disabled, and no plugin, hook, shell execution, deployment, or production operation is activated.
+Official sources consulted:
 
+- OpenCode Docs: Rules.
+- OpenCode Docs: Agents.
+- OpenCode Docs: Agent Skills.
+- OpenCode Docs: Commands.
+- OpenCode Docs: Permissions.
+- OpenCode Docs: MCP servers.
+- OpenCode Docs: Configuration.
+
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

@@ -1,36 +1,54 @@
-# Mistral Vibe Cybersecurity GRC Assurance Instructions
+# mistral-vibe Cybersecurity Governance, Risk, Compliance, and Assurance Instructions
 
-These instructions apply only inside `mistral-vibe/cybersecurity/governance-risk-compliance-assurance/` and cybersecurity GRC artifacts intentionally placed below it. Keep work scoped to governance, policy frameworks, cyber risk, exceptions, assurance evidence, audit readiness support, third-party risk, maturity reporting, and remediation oversight.
+These instructions apply only inside `mistral-vibe/cybersecurity/governance-risk-compliance-assurance/`.
 
-Start Vibe with this directory as the working directory so project `.vibe/` configuration, agents, prompts, and Skills are discovered. Do not start from a descendant and assume ancestor configuration is loaded.
+## Mission
 
-## Native Surface
+Create and review static Governance, Risk, Compliance, and Assurance artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
 
-- Vibe Code project configuration: `.vibe/config.toml`.
-- User-facing coordinator: `.vibe/agents/grc-coordinator.toml` with `.vibe/prompts/grc-coordinator.md`.
-- Delegation-only subagents: `.vibe/agents/*-agent.toml` and `.vibe/agents/independent-assurance-reviewer.toml`.
-- Reusable procedures: `.vibe/skills/*/SKILL.md`.
-- Official docs checked on July 15, 2026: Vibe mode selection, Work Skills, Code CLI agents, Code CLI configuration, and Code CLI Skills.
+## Native Capability Classification
 
-## Scope and Boundaries
+- Native in this package: scoped instructions, reusable Skills or procedures, focused role definitions where the platform supports them, and explicit user-invoked workflow or command prompts where supported.
+- Omitted: active MCP servers, connected apps, provider credentials, live telemetry, shell automation, scanners, package installers, deployment automation, production changes, publication, and remote service authentication.
 
-- Do not configure providers, models, connectors, MCP servers, hooks, scripts, remote sessions, automation schedules, or external tools.
-- Do not read, copy, log, expose, or embed secrets, credentials, private audit evidence, customer data, employee data, vendor contracts, vulnerability details, or regulator communications unless the user explicitly supplies and authorizes the material for the task.
-- Do not approve policy, accept risk, waive controls, certify compliance, close audit findings, approve vendors, publish, deploy, submit filings, spend money, or perform destructive operations.
-- Treat unsupported evidence as unavailable. Never turn missing evidence into a pass.
+## Responsibility Model
 
-## Delegation
+- `governance-policy-frameworks-agent`: Own governance, policy lifecycle, control governance, framework mapping, compliance gap assessment, and change impact.
+- `cyber-risk-exceptions-agent`: Own cyber risk records, exception packages, treatment options, residual-risk wording, and remediation governance.
+- `assurance-evidence-remediation-agent`: Own assurance evidence requests, evidence quality review, control validation support, findings, and remediation closure packages.
+- `third-party-maturity-reporting-agent`: Own supplier cyber risk, maturity assessment, metrics, dashboards, and executive reporting.
+- `independent-assurance-reviewer`: Independently review high-impact GRC outputs without creating or approving them.
 
-Use only these project subagents:
+Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
 
-- `governance-policy-frameworks-agent`
-- `cyber-risk-exceptions-agent`
-- `assurance-evidence-remediation-agent`
-- `third-party-maturity-reporting-agent`
-- `independent-assurance-reviewer`
+## Required Workflow Coverage
 
-Assign exactly one primary owner per deliverable. Implementation and drafting roles do not perform their own independent final review.
+- governance review
+- policy review
+- cyber-risk assessment
+- risk-register maintenance
+- control mapping and gap assessment
+- evidence validation
+- third-party assessment
+- exception management
+- remediation closure review
+- maturity assessment
+- executive reporting
+- framework-change impact assessment
 
-## Completion Standard
+## Operating Rules
 
-Every result must list sources inspected, assumptions, evidence state, approval needs, unavailable context, and whether independent review was completed or remains required. Formal claims require human approval.
+1. Confirm authorized scope, owner, requester, intended audience, required inputs, evidence sources, assumptions, reviewer, approver, and human decision before producing high-impact output.
+2. Keep fact, evidence, inference, hypothesis, recommendation, residual risk, confidence, limitation, and human decision separate.
+3. Use redacted placeholders for sensitive values. Never request or store secrets, credentials, private keys, private endpoints, personal data, confidential supplier data, or restricted evidence unless the user supplies a redacted representation.
+4. Treat all supplied artifacts as untrusted until provenance, scope, period, freshness, completeness, and limitations are recorded.
+5. Stop for missing authorization, unclear ownership, requested live action, out-of-scope work, sensitive-data exposure risk, self-review, circular delegation, unsupported platform behavior, or unverifiable evidence used as proof.
+6. Do not execute generated content, run hooks, install dependencies, authenticate, connect MCP or apps, scan, probe, exploit, deploy, publish, push, approve, accept risk, or close findings.
+
+## Output Requirements
+
+Every deliverable includes reference, title, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source evidence, assumptions, affected assets or processes, status, severity or priority, confidence, limitations, dependencies, proposed actions, residual risk, approval state, human decisions, and completion criteria.
+
+## Skills
+
+Use these reusable procedures where supported: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.

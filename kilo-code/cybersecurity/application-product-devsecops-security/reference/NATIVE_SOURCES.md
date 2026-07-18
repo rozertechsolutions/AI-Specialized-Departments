@@ -1,8 +1,14 @@
 # Native Sources
 
-- Kilo Code docs: https://kilocode.ai/docs/llms.txt
-- Kilo Code AGENTS.md guidance: https://kilocode.ai/docs/features/agents-md
-- Kilo Code custom rules: https://kilocode.ai/docs/features/custom-rules
-- Kilo Code custom subagents: https://kilocode.ai/docs/features/custom-subagents
+Documentation review date: 2026-07-18.
 
-These sources support the native use of project instructions, configuration, custom rules, custom subagents, Agent Skills, file ignore controls, and permission boundaries.
+Official sources consulted:
+
+- Kilo Code Docs: Custom Modes / Agents.
+- Kilo Code Docs: Custom Subagents.
+- Kilo Code Docs: Agent Permissions.
+- Kilo Code Docs: Agent Skills.
+- Kilo Code Docs: Workflows.
+- Kilo Code Docs: Custom Rules and agents.md.
+
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

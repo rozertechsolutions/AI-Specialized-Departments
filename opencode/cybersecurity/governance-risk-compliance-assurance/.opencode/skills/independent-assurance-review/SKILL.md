@@ -1,25 +1,54 @@
 ---
 name: independent-assurance-review
-description: Use for read-only challenge of governance, risk, exception, assurance, third-party, maturity, and executive reporting outputs.
-compatibility: opencode
-metadata:
-  owner: independent-assurance-reviewer
+description: Reusable Governance, Risk, Compliance, and Assurance procedure for independent assurance review using static evidence, human approval gates, and independent review.
 ---
 
-# independent-assurance-review
+# Independent Assurance Review
 
-- Objective: verify that final GRC and assurance outputs are source-backed, consistent, and transparent about limitations.
-- Trigger: final review is requested or material is intended for governance, risk acceptance, exception approval, audit support, supplier review, or committee reporting.
-- Inputs: draft output, source artifacts, scope statement, evidence matrix, risk or exception pack, rating criteria, owner list, approval path.
-- Primary owner: `independent-assurance-reviewer`.
-- Reviewers: none; this is the independent challenge step.
-- Steps: confirm independence; verify scope; trace each material claim; test rating consistency; check owner and date fields; identify unsupported assertions; classify findings; recommend corrections.
-- Conditional steps: require a different reviewer if independence is impaired.
-- Validation gates: every material claim is traceable; every rating has criteria; every approval dependency is explicit; unresolved assumptions are visible.
-- Failures: stop on missing source set, self-review, hidden limitation, or requested approval decision.
-- Stop conditions: source edits, acceptance decisions, live record changes, external submissions, or suppression of findings.
-- Evidence: claim, source artifact, review test, result, gap, severity, and recommended disposition.
-- Outputs: review findings, severity, required corrections, residual limitations, final readiness statement.
-- Acceptance criteria: blockers are corrected or explicitly reported as unresolved; advisory findings are separated from required corrections.
-- Human approvals: final governance approval, risk acceptance, exception approval, assurance conclusion, and external reporting.
-- Prohibited actions: editing reviewed material, approving own work, accepting risk, closing findings, or hiding limitations.
+## Use Cases
+
+Use this Skill for Governance, Risk, Compliance, and Assurance work related to independent assurance review, including the applicable workflows: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+
+## Required Inputs
+
+- Authorized scope, explicit exclusions, accountable human owner, requester, intended audience, and decision needed.
+- Supplied static evidence with provenance, source period, freshness, completeness, and limitations.
+- Relevant constraints, assumptions, dependencies, approval requirements, and reviewer independence.
+
+## Preconditions
+
+The task is repository-local or based on supplied static evidence. No live system action, authentication, external connection, scan, exploit, deployment, publication, or authoritative approval is requested.
+
+## Procedure
+
+1. Restate scope, exclusions, owner, evidence inventory, assumptions, and required human decision.
+2. Select one primary role from: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+3. Map evidence to each relevant workflow requirement and mark missing, stale, partial, contradictory, or unverifiable evidence.
+4. Produce the requested artifact with confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria separated.
+5. Identify human-only decisions and approval gates before any recommendation can be treated as final.
+6. Route high-impact, closure, exception, external-facing, or executive outputs to an independent reviewer that did not create the artifact.
+7. Return a completion record with residual risk, confidence, limitations, open questions, and blocked validations.
+
+## Structured Outputs
+
+Return the artifact plus an evidence table, decision log, stop-condition review, independent-review requirement, and completion criteria. Include owners and approvers as role placeholders, not real identities.
+
+## Quality Checks
+
+Verify native-surface compatibility, professional coverage, evidence traceability, least-privilege behavior, no unsupported tool claims, no self-review, no circular delegation, no real secrets, no live-action claim, and no fabricated validation.
+
+## Stop And Escalation Conditions
+
+Stop for missing authorization, unredacted sensitive material, unsupported legal or compliance conclusion, requested live action, evidence gaps that affect a conclusion, self-review, conflict of interest, or a human-only approval request.
+
+## Failure Behavior
+
+Return a blocker with the missing input, affected output, risk of proceeding, safe next step, and exact human approval or evidence needed. Do not silently continue with assumptions.
+
+## Human Review Gates
+
+Human review is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, or critical finding closure.
+
+## Prohibited Actions
+
+Do not execute code, run tools, install dependencies, authenticate, connect MCP/apps, scan, probe, exploit, deploy, publish, push, alter live records, approve decisions, accept risk, close findings, or claim validation without evidence.

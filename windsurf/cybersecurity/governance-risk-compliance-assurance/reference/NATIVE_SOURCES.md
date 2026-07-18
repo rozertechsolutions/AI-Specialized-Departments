@@ -1,16 +1,15 @@
-# Native Configuration Sources
+# Native Sources
 
-These official sources define the native Windsurf Cascade mechanisms used by this package. Review them again before installation because product behavior can change.
+Documentation review date: 2026-07-18.
 
-- `https://docs.windsurf.com/windsurf/cascade/agents-md`
-- `https://docs.windsurf.com/windsurf/cascade/skills`
-- `https://docs.windsurf.com/windsurf/cascade/workflows`
+Official sources consulted:
 
-## Decisions
+- Devin/Windsurf Docs: Rules and Memories.
+- Devin/Windsurf Docs: Skills.
+- Devin/Windsurf Docs: AGENTS.md.
+- Devin/Windsurf Docs: Workflows.
+- Devin/Windsurf Docs: Cascade Hooks.
+- Devin/Windsurf Docs: MCP.
+- Devin Local Agent differences and permissions.
 
-- `AGENTS.md` is used because Cascade discovers directory-scoped `AGENTS.md` instructions.
-- `.windsurf/skills/*/SKILL.md` is used because Cascade Skills are workspace-scoped under `.windsurf/skills/`.
-- `.windsurf/workflows/*.md` is used for a manual final decision package workflow.
-- Hooks are omitted because this package must be static and must not run generated scripts.
-- MCP and integrations are omitted because no live external system is approved or required.
-- Repository custom agent and subagent files are omitted because they are not a documented Windsurf repository-native surface for this specialization.
+Selected surface: Devin Local with shared Devin Desktop AGENTS.md and workspace Skills. Cascade Workflows were reviewed and migrated into Skills because Devin Local does not support Workflows. Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

@@ -1,5 +1,14 @@
-# OpenAI Agents SDK Application Product DevSecOps Security
+# Application, Product, and DevSecOps Security
 
-Static OpenAI Agents SDK specialization for Cybersecurity Area 03. It defines agent roles, guardrails, output contracts, and workflow registry entries for secure SDLC, application requirements, threat modeling, secure design, static code review, dependency and build-chain review, CI/CD controls, testing governance, release assurance, finding triage, PSIRT coordination, and independent assurance.
+This package is a static, organization-neutral cybersecurity configuration for Application, Product, and DevSecOps Security. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-This package is not executed by default. It does not configure live tools, external connectors, package installation, scanners, builds, tests, deployments, or service authentication.
+## Professional Coverage
+
+- Workflows covered: secure-SDLC review, threat modeling, application design review, static secure-code review, dependency and supply-chain review, CI/CD review, finding triage, release-readiness assessment, product-vulnerability coordination, remediation validation.
+- Native roles: product-security-governance-agent, requirements-threat-modeling-agent, secure-design-code-review-agent, supply-chain-ci-release-agent, testing-findings-psirt-agent, independent-appsec-reviewer.
+- Reusable Skills or procedures: secure-sdlc-review, threat-modeling, secure-design-code-review, supply-chain-ci-release-review, testing-findings-psirt-assurance.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
+
+## Evidence Standard
+
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

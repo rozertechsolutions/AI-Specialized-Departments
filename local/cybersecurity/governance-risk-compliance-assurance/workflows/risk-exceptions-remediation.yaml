@@ -1,18 +1,6 @@
-manifest_type: workflow
-schema: ../schemas/workflow.schema.json
-id: risk-exceptions-remediation
-classification: native
-purpose: Prepare cyber risk, exception, treatment, residual-risk, and remediation governance packages.
-owner: cyber-risk-exceptions-agent
-skills: [skills/risk-exceptions-remediation.yaml, skills/independent-assurance-review.yaml]
-steps:
-  - define_risk_context_and_owner
-  - validate_impact_likelihood_and_control_gap_assumptions
-  - document_treatment_options_and_compensating_controls
-  - draft_remediation_milestones_and_due_dates
-  - identify_human_decision_points
-  - request_independent_assurance_review
-outputs: [risk_register_update, exception_package, remediation_plan, residual_risk_note, decision_log, reviewer_findings]
-completion_criteria: [risk_owner_defined, evidence_and_assumptions_labeled, treatment_options_documented, approval_needs_listed]
-human_review: [risk_acceptance, exception_approval, control_waiver, remediation_closure]
-prohibited_actions: [accept_risk, waive_controls, approve_closure]
+name: risk-exceptions-remediation
+description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
+procedure_ref: ../skills/risk-exceptions-remediation/SKILL.md
+execution: manual_static_only
+live_actions_allowed: false
+requires_independent_review: true

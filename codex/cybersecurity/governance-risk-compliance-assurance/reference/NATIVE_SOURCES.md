@@ -1,14 +1,14 @@
-# Native Configuration Sources
+# Native Sources
 
-Official source checked on 2026-07-15:
+Documentation review date: 2026-07-18.
 
-- OpenAI Codex Manual: `https://developers.openai.com/codex/codex-manual.md`.
+Official sources consulted:
 
-## Current native surface
+- OpenAI Codex manual: AGENTS.md.
+- OpenAI Codex manual: subagents.
+- OpenAI Codex manual: Skills.
+- OpenAI Codex manual: hooks.
+- OpenAI Codex manual: configuration reference.
+- OpenAI Codex manual: advanced configuration.
 
-The Codex manual documents durable repository instructions through `AGENTS.md`, local configuration through `config.toml` and project `.codex/config.toml`, custom local agents/subagent workflows, skills, MCP, hooks, plugins, and approval/sandbox settings. It also describes `agents.max_depth` for subagent nesting.
-
-## Implementation decision
-
-This package uses `AGENTS.md`, `.codex/config.toml`, and `.codex/agents/*.toml` custom agents. It omits MCP, hooks, plugins, external integrations, and generated executable files because this static cybersecurity governance area must not connect external systems or execute generated integration logic.
-
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

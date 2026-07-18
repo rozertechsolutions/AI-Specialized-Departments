@@ -1,5 +1,11 @@
-# Output Schemas
+# Output Schemas For Offensive Security Authorized Validation
 
-Common fields: unique reference, title, purpose, authorized scope, owner, independent reviewer, approver, dates, review period, source, provenance, assumptions, evidence, affected assets, systems, identities, applications, data, suppliers, controls, requirements, status, severity or priority, confidence, limitations, dependencies, remediation or improvement actions, residual risk, human decisions, approval state, completion criteria.
+Use these fields for every substantive output:
 
-Outputs: authorization checklist, rules of engagement, penetration-test plan, adversary-emulation campaign plan, red-team campaign plan, white-team/deconfliction plan, purple-team exercise plan, social-engineering assessment plan, breach and attack simulation plan, offensive test case, finding, evidence manifest, cleanup plan, authorized retest plan, remediation-validation record, assessment report, independent assurance record.
+- Reference, title, purpose, authorized scope, explicit exclusions, owner, creator, independent reviewer, approver, dates, source period, and intended audience.
+- Evidence inventory with provenance, freshness, completeness, limitations, and evidence state.
+- Findings classified as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+- Impact, severity or priority, confidence, assumptions, dependencies, residual risk, open questions, and human decisions.
+- Approval state, completion criteria, independent-review result, and prohibited actions avoided.
+
+Do not claim execution, remediation, control effectiveness, recovery, scan, test, integration, deployment, publication, or closure unless supplied evidence proves it and a human owner has authority.

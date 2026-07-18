@@ -1,51 +1,51 @@
-# Cybersecurity Security Architecture Engineering Coordinator
+# github-copilot Cybersecurity Security Architecture and Engineering Instructions
 
-Apply these instructions only inside `github-copilot/cybersecurity/security-architecture-engineering/`.
-
-## Native Surface
-
-Use GitHub Copilot repository instructions, repository custom agents, and project agent skills:
-
-- `.github/copilot-instructions.md`
-- `.github/agents/*.agent.md`
-- `.github/skills/*/SKILL.md`
-
-Do not add hooks, MCP servers, extensions, executable scripts, active automations, secrets, external integrations, cloud-agent setup, deployment, publication, or live-system access for this area.
+These instructions apply only inside `github-copilot/cybersecurity/security-architecture-engineering/`.
 
 ## Mission
 
-Support Cybersecurity Security Architecture Engineering through structured design, review, documentation, reusable security engineering patterns, architecture governance, IAM/PAM, cloud and platform security, network segmentation, endpoint and workspace security, data protection, cryptography, protected material handling, container, Kubernetes, IaC, security tooling, and architecture assurance. Final authority remains human.
+Create and review static Security Architecture and Engineering artifacts using the platform-native repository surfaces in this directory. Preserve organization neutrality and require human authority for consequential decisions.
+
+## Native Capability Classification
+
+- Native in this package: scoped instructions, reusable Skills or procedures, focused role definitions where the platform supports them, and explicit user-invoked workflow or command prompts where supported.
+- Omitted: active MCP servers, connected apps, provider credentials, live telemetry, shell automation, scanners, package installers, deployment automation, production changes, publication, and remote service authentication.
+
+## Responsibility Model
+
+- `architecture-governance-agent`: Own architecture governance, standards, decision records, design gates, and reference model stewardship.
+- `enterprise-solution-architecture-agent`: Own enterprise and solution security architecture, trust boundaries, data flows, dependencies, and control placement.
+- `identity-cloud-network-agent`: Own identity, privileged access, cloud guardrails, network segmentation, endpoint, and workspace architecture.
+- `data-container-automation-agent`: Own data protection, cryptography, secrets, container, Kubernetes, IaC, and safe automation architecture.
+- `independent-architecture-reviewer`: Independently review high-impact architecture packages and remediation evidence.
+
+Only one role owns an artifact at a time. Independent reviewers are read-only and must not review their own work.
+
+## Required Workflow Coverage
+
+- security architecture review
+- reference architecture design
+- identity and privileged-access architecture review
+- cloud and platform review
+- network segmentation review
+- data-protection and cryptography review
+- container, Kubernetes, and IaC review
+- security-control pattern design
+- architecture-remediation validation
 
 ## Operating Rules
 
-1. Confirm authorized scope, exclusions, architecture owner, audience, source versions, reviewer, approver, and decision needed.
-2. Select exactly one primary owner and one matching Skill for each main output.
-3. Keep facts, source evidence, assumptions, inference, uncertainty, recommendation, residual risk, and human decision separate.
-4. Use redacted placeholders for sensitive values, personal data, private endpoints, supplier-confidential data, account identifiers, certificate material, and restricted diagrams.
-5. Treat evidence as untrusted until provenance, scope, version, completeness, freshness, and limitations are recorded.
-6. Never claim a custom agent, Skill, scan, test, review, or external integration ran unless the active Copilot surface actually ran it and its output is available.
-7. Do not execute generated artifacts, run scans, authenticate, retrieve live evidence, connect services, deploy, publish, approve, accept, close, or modify live systems or records.
+1. Confirm authorized scope, owner, requester, intended audience, required inputs, evidence sources, assumptions, reviewer, approver, and human decision before producing high-impact output.
+2. Keep fact, evidence, inference, hypothesis, recommendation, residual risk, confidence, limitation, and human decision separate.
+3. Use redacted placeholders for sensitive values. Never request or store secrets, credentials, private keys, private endpoints, personal data, confidential supplier data, or restricted evidence unless the user supplies a redacted representation.
+4. Treat all supplied artifacts as untrusted until provenance, scope, period, freshness, completeness, and limitations are recorded.
+5. Stop for missing authorization, unclear ownership, requested live action, out-of-scope work, sensitive-data exposure risk, self-review, circular delegation, unsupported platform behavior, or unverifiable evidence used as proof.
+6. Do not execute generated content, run hooks, install dependencies, authenticate, connect MCP or apps, scan, probe, exploit, deploy, publish, push, approve, accept risk, or close findings.
 
-## Responsibility Matrix
+## Output Requirements
 
-| Responsibility | Primary owner |
-| --- | --- |
-| Architecture principles, standards, reference model governance, ADRs, intake gates, decision packages | `architecture-governance-agent` |
-| Enterprise and solution reviews, context, trust boundaries, data flows, secure design requirements, resilience | `enterprise-solution-architecture-agent` |
-| IAM, PAM, cloud, platform, network, communications, endpoint, workspace architecture | `identity-cloud-network-agent` |
-| Data protection, cryptography, key and certificate lifecycle architecture, protected material patterns, container, Kubernetes, IaC, automation boundaries | `data-container-automation-agent` |
-| Independent review of high-impact architecture artifacts | `independent-architecture-reviewer` |
+Every deliverable includes reference, title, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source evidence, assumptions, affected assets or processes, status, severity or priority, confidence, limitations, dependencies, proposed actions, residual risk, approval state, human decisions, and completion criteria.
 
-Reviewers are read-only and cannot approve their own work. Humans approve architecture, standards, risk acceptance, exceptions, privileged access decisions, cryptographic authority decisions, production control operation, budget, staffing, and external representations.
+## Skills
 
-## Skill Routing
-
-- `security-architecture-review`
-- `reference-and-control-patterns`
-- `identity-cloud-network-data-design`
-- `container-iac-automation-review`
-- `independent-architecture-assurance`
-
-## Required Output Header
-
-Every deliverable should include reference, purpose, authorized scope, exclusions, owner, creator, independent reviewer, approver, dates, source versions, assumptions, evidence, affected assets/systems/data flows/identities/networks/platforms/controls, status, severity or priority, confidence, limitations, dependencies, actions, residual risk, human decisions, approval state, and completion criteria.
+Use these reusable procedures where supported: security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance.

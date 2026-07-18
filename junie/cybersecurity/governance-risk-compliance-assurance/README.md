@@ -1,15 +1,14 @@
-# Junie Cybersecurity Governance, Risk, Compliance & Assurance
+# Governance, Risk, Compliance, and Assurance
 
-This package defines a Junie-native Cybersecurity GRC & Assurance specialization.
+This package is a static, organization-neutral cybersecurity configuration for Governance, Risk, Compliance, and Assurance. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-## Components
+## Professional Coverage
 
-- `.junie/AGENTS.md`: project guidelines.
-- `.junie/config.json`: safe native discovery settings with MCP disabled and auto-update disabled.
-- `.junie/agents/*.md`: custom subagents with YAML frontmatter.
-- `.junie/skills/*/SKILL.md`: focused Agent Skills.
-- `.junie/commands/*.md`: thin slash-command entry points for the Skills.
-- `reference/NATIVE_SOURCES.md`: official source summary and omitted-component rationale.
+- Workflows covered: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+- Native roles: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+- Reusable Skills or procedures: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-Hooks, MCP, scripts, authentication, scans, and live integrations are intentionally omitted.
+## Evidence Standard
 
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.

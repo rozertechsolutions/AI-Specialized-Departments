@@ -1,20 +1,15 @@
-# Native Source Verification
+# Native Sources
 
-Reviewed before creating this Kiro package on July 15, 2026.
+Documentation review date: 2026-07-18.
 
-## Official Kiro Documentation
+Official sources consulted:
 
-- `https://kiro.dev/docs/` confirmed Kiro documentation areas for Specs, Hooks, Chat, Steering, MCP, privacy, IDE, and CLI.
-- `https://kiro.dev/docs/steering/` confirmed workspace steering in `.kiro/steering/`, `AGENTS.md` support, and inclusion modes including `auto`.
-- `https://kiro.dev/docs/skills/` confirmed Agent Skills in `.kiro/skills/<skill>/SKILL.md` with required `name` and `description` frontmatter.
-- `https://kiro.dev/docs/cli/custom-agents/` confirmed custom agents as configurable Kiro CLI agents that control tools, permissions, and context.
-- `https://kiro.dev/docs/cli/custom-agents/creating/` confirmed JSON custom-agent files, workspace directory `.kiro/agents/`, `tools`, `allowedTools`, `resources`, and `prompt` fields.
-- `https://kiro.dev/docs/specs/` was considered; Specs are omitted because this package is a static reusable guidance and workflow package, not an executable feature plan.
-- `https://kiro.dev/docs/hooks/` was considered; hooks are omitted because they can trigger commands or agent actions.
-- `https://kiro.dev/docs/mcp/` was considered; MCP is omitted because this static package must not activate external connectors.
+- Kiro Docs: Steering.
+- Kiro Docs: Agent Skills.
+- Kiro Docs: Custom subagents.
+- Kiro Docs: Specs.
+- Kiro Docs: Hooks.
+- Kiro Docs: MCP.
+- Kiro CLI custom-agent configuration reference.
 
-## Package Decisions
-
-- Included native artifacts: `AGENTS.md`, `.kiro/steering/`, `.kiro/agents/`, and `.kiro/skills/`.
-- Omitted native artifacts: `.kiro/hooks/`, `.kiro/specs/`, MCP configuration, executable scripts, Powers, and live integrations.
-- Verification is static only: file presence, empty-file scan, secret-marker scan, JSON parse, and git diff review.
+Native components were selected only when the platform documentation describes a repository-scoped or importable static surface. Unsupported components are omitted rather than simulated. MCP servers, connectors, hosted tools, cloud tasks, hooks with executable scripts, provider credentials, real endpoints, and live integrations are absent or explicitly disabled by default.

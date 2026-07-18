@@ -1,5 +1,11 @@
-# Output Schemas
+# Output Schemas For Cyber Resilience and Specialized Technologies
 
-Common fields: unique reference, title, purpose, authorized scope, owner, independent reviewer, approver, dates, review period, source, provenance, assumptions, evidence, affected assets, systems, identities, applications, data, suppliers, controls, requirements, status, severity or priority, confidence, limitations, dependencies, remediation, treatment, recovery or improvement actions, residual risk, human decisions, approval state, completion criteria.
+Use these fields for every substantive output:
 
-Outputs: cyber resilience strategy; critical-service dependency map; disruption scenario; backup and ransomware-resilience assessment; recovery-readiness assessment; exercise plan; after-action report; OT/ICS assessment; IoT/embedded assessment; AI system assessment; AI agent/tool-use assessment; hardware/firmware assessment; cryptographic inventory and agility plan; transition readiness assessment; critical-infrastructure assessment; corrective-action plan; independent assurance record.
+- Reference, title, purpose, authorized scope, explicit exclusions, owner, creator, independent reviewer, approver, dates, source period, and intended audience.
+- Evidence inventory with provenance, freshness, completeness, limitations, and evidence state.
+- Findings classified as confirmed, probable, hypothetical, not reproduced, false positive, accepted risk, insufficient evidence, or not applicable.
+- Impact, severity or priority, confidence, assumptions, dependencies, residual risk, open questions, and human decisions.
+- Approval state, completion criteria, independent-review result, and prohibited actions avoided.
+
+Do not claim execution, remediation, control effectiveness, recovery, scan, test, integration, deployment, publication, or closure unless supplied evidence proves it and a human owner has authority.

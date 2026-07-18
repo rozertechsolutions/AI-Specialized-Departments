@@ -1,32 +1,14 @@
-# Local Cybersecurity GRC Assurance
+# Governance, Risk, Compliance, and Assurance
 
-This specialization defines a local, model/runtime-independent configuration for Cybersecurity Area 01: Governance, Risk, Compliance, and Assurance.
+This package is a static, organization-neutral cybersecurity configuration for Governance, Risk, Compliance, and Assurance. It uses supplied repository files and user-provided redacted evidence only. It does not execute generated content, install software, authenticate services, connect integrations, scan targets, deploy changes, publish findings, approve risk, or close issues.
 
-It is a project-defined specification, not a runtime, daemon, API server, installer, provider client, model downloader, MCP server, or autonomous loop. External connections and providers are not configured by this package.
+## Professional Coverage
 
-## Native Components
+- Workflows covered: governance review, policy review, cyber-risk assessment, risk-register maintenance, control mapping and gap assessment, evidence validation, third-party assessment, exception management, remediation closure review, maturity assessment, executive reporting, framework-change impact assessment.
+- Native roles: governance-policy-frameworks-agent, cyber-risk-exceptions-agent, assurance-evidence-remediation-agent, third-party-maturity-reporting-agent, independent-assurance-reviewer.
+- Reusable Skills or procedures: governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review.
+- Independent review is mandatory for high-impact conclusions, closure recommendations, risk decisions, executive reporting, external-facing outputs, and any output with incomplete evidence.
 
-- `local.yaml`: specialization entry point, discovery rules, precedence, lifecycle, routing, and capability negotiation.
-- `agents/` and `subagents/`: coordinator and five specialist role manifests.
-- `skills/`: reusable GRC capability manifests.
-- `workflows/`: four named orchestration processes.
-- `tools/`: least-privilege tool contract manifests only.
-- `policies/`: permissions, security, evidence handling, and approvals.
-- `schemas/`: JSON Schemas for static manifest validation.
-- `reference/`: source notes and native capability decisions.
+## Evidence Standard
 
-## Unsupported Components
-
-This specialization omits unsupported behavior rather than simulating it:
-
-- No universal adapter, shared cross-platform runtime, active MCP server, provider connection, endpoint, port, credential, model ID, hardware limit, or context-size assumption.
-- No executable hooks, scripts, daemons, autonomous loops, external writes, regulator submissions, risk acceptance, compliance certification, publication, deployment, or destructive operations.
-- No final-review authority for implementation roles.
-
-## Use
-
-1. Open this directory as the local specialization root.
-2. Read `local.yaml` and policies before selecting roles, skills, or workflows.
-3. Validate manifests against `schemas/` before use.
-4. Enable providers or MCP servers only through separate explicit human review outside this static package.
-5. Report unavailable project infrastructure as unavailable, never as passed.
+Every output distinguishes confirmed facts, probable findings, hypotheses, not reproduced items, false positives, accepted risks, insufficient evidence, and not-applicable criteria. Missing evidence is reported as unavailable and never converted into proof.
