@@ -1,29 +1,32 @@
-# DevOps and Cloud
+# DevOps and Cloud for Claude Code
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package uses stable Claude Code project surfaces for a static DevOps and Cloud specialization. It does not enable hooks, MCP, shell execution, external integrations, deployment, or runtime validation.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Surfaces
 
-Section 02 adds Claude Code subagents, Skill, and workflow references for cloud foundations and infrastructure design. All commands remain denied or human-gated; no infrastructure tooling is executed.
+- `CLAUDE.md`: concise department routing and safety rules.
+- `.claude/settings.json`: project settings with plan mode, bypass prevention, and deny rules for shell, mutation, web, MCP, and sensitive reads.
+- `.claude/agents/*.md`: twenty native subagents covering the complete role model.
+- `.claude/skills/*/SKILL.md`: on-demand Skills for the ten sections.
+- `docs/*.md`: section workflow references.
 
-Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.
+## Sections Covered
 
-Section 04 adds native Containers and Platform Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Section 05 adds native SRE, Observability and Operations roles, skill, workflow procedures, safety gates, and human-review controls where supported.
+## Role Model
 
-Section 06 adds native Resilience and Disaster Recovery role, skill, workflow procedures, safety gates, and human-review controls where supported.
+The package includes twenty role subagents. Each role defines mission, ownership, inputs, outputs, permissions, handoffs, stop conditions, failure behavior, completion criteria, human-review boundaries, and prohibited actions. The Assurance Reviewer is independent and may block completion but must not self-review or silently rewrite specialist output.
 
-Section 07 adds native Performance, Capacity and Efficiency role, skill, workflows, safety gates, and human-review controls where supported.
+## Safety
 
-Section 08 adds native DevSecOps roles, skill, workflows, safety gates, and human-review controls where supported.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+All work is static source review, design, or planning. The project settings deny shell, mutation, web, MCP, and sensitive-file access by default. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, or irreversible decisions.
