@@ -11,3 +11,9 @@ Use this skill for section 08 static DevSecOps design and review. Do not run sca
 2. Identify risk, control, earliest practical gate, evidence, owner, remediation, exception path, and Cybersecurity handoff needs.
 3. Use SAST, DAST, SCA, secret scanning, IaC/container/Kubernetes scanners, OPA, Gatekeeper, Kyverno, SBOM standards, Sigstore/Cosign-style signing, SLSA provenance, build integrity, cloud IAM, and secrets managers only when justified by requirements.
 4. Verify findings have severity/evidence/owner/remediation/exception paths and no secrets or real identifiers.
+
+## Stop criteria
+Stop on requested scanner execution, signing, policy enforcement, secret access, production action, unsupported platform behavior, or missing human approval for exceptions.
+
+## Evidence
+Return static control design, findings, assumptions, owners, exception needs, Cybersecurity handoffs for out-of-scope security operations, Assurance handoffs for independent review, and checks not run.
