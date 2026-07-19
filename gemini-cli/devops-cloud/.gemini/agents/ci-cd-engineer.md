@@ -1,7 +1,12 @@
 ---
 name: ci-cd-engineer
 description: Owns build automation, test stages, pipeline architecture, caching, artifact flow, quality gates and CI/CD platform-specific configuration.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # CI/CD Engineer

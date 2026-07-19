@@ -1,3 +1,9 @@
+---
+description: Static CI/CD, release, rollback, progressive delivery, migration, and DORA workflow guidance.
+agent: ci-cd-engineer
+subtask: true
+---
+
 # CI/CD and Release Engineering Workflows
 
 ## new-pipeline-design

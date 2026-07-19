@@ -1,29 +1,30 @@
-# DevOps and Cloud
+# DevOps and Cloud for Cline
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package uses stable Cline workspace Rules, Skills, and workflows for a static DevOps and Cloud specialization. It does not configure MCP, hooks, connectors, plugins, external execution, deployment, or runtime validation.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Surfaces
 
-Section 02 adds Cline rules, Skill, and workflow procedures for static cloud foundation and infrastructure design.
+- `.clinerules/*.md`: concise durable rules for routing, safety, and section guidance.
+- `.cline/skills/*/SKILL.md`: on-demand Skill procedures for all ten sections.
+- `.cline/workflows/*.md`: slash-command workflow procedures.
 
-Section 03 adds Cline rules, Skill, and workflow procedures for static CI/CD and release engineering.
+## Sections Covered
 
-Section 04 adds Cline rules, Skill, and workflow procedures for static containers and platform engineering.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Section 05 adds Cline rules, Skill, and workflow procedures for static SRE and observability work.
+## Operation
 
-Section 06 adds Cline rules, Skill, and workflows for static resilience and DR work.
+Start with `00-devops-cloud-leadership-architecture.md` for intake, routing, ownership, and safety. Use section rules for durable boundaries and the matching Skill or workflow for detailed procedures. Keep provider, platform, and tool choices requirement-driven.
 
-Section 07 adds Cline rules, Skill, and workflows for static performance and capacity work.
+## Safety
 
-Section 08 adds Cline rules, Skill, and workflows for static DevSecOps work.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+All outputs are static design, review, planning, or advisory artifacts. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, or irreversible decisions. Assurance remains independent and cannot review its own output.

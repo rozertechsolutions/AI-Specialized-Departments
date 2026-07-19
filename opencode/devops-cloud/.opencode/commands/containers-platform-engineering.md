@@ -1,3 +1,9 @@
+---
+description: Static container, Kubernetes, platform product, golden path, and developer experience workflows.
+agent: container-and-orchestration-engineer
+subtask: true
+---
+
 # Containers and Platform Engineering Workflows
 
 ## containerize-service

@@ -1,7 +1,15 @@
 ---
 name: observability-engineer
 description: Owns telemetry architecture, logs, metrics, traces, profiles, dashboards, actionable alerting, correlation, retention and observability data quality.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Observability Engineer

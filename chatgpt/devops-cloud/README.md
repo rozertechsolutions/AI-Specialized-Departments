@@ -1,32 +1,37 @@
-# DevOps and Cloud
+# DevOps and Cloud for ChatGPT
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This is a manual/import package for ChatGPT Projects, Custom GPTs, project knowledge, and ChatGPT Skills. It is not repository-native automation: ChatGPT will not automatically read these files, run tools, connect apps, or validate runtime state.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Surfaces
 
+- `project/project-instructions.md`: concise persistent Project guidance for routing, safety, and completion.
+- `project/knowledge/*.md`: detailed section knowledge for the ten DevOps and Cloud sections.
+- `skills/*/SKILL.md`: reusable Skill procedures where ChatGPT Skills are available to the workspace.
+- `custom-gpt/instructions.md`: concise Custom GPT behavior and boundary instructions.
 
-Use the `project/` files as Project setup material and upload the knowledge files manually where the product plan supports project knowledge. Use the Skill folder only where Skills are available for the workspace.
+Apps, connectors, MCP, hooks, permissions, and repository-native agents are intentionally absent.
 
-Section 02 adds cloud foundation and infrastructure import material for landing zones, IaC design, cloud networking, managed services, lifecycle, safety gates, and human-review controls.
+## Sections Covered
 
-Section 03 adds importable CI/CD and release-engineering guidance, skill procedures, static workflows, and human-review controls.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Section 04 adds importable container, orchestration, and platform-product guidance with static workflows and human-review controls.
+## Setup
 
-Section 05 adds importable SRE, observability, and operations guidance with static workflows and human-review controls.
+For a ChatGPT Project, create or open a Project in the ChatGPT UI, add the contents of `project/project-instructions.md` as Project instructions, and upload only the relevant knowledge and Skill files that fit the active plan limits. Current ChatGPT Projects support custom instructions and project sources; file limits vary by plan and the UI limits how many files can be uploaded at once.
 
-Section 06 adds importable resilience and disaster-recovery guidance with static workflows and human-review controls.
+For a Custom GPT, use `custom-gpt/instructions.md` as the GPT instruction source and add selected knowledge or Skill files only if the GPT builder and workspace plan support them.
 
-Section 07 adds importable performance, capacity, and efficiency guidance with static workflows and human-review controls.
+Project setup and Custom GPT setup are separate. A Project instruction file does not configure a GPT, and a GPT instruction file does not automatically configure a Project.
 
-Section 08 adds importable DevSecOps guidance with static workflows and human-review controls.
+## Safety
 
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+All outputs are static design, review, and planning artifacts. Do not use this package to execute builds, tests, scans, deployments, failovers, restores, infrastructure plans, signing, publishing, billing changes, cloud actions, or production operations. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, or irreversible decisions.

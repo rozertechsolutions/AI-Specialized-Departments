@@ -1,38 +1,30 @@
-# DevOps and Cloud
+# DevOps and Cloud Local Specification
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package is a provider-, runtime-, model-, endpoint-, and tool-neutral declarative specification for the complete DevOps and Cloud specialization. It is static configuration and reference material only; it does not implement a runtime, choose a model, connect to services, execute tools, mutate infrastructure, deploy, publish, sign, spend, or validate live state.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Assets
+- `spec/department.yaml`: department identity, scope, sections, role references, Skill references, workflow references, policies, and disabled-by-default integration flags.
+- `spec/roles/*.yaml`: twenty role contracts with exclusive ownership, boundaries, handoffs, stop conditions, human-review requirements, and prohibited actions.
+- `spec/skills/*.yaml`: ten section Skill specifications.
+- `spec/workflows/*.yaml`: ten static workflow specifications.
+- `spec/policies/*.yaml`: safety and quality-gate policies.
 
+## Department Coverage
+1. Leadership and Architecture
+2. Cloud Foundation and Infrastructure
+3. CI/CD and Release Engineering
+4. Containers and Platform Engineering
+5. SRE, Observability, and Operations
+6. Resilience and Disaster Recovery
+7. Performance, Capacity, and Efficiency
+8. DevSecOps
+9. FinOps and Sustainability
+10. Assurance and Independent Review
 
-This local package is provider-independent. Providers, runtimes, models, endpoints, tools, and permissions remain configurable and disabled by default.
+## Neutral Operating Model
+The specification preserves the twenty-role responsibility model without binding it to any hosted provider, local model server, model, runtime, tool runner, or endpoint. Providers, runtimes, models, endpoints, tools, permissions, and integrations are user-configurable and disabled by default.
 
-## Section 01 quality gates
-- Every responsibility has exactly one primary owner.
-- No provider or product is selected without explicit requirements.
-- Every architecture decision records context, alternatives, tradeoffs, risks, owner, review status, and trigger for reconsideration.
-- Specialist implementation details are routed to later sections instead of duplicated here.
+Each responsibility has one primary owner. Supporting roles may provide evidence through explicit handoffs, but they must not silently take over ownership or create circular delegation. The DevOps and Cloud Assurance Reviewer remains independent and non-implementing.
 
-Section 02 adds provider-independent cloud foundation and infrastructure specs for landing zones, IaC, networks, managed services, lifecycle, safety gates, and human review.
-
-Section 03 adds provider-independent CI/CD and release-engineering specs for pipelines, artifacts, release strategies, progressive delivery, rollback, and DORA metrics.
-
-Section 04 adds provider-independent container, orchestration, internal platform, golden path, and platform product specs.
-
-Section 05 adds provider-independent SRE, observability, incident, postmortem, runbook, and toil-reduction specs.
-
-Section 06 adds provider-independent resilience, backup/restore, DR, failover/failback, chaos design, and recovery evidence specs.
-
-Section 07 adds provider-independent performance, workload model, capacity, autoscaling, bottleneck, and resource-efficiency specs.
-
-Section 08 adds provider-independent DevSecOps, IAM/secrets, policy-as-code, supply-chain, and exception specs.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+## Safety Model
+The package forbids secrets, credentials, real endpoints, account identifiers, private URLs, production mutation, destructive operations, external integrations, and runtime-success claims. Human review is required before privileged, destructive, costly, externally visible, compliance-sensitive, or irreversible actions.

@@ -22,7 +22,7 @@
 
 ## security-finding-remediation
 1. Capture finding, severity, evidence, owner, remediation, due date, exception path, and verification need.
-2. Hand off independent assurance to Cybersecurity.
+2. Hand off independent assurance to Assurance and Independent Review.
 
 ## devsecops-exception-approval
 1. Record control, exception rationale, compensating controls, risk owner, expiry, and approval.

@@ -1,7 +1,15 @@
 ---
 name: platform-product-and-developer-experience-engineer
 description: Owns internal developer platform capabilities, golden paths, service catalogs, templates, portals, self-service contracts, developer experience and platform-as-a-product feedback.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Platform Product and Developer Experience Engineer

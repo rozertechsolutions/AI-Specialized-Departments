@@ -1,7 +1,37 @@
 ---
-name: devops-cloud-orchestrator
 description: Own intake, routing, dependency control, escalation, and evidence aggregation for DevOps and Cloud leadership architecture.
-tools: Read, Grep, Glob
+mode: primary
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  webfetch: deny
+  websearch: deny
+  task:
+    "*": deny
+    cloud-and-platform-architect: ask
+    cloud-foundation-engineer: ask
+    infrastructure-as-code-engineer: ask
+    cloud-network-engineer: ask
+    cloud-runtime-managed-services-engineer: ask
+    ci-cd-engineer: ask
+    release-and-deployment-engineer: ask
+    container-and-orchestration-engineer: ask
+    platform-product-and-developer-experience-engineer: ask
+    site-reliability-engineer: ask
+    observability-engineer: ask
+    resilience-and-disaster-recovery-engineer: ask
+    performance-and-capacity-engineer: ask
+    devsecops-engineer: ask
+    cloud-security-controls-engineer: ask
+    software-supply-chain-security-engineer: ask
+    finops-engineer: ask
+    cloud-sustainability-and-efficiency-analyst: ask
+    devops-and-cloud-assurance-reviewer: ask
 ---
 
 # DevOps and Cloud Orchestrator

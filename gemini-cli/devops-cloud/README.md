@@ -1,29 +1,33 @@
-# DevOps and Cloud
+# DevOps and Cloud for Gemini CLI
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package uses stable Gemini CLI project context, local subagents in `.gemini/agents/`, workspace Agent Skills in `.gemini/skills/`, and static workflow references in `docs/`.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+It is static and safe by default. It does not configure MCP, hooks, extensions, browser agents, remote subagents, shell automation, deployment, signing, publication, billing changes, or runtime bindings. Repository files are guidance, not permission grants.
 
-Section 02 adds Gemini CLI memory, agent, Skill, and workflow references for static foundation and infrastructure design.
+## Sections Covered
 
-Section 03 adds native CI/CD and Release Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported by the platform.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Section 04 adds native Containers and Platform Engineering roles, skill, workflow procedures, safety gates, and human-review controls where supported.
+## Native Assets
 
-Section 05 adds native SRE, Observability and Operations roles, skill, workflow procedures, safety gates, and human-review controls where supported.
+- `GEMINI.md`: concise persistent routing and safety.
+- `.gemini/agents/*.md`: twenty local subagent profiles using YAML frontmatter and read-only tools.
+- `.gemini/skills/*/SKILL.md`: ten on-demand section Skills.
+- `docs/*.md`: static workflow references for detailed procedures.
 
-Section 06 adds native Resilience and Disaster Recovery role, skill, workflow procedures, safety gates, and human-review controls where supported.
+## Role Model
 
-Section 07 adds native Performance, Capacity and Efficiency role, skill, workflows, safety gates, and human-review controls where supported.
+The complete twenty-role DevOps and Cloud model is represented through Gemini CLI local subagents. Each profile has a unique slug, read-only tool list, exclusive ownership, stop conditions, failure behavior, human-review boundaries, and prohibited actions. Gemini CLI subagent recursion protection prevents nested subagent cycles.
 
-Section 08 adds native DevSecOps roles, skill, workflows, safety gates, and human-review controls where supported.
+## Safety Model
 
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+All outputs are design, review, planning, or documentation unless a future user explicitly authorizes separate action. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, irreversible, signing, spending, or publication decisions. Static inspection must not be described as runtime validation.

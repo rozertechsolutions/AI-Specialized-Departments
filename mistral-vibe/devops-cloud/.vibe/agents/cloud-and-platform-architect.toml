@@ -1,6 +1,16 @@
 agent_type = "subagent"
 display_name = "Cloud and Platform Architect"
-description = "Section 01 Cloud and Platform Architect role."
+description = "Owns provider-neutral architecture, ADRs, standards, target-state models, and cross-section technical boundaries."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "cloud-and-platform-architect"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

@@ -3,4 +3,14 @@ display_name = "Cloud Runtime and Managed Services Engineer"
 description = "Owns infrastructure configuration for compute, serverless, storage, managed databases, caches, queues, streams, and managed runtime services without owning application logic or data modelling."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "cloud-runtime-managed-services-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

@@ -1,7 +1,15 @@
 ---
 name: performance-and-capacity-engineer
 description: Owns performance requirements, workload models, load/stress/soak test design, bottleneck analysis, capacity planning, autoscaling strategy and technical resource efficiency.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Performance and Capacity Engineer

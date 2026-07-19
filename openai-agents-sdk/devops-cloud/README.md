@@ -1,38 +1,30 @@
-# DevOps and Cloud
+# DevOps and Cloud for OpenAI Agents SDK
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package is a static source package for the OpenAI Agents SDK. It defines the complete DevOps and Cloud specialization as SDK `Agent` objects, typed role metadata, deterministic guardrails, reusable knowledge constants, and source-level tests. It is not installed, served, deployed, or executed by this repository work.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Package Contents
+- `src/devops_cloud_department/models.py`: authoritative typed role registry for all twenty roles, including section ownership, exclusive mission, review status, and delegation boundaries.
+- `src/devops_cloud_department/agents.py`: exactly twenty SDK `Agent` objects, the entry agent, non-circular handoff graph, and deterministic input/output guardrails.
+- `src/devops_cloud_department/*_*.py`: role instructions, Skills, workflows, and quality gates for each department section.
+- `tests/test_static_contracts.py`: source-level contracts for role completeness, construction, reachability, no cycles, no self-review, Assurance independence, and guardrail attachment.
+- `pyproject.toml`: package metadata for the static SDK package.
 
+## Department Coverage
+1. Leadership and Architecture: orchestration, routing, architecture decisions, standards, target-state design, and Well-Architected review.
+2. Cloud Foundation and Infrastructure: AWS, Azure, Google Cloud, hybrid, multicloud, Terraform, OpenTofu, Pulumi, CloudFormation, Bicep, Ansible, landing zones, networking, managed services, lifecycle, and drift.
+3. CI/CD and Release Engineering: Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, release strategy, promotion, rollback, and evidence.
+4. Containers and Platform Engineering: Docker, OCI, Docker Compose, Kubernetes, Helm, Kustomize, registries, internal developer platforms, catalogs, portals, and golden paths.
+5. SRE, Observability, and Operations: OpenTelemetry, Prometheus, Grafana, Loki, Tempo, Jaeger, Elastic, OpenSearch, SLIs, SLOs, error budgets, alerts, incidents, postmortems, and toil.
+6. Resilience and Disaster Recovery: backup, restore, RTO, RPO, disaster recovery, failover, failback, high availability, and controlled chaos-experiment design.
+7. Performance, Capacity, and Efficiency: load, stress, endurance, capacity, autoscaling, performance analysis, and resource efficiency.
+8. DevSecOps: pipeline security, IAM, secrets, SAST, DAST, SCA, IaC/container/Kubernetes scanning design, policy as code, SBOM, signing, provenance, and supply-chain controls.
+9. FinOps and Sustainability: allocation, budgets, forecasts, anomalies, unit economics, rightsizing, commitments, utilization, and measurable sustainability.
+10. Assurance and Independent Review: independent evidence review, findings, waivers, cross-section consistency, and completion gates.
 
-The source is a minimal static SDK package definition. It is not installed, served, deployed, or executed by this implementation.
+## Safety Model
+Agents are constructed with no shell, computer, code-interpreter, hosted MCP, file-mutation, deployment, external, or custom function tools. The package attaches deterministic SDK input and output guardrails that trip on secret material, real deployment or infrastructure mutation requests, destructive or privileged action patterns, spending, signing, publication, and unsupported runtime-success claims.
 
-## Section 01 quality gates
-- Every responsibility has exactly one primary owner.
-- No provider or product is selected without explicit requirements.
-- Every architecture decision records context, alternatives, tradeoffs, risks, owner, review status, and trigger for reconsideration.
-- Specialist implementation details are routed to later sections instead of duplicated here.
+The DevOps and Cloud Assurance Reviewer is a non-implementing independent reviewer. It can be reached from the entry agent for review but has no outgoing handoffs and must not create or approve the primary implementation under review.
 
-Section 02 adds static SDK role definitions and skill/workflow constants for cloud foundation and infrastructure design. The package remains uninstalled and unexecuted.
-
-Section 03 adds static SDK constants for CI/CD and release-engineering roles, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
-
-Section 04 adds static SDK constants for containers and platform-engineering roles, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
-
-Section 05 adds static SDK constants for SRE, observability, and operations roles, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
-
-Section 06 adds static SDK constants for resilience and DR role, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
-
-Section 07 adds static SDK constants for performance, capacity, and efficiency role, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
-
-Section 08 adds static SDK constants for DevSecOps roles, skill, workflows, and quality gates. The package remains uninstalled and unexecuted.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+## Static Verification
+The tests are authored as source contracts and are not executed as part of this package remediation. Static source inspection is the only validation claimed here.

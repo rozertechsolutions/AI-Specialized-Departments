@@ -3,4 +3,14 @@ display_name = "CI/CD Engineer"
 description = "Owns build automation, test stages, pipeline architecture, caching, artifact flow, quality gates and CI/CD platform-specific configuration."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "ci-cd-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

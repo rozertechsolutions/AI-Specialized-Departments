@@ -1,7 +1,19 @@
 {
-  "$schema": "https://kilo.ai/schemas/kilo.json",
-  "permissions": {
-    "default": "ask",
-    "deny": ["docker", "kubectl", "terraform", "tofu", "pulumi", "ansible", "helm", "aws", "az", "gcloud"]
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    ".kilo/rules/*.md"
+  ],
+  "permission": {
+    "*": "deny",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "skill": "allow",
+    "edit": "deny",
+    "bash": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
+    "task": "deny"
   }
 }

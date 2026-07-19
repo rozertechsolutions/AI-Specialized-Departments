@@ -1,3 +1,9 @@
+---
+description: Static SRE, observability, SLO, alert, incident, postmortem, and toil workflows.
+agent: site-reliability-engineer
+subtask: true
+---
+
 # SRE, Observability and Operations Workflows
 
 ## service-operational-readiness

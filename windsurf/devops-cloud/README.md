@@ -1,32 +1,28 @@
-# DevOps and Cloud
+# DevOps and Cloud for Windsurf
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package provides a static, repository-scoped DevOps and Cloud specialization for Windsurf Cascade. It uses current stable workspace Rules, workspace Skills, workflows, and AGENTS.md instructions.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+It does not enable hooks, MCP, worktree setup hooks, cloud execution, external integrations, deployments, scanner runs, command execution, or production operations.
 
+## Native Assets
+- `AGENTS.md`: always-on project guidance for identity, routing, safety, and completion.
+- `.windsurf/rules/*.md`: workspace Rules with `trigger` frontmatter. Only `00-devops-cloud-routing-safety` is always on; section rules use `model_decision` or `manual`.
+- `.windsurf/skills/*/SKILL.md`: workspace Agent Skills with `name` and `description` frontmatter for detailed section procedures.
+- `.windsurf/workflows/*.md`: manual-only slash workflow prompts. They are static procedures and are not automatically invoked.
 
-Windsurf coverage uses Cascade rules and workflows. MCP and hooks are omitted because section 01 requires no external integration or execution.
+## Department Coverage
+1. Leadership and Architecture: request triage, architecture decisions, technology tradeoffs, standards, dependency routing, and Well-Architected review.
+2. Cloud Foundation and Infrastructure: AWS, Azure, Google Cloud, hybrid and multicloud foundations; Terraform, OpenTofu, Pulumi, CloudFormation, Bicep, Ansible; networks, managed services, state, drift, and lifecycle design.
+3. CI/CD and Release Engineering: Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, Flux, artifact promotion, release strategy, rollback, and DORA metrics.
+4. Containers and Platform Engineering: Docker, OCI, Docker Compose, Kubernetes, Helm, Kustomize, registries, internal developer platforms, catalogs, portals, and golden paths.
+5. SRE, Observability, and Operations: OpenTelemetry, Prometheus, Grafana, Loki, Tempo, Jaeger, Elastic, OpenSearch, SLIs, SLOs, error budgets, alerts, incidents, postmortems, and toil.
+6. Resilience and Disaster Recovery: RTO, RPO, backup, restore, disaster recovery, failover, failback, high availability, and controlled chaos-experiment design.
+7. Performance, Capacity, and Efficiency: load, stress, endurance, capacity, autoscaling, bottleneck analysis, performance, and resource efficiency.
+8. DevSecOps: pipeline security, IAM, secrets, SAST, DAST, SCA, IaC/container/Kubernetes scanning design, policy as code, SBOM, signing, provenance, and software supply-chain controls.
+9. FinOps and Sustainability: allocation, budgets, forecasts, anomalies, unit economics, rightsizing, commitments, utilization, and measurable sustainability.
+10. Assurance and Independent Review: independent evidence review, cross-section consistency, findings, waivers, and completion gates.
 
-Section 02 adds Windsurf rules and workflow procedures for static cloud foundation and infrastructure design.
+## Safety Model
+All outputs are static design, review, or workflow guidance. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, irreversible, signing, publication, spending, infrastructure mutation, or production-impacting actions.
 
-Section 03 adds Windsurf rules and workflow references for static CI/CD and release engineering.
-
-Section 04 adds Windsurf rules and workflow references for static containers and platform engineering.
-
-Section 05 adds Windsurf rules and workflow references for static SRE and observability work.
-
-Section 06 adds Windsurf rules and workflow references for static resilience and DR work.
-
-Section 07 adds Windsurf rules and workflow references for static performance and capacity work.
-
-Section 08 adds Windsurf rules and workflow references for static DevSecOps work.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+No file in this package should contain secrets, credentials, tokens, real endpoints, account identifiers, private URLs, or environment-specific values.

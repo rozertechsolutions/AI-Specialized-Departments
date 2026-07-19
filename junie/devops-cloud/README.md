@@ -1,29 +1,33 @@
-# DevOps and Cloud
+# DevOps and Cloud for Junie
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package provides a static, stable Junie configuration for the complete DevOps and Cloud specialization. It uses project guidelines plus Agent Skills to keep persistent context small while preserving the ten department sections and twenty-role responsibility model.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Assets
+- `.junie/AGENTS.md`: persistent project guidance for routing, safety, native asset discovery, assurance independence, and completion.
+- `.junie/skills/*/SKILL.md`: on-demand Skill instructions for each department section.
+- `docs/*-workflows.md`: static workflow references linked from the Skills.
 
-Section 02 adds Junie guidelines, Skill, and workflow procedures for static cloud foundation and infrastructure design.
+## Department Coverage
+1. Leadership and Architecture
+2. Cloud Foundation and Infrastructure
+3. CI/CD and Release Engineering
+4. Containers and Platform Engineering
+5. SRE, Observability, and Operations
+6. Resilience and Disaster Recovery
+7. Performance, Capacity, and Efficiency
+8. DevSecOps
+9. FinOps and Sustainability
+10. Assurance and Independent Review
 
-Section 03 adds Junie Skill and workflow references for static CI/CD and release engineering.
+## Operating Model
+Junie receives concise persistent guidance from `.junie/AGENTS.md`. Detailed professional procedures live in the matching Skill and workflow files. Each request should be routed to one primary section owner, with dependencies recorded explicitly when another section must contribute evidence.
 
-Section 04 adds Junie Skill and workflow references for static containers and platform engineering.
+The package represents the full role model through stable Junie guidelines, Skills, and workflow references. It intentionally does not create custom subagent files, extensions, MCP configuration, hooks, or external integrations because those mechanisms are not required for this stable repository package.
 
-Section 05 adds Junie Skill and workflow references for static SRE and observability work.
+## Safety Model
+All outputs are static recommendations, designs, reviews, or checklists. The package does not run platform tooling, authenticate to services, deploy infrastructure, mutate cloud state, scan systems, sign artifacts, publish releases, spend money, or validate runtime state.
 
-Section 06 adds Junie Skill and workflow references for static resilience and DR work.
+Human review is required before privileged, destructive, costly, externally visible, compliance-sensitive, or irreversible actions. Secrets, credentials, tokens, private keys, account identifiers, private endpoints, and private URLs must not be stored in this package.
 
-Section 07 adds Junie Skill and workflow references for static performance and capacity work.
-
-Section 08 adds Junie Skill and workflow references for static DevSecOps work.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+## Assurance
+The Assurance and Independent Review Skill is non-implementing. It reviews evidence, checks cross-section consistency, identifies blockers, and enforces completion gates without approving its own work or replacing specialist owners.

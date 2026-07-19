@@ -39,7 +39,7 @@ rules:
 - Controls are risk-based, traceable and placed at the earliest practical stage.
 - Findings have severity, evidence, owner, remediation and exception paths.
 - No secret values or real identifiers are committed.
-- DevSecOps does not absorb Cybersecurity's independent assurance or offensive responsibilities.
+- DevSecOps does not absorb Assurance review or Cybersecurity offensive responsibilities.
 
 - Recommendations distinguish measured facts, estimates and assumptions.
 - Every saving estimate includes method, risk and operational tradeoff.

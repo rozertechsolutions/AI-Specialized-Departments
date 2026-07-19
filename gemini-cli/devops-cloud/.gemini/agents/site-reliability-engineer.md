@@ -1,7 +1,12 @@
 ---
 name: site-reliability-engineer
 description: Owns SLIs, SLOs, error budgets, operational readiness, on-call design, incident operations, postmortems, toil reduction and reliability improvement.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # Site Reliability Engineer

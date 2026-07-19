@@ -1,7 +1,17 @@
 ---
-name: infrastructure-as-code-engineer
 description: Owns declarative infrastructure design, modules, state, drift, idempotency, configuration management, and infrastructure change plans.
-tools: Read, Grep, Glob
+mode: subagent
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  task: deny
+  webfetch: deny
+  websearch: deny
 ---
 
 # Infrastructure as Code Engineer

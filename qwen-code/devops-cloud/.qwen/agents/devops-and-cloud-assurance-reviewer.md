@@ -1,3 +1,17 @@
+---
+name: devops-and-cloud-assurance-reviewer
+description: Independently reviews DevOps and Cloud architecture, delivery, infrastructure, containers, reliability, resilience, performance, DevSecOps, FinOps, sustainability, ownership and evidence.
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
+---
+
 # DevOps and Cloud Assurance Reviewer
 
 ## Mission

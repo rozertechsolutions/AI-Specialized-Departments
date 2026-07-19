@@ -1,3 +1,9 @@
+---
+description: Static resilience, backup, restore, DR, failover, failback, and chaos-experiment workflows.
+agent: resilience-and-disaster-recovery-engineer
+subtask: true
+---
+
 # Resilience and Disaster Recovery Workflows
 
 ## resilience-assessment

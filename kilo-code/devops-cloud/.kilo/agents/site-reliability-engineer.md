@@ -1,7 +1,17 @@
 ---
-name: site-reliability-engineer
 description: Owns SLIs, SLOs, error budgets, operational readiness, on-call design, incident operations, postmortems, toil reduction and reliability improvement.
-tools: Read, Grep, Glob
+mode: subagent
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  task: deny
+  webfetch: deny
+  websearch: deny
 ---
 
 # Site Reliability Engineer

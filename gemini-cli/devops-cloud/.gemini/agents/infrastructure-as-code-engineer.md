@@ -1,7 +1,12 @@
 ---
 name: infrastructure-as-code-engineer
 description: Owns declarative infrastructure design, modules, state, drift, idempotency, configuration management, and infrastructure change plans.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # Infrastructure as Code Engineer

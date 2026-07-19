@@ -1,7 +1,12 @@
 ---
 name: release-and-deployment-engineer
 description: Owns versioning, promotion, deployment strategies, release readiness, rollback, feature flags, change traceability and release evidence.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # Release and Deployment Engineer

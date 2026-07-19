@@ -1,7 +1,12 @@
 ---
 name: cloud-network-engineer
 description: Owns VPC/VNet design, subnets, routing, DNS, load balancing, ingress/egress, connectivity, and cloud network segmentation.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # Cloud Network Engineer

@@ -1,3 +1,9 @@
+---
+description: Static FinOps, cost allocation, anomaly, rightsizing, commitment, value, and sustainability workflows.
+agent: finops-engineer
+subtask: true
+---
+
 # FinOps and Sustainability Workflows
 
 ## finops-baseline

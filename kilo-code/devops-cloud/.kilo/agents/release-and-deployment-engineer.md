@@ -1,7 +1,17 @@
 ---
-name: release-and-deployment-engineer
 description: Owns versioning, promotion, deployment strategies, release readiness, rollback, feature flags, change traceability and release evidence.
-tools: Read, Grep, Glob
+mode: subagent
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  task: deny
+  webfetch: deny
+  websearch: deny
 ---
 
 # Release and Deployment Engineer

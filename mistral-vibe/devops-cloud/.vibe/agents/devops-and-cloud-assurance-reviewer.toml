@@ -3,4 +3,14 @@ display_name = "DevOps and Cloud Assurance Reviewer"
 description = "Independently reviews architecture, delivery, infrastructure, containers, reliability, resilience, performance, DevSecOps, FinOps and evidence; may block completion but must not silently rewrite or self-review."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "devops-and-cloud-assurance-reviewer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

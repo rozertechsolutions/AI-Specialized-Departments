@@ -3,4 +3,14 @@ display_name = "Cloud Security Controls Engineer"
 description = "Owns technical cloud IAM, secrets controls, policy as code, cloud configuration hardening and least-privilege patterns inside DevOps workflows."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "cloud-security-controls-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

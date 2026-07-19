@@ -1,3 +1,8 @@
+---
+description: Static leadership, architecture, routing, ADR, exception, and dependency workflow guidance.
+agent: devops-cloud-orchestrator
+---
+
 # Leadership and Architecture Workflows
 
 ## new-devops-cloud-request

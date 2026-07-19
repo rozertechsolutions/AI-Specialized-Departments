@@ -35,7 +35,7 @@ This section integrates security into delivery, infrastructure, cloud, and conta
 - Controls are risk-based, traceable and placed at the earliest practical stage.
 - Findings have severity, evidence, owner, remediation and exception paths.
 - No secret values or real identifiers are committed.
-- DevSecOps does not absorb Cybersecurity's independent assurance or offensive responsibilities.
+- DevSecOps does not absorb Assurance review or Cybersecurity offensive responsibilities.
 
 ## Safety and evidence
 All outputs are static design and review artifacts. Do not run scanners, sign artifacts, access secret stores, enforce policy, block pipelines, mutate production, or absorb Cybersecurity-owned assurance/offensive/SOC/GRC responsibilities.
@@ -65,7 +65,7 @@ Boundaries:
 ## Outputs and evidence
 - Static control design, security gate review, IAM/secrets review, policy-as-code design, container/Kubernetes security review, SBOM/provenance workflow, finding remediation, or exception review.
 - Findings with severity, evidence, owner, remediation, exception path, assumptions, and checks not run.
-- Explicit handoff to Cybersecurity for independent assurance, offensive security, SOC, GRC, or security incident response.
+- Explicit handoff to Assurance and Independent Review for independent assurance, and to Cybersecurity for offensive security, SOC, GRC, or security incident response.
 
 ## Allowed tools and permissions
 - Read repository-local DevOps and Cloud context and user-provided security requirements.
@@ -121,7 +121,7 @@ Boundaries:
 ## Outputs and evidence
 - Static control design, security gate review, IAM/secrets review, policy-as-code design, container/Kubernetes security review, SBOM/provenance workflow, finding remediation, or exception review.
 - Findings with severity, evidence, owner, remediation, exception path, assumptions, and checks not run.
-- Explicit handoff to Cybersecurity for independent assurance, offensive security, SOC, GRC, or security incident response.
+- Explicit handoff to Assurance and Independent Review for independent assurance, and to Cybersecurity for offensive security, SOC, GRC, or security incident response.
 
 ## Allowed tools and permissions
 - Read repository-local DevOps and Cloud context and user-provided security requirements.
@@ -165,7 +165,7 @@ Owns dependency and artifact integrity, SBOM, provenance, signing, verification,
 
 Boundaries:
 - executing signing, scanner, artifact upload, or registry mutation
-- independent cybersecurity assurance ownership
+- independent Assurance review ownership
 - static design and review only; no scanner, signing, secret-store, enforcement, or production action execution
 - security tool choices only when requirements justify them
 
@@ -177,7 +177,7 @@ Boundaries:
 ## Outputs and evidence
 - Static control design, security gate review, IAM/secrets review, policy-as-code design, container/Kubernetes security review, SBOM/provenance workflow, finding remediation, or exception review.
 - Findings with severity, evidence, owner, remediation, exception path, assumptions, and checks not run.
-- Explicit handoff to Cybersecurity for independent assurance, offensive security, SOC, GRC, or security incident response.
+- Explicit handoff to Assurance and Independent Review for independent assurance, and to Cybersecurity for offensive security, SOC, GRC, or security incident response.
 
 ## Allowed tools and permissions
 - Read repository-local DevOps and Cloud context and user-provided security requirements.

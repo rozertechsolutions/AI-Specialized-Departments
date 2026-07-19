@@ -3,4 +3,14 @@ display_name = "FinOps Engineer"
 description = "Owns cost visibility, allocation, forecasting, budgets, anomaly response, unit economics, optimization recommendations and engineering/finance collaboration."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "finops-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

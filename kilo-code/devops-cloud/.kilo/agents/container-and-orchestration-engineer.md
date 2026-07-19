@@ -1,7 +1,17 @@
 ---
-name: container-and-orchestration-engineer
 description: Owns OCI images, Docker/Compose configuration, registries, Kubernetes workload/orchestration design, Helm, Kustomize and cluster-facing workload standards.
-tools: Read, Grep, Glob
+mode: subagent
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  task: deny
+  webfetch: deny
+  websearch: deny
 ---
 
 # Container and Orchestration Engineer

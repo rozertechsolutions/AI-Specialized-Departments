@@ -1,6 +1,16 @@
-agent_type = "subagent"
+agent_type = "agent"
 display_name = "DevOps and Cloud Orchestrator"
-description = "Section 01 DevOps and Cloud Orchestrator role."
+description = "Routes DevOps and Cloud work across the ten sections, coordinates handoffs, and blocks unsafe or unsupported execution."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "devops-cloud-orchestrator"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

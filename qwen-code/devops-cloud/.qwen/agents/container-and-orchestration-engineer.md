@@ -1,7 +1,15 @@
 ---
 name: container-and-orchestration-engineer
 description: Owns OCI images, Docker/Compose configuration, registries, Kubernetes workload/orchestration design, Helm, Kustomize and cluster-facing workload standards.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Container and Orchestration Engineer

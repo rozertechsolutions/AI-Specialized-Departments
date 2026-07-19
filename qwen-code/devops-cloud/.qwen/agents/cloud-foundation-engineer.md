@@ -1,7 +1,15 @@
 ---
 name: cloud-foundation-engineer
 description: Owns landing-zone structure, organizations/accounts/subscriptions/projects, environment separation, baseline governance, and cloud resource lifecycle foundations.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Cloud Foundation Engineer

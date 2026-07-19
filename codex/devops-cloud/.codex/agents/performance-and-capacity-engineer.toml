@@ -1,4 +1,4 @@
-name = "Performance and Capacity Engineer"
+name = "performance_and_capacity_engineer"
 description = "Owns performance requirements, workload models, load/stress/soak test design, bottleneck analysis, capacity planning, autoscaling strategy and technical resource efficiency."
 sandbox_mode = "read-only"
 developer_instructions = """

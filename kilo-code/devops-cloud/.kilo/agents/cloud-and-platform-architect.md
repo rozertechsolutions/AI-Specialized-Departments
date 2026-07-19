@@ -1,7 +1,17 @@
 ---
-name: cloud-and-platform-architect
 description: Own provider-neutral cloud/platform architecture, ADRs, standards, target-state models, and technology tradeoff decisions.
-tools: Read, Grep, Glob
+mode: subagent
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  task: deny
+  webfetch: deny
+  websearch: deny
 ---
 
 # Cloud and Platform Architect

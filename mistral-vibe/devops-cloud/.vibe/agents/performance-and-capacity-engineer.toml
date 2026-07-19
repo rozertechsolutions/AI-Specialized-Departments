@@ -3,4 +3,14 @@ display_name = "Performance and Capacity Engineer"
 description = "Owns performance requirements, workload models, load/stress/soak test design, bottleneck analysis, capacity planning, autoscaling strategy and technical resource efficiency."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "performance-and-capacity-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

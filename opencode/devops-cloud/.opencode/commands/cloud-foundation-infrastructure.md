@@ -1,3 +1,9 @@
+---
+description: Static cloud foundation, IaC, networking, managed-service, lifecycle, and decommissioning workflows.
+agent: cloud-foundation-engineer
+subtask: true
+---
+
 # Cloud Foundation and Infrastructure Workflows
 
 ## new-cloud-foundation

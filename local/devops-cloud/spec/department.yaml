@@ -68,3 +68,15 @@ policies:
 providers_enabled: false
 runtime_enabled: false
 tools_enabled: false
+models_enabled: false
+endpoints_enabled: false
+permissions_enabled: false
+integrations_enabled: false
+user_configurable:
+- providers
+- runtimes
+- models
+- endpoints
+- tools
+- permissions
+- integrations

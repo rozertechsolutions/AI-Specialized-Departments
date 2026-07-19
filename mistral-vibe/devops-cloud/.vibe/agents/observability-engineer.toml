@@ -3,4 +3,14 @@ display_name = "Observability Engineer"
 description = "Owns telemetry architecture, logs, metrics, traces, profiles, dashboards, actionable alerting, correlation, retention and observability data quality."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "observability-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"

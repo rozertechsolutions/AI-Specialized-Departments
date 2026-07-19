@@ -1,7 +1,15 @@
 ---
 name: resilience-and-disaster-recovery-engineer
 description: Owns availability patterns, backup/restore, RTO/RPO, disaster recovery, failover/failback, resilience testing strategy and recovery evidence.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Resilience and Disaster Recovery Engineer

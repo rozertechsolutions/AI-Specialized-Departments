@@ -1,3 +1,9 @@
+---
+description: Independent static assurance, finding, waiver, consistency, and completion-gate workflows.
+agent: devops-and-cloud-assurance-reviewer
+subtask: true
+---
+
 # Assurance and Independent Review Workflows
 
 ## section-assurance-review

@@ -1,4 +1,4 @@
-name = "DevOps and Cloud Orchestrator"
+name = "devops_cloud_orchestrator"
 description = "Own intake, routing, dependency control, escalation, and evidence aggregation for DevOps and Cloud leadership architecture."
 sandbox_mode = "read-only"
 developer_instructions = """

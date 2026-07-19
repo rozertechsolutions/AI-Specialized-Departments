@@ -1,32 +1,34 @@
-# DevOps and Cloud
+# DevOps and Cloud for Cursor
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package uses stable Cursor project customization surfaces: `AGENTS.md`, Project Rules in `.cursor/rules/`, Agent Skills in `.cursor/skills/`, and static workflow references in `docs/`.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+It is static and safe by default. It does not configure MCP, hooks, cloud agents, external integrations, terminals, deployment, signing, publication, billing changes, or runtime bindings. Repository files are guidance, not permission grants.
 
+## Sections Covered
 
-Cursor coverage uses AGENTS.md, project rules, and workflow references. Dedicated role files are intentionally omitted because the current repository package uses rules rather than confirmed project-scoped subagent files.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Section 02 adds Cursor rules and workflow procedures. Role contracts are represented in persistent instructions rather than unsupported custom agent files.
+## Native Assets
 
-Section 03 adds Cursor rules and workflow references for static CI/CD and release engineering.
+- `AGENTS.md`: concise persistent Cursor guidance.
+- `.cursor/rules/00-devops-cloud-leadership-architecture.mdc`: always-on routing and safety.
+- `.cursor/rules/10-*.mdc` through `.cursor/rules/90-*.mdc`: agent-requested section rules with explicit frontmatter.
+- `.cursor/skills/*/SKILL.md`: on-demand section procedures.
+- `docs/*-workflows.md`: static workflow references for detailed steps.
 
-Section 04 adds Cursor rules and workflow references for static containers and platform engineering.
+## Role Model
 
-Section 05 adds Cursor rules and workflow references for static SRE and observability work.
+The complete twenty-role model is represented through section rules and Agent Skills. Additional custom subagent files are intentionally omitted because they would duplicate the same ownership model without adding exclusive value in this static package. Assurance remains independent and non-implementing.
 
-Section 06 adds Cursor rules and workflow references for static resilience and DR work.
+## Safety Model
 
-Section 07 adds Cursor rules and workflow references for static performance and capacity work.
-
-Section 08 adds Cursor rules and workflow references for static DevSecOps work.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+All outputs are design, review, planning, or documentation unless a future user explicitly authorizes separate action. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, irreversible, signing, spending, or publication decisions. Static inspection must not be described as runtime validation.

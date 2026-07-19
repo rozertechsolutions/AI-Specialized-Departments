@@ -1,7 +1,12 @@
 ---
 name: devops-cloud-orchestrator
 description: Own intake, routing, dependency control, escalation, and evidence aggregation for DevOps and Cloud leadership architecture.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # DevOps and Cloud Orchestrator

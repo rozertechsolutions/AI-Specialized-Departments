@@ -1,7 +1,15 @@
 ---
 name: release-and-deployment-engineer
 description: Owns versioning, promotion, deployment strategies, release readiness, rollback, feature flags, change traceability and release evidence.
-tools: Read, Grep, Glob
+approvalMode: plan
+tools:
+  - read_file
+  - grep_search
+  - glob
+disallowedTools:
+  - write_file
+  - edit
+  - run_shell_command
 ---
 
 # Release and Deployment Engineer

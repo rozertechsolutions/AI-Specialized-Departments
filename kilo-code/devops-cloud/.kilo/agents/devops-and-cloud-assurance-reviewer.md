@@ -1,3 +1,19 @@
+---
+description: Independently reviews DevOps and Cloud evidence, findings, waivers, completion gates and cross-section consistency without implementing or self-reviewing.
+mode: subagent
+permission:
+  "*": deny
+  read: allow
+  grep: allow
+  glob: allow
+  skill: allow
+  edit: deny
+  bash: deny
+  task: deny
+  webfetch: deny
+  websearch: deny
+---
+
 # DevOps and Cloud Assurance Reviewer
 
 ## Mission

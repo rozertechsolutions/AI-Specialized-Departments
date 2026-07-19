@@ -1,7 +1,12 @@
 ---
 name: cloud-and-platform-architect
 description: Own provider-neutral cloud/platform architecture, ADRs, standards, target-state models, and technology tradeoff decisions.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # Cloud and Platform Architect

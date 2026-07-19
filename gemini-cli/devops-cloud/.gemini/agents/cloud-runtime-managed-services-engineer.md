@@ -1,7 +1,12 @@
 ---
 name: cloud-runtime-managed-services-engineer
 description: Owns infrastructure configuration for compute, serverless, storage, managed databases, caches, queues, streams, and managed runtime services without owning application logic or data modelling.
-tools: Read, Grep, Glob
+kind: local
+tools:
+  - read_file
+  - grep_search
+  - glob
+max_turns: 20
 ---
 
 # Cloud Runtime and Managed Services Engineer

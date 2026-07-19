@@ -1,165 +1,153 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "default_agent": "devops-cloud-orchestrator",
+  "subagent_depth": 1,
+  "share": "disabled",
+  "permission": {
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "skill": "allow",
+    "task": "allow",
+    "edit": "deny",
+    "bash": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
+    "external_directory": "deny"
+  },
   "agent": {
-    "ci-cd-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/ci-cd-engineer.md}",
+    "devops-cloud-orchestrator": {
+      "description": "Primary DevOps and Cloud intake, routing, dependency, and safety-boundary agent.",
+      "mode": "primary",
+      "prompt": "{file:./.opencode/agents/devops-cloud-orchestrator.md}",
       "permission": {
-        "edit": "ask",
-        "bash": "deny"
+        "read": "allow",
+        "grep": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "skill": "allow",
+        "task": "allow",
+        "edit": "deny",
+        "bash": "deny",
+        "webfetch": "deny",
+        "websearch": "deny",
+        "external_directory": "deny"
       }
     },
     "cloud-and-platform-architect": {
+      "description": "Subagent for provider-neutral architecture, ADRs, standards, and target-state boundaries.",
       "mode": "subagent",
       "prompt": "{file:./.opencode/agents/cloud-and-platform-architect.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
     "cloud-foundation-engineer": {
+      "description": "Subagent for landing zones, environment separation, governance foundations, and lifecycle boundaries.",
       "mode": "subagent",
       "prompt": "{file:./.opencode/agents/cloud-foundation-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "cloud-network-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/cloud-network-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "cloud-runtime-managed-services-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/cloud-runtime-managed-services-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "cloud-security-controls-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/cloud-security-controls-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "cloud-sustainability-and-efficiency-analyst": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/cloud-sustainability-and-efficiency-analyst.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "container-and-orchestration-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/container-and-orchestration-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "devops-and-cloud-assurance-reviewer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/devops-and-cloud-assurance-reviewer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "devops-cloud-orchestrator": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/devops-cloud-orchestrator.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "devsecops-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/devsecops-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
-    },
-    "finops-engineer": {
-      "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/finops-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
     "infrastructure-as-code-engineer": {
+      "description": "Subagent for IaC design, modules, state, drift, idempotency, and static change plans.",
       "mode": "subagent",
       "prompt": "{file:./.opencode/agents/infrastructure-as-code-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
-    "observability-engineer": {
+    "cloud-network-engineer": {
+      "description": "Subagent for VPC/VNet, DNS, routing, ingress, egress, connectivity, and segmentation design.",
       "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/observability-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "prompt": "{file:./.opencode/agents/cloud-network-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
-    "performance-and-capacity-engineer": {
+    "cloud-runtime-managed-services-engineer": {
+      "description": "Subagent for compute, serverless, storage, managed data services, queues, streams, and runtime infrastructure.",
       "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/performance-and-capacity-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "prompt": "{file:./.opencode/agents/cloud-runtime-managed-services-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
-    "platform-product-and-developer-experience-engineer": {
+    "ci-cd-engineer": {
+      "description": "Subagent for CI/CD architecture, quality gates, artifact flow, and static pipeline review.",
       "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/platform-product-and-developer-experience-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "prompt": "{file:./.opencode/agents/ci-cd-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
     "release-and-deployment-engineer": {
+      "description": "Subagent for release readiness, promotion, deployment strategy design, rollback, and evidence.",
       "mode": "subagent",
       "prompt": "{file:./.opencode/agents/release-and-deployment-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
-    "resilience-and-disaster-recovery-engineer": {
+    "container-and-orchestration-engineer": {
+      "description": "Subagent for OCI, Docker, Compose, Kubernetes, Helm, Kustomize, registries, and workload standards.",
       "mode": "subagent",
-      "prompt": "{file:./.opencode/agents/resilience-and-disaster-recovery-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "prompt": "{file:./.opencode/agents/container-and-orchestration-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "platform-product-and-developer-experience-engineer": {
+      "description": "Subagent for internal developer platforms, catalogs, portals, golden paths, and developer experience.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/platform-product-and-developer-experience-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
     "site-reliability-engineer": {
+      "description": "Subagent for SLOs, error budgets, operational readiness, incidents, postmortems, and toil.",
       "mode": "subagent",
       "prompt": "{file:./.opencode/agents/site-reliability-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "observability-engineer": {
+      "description": "Subagent for telemetry, dashboards, alerts, retention, correlation, and observability data quality.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/observability-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "resilience-and-disaster-recovery-engineer": {
+      "description": "Subagent for availability, backup, restore, RTO, RPO, failover, failback, and DR design.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/resilience-and-disaster-recovery-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "performance-and-capacity-engineer": {
+      "description": "Subagent for workload models, load-test plans, capacity, autoscaling, and resource efficiency.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/performance-and-capacity-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "devsecops-engineer": {
+      "description": "Subagent for secure delivery controls, pipeline security, gate design, findings, and remediation routing.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/devsecops-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "cloud-security-controls-engineer": {
+      "description": "Subagent for cloud IAM, secrets controls, policy as code, hardening, and least privilege.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/cloud-security-controls-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     },
     "software-supply-chain-security-engineer": {
+      "description": "Subagent for SBOM, provenance, signing design, artifact integrity, verification, and supply-chain controls.",
       "mode": "subagent",
       "prompt": "{file:./.opencode/agents/software-supply-chain-security-engineer.md}",
-      "permission": {
-        "edit": "ask",
-        "bash": "deny"
-      }
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "finops-engineer": {
+      "description": "Subagent for allocation, forecasts, budgets, anomalies, unit economics, rightsizing, and commitments.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/finops-engineer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "cloud-sustainability-and-efficiency-analyst": {
+      "description": "Subagent for measurable sustainability, carbon-aware tradeoffs, utilization, and efficiency evidence.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/cloud-sustainability-and-efficiency-analyst.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
+    },
+    "devops-and-cloud-assurance-reviewer": {
+      "description": "Independent read-only subagent for assurance, findings, waivers, and completion gates.",
+      "mode": "subagent",
+      "prompt": "{file:./.opencode/agents/devops-and-cloud-assurance-reviewer.md}",
+      "permission": { "read": "allow", "grep": "allow", "glob": "allow", "list": "allow", "skill": "allow", "task": "deny", "edit": "deny", "bash": "deny", "webfetch": "deny", "websearch": "deny", "external_directory": "deny" }
     }
   }
 }

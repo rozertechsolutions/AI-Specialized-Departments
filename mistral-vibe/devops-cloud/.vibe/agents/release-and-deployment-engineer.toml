@@ -3,4 +3,14 @@ display_name = "Release and Deployment Engineer"
 description = "Owns versioning, promotion, deployment strategies, release readiness, rollback, feature flags, change traceability and release evidence."
 safety = "safe"
 enabled_tools = ["grep", "read_file"]
+disabled_tools = ["write_file", "search_replace", "bash"]
 system_prompt_id = "release-and-deployment-engineer"
+
+[tools.bash]
+permission = "deny"
+
+[tools.write_file]
+permission = "deny"
+
+[tools.search_replace]
+permission = "deny"
