@@ -1,32 +1,35 @@
-# DevOps and Cloud
+# DevOps and Cloud for Kiro IDE
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This package provides a static Kiro IDE configuration for the complete DevOps and Cloud specialization. It uses only workspace `AGENTS.md`, Kiro steering, Kiro Markdown custom agents, and workspace Agent Skills.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Assets
+- `AGENTS.md`: always-included workspace guidance for routing, safety, native asset discovery, and assurance independence.
+- `.kiro/steering/*.md`: concise steering with current Kiro inclusion frontmatter.
+- `.kiro/agents/*.md`: twenty workspace custom agents using IDE Markdown frontmatter, read-only tool tags, `includeMcpJson: false`, and explicit shell/sensitive-file denials.
+- `.kiro/skills/*/SKILL.md`: ten Agent Skills, one per department section.
+- `docs/*-workflows.md`: static workflow references.
 
+## Department Coverage
+1. Leadership and Architecture
+2. Cloud Foundation and Infrastructure
+3. CI/CD and Release Engineering
+4. Containers and Platform Engineering
+5. SRE, Observability, and Operations
+6. Resilience and Disaster Recovery
+7. Performance, Capacity, and Efficiency
+8. DevSecOps
+9. FinOps and Sustainability
+10. Assurance and Independent Review
 
-Kiro coverage uses steering and workflow references. Hooks, Powers, MCP, and executable specs are intentionally omitted for section 01 because no execution or external integration is needed.
+## Agent Model
+The `devops-cloud-orchestrator` agent is the routing entry point and has `read`, `context`, and `subagent` tags. Specialist and Assurance agents have `read` and `context` tags only. No agent includes `write`, `shell`, `web`, `@mcp`, `@builtin`, `*`, or inline `mcpServers`.
 
-Section 02 adds Kiro steering and workflow references. Hooks, Powers, MCP, and executable specs remain omitted because section 02 requires no execution or external integration.
+Skills are workspace-level assets that Kiro can activate by description or users can invoke directly as slash commands. Detailed procedures live in `.kiro/skills/` and `docs/`, while steering remains concise.
 
-Section 03 adds Kiro steering and workflow references for static CI/CD and release engineering.
+## Safety Model
+All output is static guidance or review. The package does not run tools, authenticate, mutate files or infrastructure, deploy, publish, sign, spend, scan, execute hooks, use MCP, or claim runtime validation.
 
-Section 04 adds Kiro steering and workflow references for static containers and platform engineering.
+Human review is required before privileged, destructive, costly, externally visible, compliance-sensitive, or irreversible actions.
 
-Section 05 adds Kiro steering and workflow references for static SRE and observability work.
-
-Section 06 adds Kiro steering and workflow references for static resilience and DR work.
-
-Section 07 adds Kiro steering and workflow references for static performance and capacity work.
-
-Section 08 adds Kiro steering and workflow references for static DevSecOps work.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+## Stable-Only Scope
+This package intentionally excludes Kiro CLI JSON agents, hooks, powers, MCP servers, external integrations, executable specs, schedules, and hosted automation. It uses the Kiro IDE Markdown custom-agent surface consistently and does not mix IDE and CLI schemas.
