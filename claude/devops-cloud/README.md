@@ -1,32 +1,34 @@
-# DevOps and Cloud
+# DevOps and Cloud for Claude
 
-This package implements section 01, Leadership and Architecture, for the platform-native DevOps and Cloud specialization. It is static configuration and importable guidance only; it does not execute tools, connect to services, deploy infrastructure, or validate runtime state.
+This is a manual/import package for Claude Projects, project instructions, project knowledge, and Claude Skills where available. It is intentionally separate from Claude Code and contains no `.claude/` subagents, hooks, MCP configuration, shell permissions, or repository runtime automation.
 
-Native mechanisms in this package represent persistent instructions, supported role delegation, reusable leadership/architecture capability guidance, workflow procedures, human-review controls, and static completion gates.
+## Native Surfaces
 
+- `project/project-instructions.md`: concise Project-level routing, safety, and completion guidance.
+- `project/knowledge/*.md`: detailed knowledge for all ten DevOps and Cloud sections.
+- `skills/*/SKILL.md`: on-demand Skill procedures for workspaces that support Claude Skills.
 
-Use the `project/` files as Project setup material and upload the knowledge files manually where the product plan supports project knowledge. Use the Skill folder only where Skills are available for the workspace.
+Connectors and remote MCP are intentionally absent. Current Claude custom connectors are configured in the Claude UI and require explicit user or organization setup; this package does not enable them.
 
-Section 02 adds cloud foundation and infrastructure import material for landing zones, IaC design, cloud networking, managed services, lifecycle, safety gates, and human-review controls.
+## Sections Covered
 
-Section 03 adds importable CI/CD and release-engineering guidance, skill procedures, static workflows, and human-review controls.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Section 04 adds importable container, orchestration, and platform-product guidance with static workflows and human-review controls.
+## Setup
 
-Section 05 adds importable SRE, observability, and operations guidance with static workflows and human-review controls.
+Create or open a Claude Project in the Claude UI, add `project/project-instructions.md` as Project instructions, and upload the relevant knowledge and Skill files according to the active plan and workspace capabilities. Claude Projects provide project instructions and project knowledge; enhanced knowledge capacity and collaboration depend on plan and workspace settings.
 
-Section 06 adds importable resilience and disaster-recovery guidance with static workflows and human-review controls.
+Do not copy this package into Claude Code. Claude Code has a separate package under `claude-code/devops-cloud/`.
 
-Section 07 adds importable performance, capacity, and efficiency guidance with static workflows and human-review controls.
+## Safety
 
-Section 08 adds importable DevSecOps guidance with static workflows and human-review controls.
-
-
-## Section 09 - FinOps and Sustainability
-
-Adds FinOps and Sustainability roles, skills and workflows for cost allocation, budgets, forecasts, anomaly response, unit economics, rightsizing, commitment analysis, technology-value review and measurable sustainability assessment. All outputs are static recommendations; financial authorization, resource mutation and public sustainability claims require human approval.
-
-
-## Section 10 - Assurance and Independent Review
-
-Adds an independent assurance reviewer, reusable review skill and static workflows for evidence-based review, cross-section consistency, findings, waivers and completion gates. The reviewer may block completion, but cannot self-review, silently rewrite implementation work or claim runtime validation.
+All outputs are static design, review, planning, or advisory artifacts. Do not use this package to execute builds, tests, scans, deployments, failovers, restores, infrastructure plans, signing, publishing, billing changes, cloud actions, or production operations. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, or irreversible decisions.
