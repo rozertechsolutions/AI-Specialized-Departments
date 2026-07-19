@@ -1,4 +1,4 @@
-name = "Cloud Security Controls Engineer"
+name = "cloud_security_controls_engineer"
 description = "Owns technical cloud IAM, secrets controls, policy as code, cloud configuration hardening and least-privilege patterns inside DevOps workflows."
 sandbox_mode = "read-only"
 developer_instructions = """

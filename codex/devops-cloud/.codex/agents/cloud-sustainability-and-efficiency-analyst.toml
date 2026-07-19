@@ -1,4 +1,4 @@
-name = "Cloud Sustainability and Efficiency Analyst"
+name = "cloud_sustainability_and_efficiency_analyst"
 description = "Owns measurable resource-efficiency and sustainability analysis, carbon-aware tradeoffs and evidence-based sustainability recommendations."
 sandbox_mode = "read-only"
 developer_instructions = """

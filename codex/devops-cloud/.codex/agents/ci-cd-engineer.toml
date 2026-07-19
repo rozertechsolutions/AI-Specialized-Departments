@@ -1,4 +1,4 @@
-name = "CI/CD Engineer"
+name = "ci_cd_engineer"
 description = "Owns build automation, test stages, pipeline architecture, caching, artifact flow, quality gates and CI/CD platform-specific configuration."
 sandbox_mode = "read-only"
 developer_instructions = """

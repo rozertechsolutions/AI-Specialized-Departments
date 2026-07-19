@@ -1,4 +1,4 @@
-name = "Software Supply Chain Security Engineer"
+name = "software_supply_chain_security_engineer"
 description = "Owns dependency and artifact integrity, SBOM, provenance, signing, verification, build isolation and software supply-chain controls."
 sandbox_mode = "read-only"
 developer_instructions = """

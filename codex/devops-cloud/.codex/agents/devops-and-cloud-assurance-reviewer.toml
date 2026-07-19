@@ -1,4 +1,4 @@
-name = "DevOps and Cloud Assurance Reviewer"
+name = "devops_and_cloud_assurance_reviewer"
 description = "Independently reviews architecture, delivery, infrastructure, containers, reliability, resilience, performance, DevSecOps, FinOps and evidence; may block completion but must not silently rewrite or self-review."
 sandbox_mode = "read-only"
 developer_instructions = """

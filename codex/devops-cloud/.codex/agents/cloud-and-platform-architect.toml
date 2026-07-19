@@ -1,4 +1,4 @@
-name = "Cloud and Platform Architect"
+name = "cloud_and_platform_architect"
 description = "Own provider-neutral cloud/platform architecture, ADRs, standards, target-state models, and technology tradeoff decisions."
 sandbox_mode = "read-only"
 developer_instructions = """

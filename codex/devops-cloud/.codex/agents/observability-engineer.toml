@@ -1,4 +1,4 @@
-name = "Observability Engineer"
+name = "observability_engineer"
 description = "Owns telemetry architecture, logs, metrics, traces, profiles, dashboards, actionable alerting, correlation, retention and observability data quality."
 sandbox_mode = "read-only"
 developer_instructions = """

@@ -1,4 +1,4 @@
-name = "Resilience and Disaster Recovery Engineer"
+name = "resilience_and_disaster_recovery_engineer"
 description = "Owns availability patterns, backup/restore, RTO/RPO, disaster recovery, failover/failback, resilience testing strategy and recovery evidence."
 sandbox_mode = "read-only"
 developer_instructions = """

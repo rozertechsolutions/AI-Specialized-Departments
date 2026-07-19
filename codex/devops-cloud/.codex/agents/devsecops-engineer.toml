@@ -1,4 +1,4 @@
-name = "DevSecOps Engineer"
+name = "devsecops_engineer"
 description = "Owns secure delivery controls, pipeline security requirements, security gate placement, findings routing and developer-facing remediation workflows."
 sandbox_mode = "read-only"
 developer_instructions = """

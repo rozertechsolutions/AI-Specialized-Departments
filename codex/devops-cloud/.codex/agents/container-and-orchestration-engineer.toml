@@ -1,4 +1,4 @@
-name = "Container and Orchestration Engineer"
+name = "container_and_orchestration_engineer"
 description = "Owns OCI images, Docker/Compose configuration, registries, Kubernetes workload/orchestration design, Helm, Kustomize and cluster-facing workload standards."
 sandbox_mode = "read-only"
 developer_instructions = """
