@@ -1,32 +1,63 @@
 # DevOps and Cloud for Warp
 
-This package provides a static, repository-scoped DevOps and Cloud specialization for Warp. It uses the current stable Warp project Rules surface (`AGENTS.md`) and project Agent Skills in `.agents/skills/`.
+This package is a static DevOps and Cloud department for Warp using project rules in `AGENTS.md`, Agent Skills, and referenced workflow documents. It covers DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance without configuring Warp cloud agents, schedules, triggers, environments, or integrations.
 
-It does not configure Warp agent profiles, file permissions, MCP servers, integrations, cloud agents, Oz runs, schedules, triggers, environments, or external execution. Those controls remain user/account scoped or intentionally absent.
+The package is static and safe by default. The Warp implementation is a manual/repository-guidance Warp package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
 
-## Native Assets
-- `AGENTS.md`: concise project Rules for routing, safety, human review, and Skill discovery.
-- `.agents/skills/*/SKILL.md`: ten focused project Skills with YAML frontmatter (`name` and `description`) and static professional procedures.
-- `docs/*-workflows.md`: supporting workflow references for the matching Skills.
+## Possible Uses
+
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
 
 ## Department Coverage
-1. Leadership and Architecture: request triage, architecture decisions, standards, technology tradeoffs, dependency routing, and Well-Architected review.
-2. Cloud Foundation and Infrastructure: AWS, Azure, Google Cloud, hybrid and multicloud foundations; Terraform, OpenTofu, Pulumi, CloudFormation, Bicep, Ansible; networks, managed services, state, drift, and lifecycle design.
-3. CI/CD and Release Engineering: Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, Flux, artifact promotion, release strategy, rollback, and DORA metrics.
-4. Containers and Platform Engineering: Docker, OCI, Docker Compose, Kubernetes, Helm, Kustomize, registries, internal developer platforms, catalogs, portals, and golden paths.
-5. SRE, Observability, and Operations: OpenTelemetry, Prometheus, Grafana, Loki, Tempo, Jaeger, Elastic, OpenSearch, SLIs, SLOs, error budgets, alerts, incidents, postmortems, and toil.
-6. Resilience and Disaster Recovery: RTO, RPO, backup, restore, disaster recovery, failover, failback, high availability, and controlled chaos-experiment design.
-7. Performance, Capacity, and Efficiency: load, stress, endurance, capacity, autoscaling, bottleneck analysis, performance, and resource efficiency.
-8. DevSecOps: pipeline security, IAM, secrets, SAST, DAST, SCA, IaC/container/Kubernetes scanning design, policy as code, SBOM, signing, provenance, and software supply-chain controls.
-9. FinOps and Sustainability: allocation, budgets, forecasts, anomalies, unit economics, rightsizing, commitments, utilization, and measurable sustainability.
-10. Assurance and Independent Review: independent evidence review, cross-section consistency, findings, waivers, and completion gates.
 
-## Operating Model
-Warp automatically applies `AGENTS.md` project Rules when working in this directory. Skills are discovered from `.agents/skills/` and can be invoked by natural language or slash command. Long procedures live in Skills and workflow references so persistent Rules stay concise.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Every task must have one primary owner, explicit assumptions, clear handoffs, stop conditions, and human-review boundaries. Assurance remains independent and must not review its own implementation.
+## Native Assets
 
-## Safety Model
-All outputs are static guidance, design, or review artifacts. Do not run platform CLIs, builds, tests, scanners, IaC plans, deployments, failovers, restores, hooks, MCP servers, cloud agents, schedules, triggers, or integrations from this package.
+- `AGENTS.md`: Warp project rule guidance for routing and safety.
+- `.agents/skills/*/SKILL.md`: ten Agent Skills.
+- `docs/*-workflows.md`: static workflow references used by Skills.
+- No repository-native Warp agent profiles, MCP, cloud-agent execution, schedules, triggers, environments, or connector configuration is included.
 
-No secrets, credentials, real endpoints, account identifiers, private URLs, or environment-specific values belong in this package. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, irreversible, signing, publication, spending, infrastructure mutation, or production-impacting actions.
+## Installation and Setup
+
+Place `warp/devops-cloud/` contents in the repository you open from Warp. Use `AGENTS.md` as project guidance and keep `.agents/skills/` and `docs/` available for agents that support local Agent Skills.
+
+Warp account, UI, and workspace settings may control which rules, Skills, and agent features are available. This repository package installs no Warp integration or runtime permission profile.
+
+## Usage
+
+Ask Warp Agent for a section, such as "use FinOps and Sustainability to review cost allocation." Load the matching Skill for procedure detail and use `docs/` only as referenced support.
+
+Ask Assurance after primary work exists. Do not use this package as evidence that Warp executed commands, cloud agents, schedules, or integrations.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove `AGENTS.md`, `.agents/skills/`, and this package's `docs/` files from the target repository or stop referencing them in Warp. Account-scoped Warp settings must be changed in Warp, not in this repository.

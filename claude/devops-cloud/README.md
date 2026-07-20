@@ -1,16 +1,24 @@
 # DevOps and Cloud for Claude
 
-This is a manual/import package for Claude Projects, project instructions, project knowledge, and Claude Skills where available. It is intentionally separate from Claude Code and contains no `.claude/` subagents, hooks, MCP configuration, shell permissions, or repository runtime automation.
+This package is a manual/import-only DevOps and Cloud department for Claude Projects, project instructions, project knowledge, and Claude Skills where available. It covers DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance while staying static and safe by default.
 
-## Native Surfaces
+The package is static and safe by default. The Claude implementation is a manual/import-only Claude package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
 
-- `project/project-instructions.md`: concise Project-level routing, safety, and completion guidance.
-- `project/knowledge/*.md`: detailed knowledge for all ten DevOps and Cloud sections.
-- `skills/*/SKILL.md`: on-demand Skill procedures for workspaces that support Claude Skills.
+## Possible Uses
 
-Connectors and remote MCP are intentionally absent. Current Claude custom connectors are configured in the Claude UI and require explicit user or organization setup; this package does not enable them.
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
 
-## Sections Covered
+## Department Coverage
 
 1. Leadership and Architecture.
 2. Cloud Foundation and Infrastructure.
@@ -23,12 +31,33 @@ Connectors and remote MCP are intentionally absent. Current Claude custom connec
 9. FinOps and Sustainability.
 10. Assurance and Independent Review.
 
-## Setup
+## Native Assets
 
-Create or open a Claude Project in the Claude UI, add `project/project-instructions.md` as Project instructions, and upload the relevant knowledge and Skill files according to the active plan and workspace capabilities. Claude Projects provide project instructions and project knowledge; enhanced knowledge capacity and collaboration depend on plan and workspace settings.
+- `project/project-instructions.md`: Claude Project instructions for routing, boundaries, and completion.
+- `project/knowledge/*.md`: ten section knowledge files for manual upload to Project knowledge.
+- `skills/*/SKILL.md`: Agent Skill bundles for Claude surfaces that support Skills.
+- No Claude Code files, hooks, MCP, connectors, or automatic repository-loading configuration is included.
 
-Do not copy this package into Claude Code. Claude Code has a separate package under `claude-code/devops-cloud/`.
+## Installation and Setup
 
-## Safety
+Create or open a Claude Project, set `project/project-instructions.md` as the Project instructions, and upload selected `project/knowledge/*.md` or Skill bundles as allowed by the current plan and workspace policy. Claude Projects do not automatically load this repository.
 
-All outputs are static design, review, planning, or advisory artifacts. Do not use this package to execute builds, tests, scans, deployments, failovers, restores, infrastructure plans, signing, publishing, billing changes, cloud actions, or production operations. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, or irreversible decisions.
+Keep connector setup absent unless a human configures it separately in Claude. Do not mix this package with Claude Code workspace files.
+
+## Usage
+
+Ask within the configured Claude Project for a specific section or role, such as "review the Terraform module using Cloud Foundation and Infrastructure." Use Skills for detailed section workflows where Skills are available.
+
+Ask for Assurance only after a primary artifact exists. Treat all responses as static advice and not evidence that infrastructure, deployments, rollbacks, scans, or tests succeeded.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove the uploaded knowledge files, clear Project instructions, or remove imported Skills in Claude. Repository files remain unchanged.

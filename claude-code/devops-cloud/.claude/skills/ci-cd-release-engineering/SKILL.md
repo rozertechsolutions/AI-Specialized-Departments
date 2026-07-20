@@ -16,5 +16,7 @@ Use this skill for section 03 delivery-system design and review only. Produce st
 ## Stop criteria
 Stop on requested execution, missing rollback plan, mutable artifact flow without rationale, secret exposure, production authorization, unsupported platform behavior, or missing human approval.
 
+Reference: `docs/ci-cd-release-engineering.md`.
+
 ## Evidence
 Return static assumptions, designs, reviews, risks, approvals needed, DORA metric considerations, and checks not run.

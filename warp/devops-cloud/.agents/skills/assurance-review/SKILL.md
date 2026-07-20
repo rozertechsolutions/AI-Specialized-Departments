@@ -18,3 +18,5 @@ Use this skill for section 10 static assurance review. Do not create the primary
 - Every finding includes evidence, impact, owner, severity and closure criteria.
 - Static review is never represented as runtime validation.
 - Completion is blocked while critical findings remain unresolved.
+
+Reference: `docs/assurance-review-workflows.md`.

@@ -18,3 +18,5 @@ Use this skill for section 09 static FinOps and Sustainability design and review
 - Every saving estimate includes method, risk and operational tradeoff.
 - Financial decisions remain human-owned.
 - Sustainability claims require measurable evidence.
+
+Reference: `docs/finops-sustainability.md`.

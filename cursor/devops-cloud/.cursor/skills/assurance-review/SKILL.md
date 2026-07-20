@@ -1,6 +1,9 @@
 ---
 name: assurance-review
-description: Use only for independent DevOps and Cloud assurance after primary work exists: findings, waivers, evidence sufficiency, cross-section consistency, and completion gates.
+description: >-
+  Use only for independent DevOps and Cloud assurance after primary work
+  exists: findings, waivers, evidence sufficiency, cross-section consistency,
+  and completion gates.
 ---
 
 # Assurance and Independent Review

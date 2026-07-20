@@ -12,3 +12,5 @@ Use this skill for section 05 static reliability and observability design only. 
 3. Use OpenTelemetry, Prometheus, Alertmanager, Grafana, Loki, Tempo, Jaeger, Elastic Stack, OpenSearch, cloud-native monitoring services, and optional disabled incident/on-call integrations only when justified by requirements.
 4. Verify SLOs are measurable, alerts actionable and owned, runbooks safe and escalating, and postmortems evidence-based/blameless/action-oriented.
 5. Return static evidence, risks, approvals needed, and checks not run.
+
+Reference: `docs/sre-observability-operations-workflows.md`.

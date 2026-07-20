@@ -1,10 +1,24 @@
 # DevOps and Cloud for GitHub Copilot
 
-This package uses stable GitHub Copilot customization surfaces: repository custom instructions, scoped `.instructions.md`, custom agents in `.github/agents/`, and Agent Skills in `.github/skills/`.
+This package is a repository-native DevOps and Cloud department for GitHub Copilot surfaces that support repository instructions, coding-agent custom agents, and Agent Skills. It covers DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance while documenting stable surface limitations.
 
-It is static and safe by default. It does not configure MCP, hooks, prompt files, cloud agent automation, external integrations, terminal automation, deployment, signing, publication, billing changes, or runtime bindings. Prompt files are intentionally absent because Copilot prompt files are public preview.
+The package is static and safe by default. The GitHub Copilot implementation is a repository-native GitHub Copilot package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
 
-## Sections Covered
+## Possible Uses
+
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
+
+## Department Coverage
 
 1. Leadership and Architecture.
 2. Cloud Foundation and Infrastructure.
@@ -19,15 +33,32 @@ It is static and safe by default. It does not configure MCP, hooks, prompt files
 
 ## Native Assets
 
-- `.github/copilot-instructions.md`: concise repository guidance.
-- `.github/instructions/devops-cloud-leadership-architecture.instructions.md`: scoped routing and safety guidance.
-- `.github/agents/*.agent.md`: twenty custom agents with YAML frontmatter and read/search tools.
-- `.github/skills/*/SKILL.md`: ten on-demand section Skills.
+- `.github/copilot-instructions.md`: repository-wide Copilot instructions.
+- `.github/instructions/*.instructions.md`: scoped custom instruction files.
+- `.github/agents/*.agent.md`: twenty Copilot coding-agent custom agents.
+- `.github/skills/*/SKILL.md`: ten Agent Skills for Copilot surfaces that support skills.
+- No prompt files, MCP, hooks, actions workflows, secrets, or external integrations are included.
 
-## Role Model
+## Installation and Setup
 
-The complete twenty-role DevOps and Cloud model is represented through custom agents and Skills. Each role has exclusive ownership and static review or planning boundaries. Assurance is independent, non-implementing, and cannot self-review.
+Place `github-copilot/devops-cloud/` contents at the root of the GitHub repository. Repository custom instructions are used by supported Copilot experiences; coding-agent custom agents and Skills apply only on Copilot surfaces and plans where GitHub makes them available.
 
-## Safety Model
+VS Code, Visual Studio, JetBrains, Eclipse, Xcode, GitHub.com coding agent, and Copilot CLI do not all expose the same customization features. Do not assume a file is active on a surface unless that surface documents support for it.
 
-All outputs are design, review, planning, or documentation unless a future user explicitly authorizes separate action. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, irreversible, signing, spending, or publication decisions. Static inspection must not be described as runtime validation.
+## Usage
+
+Ask Copilot Chat or coding agent for a section, for example "use the DevOps and Cloud CI/CD agent to audit this workflow." Use instructions for broad guidance, custom agents for role-specific coding-agent tasks, and Skills for section procedures where supported.
+
+Request Assurance after primary output exists. Static Copilot output does not prove that checks, deployments, rollbacks, scans, or cloud operations ran.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove this package's `.github/copilot-instructions.md`, `.github/instructions/`, `.github/agents/`, and `.github/skills/` entries from the target repository. Preserve unrelated GitHub workflow and Copilot files.

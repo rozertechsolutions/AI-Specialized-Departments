@@ -1,10 +1,24 @@
 # DevOps and Cloud for Gemini CLI
 
-This package uses stable Gemini CLI project context, local subagents in `.gemini/agents/`, workspace Agent Skills in `.gemini/skills/`, and static workflow references in `docs/`.
+This package is a repository-native DevOps and Cloud department for Gemini CLI. It uses `GEMINI.md`, Gemini subagents, Agent Skills, and referenced workflows to cover DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance in static read-only form.
 
-It is static and safe by default. It does not configure MCP, hooks, extensions, browser agents, remote subagents, shell automation, deployment, signing, publication, billing changes, or runtime bindings. Repository files are guidance, not permission grants.
+The package is static and safe by default. The Gemini CLI implementation is a repository-native Gemini CLI package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
 
-## Sections Covered
+## Possible Uses
+
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
+
+## Department Coverage
 
 1. Leadership and Architecture.
 2. Cloud Foundation and Infrastructure.
@@ -19,15 +33,32 @@ It is static and safe by default. It does not configure MCP, hooks, extensions, 
 
 ## Native Assets
 
-- `GEMINI.md`: concise persistent routing and safety.
-- `.gemini/agents/*.md`: twenty local subagent profiles using YAML frontmatter and read-only tools.
-- `.gemini/skills/*/SKILL.md`: ten on-demand section Skills.
-- `docs/*.md`: static workflow references for detailed procedures.
+- `GEMINI.md`: project instructions for Gemini CLI.
+- `.gemini/agents/*.md`: twenty Markdown subagent profiles with YAML frontmatter.
+- `.gemini/skills/*/SKILL.md`: ten Agent Skills.
+- `docs/*.md`: referenced workflow support documents.
+- No shell, mutation, MCP, connector, deployment, or runtime automation files are included.
 
-## Role Model
+## Installation and Setup
 
-The complete twenty-role DevOps and Cloud model is represented through Gemini CLI local subagents. Each profile has a unique slug, read-only tool list, exclusive ownership, stop conditions, failure behavior, human-review boundaries, and prohibited actions. Gemini CLI subagent recursion protection prevents nested subagent cycles.
+Place `gemini-cli/devops-cloud/` contents at the repository root opened by Gemini CLI. Keep `.gemini/`, `GEMINI.md`, `docs/`, and this README together so subagents and Skills can be discovered by the CLI version that supports them.
 
-## Safety Model
+This package does not install Gemini CLI, models, authentication, dependencies, or external tools.
 
-All outputs are design, review, planning, or documentation unless a future user explicitly authorizes separate action. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, irreversible, signing, spending, or publication decisions. Static inspection must not be described as runtime validation.
+## Usage
+
+Use Gemini CLI with a section request or select a subagent when appropriate, for example "ask the observability engineer to design alerts." Load the matching Skill for procedures and use `docs/` only as referenced support material.
+
+Ask Assurance after primary work exists. Output remains static and advisory unless a human authorizes a separate command or change outside this package.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove `GEMINI.md`, `.gemini/`, and `docs/` files belonging to this package from the target repository. Leave unrelated Gemini CLI files intact.
