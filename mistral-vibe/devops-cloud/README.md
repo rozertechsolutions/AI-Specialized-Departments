@@ -1,31 +1,65 @@
 # DevOps and Cloud for Mistral Vibe
 
-This package provides a static, project-scoped Mistral Vibe setup for the DevOps and Cloud specialization. It uses current Vibe custom agents, prompt references, Skills, and local documentation only. It does not execute tools, connect to services, run infrastructure workflows, deploy, scan, publish, sign, or validate live runtime state.
+This package is a repository-native DevOps and Cloud department for Mistral Vibe. It uses Vibe TOML configuration, selectable agents, prompt files, Agent Skills, and static workflow references to cover DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance.
 
-## Package Contents
-- `.vibe/config.toml`: selects `devops-cloud-orchestrator` as the default user-facing agent.
-- `.vibe/agents/*.toml`: one selectable orchestrator plus nineteen delegation-only specialist agents. Each profile enables only read-oriented tools and explicitly disables shell and mutation tools.
-- `.vibe/prompts/*.md`: detailed role instructions for the complete twenty-role DevOps and Cloud model.
-- `.vibe/skills/*/SKILL.md`: reusable procedures for the ten department sections.
-- `docs/*.md`: static workflow references for architecture, cloud foundation, delivery, platform engineering, reliability, resilience, performance, DevSecOps, FinOps, sustainability, and assurance.
-- `AGENTS.md`: concise project routing, safety, and completion instructions.
+The package is static and safe by default. The Mistral Vibe implementation is a repository-native Mistral Vibe package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
+
+## Possible Uses
+
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
 
 ## Department Coverage
-1. Leadership and Architecture: intake, routing, architecture decisions, standards, target-state design, and Well-Architected review.
-2. Cloud Foundation and Infrastructure: AWS, Azure, Google Cloud, hybrid and multicloud foundations, IaC, networking, managed services, lifecycle, drift, and decommissioning.
-3. CI/CD and Release Engineering: Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, promotion, release evidence, rollback, and deployment strategy design.
-4. Containers and Platform Engineering: Docker, OCI, Docker Compose, Kubernetes, Helm, Kustomize, registries, internal developer platforms, catalogs, portals, and golden paths.
-5. SRE, Observability, and Operations: OpenTelemetry, Prometheus, Grafana, Loki, Tempo, Jaeger, Elastic, OpenSearch, SLIs, SLOs, error budgets, alerts, incidents, postmortems, and toil reduction.
-6. Resilience and Disaster Recovery: backup, restore, RTO, RPO, high availability, failover, failback, disaster recovery, and controlled chaos-experiment design.
-7. Performance, Capacity, and Efficiency: load, stress, endurance, capacity, autoscaling, performance diagnosis, and technical resource efficiency.
-8. DevSecOps: secure delivery, IAM and secrets controls, SAST, DAST, SCA, IaC/container/Kubernetes scanning design, policy as code, SBOM, signing, provenance, and supply-chain controls.
-9. FinOps and Sustainability: allocation, budgets, forecasts, anomalies, unit economics, rightsizing, commitments, utilization, and measurable sustainability.
-10. Assurance and Independent Review: independent review, evidence checks, cross-section consistency, waiver scrutiny, and completion gating.
 
-## Safety Model
-The Vibe `safety` labels are descriptive. Read-only behavior is enforced through the agent tool lists and per-tool permission denials. Shell execution, write tools, search/replace mutation, MCP, connectors, hooks, plugins, external integrations, schedules, deployments, and production actions are absent or disabled by default.
+1. Leadership and Architecture.
+2. Cloud Foundation and Infrastructure.
+3. CI/CD and Release Engineering.
+4. Containers and Platform Engineering.
+5. SRE, Observability, and Operations.
+6. Resilience and Disaster Recovery.
+7. Performance, Capacity, and Efficiency.
+8. DevSecOps.
+9. FinOps and Sustainability.
+10. Assurance and Independent Review.
 
-Human review is required before privileged, destructive, costly, externally visible, compliance-sensitive, irreversible, production-affecting, or security-sensitive action. Static guidance must not be presented as proof that a live platform, pipeline, cluster, cloud account, backup, failover, scanner, or deployment succeeded.
+## Native Assets
 
-## Use
-Select the default `devops-cloud-orchestrator` for intake and routing. Delegate to specialist agents only for their owned sections and use the matching Skills or workflow docs for detailed procedures. Use `devops-and-cloud-assurance-reviewer` only for independent review after implementation or planning work is complete.
+- `AGENTS.md`: package guidance and safety boundaries.
+- `.vibe/config.toml`: Vibe project configuration and default user-facing agent selection.
+- `.vibe/agents/*.toml`: one orchestrator plus specialist agent configurations.
+- `.vibe/prompts/*.md`: twenty role prompts referenced by agent configs.
+- `.vibe/skills/*/SKILL.md`: ten Agent Skills.
+- `docs/*.md`: referenced static workflow support documents.
+
+## Installation and Setup
+
+Place `mistral-vibe/devops-cloud/` contents at the repository root used by Mistral Vibe. Keep `.vibe/config.toml`, `.vibe/agents/`, `.vibe/prompts/`, `.vibe/skills/`, `AGENTS.md`, and `docs/` together so prompt references resolve.
+
+This package does not install Vibe, configure credentials, enable MCP, connect providers, or start external integrations.
+
+## Usage
+
+Select the DevOps Cloud orchestrator or a specialist agent in Vibe, then ask for a section, such as "review this Argo CD promotion model." Agents provide role behavior, Skills provide procedures, and docs provide static references.
+
+Use Assurance only after primary work exists. Treat `safety` metadata as documentation, not proof of enforcement by itself.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove `.vibe/`, `AGENTS.md`, and `docs/` files belonging to this package from the target repository, or select another Vibe agent/config outside this package.

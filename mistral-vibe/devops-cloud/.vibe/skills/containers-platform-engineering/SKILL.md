@@ -15,3 +15,5 @@ Use this skill for section 04 static container, orchestration, and platform-prod
 
 ## Stop criteria
 Stop on requested execution, installation, authentication, embedded secrets, real endpoints, unsafe self-service, unsupported platform behavior, or missing human approval.
+
+Reference: `docs/containers-platform-engineering.md`.
