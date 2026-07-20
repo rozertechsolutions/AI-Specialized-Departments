@@ -16,5 +16,7 @@ Use this skill for section 02 foundation and infrastructure design only. Produce
 ## Stop criteria
 Stop on missing requirements, requested cloud authentication, plan/apply/provisioning execution, real account identifiers, private endpoints, secret exposure, or unsupported platform mechanisms.
 
+Reference: `docs/cloud-foundation-infrastructure-workflows.md`.
+
 ## Evidence
 Return static requirements, assumptions, design decisions, tradeoffs, risks, owners, handoffs, human approvals needed, and checks not run.
