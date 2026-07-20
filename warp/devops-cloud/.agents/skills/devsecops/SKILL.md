@@ -15,5 +15,7 @@ Use this skill for section 08 static DevSecOps design and review. Do not run sca
 ## Stop criteria
 Stop on requested scanner execution, signing, policy enforcement, secret access, production action, unsupported platform behavior, or missing human approval for exceptions.
 
+Reference: `docs/devsecops-workflows.md`.
+
 ## Evidence
 Return static control design, findings, assumptions, owners, exception needs, Cybersecurity handoffs for out-of-scope security operations, Assurance handoffs for independent review, and checks not run.
