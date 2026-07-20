@@ -1,43 +1,61 @@
 # Mistral Vibe - Software Development
 
-This directory implements the Software Development specialization for Mistral Vibe using native project content only. It is language-, framework-, database-, provider-, model-, and vendor-agnostic, and it must follow the repository's existing stack and conventions.
+The Software Development department is a human-reviewed Mistral Vibe specialization for requirements, planning, architecture, implementation, validation, independent code review, engineering risk review, documentation, and release readiness. This package uses Vibe project guidance, config, agents, prompts, Skills, and workflow references while keeping provider, model, endpoint, Bash, web, MCP, and credential configuration out of scope. It is safe by default: select the Lead explicitly, keep specialist delegation bounded, and require human approval for sensitive actions.
 
-## Native content
+## Department Overview
 
-- `AGENTS.md` contains repository-scoped department instructions.
-- `.vibe/config.toml` names `software-development-lead` as the intended default agent.
-- `.vibe/agents/software-development-lead.toml` is the user-facing coordinator with read/search plus the native `task` delegation tool.
-- `.vibe/agents/*.toml` defines seven specialist subagents. Only `implementation-and-maintenance-engineer` has edit authority through `write_file` and `search_replace`; every other specialist is read-only.
-- `.vibe/prompts/*.md` contains role prompts that require specialists to return evidence to the Lead.
-- `.vibe/skills/*/SKILL.md` covers fourteen reusable capability areas.
-- `docs/workflows/*.md` contains eleven differentiated workflow references.
+Use this department for stack-agnostic software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Web Development and Mobile Development remain separate. The package does not select a language, framework, database, provider, model, endpoint, or account.
 
-## Safe selection requirement
+## Possible Uses
 
-For interactive use, select the `software-development-lead` agent before starting Software Development work. For programmatic use, explicitly select `software-development-lead` in the caller. Do not rely on an implicit default, ambient automation, or auto-approval setting because Mistral Vibe host behavior may bypass the package's intended safe selection path.
+- Requirements analysis, acceptance criteria, constraints, risks, and planning.
+- Feature work, bug investigation, maintenance, and controlled refactoring.
+- Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, compatibility updates, and release-readiness assessment.
 
-The Lead is the only agent with `task`; specialists cannot delegate or aggregate final completion. The Lead can route bounded work to specialists, collect evidence, require independent review after implementation, and stop for human approval.
+## Included Components
 
-## Safety limits
+- `AGENTS.md`: repository-scoped department instructions for Vibe.
+- `.vibe/config.toml`: project-local config naming `software-development-lead` as the intended default agent.
+- `.vibe/agents/software-development-lead.toml`: native Lead agent with read/search plus bounded `task` delegation.
+- `.vibe/agents/*.toml`: seven native specialist agents; only implementation has write tools.
+- `.vibe/prompts/*.md`: native role prompts paired with the agent definitions.
+- `.vibe/skills/*/SKILL.md`: native Agent Skills packages.
+- `docs/workflows/*.md`: auxiliary workflow references.
 
-`safety = "safe"` is metadata, not an enforcement mechanism. Safety is enforced here through explicit tool allowlists and role instructions. The package contains no Bash grant, web tool, MCP configuration, hooks, executable launcher, model pin, provider pin, endpoint, credential, account identifier, deployment automation, publication automation, signing automation, release automation, or Git mutation authority.
+## Prerequisites
 
-Human approval is mandatory before destructive, sensitive, external, architectural, dependency, permission, trust-boundary, migration, or irreversible actions. Release, deployment, publication, signing, notarization, submission, and Git mutation remain human-controlled and outside this package.
+You need Mistral Vibe CLI or VS Code extension support for project config, agents, prompts, and Skills. Account, plan, model, provider, and authentication setup are external to this package. Human approval is expected before edits, shell/process execution, external access, dependency changes, Git mutation, deployment, publication, signing, release, or destructive actions.
 
-## Department responsibilities
+## Installation or Setup
 
-1. Software Development Lead: scope, routing, approvals, dependency control, separation of duties, and final evidence aggregation.
-2. Requirements and Planning Specialist: requirements, acceptance criteria, constraints, assumptions, exclusions, risks, and implementation planning.
-3. Software Architect: boundaries, contracts, decisions, compatibility, migrations, and trade-offs.
-4. Implementation and Maintenance Engineer: approved implementation, fixes, refactors, maintenance, and implementation evidence.
-5. Test and Quality Engineer: validation strategy, regression coverage, edge cases, acceptance evidence, and untested areas.
-6. Code Quality Reviewer: independent correctness, maintainability, architecture conformance, complexity, duplication, readability, and compatibility review.
-7. Engineering Risk Reviewer: independent software security, dependency, supply-chain, performance, concurrency, reliability, data-integrity, and operational-risk review.
-8. Documentation and Release Readiness Specialist: technical documentation, compatibility notes, migrations, versioning implications, readiness evidence, and unresolved limitations.
+1. Copy the contents of `mistral-vibe/software-development/` into the target repository root so `AGENTS.md`, `.vibe/`, and `docs/` land at the root.
+2. Merge with existing `.vibe/config.toml`, `.vibe/agents/`, `.vibe/prompts/`, `.vibe/skills/`, and `docs/workflows/` content.
+3. In interactive use, select `software-development-lead` before starting Software Development work.
+4. In programmatic use, explicitly select `software-development-lead`; do not rely on ambient defaults or auto-approval behavior.
+5. Do not add Bash, web, MCP, connectors, providers, models, endpoints, credentials, hooks, installers, or launchers.
 
-## Intentionally omitted
+## Usage
 
-- model, provider, endpoint, account, or credential configuration
-- Bash, shell, process, web, MCP, connector, deployment, publication, signing, release, or Git tools
-- hooks, generated runtime code, installers, launchers, wrappers, or validators
-- platform-loading claims beyond the static file structure represented here
+Start with the Lead agent. The Lead can call specialists through `task`, collect evidence, require independent review after implementation, and stop before release actions.
+
+Example requests:
+
+- "Use the Lead to plan this dependency update and identify approval gates."
+- "Route this proposed API change to the architect and risk reviewer."
+- "Implement only the approved fix, then request code-quality review."
+
+## Operating Model
+
+The Lead owns scope, routing, approvals, dependency control, separation of duties, and final evidence aggregation. Specialists return evidence to the Lead and cannot delegate further. Implementation, code-quality review, engineering-risk review, and documentation/release readiness remain distinct phases.
+
+## Safety and Human Review
+
+Use least privilege and protect secrets. `safety = "safe"` metadata is not an enforcement mechanism; tool allowlists and human review carry the safety boundary. Do not allow automatic Git mutation, deployment, publication, signing, release, external messages, spending, submissions, destructive actions, credential use, or authentication without explicit task-specific approval.
+
+## Platform Limitations
+
+Vibe behavior can vary by CLI, extension, account, and host policy. Programmatic approval limits are explicit: callers must select the safe Lead and enforce approvals. This package intentionally omits Bash, web, MCP, connectors, provider/model pins, endpoints, credentials, hooks, installers, launchers, deployment automation, publication automation, signing automation, release automation, and Git tools.
+
+## Updating and Removal
+
+To update, merge `AGENTS.md`, `.vibe/`, and `docs/workflows/` changes while preserving local customizations. To remove, delete only this department's copied Vibe files and empty directories created solely for them. Integrations and credentials are not stored here.

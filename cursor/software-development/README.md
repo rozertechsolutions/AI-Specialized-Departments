@@ -1,18 +1,59 @@
 # Cursor - Software Development
 
-This directory configures Cursor for the Software Development specialization.
+The Software Development department is a human-reviewed Cursor specialization for requirements, planning, architecture, implementation, validation, independent code review, engineering risk review, documentation, and release readiness. This package uses Cursor project instructions, rules, Skills, and auxiliary workflow references without inventing unsupported project-agent files. It is safe by default: Cursor remains under human approval and no file here enables background automation, hooks, MCP, credentials, or external actions.
 
-## Native Surfaces
+## Department Overview
 
-- `AGENTS.md` makes the primary Cursor Agent the Software Development Lead.
-- `.cursor/rules/` contains Cursor project rules.
-- `.cursor/skills/` contains static reusable Skills.
-- `docs/workflows/` contains auxiliary workflow references, not a guaranteed native workflow engine.
+Use this department for stack-agnostic software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Browser-specific frontend work belongs in Web Development; mobile-platform work belongs in Mobile Development. The package does not select a framework, provider, database, model, or endpoint.
 
-## Subagent Omission
+## Possible Uses
 
-This package intentionally omits Cursor project subagents because the exact stable project subagent path and frontmatter cannot be established from the current target files. Do not simulate them, create legacy `.cursorrules`, or add background-agent automation.
+- Requirements analysis, acceptance criteria, and implementation planning.
+- New feature development, bug investigation, correction, maintenance, and controlled refactoring.
+- Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, and release-readiness review.
 
-## Safety Defaults
+## Included Components
 
-No hooks, MCP configuration, shell helpers, automatic approvals, background-agent configuration, credentials, endpoints, deployment automation, publication automation, signing automation, release automation, or automatic authentication are included. Human approval is required for sensitive actions, edits, command execution, external access, Git mutation, deployment, publication, signing, submission, and release.
+- `AGENTS.md`: project guidance for the primary Cursor Agent/CLI/cloud-agent surface where AGENTS.md is supported.
+- `.cursor/rules/*.mdc`: native Cursor project rules with MDC frontmatter.
+- `.cursor/skills/*/SKILL.md`: native Agent Skills packages when Skills are supported by the installed Cursor surface.
+- `docs/workflows/*.md`: auxiliary workflow references; not a guaranteed native workflow engine.
+
+There is intentionally no `.cursor/agents/` directory because the current official Cursor documentation verified for this repair establishes rules and Skills, while project subagent file support could not be confirmed as a stable repository mechanism.
+
+## Prerequisites
+
+You need Cursor Desktop, Cursor CLI, Cursor web/cloud-agent access, or another Cursor surface that supports the selected components. Rules and Skills depend on product version, account plan, workspace settings, and managed policy. Human approval is expected before edits, terminal commands, external actions, Git mutation, dependency changes, deployment, publication, signing, release, or destructive work.
+
+## Installation or Setup
+
+1. Copy the contents of `cursor/software-development/` into the target repository root so `AGENTS.md`, `.cursor/`, and `docs/` land at the root.
+2. Merge with any existing `AGENTS.md`, `.cursor/rules/`, `.cursor/skills/`, and `docs/workflows/` content.
+3. Open the target repository in Cursor and confirm the relevant rules and Skills are visible in the Cursor customization UI.
+4. Do not create legacy `.cursorrules`, hooks, MCP config, background-agent automation, credentials, endpoints, or shell helpers for this package.
+
+## Usage
+
+Use the primary Cursor Agent as the Software Development Lead. Ask it to plan, route specialist responsibilities through rules/Skills/workflow references, and collect independent review evidence before completion.
+
+Example requests:
+
+- "Plan this API change and identify compatibility, migration, and validation risks."
+- "Investigate this bug and propose a smallest safe fix before editing."
+- "Review this refactor for code quality and reliability without changing files."
+
+## Operating Model
+
+The Lead owns intake, scope, routing, approvals, dependency control, and final evidence aggregation. Specialist responsibilities are represented through rules, Skills, and requested review stages. Implementation must not certify itself; code-quality and engineering-risk review remain independent.
+
+## Safety and Human Review
+
+Use least privilege and keep secrets out of prompts and files. Cursor instructions cannot enforce every IDE, CLI, or cloud action, so human approval and workspace policy remain authoritative. Do not allow automatic Git mutation, deployment, publication, signing, release, spending, submissions, destructive operations, external authentication, or credential use without explicit task-specific approval.
+
+## Platform Limitations
+
+Cursor feature availability varies across Desktop, CLI, web/cloud agents, account plan, and managed settings. Skills support may require a current Cursor version. This package intentionally omits unsupported project subagents, legacy `.cursorrules`, hooks, MCP config, automatic approvals, background automation, provider/model pins, endpoints, and credentials.
+
+## Updating and Removal
+
+To update, merge changes in `AGENTS.md`, `.cursor/rules/`, `.cursor/skills/`, and `docs/workflows/` while preserving local customizations. To remove, delete only this department's copied Cursor files and empty directories created solely for it. No integrations or credentials are stored here.

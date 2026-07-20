@@ -1,17 +1,58 @@
 # Codex - Software Development
 
-This directory configures Codex for the Software Development specialization.
+The Software Development department is a human-reviewed Codex specialization for requirements, planning, architecture, implementation, validation, independent code review, engineering risk review, documentation, and release readiness. This package uses Codex-native `AGENTS.md`, project `config.toml`, subagents, Skills, and auxiliary workflow references. It is safe by default: the primary Codex session is the Lead, delegation depth is bounded, network is disabled in workspace-write sandboxing, and sensitive actions require approval.
 
-## Native Surfaces
+## Department Overview
 
-- `AGENTS.md` makes the primary Codex session the Software Development Lead.
-- `.codex/config.toml` is project-scoped, model-neutral, endpoint-neutral, approval-gated, and network-disabled with `[agents].max_depth = 1`.
-- `.codex/agents/` contains seven specialist agents; there is intentionally no Lead agent.
-- `.agents/skills/` contains static reusable Skills.
-- `docs/workflows/` contains auxiliary workflow references, not an auto-loaded workflow engine.
+Use this department for general software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Web Development and Mobile Development remain separate for browser-specific and mobile-platform-specific work. The package is stack-, database-, provider-, model-, and vendor-neutral.
 
-## Safety Model
+## Possible Uses
 
-The primary session plans, routes, requests approvals, aggregates evidence, and reports completion. Specialists return bounded evidence to the primary session, cannot recursively delegate, cannot expand scope, and cannot claim final completion. Planning, architecture, testing, code-quality, engineering-risk, and release-readiness specialists are read-only. The implementation specialist is limited to approval-gated workspace edits and has no network, unrestricted shell, external service, Git mutation, deployment, publication, signing, or release authority.
+- Requirements decomposition, acceptance criteria, and implementation planning.
+- New feature development, bug fixes, maintenance, and controlled refactoring.
+- Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, and release-readiness review.
 
-No hooks, MCP entries, scripts, executable helpers, model/provider pins, endpoint pins, credentials, or user-global paths are included.
+## Included Components
+
+- `AGENTS.md`: native Codex project instructions; auto-discovered by Codex when in scope.
+- `.codex/config.toml`: native project config with `approval_policy = "on-request"`, `sandbox_mode = "workspace-write"`, network disabled for workspace-write, and `[agents].max_depth = 1`.
+- `.codex/agents/*.toml`: seven native specialist agents; there is intentionally no Lead agent.
+- `.agents/skills/*/SKILL.md`: native project Skills following the Agent Skills format.
+- `docs/workflows/*.md`: auxiliary references; not a Codex hook or workflow engine.
+
+## Prerequisites
+
+You need Codex CLI, IDE extension, or app support for repository instructions, project config, project agents, and Skills. Managed settings or surface-specific restrictions may override repository config. You need authorized repository access and explicit human approval for edits, commands, Git mutation, dependency changes, external services, deployment, publication, signing, release, or destructive work.
+
+## Installation or Setup
+
+1. Copy the contents of `codex/software-development/` into the target repository root so `AGENTS.md`, `.codex/`, `.agents/`, and `docs/` land at the root.
+2. Merge with any existing target `AGENTS.md`, `.codex/config.toml`, `.codex/agents/`, `.agents/skills/`, or `docs/workflows/` files.
+3. Open the target repository with Codex from the repository root or an in-scope subdirectory.
+4. Do not add hooks, MCP servers, provider/model pins, endpoints, credentials, or user-global paths as part of this package.
+
+## Usage
+
+Begin with the primary Codex session as the Lead. Ask it to clarify scope, route bounded work to specialists when useful, and collect evidence before completion.
+
+Example requests:
+
+- "Plan this feature and identify architecture, risk, and validation gates before edits."
+- "Use the code-quality and engineering-risk reviewers on this proposed refactor."
+- "Implement the approved fix only, then report tests and checks not run."
+
+## Operating Model
+
+The Lead owns intake, scope, routing, approvals, dependency control, and final evidence aggregation. Specialists return evidence and do not recursively delegate. Implementation and independent review are separate. Risk review is required for security, dependency, performance, concurrency, reliability, data integrity, architecture, public-contract, or operational-risk changes.
+
+## Safety and Human Review
+
+Use least privilege and keep secrets out of context. Codex config helps constrain behavior, but user approval, sandboxing, and managed policy remain authoritative. Do not allow automatic Git mutation, deployment, publication, signing, release, external messages, spending, destructive actions, credentials use, or authentication without explicit task-specific approval.
+
+## Platform Limitations
+
+Codex discovery depends on the active Codex surface and project root. `docs/workflows/` is auxiliary, not auto-executed. This package intentionally contains no hooks, MCP entries, executable helpers, provider/model pins, endpoint pins, credentials, release automation, or Lead subagent.
+
+## Updating and Removal
+
+To update, merge the copied `AGENTS.md`, `.codex/`, `.agents/skills/`, and `docs/workflows/` content while preserving target customizations. To remove, delete only this department's copied Codex files and any empty directories created solely for it. Integrations and credentials are not stored here.

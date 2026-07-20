@@ -1,17 +1,59 @@
 # Kilo Code - Software Development
 
-This directory configures Kilo Code for the Software Development specialization.
+The Software Development department is a human-reviewed Kilo Code specialization for requirements, planning, architecture, implementation, validation, independent code review, engineering risk review, documentation, and release readiness. This package uses Kilo Code native AGENTS.md guidance, project JSONC config, rules, subagents, Skills, and prompt commands. It is safe by default: broad actions ask, Bash and web fetch are denied, edits are approval-gated, and no hooks, MCP, provider endpoints, or credentials are included.
 
-## Native Surfaces
+## Department Overview
 
-- `AGENTS.md` makes the primary Kilo Code agent the Software Development Lead.
-- `kilo.jsonc` keeps broad fallback ask, denies Bash and web fetch, and makes edits approval-gated.
-- `.kilo/agents/` contains seven specialist subagents; there is intentionally no Lead subagent.
-- `.kilo/commands/*.md` contains native prompt-only workflows migrated from the former auxiliary `docs/workflows/` directory.
-- `.kilo/skills/` contains static reusable Skills.
+Use this department for stack-agnostic software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Web Development and Mobile Development remain separate. The package does not select a language, framework, database, provider, model, or endpoint.
 
-## Safety Model
+## Possible Uses
 
-Specialists return bounded evidence to the primary agent, cannot recursively delegate, cannot expand scope, and cannot claim final completion. Reviewers and planners deny edits, Bash, and web. The implementation specialist may request edits but may not use Bash, web, MCP, Git mutation, deployment, publication, signing, or release actions.
+- Requirements analysis, acceptance criteria, constraints, risks, and planning.
+- New feature development, bug investigation, maintenance, and controlled refactoring.
+- Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, compatibility updates, and release-readiness review.
 
-No schema URI is declared because no exact official schema URI was verified in this target. Runtime loading and command execution have not been performed from this repository package.
+## Included Components
+
+- `AGENTS.md`: native project instructions for the primary Kilo Code Lead.
+- `kilo.jsonc`: native JSONC project config with fallback ask, Bash deny, web fetch deny, and edit ask.
+- `.kilo/rules/*.md`: native project rules referenced by `kilo.jsonc`.
+- `.kilo/agents/*.md`: seven native specialist agents; there is intentionally no Lead subagent.
+- `.kilo/skills/*/SKILL.md`: native Agent Skills packages.
+- `.kilo/commands/*.md`: native prompt-only workflow commands.
+
+## Prerequisites
+
+You need Kilo Code in a supported IDE, CLI, or cloud surface with project rules/config, agents, commands, and Skills support. Parent/user/workspace approval settings may override or add restrictions. Human approval is expected before edits, shell commands, external access, dependency changes, Git mutation, deployment, publication, signing, release, or destructive actions.
+
+## Installation or Setup
+
+1. Copy the contents of `kilo-code/software-development/` into the target repository root so `AGENTS.md`, `kilo.jsonc`, and `.kilo/` land at the root.
+2. Merge with existing target `AGENTS.md`, `kilo.jsonc`, `.kilo/rules/`, `.kilo/agents/`, `.kilo/skills/`, and `.kilo/commands/`.
+3. Open the target repository in Kilo Code and confirm the project rules, agents, Skills, and commands are discovered.
+4. Do not add legacy `.kilocodemodes`, hooks, MCP config, providers, model pins, endpoints, credentials, shell helpers, or auto-approval settings.
+
+## Usage
+
+Use the primary Kilo Code session as the Software Development Lead. Invoke native commands or specialist agents only for bounded responsibilities and keep final evidence aggregation in the Lead.
+
+Example requests:
+
+- "Use the requirements specialist to plan this feature before any edits."
+- "Run the security-remediation command as a planning workflow; do not change files."
+- "Have implementation make the approved fix, then request independent code-quality review."
+
+## Operating Model
+
+The Lead owns intake, scope, routing, approvals, dependency control, and final evidence aggregation. Specialists return evidence, cannot recursively delegate, and cannot claim final completion. Implementation must be independently reviewed, and risk review is required for security, dependencies, performance, concurrency, reliability, data integrity, architecture, public contracts, or operational risk.
+
+## Safety and Human Review
+
+Use least privilege and keep secrets out of context. `kilo.jsonc` is a project safety layer, not a replacement for human review or managed policy. Do not allow automatic Git mutation, deployment, publication, signing, release, external messages, spending, submissions, destructive actions, credentials use, or authentication without explicit task-specific approval.
+
+## Platform Limitations
+
+Kilo Code feature support varies by surface and version. No exact official schema URI is declared in `kilo.jsonc`. This package intentionally omits legacy `.kilocodemodes`, hooks, MCP, Bash/web grants, providers, model pins, endpoints, credentials, deployment automation, publication automation, signing automation, release automation, and a Lead subagent.
+
+## Updating and Removal
+
+To update, merge `AGENTS.md`, `kilo.jsonc`, and `.kilo/` changes while preserving local customizations. To remove, delete only this department's copied Kilo files and empty directories created solely for them. Integrations and credentials are not stored here.
