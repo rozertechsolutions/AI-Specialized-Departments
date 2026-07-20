@@ -5,7 +5,7 @@ approvalMode: plan
 tools:
   - read_file
   - grep_search
-  - list_files
+  - list_directory
 disallowedTools:
   - run_shell_command
 ---

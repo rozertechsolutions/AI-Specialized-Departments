@@ -2,6 +2,7 @@
   "instructions": [".kilo/rules/*.md"],
   "permission": {
     "*": "ask",
+    "task": "ask",
     "bash": "deny",
     "webfetch": "deny",
     "edit": "ask"

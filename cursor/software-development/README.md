@@ -5,13 +5,14 @@ This directory configures Cursor for the Software Development specialization.
 ## Native Surfaces
 
 - `AGENTS.md` makes the primary Cursor Agent the Software Development Lead.
+- `.cursor/agents/` contains the seven native Cursor project specialist subagents. There is no Lead subagent.
 - `.cursor/rules/` contains Cursor project rules.
 - `.cursor/skills/` contains static reusable Skills.
 - `docs/workflows/` contains auxiliary workflow references, not a guaranteed native workflow engine.
 
-## Subagent Omission
+## Project Subagents
 
-This package intentionally omits Cursor project subagents because the exact stable project subagent path and frontmatter cannot be established from the current target files. Do not simulate them, create legacy `.cursorrules`, or add background-agent automation.
+The primary Cursor Agent remains the Software Development Lead. It delegates to seven project subagents for requirements/planning, architecture, implementation/maintenance, test/quality, code-quality review, engineering-risk review, and documentation/release readiness. Only the implementation specialist is writable; the other six are read-only. Implementation must be followed by independent review before final evidence aggregation.
 
 ## Safety Defaults
 

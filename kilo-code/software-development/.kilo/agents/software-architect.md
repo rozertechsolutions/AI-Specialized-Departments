@@ -2,6 +2,7 @@
 description: Define boundaries, contracts, architecture decisions, compatibility, migration strategy, and technical trade-offs.
 mode: subagent
 permission:
+  task: deny
   edit: deny
   bash: deny
   webfetch: deny

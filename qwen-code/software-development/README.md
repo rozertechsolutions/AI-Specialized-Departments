@@ -16,7 +16,7 @@ Start and keep the parent Qwen Code session in `default` approval mode. A permis
 
 ## Tool policy
 
-Read-only specialists use `approvalMode: plan` and only `read_file`, `grep_search`, and `list_files`. The implementation specialist uses `approvalMode: default` and only `read_file`, `grep_search`, `write_file`, and `replace`. All specialists disallow `run_shell_command` and omit MCP, browser, network, shell, Git, deployment, publication, signing, release, and external tools.
+Read-only specialists use `approvalMode: plan` and only `read_file`, `grep_search`, and `list_directory`. The implementation specialist uses `approvalMode: default` and only `read_file`, `grep_search`, `write_file`, and `replace`. All specialists disallow `run_shell_command` and omit MCP, browser, network, shell, Git, deployment, publication, signing, release, and external tools.
 
 The package contains no hooks, deprecated TOML commands, scripts, provider/model/auth configuration, endpoints, credentials, environment values, MCP configuration, extensions, sandbox builders, deployment automation, publication automation, signing automation, release automation, or executable assets.
 

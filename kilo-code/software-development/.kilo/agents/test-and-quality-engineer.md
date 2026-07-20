@@ -2,6 +2,7 @@
 description: Define and evaluate applicable test strategy, regression coverage, edge cases, acceptance evidence, and explicitly untested areas.
 mode: subagent
 permission:
+  task: deny
   edit: deny
   bash: deny
   webfetch: deny

@@ -5,11 +5,11 @@ This directory implements the Software Development specialization for Warp using
 ## Native and manual-import content
 
 - `WARP.md`: project guidance for the primary Warp Agent when the workspace supports project guidance loading.
+- `.agents/skills/`: fourteen repository Skills automatically discoverable by Warp from the project.
 - `warp-drive/rules/`: source material for Warp Drive rules or manual import.
-- `warp-drive/skills/`: fourteen source Skills for manual import or supported Warp Drive surfaces.
 - `warp-drive/workflows/`: eleven differentiated workflow references for manual import or supported Warp Drive surfaces.
 
-Do not claim Warp Drive source files are automatically loaded in every repository. Use them only where the target Warp account/product surface explicitly supports them or import them manually.
+Do not claim workflow source files are automatically loaded in every repository. Use `warp-drive/workflows/` only where the target Warp account/product surface explicitly supports them or import them manually.
 
 ## Safety boundary
 

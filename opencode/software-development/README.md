@@ -5,14 +5,14 @@ This directory implements the Software Development specialization for OpenCode u
 ## Native content
 
 - `AGENTS.md` defines the primary Software Development Lead behavior.
-- `opencode.jsonc` sets explicit project permissions: broad fallback ask, Bash denied, web fetch denied, edits ask.
+- `opencode.jsonc` sets explicit project permissions: broad fallback ask, Task ask, Bash denied, web fetch denied, edits ask.
 - `.opencode/agents/` contains seven specialist subagents.
 - `.opencode/skills/` contains fourteen preserved capability Skills.
 - `.opencode/commands/` contains eleven prompt-only workflow commands.
 
 ## Permission rationale
 
-OpenCode tools may otherwise be broadly available, so this package uses explicit least-privilege permissions. Planners, architects, testers, reviewers, risk reviewers, and documentation/release specialists deny edit, Bash, and web. The implementation specialist may request edits only after the primary Lead has approved scope; it still denies Bash, web, Git, MCP, deployment, publication, signing, release, and external actions.
+OpenCode tools may otherwise be broadly available, so this package uses explicit least-privilege permissions. All specialists deny Task to prevent recursive delegation. Planners, architects, testers, reviewers, risk reviewers, and documentation/release specialists deny edit, Bash, and web. The implementation specialist may request edits only after the primary Lead has approved scope; it still denies Task, Bash, web, Git, MCP, deployment, publication, signing, release, and external actions.
 
 The project configuration contains no MCP server, provider pin, model pin, endpoint, credential, plugin, hook, global path, script, wrapper, launcher, deployment automation, publication automation, signing automation, release automation, or executable asset.
 

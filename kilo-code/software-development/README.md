@@ -12,6 +12,6 @@ This directory configures Kilo Code for the Software Development specialization.
 
 ## Safety Model
 
-Specialists return bounded evidence to the primary agent, cannot recursively delegate, cannot expand scope, and cannot claim final completion. Reviewers and planners deny edits, Bash, and web. The implementation specialist may request edits but may not use Bash, web, MCP, Git mutation, deployment, publication, signing, or release actions.
+Specialists return bounded evidence to the primary agent, explicitly deny Task to prevent recursive delegation, cannot expand scope, and cannot claim final completion. Reviewers and planners deny edits, Bash, and web. The implementation specialist may request edits but may not use Task, Bash, web, MCP, Git mutation, deployment, publication, signing, or release actions.
 
 No schema URI is declared because no exact official schema URI was verified in this target. Runtime loading and command execution have not been performed from this repository package.

@@ -2,6 +2,7 @@
 description: Own technical documentation, compatibility notes, migrations, versioning implications, release-readiness evidence, and unresolved limitations.
 mode: subagent
 permission:
+  task: deny
   edit: deny
   bash: deny
   webfetch: deny

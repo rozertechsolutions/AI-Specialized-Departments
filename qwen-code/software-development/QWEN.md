@@ -45,7 +45,7 @@ No role may implement and independently approve the same substantive change. Spe
 
 `.qwen/settings.json` sets project tool approval mode to `default` and contains no model provider, selected model, authentication data, environment value, MCP, hook, extension, endpoint, credential, sandbox builder, or permissive default.
 
-Read-only specialists use only `read_file`, `grep_search`, and `list_files` with `approvalMode: plan`. The implementation specialist uses `read_file`, `grep_search`, `write_file`, and `replace` with `approvalMode: default`. All specialists disallow `run_shell_command` and omit MCP, browser, network, shell, Git, deployment, publication, signing, release, and external tools.
+Read-only specialists use only `read_file`, `grep_search`, and `list_directory` with `approvalMode: plan`. The implementation specialist uses `read_file`, `grep_search`, `write_file`, and `replace` with `approvalMode: default`. All specialists disallow `run_shell_command` and omit MCP, browser, network, shell, Git, deployment, publication, signing, release, and external tools.
 
 ## Completion gates
 

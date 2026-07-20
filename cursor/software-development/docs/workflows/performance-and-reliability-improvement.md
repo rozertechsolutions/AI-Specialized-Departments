@@ -33,6 +33,6 @@ Improve performance or resilience with guardrails and evidence.
 
 ## Cursor Routing
 
-- The primary Cursor Agent remains Lead and routes work through responsibility phases rather than simulated subagents.
+- The primary Cursor Agent remains Lead and routes specialist work through native project subagents.
 - Use `.cursor/rules/` and `.cursor/skills/` as native guidance; treat this workflow file as auxiliary unless the environment natively loads it.
 - Request human approval before sensitive scope, architecture/dependency changes, edits, command execution, external access, destructive operations, Git actions, deployment, publication, signing, submission, or release.

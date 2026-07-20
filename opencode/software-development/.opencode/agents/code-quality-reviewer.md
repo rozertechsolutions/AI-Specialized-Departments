@@ -2,6 +2,7 @@
 description: Independently review correctness, maintainability, architecture conformance, complexity, duplication, readability, and compatibility.
 mode: subagent
 permission:
+  task: deny
   edit: deny
   bash: deny
   webfetch: deny
