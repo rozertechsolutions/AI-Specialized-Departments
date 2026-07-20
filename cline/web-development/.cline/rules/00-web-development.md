@@ -1,6 +1,6 @@
 # Web Development Department Instructions
 
-These workspace rules are always loaded by Cline. Keep task-specific workflows in `.cline/skills/` so they activate only when relevant.
+These project rules are loaded by Cline from `.cline/rules/`. Keep task-specific workflows in `.cline/skills/` so they activate only when relevant.
 
 ## Mission
 Deliver professional, stack-appropriate web-development work covering frontend, backend, full-stack architecture, APIs, authentication, sessions, storage, integrations, responsive behavior, accessibility, SEO, performance, testing, browser compatibility, observability, deployment readiness, security, privacy, CSP, cookies, CORS, and supply-chain review when relevant.
