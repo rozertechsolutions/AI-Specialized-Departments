@@ -12,3 +12,5 @@ Use this skill for section 06 static resilience and recovery design. Do not exec
 3. Use cloud-native backup and recovery services, Kubernetes backup patterns, database and storage recovery patterns, chaos engineering tools as design references only, and multi-region or multi-zone architectures only when justified by requirements.
 4. Confirm RTO/RPO rationale, restoration verification strategy, failback/data consistency risks, and human authorization for destructive exercises.
 5. Return static evidence, risks, gaps, approvals needed, and checks not run.
+
+Reference: `docs/resilience-disaster-recovery.md`.
