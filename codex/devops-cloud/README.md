@@ -1,10 +1,24 @@
 # DevOps and Cloud for Codex
 
-This package uses stable Codex repository customization surfaces: `AGENTS.md`, project `.codex/config.toml`, project custom agents in `.codex/agents/`, repo-scoped Skills in `.agents/skills/`, and static workflow references in `docs/`.
+This package is a repository-native DevOps and Cloud department for Codex. It uses `AGENTS.md`, project `.codex/config.toml`, project custom agents, Agent Skills, and referenced workflows to cover DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance with safe static defaults.
 
-It is static and safe by default. The project config keeps the sandbox read-only, keeps web search disabled, and does not configure hooks, MCP servers, plugins, connectors, shell automation, deployment, signing, publication, billing changes, or external runtime bindings.
+The package is static and safe by default. The Codex implementation is a repository-native Codex package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
 
-## Sections Covered
+## Possible Uses
+
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
+
+## Department Coverage
 
 1. Leadership and Architecture.
 2. Cloud Foundation and Infrastructure.
@@ -19,16 +33,32 @@ It is static and safe by default. The project config keeps the sandbox read-only
 
 ## Native Assets
 
-- `AGENTS.md`: concise persistent routing, safety, human-review, and completion guidance.
-- `.codex/config.toml`: least-privilege project defaults for future Codex sessions.
-- `.codex/agents/*.toml`: twenty read-only custom agent profiles with exclusive role ownership and stop conditions.
-- `.agents/skills/*/SKILL.md`: ten on-demand section Skills that hold detailed procedures without bloating persistent context.
-- `docs/*.md`: static workflow references for the Skills and specialist roles.
+- `AGENTS.md`: Codex project instructions for routing, safety, and completion.
+- `.codex/config.toml`: project-scoped Codex configuration with safe defaults.
+- `.codex/agents/*.toml`: twenty project custom agents.
+- `.agents/skills/*/SKILL.md`: ten Agent Skills.
+- `docs/*.md`: referenced static workflow documents, loaded only when the owning instructions or Skill direct Codex to read them.
 
-## Role Model
+## Installation and Setup
 
-The package preserves the complete twenty-role DevOps and Cloud model through Codex custom agents. `devops_cloud_orchestrator` owns intake and routing; section specialists own architecture, infrastructure, delivery, platform, reliability, resilience, performance, DevSecOps, FinOps, and sustainability work; `devops_and_cloud_assurance_reviewer` performs independent non-implementing review.
+Place `codex/devops-cloud/` contents at the repository root. Codex reads applicable `AGENTS.md` files and project `.codex/config.toml` only in trusted project contexts; user-level configuration remains separate.
 
-## Safety Model
+No dependency, MCP server, hook, connector, plugin, credential, or runtime binding is installed by this package.
 
-All work is design, review, planning, or documentation unless a future user explicitly authorizes a separate action. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, irreversible, signing, spending, or publication decisions. Static inspection must not be described as runtime validation.
+## Usage
+
+Start with the DevOps Cloud orchestrator custom agent or ask Codex for a section directly, for example "use DevSecOps for a static supply-chain review." Use Skills for detailed procedures and custom agents for bounded specialist review or planning.
+
+Use Assurance only after primary work exists. Outputs are advisory/static unless a human separately authorizes edits, commands, deployments, scans, or external actions.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove `AGENTS.md`, `.codex/`, `.agents/skills/`, and `docs/` entries belonging to this package from the target repository. Preserve unrelated Codex configuration.

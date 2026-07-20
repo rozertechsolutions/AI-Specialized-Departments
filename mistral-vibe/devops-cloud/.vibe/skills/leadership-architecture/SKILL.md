@@ -17,5 +17,7 @@ Use this skill only for section 01 leadership and architecture work. Keep the wo
 ## Stop criteria
 Stop on missing requirements, secret exposure, requested runtime execution, real cloud identifiers, unsupported platform mechanisms, duplicated ownership, circular delegation, or unresolved human approval.
 
+Reference: `docs/leadership-architecture-workflows.md`.
+
 ## Evidence
 Return only static evidence: assumptions, files inspected, decisions produced, risks, handoffs, approvals needed, and checks not run.

@@ -1,10 +1,24 @@
 # DevOps and Cloud for Cursor
 
-This package uses stable Cursor project customization surfaces: `AGENTS.md`, Project Rules in `.cursor/rules/`, Agent Skills in `.cursor/skills/`, and static workflow references in `docs/`.
+This package is a repository-native DevOps and Cloud department for Cursor. It uses `AGENTS.md`, Cursor Project Rules, Agent Skills, and static workflow references to cover DevOps, Cloud, Platform Engineering, SRE, resilience, performance, DevSecOps, FinOps, sustainability, and independent assurance safely by default.
 
-It is static and safe by default. It does not configure MCP, hooks, cloud agents, external integrations, terminals, deployment, signing, publication, billing changes, or runtime bindings. Repository files are guidance, not permission grants.
+The package is static and safe by default. The Cursor implementation is a repository-native Cursor package; it provides platform-appropriate instructions, roles, Skills, rules, workflows, or source files without activating infrastructure, CI/CD systems, cloud access, scanners, billing actions, deployments, or runtime checks.
 
-## Sections Covered
+## Possible Uses
+
+- Designing a cloud target architecture.
+- Reviewing landing zones and environment separation.
+- Designing or auditing IaC.
+- Designing Jenkins, GitHub Actions, GitLab CI/CD, Azure Pipelines, CircleCI, Tekton, Argo CD, or Flux workflows.
+- Designing Docker, OCI, Kubernetes, Helm, and Kustomize configurations.
+- Creating SLI, SLO, error-budget, alerting, and observability plans.
+- Preparing incident, rollback, backup, restore, RTO, RPO, and disaster-recovery plans.
+- Reviewing performance, capacity, scaling, and resource efficiency.
+- Performing static DevSecOps and software supply-chain reviews.
+- Performing FinOps, cost allocation, forecasting, rightsizing, and sustainability analysis.
+- Performing independent operational-readiness and assurance reviews.
+
+## Department Coverage
 
 1. Leadership and Architecture.
 2. Cloud Foundation and Infrastructure.
@@ -20,15 +34,31 @@ It is static and safe by default. It does not configure MCP, hooks, cloud agents
 ## Native Assets
 
 - `AGENTS.md`: concise persistent Cursor guidance.
-- `.cursor/rules/00-devops-cloud-leadership-architecture.mdc`: always-on routing and safety.
-- `.cursor/rules/10-*.mdc` through `.cursor/rules/90-*.mdc`: agent-requested section rules with explicit frontmatter.
-- `.cursor/skills/*/SKILL.md`: on-demand section procedures.
-- `docs/*-workflows.md`: static workflow references for detailed steps.
+- `.cursor/rules/*.mdc`: Project Rules with YAML frontmatter and explicit activation.
+- `.cursor/skills/*/SKILL.md`: ten Agent Skills with valid `name` and `description` frontmatter.
+- `docs/*-workflows.md`: static workflow references used by Skills.
+- No Cursor cloud-agent setup, MCP, hooks, connector, or terminal automation is enabled.
 
-## Role Model
+## Installation and Setup
 
-The complete twenty-role model is represented through section rules and Agent Skills. Additional custom subagent files are intentionally omitted because they would duplicate the same ownership model without adding exclusive value in this static package. Assurance remains independent and non-implementing.
+Place `cursor/devops-cloud/` contents at the root of the repository opened in Cursor so `AGENTS.md`, `.cursor/rules/`, `.cursor/skills/`, and `docs/` are available. Cursor workspace discovery depends on opening the repository in Cursor and on the user's product version and workspace settings.
 
-## Safety Model
+This package installs no extension, dependency, plugin, MCP server, or provider configuration.
 
-All outputs are design, review, planning, or documentation unless a future user explicitly authorizes separate action. Human review is required for privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, irreversible, signing, spending, or publication decisions. Static inspection must not be described as runtime validation.
+## Usage
+
+Ask Cursor Agent for a section, such as "use the Performance, Capacity, and Efficiency Skill to review autoscaling risks." Project Rules provide routing and safety; Skills provide on-demand procedures; `docs/` files are supporting references.
+
+Request Assurance only after a primary artifact exists. Do not treat static review output as proof that Cursor executed tests, scans, deployments, or infrastructure operations.
+
+## Safety and Limitations
+
+The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.
+
+Human approval is required before privileged, destructive, costly, externally visible, compliance-sensitive, production-impacting, signing, spending, publishing, failover, restore, deployment, scanner, or irreversible actions. Static validation means reviewing files and reasoning about artifacts; runtime validation requires separately authorized execution and evidence. This package must not be used as proof of runtime success.
+
+DevSecOps is limited to secure delivery, cloud/platform control design, policy-as-code placement, SBOM, provenance, signing strategy, and software supply-chain controls. Pentesting, SOC/SIEM operations, threat intelligence, forensics, enterprise GRC, general cybersecurity incident response, and offensive security belong to the separate Cybersecurity specialization.
+
+## Removal or Deactivation
+
+Remove this package's `AGENTS.md`, `.cursor/rules/`, `.cursor/skills/`, and referenced `docs/` files from the target repository. Preserve unrelated Cursor settings.

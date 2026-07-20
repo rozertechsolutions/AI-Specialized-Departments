@@ -11,3 +11,5 @@ Use this skill for section 07 static performance and capacity planning. Do not e
 2. Identify measurable targets, workload assumptions, demand forecast, uncertainty, seasonality, failure headroom, autoscaling bounds, stabilization, bottleneck hypotheses, and evidence limits.
 3. Use load-testing and benchmarking tool patterns without execution, Kubernetes autoscaling and resource management, cloud autoscaling services, observability-derived capacity signals, queueing, caching, and graceful-degradation patterns only when justified by requirements.
 4. Verify quality gates and return static evidence, risks, approvals needed, and checks not run.
+
+Reference: `docs/performance-capacity-efficiency.md`.
