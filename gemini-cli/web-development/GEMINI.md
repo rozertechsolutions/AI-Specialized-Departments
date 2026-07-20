@@ -30,7 +30,7 @@ Deliver professional, stack-appropriate web-development work covering frontend, 
 ## Delegation and review
 - Custom commands in `.gemini/commands/web/*.toml` are prompt workflows; they guide the session but do not enforce approvals or execute actions by themselves.
 - Local subagents in `.gemini/agents/*.md` are independently invocable specialists. They must not request child agents.
-- Skills in `.gemini/skills/*/SKILL.md` are on-demand procedures and should not duplicate this root context.
+- Domain Skills in `.gemini/skills/*/SKILL.md` are on-demand procedures and should not duplicate this root context or the manual workflow commands.
 - Implementation subagents receive file-inspection and file-edit tools only. Reviewer subagents receive read-only repository tools.
 - Resolve conflicting recommendations by requirements, evidence, risk, and existing architecture; document the decision.
 
