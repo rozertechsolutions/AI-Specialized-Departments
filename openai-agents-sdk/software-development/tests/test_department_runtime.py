@@ -19,7 +19,7 @@ from software_development_department.models import (
     RoleSlug,
     ToolActionType,
 )
-from software_development_department.orchestrator import DepartmentContext, DepartmentRuntime, RunLimits
+from software_development_department.orchestrator import DepartmentContext, DepartmentRunResult, DepartmentRuntime, RunLimits
 from software_development_department.policies import (
     action_requires_human_approval,
     final_record_is_supported,
@@ -51,9 +51,22 @@ class DepartmentRuntimeTests(unittest.TestCase):
         with TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.assertTrue(validate_scope(("src/a.py",), ("src",), root))
+            self.assertFalse(validate_scope(("tests/a.py",), ("src",), root))
+            self.assertFalse(validate_scope(("",), ("src",), root))
             self.assertFalse(validate_scope(("../outside",), ("src",), root))
             with self.assertRaisesRegex(ValueError, "absolute"):
                 normalize_relative_path(root, "/absolute/path")
+
+    def test_context_rejects_empty_and_out_of_scope_paths(self) -> None:
+        async def scenario() -> None:
+            repo = MemoryRepository({"src/a.py": "old", "tests/a.py": "outside"})
+            context = DepartmentContext(Path("."), ("src",), repo, repo, DeterministicApprovalProvider())
+            with self.assertRaisesRegex(ValueError, "outside"):
+                await context.read_text("")
+            with self.assertRaisesRegex(ValueError, "outside"):
+                await context.read_text("tests/a.py")
+
+        asyncio.run(scenario())
 
     def test_scope_validation_rejects_symlink_escape(self) -> None:
         with TemporaryDirectory() as tmp:
@@ -155,6 +168,38 @@ class DepartmentRuntimeTests(unittest.TestCase):
             runtime = DepartmentRuntime.build(context=context)
             result = await runtime.run(DepartmentTask("", ("src",), ("done",)))
             self.assertEqual(result.state, FinalState.BLOCKED)
+
+        asyncio.run(scenario())
+
+    def test_resume_rejects_malformed_or_over_limit_decisions_safely(self) -> None:
+        class FakeState:
+            approved = False
+            rejected = False
+
+            def approve(self, interruption: object) -> None:
+                self.approved = True
+
+            def reject(self, interruption: object, rejection_message: str) -> None:
+                self.rejected = True
+
+        async def scenario() -> None:
+            repo = MemoryRepository({"src/a.py": "old"})
+            context = DepartmentContext(Path("."), ("src",), repo, repo, DeterministicApprovalProvider())
+            over_limit = DepartmentRuntime.build(context=context, limits=RunLimits(max_approval_cycles=0))
+            state = FakeState()
+            paused = DepartmentRunResult(FinalState.PAUSED, object(), resume_state=state, interruptions=("approval",))
+            approved = await over_limit.approve_and_resume(paused)
+            rejected = await over_limit.reject_and_resume(paused)
+            self.assertEqual(approved.state, FinalState.STOPPED)
+            self.assertEqual(rejected.state, FinalState.STOPPED)
+            self.assertFalse(state.approved)
+            self.assertFalse(state.rejected)
+
+            malformed = DepartmentRuntime.build(context=context, limits=RunLimits(max_approval_cycles=1))
+            malformed_result = await malformed.approve_and_resume(
+                DepartmentRunResult(FinalState.PAUSED, object(), resume_state=FakeState(), interruptions=("one", "two"))
+            )
+            self.assertEqual(malformed_result.state, FinalState.STOPPED)
 
         asyncio.run(scenario())
 
