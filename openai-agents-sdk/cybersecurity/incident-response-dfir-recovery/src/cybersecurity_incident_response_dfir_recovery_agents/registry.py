@@ -137,13 +137,52 @@ def workflow_specs() -> tuple[str, ...]:
     return tuple(WORKFLOW_SPECS)
 
 
-def input_guardrails() -> tuple[str, ...]:
-    return INPUT_GUARDRAILS
+def _coerce_guardrail_text(value: Any) -> str:
+    if isinstance(value, str):
+        return value
+    if isinstance(value, list):
+        return " ".join(str(item) for item in value)
+    return str(value)
 
 
-def output_guardrails() -> tuple[str, ...]:
-    return OUTPUT_GUARDRAILS
+def input_guardrails() -> tuple[Any, ...]:
+    try:
+        from agents import GuardrailFunctionOutput, input_guardrail
+    except ImportError as exc:
+        raise RuntimeError("OpenAI Agents SDK is required to construct input guardrails.") from exc
 
+    @input_guardrail(run_in_parallel=False)
+    async def cybersecurity_input_guardrail(ctx: Any, agent: Any, input: Any) -> Any:
+        text = _coerce_guardrail_text(input)
+        authorized_scope = "supplied" if "scope" in text.lower() or "authorized" in text.lower() else None
+        decision = evaluate_static_request(text, authorized_scope)
+        return GuardrailFunctionOutput(output_info=decision, tripwire_triggered=not decision.allowed)
+
+    return (cybersecurity_input_guardrail,)
+
+
+def output_guardrails() -> tuple[Any, ...]:
+    try:
+        from agents import GuardrailFunctionOutput, output_guardrail
+    except ImportError as exc:
+        raise RuntimeError("OpenAI Agents SDK is required to construct output guardrails.") from exc
+
+    @output_guardrail
+    async def cybersecurity_output_guardrail(ctx: Any, agent: Any, output: Any) -> Any:
+        evidence = getattr(output, "evidence", ()) or ()
+        confidence = getattr(output, "confidence", "low")
+        approval_state = getattr(output, "approval_state", "required")
+        blocked = []
+        if not evidence:
+            blocked.append("output-without-evidence")
+        if confidence == "low":
+            blocked.append("insufficient-confidence")
+        if approval_state == "approved by supplied evidence":
+            blocked.append("unsupported-approval-claim")
+        decision = GuardrailDecision(allowed=not blocked, reason="Output guardrail review.", triggered_rules=tuple(blocked))
+        return GuardrailFunctionOutput(output_info=decision, tripwire_triggered=bool(blocked))
+
+    return (cybersecurity_output_guardrail,)
 
 def approval_gates() -> tuple[HumanApprovalGate, ...]:
     return HITL_APPROVAL_GATES
@@ -177,6 +216,7 @@ def build_specialists(model: str | None = None) -> tuple[Any, ...]:
             instructions=_specialist_instruction(role),
             tools=[],
             output_type=AssessmentOutput,
+            output_guardrails=list(output_guardrails()),
         )
         if model:
             kwargs["model"] = model
@@ -196,6 +236,7 @@ def build_coordinator(model: str | None = None) -> Any:
         agent.as_tool(
             tool_name=agent.name.replace("-", "_"),
             tool_description=f"Run {agent.name} for its exclusive static cybersecurity responsibility.",
+            needs_approval=True,
         )
         for agent in specialists
     ]
@@ -203,8 +244,46 @@ def build_coordinator(model: str | None = None) -> Any:
         name=f"{AREA_SLUG}-coordinator",
         instructions=COORDINATOR_INSTRUCTIONS,
         tools=tools,
+        input_guardrails=list(input_guardrails()),
+        output_guardrails=list(output_guardrails()),
         output_type=AssessmentOutput,
     )
     if model:
         kwargs["model"] = model
     return Agent(**kwargs)
+
+
+def build_default_run_config() -> Any:
+    try:
+        from agents import RunConfig
+    except ImportError as exc:
+        raise RuntimeError("OpenAI Agents SDK is required to build RunConfig.") from exc
+    return RunConfig(tracing_disabled=True, input_guardrails=list(input_guardrails()), output_guardrails=list(output_guardrails()))
+
+def list_pending_interruptions(result_or_state: Any) -> tuple[Any, ...]:
+    return tuple(getattr(result_or_state, "interruptions", ()) or ())
+
+def select_interruption(interruptions: tuple[Any, ...], index: int = 0) -> Any:
+    if index < 0 or index >= len(interruptions):
+        raise IndexError("No pending interruption at the requested index.")
+    return interruptions[index]
+
+def serialize_state(state: Any) -> str:
+    return state.to_string()
+
+def restore_state(agent: Any, serialized_state: str) -> Any:
+    try:
+        from agents import RunState
+    except ImportError as exc:
+        raise RuntimeError("OpenAI Agents SDK is required to restore RunState.") from exc
+    return RunState.from_string(agent, serialized_state)
+
+def record_explicit_approval(state: Any, interruption: Any) -> Any:
+    state.approve(interruption, always_approve=False)
+    return state
+
+def record_explicit_rejection(state: Any, interruption: Any, reason: str) -> Any:
+    if not reason.strip():
+        raise ValueError("A rejection reason is required.")
+    state.reject(interruption, rejection_message=reason, always_reject=False)
+    return state

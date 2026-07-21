@@ -2,9 +2,7 @@
 name: independent-architecture-reviewer
 description: Independently review high-impact architecture packages and remediation evidence.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance]
 ---
 
 # independent-architecture-reviewer

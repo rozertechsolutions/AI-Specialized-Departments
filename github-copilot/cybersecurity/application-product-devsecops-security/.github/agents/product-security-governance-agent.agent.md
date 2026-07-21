@@ -2,9 +2,7 @@
 name: product-security-governance-agent
 description: Own secure SDLC governance, security requirements, release gates, and product-security operating model.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [secure-sdlc-review, threat-modeling, secure-design-code-review, supply-chain-ci-release-review, testing-findings-psirt-assurance]
 ---
 
 # product-security-governance-agent

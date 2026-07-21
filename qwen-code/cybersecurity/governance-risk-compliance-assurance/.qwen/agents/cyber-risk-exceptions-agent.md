@@ -2,9 +2,7 @@
 name: cyber-risk-exceptions-agent
 description: Own cyber risk records, exception packages, treatment options, residual-risk wording, and remediation governance.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review]
 ---
 
 # cyber-risk-exceptions-agent

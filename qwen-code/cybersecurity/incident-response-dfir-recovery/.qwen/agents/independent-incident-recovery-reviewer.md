@@ -2,9 +2,7 @@
 name: independent-incident-recovery-reviewer
 description: Independently review high-impact incident, DFIR, recovery, and closure packages.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [incident-readiness-triage, evidence-forensics-planning, containment-recovery-coordination, scenario-tabletop-post-incident, independent-incident-recovery-assurance]
 ---
 
 # independent-incident-recovery-reviewer

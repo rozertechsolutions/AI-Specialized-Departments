@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Post Incident Corrective Action Agent"
+description = "Own tabletop exercises, post-incident reviews, lessons learned, corrective actions, and recovery governance."
+safety = "safe"
+system_prompt_id = "post-incident-corrective-action-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

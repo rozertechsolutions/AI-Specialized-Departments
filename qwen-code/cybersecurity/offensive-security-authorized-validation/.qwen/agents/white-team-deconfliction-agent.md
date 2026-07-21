@@ -2,9 +2,7 @@
 name: white-team-deconfliction-agent
 description: Own white-team deconfliction, safety, communications, emergency stop, and artifact-control planning.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [authorization-scope-roe, assessment-campaign-planning, purple-bas-social-governance, findings-cleanup-retest-assurance, independent-offensive-safety-review]
 ---
 
 # white-team-deconfliction-agent

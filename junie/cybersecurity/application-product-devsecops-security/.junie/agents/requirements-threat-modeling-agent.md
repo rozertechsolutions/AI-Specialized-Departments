@@ -2,9 +2,7 @@
 name: requirements-threat-modeling-agent
 description: Own requirements, threat models, abuse cases, mitigations, validation criteria, and traceability.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [secure-sdlc-review, threat-modeling, secure-design-code-review, supply-chain-ci-release-review, testing-findings-psirt-assurance]
 ---
 
 # requirements-threat-modeling-agent

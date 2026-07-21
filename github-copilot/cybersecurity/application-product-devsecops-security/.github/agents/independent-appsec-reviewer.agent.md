@@ -2,9 +2,7 @@
 name: independent-appsec-reviewer
 description: Independently review high-impact application-security outputs and release-readiness packages.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [secure-sdlc-review, threat-modeling, secure-design-code-review, supply-chain-ci-release-review, testing-findings-psirt-assurance]
 ---
 
 # independent-appsec-reviewer

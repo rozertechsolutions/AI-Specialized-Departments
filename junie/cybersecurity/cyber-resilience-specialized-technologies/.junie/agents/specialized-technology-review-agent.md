@@ -2,9 +2,7 @@
 name: specialized-technology-review-agent
 description: Own OT/ICS, IoT, embedded, AI, machine-learning, agent, retrieval, memory, model-supply-chain, hardware, and firmware security review.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [resilience-program-review, backup-ransomware-recovery-assessment, specialized-technology-security-review, crypto-critical-infrastructure-planning, independent-resilience-assurance]
 ---
 
 # specialized-technology-review-agent

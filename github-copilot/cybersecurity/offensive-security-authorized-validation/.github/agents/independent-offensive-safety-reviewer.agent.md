@@ -2,9 +2,7 @@
 name: independent-offensive-safety-reviewer
 description: Independently review scope, authorization, safety, report quality, and retest readiness.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [authorization-scope-roe, assessment-campaign-planning, purple-bas-social-governance, findings-cleanup-retest-assurance, independent-offensive-safety-review]
 ---
 
 # independent-offensive-safety-reviewer

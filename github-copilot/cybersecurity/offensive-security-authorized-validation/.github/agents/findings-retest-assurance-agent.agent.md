@@ -2,9 +2,7 @@
 name: findings-retest-assurance-agent
 description: Own finding quality, evidence, severity, confidence, cleanup assurance, authorized retest planning, and remediation validation.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [authorization-scope-roe, assessment-campaign-planning, purple-bas-social-governance, findings-cleanup-retest-assurance, independent-offensive-safety-review]
 ---
 
 # findings-retest-assurance-agent

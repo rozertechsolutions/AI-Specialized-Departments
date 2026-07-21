@@ -2,9 +2,7 @@
 name: architecture-governance-agent
 description: Own architecture governance, standards, decision records, design gates, and reference model stewardship.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance]
 ---
 
 # architecture-governance-agent

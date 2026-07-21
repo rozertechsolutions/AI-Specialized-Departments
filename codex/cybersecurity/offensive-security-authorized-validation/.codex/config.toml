@@ -1,10 +1,6 @@
-profile = "cybersecurity-area-07-offensive-security-authorized-validation"
-static_only = true
-external_integrations_enabled = false
-active_testing_enabled = false
+sandbox_mode = "read-only"
+approval_policy = "on-request"
 
-[authority]
-authorization = "human_only"
-scope_change = "human_only"
-high_impact_action = "human_only"
-critical_closure = "independent_human_review_required"
+[agents]
+max_depth = 1
+max_threads = 5

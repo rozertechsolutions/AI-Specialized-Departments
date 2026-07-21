@@ -2,9 +2,7 @@
 name: identity-cloud-network-agent
 description: Own identity, privileged access, cloud guardrails, network segmentation, endpoint, and workspace architecture.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance]
 ---
 
 # identity-cloud-network-agent

@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Findings Retest Assurance Agent"
+description = "Own finding quality, evidence, severity, confidence, cleanup assurance, authorized retest planning, and remediation validation."
+safety = "safe"
+system_prompt_id = "findings-retest-assurance-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

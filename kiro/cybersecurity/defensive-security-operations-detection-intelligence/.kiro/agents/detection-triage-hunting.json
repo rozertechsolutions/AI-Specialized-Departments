@@ -1,5 +1,0 @@
-{
-  "name": "detection-triage-hunting",
-  "description": "Detection lifecycle, supplied-alert triage, and threat-hunt planning.",
-  "staticOnly": true
-}

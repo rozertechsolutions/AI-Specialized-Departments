@@ -1,5 +1,0 @@
-{
-  "name": "resilience-recovery-core",
-  "description": "Resilience strategy, dependency maps, disruption scenarios, backup/ransomware assessments, recovery readiness, exercises, and corrective actions.",
-  "staticOnly": true
-}

@@ -1,5 +1,0 @@
-{
-  "name": "soc-governance-telemetry",
-  "description": "SOC operating model, escalation, telemetry requirements, and logging coverage map.",
-  "staticOnly": true
-}

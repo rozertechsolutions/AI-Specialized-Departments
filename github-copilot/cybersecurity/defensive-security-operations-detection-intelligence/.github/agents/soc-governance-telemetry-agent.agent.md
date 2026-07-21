@@ -2,9 +2,7 @@
 name: soc-governance-telemetry-agent
 description: Own SOC operating model, service boundaries, escalation, telemetry requirements, and logging coverage.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [soc-telemetry-governance, detection-triage-hunting, intelligence-malware-automation, coverage-quality-assurance, incident-escalation-handoff]
 ---
 
 # soc-governance-telemetry-agent

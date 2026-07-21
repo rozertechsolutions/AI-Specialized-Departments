@@ -1,4 +1,6 @@
-[agents]
-max_threads = 5
-max_depth = 1
+sandbox_mode = "read-only"
+approval_policy = "on-request"
 
+[agents]
+max_depth = 1
+max_threads = 5

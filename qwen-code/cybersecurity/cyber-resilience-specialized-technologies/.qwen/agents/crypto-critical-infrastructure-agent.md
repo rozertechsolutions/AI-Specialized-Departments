@@ -2,9 +2,7 @@
 name: crypto-critical-infrastructure-agent
 description: Own cryptographic agility, post-quantum transition planning, critical-infrastructure, and safety-relevant cybersecurity analysis.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [resilience-program-review, backup-ransomware-recovery-assessment, specialized-technology-security-review, crypto-critical-infrastructure-planning, independent-resilience-assurance]
 ---
 
 # crypto-critical-infrastructure-agent

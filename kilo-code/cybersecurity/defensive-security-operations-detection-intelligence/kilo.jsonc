@@ -1,6 +1,39 @@
 {
-  "name": "cybersecurity-area-05-defensive-security-operations-detection-intelligence",
-  "staticOnly": true,
-  "externalIntegrationsEnabled": false,
-  "liveSecurityActionsEnabled": false
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    ".kilo/rules/defensive-security-operations-detection-intelligence.md"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow",
+      "*secret*": "ask",
+      "*credential*": "ask",
+      "*private-key*": "ask"
+    },
+    "edit": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "write": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "bash": {
+      "*": "deny"
+    },
+    "task": {
+      "*": "deny",
+      "coverage-quality-assurance-agent": "allow",
+      "detection-triage-hunting-agent": "allow",
+      "incident-escalation-reviewer": "allow",
+      "intelligence-malware-automation-agent": "allow",
+      "soc-governance-telemetry-agent": "allow"
+    }
+  },
+  "mcp": {}
 }

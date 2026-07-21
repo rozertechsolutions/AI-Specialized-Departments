@@ -1,6 +1,39 @@
 {
-  "name": "cybersecurity-area-07-offensive-security-authorized-validation",
-  "staticOnly": true,
-  "externalIntegrationsEnabled": false,
-  "activeTestingEnabled": false
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    ".kilo/rules/offensive-security-authorized-validation.md"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow",
+      "*secret*": "ask",
+      "*credential*": "ask",
+      "*private-key*": "ask"
+    },
+    "edit": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "write": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "bash": {
+      "*": "deny"
+    },
+    "task": {
+      "*": "deny",
+      "authorization-assessment-planning-agent": "allow",
+      "emulation-purple-safety-agent": "allow",
+      "findings-retest-assurance-agent": "allow",
+      "independent-offensive-safety-reviewer": "allow",
+      "white-team-deconfliction-agent": "allow"
+    }
+  },
+  "mcp": {}
 }

@@ -1,10 +1,6 @@
-profile = "cybersecurity-area-06-incident-response-dfir-recovery"
-static_only = true
-external_integrations_enabled = false
-live_security_actions_enabled = false
+sandbox_mode = "read-only"
+approval_policy = "on-request"
 
-[authority]
-incident_declaration = "human_only"
-legal_privacy_communications = "authorized_functions_only"
-destructive_action = "human_incident_command_only"
-critical_closure = "independent_review_required"
+[agents]
+max_depth = 1
+max_threads = 5

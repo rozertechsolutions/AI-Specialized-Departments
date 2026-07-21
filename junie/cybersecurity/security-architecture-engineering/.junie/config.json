@@ -1,5 +1,4 @@
 {
-  "name": "cybersecurity-security-architecture-engineering",
   "description": "Static Junie guidance for Cybersecurity Security Architecture Engineering.",
   "entrypoint": ".junie/AGENTS.md",
   "version": "1.0.0"

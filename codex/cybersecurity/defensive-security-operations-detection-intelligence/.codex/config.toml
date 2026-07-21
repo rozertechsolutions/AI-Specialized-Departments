@@ -1,8 +1,6 @@
-profile = "cybersecurity-area-05-defensive-security-operations-detection-intelligence"
-static_only = true
-external_integrations_enabled = false
-live_security_actions_enabled = false
+sandbox_mode = "read-only"
+approval_policy = "on-request"
 
-[handoff]
-declared_incident_owner = "Incident Response, DFIR, and Recovery"
-soc_role = "supporting evidence and monitoring context"
+[agents]
+max_depth = 1
+max_threads = 5

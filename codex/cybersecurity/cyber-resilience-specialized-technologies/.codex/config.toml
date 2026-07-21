@@ -1,10 +1,6 @@
-profile = "cybersecurity-area-08-cyber-resilience-specialized-technologies"
-static_only = true
-external_integrations_enabled = false
-production_actions_enabled = false
+sandbox_mode = "read-only"
+approval_policy = "on-request"
 
-[authority]
-business_continuity = "human_only"
-safety_decision = "qualified_human_only"
-specialist_assurance = "qualified_specialist_required"
-critical_closure = "independent_review_required"
+[agents]
+max_depth = 1
+max_threads = 5
