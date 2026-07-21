@@ -205,8 +205,11 @@ class DepartmentRuntime:
         return self._classify_result(result)
 
     async def approve_and_resume(self, run_result: DepartmentRunResult, interruption: Any | None = None) -> DepartmentRunResult:
-        state = self._require_resume_state(run_result)
-        selected = interruption or self._single_interruption(run_result)
+        try:
+            state = self._require_resume_state(run_result)
+            selected = interruption or self._single_interruption(run_result)
+        except ValueError as exc:
+            return DepartmentRunResult(FinalState.STOPPED, run_result.sdk_result, reason=str(exc))
         if self.approval_cycles >= self.limits.max_approval_cycles:
             return DepartmentRunResult(FinalState.STOPPED, run_result.sdk_result, reason="approval cycle limit reached")
         state.approve(selected)
@@ -215,8 +218,13 @@ class DepartmentRuntime:
         return self._classify_result(result)
 
     async def reject_and_resume(self, run_result: DepartmentRunResult, interruption: Any | None = None, message: str = "human rejected") -> DepartmentRunResult:
-        state = self._require_resume_state(run_result)
-        selected = interruption or self._single_interruption(run_result)
+        try:
+            state = self._require_resume_state(run_result)
+            selected = interruption or self._single_interruption(run_result)
+        except ValueError as exc:
+            return DepartmentRunResult(FinalState.STOPPED, run_result.sdk_result, reason=str(exc))
+        if self.approval_cycles >= self.limits.max_approval_cycles:
+            return DepartmentRunResult(FinalState.STOPPED, run_result.sdk_result, reason="approval cycle limit reached")
         state.reject(selected, rejection_message=message)
         self.approval_cycles += 1
         result = await Runner.run(self.lead, state, max_turns=self.limits.max_turns)
