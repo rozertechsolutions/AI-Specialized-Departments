@@ -1,26 +1,64 @@
 # Claude - Software Development
 
-This directory is a static manual source package for configuring a Claude Project Software Development specialization. It is intentionally separate from Claude Code.
+The Software Development department is a human-reviewed specialization for requirements, planning, architecture, implementation support, validation, independent code review, engineering risk review, documentation, and release readiness. This Claude package represents the department as manual Claude Project, Project knowledge, optional Skill, and connector-policy source material. It is safe by default: no repository file auto-loads in Claude, no connector is enabled here, and external actions require explicit human approval.
 
-## Native and Conditional Surfaces
+## Department Overview
 
-- `project/project-instructions.md` and `project/knowledge/` are the primary Claude Project source material.
-- `project/review-checklists.md` provides manual review checklists for Claude Project knowledge.
-- `skills/` contains static Skill source packages only when Claude Skills are available for the account or workspace.
-- `connectors/` is policy source only; it does not enable or configure integrations.
+Use this department for general software engineering across backend services, APIs, desktop apps, command-line apps, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, and documentation. Browser-specific Web Development and mobile-platform Mobile Development remain separate. The package is stack-agnostic and does not prescribe a language, framework, database, provider, or model.
 
-No file in this repository is automatically loaded by Claude. Copy or attach only the surfaces supported by the target account, plan, administrator policy, and current product behavior.
+## Possible Uses
 
-## Department Scope
+- Define requirements, acceptance criteria, assumptions, exclusions, and a plan.
+- Investigate a bug and produce a safe correction strategy.
+- Review architecture, API/library evolution, dependency changes, security remediation, performance/reliability work, or technical-debt reduction.
+- Prepare validation evidence, compatibility notes, documentation updates, and release-readiness findings.
 
-The package covers fourteen capability areas: requirements analysis, architecture, implementation and maintenance, defect correction, controlled refactoring, testing, code quality, engineering risk, software security, dependencies and supply chain, performance and reliability, API/library evolution, technical documentation, and release readiness.
+## Included Components
 
-## Omitted Claude Code Surfaces
+- `project/project-instructions.md`: manual Claude Project instructions; paste into the Project instructions field.
+- `project/knowledge/`: manual Project knowledge files for operating model, quality gates, safety policy, and workflows.
+- `project/review-checklists.md`: auxiliary Project knowledge for manual review checks.
+- `skills/`: conditional Claude Skill source packages; import only where Skills are available for the account/workspace.
+- `connectors/connectors-policy.md`: manual policy text for connector use; it does not enable pre-built or custom connectors.
 
-This target must not contain `CLAUDE.md`, `.claude/`, repository subagents, commands, hooks, settings, MCP configuration, local shell automation, or automatic connector authentication.
+This package intentionally contains no Claude Code files.
 
-## Safety Defaults
+## Prerequisites
 
-The package contains no executable hooks, scripts, active MCP configuration, credentials, endpoints, installers, launchers, deployment assets, release automation, or automatic authentication. Human approval is required for destructive, sensitive, external, architectural, dependency, permission, trust-boundary, migration, public-contract, Git, deployment, publication, signing, submission, and release actions.
+You need Claude with Projects for the Project setup, an account/workspace that supports Skills before importing `skills/`, and administrator permission where connector or workspace policy applies. You need authorization to share the selected repository or project context. Human review is required before edits, tool use, connector authorization, Git mutation, deployment, publication, signing, release, or destructive work.
 
-Runtime loading, product acceptance, connector behavior, and Skill availability have not been executed or verified from this repository.
+## Installation or Setup
+
+1. Create or open the destination Claude Project in the Claude UI.
+2. Paste `project/project-instructions.md` into the Project instructions field.
+3. Add selected files from `project/knowledge/` and `project/review-checklists.md` as Project knowledge.
+4. If Claude Skills are supported and allowed, import each `skills/<skill-name>/` folder through the current Skill UI.
+5. Keep `connectors/connectors-policy.md` as manual policy text. Enable no connector unless a human approves that exact connector in Claude.
+
+Do not copy credentials, private endpoints, account identifiers, or secrets into Claude setup fields.
+
+## Usage
+
+Start a chat inside the configured Claude Project or Skill-enabled surface. Ask the Lead to confirm objective, scope, exclusions, approvals, and evidence needs before any implementation guidance.
+
+Example requests:
+
+- "Convert this request into requirements, acceptance criteria, risks, and a staged implementation plan."
+- "Review this dependency update for compatibility and supply-chain risk; do not change files."
+- "Assess release readiness from these validation notes and identify unresolved blockers."
+
+## Operating Model
+
+The Claude conversation acts as the Software Development Lead. The Lead routes work through the seven specialist responsibilities, keeps implementation separate from code-quality and risk review, and aggregates final evidence. Specialists are represented through Project instructions, knowledge, Skills, and requested review phases rather than autonomous Claude Code subagents.
+
+## Safety and Human Review
+
+Use least privilege and only upload context needed for the task. Claude textual instructions cannot enforce every product action, so users and workspace admins must control file access, connectors, code execution, and external integrations. Do not allow automatic Git mutation, deployment, publication, signing, release, spending, submissions, destructive operations, or credential handling without explicit task-specific approval.
+
+## Platform Limitations
+
+Claude Projects and Skills are account-, plan-, workspace-, and policy-dependent. Connectors are configured in Claude, not by these files. This package does not include `CLAUDE.md`, `.claude/`, Claude Code settings, Claude Code subagents, hooks, MCP server config, shell helpers, or repository-native automation.
+
+## Updating and Removal
+
+To update, replace the pasted Project instructions, selected Project knowledge, and imported Skills after preserving local edits. To remove, delete only this department's Project instructions, knowledge files, Skills, and connector-policy text from Claude. No integrations, credentials, or account settings are stored in this package.

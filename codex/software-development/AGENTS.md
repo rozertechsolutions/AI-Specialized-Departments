@@ -34,4 +34,4 @@ Every completed implementation must be followed by independent code-quality revi
 
 ## Native Resources
 
-Use `.codex/agents/` only for the seven specialists. Use `.agents/skills/` for reusable procedures. Keep `.codex/config.toml` project-scoped, model-neutral, endpoint-neutral, approval-gated, and network-disabled. No Lead subagent, hooks, MCP configuration, executable helper, provider/model/endpoint pin, or user-global path belongs in this package.
+Use `.codex/agents/` only for the seven specialists. Use `.codex/skills/` for reusable procedures. Keep `.codex/config.toml` project-scoped, model-neutral, endpoint-neutral, approval-gated, and network-disabled. No Lead subagent, hooks, MCP configuration, executable helper, provider/model/endpoint pin, or user-global path belongs in this package.

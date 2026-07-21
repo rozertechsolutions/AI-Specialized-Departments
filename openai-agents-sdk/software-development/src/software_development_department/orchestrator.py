@@ -25,12 +25,30 @@ from .tools import DepartmentContext, RunLimits
 
 
 @dataclass(frozen=True)
+<<<<<<< HEAD
 class DepartmentRunResult:
     final_state: FinalState
     sdk_result: Any
     interruption_state: InterruptionState | None = None
     approvals_and_rejections: tuple[ApprovalDecisionRecord, ...] = ()
     stopped_reason: str | None = None
+=======
+class OrchestrationLimits:
+    max_turns: int = 16
+    max_specialist_calls: int = 12
+    max_total_tool_calls: int = 20
+    max_approval_cycles: int = 4
+
+    def __post_init__(self) -> None:
+        if not 1 <= self.max_turns <= 32:
+            raise ValueError("max_turns must be between 1 and 32")
+        if not 1 <= self.max_specialist_calls <= 24:
+            raise ValueError("max_specialist_calls must be between 1 and 24")
+        if not 1 <= self.max_total_tool_calls <= 64:
+            raise ValueError("max_total_tool_calls must be between 1 and 64")
+        if not 1 <= self.max_approval_cycles <= 12:
+            raise ValueError("max_approval_cycles must be between 1 and 12")
+>>>>>>> feature/software-development
 
 
 @dataclass
@@ -41,6 +59,7 @@ class DepartmentRuntime:
     last_result: Any | None = None
 
     @classmethod
+<<<<<<< HEAD
     def build(
         cls,
         *,
@@ -60,6 +79,46 @@ class DepartmentRuntime:
             limits=run_limits or RunLimits(),
             lead_model=lead_model,
             specialist_models=specialist_models or {},
+=======
+    def build(cls, limits: OrchestrationLimits | None = None) -> "DepartmentRuntime":
+        agents = build_department_agents()
+        return cls(lead=agents["software-development-lead"], limits=limits or OrchestrationLimits())
+
+    def validate_specialist_call_sequence(self, calls: tuple[str, ...]) -> OrchestrationState:
+        if len(calls) > self.limits.max_specialist_calls:
+            return OrchestrationState.STOPPED
+        if any(call not in SPECIALIST_OUTPUTS for call in calls):
+            return OrchestrationState.STOPPED
+        if len(calls) != len(tuple(dict.fromkeys(calls))):
+            return OrchestrationState.STOPPED
+        return OrchestrationState.RUNNING
+
+    def validate_total_tool_calls(self, count: int) -> OrchestrationState:
+        if count < 0 or count > self.limits.max_total_tool_calls:
+            return OrchestrationState.STOPPED
+        return OrchestrationState.RUNNING
+
+    def validate_approval_cycles(self, count: int) -> OrchestrationState:
+        if count < 0 or count > self.limits.max_approval_cycles:
+            return OrchestrationState.STOPPED
+        return OrchestrationState.RUNNING
+
+    async def run(self, task: DepartmentTask):
+        """Run only when the host explicitly invokes the department.
+
+        The Lead remains the active top-level agent. Specialists are available
+        only as Agent.as_tool() tools, so their typed results return to the
+        Lead without transferring the conversation.
+        """
+        prompt = (
+            f"Objective: {task.objective}\n"
+            f"Authorized scope: {task.authorized_scope}\n"
+            f"Acceptance criteria: {task.acceptance_criteria}\n"
+            f"Exclusions: {task.exclusions}\n"
+            f"Risk level: {task.risk_level}\n"
+            "Use specialist tools only as bounded calls. Produce a LeadFinalRecord with evidence, "
+            "checks not run, limitations, human decisions, and an explicit stop state."
+>>>>>>> feature/software-development
         )
         return cls(context=context, agents=build_department_agents(context))
 

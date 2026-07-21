@@ -213,6 +213,7 @@ class DocumentationReleaseReadinessResult:
 
 
 @dataclass(frozen=True)
+<<<<<<< HEAD
 class DocumentationReadinessOutput(SpecialistResult):
     readiness: DocumentationReleaseReadinessResult = field(
         default_factory=lambda: DocumentationReleaseReadinessResult((), "not_assessed", True)
@@ -221,6 +222,9 @@ class DocumentationReadinessOutput(SpecialistResult):
 
 @dataclass(frozen=True)
 class ApprovalDecisionRecord:
+=======
+class HumanDecision:
+>>>>>>> feature/software-development
     subject: str
     decision: ApprovalDecisionValue
     evidence: str

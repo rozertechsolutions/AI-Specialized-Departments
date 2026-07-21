@@ -1,25 +1,63 @@
 # Qwen Code - Software Development
 
-This directory implements the Software Development specialization for Qwen Code using repository-scoped native content. The main Qwen Code session is the Software Development Lead through `QWEN.md`; there is intentionally no `.qwen/agents/software-development-lead.md` subagent.
+The Software Development department is a human-reviewed Qwen Code specialization for requirements, planning, architecture, implementation, validation, independent code review, engineering risk review, documentation, and release readiness. This package uses Qwen Code native project memory, settings, subagents, Skills, and Markdown custom commands. It is safe by default: the parent session must stay in default approval mode, specialists deny shell execution, and no hooks, MCP, provider, endpoint, credential, or automation config is included.
 
-## Native content
+## Department Overview
 
-- `QWEN.md` defines the main-session Software Development Lead behavior.
-- `.qwen/settings.json` sets `{ "tools": { "approvalMode": "default" } }` only.
-- `.qwen/agents/` contains seven specialist subagents with explicit `approvalMode`, tool allowlists, and `run_shell_command` denied.
-- `.qwen/skills/` contains fourteen preserved non-executable capability Skills.
-- `.qwen/commands/` contains eleven current Markdown prompt-only workflow commands.
+Use this department for stack-agnostic software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Web Development and Mobile Development remain separate. The package does not select a provider, model, endpoint, framework, database, or account.
 
-## Parent approval-mode requirement
+## Possible Uses
 
-Start and keep the parent Qwen Code session in `default` approval mode. A permissive parent session such as `auto-edit` or `yolo` can override subagent restrictions. This package does not claim project settings can defeat explicit permissive CLI flags.
+- Requirements analysis, acceptance criteria, constraints, risks, and planning.
+- New feature development, bug investigation, maintenance, and controlled refactoring.
+- Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, compatibility updates, and release-readiness review.
 
-## Tool policy
+## Included Components
 
+<<<<<<< HEAD
 Read-only specialists use `approvalMode: plan` and only `read_file`, `grep_search`, and `list_directory`. The implementation specialist uses `approvalMode: default` and only `read_file`, `grep_search`, `write_file`, and `replace`. All specialists disallow `run_shell_command` and omit MCP, browser, network, shell, Git, deployment, publication, signing, release, and external tools.
+=======
+- `QWEN.md`: native project memory/instructions for the main Lead session.
+- `.qwen/settings.json`: native project settings that keep tool approval mode at `default`.
+- `.qwen/agents/*.md`: seven native specialist subagents; there is intentionally no Lead subagent.
+- `.qwen/skills/*/SKILL.md`: native Agent Skills packages.
+- `.qwen/commands/*.md`: native Markdown custom commands with optional YAML frontmatter.
+>>>>>>> feature/software-development
 
-The package contains no hooks, deprecated TOML commands, scripts, provider/model/auth configuration, endpoints, credentials, environment values, MCP configuration, extensions, sandbox builders, deployment automation, publication automation, signing automation, release automation, or executable assets.
+## Prerequisites
 
-## Operating model
+You need Qwen Code with project settings, QWEN.md memory, subagents, Skills, and Markdown custom command support. Authentication, model/provider selection, and any paid plan are configured outside this package. Human approval is expected before edits, shell commands, external access, dependency changes, Git mutation, deployment, publication, signing, release, or destructive actions.
 
-Commands and user requests route through the main Software Development Lead session. The Lead may call specialists for bounded responsibilities, but specialists return evidence to the Lead, never call each other, cannot expand scope, and cannot claim final completion. Implementation, code-quality review, engineering-risk review, and release-readiness assessment remain distinct.
+## Installation or Setup
+
+1. Copy the contents of `qwen-code/software-development/` into the target repository root so `QWEN.md` and `.qwen/` land at the root.
+2. Merge with existing target `QWEN.md`, `.qwen/settings.json`, `.qwen/agents/`, `.qwen/skills/`, and `.qwen/commands/`.
+3. Start Qwen Code from the target repository root in `default` approval mode.
+4. Do not use permissive parent modes such as auto-edit or yolo for this department.
+5. Do not add TOML commands, hooks, MCP, extensions, sandbox builders, providers, model pins, endpoints, credentials, or shell helpers.
+
+## Usage
+
+Use the main Qwen Code session as the Software Development Lead. The Lead can delegate to named subagents or use Markdown commands where supported, then collect evidence.
+
+Example requests:
+
+- "Plan this bug fix and wait before writing files."
+- "Use the software-architect subagent to review this migration risk."
+- "/release-readiness-review summarize evidence and unresolved blockers."
+
+## Operating Model
+
+The Lead owns scope, routing, approvals, dependency control, and final evidence aggregation. Specialists return evidence, cannot call each other, cannot expand scope, and cannot claim final completion. Implementation must be followed by independent code-quality review, with engineering-risk review when security, dependencies, performance, concurrency, reliability, data integrity, architecture, public contracts, or operations are affected.
+
+## Safety and Human Review
+
+Use least privilege and protect secrets. Project settings and subagent tool allowlists do not defeat permissive parent CLI flags or managed policy. Do not allow automatic Git mutation, deployment, publication, signing, release, external messages, spending, submissions, destructive actions, credential use, authentication, or shell commands without explicit task-specific approval.
+
+## Platform Limitations
+
+Qwen Code feature behavior depends on installed version and configuration precedence: defaults, system defaults, user settings, project settings, system settings, environment variables, and command-line arguments. Markdown commands are current; TOML commands are deprecated. This package omits shell grants, hooks, MCP, extensions, providers, endpoints, credentials, sandbox builders, deployment automation, publication automation, signing automation, release automation, and a Lead subagent.
+
+## Updating and Removal
+
+To update, merge `QWEN.md` and `.qwen/` changes while preserving local customizations. To remove, delete only this department's copied Qwen files and empty directories created solely for them. Integrations and credentials are not stored here.
