@@ -1,11 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from pathlib import Path
 from typing import Protocol
 
 from .models import ApprovalDecision, ProposedToolAction, ToolApprovalResult
-from .policies import action_requires_human_approval, approval_result_allows_action, normalize_relative_path
 
 
 class RepositoryReader(Protocol):
@@ -23,7 +21,7 @@ class HumanApproval(Protocol):
 
 
 @dataclass
-class DeterministicApprovalFake:
+class DeterministicApprovalProvider:
     decision: ApprovalDecision = ApprovalDecision.PENDING
     requested: list[ProposedToolAction] = field(default_factory=list)
 
@@ -32,21 +30,34 @@ class DeterministicApprovalFake:
         return self.decision
 
 
-@dataclass(frozen=True)
-class InertWorkspaceTools:
-    workspace_root: Path
-    approval: HumanApproval
+@dataclass
+class MemoryRepository:
+    files: dict[str, str] = field(default_factory=dict)
+    writes: list[tuple[str, str]] = field(default_factory=list)
 
-    async def authorize(self, action: ProposedToolAction) -> ToolApprovalResult:
-        normalize_relative_path(self.workspace_root, action.target)
-        if not action_requires_human_approval(action):
-            return ToolApprovalResult(action, ApprovalDecision.APPROVED, "read-only action allowed")
-        decision = await self.approval.request_approval(action)
-        if not approval_result_allows_action(decision):
-            return ToolApprovalResult(action, ApprovalDecision.DENIED, "sensitive action denied; no action executed")
-        return ToolApprovalResult(action, ApprovalDecision.APPROVED, "sensitive action approved by host")
+    async def read_text(self, path: str) -> str:
+        return self.files[path]
+
+    async def search(self, query: str, paths: tuple[str, ...]) -> tuple[str, ...]:
+        return tuple(path for path in paths if query in self.files.get(path, ""))
+
+    async def write_text(self, path: str, content: str) -> None:
+        self.files[path] = content
+        self.writes.append((path, content))
+
+    async def replace_text(self, path: str, old: str, new: str) -> None:
+        self.files[path] = self.files[path].replace(old, new)
+        self.writes.append((path, self.files[path]))
+
+
+def approval_result_allows_action(decision: ApprovalDecision) -> bool:
+    return decision is ApprovalDecision.APPROVED
+
+
+def approval_result(action: ProposedToolAction, decision: ApprovalDecision, message: str) -> ToolApprovalResult:
+    return ToolApprovalResult(action=action, decision=decision, message=message)
 
 
 # The reference package intentionally provides no concrete filesystem, shell,
-# network, Git, deployment, publication, signing, credential, or unrestricted
-# operational tools. Hosts must inject implementations and SDK HITL approval.
+# network, Git, deployment, publication, signing, credential, MCP, or
+# unrestricted operational tools. Hosts inject repository tools and models.

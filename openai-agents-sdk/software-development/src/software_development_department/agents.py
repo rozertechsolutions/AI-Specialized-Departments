@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any, Mapping
+
 from agents import Agent
 
 from .guardrails import evidence_and_self_review_guardrail, legitimate_task_guardrail
@@ -37,18 +39,23 @@ SPECIALIST_TOOL_DESCRIPTIONS = {
 }
 
 
-def _specialist(slug: str, output_type: type[object]) -> Agent:
+def _specialist(slug: str, output_type: type[object], model: Any = None) -> Agent:
     return Agent(
         name=slug,
         instructions=ROLE_INSTRUCTIONS[slug],
+        model=model,
         output_type=output_type,
         input_guardrails=[legitimate_task_guardrail],
         output_guardrails=[],
     )
 
 
-def build_department_agents() -> dict[str, Agent]:
-    specialists = {slug: _specialist(slug, output_type) for slug, output_type in SPECIALIST_OUTPUTS.items()}
+def build_department_agents(models: Mapping[str, Any] | None = None) -> dict[str, Agent]:
+    injected_models = models or {}
+    specialists = {
+        slug: _specialist(slug, output_type, injected_models.get(slug))
+        for slug, output_type in SPECIALIST_OUTPUTS.items()
+    }
     specialist_tools = [
         agent.as_tool(
             tool_name=slug.replace("-", "_"),
@@ -59,6 +66,7 @@ def build_department_agents() -> dict[str, Agent]:
     lead = Agent(
         name="software-development-lead",
         instructions=ROLE_INSTRUCTIONS["software-development-lead"],
+        model=injected_models.get("software-development-lead"),
         tools=specialist_tools,
         output_type=LeadFinalRecord,
         input_guardrails=[legitimate_task_guardrail],

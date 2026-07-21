@@ -22,17 +22,16 @@ class RoleSlug(str, Enum):
     DOCUMENTATION = "documentation-and-release-readiness-specialist"
 
 
-class OrchestrationState(str, Enum):
-    READY = "ready"
-    RUNNING = "running"
-    PAUSED_FOR_HUMAN_APPROVAL = "paused_for_human_approval"
+class FinalState(str, Enum):
+    PAUSED = "paused"
     STOPPED = "stopped"
+    BLOCKED = "blocked"
     COMPLETED = "completed"
 
 
 class ApprovalDecision(str, Enum):
     APPROVED = "approved"
-    DENIED = "denied"
+    REJECTED = "rejected"
     PENDING = "pending"
 
 
@@ -129,8 +128,9 @@ class DocumentationReadinessOutput(SpecialistResult):
 
 
 @dataclass(frozen=True)
-class HumanDecision:
+class ApprovalDecisionRecord:
     subject: str
+    action: str
     decision: ApprovalDecision
     evidence: str
 
@@ -161,11 +161,17 @@ class LeadFinalRecord:
     risk_review: RiskReviewOutput | None
     documentation_release_readiness: DocumentationReadinessOutput | None
     limitations: tuple[str, ...]
-    human_decisions: tuple[HumanDecision, ...]
-    stop_state: OrchestrationState = OrchestrationState.STOPPED
+    approval_decisions: tuple[ApprovalDecisionRecord, ...]
+    final_state: FinalState = FinalState.STOPPED
     checks_not_run: tuple[str, ...] = field(default_factory=tuple)
 
     def has_independent_review(self) -> bool:
         if self.implementation_evidence is None:
             return True
         return self.code_review is not None and self.code_review.role is RoleSlug.CODE_REVIEW
+
+    def has_required_risk_review(self) -> bool:
+        if self.implementation_evidence is None:
+            return True
+        risky = self.implementation_evidence.validation_notes or self.risk_review is not None
+        return not risky or (self.risk_review is not None and self.risk_review.role is RoleSlug.RISK_REVIEW)

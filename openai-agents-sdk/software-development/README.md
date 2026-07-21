@@ -18,10 +18,10 @@ Use this package as SDK source for a stack-agnostic software-development orchest
 - `pyproject.toml`: Python package metadata and bounded Agents SDK dependency.
 - `src/software_development_department/models.py`: typed task, evidence, role output, approval, action, and final-record models.
 - `src/software_development_department/agents.py`: native SDK construction for one Lead and seven specialists exposed through `Agent.as_tool()`.
-- `src/software_development_department/orchestrator.py`: bounded Lead runtime and specialist-call limits.
+- `src/software_development_department/orchestrator.py`: bounded `DepartmentRuntime`, `DepartmentContext`, `RunLimits`, `DepartmentRunResult`, interruption inspection, `to_state()`, approve/reject, and resume flow.
 - `src/software_development_department/guardrails.py`: input/output guardrails and proposed-action approval metadata.
 - `src/software_development_department/policies.py`: approval, scope, path, and evidence policies.
-- `src/software_development_department/tools.py`: host-injected tool protocols plus deterministic inert fakes.
+- `src/software_development_department/tools.py`: host-injected repository and approval protocols plus deterministic test fakes.
 - `src/software_development_department/skills.py` and `workflows.py`: source-only capability and workflow definitions.
 - `tests/`: deterministic `unittest`-discoverable tests for public SDK use and local safety behavior.
 
@@ -39,7 +39,7 @@ Use Python 3.10 or newer and a virtual environment. Install the declared `openai
 
 ## Usage
 
-Import the package, build the department agents, and run the Lead only from a host that supplies models/tools and handles SDK human-in-the-loop approvals.
+Import the package, build the department agents, create a `DepartmentContext` with host-injected repository reader/writer and approval provider, and run the Lead only from a host that supplies models/tools and handles SDK human-in-the-loop approvals.
 
 Example requests for a host:
 
@@ -55,7 +55,7 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 
 ## Operating Model
 
-The Lead remains the top-level agent. The seven specialists are exposed as tools, not handoffs, so typed results return to the Lead. Implementation evidence does not count as independent review. Completion requires typed evidence, validation status, human decisions, limitations, and explicit stop state.
+The Lead remains the top-level agent. The seven specialists are exposed through `Agent.as_tool()`, not handoffs, so typed results return to the Lead. `Runner.run(...)` is bounded by `RunLimits`; HITL interruptions are inspected, converted with `result.to_state()`, approved or rejected by the host, and resumed. Implementation evidence does not count as independent review. Completion requires typed evidence, validation status, approval records, limitations, and an explicit `PAUSED`, `STOPPED`, `BLOCKED`, or `COMPLETED` state.
 
 ## Safety and Human Review
 
@@ -64,6 +64,18 @@ Use least privilege. Paths are normalized against an injected workspace root and
 ## Platform Limitations
 
 This is source code, not a production service. It includes no real API invocation, credentials, account identifiers, endpoints, fixed model, UI, CLI, server, installer, shell tool, Git tool, network tool, MCP server, deployment, publication, signing, release, purchase, submission, or external communication implementation. Real HITL approval/resume must be wired by the host through the Agents SDK.
+
+## Project-dependent configuration
+
+Adapt repository/module paths, authorized scopes, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules in the host application. These values must come from the target repository, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+OpenAI account availability, model selection, provider/runtime selection, approval UI, repository reader/writer implementations, enabled tools, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, tracing/telemetry, and privacy choices remain controlled by the user, team, host application, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, source-only SDK behavior, and honest representation of Agents SDK host-integration limitations are department invariants.
 
 ## Updating and Removal
 
