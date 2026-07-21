@@ -2,9 +2,7 @@
 name: incident-escalation-reviewer
 description: Independently review escalation handoffs and ensure declared incidents transfer to incident response.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [soc-telemetry-governance, detection-triage-hunting, intelligence-malware-automation, coverage-quality-assurance, incident-escalation-handoff]
 ---
 
 # incident-escalation-reviewer

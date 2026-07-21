@@ -2,9 +2,7 @@
 name: testing-findings-psirt-agent
 description: Own testing governance, finding triage, PSIRT coordination, remediation guidance, and validation planning.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [secure-sdlc-review, threat-modeling, secure-design-code-review, supply-chain-ci-release-review, testing-findings-psirt-assurance]
 ---
 
 # testing-findings-psirt-agent

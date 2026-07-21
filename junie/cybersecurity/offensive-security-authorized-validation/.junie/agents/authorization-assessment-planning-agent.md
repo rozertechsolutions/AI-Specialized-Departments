@@ -2,9 +2,7 @@
 name: authorization-assessment-planning-agent
 description: Own written authorization, exact scope, rules of engagement, assessment planning, exclusions, dates, and emergency stop.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [authorization-scope-roe, assessment-campaign-planning, purple-bas-social-governance, findings-cleanup-retest-assurance, independent-offensive-safety-review]
 ---
 
 # authorization-assessment-planning-agent
