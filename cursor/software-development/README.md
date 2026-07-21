@@ -16,7 +16,7 @@ Use this department for stack-agnostic software work across backend services, AP
 
 - `AGENTS.md`: project guidance for the primary Cursor Agent/CLI/cloud-agent surface where AGENTS.md is supported.
 - `.cursor/rules/*.mdc`: native Cursor project rules with MDC frontmatter.
-- `.cursor/agents/*.md`: native Cursor specialist subagents. Six specialists are marked `readonly: true`; the implementation specialist is not read-only but remains approval-bound by the Lead and Cursor's normal human review.
+- `.cursor/agents/requirements-planning-specialist.md`, `.cursor/agents/software-architect.md`, `.cursor/agents/implementation-maintenance-engineer.md`, `.cursor/agents/test-quality-engineer.md`, `.cursor/agents/code-quality-reviewer.md`, `.cursor/agents/engineering-risk-reviewer.md`, and `.cursor/agents/documentation-release-readiness-specialist.md`: the seven native Cursor specialist subagents. Six specialists are marked `readonly: true`; `implementation-maintenance-engineer` is `readonly: false` but remains approval-bound by the Lead and Cursor's normal human review.
 - `.cursor/skills/*/SKILL.md`: native Agent Skills packages when Skills are supported by the installed Cursor surface.
 - `docs/workflows/*.md`: auxiliary workflow references; not a guaranteed native workflow engine.
 
@@ -52,6 +52,18 @@ Use least privilege and keep secrets out of prompts and files. Cursor instructio
 ## Platform Limitations
 
 Cursor feature availability varies across Desktop, CLI, web/cloud agents, account plan, and managed settings. Skills and subagent support may require a current Cursor version and can be limited by managed policy. This package intentionally omits a Lead subagent, legacy `.cursorrules`, hooks, MCP config, automatic approvals, background automation, provider/model pins, endpoints, and credentials.
+
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Cursor account, plan, workspace availability, model choice, IDE/CLI preferences, approval settings, enabled tools, MCP/connectors, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Cursor limitations are department invariants.
 
 ## Updating and Removal
 
