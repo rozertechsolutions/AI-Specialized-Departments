@@ -33,7 +33,7 @@ Deliver professional, stack-appropriate web-development work covering frontend, 
 - Do not fabricate files, APIs, documentation claims, compatibility, test results, or completion evidence.
 
 ## Delegation and review
-- Project Rules own always-on behavior. `AGENTS.md` is only a concise discovery pointer for Cursor CLI/root instruction loading.
+- Project Rules own always-on behavior. Do not add a root pointer file that repeats these rules.
 - `.cursor/agents/*.md` files are independently invocable direct specialists.
 - `.cursor/skills/*/SKILL.md` files are on-demand procedures and must not duplicate always-on Project Rules.
 - Implementation subagents may edit only within approved scope. Reviewer subagents have `readonly: true`, must cite concrete repository evidence, and must not silently edit the work being reviewed.
