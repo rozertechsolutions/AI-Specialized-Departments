@@ -25,9 +25,9 @@ It does not authorize live scanning, exploitation, containment, recovery executi
 
 ## Platform compatibility
 
-Product surface: Cline IDE extension, TUI, CLI, project `.cline/` configuration, Rules, Skills, workflows, hooks, Cline-managed subagents, Agent Teams on supported non-IDE surfaces, MCP configuration, and approval controls.
+Product surface: Cline IDE extension, TUI, CLI, project `.cline/` Rules, Skills, workflows/commands, hooks when separately configured, Cline-managed read-only subagents, Agent Teams on supported SDK/CLI/Kanban surfaces, MCP configuration when separately approved, and approval controls.
 
-Validated documentation date: 2026-07-21. Cline documents project-level `.cline/rules/`, `.cline/skills/`, `.cline/hooks/`, `.cline/agents/`, plugins, and cron specs. Cline-managed subagents are an experimental read-only research feature; Agent Teams apply to Cline SDK, CLI, and Kanban, not the VS Code or JetBrains extensions. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+Validated documentation date: 2026-07-21. Cline documents project Rules, Skills, commands/workflows, hooks, MCP, plugins, CLI/TUI usage, and Cline-managed experimental subagents. The current official documentation does not establish `.cline/agents/*.md` as a repository-native declarative custom-agent format for project-defined named subagents, so this package does not include that directory. Agent Teams apply to Cline SDK, CLI, and Kanban surfaces, not the VS Code or JetBrains extensions. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
 
 ## Prerequisites
 
@@ -44,15 +44,15 @@ cd cline/cybersecurity/governance-risk-compliance-assurance
 cline -p "Review the supplied policy evidence against the governance-policy-frameworks workflow. Do not modify files."
 ```
 
-In the IDE extension, open the repository, navigate to the selected `cline/cybersecurity/<area>/`, and ask Cline to use the area Rules, Skills, workflows, and project agent definitions. If a Skill is not shown in Cline's Skills UI, copy or import the specific area skill directory into the documented Cline skill location and keep the original repository copy as the source baseline.
+In the IDE extension, open the repository, navigate to the selected `cline/cybersecurity/<area>/`, and ask Cline to use the area Rules, Skills, workflows, and `AGENTS.md` instructions. If a Skill is not shown in Cline's Skills UI, copy or import the specific area skill directory into the documented Cline skill location and keep the original repository copy as the source baseline.
 
 Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
 
 ## Working directory and discovery
 
-Cline loads project configuration from `.cline/` under the trusted workspace. In this package, each area is intended to be used as the effective workspace root so that its local `.cline/rules/`, `.cline/skills/`, `.cline/workflows/`, and `.cline/agents/` assets describe that area without bleeding into another area.
+Cline loads project configuration from `.cline/` under the trusted workspace. In this package, each area is intended to be used as the effective workspace root so that its local `.cline/rules/`, `.cline/skills/`, and `.cline/workflows/` assets describe that area without bleeding into another area.
 
-Current Cline subagents created through `use_subagents` are Cline-managed read-only research workers. They can read files, list files, search, run restricted read-only commands, and use Skills, but cannot edit files, use the browser, access MCP servers, perform web searches, or spawn nested subagents. Repository `.cline/agents/*.md` files are retained only as project agent-definition artifacts documented under Cline project configuration; do not treat them as proof that Cline will automatically invoke named custom subagents on every surface.
+Current Cline subagents created through `use_subagents` are Cline-managed read-only research workers. They can read files, list files, search, run restricted read-only commands, and use Skills, but cannot edit files, use the browser, access MCP servers, perform web searches, or spawn nested subagents. Do not assume repository-defined named Cline subagents exist; use the retained Rules, Skills, workflows, and `AGENTS.md` instructions directly.
 
 When upward discovery applies, the nearest area-level instructions take precedence for that area. When a surface requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
 
@@ -72,10 +72,9 @@ When upward discovery applies, the nearest area-level instructions take preceden
 - Area `AGENTS.md` files for durable area ownership and safety instructions.
 - `.cline/rules/*.md` project Rules for always-on Cline guidance.
 - `.cline/skills/*/SKILL.md` Agent Skills for reusable area workflows.
-- `.cline/workflows/*.md` workflow entry points that delegate to the corresponding complete Skill or agent contract.
-- `.cline/agents/*.md` project agent-definition artifacts for the Cline project configuration surface.
+- `.cline/workflows/*.md` workflow entry points that delegate to the corresponding complete Skill or role contract.
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+Unsupported native mechanisms are omitted rather than simulated. The package does not include `.cline/agents/*.md`, fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
 
 ## How to use the department
 
@@ -119,7 +118,7 @@ Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YA
 
 - If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
 - If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
-- If a named `.cline/agents/*.md` definition is not visible on the current Cline surface, use the equivalent Rule, Skill, or workflow directly; Cline-managed `use_subagents` remains a separate experimental read-only research feature.
+- If a named specialist role is needed, use the equivalent Rule, Skill, workflow, or area `AGENTS.md` section directly; Cline-managed `use_subagents` remains a separate experimental read-only research feature and is not a repository-defined named-agent system.
 - If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
 - If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
 - If a platform preview feature changes, re-check official documentation and update `cline/cybersecurity/NATIVE_SOURCES.md` before relying on it.
