@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Incident Command Evidence Agent"
+description = "Own incident readiness, classification support, command coordination, decision logging, evidence preservation, and chain of custody."
+safety = "safe"
+system_prompt_id = "incident-command-evidence-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

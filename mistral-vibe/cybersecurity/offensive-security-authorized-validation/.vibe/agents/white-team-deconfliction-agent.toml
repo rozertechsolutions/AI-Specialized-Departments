@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "White Team Deconfliction Agent"
+description = "Own white-team deconfliction, safety, communications, emergency stop, and artifact-control planning."
+safety = "safe"
+system_prompt_id = "white-team-deconfliction-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

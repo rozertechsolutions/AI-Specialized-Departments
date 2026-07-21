@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Coverage Quality Assurance Agent"
+description = "Own SOC metrics, detection quality, adversary-behavior mapping, and independent quality review."
+safety = "safe"
+system_prompt_id = "coverage-quality-assurance-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"

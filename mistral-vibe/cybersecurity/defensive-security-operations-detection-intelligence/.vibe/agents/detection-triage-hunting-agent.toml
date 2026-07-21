@@ -1,0 +1,18 @@
+agent_type = "subagent"
+display_name = "Detection Triage Hunting Agent"
+description = "Own detection lifecycle, supplied-alert triage, case-analysis methods, threat-hunt design, and coverage mapping."
+safety = "safe"
+system_prompt_id = "detection-triage-hunting-agent"
+bypass_tool_permissions = false
+enable_connectors = false
+enabled_tools = ["grep", "read_file", "skill"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+
+[tools.grep]
+permission = "always"
+
+[tools.read_file]
+permission = "always"
+
+[tools.skill]
+permission = "always"
