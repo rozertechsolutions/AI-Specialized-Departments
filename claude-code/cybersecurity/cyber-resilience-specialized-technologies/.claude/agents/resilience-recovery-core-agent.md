@@ -2,8 +2,9 @@
 name: resilience-recovery-core-agent
 description: Own resilience strategy, critical services, dependencies, disruption scenarios, backup, restoration, immutability, ransomware resilience, and recovery exercise planning.
 model: inherit
-readonly: true
+permissionMode: plan
 tools: [Read, Grep, Glob]
+disallowedTools: [Write, Edit, MultiEdit, NotebookEdit, Bash, WebFetch, WebSearch, "mcp__*"]
 skills: [resilience-program-review, backup-ransomware-recovery-assessment, specialized-technology-security-review, crypto-critical-infrastructure-planning, independent-resilience-assurance]
 ---
 

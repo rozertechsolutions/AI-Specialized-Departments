@@ -2,8 +2,9 @@
 name: soc-governance-telemetry-agent
 description: Own SOC operating model, service boundaries, escalation, telemetry requirements, and logging coverage.
 model: inherit
-readonly: true
+permissionMode: plan
 tools: [Read, Grep, Glob]
+disallowedTools: [Write, Edit, MultiEdit, NotebookEdit, Bash, WebFetch, WebSearch, "mcp__*"]
 skills: [soc-telemetry-governance, detection-triage-hunting, intelligence-malware-automation, coverage-quality-assurance, incident-escalation-handoff]
 ---
 

@@ -2,8 +2,9 @@
 name: enterprise-solution-architecture-agent
 description: Own enterprise and solution security architecture, trust boundaries, data flows, dependencies, and control placement.
 model: inherit
-readonly: true
+permissionMode: plan
 tools: [Read, Grep, Glob]
+disallowedTools: [Write, Edit, MultiEdit, NotebookEdit, Bash, WebFetch, WebSearch, "mcp__*"]
 skills: [security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance]
 ---
 
