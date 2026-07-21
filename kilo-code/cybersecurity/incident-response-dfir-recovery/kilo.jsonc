@@ -1,6 +1,39 @@
 {
-  "name": "cybersecurity-area-06-incident-response-dfir-recovery",
-  "staticOnly": true,
-  "externalIntegrationsEnabled": false,
-  "liveSecurityActionsEnabled": false
+  "$schema": "https://app.kilo.ai/config.json",
+  "instructions": [
+    ".kilo/rules/incident-response-dfir-recovery.md"
+  ],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow",
+      "*secret*": "ask",
+      "*credential*": "ask",
+      "*private-key*": "ask"
+    },
+    "edit": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "write": {
+      "*": "ask",
+      "../*": "deny",
+      "/**": "deny"
+    },
+    "bash": {
+      "*": "deny"
+    },
+    "task": {
+      "*": "deny",
+      "forensics-containment-recovery-agent": "allow",
+      "incident-command-evidence-agent": "allow",
+      "independent-incident-recovery-reviewer": "allow",
+      "post-incident-corrective-action-agent": "allow",
+      "scenario-crisis-review-agent": "allow"
+    }
+  },
+  "mcp": {}
 }
