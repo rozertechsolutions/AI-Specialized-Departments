@@ -1,112 +1,176 @@
-# Cybersecurity Department for opencode
+# OpenCode Cybersecurity Department
 
-This Cybersecurity department is a professional, adaptable baseline for opencode covering governance, architecture, product security, vulnerability management, defensive operations, incident response, authorized offensive validation, and resilience.
+This Cybersecurity department is a professional OpenCode configuration package covering governance, risk, compliance, assurance, security architecture and engineering, application/product/DevSecOps security, exposure and hardening, defensive operations and intelligence, incident response and recovery, authorized offensive validation, and resilience or specialized technology security.
 
-Its purpose is to help humans produce evidence-based cybersecurity work products while preserving clear professional ownership, least privilege, independent review, and human authority for consequential decisions.
+It solves the problem of opening a bounded cybersecurity area in OpenCode with area instructions, subagents, Skills, custom commands, and conservative permissions already colocated in the area directory. Possible uses include policy review, control mapping, risk exception support, architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection planning, incident readiness, authorized validation planning, resilience review, and independent assurance.
 
-Possible uses include risk and compliance assessment, security architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection engineering, incident-response planning, authorized penetration-test planning, resilience exercises, and independent assurance.
+## Department Overview
 
-## Department overview
+The department contains eight area packages under `opencode/cybersecurity/<area>/`. Each area is an isolated OpenCode project root with `AGENTS.md`, `opencode.jsonc`, `.opencode/agents/`, `.opencode/commands/`, and `.opencode/skills/`.
 
-The department contains eight Cybersecurity areas under `opencode/cybersecurity/<area>/`. Each area is scoped to a distinct professional ownership boundary and is intended for static analysis, planning, review, documentation, and assurance using supplied evidence.
+OpenCode can assist with static repository review, drafting, evidence organization, and handoff planning. It is not authorized to accept enterprise risk, approve exceptions, authorize offensive testing, approve production changes, declare or close incidents, make legal determinations, certify compliance, operate live security tooling, or act without a human accountable owner.
 
-It does not authorize live scanning, exploitation, containment, recovery execution, production changes, publication, external integrations, legal determinations, risk acceptance, or closure decisions. Human owners remain accountable for authorization, approvals, exceptions, risk acceptance, incident declaration or closure, offensive testing authorization, and production action.
+## Possible Uses
 
-## Possible uses
+- Start OpenCode in one cybersecurity area for area-scoped analysis.
+- Use `AGENTS.md` as the area instruction source.
+- Invoke named subagents with `@subagent-name` for specialized static review.
+- Invoke custom commands with `/command-name` for repeatable prompt workflows.
+- Load area Skills from `.opencode/skills/` according to OpenCode Skill permissions.
 
-- Risk and compliance assessment using supplied policies, control evidence, and framework mappings.
-- Security architecture and engineering review for proposed designs and reference patterns.
-- Threat modeling, secure SDLC review, release-readiness support, and supply-chain evidence review.
-- Vulnerability prioritization, remediation planning, and hardening governance from provided findings.
-- Detection engineering, telemetry coverage review, SOC triage methods, and threat-hunt planning.
-- Incident-response readiness, DFIR planning, evidence governance, recovery planning, and lessons learned.
-- Authorized offensive assessment planning, rules of engagement review, validation planning, and retest assurance.
-- Resilience exercises, ransomware recovery planning, specialized technology review, and independent assurance.
+## Platform Compatibility
 
-## Platform compatibility
+Validated on 2026-07-21 against current OpenCode documentation and `https://opencode.ai/config.json`.
 
-Product surface: OpenCode AGENTS.md, opencode.jsonc, agents, Skills, commands, permissions, and MCP settings where supported.
+Supported OpenCode surfaces:
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+- Project instructions through `AGENTS.md`.
+- Project config through JSON/JSONC config files.
+- Per-project `.opencode/agents/*.md` Markdown agents.
+- Per-project `.opencode/commands/*.md` custom command files.
+- Per-project `.opencode/skills/*/SKILL.md` Agent Skills.
+- Permission controls through the current `permission` config.
+- MCP configuration through `mcp`, intentionally empty in this package.
+
+OpenCode is a coding-agent CLI. This package does not configure providers, models, credentials, remote MCP servers, local MCP servers, plugins, LSP servers, formatters, hooks, or production integrations.
 
 ## Prerequisites
 
-OpenCode installed; trusted workspace; no dummy MCP servers or external credentials.
+- OpenCode installed by the user outside this repository.
+- A trusted local checkout.
+- A provider/model configured by the user outside this package if OpenCode requires one.
+- Human authorization for the selected cybersecurity scope and any supplied evidence.
 
-Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
+No API keys, credentials, connectors, scanners, cloud accounts, MCP servers, or production access are included in this package.
 
-## Installation or import
+## Installation Or Import
 
-Open OpenCode from opencode/cybersecurity/<area>/ to load area AGENTS.md and opencode.jsonc. Enable additional tools only by explicit human configuration outside this package.
+Use one area at a time.
 
-Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
+1. Open a terminal at the repository root.
+2. Change into the selected area, for example:
 
-## Working directory and discovery
+   ```text
+   cd opencode/cybersecurity/governance-risk-compliance-assurance
+   ```
 
-OpenCode loads AGENTS.md and config from documented workspace locations. Area isolation is preserved by starting in the area directory and permission boundaries.
+3. Start OpenCode from that area directory using the user's normal OpenCode launch command.
+4. Confirm OpenCode loads the area `AGENTS.md`, `opencode.jsonc`, and `.opencode/` directory.
+5. Provide redacted static evidence and an explicit scope.
 
-When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
+Do not start from `opencode/cybersecurity/` if the intent is strict area isolation. Start from the area directory so the nearest `AGENTS.md`, area `opencode.jsonc`, and area `.opencode/` files are the active project artifacts.
 
-## Area map
+## Working Directory And Discovery
 
-- `opencode/cybersecurity/governance-risk-compliance-assurance/` - Governance, Risk, Compliance, and Assurance: governance, cyber risk, compliance mapping, policies, assurance, exceptions, and risk-decision support.
-- `opencode/cybersecurity/security-architecture-engineering/` - Security Architecture and Engineering: security architecture, engineering patterns, identity, network, cloud, data, platform, and control design review.
-- `opencode/cybersecurity/application-product-devsecops-security/` - Application, Product, and DevSecOps Security: product security, secure SDLC, threat modeling, code/design review, CI/CD, supply chain, PSIRT, and release assurance.
-- `opencode/cybersecurity/exposure-vulnerability-hardening/` - Exposure, Vulnerability, and Hardening: asset exposure, vulnerability triage, prioritization, hardening, remediation governance, and validation evidence.
-- `opencode/cybersecurity/defensive-security-operations-detection-intelligence/` - Defensive Security Operations, Detection, and Intelligence: SOC operating model, telemetry, detection engineering, alert triage, hunting, intelligence, and coverage quality.
-- `opencode/cybersecurity/incident-response-dfir-recovery/` - Incident Response, DFIR, and Recovery: incident planning, evidence governance, DFIR analysis planning, containment planning, recovery coordination, and lessons learned.
-- `opencode/cybersecurity/offensive-security-authorized-validation/` - Offensive Security and Authorized Validation: explicitly authorized assessment planning, rules of engagement, emulation governance, retest planning, and safety review.
-- `opencode/cybersecurity/cyber-resilience-specialized-technologies/` - Cyber Resilience and Specialized Technologies: resilience, ransomware recovery planning, specialized technology review, cryptography, critical infrastructure, OT/IoT/cloud edge, and transition assurance.
+Launch directory:
 
-## Native components
+```text
+opencode/cybersecurity/<area>/
+```
 
-- `governance-risk-compliance-assurance/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `security-architecture-engineering/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `application-product-devsecops-security/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `exposure-vulnerability-hardening/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `defensive-security-operations-detection-intelligence/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `incident-response-dfir-recovery/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `offensive-security-authorized-validation/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
-- `cyber-resilience-specialized-technologies/`: `AGENTS.md`, `opencode.jsonc`, `.opencode/`
+Auto-discovered or project-loaded by OpenCode from that area:
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+- `AGENTS.md` for project rules.
+- `opencode.jsonc` for area permissions and empty MCP config.
+- `.opencode/agents/*.md` for Markdown agents.
+- `.opencode/commands/*.md` for custom commands.
+- `.opencode/skills/*/SKILL.md` for Skills.
 
-## How to use the department
+OpenCode rule precedence checks local `AGENTS.md` or compatible rule files by traversing upward from the current directory, then global files. OpenCode config merges remote, global, custom, project, `.opencode`, and inline configuration, with later config overriding conflicting keys. The eight identical `opencode.jsonc` files are retained intentionally because each area is an isolated runnable project root.
 
-Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
+## Area Map
 
-Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
+- `governance-risk-compliance-assurance/`: governance, policy, control mapping, compliance, risk records, exceptions, assurance, evidence, suppliers, maturity, and reporting.
+- `security-architecture-engineering/`: security architecture, engineering patterns, identity, cloud, network, data, containers, infrastructure as code, automation, and architecture assurance.
+- `application-product-devsecops-security/`: product security, secure SDLC, threat modeling, secure code/design review, CI/CD, software supply chain, PSIRT, release readiness, and appsec assurance.
+- `exposure-vulnerability-hardening/`: exposure management, vulnerability triage, prioritization, hardening, remediation governance, validation, and reporting.
+- `defensive-security-operations-detection-intelligence/`: SOC governance, telemetry, detection engineering, triage, hunting, intelligence, malware-analysis planning, automation review, and coverage quality.
+- `incident-response-dfir-recovery/`: incident command, evidence governance, DFIR planning, containment planning, recovery coordination, scenarios, crisis review, and corrective action.
+- `offensive-security-authorized-validation/`: authorization, scope, rules of engagement, assessment planning, deconfliction, emulation, Purple Team validation, findings, cleanup, retest, and safety review.
+- `cyber-resilience-specialized-technologies/`: resilience programs, ransomware recovery, backups, specialized technology security, OT/ICS, IoT, embedded, AI systems, firmware, cryptographic agility, critical infrastructure, and transition governance.
 
-## Permissions and safety
+## Native Components
 
-Default behavior is read-only and static. Repository writes, where a platform technically allows them, must stay inside the selected `opencode/cybersecurity/<area>/` directory and require an explicit user task to update static artifacts. Shell, network, installation, deployment, scanning, exploitation, recovery execution, remote Git operations, MCP connections, hosted tools, and external connectors are prohibited by default.
+Each area contains:
 
-AI components cannot self-approve, accept enterprise risk, authorize offensive testing, approve production changes, close incidents, certify compliance, make legal determinations, or conceal residual risk. Human review is mandatory for approvals, exceptions, risk acceptance, release or closure decisions, incident command, offensive authorization, external reporting, and production actions.
+- `AGENTS.md`: area instructions loaded as project rules.
+- `opencode.jsonc`: area config with read/search/list allowed, Skill loading allowed, edit requiring approval, bash denied, webfetch/websearch denied, task/todo actions denied, external directories denied, and no MCP servers.
+- `.opencode/agents/*.md`: current Markdown subagents with `description`, `mode: subagent`, `temperature`, and documented `permission` keys.
+- `.opencode/commands/*.md`: user-invoked slash-command prompt files.
+- `.opencode/skills/*/SKILL.md`: Agent Skills.
 
-## Configuration and customization
+No hooks, plugins, providers, models, MCP servers, scanner connectors, or live app integrations are included.
 
-Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
+## How To Use The Department
+
+Select the area that owns the work, launch OpenCode from that area, and provide:
+
+- authorized scope and explicit exclusions;
+- accountable owner, requester, reviewer, approver role, and intended audience;
+- evidence inventory with provenance, period, freshness, and limitations;
+- decision needed, assumptions, constraints, and required output.
+
+Example input:
+
+```text
+@governance-policy-frameworks-agent use /governance-policy-frameworks to review the supplied access-control policy draft. Scope is static review only. Exclude publication and external submission. Return control mappings, ambiguity, evidence gaps, required approvers, and independent-review requirements.
+```
+
+Expected output is a scoped artifact with evidence tables, findings separated by evidence state, assumptions, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact, closure-facing, exception, release, incident, offensive, or external-facing outputs must go to an independent reviewer that did not create the artifact.
+
+Stop when authorization is missing, evidence is unredacted or insufficient, scope is unclear, a live action is requested, an output would self-review, or a human-only decision is requested.
+
+## Permissions And Safety
+
+The area `opencode.jsonc` and agent frontmatter use current OpenCode `permission` keys:
+
+- `read`, `list`, `glob`, and `grep`: `allow`.
+- `skill`: `allow`.
+- `edit`: `ask`.
+- `bash`, `webfetch`, `websearch`, `external_directory`, `task`, and `todowrite`: `deny`.
+- `mcp`: `{}`.
+
+Auto mode does not override explicit `deny` rules. Any static repository edit still requires a human approval prompt and must remain inside the selected area. Do not add MCP servers, plugins, providers, credentials, scanner commands, deployment commands, or external references unless a human explicitly approves them in the consuming environment.
+
+Human approval is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, and critical finding closure.
+
+## Configuration And Customization
+
+### Project-dependent configuration
+
+Adapt repository paths, source directories, application architecture, build systems, languages, deployment model, cloud provider, CI/CD structure, telemetry locations, asset inventory, data-flow scope, threat-model scope, vulnerability evidence, approved test scope, area-specific working directories, and repository-specific policies per project.
+
+### User/organization-dependent configuration
+
+Supply or approve OpenCode installation, provider/model configuration, account identity, organization policies, regulatory frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, permitted integrations, API credentials, MCP endpoints, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, retention rules, and legal/privacy constraints outside this repository. Do not commit secrets or confidential values.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, static-by-default behavior, prohibited unauthorized actions, stop conditions, denied live integrations, denied shell/web/task behavior, empty MCP config, and human approval gates intact.
 
 ## Validation
 
-Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
+Repository validation can check JSON/JSONC parsing, current OpenCode config schema compatibility, Markdown frontmatter, area coverage, file existence, exact duplicates, empty files, empty directories, and absence of providers, credentials, MCP servers, plugins, hooks, and live integrations.
+
+Runtime behavior, provider/model behavior, OpenCode UI behavior, app/plugin behavior, scanner output, incident actions, recovery, and production changes require a separately authorized runtime and were not executed.
 
 ## Troubleshooting
 
-- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
-- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
-- If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
-- If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
-- If a platform preview feature changes, re-check official documentation and update `opencode/cybersecurity/NATIVE_SOURCES.md` before relying on it.
+- If area instructions are not loaded, confirm OpenCode was launched from `opencode/cybersecurity/<area>/`.
+- If a subagent is unavailable, confirm the file exists under `.opencode/agents/` and has `mode: subagent`.
+- If a command is unavailable, confirm the Markdown file exists under `.opencode/commands/` and invoke it as `/file-name`.
+- If a Skill is hidden or rejected, inspect `permission.skill` in `opencode.jsonc`.
+- If an MCP tool appears, inspect merged remote/global/user config; this package defines no MCP servers.
+- If permissions appear broader than intended, inspect OpenCode's merged config because remote, global, custom, project, `.opencode`, and inline config are merged.
 
-## Removal or uninstall
+## Removal Or Uninstall
 
-Remove the imported Project, GPT, Skill, agent, rule, command, workflow, or workspace configuration from the platform UI or delete the selected `opencode/cybersecurity/` directory from the repository. Remove any manually uploaded knowledge files from the platform. Do not delete organizational evidence or platform-global settings unless a human owner explicitly authorizes that cleanup.
+Stop OpenCode, delete or stop using the selected `opencode/cybersecurity/<area>/` import, or remove that area's `AGENTS.md`, `opencode.jsonc`, and `.opencode/` files from a copied consuming project. Remove user/global provider, model, MCP, plugin, or credential configuration from OpenCode's user settings only through the user's approved process. Do not delete unrelated organization evidence or global OpenCode settings without human approval.
 
 ## Limitations
 
-This package is a static professional baseline. It is not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing tool, incident-response platform, legal opinion, compliance certification, or production-control system. Platform support and schema details can change, especially for preview agent, Skill, hook, and permission features.
+This package is a static professional baseline for OpenCode, not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing platform, incident command system, recovery orchestrator, legal opinion, compliance certification, or production-control system. OpenCode configuration, permission keys, Skill behavior, and `.opencode` discovery can change.
 
-## Security notice
+## Security Notice
 
-Offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and use of sensitive evidence require explicit authorization, validated scope, and human control. Do not use these components to bypass approval, access secrets, contact external systems, or claim live execution without evidence.
+Explicit authorization and human control are mandatory for offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and sensitive evidence handling. Do not use this package to bypass approval, access secrets, contact external systems, or claim execution without evidence.

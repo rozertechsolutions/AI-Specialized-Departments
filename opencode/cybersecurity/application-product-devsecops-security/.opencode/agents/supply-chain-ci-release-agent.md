@@ -3,10 +3,18 @@ description: Own dependency, SBOM, provenance, build, artifact, CI/CD, configura
 mode: subagent
 temperature: 0.1
 permission:
+  read: allow
+  list: allow
+  glob: allow
+  grep: allow
   edit: ask
-  write: ask
   bash: deny
   webfetch: deny
+  websearch: deny
+  external_directory: deny
+  task: deny
+  todowrite: deny
+  skill: allow
 ---
 
 # supply-chain-ci-release-agent

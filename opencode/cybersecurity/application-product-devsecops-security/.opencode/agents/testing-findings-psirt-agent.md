@@ -3,10 +3,18 @@ description: Own testing governance, finding triage, PSIRT coordination, remedia
 mode: subagent
 temperature: 0.1
 permission:
+  read: allow
+  list: allow
+  glob: allow
+  grep: allow
   edit: ask
-  write: ask
   bash: deny
   webfetch: deny
+  websearch: deny
+  external_directory: deny
+  task: deny
+  todowrite: deny
+  skill: allow
 ---
 
 # testing-findings-psirt-agent

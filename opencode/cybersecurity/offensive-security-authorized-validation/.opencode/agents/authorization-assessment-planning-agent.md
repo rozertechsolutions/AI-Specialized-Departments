@@ -3,10 +3,18 @@ description: Own written authorization, exact scope, rules of engagement, assess
 mode: subagent
 temperature: 0.1
 permission:
+  read: allow
+  list: allow
+  glob: allow
+  grep: allow
   edit: ask
-  write: ask
   bash: deny
   webfetch: deny
+  websearch: deny
+  external_directory: deny
+  task: deny
+  todowrite: deny
+  skill: allow
 ---
 
 # authorization-assessment-planning-agent
