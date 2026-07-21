@@ -17,7 +17,7 @@ Use this department for general software work across backend services, APIs, des
 - `AGENTS.md`: native Codex project instructions; auto-discovered by Codex when in scope.
 - `.codex/config.toml`: native project config with `approval_policy = "on-request"`, `sandbox_mode = "workspace-write"`, network disabled for workspace-write, and `[agents].max_depth = 1`.
 - `.codex/agents/*.toml`: seven native specialist agents; there is intentionally no Lead agent.
-- `.agents/skills/*/SKILL.md`: native project Skills following the Agent Skills format.
+- `.codex/skills/*/SKILL.md`: native project Skills following the Agent Skills format.
 - `docs/workflows/*.md`: auxiliary references; not a Codex hook or workflow engine.
 
 ## Prerequisites
@@ -26,8 +26,8 @@ You need Codex CLI, IDE extension, or app support for repository instructions, p
 
 ## Installation or Setup
 
-1. Copy the contents of `codex/software-development/` into the target repository root so `AGENTS.md`, `.codex/`, `.agents/`, and `docs/` land at the root.
-2. Merge with any existing target `AGENTS.md`, `.codex/config.toml`, `.codex/agents/`, `.agents/skills/`, or `docs/workflows/` files.
+1. Copy the contents of `codex/software-development/` into the target repository root so `AGENTS.md`, `.codex/`, and `docs/` land at the root.
+2. Merge with any existing target `AGENTS.md`, `.codex/config.toml`, `.codex/agents/`, `.codex/skills/`, or `docs/workflows/` files.
 3. Open the target repository with Codex from the repository root or an in-scope subdirectory.
 4. Do not add hooks, MCP servers, provider/model pins, endpoints, credentials, or user-global paths as part of this package.
 
@@ -55,4 +55,4 @@ Codex discovery depends on the active Codex surface and project root. `docs/work
 
 ## Updating and Removal
 
-To update, merge the copied `AGENTS.md`, `.codex/`, `.agents/skills/`, and `docs/workflows/` content while preserving target customizations. To remove, delete only this department's copied Codex files and any empty directories created solely for it. Integrations and credentials are not stored here.
+To update, merge the copied `AGENTS.md`, `.codex/`, and `docs/workflows/` content while preserving target customizations. To remove, delete only this department's copied Codex files and any empty directories created solely for it. Integrations and credentials are not stored here.
