@@ -4,7 +4,7 @@ trigger: always_on
 
 # Web Development Behavior Rule
 
-This is a Cascade workspace rule in the legacy `.windsurf/rules/` path. Keep it behavioral; use skills for multi-step procedures and workflows for manual Cascade slash-command runbooks.
+This is a Devin Desktop / Cascade workspace rule in the current `.devin/rules/` path. Keep it behavioral; use Skills for reusable specialist procedures and workflows for manual Cascade slash-command runbooks.
 
 - Start from verified repository evidence, not assumed framework or platform behavior.
 - Confirm scope, acceptance criteria, affected surfaces, prohibited changes, and required human approvals before editing.
