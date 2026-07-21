@@ -53,6 +53,18 @@ Use least privilege and keep secrets out of prompts and files. `.claude/settings
 
 Claude Code settings are not a substitute for organization policy or human review. This package intentionally contains no hooks, MCP config, executable helpers, provider/model pins, endpoints, credentials, release automation, or Lead subagent. `docs/workflows/` is reference material only.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Claude Code account, plan, workspace availability, model choice, IDE/CLI preferences, permission mode, enabled tools, MCP/connectors, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Claude Code limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge new `CLAUDE.md`, `.claude/settings.json`, `.claude/agents/`, `.claude/skills/`, and `docs/workflows/` content while preserving target customizations. To remove, delete only those copied department files and empty directories created solely for this package. Credentials and integrations are not stored here.

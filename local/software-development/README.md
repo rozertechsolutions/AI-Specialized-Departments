@@ -60,6 +60,18 @@ Use least privilege and do not store secrets in these files. Schemas and policy 
 
 This is not an installer, launcher, agent runtime, validator, server, CLI, hook, MCP server, or provider integration. It contains no real endpoints, credentials, account identifiers, model defaults, executable code, generated build outputs, or active environment configuration. Runtime behavior depends entirely on the host that imports the specification.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules when deriving a project-specific implementation from the inert local specification. These values must come from the target repository, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Provider/runtime selection, model choice, local tool permissions, connectors/apps/MCP, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation that `local/` is declarative and inert are department invariants.
+
 ## Updating and Removal
 
 To update, merge changed `spec/`, `schemas/`, `config/*.example.yaml`, and `docs/` files while preserving local adaptations. To remove, delete only this department's copied Local specification files. No integrations, credentials, providers, models, or endpoints are stored here.

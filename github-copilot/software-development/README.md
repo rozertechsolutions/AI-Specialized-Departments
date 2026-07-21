@@ -53,6 +53,18 @@ Use least privilege and do not expose secrets. Copilot customization text cannot
 
 Copilot customization support varies by IDE, CLI, GitHub.com cloud agent, organization policy, and plan. Agent profiles and Skills may not be available in every surface. This package intentionally contains no GitHub Actions, issue automation, PR automation, release automation, MCP config, hooks, provider/model pins, endpoints, credentials, or Lead agent profile.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+GitHub Copilot account, plan, repository or organization policy, model choice, IDE/GitHub surface availability, enabled tools, MCP/connectors, credentials, private endpoints, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of GitHub Copilot limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge changed `.github/` customization files while preserving local repository policy. To remove, delete only this department's copied Copilot instruction, agent, prompt, and Skill files. Integrations, credentials, and GitHub app settings are not stored here.

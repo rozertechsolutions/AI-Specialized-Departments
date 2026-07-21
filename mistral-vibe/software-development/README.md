@@ -56,6 +56,18 @@ Use least privilege and protect secrets. `safety = "safe"` metadata is not an en
 
 Vibe behavior can vary by CLI, extension, account, and host policy. Programmatic approval limits are explicit: callers must select the safe Lead and enforce approvals. This package intentionally omits Bash, web, MCP, connectors, provider/model pins, endpoints, credentials, hooks, installers, launchers, deployment automation, publication automation, signing automation, release automation, and Git tools.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Mistral Vibe account, workspace availability, model/provider choices exposed by the product, IDE/CLI preferences, approval settings, enabled tools, connectors/MCP, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Mistral Vibe limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge `AGENTS.md`, `.vibe/`, and `docs/workflows/` changes while preserving local customizations. To remove, delete only this department's copied Vibe files and empty directories created solely for them. Integrations and credentials are not stored here.

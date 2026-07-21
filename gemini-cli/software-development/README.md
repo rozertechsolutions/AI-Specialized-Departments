@@ -54,6 +54,18 @@ Use least privilege and protect secrets. Gemini CLI settings and subagent tool a
 
 Gemini CLI custom command, subagent, and Skill behavior depends on the installed version and active settings. This package intentionally omits ineffective workspace policy files, hooks, MCP, extensions, providers, model pins, endpoints, credentials, sandbox builders, deployment automation, publication automation, signing automation, and release automation.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Gemini CLI account, plan, model/provider choice, CLI preferences, approval settings, enabled tools, MCP/connectors, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Gemini CLI limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge `GEMINI.md` and `.gemini/` changes while preserving local settings and commands. To remove, delete only this department's copied Gemini files and empty directories created solely for them. Authentication, providers, credentials, and integrations are not stored here.

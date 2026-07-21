@@ -53,6 +53,18 @@ Use least privilege and protect secrets. OpenCode permission config reduces risk
 
 OpenCode feature support varies by installed version and parent config. This package intentionally omits `.opencode/agents/software-development-lead.md`, MCP, plugins, hooks, scripts, wrappers, global paths, provider/model pins, endpoints, credentials, Bash/web grants, deployment automation, publication automation, signing automation, and release automation.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+OpenCode account or CLI availability, model/provider choice, permission settings, enabled tools, plugins/MCP, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of OpenCode limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge `AGENTS.md`, `opencode.jsonc`, and `.opencode/` changes while preserving local customizations. To remove, delete only this department's copied OpenCode files and empty directories created solely for them. Integrations and credentials are not stored here.
