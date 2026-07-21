@@ -63,6 +63,18 @@ Use least privilege and protect secrets. Warp instructions and imported assets d
 
 Warp and Oz capabilities vary by product surface, plan, and workspace. Warp Drive source files may require manual import and are not guaranteed to auto-load from a repository checkout. This package intentionally omits cloud-agent schedules, Oz/background jobs, MCP, connectors, hooks, terminal launchers, provider/model pins, endpoints, credentials, release automation, and fake repository agents.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying or importing the Warp Drive assets into the target workspace. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Warp account, workspace availability, model/provider choices exposed by Warp, terminal preferences, approval settings, enabled integrations, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Warp Drive limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge `WARP.md` and refresh imported Warp Drive rules, Skills, and workflows while preserving local customizations. To remove, delete this department's copied `WARP.md` content and imported Warp Drive assets only. Integrations and credentials are not stored here.

@@ -125,6 +125,8 @@ def final_record_is_supported(record: LeadFinalRecord, context: object | None = 
         return False
     if not record.has_independent_review():
         return False
+    if not record.has_required_risk_review():
+        return False
     if record.implementation_evidence and record.validation_evidence is None:
         return False
     if record.implementation_evidence and record.code_quality_review_result is None:

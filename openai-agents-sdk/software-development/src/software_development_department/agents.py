@@ -1,11 +1,17 @@
 from __future__ import annotations
 
+<<<<<<< HEAD
 import json
 from dataclasses import asdict, dataclass, is_dataclass
 from typing import Any
 
 from agents import Agent, RunContextWrapper
 from pydantic import TypeAdapter
+=======
+from typing import Any, Mapping
+
+from agents import Agent
+>>>>>>> feature/software-development
 
 from .guardrails import evidence_and_self_review_guardrail, legitimate_task_guardrail
 from .models import (
@@ -120,6 +126,7 @@ SPECIALIST_TOOL_DESCRIPTIONS = {
 
 SENSITIVE_SPECIALIST_TOOLS = frozenset({RoleSlug.ARCHITECTURE.value, RoleSlug.IMPLEMENTATION.value})
 
+<<<<<<< HEAD
 
 @dataclass(frozen=True)
 class DepartmentAgents:
@@ -140,12 +147,20 @@ def _specialist(
         instructions=ROLE_INSTRUCTIONS[slug],
         tools=tools,
         model=context.model_for(slug),
+=======
+def _specialist(slug: str, output_type: type[object], model: Any = None) -> Agent:
+    return Agent(
+        name=slug,
+        instructions=ROLE_INSTRUCTIONS[slug],
+        model=model,
+>>>>>>> feature/software-development
         output_type=output_type,
         input_guardrails=[legitimate_task_guardrail],
         output_guardrails=[],
     )
 
 
+<<<<<<< HEAD
 def _specialist_input_builder(input_data: SpecialistInput | dict[str, object]) -> str:
     if not isinstance(input_data, SpecialistInput):
         if isinstance(input_data.get("params"), dict):
@@ -198,6 +213,12 @@ def build_department_agents(context: DepartmentContext) -> DepartmentAgents:
             [read_tool, write_tool] if slug == RoleSlug.IMPLEMENTATION.value else [read_tool],
             context,
         )
+=======
+def build_department_agents(models: Mapping[str, Any] | None = None) -> dict[str, Agent]:
+    injected_models = models or {}
+    specialists = {
+        slug: _specialist(slug, output_type, injected_models.get(slug))
+>>>>>>> feature/software-development
         for slug, output_type in SPECIALIST_OUTPUTS.items()
     }
     specialist_tools = [
@@ -215,7 +236,12 @@ def build_department_agents(context: DepartmentContext) -> DepartmentAgents:
     lead = Agent(
         name="software-development-lead",
         instructions=ROLE_INSTRUCTIONS["software-development-lead"],
+<<<<<<< HEAD
         tools=[*specialist_tools, read_tool],
+=======
+        model=injected_models.get("software-development-lead"),
+        tools=specialist_tools,
+>>>>>>> feature/software-development
         output_type=LeadFinalRecord,
         input_guardrails=[legitimate_task_guardrail],
         output_guardrails=[evidence_and_self_review_guardrail],

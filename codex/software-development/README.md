@@ -53,6 +53,18 @@ Use least privilege and keep secrets out of context. Codex config helps constrai
 
 Codex discovery depends on the active Codex surface and project root. `docs/workflows/` is auxiliary, not auto-executed. This package intentionally contains no hooks, MCP entries, executable helpers, provider/model pins, endpoint pins, credentials, release automation, or Lead subagent.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Codex account, plan, workspace availability, model choice, CLI preferences, approval settings, enabled tools, MCP/connectors, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Codex limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge the copied `AGENTS.md`, `.codex/`, and `docs/workflows/` content while preserving target customizations. To remove, delete only this department's copied Codex files and any empty directories created solely for it. Integrations and credentials are not stored here.

@@ -24,10 +24,17 @@ class RoleSlug(str, Enum):
 
 
 class FinalState(str, Enum):
+<<<<<<< HEAD
     COMPLETED = "COMPLETED"
     PAUSED = "PAUSED"
     STOPPED = "STOPPED"
     BLOCKED = "BLOCKED"
+=======
+    PAUSED = "paused"
+    STOPPED = "stopped"
+    BLOCKED = "blocked"
+    COMPLETED = "completed"
+>>>>>>> feature/software-development
 
 
 class ApprovalDecisionValue(str, Enum):
@@ -214,6 +221,7 @@ class DocumentationReleaseReadinessResult:
 
 @dataclass(frozen=True)
 <<<<<<< HEAD
+<<<<<<< HEAD
 class DocumentationReadinessOutput(SpecialistResult):
     readiness: DocumentationReleaseReadinessResult = field(
         default_factory=lambda: DocumentationReleaseReadinessResult((), "not_assessed", True)
@@ -227,6 +235,12 @@ class HumanDecision:
 >>>>>>> feature/software-development
     subject: str
     decision: ApprovalDecisionValue
+=======
+class ApprovalDecisionRecord:
+    subject: str
+    action: str
+    decision: ApprovalDecision
+>>>>>>> feature/software-development
     evidence: str
 
 
@@ -290,12 +304,19 @@ class LeadFinalRecord:
     approvals_and_rejections: tuple[ApprovalDecisionRecord, ...]
     remaining_risks: tuple[str, ...]
     limitations: tuple[str, ...]
+<<<<<<< HEAD
     checks_not_executed: tuple[str, ...]
     final_state: FinalState
+=======
+    approval_decisions: tuple[ApprovalDecisionRecord, ...]
+    final_state: FinalState = FinalState.STOPPED
+    checks_not_run: tuple[str, ...] = field(default_factory=tuple)
+>>>>>>> feature/software-development
 
     def has_independent_review(self) -> bool:
         if self.implementation_evidence is None:
             return True
+<<<<<<< HEAD
         return (
             self.code_quality_review_result is not None
             and self.code_quality_review_result.role is RoleSlug.CODE_REVIEW
@@ -314,3 +335,12 @@ class RepositoryWriter(Protocol):
 
 class HumanApprovalProvider(Protocol):
     async def pending_decisions(self, interruptions: tuple[Any, ...]) -> tuple[ApprovalDecision, ...]: ...
+=======
+        return self.code_review is not None and self.code_review.role is RoleSlug.CODE_REVIEW
+
+    def has_required_risk_review(self) -> bool:
+        if self.implementation_evidence is None:
+            return True
+        risky = self.implementation_evidence.validation_notes or self.risk_review is not None
+        return not risky or (self.risk_review is not None and self.risk_review.role is RoleSlug.RISK_REVIEW)
+>>>>>>> feature/software-development

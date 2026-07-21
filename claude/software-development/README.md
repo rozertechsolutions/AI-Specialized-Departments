@@ -59,6 +59,18 @@ Use least privilege and only upload context needed for the task. Claude textual 
 
 Claude Projects and Skills are account-, plan-, workspace-, and policy-dependent. Connectors are configured in Claude, not by these files. This package does not include `CLAUDE.md`, `.claude/`, Claude Code settings, Claude Code subagents, hooks, MCP server config, shell helpers, or repository-native automation.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after importing the department into the target Claude Project, Skill, or knowledge setup. These values must come from the target repository, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Account, plan, workspace availability, model choice, connector availability, tool permissions, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package or its knowledge files.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Claude manual-import limitations are department invariants.
+
 ## Updating and Removal
 
 To update, replace the pasted Project instructions, selected Project knowledge, and imported Skills after preserving local edits. To remove, delete only this department's Project instructions, knowledge files, Skills, and connector-policy text from Claude. No integrations, credentials, or account settings are stored in this package.

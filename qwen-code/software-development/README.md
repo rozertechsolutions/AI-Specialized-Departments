@@ -58,6 +58,18 @@ Use least privilege and protect secrets. Project settings and subagent tool allo
 
 Qwen Code feature behavior depends on installed version and configuration precedence: defaults, system defaults, user settings, project settings, system settings, environment variables, and command-line arguments. Markdown commands are current; TOML commands are deprecated. This package omits shell grants, hooks, MCP, extensions, providers, endpoints, credentials, sandbox builders, deployment automation, publication automation, signing automation, release automation, and a Lead subagent.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Qwen Code account or CLI availability, model/provider choice, CLI preferences, permission settings, enabled tools, MCP/connectors, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Qwen Code limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge `QWEN.md` and `.qwen/` changes while preserving local customizations. To remove, delete only this department's copied Qwen files and empty directories created solely for them. Integrations and credentials are not stored here.

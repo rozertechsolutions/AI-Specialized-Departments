@@ -55,6 +55,18 @@ Use least privilege. `.clineignore` reduces accidental exposure but does not rep
 
 Cline rules are project-scoped to the workspace Cline recognizes, and multi-root behavior can affect loading. Workflow and Skill support depends on the current Cline surface. This package omits hooks, plugins, MCP configuration, Auto Approve/YOLO settings, shell helpers, credentials, endpoints, and simulated project agents.
 
+## Project-dependent configuration
+
+Adapt repository/module paths, source/test/resource directories, languages, frameworks, libraries, build/test/lint/type-check commands, package manager, dependency policy, architecture boundaries, API contracts, database/storage choices, supported runtime versions, quality gates, CI/CD conventions, branch/release conventions, generated-code directories, documentation paths, test strategy, and project-specific security or compliance rules after copying the package into the target repository root. These values must come from repository files, project documentation, maintainers, and review evidence, not from this generic package.
+
+## User- or organization-dependent configuration
+
+Cline account or extension availability, model/provider choice, IDE preferences, permission settings, enabled tools, MCP/connectors, credentials, private endpoints, organization policies, reviewer identities, deployment/release authorization, billing/spending approval, telemetry, and privacy choices remain controlled by the user, team, or administrator. Secrets and credentials must not be stored in this open-source package.
+
+## What must remain fixed in the department package
+
+Responsibility separation, no self-review, no circular delegation, human review for sensitive actions, least privilege, evidence-based completion, no secret exposure, no automatic destructive/external/release action, and honest representation of Cline limitations are department invariants.
+
 ## Updating and Removal
 
 To update, merge changed files in `.clinerules/`, `.cline/skills/`, `.cline/workflows/`, and `.clineignore` while preserving local customizations. To remove, delete only this department's copied rules, Skills, workflows, and ignore entries; remove empty directories only if they were created solely for this package.
