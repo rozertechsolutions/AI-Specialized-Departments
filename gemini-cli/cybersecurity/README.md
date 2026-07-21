@@ -1,111 +1,142 @@
-# Cybersecurity Department for gemini-cli
+# Cybersecurity Department for Gemini CLI
 
-This Cybersecurity department is a professional, adaptable baseline for gemini-cli covering governance, architecture, product security, vulnerability management, defensive operations, incident response, authorized offensive validation, and resilience.
+This Cybersecurity department is a Gemini CLI repository package for static, human-reviewed cybersecurity work. It helps teams use Gemini CLI `GEMINI.md`, custom subagents, Agent Skills, and command prompts to produce evidence-based artifacts without granting the AI authority to approve risk, run live security actions, or act on production systems.
 
-Its purpose is to help humans produce evidence-based cybersecurity work products while preserving clear professional ownership, least privilege, independent review, and human authority for consequential decisions.
-
-Possible uses include risk and compliance assessment, security architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection engineering, incident-response planning, authorized penetration-test planning, resilience exercises, and independent assurance.
+Possible uses include governance, risk, compliance, and assurance support; security architecture and engineering review; application, product, and DevSecOps security review; exposure, vulnerability, and hardening planning; defensive operations, detection, and threat-intelligence analysis; incident response, DFIR, and recovery planning; explicitly authorized offensive validation planning; and resilience or specialized-technology assurance.
 
 ## Department overview
 
-The department contains eight Cybersecurity areas under `gemini-cli/cybersecurity/<area>/`. Each area is scoped to a distinct professional ownership boundary and is intended for static analysis, planning, review, documentation, and assurance using supplied evidence.
+The department contains eight isolated Gemini CLI project packages under `gemini-cli/cybersecurity/<area>/`. Each area contains `GEMINI.md`, custom agents under `.gemini/agents/`, Agent Skills under `.gemini/skills/`, and command prompt files under `.gemini/commands/`.
 
-It does not authorize live scanning, exploitation, containment, recovery execution, production changes, publication, external integrations, legal determinations, risk acceptance, or closure decisions. Human owners remain accountable for authorization, approvals, exceptions, risk acceptance, incident declaration or closure, offensive testing authorization, and production action.
+The package supports static analysis, planning, review, documentation, and assurance from supplied evidence. It does not authorize live scanning, exploitation, containment, recovery execution, production changes, publication, external integrations, legal determinations, risk acceptance, or closure decisions. Human owners remain accountable for authorization, approvals, exceptions, risk acceptance, incident declaration or closure, offensive testing authorization, and production action.
 
 ## Possible uses
 
-- Risk and compliance assessment using supplied policies, control evidence, and framework mappings.
-- Security architecture and engineering review for proposed designs and reference patterns.
-- Threat modeling, secure SDLC review, release-readiness support, and supply-chain evidence review.
-- Vulnerability prioritization, remediation planning, and hardening governance from provided findings.
-- Detection engineering, telemetry coverage review, SOC triage methods, and threat-hunt planning.
-- Incident-response readiness, DFIR planning, evidence governance, recovery planning, and lessons learned.
-- Authorized offensive assessment planning, rules of engagement review, validation planning, and retest assurance.
-- Resilience exercises, ransomware recovery planning, specialized technology review, and independent assurance.
+- Launch Gemini CLI from a specific area package and use the area `GEMINI.md` as persistent project guidance.
+- Invoke a custom subagent with `@agent-name` for scoped static review.
+- Use workspace Skills such as `/threat-modeling`, `/exposure-lifecycle-triage`, or `/independent-offensive-safety-review`.
+- Use command prompt files in `.gemini/commands/` as user-invoked workflows that delegate to retained Skills.
 
 ## Platform compatibility
 
-Product surface: Gemini CLI persistent instruction files, GEMINI.md, commands, hooks, Skills, subagents, MCP, extension packaging, and trust controls.
+Surface: Gemini CLI, not Gemini API alone, Gemini Code Assist IDE configuration, or a generic Markdown package.
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+Current official Gemini CLI documentation supports custom agent files in `.gemini/agents/*.md` and user agents in `~/.gemini/agents/*.md`. Supported agent frontmatter includes `name`, `description`, `kind`, `tools`, `mcpServers`, `model`, `temperature`, `max_turns`, and `timeout_mins`. This package does not use unsupported `readonly` or agent-level `skills` fields.
+
+Gemini CLI Agent Skills are discovered separately from `.gemini/skills/` and `.agents/skills/`. The retained Skills live in `.gemini/skills/` under each area. Agents do not preload Skills through frontmatter.
 
 ## Prerequisites
 
-Gemini CLI installed; trusted repository; account/provider setup handled outside this package.
+- Gemini CLI installed by the user, usually with `npm install -g @google/gemini-cli` or another documented installer.
+- A trusted repository/workspace.
+- Account, API key, Vertex AI, or Google sign-in setup handled outside this package when the user intentionally runs Gemini CLI.
+- No credentials, MCP servers, browser automation, scanners, or cloud accounts are required for this repository package.
 
-Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
+Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package.
 
 ## Installation or import
 
-Open Gemini CLI from gemini-cli/cybersecurity/<area>/ or the platform tree. Use GEMINI.md and native command/skill folders as static repository guidance.
+Keep this tree in the repository. To use a single area, launch Gemini CLI from that area:
 
-Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
+```bash
+cd gemini-cli/cybersecurity/application-product-devsecops-security
+gemini
+```
+
+Invoke a retained Skill or direct a custom subagent:
+
+```text
+/threat-modeling
+```
+
+```text
+@requirements-threat-modeling-agent Review the supplied architecture notes for static threat-model gaps. Authorized scope: this repository and redacted evidence only. Do not run shell commands, browse, connect MCP, scan, or write files.
+```
+
+Expected output is a static scoped artifact with evidence states, assumptions, limitations, residual risk, confidence, required human decisions, and independent-review status.
 
 ## Working directory and discovery
 
-Gemini CLI uses documented instruction discovery from the working directory. Skills or commands must be in native CLI locations; this package keeps area content separate.
+Start Gemini CLI from `gemini-cli/cybersecurity/<area>/` when using one area. Gemini CLI discovers:
 
-When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
+- `GEMINI.md` as persistent workspace guidance;
+- `.gemini/agents/*.md` as project custom agents;
+- `.gemini/skills/*/SKILL.md` as workspace Agent Skills;
+- `.gemini/commands/*.md` as repository command prompt files where supported by the installed CLI.
+
+Subagents use their own isolated context and only the tools granted in the agent frontmatter. Skills are discovered independently and activated through Gemini CLI's Skill mechanism with user consent. Area isolation depends on launching from the selected area directory.
 
 ## Area map
 
-- `gemini-cli/cybersecurity/governance-risk-compliance-assurance/` - Governance, Risk, Compliance, and Assurance: governance, cyber risk, compliance mapping, policies, assurance, exceptions, and risk-decision support.
-- `gemini-cli/cybersecurity/security-architecture-engineering/` - Security Architecture and Engineering: security architecture, engineering patterns, identity, network, cloud, data, platform, and control design review.
-- `gemini-cli/cybersecurity/application-product-devsecops-security/` - Application, Product, and DevSecOps Security: product security, secure SDLC, threat modeling, code/design review, CI/CD, supply chain, PSIRT, and release assurance.
-- `gemini-cli/cybersecurity/exposure-vulnerability-hardening/` - Exposure, Vulnerability, and Hardening: asset exposure, vulnerability triage, prioritization, hardening, remediation governance, and validation evidence.
-- `gemini-cli/cybersecurity/defensive-security-operations-detection-intelligence/` - Defensive Security Operations, Detection, and Intelligence: SOC operating model, telemetry, detection engineering, alert triage, hunting, intelligence, and coverage quality.
-- `gemini-cli/cybersecurity/incident-response-dfir-recovery/` - Incident Response, DFIR, and Recovery: incident planning, evidence governance, DFIR analysis planning, containment planning, recovery coordination, and lessons learned.
-- `gemini-cli/cybersecurity/offensive-security-authorized-validation/` - Offensive Security and Authorized Validation: explicitly authorized assessment planning, rules of engagement, emulation governance, retest planning, and safety review.
-- `gemini-cli/cybersecurity/cyber-resilience-specialized-technologies/` - Cyber Resilience and Specialized Technologies: resilience, ransomware recovery planning, specialized technology review, cryptography, critical infrastructure, OT/IoT/cloud edge, and transition assurance.
+- `gemini-cli/cybersecurity/governance-risk-compliance-assurance/` - Governance, cyber risk, compliance mapping, policies, assurance, exceptions, and risk-decision support.
+- `gemini-cli/cybersecurity/security-architecture-engineering/` - Security architecture, engineering patterns, identity, network, cloud, data, platform, and control design review.
+- `gemini-cli/cybersecurity/application-product-devsecops-security/` - Product security, secure SDLC, threat modeling, code/design review, CI/CD, supply chain, PSIRT, and release assurance.
+- `gemini-cli/cybersecurity/exposure-vulnerability-hardening/` - Asset exposure, vulnerability triage, prioritization, hardening, remediation governance, and validation evidence.
+- `gemini-cli/cybersecurity/defensive-security-operations-detection-intelligence/` - SOC operating model, telemetry, detection engineering, alert triage, hunting, intelligence, and coverage quality.
+- `gemini-cli/cybersecurity/incident-response-dfir-recovery/` - Incident planning, evidence governance, DFIR planning, containment planning, recovery coordination, and lessons learned.
+- `gemini-cli/cybersecurity/offensive-security-authorized-validation/` - Explicitly authorized assessment planning, rules of engagement, emulation governance, retest planning, and safety review.
+- `gemini-cli/cybersecurity/cyber-resilience-specialized-technologies/` - Resilience, ransomware recovery planning, OT/ICS, IoT/embedded, AI security, hardware/firmware, cryptographic agility, and critical-infrastructure assurance.
 
 ## Native components
 
-- `governance-risk-compliance-assurance/`: `GEMINI.md`
-- `security-architecture-engineering/`: `GEMINI.md`
-- `application-product-devsecops-security/`: `GEMINI.md`
-- `exposure-vulnerability-hardening/`: `GEMINI.md`
-- `defensive-security-operations-detection-intelligence/`: `GEMINI.md`
-- `incident-response-dfir-recovery/`: `GEMINI.md`
-- `offensive-security-authorized-validation/`: `GEMINI.md`
-- `cyber-resilience-specialized-technologies/`: `GEMINI.md`
+Each area contains:
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+- `GEMINI.md` - area-scoped persistent instructions.
+- `.gemini/agents/*.md` - native custom subagents using `kind: local`, `model: inherit`, conservative turn/time limits, and native read-only tool IDs.
+- `.gemini/skills/*/SKILL.md` - retained workspace Skills referenced by commands and discoverable by Gemini CLI.
+- `.gemini/commands/*.md` - command prompt files that delegate to retained Skills.
 
 ## How to use the department
 
-Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
+Select the area that owns the requested work, launch Gemini CLI from that area, and provide authorized scope, exclusions, accountable owner, requester, intended audience, evidence inventory, assumptions, constraints, reviewer, approver role, and the human decision being supported.
 
-Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
+Use a Skill, a command prompt, or an `@agent-name` subagent invocation. High-impact outputs must go to an independent reviewer that did not create the work. Stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
 
 ## Permissions and safety
 
-Default behavior is read-only and static. Repository writes, where a platform technically allows them, must stay inside the selected `gemini-cli/cybersecurity/<area>/` directory and require an explicit user task to update static artifacts. Shell, network, installation, deployment, scanning, exploitation, recovery execution, remote Git operations, MCP connections, hosted tools, and external connectors are prohibited by default.
+Subagents use only native read-only tool identifiers:
 
-AI components cannot self-approve, accept enterprise risk, authorize offensive testing, approve production changes, close incidents, certify compliance, make legal determinations, or conceal residual risk. Human review is mandatory for approvals, exceptions, risk acceptance, release or closure decisions, incident command, offensive authorization, external reporting, and production actions.
+```yaml
+tools: [read_file, grep_search, glob, list_directory]
+```
+
+They do not include write, replace, shell, web, browser, MCP, or remote-agent tools. Gemini CLI's policy engine can add user or organization deny/ask rules for tools such as `run_shell_command`, `write_file`, `replace`, web/browser tools, and `mcp_*`; this repository does not install those user-global policies.
+
+Default use is static and read-only. Shell, network, installation, deployment, scanning, exploitation, recovery execution, remote Git operations, MCP connections, hosted tools, browser automation, and external connectors are prohibited by this baseline.
 
 ## Configuration and customization
 
-Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
+### Project-dependent configuration
+
+Adapt repository paths, source directories, application architecture, build systems, technology stack, deployment model, CI/CD structure, telemetry locations, assets, threat-model scope, approved targets, evidence locations, area working directories, and repository-specific policies inside the selected area.
+
+### User/organization-dependent configuration
+
+Supply account, subscription, user identity, organization policies, frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, permitted integrations, API credentials, MCP endpoints, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, data-retention requirements, and legal/privacy constraints outside this repository. Real secrets and confidential values must not be committed.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, native read-only tool allowlists, MCP absence by default, prohibited unauthorized actions, stop conditions, and human-approval gates unless a formal governance review approves a change.
 
 ## Validation
 
-Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
+Static validation can check Markdown frontmatter, native tool IDs, agent Skill-field absence, command Skill references, retained Skill structure, duplicate or obsolete Skills, empty artifacts, broken references, and absence of unsupported fields such as `readonly`. Runtime behavior, model behavior, Skill activation consent, policy engine enforcement, MCP, remote agents, browser agents, scans, incident action, recovery, and production integration require a separate authorized Gemini CLI session and were not executed by this repository validation.
 
 ## Troubleshooting
 
-- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
-- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
-- If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
-- If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
-- If a platform preview feature changes, re-check official documentation and update `gemini-cli/cybersecurity/NATIVE_SOURCES.md` before relying on it.
+- If a subagent is not available, confirm Gemini CLI was launched from the intended area directory and the file exists under `.gemini/agents/*.md`.
+- If a subagent errors on tools, confirm it uses native tool IDs such as `read_file`, `grep_search`, `glob`, and `list_directory`.
+- If a Skill is not available, confirm the directory is `.gemini/skills/<skill-name>/SKILL.md`; workspace Skills can also be managed with Gemini CLI's `/skills` or `gemini skills` commands.
+- If a command is not available, use the equivalent retained Skill directly.
+- If broader tool access appears, inspect user or organization Gemini CLI settings and policy-engine rules.
 
 ## Removal or uninstall
 
-Remove the imported Project, GPT, Skill, agent, rule, command, workflow, or workspace configuration from the platform UI or delete the selected `gemini-cli/cybersecurity/` directory from the repository. Remove any manually uploaded knowledge files from the platform. Do not delete organizational evidence or platform-global settings unless a human owner explicitly authorizes that cleanup.
+Remove this package by deleting `gemini-cli/cybersecurity/` from the repository, or remove individual area packages by deleting `gemini-cli/cybersecurity/<area>/`. To disable one component without deleting the whole area, remove the corresponding `.gemini/agents/`, `.gemini/skills/`, `.gemini/commands/`, or `GEMINI.md` file from the area and restart Gemini CLI. Do not delete user-global Gemini CLI settings or policies unless a human owner explicitly authorizes that cleanup.
 
 ## Limitations
 
-This package is a static professional baseline. It is not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing tool, incident-response platform, legal opinion, compliance certification, or production-control system. Platform support and schema details can change, especially for preview agent, Skill, hook, and permission features.
+This package is a static professional baseline. It is not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing tool, incident-response platform, legal opinion, compliance certification, or production-control system. Gemini CLI feature availability varies by installed release, account/provider mode, trusted folder state, policy-engine configuration, and preview/stable channel.
 
 ## Security notice
 

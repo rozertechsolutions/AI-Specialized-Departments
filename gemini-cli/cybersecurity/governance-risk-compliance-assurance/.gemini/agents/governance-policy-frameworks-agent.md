@@ -1,10 +1,12 @@
 ---
 name: governance-policy-frameworks-agent
 description: Own governance, policy lifecycle, control governance, framework mapping, compliance gap assessment, and change impact.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # governance-policy-frameworks-agent

@@ -1,10 +1,12 @@
 ---
 name: independent-resilience-specialist-reviewer
 description: Independently review high-impact resilience and specialized-technology outputs.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [resilience-program-review, backup-ransomware-recovery-assessment, specialized-technology-security-review, crypto-critical-infrastructure-planning, independent-resilience-assurance]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # independent-resilience-specialist-reviewer

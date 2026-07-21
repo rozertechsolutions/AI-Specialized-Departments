@@ -1,10 +1,12 @@
 ---
 name: independent-architecture-reviewer
 description: Independently review high-impact architecture packages and remediation evidence.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # independent-architecture-reviewer

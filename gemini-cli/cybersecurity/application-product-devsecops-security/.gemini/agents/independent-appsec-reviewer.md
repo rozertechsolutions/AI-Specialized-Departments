@@ -1,10 +1,12 @@
 ---
 name: independent-appsec-reviewer
 description: Independently review high-impact application-security outputs and release-readiness packages.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [secure-sdlc-review, threat-modeling, secure-design-code-review, supply-chain-ci-release-review, testing-findings-psirt-assurance]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # independent-appsec-reviewer

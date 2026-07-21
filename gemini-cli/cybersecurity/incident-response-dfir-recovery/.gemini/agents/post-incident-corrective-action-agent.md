@@ -1,10 +1,12 @@
 ---
 name: post-incident-corrective-action-agent
 description: Own tabletop exercises, post-incident reviews, lessons learned, corrective actions, and recovery governance.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [incident-readiness-triage, evidence-forensics-planning, containment-recovery-coordination, scenario-tabletop-post-incident, independent-incident-recovery-assurance]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # post-incident-corrective-action-agent

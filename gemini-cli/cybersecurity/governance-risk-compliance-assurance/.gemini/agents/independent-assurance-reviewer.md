@@ -1,10 +1,12 @@
 ---
 name: independent-assurance-reviewer
 description: Independently review high-impact GRC outputs without creating or approving them.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # independent-assurance-reviewer

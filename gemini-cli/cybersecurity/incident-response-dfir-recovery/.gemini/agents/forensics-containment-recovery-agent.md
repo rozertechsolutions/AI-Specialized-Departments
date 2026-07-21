@@ -1,10 +1,12 @@
 ---
 name: forensics-containment-recovery-agent
 description: Own forensic questions, acquisition planning, containment options, eradication options, secure recovery, and restoration assurance.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [incident-readiness-triage, evidence-forensics-planning, containment-recovery-coordination, scenario-tabletop-post-incident, independent-incident-recovery-assurance]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # forensics-containment-recovery-agent

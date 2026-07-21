@@ -1,10 +1,12 @@
 ---
 name: assurance-evidence-remediation-agent
 description: Own assurance evidence requests, evidence quality review, control validation support, findings, and remediation closure packages.
+kind: local
 model: inherit
-readonly: true
-tools: [Read, Grep, Glob]
-skills: [governance-policy-frameworks, risk-exceptions-remediation, assurance-third-party-reporting, independent-assurance-review]
+temperature: 0.2
+max_turns: 10
+timeout_mins: 10
+tools: [read_file, grep_search, glob, list_directory]
 ---
 
 # assurance-evidence-remediation-agent
