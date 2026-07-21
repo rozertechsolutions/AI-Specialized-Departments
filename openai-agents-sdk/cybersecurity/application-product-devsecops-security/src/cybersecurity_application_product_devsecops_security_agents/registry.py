@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from typing import Any, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 from pydantic import BaseModel, Field
+
+if TYPE_CHECKING:
+    from agents import RunState
 
 AREA_SLUG = 'application-product-devsecops-security'
 TRACING_DISABLED_BY_DEFAULT = True
@@ -275,12 +278,15 @@ def select_interruption(interruptions: tuple[Any, ...], index: int = 0) -> Any:
 def serialize_state(state: Any) -> str:
     return state.to_string()
 
-def restore_state(agent: Any, serialized_state: str) -> Any:
+async def restore_state(agent: Any, serialized_state: str) -> RunState[Any, Any]:
     try:
         from agents import RunState
     except ImportError as exc:
         raise RuntimeError("OpenAI Agents SDK is required to restore RunState.") from exc
-    return RunState.from_string(agent, serialized_state)
+    return await RunState.from_string(
+        initial_agent=agent,
+        state_string=serialized_state,
+    )
 
 def record_explicit_approval(state: Any, interruption: Any) -> Any:
     state.approve(interruption, always_approve=False)

@@ -3,7 +3,7 @@ name = "cybersecurity-security-architecture-engineering-agents"
 version = "0.1.0"
 description = "Static OpenAI Agents SDK wiring for Security Architecture and Engineering."
 requires-python = ">=3.11"
-dependencies = ["openai-agents>=0.7,<1", "pydantic>=2,<3"]
+dependencies = ["openai-agents>=0.18.3,<0.19", "pydantic>=2.13,<3"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
