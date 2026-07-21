@@ -1,8 +1,0 @@
-agent_type = "subagent"
-display_name = "Forensics Containment Recovery"
-description = "Static forensic acquisition planning, containment/eradication option analysis, recovery planning, and validation."
-safety = "safe"
-system_prompt_id = "forensics-containment-recovery"
-bypass_tool_permissions = false
-enable_connectors = false
-disabled_tools = ["bash", "write_file", "search_replace"]

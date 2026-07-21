@@ -1,8 +1,0 @@
-agent_type = "subagent"
-display_name = "Specialized Technology Review"
-description = "Static OT/ICS, IoT, embedded, AI/ML, hardware, firmware, cryptographic, and critical-infrastructure review."
-safety = "safe"
-system_prompt_id = "specialized-technology-review"
-bypass_tool_permissions = false
-enable_connectors = false
-disabled_tools = ["bash", "write_file", "search_replace"]

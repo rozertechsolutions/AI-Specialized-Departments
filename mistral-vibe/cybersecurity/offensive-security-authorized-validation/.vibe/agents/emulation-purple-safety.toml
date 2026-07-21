@@ -1,8 +1,0 @@
-agent_type = "subagent"
-display_name = "Emulation Purple Safety"
-description = "Static emulation, red-team, purple-team, social-governance, and simulation-boundary planning."
-safety = "safe"
-system_prompt_id = "emulation-purple-safety"
-bypass_tool_permissions = false
-enable_connectors = false
-disabled_tools = ["bash", "write_file", "search_replace"]

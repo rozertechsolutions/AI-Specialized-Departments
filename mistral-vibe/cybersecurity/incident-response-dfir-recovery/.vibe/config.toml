@@ -1,1 +1,36 @@
-default_agent = "incident-command-evidence"
+default_agent = "incident-command-evidence-agent"
+bypass_tool_permissions = false
+disabled_agents = ["auto-approve"]
+enable_connectors = false
+experimental_enable_registry_skills = false
+experimental_bash_tool = false
+enabled_tools = ["grep", "read_file", "skill", "todo", "ask_user_question", "task"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+enabled_skills = [
+  "incident-readiness-triage",
+  "evidence-forensics-planning",
+  "containment-recovery-coordination",
+  "scenario-tabletop-post-incident",
+  "independent-incident-recovery-assurance",
+]
+
+[tools.grep]
+permission = "always"
+denylist = ["**/.env", "**/.env.*", "**/*.pem", "**/*.key", "**/credentials.json", "**/service-account*.json"]
+
+[tools.read_file]
+permission = "always"
+denylist = ["**/.env", "**/.env.*", "**/*.pem", "**/*.key", "**/credentials.json", "**/service-account*.json"]
+
+[tools.skill]
+permission = "always"
+
+[tools.todo]
+permission = "always"
+
+[tools.ask_user_question]
+permission = "always"
+
+[tools.task]
+permission = "ask"
+allowlist = []

@@ -5,7 +5,6 @@ disabled_agents = ["auto-approve"]
 
 enable_connectors = false
 experimental_enable_registry_skills = false
-enable_experimental_hooks = false
 experimental_bash_tool = false
 
 enabled_tools = [

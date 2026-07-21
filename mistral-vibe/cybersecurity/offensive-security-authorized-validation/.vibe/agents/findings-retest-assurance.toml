@@ -1,8 +1,0 @@
-agent_type = "subagent"
-display_name = "Findings Retest Assurance"
-description = "Static findings, cleanup, retest, validation, report review, and assurance."
-safety = "safe"
-system_prompt_id = "findings-retest-assurance"
-bypass_tool_permissions = false
-enable_connectors = false
-disabled_tools = ["bash", "write_file", "search_replace"]

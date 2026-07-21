@@ -1,1 +1,36 @@
-default_agent = "resilience-recovery-core"
+default_agent = "resilience-recovery-core-agent"
+bypass_tool_permissions = false
+disabled_agents = ["auto-approve"]
+enable_connectors = false
+experimental_enable_registry_skills = false
+experimental_bash_tool = false
+enabled_tools = ["grep", "read_file", "skill", "todo", "ask_user_question", "task"]
+disabled_tools = ["mcp_*", "bash", "write_file", "edit"]
+enabled_skills = [
+  "resilience-program-review",
+  "backup-ransomware-recovery-assessment",
+  "specialized-technology-security-review",
+  "crypto-critical-infrastructure-planning",
+  "independent-resilience-assurance",
+]
+
+[tools.grep]
+permission = "always"
+denylist = ["**/.env", "**/.env.*", "**/*.pem", "**/*.key", "**/credentials.json", "**/service-account*.json"]
+
+[tools.read_file]
+permission = "always"
+denylist = ["**/.env", "**/.env.*", "**/*.pem", "**/*.key", "**/credentials.json", "**/service-account*.json"]
+
+[tools.skill]
+permission = "always"
+
+[tools.todo]
+permission = "always"
+
+[tools.ask_user_question]
+permission = "always"
+
+[tools.task]
+permission = "ask"
+allowlist = []

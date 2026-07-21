@@ -25,25 +25,40 @@ It does not authorize live scanning, exploitation, containment, recovery executi
 
 ## Platform compatibility
 
-Product surface: Mistral Vibe project config, native TOML agent profiles, prompt files, Skills, tool filters, permissions, and update/telemetry settings.
+Product surface: Mistral Vibe Code CLI/VS Code surfaces, project `.vibe/config.toml`, native TOML agent profiles, project and user prompt directories, Skills, tool filters, permissions, hooks configuration, MCP settings, and update/telemetry settings.
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+Validated documentation date: 2026-07-21. Validated package version: `mistral-vibe==2.21.0`. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
 
 ## Prerequisites
 
-Current Mistral Vibe package/application; trusted project; no credentials/connectors/MCP/experimental hooks enabled by default.
+Current Mistral Vibe package/application, trusted project folder, and no credentials/connectors/MCP/hooks enabled by default. CLI use requires the user or organization to configure an approved model/provider separately. Repository validation does not run Vibe, authenticate, or call a model.
 
 Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
 
 ## Installation or import
 
-Open Vibe from mistral-vibe/cybersecurity/<area>/. Vibe reads .vibe/config.toml, .vibe/agents/*.toml, .vibe/prompts/*.md, and .vibe/skills/*/SKILL.md where supported. Markdown agent profiles are obsolete.
+Open Vibe from `mistral-vibe/cybersecurity/<area>/` as the trusted project root. Vibe discovers the area's `.vibe/config.toml`, `.vibe/agents/*.toml`, project prompt directory, and Skills when the area is the working directory or a trusted project root.
+
+Example safe launch:
+
+```text
+cd mistral-vibe/cybersecurity/governance-risk-compliance-assurance
+VIBE_HOME="$PWD/.vibe" vibe --agent grc-coordinator
+```
+
+`VIBE_HOME="$PWD/.vibe"` is optional only when the project prompt directory is trusted and discovered as intended. It is the repository-local option for resolving config-adjacent user-home files without mutating `~/.vibe`. Do not copy prompts or settings into the user's real home during repository remediation.
+
+Markdown agent profiles are obsolete; retained agents are TOML files under `.vibe/agents/`.
 
 Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
 
 ## Working directory and discovery
 
-Vibe resolves agent system_prompt_id values to .vibe/prompts/<id>.md in the area package. Default agents and delegation-only subagents remain area-local.
+Mistral Vibe 2.21.0 resolves prompt IDs from discovered project prompt directories and from the user Vibe home prompt directory. The package source also honors `VIBE_HOME`, which normally defaults to `~/.vibe`; setting `VIBE_HOME="$PWD/.vibe"` while launched from an area keeps prompts, config-adjacent files, agents, and Skills repository-local for validation or manual use.
+
+Each retained `.vibe/agents/*.toml` has a `system_prompt_id` whose matching prompt file remains in that area. Unreferenced workflow-like prompt copies and exact duplicate prompt pairs were removed; reusable procedures live in `.vibe/skills/*/SKILL.md`.
+
+Default agents and delegation-only subagents remain area-local. Subagents cannot ask user questions; user-question tools are available only to primary agents where the config allows them.
 
 When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
 
@@ -60,20 +75,23 @@ When a platform supports upward discovery, the nearest area-level instructions t
 
 ## Native components
 
-- `governance-risk-compliance-assurance/`: `AGENTS.md`, `.vibe/`
-- `security-architecture-engineering/`: `AGENTS.md`, `.vibe/`
-- `application-product-devsecops-security/`: `AGENTS.md`, `.vibe/`
-- `exposure-vulnerability-hardening/`: `AGENTS.md`, `.vibe/`
-- `defensive-security-operations-detection-intelligence/`: `AGENTS.md`, `.vibe/`
-- `incident-response-dfir-recovery/`: `AGENTS.md`, `.vibe/`
-- `offensive-security-authorized-validation/`: `AGENTS.md`, `.vibe/`
-- `cyber-resilience-specialized-technologies/`: `AGENTS.md`, `.vibe/`
+- Area `AGENTS.md` files for durable area ownership and safety instructions.
+- `.vibe/config.toml` area configuration for default agent selection and conservative tool permissions.
+- `.vibe/agents/*.toml` native Vibe agent and subagent profiles.
+- `.vibe/prompts/*.md` only for retained agent `system_prompt_id` values.
+- `.vibe/skills/*/SKILL.md` reusable Agent Skills.
 
 Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
 
 ## How to use the department
 
 Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
+
+Example input:
+
+```text
+Use the incident-command-evidence-agent profile and the incident-readiness-triage Skill. Review only the supplied tabletop notes, identify missing incident-declaration evidence, and prepare a human decision log. Do not connect to SIEM, EDR, ticketing, cloud, or production systems.
+```
 
 Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
 
@@ -87,21 +105,34 @@ AI components cannot self-approve, accept enterprise risk, authorize offensive t
 
 Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
 
+### Project-dependent configuration
+
+Adapt repository paths, source directories, application architecture, build systems, deployment model, telemetry locations, product requirements, threat-model scope, project assets, approved targets, area working directories, and repository-specific policies per project. These values must not be hard-coded globally.
+
+### User/organization-dependent configuration
+
+Supply or approve account/subscription, user identity, organization policies, regulatory frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, permitted integrations, credentials, MCP endpoints, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, data-retention requirements, and legal/privacy constraints outside this repository. Never commit real secrets or confidential organization values.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, disabled MCP/connectors/write/shell defaults, prohibited unauthorized actions, stop conditions, and human-approval gates intact.
+
 ## Validation
 
 Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
 
 ## Troubleshooting
 
-- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
-- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
+- If prompts do not resolve, launch from the area directory and either trust the project prompt directory or set `VIBE_HOME="$PWD/.vibe"` for repository-local resolution.
+- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Vibe agent, prompt, Skill, or config location.
+- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the TOML filename, `agent_type`, `display_name`, `description`, `safety`, and `system_prompt_id` match the current product documentation.
 - If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
 - If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
 - If a platform preview feature changes, re-check official documentation and update `mistral-vibe/cybersecurity/NATIVE_SOURCES.md` before relying on it.
 
 ## Removal or uninstall
 
-Remove the imported Project, GPT, Skill, agent, rule, command, workflow, or workspace configuration from the platform UI or delete the selected `mistral-vibe/cybersecurity/` directory from the repository. Remove any manually uploaded knowledge files from the platform. Do not delete organizational evidence or platform-global settings unless a human owner explicitly authorizes that cleanup.
+Remove imported Skills or agents from Vibe's configured user/project locations, unset any temporary `VIBE_HOME` used for repository-local launch, or delete the selected `mistral-vibe/cybersecurity/` directory from the repository. Do not delete `~/.vibe`, organization evidence, credentials, or platform-global settings unless a human owner explicitly authorizes that cleanup.
 
 ## Limitations
 

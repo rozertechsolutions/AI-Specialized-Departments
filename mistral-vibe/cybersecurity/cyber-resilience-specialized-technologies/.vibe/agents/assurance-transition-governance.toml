@@ -1,8 +1,0 @@
-agent_type = "subagent"
-display_name = "Assurance Transition Governance"
-description = "Independent assurance, specialist escalation, metrics review, transition governance, and corrective-action quality review."
-safety = "safe"
-system_prompt_id = "assurance-transition-governance"
-bypass_tool_permissions = false
-enable_connectors = false
-disabled_tools = ["bash", "write_file", "search_replace"]

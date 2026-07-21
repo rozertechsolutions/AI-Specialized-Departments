@@ -1,4 +1,4 @@
-agent_type = "subagent"
+agent_type = "agent"
 display_name = "Authorization Assessment Planning Agent"
 description = "Own written authorization, exact scope, rules of engagement, assessment planning, exclusions, dates, and emergency stop."
 safety = "safe"

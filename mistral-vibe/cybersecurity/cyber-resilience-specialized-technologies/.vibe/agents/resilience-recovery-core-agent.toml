@@ -1,4 +1,4 @@
-agent_type = "subagent"
+agent_type = "agent"
 display_name = "Resilience Recovery Core Agent"
 description = "Own resilience strategy, critical services, dependencies, disruption scenarios, backup, restoration, immutability, ransomware resilience, and recovery exercise planning."
 safety = "safe"

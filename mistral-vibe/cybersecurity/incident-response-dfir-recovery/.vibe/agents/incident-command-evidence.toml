@@ -1,8 +1,0 @@
-agent_type = "agent"
-display_name = "Incident Command Evidence"
-description = "Static readiness, classification, command support, logs, evidence preservation, manifest, and custody planning."
-safety = "safe"
-system_prompt_id = "incident-command-evidence"
-bypass_tool_permissions = false
-enable_connectors = false
-disabled_tools = ["bash", "write_file", "search_replace"]
