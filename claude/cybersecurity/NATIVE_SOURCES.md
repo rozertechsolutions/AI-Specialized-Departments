@@ -2,32 +2,69 @@
 
 Documentation review date: 2026-07-21.
 
-Product surface: Claude web and desktop Projects, project instructions, project knowledge, and Claude Agent Skills.
+Product surface: Claude web and Claude Desktop Projects, project instructions, project knowledge, Claude Skills, memory, sharing controls, and optional connectors.
 
-Official source evidence checked or retained for this platform:
+## Official Source Checks
 
-- https://www.anthropic.com/news/projects
-- https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
-- https://github.com/anthropics/skills
+### Check 1 - Current reference documentation
 
-Validation method:
+- What are Projects: https://support.anthropic.com/en/articles/9517075-what-are-projects
+- How to create and manage Projects: https://support.anthropic.com/en/articles/9519177-how-can-i-create-and-manage-projects
+- Personalization features, including project instructions and Skills: https://support.anthropic.com/en/articles/10185728-understanding-claude-s-personalization-features
+- Use connectors to extend Claude's capabilities: https://support.anthropic.com/en/articles/11176164-pre-built-web-connectors-using-remote-mcp
 
-- Inventory of `claude/cybersecurity/` files and native support directories.
-- Static syntax parsing for JSON, TOML, YAML where applicable.
-- Reference resolution for retained repository-local prompts, Skills, agents, and config files where applicable.
-- Removal of redundant area-level source copies after this platform-wide source file replaced them.
+### Check 2 - Release notes or recent product notes
 
-Current native facts recorded:
+- Claude project and sharing articles were checked for current plan, sharing, RAG, and memory behavior.
+- Claude connector articles were checked for remote connector and remote MCP behavior.
+- Claude Skills support articles were checked for current Skill availability and manual setup behavior.
 
-- Project paths: `claude/cybersecurity/<area>/` for all eight Cybersecurity areas.
-- Discovery: use the platform-specific README and open/import from the documented working directory or manual UI location.
-- Permissions: read-only/static by default; shell, network, MCP, connector, hosted tool, scanner, deployment, and production actions absent or denied unless a human explicitly configures them outside this baseline.
-- Trust: repository-local configuration is effective only when the platform trusts or imports the project according to its current documentation.
-- Precedence: nearest area-level instructions or manually selected area package govern the selected work; platform-level README and this file provide package-wide evidence.
-- Omitted mechanisms: fake MCP servers, generated live hooks, external endpoints, credentials, cloud actions, scanners, and deployment automation are intentionally omitted.
+### Check 3 - Current product behavior and schema
 
-Removed or deprecated field handling:
+- Claude Projects are self-contained workspaces with project instructions, project knowledge, project chats, sharing controls, and project-scoped memory behavior.
+- Project instructions are added through `Set project instructions`; they are not repository files discovered from disk.
+- Project knowledge requires manual upload or source addition. Paid plans may enable RAG mode when knowledge approaches the context limit.
+- Skills customize Claude behavior and can be created, uploaded, installed, or shared only through the supported Claude Skill surface.
+- Connectors are separate integrations. Claude inherits the user's permissions from the connected service and can access or act only according to the configured connector.
 
-- Unsupported descriptive-only metadata is not treated as a permission control.
-- Platform-specific frontmatter and config fields must be verified against current vendor documentation before use.
-- For SDK packages, runtime API compatibility must be validated in an isolated environment without model calls before production use.
+## Current Native Facts
+
+- Area path: `claude/cybersecurity/<area>/`.
+- Primary instructions: `PROJECT_INSTRUCTIONS.md`.
+- Skills: `skills/<skill>/SKILL.md`.
+- Workflow guidance: `workflows/*.md`.
+- Output templates: `templates/*.md`.
+- Unique area knowledge retained: `governance-risk-compliance-assurance/knowledge/GOVERNANCE.md` and `security-architecture-engineering/knowledge/ARCHITECTURE_GOVERNANCE.md`.
+- Discovery: manual import only; no repository autoload for Claude web or Desktop.
+- Connectors and remote MCP: absent by default and optional only through separately approved Claude settings.
+
+## Discovery, Precedence, And Trust
+
+- Project instructions apply inside the selected Claude Project.
+- Project knowledge is separate from instructions and is available only after upload or source addition.
+- Shared project visibility depends on owner/admin sharing controls and plan limits.
+- Skills must be created, uploaded, installed, or shared through Claude.
+- Connectors require explicit configuration and inherit source-system permissions.
+
+## File Classification
+
+- Retained: eight `PROJECT_INSTRUCTIONS.md` files, 47 Skills, 16 workflow files, eight template files, and two unique knowledge files.
+- Retained workflow pairs: one file provides area-specific procedure guidance and one provides a compact manual workflow entry point; they are not exact duplicates.
+- Deleted: eight exact duplicate `knowledge/RESPONSIBILITY_MODEL.md` files because each matched its area's `PROJECT_INSTRUCTIONS.md` byte-for-byte and did not add independent Project knowledge value.
+- Omitted: repository-discovered agents, hooks, MCP runtime, coding-agent config, scanner connectors, cloud integrations, schedules, and production actions.
+
+## Removed Or Deprecated Field Handling
+
+- No repository-discovered agents are claimed.
+- No hooks, MCP runtime, coding-agent permissions, connector access, or app connections are simulated.
+- Project knowledge files are documented as manual uploads, not auto-loaded repository artifacts.
+- Connectors and remote MCP are documented as optional manual integrations with separate permissions.
+
+## Validation Method
+
+- Inventory of all eight Claude Cybersecurity areas.
+- Markdown frontmatter checks for retained Skills.
+- Exact duplicate comparison for `PROJECT_INSTRUCTIONS.md` versus `knowledge/RESPONSIBILITY_MODEL.md`.
+- Removal of exact duplicate knowledge files and empty directories.
+- Confirmation that no fake repository agents, hooks, MCP runtime, executable workflows, or credentials are present.
+- README review for manual import, plan/workspace limitations, project-dependent values, user/organization-dependent values, fixed safety baseline, removal, and security notice.

@@ -1,112 +1,178 @@
-# Cybersecurity Department for claude
+# Claude Cybersecurity Department
 
-This Cybersecurity department is a professional, adaptable baseline for claude covering governance, architecture, product security, vulnerability management, defensive operations, incident response, authorized offensive validation, and resilience.
+This Cybersecurity department is a professional manual-import package for Claude web and Claude Desktop. It covers governance, risk, compliance, assurance, security architecture and engineering, application/product/DevSecOps security, exposure and hardening, defensive operations and intelligence, incident response and recovery, authorized offensive validation, and resilience or specialized technology security.
 
-Its purpose is to help humans produce evidence-based cybersecurity work products while preserving clear professional ownership, least privilege, independent review, and human authority for consequential decisions.
+It solves the problem of setting up consistent Claude Projects and Claude Skills for evidence-based cybersecurity work without pretending that Claude web or Desktop auto-discovers repository folders. Possible uses include policy review, control mapping, risk exception support, architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection planning, incident readiness, authorized validation planning, resilience review, and independent assurance.
 
-Possible uses include risk and compliance assessment, security architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection engineering, incident-response planning, authorized penetration-test planning, resilience exercises, and independent assurance.
+## Department Overview
 
-## Department overview
+The department contains eight area packages under `claude/cybersecurity/<area>/`. Each area provides project instructions, reusable Skills, static workflow guidance, output templates, and, where useful, additional knowledge files for manual import into a Claude Project.
 
-The department contains eight Cybersecurity areas under `claude/cybersecurity/<area>/`. Each area is scoped to a distinct professional ownership boundary and is intended for static analysis, planning, review, documentation, and assurance using supplied evidence.
+Claude can assist with reasoning, drafting, review, evidence organization, and handoff planning. It is not authorized to accept enterprise risk, approve exceptions, authorize offensive testing, approve production changes, declare or close incidents, make legal determinations, certify compliance, operate live security tooling, or act without a human accountable owner.
 
-It does not authorize live scanning, exploitation, containment, recovery execution, production changes, publication, external integrations, legal determinations, risk acceptance, or closure decisions. Human owners remain accountable for authorization, approvals, exceptions, risk acceptance, incident declaration or closure, offensive testing authorization, and production action.
+## Possible Uses
 
-## Possible uses
+- Create one Claude Project per cybersecurity area for recurring static review work.
+- Paste the selected area's `PROJECT_INSTRUCTIONS.md` into Project instructions.
+- Upload the selected area's templates, workflow guidance, and unique knowledge files to Project knowledge.
+- Import or recreate the relevant `skills/<skill>/SKILL.md` packages as Claude Skills when the user's plan and workspace support Skills.
+- Review supplied policies, designs, findings, incident notes, telemetry plans, assessment scopes, and resilience evidence.
 
-- Risk and compliance assessment using supplied policies, control evidence, and framework mappings.
-- Security architecture and engineering review for proposed designs and reference patterns.
-- Threat modeling, secure SDLC review, release-readiness support, and supply-chain evidence review.
-- Vulnerability prioritization, remediation planning, and hardening governance from provided findings.
-- Detection engineering, telemetry coverage review, SOC triage methods, and threat-hunt planning.
-- Incident-response readiness, DFIR planning, evidence governance, recovery planning, and lessons learned.
-- Authorized offensive assessment planning, rules of engagement review, validation planning, and retest assurance.
-- Resilience exercises, ransomware recovery planning, specialized technology review, and independent assurance.
+## Platform Compatibility
 
-## Platform compatibility
+Validated on 2026-07-21 against current Anthropic Help Center and Anthropic documentation.
 
-Product surface: Claude web and desktop Projects, project instructions, project knowledge, and Claude Agent Skills.
+Supported manual/import surfaces:
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+- Claude web and Claude Desktop conversations.
+- Claude Projects with project instructions, project knowledge, sharing controls, and project-scoped chats.
+- Claude Project knowledge with uploaded documents, text, or code snippets; paid plans may use RAG mode when project knowledge approaches the context-window limit.
+- Claude Skills where available to the user or workspace.
+- Claude connectors only as separately approved web connectors, desktop extensions, or custom remote MCP connectors.
+
+Claude web and Desktop do not auto-load this repository. This package contains no repository-discovered agents, hooks, MCP runtime, coding-agent permissions, scanner integrations, schedules, or cloud deployment automation.
 
 ## Prerequisites
 
-Claude plan with Projects and Skills where available; connector access disabled unless separately approved.
+- A Claude account in a supported location.
+- Project creation rights and the required plan/workspace permissions for Projects, Skills, sharing, memory, and connectors.
+- Human authorization to import each area package and any organization evidence.
+- Admin approval for shared Projects, workspace Skills, connectors, remote MCP, desktop extensions, or other external integrations where applicable.
 
-Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
+No API keys, credentials, connectors, scanners, cloud accounts, or production access are required to import this static package.
 
-## Installation or import
+## Installation Or Import
 
-Create a Claude Project per area, paste PROJECT_INSTRUCTIONS.md into project instructions, upload knowledge/templates/workflows as project knowledge, and import skills/*/SKILL.md manually where custom Skills are supported.
+Use one area at a time.
 
-Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
+For a Claude Project:
 
-## Working directory and discovery
+1. Open `claude.ai/projects` or the Projects view in Claude.
+2. Create a new Project named for the area, for example `Cybersecurity - Incident Response DFIR Recovery`.
+3. Open the Project and choose `Set project instructions`.
+4. Paste the area's `PROJECT_INSTRUCTIONS.md` into the instructions field and save.
+5. Upload the area's `workflows/*.md`, `templates/*.md`, and any remaining `knowledge/*.md` files to Project knowledge.
+6. Start chats inside that Project and keep area evidence in the same Project.
 
-Claude web/desktop does not automatically load repository folders. Files require manual Project knowledge upload or Skill import; preserve isolation with one area per project or clearly named Skill set.
+For Claude Skills:
 
-When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
+1. Confirm that Skills are available for the user's account or workspace.
+2. Create, upload, or install the relevant `skills/<skill>/SKILL.md` packages using Claude's current Skill interface.
+3. Review the Skill instructions before enabling or sharing them.
+4. Share Skills only when workspace policy allows it.
 
-## Area map
+For connectors:
 
-- `claude/cybersecurity/governance-risk-compliance-assurance/` - Governance, Risk, Compliance, and Assurance: governance, cyber risk, compliance mapping, policies, assurance, exceptions, and risk-decision support.
-- `claude/cybersecurity/security-architecture-engineering/` - Security Architecture and Engineering: security architecture, engineering patterns, identity, network, cloud, data, platform, and control design review.
-- `claude/cybersecurity/application-product-devsecops-security/` - Application, Product, and DevSecOps Security: product security, secure SDLC, threat modeling, code/design review, CI/CD, supply chain, PSIRT, and release assurance.
-- `claude/cybersecurity/exposure-vulnerability-hardening/` - Exposure, Vulnerability, and Hardening: asset exposure, vulnerability triage, prioritization, hardening, remediation governance, and validation evidence.
-- `claude/cybersecurity/defensive-security-operations-detection-intelligence/` - Defensive Security Operations, Detection, and Intelligence: SOC operating model, telemetry, detection engineering, alert triage, hunting, intelligence, and coverage quality.
-- `claude/cybersecurity/incident-response-dfir-recovery/` - Incident Response, DFIR, and Recovery: incident planning, evidence governance, DFIR analysis planning, containment planning, recovery coordination, and lessons learned.
-- `claude/cybersecurity/offensive-security-authorized-validation/` - Offensive Security and Authorized Validation: explicitly authorized assessment planning, rules of engagement, emulation governance, retest planning, and safety review.
-- `claude/cybersecurity/cyber-resilience-specialized-technologies/` - Cyber Resilience and Specialized Technologies: resilience, ransomware recovery planning, specialized technology review, cryptography, critical infrastructure, OT/IoT/cloud edge, and transition assurance.
+1. Do not connect anything merely to install this repository.
+2. If a human later approves connector use, configure the connector in Claude settings or the approved workspace control surface.
+3. Keep connector permissions limited to the user's existing authorization in the connected service.
 
-## Native components
+## Working Directory And Discovery
 
-- `governance-risk-compliance-assurance/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `security-architecture-engineering/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `application-product-devsecops-security/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `exposure-vulnerability-hardening/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `defensive-security-operations-detection-intelligence/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `incident-response-dfir-recovery/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `offensive-security-authorized-validation/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
-- `cyber-resilience-specialized-technologies/`: `PROJECT_INSTRUCTIONS.md`, `knowledge/`, `skills/`, `workflows/`, `templates/`
+Claude web and Desktop have no working-directory discovery for this repository. The local paths are source material for manual import only.
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+Auto-discovered by Claude web/Desktop: nothing in `claude/cybersecurity/`.
 
-## How to use the department
+Manual import/copy:
 
-Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
+- `PROJECT_INSTRUCTIONS.md` into the Claude Project instruction field.
+- `workflows/*.md`, `templates/*.md`, and any `knowledge/*.md` files as Project knowledge.
+- `skills/<skill>/SKILL.md` through Claude's Skill create/upload/install flow where supported.
 
-Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
+Project instructions apply to all chats inside the selected Project. Project knowledge is separate from instructions and is used only after upload. Keep areas isolated by creating separate Projects or clearly named Skill sets. Do not mix area files unless a human explicitly approves a cross-area handoff.
 
-## Permissions and safety
+## Area Map
 
-Default behavior is read-only and static. Repository writes, where a platform technically allows them, must stay inside the selected `claude/cybersecurity/<area>/` directory and require an explicit user task to update static artifacts. Shell, network, installation, deployment, scanning, exploitation, recovery execution, remote Git operations, MCP connections, hosted tools, and external connectors are prohibited by default.
+- `governance-risk-compliance-assurance/`: governance, policy, control mapping, compliance, risk records, exceptions, assurance, evidence, suppliers, maturity, and reporting.
+- `security-architecture-engineering/`: security architecture, engineering patterns, identity, cloud, network, data, containers, infrastructure as code, automation, and architecture assurance.
+- `application-product-devsecops-security/`: product security, secure SDLC, threat modeling, secure code/design review, CI/CD, software supply chain, PSIRT, release readiness, and appsec assurance.
+- `exposure-vulnerability-hardening/`: exposure management, vulnerability triage, prioritization, hardening, remediation governance, validation, and reporting.
+- `defensive-security-operations-detection-intelligence/`: SOC governance, telemetry, detection engineering, triage, hunting, intelligence, malware-analysis planning, automation review, and coverage quality.
+- `incident-response-dfir-recovery/`: incident command, evidence governance, DFIR planning, containment planning, recovery coordination, scenarios, crisis review, and corrective action.
+- `offensive-security-authorized-validation/`: authorization, scope, rules of engagement, assessment planning, deconfliction, emulation, Purple Team validation, findings, cleanup, retest, and safety review.
+- `cyber-resilience-specialized-technologies/`: resilience programs, ransomware recovery, backups, specialized technology security, OT/ICS, IoT, embedded, AI systems, firmware, cryptographic agility, critical infrastructure, and transition governance.
 
-AI components cannot self-approve, accept enterprise risk, authorize offensive testing, approve production changes, close incidents, certify compliance, make legal determinations, or conceal residual risk. Human review is mandatory for approvals, exceptions, risk acceptance, release or closure decisions, incident command, offensive authorization, external reporting, and production actions.
+## Native Components
 
-## Configuration and customization
+Each area contains:
 
-Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
+- `PROJECT_INSTRUCTIONS.md`: primary Claude Project instruction source.
+- `skills/<skill>/SKILL.md`: Claude Skill source packages.
+- `workflows/*.md`: static workflow guidance for Project knowledge.
+- `templates/*.md`: output schema guidance for Project knowledge.
+
+Additional unique knowledge remains only where it has independent value:
+
+- `governance-risk-compliance-assurance/knowledge/GOVERNANCE.md`.
+- `security-architecture-engineering/knowledge/ARCHITECTURE_GOVERNANCE.md`.
+
+The duplicate `knowledge/RESPONSIBILITY_MODEL.md` copies were removed because they were exact copies of `PROJECT_INSTRUCTIONS.md` and did not add independent Project knowledge value.
+
+No hooks, MCP servers, coding-agent config, repository agents, scanner connectors, or live app integrations are included.
+
+## How To Use The Department
+
+Select the area that owns the work, import that area into a Claude Project, and provide:
+
+- authorized scope and explicit exclusions;
+- accountable owner, requester, reviewer, approver role, and intended audience;
+- evidence inventory with provenance, period, freshness, and limitations;
+- decision needed, assumptions, constraints, and required output.
+
+Example input:
+
+```text
+Using the Incident Response DFIR Recovery Project and the incident-command-evidence Skill, review the uploaded ransomware tabletop notes. Scope is static readiness review only. Exclude containment execution and live log access. Return decision log gaps, evidence requirements, recovery assumptions, escalation points, and independent-review requirements.
+```
+
+Expected output is a scoped artifact with evidence tables, findings separated by evidence state, assumptions, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact, closure-facing, exception, release, incident, offensive, or external-facing outputs must go to an independent reviewer that did not create the artifact.
+
+Stop when authorization is missing, evidence is unredacted or insufficient, scope is unclear, a live action is requested, an output would self-review, or a human-only decision is requested.
+
+## Permissions And Safety
+
+Claude Projects can use project instructions, project knowledge, memory, and available tools according to the user's plan and workspace settings. Connectors can retrieve data or take actions only after separate connection, authentication, and permissions. Claude inherits the user's permissions from the connected service.
+
+This repository does not enable any connector, remote MCP server, desktop extension, scanner, write action, schedule, deployment, or production integration. Keep connector permissions at least as restrictive as organizational policy requires, and require human confirmation for any action outside Claude.
+
+Human approval is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, and critical finding closure.
+
+## Configuration And Customization
+
+### Project-dependent configuration
+
+Adapt repository paths, source directories, application architecture, build systems, languages, deployment model, cloud provider, CI/CD structure, telemetry locations, asset inventory, data-flow scope, threat-model scope, vulnerability evidence, approved test scope, area-specific working directories, and repository-specific policies per project.
+
+### User/organization-dependent configuration
+
+Supply or approve account access, workspace role, Project sharing, Skill availability, organization policies, regulatory frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, permitted integrations, connector access, MCP endpoints, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, retention rules, and legal/privacy constraints outside this repository. Do not commit secrets or confidential values.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, static-by-default behavior, prohibited unauthorized actions, stop conditions, no live integrations by default, and human approval gates intact.
 
 ## Validation
 
-Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
+Repository validation can check Markdown frontmatter, area coverage, reference wording, file existence, duplicate or obsolete artifacts, empty files, and absence of fake agents, hooks, MCP runtime, credentials, or live integrations.
+
+Runtime behavior, model availability, Project file limits, project knowledge RAG mode, memory behavior, Skill availability, sharing, connector behavior, scanner output, incident actions, recovery, and production changes require a separately authorized Claude environment and were not executed.
 
 ## Troubleshooting
 
-- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
-- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
-- If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
-- If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
-- If a platform preview feature changes, re-check official documentation and update `claude/cybersecurity/NATIVE_SOURCES.md` before relying on it.
+- If Claude ignores area guidance, confirm `PROJECT_INSTRUCTIONS.md` was pasted into Project instructions rather than uploaded only as knowledge.
+- If Claude cannot reference a workflow or template, upload the relevant files to the same Project knowledge base.
+- If a Skill is unavailable, verify the account or workspace supports Skills and that the Skill was created, uploaded, installed, or shared in the current Claude surface.
+- If connector results appear, confirm the connector was intentionally enabled and that its source-system permissions are approved.
+- If shared users cannot see content, review Project visibility and sharing permissions.
 
-## Removal or uninstall
+## Removal Or Uninstall
 
-Remove the imported Project, GPT, Skill, agent, rule, command, workflow, or workspace configuration from the platform UI or delete the selected `claude/cybersecurity/` directory from the repository. Remove any manually uploaded knowledge files from the platform. Do not delete organizational evidence or platform-global settings unless a human owner explicitly authorizes that cleanup.
+Archive or delete the imported Claude Project, remove uploaded Project knowledge files, clear or replace Project instructions, and remove imported Skills from the Skill management surface. Disconnect connectors in Claude settings or ask a workspace administrator to disable them. Delete only the selected cybersecurity imports; do not remove unrelated organization evidence or global workspace settings without human approval.
 
 ## Limitations
 
-This package is a static professional baseline. It is not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing tool, incident-response platform, legal opinion, compliance certification, or production-control system. Platform support and schema details can change, especially for preview agent, Skill, hook, and permission features.
+This package is a static professional baseline, not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing platform, incident command system, recovery orchestrator, legal opinion, compliance certification, or production-control system. Claude plan limits, file limits, project knowledge RAG behavior, memory behavior, Skill availability, connector permissions, and admin controls can change.
 
-## Security notice
+## Security Notice
 
-Offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and use of sensitive evidence require explicit authorization, validated scope, and human control. Do not use these components to bypass approval, access secrets, contact external systems, or claim live execution without evidence.
+Explicit authorization and human control are mandatory for offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and sensitive evidence handling. Do not use this package to bypass approval, access secrets, contact external systems, or claim execution without evidence.
