@@ -1,7 +1,3 @@
 {
-  "name": "cybersecurity-area-06-incident-response-dfir-recovery",
-  "staticOnly": true,
-  "externalIntegrationsEnabled": false,
-  "liveSecurityActionsEnabled": false,
   "humanAuthorityRequired": true
 }

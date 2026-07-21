@@ -1,7 +1,5 @@
 {
-  "name": "cybersecurity-application-product-devsecops-security",
   "description": "Static Junie guidance for Cybersecurity Application, Product, and DevSecOps Security.",
   "entrypoint": ".junie/AGENTS.md",
   "version": "1.0.0"
 }
-
