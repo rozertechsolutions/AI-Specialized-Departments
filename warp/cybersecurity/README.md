@@ -1,112 +1,161 @@
-# Cybersecurity Department for warp
+# Warp Cybersecurity Department
 
-This Cybersecurity department is a professional, adaptable baseline for warp covering governance, architecture, product security, vulnerability management, defensive operations, incident response, authorized offensive validation, and resilience.
+This Cybersecurity department is a professional Warp Project Rules and Skills package covering governance, risk, compliance, assurance, security architecture and engineering, application/product/DevSecOps security, exposure and hardening, defensive operations and intelligence, incident response and recovery, authorized offensive validation, and resilience or specialized technology security.
 
-Its purpose is to help humans produce evidence-based cybersecurity work products while preserving clear professional ownership, least privilege, independent review, and human authority for consequential decisions.
+It solves the problem of opening a bounded cybersecurity area in Warp with area-specific Project Rules and reusable Skills while keeping Oz cloud-agent setup, schedules, integrations, and MCP servers out of the repository. Possible uses include policy review, control mapping, risk exception support, architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection planning, incident readiness, authorized validation planning, resilience review, and independent assurance.
 
-Possible uses include risk and compliance assessment, security architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection engineering, incident-response planning, authorized penetration-test planning, resilience exercises, and independent assurance.
+## Department Overview
 
-## Department overview
+The department contains eight area packages under `warp/cybersecurity/<area>/`. Each area contains an `AGENTS.md` Project Rules file and `.warp/skills/*/SKILL.md` Skill packages.
 
-The department contains eight Cybersecurity areas under `warp/cybersecurity/<area>/`. Each area is scoped to a distinct professional ownership boundary and is intended for static analysis, planning, review, documentation, and assurance using supplied evidence.
+Warp agents can assist with static repository review, drafting, evidence organization, and handoff planning. They are not authorized to accept enterprise risk, approve exceptions, authorize offensive testing, approve production changes, declare or close incidents, make legal determinations, certify compliance, operate live security tooling, or act without a human accountable owner.
 
-It does not authorize live scanning, exploitation, containment, recovery execution, production changes, publication, external integrations, legal determinations, risk acceptance, or closure decisions. Human owners remain accountable for authorization, approvals, exceptions, risk acceptance, incident declaration or closure, offensive testing authorization, and production action.
+## Possible Uses
 
-## Possible uses
+- Open Warp in one cybersecurity area so its `AGENTS.md` Project Rules apply.
+- Ask Warp Agent to use a discovered Skill by natural language.
+- Invoke a discovered Skill as a slash command, for example `/governance-policy-frameworks`, when Warp lists it.
+- Use `AGENTS.md` as persistent constraints and Skills as specific task workflows.
+- Copy the area into an Oz project only after a human approves cloud-agent execution and environment controls.
 
-- Risk and compliance assessment using supplied policies, control evidence, and framework mappings.
-- Security architecture and engineering review for proposed designs and reference patterns.
-- Threat modeling, secure SDLC review, release-readiness support, and supply-chain evidence review.
-- Vulnerability prioritization, remediation planning, and hardening governance from provided findings.
-- Detection engineering, telemetry coverage review, SOC triage methods, and threat-hunt planning.
-- Incident-response readiness, DFIR planning, evidence governance, recovery planning, and lessons learned.
-- Authorized offensive assessment planning, rules of engagement review, validation planning, and retest assurance.
-- Resilience exercises, ransomware recovery planning, specialized technology review, and independent assurance.
+## Platform Compatibility
 
-## Platform compatibility
+Validated on 2026-07-21 against current Warp documentation.
 
-Product surface: Warp local AI Project Rules, WARP.md/AGENTS.md guidance, Skills or workflows available to Warp/Oz, and command guidance.
+Supported Warp surfaces:
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+- Local Warp Agent Mode and Auto-Detection Mode.
+- Project Rules through uppercase `AGENTS.md`; `WARP.md` remains a supported fallback, but this package uses `AGENTS.md`.
+- Project Skills through `.warp/skills/*/SKILL.md`.
+- Skill invocation by natural language or slash command.
+- Oz CLI, Oz web app, schedules, integrations, and cloud agents only as optional manual setup outside this repository.
+
+This package does not configure Warp settings, Agent Profiles, Oz environments, Oz runs, schedules, Slack/Linear triggers, providers, custom inference endpoints, MCP servers, or terminal automation.
 
 ## Prerequisites
 
-Warp with AI features; Oz availability depends on plan/workspace; no cloud action enabled by this package.
+- Warp installed with Agent features available to the user.
+- A trusted local checkout.
+- Human authorization for the selected cybersecurity scope and any supplied evidence.
+- Workspace approval before using Oz cloud agents, shared Skills, MCP servers, integrations, schedules, or remote environments.
 
-Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
+No API keys, credentials, MCP servers, scanners, cloud accounts, Oz environments, schedules, or production access are included in this package.
 
-## Installation or import
+## Installation Or Import
 
-Open Warp in the relevant area directory and attach area AGENTS.md/rules as project guidance. Oz or team features require manual setup and approval in Warp.
+Use one area at a time.
 
-Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
+1. Open Warp at the repository root.
+2. Change into the selected area, for example:
 
-## Working directory and discovery
+   ```text
+   cd warp/cybersecurity/offensive-security-authorized-validation
+   ```
 
-Warp does not load fake custom-agent trees. It uses project rules/instructions available to the current terminal or Oz workspace; area isolation is by working directory.
+3. Start a Warp Agent conversation from that directory.
+4. Confirm the area `AGENTS.md` appears as applied Project Rules or as a referenced rule.
+5. Ask what Skills are available, or invoke a specific Skill by name.
 
-When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
+Do not use `/cloud-agent`, Oz schedules, Oz environments, or integrations merely to install this package. Those are separate Warp/Oz features requiring explicit authorization and configuration outside this repository.
 
-## Area map
+## Working Directory And Discovery
 
-- `warp/cybersecurity/governance-risk-compliance-assurance/` - Governance, Risk, Compliance, and Assurance: governance, cyber risk, compliance mapping, policies, assurance, exceptions, and risk-decision support.
-- `warp/cybersecurity/security-architecture-engineering/` - Security Architecture and Engineering: security architecture, engineering patterns, identity, network, cloud, data, platform, and control design review.
-- `warp/cybersecurity/application-product-devsecops-security/` - Application, Product, and DevSecOps Security: product security, secure SDLC, threat modeling, code/design review, CI/CD, supply chain, PSIRT, and release assurance.
-- `warp/cybersecurity/exposure-vulnerability-hardening/` - Exposure, Vulnerability, and Hardening: asset exposure, vulnerability triage, prioritization, hardening, remediation governance, and validation evidence.
-- `warp/cybersecurity/defensive-security-operations-detection-intelligence/` - Defensive Security Operations, Detection, and Intelligence: SOC operating model, telemetry, detection engineering, alert triage, hunting, intelligence, and coverage quality.
-- `warp/cybersecurity/incident-response-dfir-recovery/` - Incident Response, DFIR, and Recovery: incident planning, evidence governance, DFIR analysis planning, containment planning, recovery coordination, and lessons learned.
-- `warp/cybersecurity/offensive-security-authorized-validation/` - Offensive Security and Authorized Validation: explicitly authorized assessment planning, rules of engagement, emulation governance, retest planning, and safety review.
-- `warp/cybersecurity/cyber-resilience-specialized-technologies/` - Cyber Resilience and Specialized Technologies: resilience, ransomware recovery planning, specialized technology review, cryptography, critical infrastructure, OT/IoT/cloud edge, and transition assurance.
+Launch directory:
 
-## Native components
+```text
+warp/cybersecurity/<area>/
+```
 
-- `governance-risk-compliance-assurance/`: `AGENTS.md`
-- `security-architecture-engineering/`: `AGENTS.md`
-- `application-product-devsecops-security/`: `AGENTS.md`
-- `exposure-vulnerability-hardening/`: `AGENTS.md`
-- `defensive-security-operations-detection-intelligence/`: `AGENTS.md`
-- `incident-response-dfir-recovery/`: `AGENTS.md`
-- `offensive-security-authorized-validation/`: `AGENTS.md`
-- `cyber-resilience-specialized-technologies/`: `AGENTS.md`
+Auto-discovered by Warp from that area:
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+- `AGENTS.md` as Project Rules.
+- `.warp/skills/*/SKILL.md` as project Skills.
 
-## How to use the department
+Warp applies Project Rules from the current directory and repository root, with current-subdirectory rules taking precedence over root rules and Global Rules. Skill discovery is based on the current working directory; in Git repositories, Warp includes skills from the current directory up through the repository root. Keep areas isolated by launching from exactly one area directory.
 
-Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
+## Area Map
 
-Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
+- `governance-risk-compliance-assurance/`: governance, policy, control mapping, compliance, risk records, exceptions, assurance, evidence, suppliers, maturity, and reporting.
+- `security-architecture-engineering/`: security architecture, engineering patterns, identity, cloud, network, data, containers, infrastructure as code, automation, and architecture assurance.
+- `application-product-devsecops-security/`: product security, secure SDLC, threat modeling, secure code/design review, CI/CD, software supply chain, PSIRT, release readiness, and appsec assurance.
+- `exposure-vulnerability-hardening/`: exposure management, vulnerability triage, prioritization, hardening, remediation governance, validation, and reporting.
+- `defensive-security-operations-detection-intelligence/`: SOC governance, telemetry, detection engineering, triage, hunting, intelligence, malware-analysis planning, automation review, and coverage quality.
+- `incident-response-dfir-recovery/`: incident command, evidence governance, DFIR planning, containment planning, recovery coordination, scenarios, crisis review, and corrective action.
+- `offensive-security-authorized-validation/`: authorization, scope, rules of engagement, assessment planning, deconfliction, emulation, Purple Team validation, findings, cleanup, retest, and safety review.
+- `cyber-resilience-specialized-technologies/`: resilience programs, ransomware recovery, backups, specialized technology security, OT/ICS, IoT, embedded, AI systems, firmware, cryptographic agility, critical infrastructure, and transition governance.
 
-## Permissions and safety
+## Native Components
 
-Default behavior is read-only and static. Repository writes, where a platform technically allows them, must stay inside the selected `warp/cybersecurity/<area>/` directory and require an explicit user task to update static artifacts. Shell, network, installation, deployment, scanning, exploitation, recovery execution, remote Git operations, MCP connections, hosted tools, and external connectors are prohibited by default.
+Each area contains:
 
-AI components cannot self-approve, accept enterprise risk, authorize offensive testing, approve production changes, close incidents, certify compliance, make legal determinations, or conceal residual risk. Human review is mandatory for approvals, exceptions, risk acceptance, release or closure decisions, incident command, offensive authorization, external reporting, and production actions.
+- `AGENTS.md`: Warp Project Rules for the selected area.
+- `.warp/skills/*/SKILL.md`: project Skills with required `name` and `description` frontmatter.
 
-## Configuration and customization
+No repository custom-agent files, Oz run definitions, schedules, environments, Agent Profiles, MCP servers, Warp settings files, hooks, plugins, scanner connectors, or live app integrations are included.
 
-Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
+## How To Use The Department
+
+Select the area that owns the work, launch Warp from that area, and provide:
+
+- authorized scope and explicit exclusions;
+- accountable owner, requester, reviewer, approver role, and intended audience;
+- evidence inventory with provenance, period, freshness, and limitations;
+- decision needed, assumptions, constraints, and required output.
+
+Example input:
+
+```text
+Use the /authorization-scope-roe Skill in this Offensive Security Authorized Validation area. Review the supplied rules of engagement draft. Scope is static review only. Exclude live testing. Return missing authorization terms, safety gates, evidence gaps, emergency-stop requirements, and independent-review needs.
+```
+
+Expected output is a scoped artifact with evidence tables, findings separated by evidence state, assumptions, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact, closure-facing, exception, release, incident, offensive, or external-facing outputs must go to an independent reviewer that did not create the artifact.
+
+Stop when authorization is missing, evidence is unredacted or insufficient, scope is unclear, a live action is requested, an output would self-review, or a human-only decision is requested.
+
+## Permissions And Safety
+
+Warp local agents can use terminal context and may run commands depending on user interaction, profiles, settings, and approvals. This repository provides text rules and Skills only; it does not enforce terminal permissions by configuration.
+
+Keep the Warp Agent AI toggle, Agent Profiles, MCP servers, full terminal use, web search, custom endpoints, and Oz permissions configured by the user or workspace. Do not add MCP servers, integrations, cloud environments, schedules, or production credentials unless a human explicitly approves them outside this repository.
+
+Human approval is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, and critical finding closure.
+
+## Configuration And Customization
+
+### Project-dependent configuration
+
+Adapt repository paths, source directories, application architecture, build systems, languages, deployment model, cloud provider, CI/CD structure, telemetry locations, asset inventory, data-flow scope, threat-model scope, vulnerability evidence, approved test scope, area-specific working directories, and repository-specific policies per project.
+
+### User/organization-dependent configuration
+
+Supply or approve Warp installation, account identity, workspace policy, Agent Profile, provider/model choice, custom endpoint, Oz cloud-agent eligibility, environment, schedule, integration, MCP endpoints, organization policies, regulatory frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, retention rules, and legal/privacy constraints outside this repository. Do not commit secrets or confidential values.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, static-by-default behavior, prohibited unauthorized actions, stop conditions, no live integrations by default, and human approval gates intact.
 
 ## Validation
 
-Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
+Repository validation can check Markdown frontmatter, area coverage, file existence, exact duplicates, empty files, empty directories, and absence of fake custom agents, Oz run definitions, schedules, MCP configs, credentials, and live integrations.
+
+Runtime behavior, model behavior, Warp Agent settings, Agent Profiles, terminal-command approval, MCP behavior, Oz CLI behavior, Oz cloud runs, schedules, integrations, scanner output, incident actions, recovery, and production changes require a separately authorized Warp/Oz environment and were not executed.
 
 ## Troubleshooting
 
-- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
-- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
-- If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
-- If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
-- If a platform preview feature changes, re-check official documentation and update `warp/cybersecurity/NATIVE_SOURCES.md` before relying on it.
+- If Project Rules are not applied, confirm the file is uppercase `AGENTS.md` and Warp was launched from `warp/cybersecurity/<area>/`.
+- If the wrong rules apply, check for a `WARP.md` in the same directory because Warp gives it priority over `AGENTS.md`.
+- If a Skill is unavailable, confirm it is under `.warp/skills/<skill>/SKILL.md` and has `name` and `description` frontmatter.
+- If Skills from another area appear, restart the agent conversation from the intended area directory.
+- If an MCP server, integration, cloud run, or schedule appears, inspect Warp/Oz user or workspace settings; this repository does not configure them.
 
-## Removal or uninstall
+## Removal Or Uninstall
 
-Remove the imported Project, GPT, Skill, agent, rule, command, workflow, or workspace configuration from the platform UI or delete the selected `warp/cybersecurity/` directory from the repository. Remove any manually uploaded knowledge files from the platform. Do not delete organizational evidence or platform-global settings unless a human owner explicitly authorizes that cleanup.
+Stop the Warp Agent conversation, leave the selected area directory, or remove the imported/copied `AGENTS.md` and `.warp/skills/` files from a consuming project. Remove Warp/Oz global rules, project links, MCP servers, Agent Profiles, cloud schedules, environments, integrations, or credentials only through the user's approved Warp/Oz settings process. Do not delete unrelated organization evidence or global Warp settings without human approval.
 
 ## Limitations
 
-This package is a static professional baseline. It is not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing tool, incident-response platform, legal opinion, compliance certification, or production-control system. Platform support and schema details can change, especially for preview agent, Skill, hook, and permission features.
+This package is a static professional baseline for Warp rules and Skills, not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing platform, incident command system, recovery orchestrator, legal opinion, compliance certification, production-control system, Oz environment, or scheduled cloud-agent workflow. Warp/Oz behavior, Skill discovery, and cloud-agent capabilities can change.
 
-## Security notice
+## Security Notice
 
-Offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and use of sensitive evidence require explicit authorization, validated scope, and human control. Do not use these components to bypass approval, access secrets, contact external systems, or claim live execution without evidence.
+Explicit authorization and human control are mandatory for offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and sensitive evidence handling. Do not use this package to bypass approval, access secrets, contact external systems, or claim execution without evidence.

@@ -2,31 +2,67 @@
 
 Documentation review date: 2026-07-21.
 
-Product surface: Warp local AI Project Rules, WARP.md/AGENTS.md guidance, Skills or workflows available to Warp/Oz, and command guidance.
+Product surface: Warp local Agent Mode, Project Rules through `AGENTS.md`, project Skills through `.warp/skills/`, and optional Oz cloud agents outside this repository.
 
-Official source evidence checked or retained for this platform:
+## Official Source Checks
 
-- https://docs.warp.dev/
-- https://docs.warp.dev/knowledge-and-collaboration/rules
+### Check 1 - Current reference documentation
 
-Validation method:
+- Warp getting started and Oz overview: https://docs.warp.dev/
+- Warp Agents overview: https://docs.warp.dev/agent-platform/local-agents/overview/
+- Rules for agents: https://docs.warp.dev/agent-platform/capabilities/rules/
+- Skills for agents: https://docs.warp.dev/agent-platform/capabilities/skills/
+- MCP capability: https://docs.warp.dev/agent-platform/capabilities/mcp/
+- Slash Commands: https://docs.warp.dev/agent-platform/capabilities/slash-commands/
 
-- Inventory of `warp/cybersecurity/` files and native support directories.
-- Static syntax parsing for JSON, TOML, YAML where applicable.
-- Reference resolution for retained repository-local prompts, Skills, agents, and config files where applicable.
-- Removal of redundant area-level source copies after this platform-wide source file replaced them.
+### Check 2 - Release notes or current behavior notes
 
-Current native facts recorded:
+- Warp Rules and Skills pages were last updated in July 2026.
+- Oz CLI reference was last updated on 2026-07-20 and confirms `warp-cli` is deprecated in favor of `oz`.
+- Current docs distinguish local Warp agents from Oz cloud agents, environments, schedules, integrations, and API/SDK usage.
 
-- Project paths: `warp/cybersecurity/<area>/` for all eight Cybersecurity areas.
-- Discovery: use the platform-specific README and open/import from the documented working directory or manual UI location.
-- Permissions: read-only/static by default; shell, network, MCP, connector, hosted tool, scanner, deployment, and production actions absent or denied unless a human explicitly configures them outside this baseline.
-- Trust: repository-local configuration is effective only when the platform trusts or imports the project according to its current documentation.
-- Precedence: nearest area-level instructions or manually selected area package govern the selected work; platform-level README and this file provide package-wide evidence.
-- Omitted mechanisms: fake MCP servers, generated live hooks, external endpoints, credentials, cloud actions, scanners, and deployment automation are intentionally omitted.
+### Check 3 - Current product behavior and format
 
-Removed or deprecated field handling:
+- Project Rules are stored in uppercase `AGENTS.md`; `WARP.md` is still supported and has same-directory priority if both exist.
+- Warp automatically applies `AGENTS.md` from the current directory and repository root, with current-subdirectory rules taking precedence.
+- Project Skills can live in `.warp/skills/` and must be in their own directory with `SKILL.md` containing `name` and `description` frontmatter.
+- Skill discovery is based on the current working directory.
+- MCP servers are configured through Warp Drive/Oz settings, not through files retained in this package.
 
-- Unsupported descriptive-only metadata is not treated as a permission control.
-- Platform-specific frontmatter and config fields must be verified against current vendor documentation before use.
-- For SDK packages, runtime API compatibility must be validated in an isolated environment without model calls before production use.
+## Current Native Facts
+
+- Area path: `warp/cybersecurity/<area>/`.
+- Project Rules: `AGENTS.md`.
+- Skills: `.warp/skills/*/SKILL.md`.
+- Discovery: launch Warp from the selected area directory.
+- Oz cloud agents: not represented as repository files.
+- MCP: absent by default; no MCP configuration file is retained.
+
+## Discovery, Precedence, And Trust
+
+- Warp applies the current directory's Project Rules before root Project Rules and Global Rules.
+- If `WARP.md` and `AGENTS.md` exist in the same directory, `WARP.md` has priority; this package intentionally uses only `AGENTS.md`.
+- Skills are discovered from the current working directory up through the repository root.
+- Runtime trust, provider/model selection, Agent Profiles, terminal command approval, MCP, and Oz cloud execution remain user/workspace controlled outside this package.
+
+## File Classification
+
+- Retained: eight `AGENTS.md` Project Rules files and 38 `.warp/skills/*/SKILL.md` project Skills.
+- Omitted: repository custom-agent files, WARP.md duplicates, Oz run definitions, Oz schedules, Oz environments, Agent Profiles, MCP configs, Warp settings files, cloud integrations, scanner connectors, hooks, and production actions.
+- Deleted: none for this platform stage; no exact duplicate files were found.
+
+## Removed Or Deprecated Field Handling
+
+- No `warp-cli` instructions are used; Oz is documented as the current CLI when cloud/local Oz execution is separately authorized.
+- No repository-defined named Warp custom agents are claimed.
+- No MCP server, schedule, integration, or cloud environment is simulated.
+- No unsupported permissions file is presented as an enforcement mechanism.
+
+## Validation Method
+
+- Inventory of all eight Warp Cybersecurity areas.
+- Markdown frontmatter checks for 38 Skills.
+- Exact duplicate scan across retained Warp files.
+- Hidden-path search for `.warp/skills`.
+- Confirmation that no fake custom agents, Oz run definitions, schedules, MCP configs, credentials, or live integrations are present.
+- README review for local versus Oz behavior, launch directory, discovery, project-dependent values, user/organization-dependent values, fixed safety baseline, removal, and limitations.
