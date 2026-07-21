@@ -2,9 +2,7 @@
 name: data-container-automation-agent
 description: Own data protection, cryptography, secrets, container, Kubernetes, IaC, and safe automation architecture.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [security-architecture-review, reference-and-control-patterns, identity-cloud-network-data-design, container-iac-automation-review, independent-architecture-assurance]
 ---
 
 # data-container-automation-agent

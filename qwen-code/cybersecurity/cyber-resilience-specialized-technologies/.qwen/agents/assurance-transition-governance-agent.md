@@ -2,9 +2,7 @@
 name: assurance-transition-governance-agent
 description: Own corrective actions, resilience roadmap, specialist handoffs, transition governance, and evidence packages.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [resilience-program-review, backup-ransomware-recovery-assessment, specialized-technology-security-review, crypto-critical-infrastructure-planning, independent-resilience-assurance]
 ---
 
 # assurance-transition-governance-agent

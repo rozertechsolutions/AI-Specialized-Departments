@@ -2,9 +2,7 @@
 name: coverage-quality-assurance-agent
 description: Own SOC metrics, detection quality, adversary-behavior mapping, and independent quality review.
 model: inherit
-readonly: true
 tools: [Read, Grep, Glob]
-skills: [soc-telemetry-governance, detection-triage-hunting, intelligence-malware-automation, coverage-quality-assurance, incident-escalation-handoff]
 ---
 
 # coverage-quality-assurance-agent
