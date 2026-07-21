@@ -194,6 +194,7 @@ def build_coordinator(model: str | None = None) -> Any:
         agent.as_tool(
             tool_name=agent.name.replace("-", "_"),
             tool_description=f"Run {agent.name} for its exclusive static cybersecurity responsibility.",
+            needs_approval=True,
         )
         for agent in specialists
     ]
@@ -206,3 +207,39 @@ def build_coordinator(model: str | None = None) -> Any:
     if model:
         kwargs["model"] = model
     return Agent(**kwargs)
+
+
+def build_default_run_config() -> Any:
+    try:
+        from agents import RunConfig
+    except ImportError as exc:
+        raise RuntimeError("OpenAI Agents SDK is required to build RunConfig.") from exc
+    return RunConfig(tracing_disabled=True, input_guardrails=[], output_guardrails=[])
+
+def list_pending_interruptions(result_or_state: Any) -> tuple[Any, ...]:
+    return tuple(getattr(result_or_state, "interruptions", ()) or ())
+
+def select_interruption(interruptions: tuple[Any, ...], index: int = 0) -> Any:
+    if index < 0 or index >= len(interruptions):
+        raise IndexError("No pending interruption at the requested index.")
+    return interruptions[index]
+
+def serialize_state(state: Any) -> str:
+    return state.to_string()
+
+def restore_state(agent: Any, serialized_state: str) -> Any:
+    try:
+        from agents import RunState
+    except ImportError as exc:
+        raise RuntimeError("OpenAI Agents SDK is required to restore RunState.") from exc
+    return RunState.from_string(agent, serialized_state)
+
+def record_explicit_approval(state: Any, interruption: Any) -> Any:
+    state.approve(interruption, always_approve=False)
+    return state
+
+def record_explicit_rejection(state: Any, interruption: Any, reason: str) -> Any:
+    if not reason.strip():
+        raise ValueError("A rejection reason is required.")
+    state.reject(interruption, rejection_message=reason, always_reject=False)
+    return state
