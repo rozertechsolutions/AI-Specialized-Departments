@@ -1,4 +1,4 @@
-# Section 05: SRE, Observability and Operations
+# SRE, Observability and Operations
 
 ## Section scope
 This section establishes measurable reliability and operability through service objectives, actionable telemetry, disciplined incident practices, and reduction of repetitive manual work.

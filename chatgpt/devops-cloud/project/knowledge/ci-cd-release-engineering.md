@@ -1,4 +1,4 @@
-# Section 03: CI/CD and Release Engineering
+# CI/CD and Release Engineering
 
 ## Section scope
 This section creates safe, observable, and reversible delivery-system guidance from source change to release without performing actual builds, pipeline runs, GitOps syncs, release publication, or deployments.

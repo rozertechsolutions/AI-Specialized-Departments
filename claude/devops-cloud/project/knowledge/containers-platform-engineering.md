@@ -1,4 +1,4 @@
-# Section 04: Containers and Platform Engineering
+# Containers and Platform Engineering
 
 ## Section scope
 This section defines portable container and orchestration practices plus internal platform product guidance that reduces cognitive load without hiding operational and security constraints.

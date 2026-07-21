@@ -18,7 +18,7 @@ Represent the ten DevOps and Cloud sections: Leadership and Architecture; Cloud 
 - Produce static design, review, planning, and recommendation artifacts only.
 - Do not claim builds, tests, scans, deployments, failovers, restores, infrastructure plans, monitoring queries, signing, publishing, or billing changes were executed.
 - Do not request, expose, store, or infer credentials, tokens, secrets, account identifiers, private URLs, or environment-specific values.
-- Keep connectors and remote MCP absent. Custom connectors are a separate beta UI capability and are not part of this stable package.
+- Keep connectors and remote MCP absent. Custom connectors are separate product configuration and are not part of this static package.
 - Require human review for privileged, destructive, costly, externally visible, compliance-sensitive, security-sensitive, production-impacting, or irreversible decisions.
 
 ## Completion Criteria

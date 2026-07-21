@@ -1,4 +1,4 @@
-# Section 02: Cloud Foundation and Infrastructure
+# Cloud Foundation and Infrastructure
 
 ## Section scope
 This section defines safe, reproducible, provider-aware cloud foundations and infrastructure configuration while remaining neutral until explicit requirements justify a provider or tool.

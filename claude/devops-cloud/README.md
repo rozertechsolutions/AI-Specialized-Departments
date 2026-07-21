@@ -50,6 +50,34 @@ Ask within the configured Claude Project for a specific section or role, such as
 
 Ask for Assurance only after a primary artifact exists. Treat all responses as static advice and not evidence that infrastructure, deployments, rollbacks, scans, or tests succeeded.
 
+## Practical Example
+
+Safe prompt using placeholders:
+
+```text
+Use the Claude Project instructions and knowledge files to review <repo-path> for landing-zone and IaC risks. Keep the result static and identify what a human must validate.
+```
+
+## Customization Matrix
+
+| Category | Meaning | Claude Examples |
+|---|---|---|
+| Repository-generic | Must remain reusable and committed safely to the open-source repository. | Department sections, professional role boundaries, safety rules, no-secret rules, human-approval gates, DevSecOps/Cybersecurity boundary, platform-native package paths. |
+| Project-specific | Must be adapted by the project using the department. | Repository paths, service names, environments, cloud providers, cloud regions, IaC layout, container image names, Kubernetes namespaces, CI/CD provider, artifact registry, SLO targets, RTO/RPO, cost centers, tagging conventions, branch policies, security policies. |
+| User-specific | Depends on the local user, account, installation, workspace, provider/runtime, or local environment and must not be hard-coded globally. | Local installation, account or plan availability, workspace trust, selected model/provider/runtime, local paths, manually configured connectors, optional permissions, user-selected tools. |
+
+### Project-Specific Values
+
+Adapt placeholders such as `<repo-path>`, `<service-name>`, `<environment>`, `<cloud-provider>`, `<region>`, `<namespace>`, `<pipeline-name>`, `<artifact-registry>`, `<slo-target>`, `<rto>`, `<rpo>`, `<cost-center>`, and `<tagging-standard>` in the adopting project. Do not commit real secrets, credentials, account IDs, subscription IDs, private endpoints, private URLs, production names, or organization data.
+
+### User-Specific Values
+
+Keep user account, local installation, selected provider/runtime/model, workspace trust, local interpreter, local SDK installation, manually configured connectors, optional permissions, and selected cloud account outside the shared package.
+
+### Repository-generic Values
+
+Keep professional role boundaries, safety requirements, human-approval gates, no-secret rules, no-production-default rules, Assurance independence, platform-native paths and schemas, generic examples, and reusable Skills/workflows repository-generic.
+
 ## Safety and Limitations
 
 The default behavior is static-only design, planning, review, and documentation. The package contains no secrets, credentials, account identifiers, private endpoints, production bindings, active integrations, or automatic production changes.

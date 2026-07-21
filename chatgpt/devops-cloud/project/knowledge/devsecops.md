@@ -1,4 +1,4 @@
-# Section 08: DevSecOps
+# DevSecOps
 
 ## Section scope
 This section integrates security into delivery, infrastructure, cloud, and container workflows while leaving enterprise security governance, offensive security, SOC, and security incident response to Cybersecurity.

@@ -11,6 +11,7 @@ Use this rule for every DevOps and Cloud request in this package. Keep work stat
 ## Native Assets
 
 - Project instructions: `AGENTS.md`.
+- Native custom subagents: `.cursor/agents/*.md`.
 - Section rules: `.cursor/rules/*.mdc`.
 - Section Skills: `.cursor/skills/*/SKILL.md`.
 - Workflow references: `docs/*-workflows.md`.
@@ -22,7 +23,8 @@ Route to one primary section: Leadership and Architecture; Cloud Foundation and 
 ## Owners
 
 - DevOps and Cloud Orchestrator: intake, routing, dependency control, escalation, evidence needs.
-- Cloud and Platform Architect: provider-neutral architecture, ADRs, standards, tradeoffs, Well-Architected review.
+- Cursor custom subagents: role identity, exclusive ownership, delegation boundaries, readonly frontmatter, and role-specific completion rules.
+- Cloud Platform Architect: provider-neutral architecture, ADRs, standards, tradeoffs, Well-Architected review.
 
 Use section Skills for detailed procedures. Keep provider, platform, and tool choices requirement-driven.
 

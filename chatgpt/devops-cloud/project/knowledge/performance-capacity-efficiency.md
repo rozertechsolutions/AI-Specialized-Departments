@@ -1,4 +1,4 @@
-# Section 07: Performance, Capacity and Efficiency
+# Performance, Capacity and Efficiency
 
 ## Section scope
 This section defines measurable performance and capacity plans that support reliability and cost decisions without running benchmarks, load tests, or modifying real infrastructure.

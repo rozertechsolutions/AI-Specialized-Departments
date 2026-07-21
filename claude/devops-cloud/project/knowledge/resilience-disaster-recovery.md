@@ -1,4 +1,4 @@
-# Section 06: Resilience and Disaster Recovery
+# Resilience and Disaster Recovery
 
 ## Section scope
 This section designs recoverable systems and verifiable continuity mechanisms without destructive tests, failovers, restorations, or production recovery actions.
