@@ -25,27 +25,36 @@ It does not authorize live scanning, exploitation, containment, recovery executi
 
 ## Platform compatibility
 
-Product surface: Cline Rules, AGENTS.md steering, Skills, workflows, hooks, subagents, MCP configuration, and approval controls.
+Product surface: Cline IDE extension, TUI, CLI, project `.cline/` configuration, Rules, Skills, workflows, hooks, Cline-managed subagents, Agent Teams on supported non-IDE surfaces, MCP configuration, and approval controls.
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+Validated documentation date: 2026-07-21. Cline documents project-level `.cline/rules/`, `.cline/skills/`, `.cline/hooks/`, `.cline/agents/`, plugins, and cron specs. Cline-managed subagents are an experimental read-only research feature; Agent Teams apply to Cline SDK, CLI, and Kanban, not the VS Code or JetBrains extensions. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
 
 ## Prerequisites
 
-Cline extension installed in a supported IDE; trusted workspace; user approval prompts retained.
+Cline extension installed in a supported IDE, or Cline CLI/TUI installed for terminal use; trusted workspace; user approval prompts retained. CLI use requires provider authentication through Cline or an approved provider before model-backed use. Repository validation of this package does not require authentication and does not run Cline.
 
 Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
 
 ## Installation or import
 
-Place the directory in the repository and open the relevant area in Cline. Use area AGENTS.md and .cline assets as local guidance; import Skills when not automatically discovered.
+Place the directory in the repository, open the repository as a trusted Cline workspace, and start Cline from the relevant area directory, for example:
+
+```text
+cd cline/cybersecurity/governance-risk-compliance-assurance
+cline -p "Review the supplied policy evidence against the governance-policy-frameworks workflow. Do not modify files."
+```
+
+In the IDE extension, open the repository, navigate to the selected `cline/cybersecurity/<area>/`, and ask Cline to use the area Rules, Skills, workflows, and project agent definitions. If a Skill is not shown in Cline's Skills UI, copy or import the specific area skill directory into the documented Cline skill location and keep the original repository copy as the source baseline.
 
 Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
 
 ## Working directory and discovery
 
-Cline loads rules and instructions from documented workspace locations. Area assets are isolated by opening or targeting <platform>/cybersecurity/<area>/.
+Cline loads project configuration from `.cline/` under the trusted workspace. In this package, each area is intended to be used as the effective workspace root so that its local `.cline/rules/`, `.cline/skills/`, `.cline/workflows/`, and `.cline/agents/` assets describe that area without bleeding into another area.
 
-When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
+Current Cline subagents created through `use_subagents` are Cline-managed read-only research workers. They can read files, list files, search, run restricted read-only commands, and use Skills, but cannot edit files, use the browser, access MCP servers, perform web searches, or spawn nested subagents. Repository `.cline/agents/*.md` files are retained only as project agent-definition artifacts documented under Cline project configuration; do not treat them as proof that Cline will automatically invoke named custom subagents on every surface.
+
+When upward discovery applies, the nearest area-level instructions take precedence for that area. When a surface requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
 
 ## Area map
 
@@ -60,14 +69,11 @@ When a platform supports upward discovery, the nearest area-level instructions t
 
 ## Native components
 
-- `governance-risk-compliance-assurance/`: `AGENTS.md`
-- `security-architecture-engineering/`: `AGENTS.md`
-- `application-product-devsecops-security/`: `AGENTS.md`
-- `exposure-vulnerability-hardening/`: `AGENTS.md`
-- `defensive-security-operations-detection-intelligence/`: `AGENTS.md`
-- `incident-response-dfir-recovery/`: `AGENTS.md`
-- `offensive-security-authorized-validation/`: `AGENTS.md`
-- `cyber-resilience-specialized-technologies/`: `AGENTS.md`
+- Area `AGENTS.md` files for durable area ownership and safety instructions.
+- `.cline/rules/*.md` project Rules for always-on Cline guidance.
+- `.cline/skills/*/SKILL.md` Agent Skills for reusable area workflows.
+- `.cline/workflows/*.md` workflow entry points that delegate to the corresponding complete Skill or agent contract.
+- `.cline/agents/*.md` project agent-definition artifacts for the Cline project configuration surface.
 
 Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
 
@@ -75,7 +81,13 @@ Unsupported native mechanisms are omitted rather than simulated. The package doe
 
 Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
 
-Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
+Example prompt:
+
+```text
+Use the exposure-lifecycle-triage Skill in cline/cybersecurity/exposure-vulnerability-hardening. Review these supplied scanner findings only as static evidence, classify prioritization confidence, identify missing asset context, and prepare a human remediation-decision package. Do not scan, connect to tools, or modify production.
+```
+
+Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur. Stop or disable the configuration by closing the Cline task, disabling `use_subagents` in Settings -> Features -> Agent when experimental subagents are not wanted, removing imported Skills from the Skills UI, or deleting the selected area package from the repository.
 
 ## Permissions and safety
 
@@ -87,6 +99,18 @@ AI components cannot self-approve, accept enterprise risk, authorize offensive t
 
 Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
 
+### Project-dependent configuration
+
+Adapt repository paths, source directories, build systems, application architecture, deployment model, telemetry locations, approved evidence locations, assessment scope, area working directories, technology stack, and project-specific policies per repository or engagement. Do not hard-code these values globally.
+
+### User/organization-dependent configuration
+
+Supply or approve account access, subscription, identity, organization policies, regulatory frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, permitted integrations, API credentials, MCP endpoints, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, data-retention requirements, and legal or privacy constraints outside this repository. Never commit real secrets or confidential organization values.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, safe defaults, prohibited unauthorized actions, stop conditions, and human-approval gates intact. These controls define the reusable safety and governance model.
+
 ## Validation
 
 Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
@@ -95,6 +119,7 @@ Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YA
 
 - If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
 - If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
+- If a named `.cline/agents/*.md` definition is not visible on the current Cline surface, use the equivalent Rule, Skill, or workflow directly; Cline-managed `use_subagents` remains a separate experimental read-only research feature.
 - If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
 - If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
 - If a platform preview feature changes, re-check official documentation and update `cline/cybersecurity/NATIVE_SOURCES.md` before relying on it.
