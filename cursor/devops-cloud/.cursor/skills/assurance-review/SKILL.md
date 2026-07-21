@@ -10,4 +10,4 @@ description: >-
 
 Use this Skill for section 10. Review evidence, ownership, role boundaries, static claims, safety, and cross-section consistency. Findings must include severity, evidence, owner, impact, closure criteria, waiver status, and re-review trigger.
 
-Use `docs/assurance-review-workflows.md`. Do not create the implementation under review, self-review, silently rewrite specialist output, execute validation tools, or claim runtime validation.
+Use `docs/assurance-review-workflows.md`. Do not create the implementation under review, self-review, silently rewrite specialist output, operate validation tools, or claim runtime validation.
