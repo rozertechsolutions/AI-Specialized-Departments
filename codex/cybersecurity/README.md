@@ -1,112 +1,168 @@
-# Cybersecurity Department for codex
+# Codex Cybersecurity Department
 
-This Cybersecurity department is a professional, adaptable baseline for codex covering governance, architecture, product security, vulnerability management, defensive operations, incident response, authorized offensive validation, and resilience.
+This Cybersecurity department is a professional Codex baseline for governance, risk, compliance, assurance, security architecture and engineering, application/product/DevSecOps security, exposure and hardening, defensive operations and intelligence, incident response and recovery, authorized offensive validation, and resilience or specialized technology security.
 
-Its purpose is to help humans produce evidence-based cybersecurity work products while preserving clear professional ownership, least privilege, independent review, and human authority for consequential decisions.
+It solves the problem of producing evidence-based cybersecurity artifacts inside Codex while preserving native discovery, least privilege, independent review, and human accountability. Possible uses include risk assessment, security architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection planning, incident readiness, authorized assessment planning, resilience review, and independent assurance.
 
-Possible uses include risk and compliance assessment, security architecture review, threat modeling, secure SDLC review, vulnerability prioritization, detection engineering, incident-response planning, authorized penetration-test planning, resilience exercises, and independent assurance.
+## Department Overview
 
-## Department overview
+The department contains eight isolated Cybersecurity area workspaces under `codex/cybersecurity/<area>/`. Each area provides `AGENTS.md`, project-scoped `.codex/config.toml`, Codex custom agent TOML files, and repository Skills under `.agents/skills/`.
 
-The department contains eight Cybersecurity areas under `codex/cybersecurity/<area>/`. Each area is scoped to a distinct professional ownership boundary and is intended for static analysis, planning, review, documentation, and assurance using supplied evidence.
+Codex can assist with static analysis, drafting, review, and handoff planning. It is not authorized to accept risk, approve exceptions, authorize offensive testing, approve production changes, declare or close incidents, make legal determinations, certify compliance, operate live security tooling, or act without a human accountable owner.
 
-It does not authorize live scanning, exploitation, containment, recovery execution, production changes, publication, external integrations, legal determinations, risk acceptance, or closure decisions. Human owners remain accountable for authorization, approvals, exceptions, risk acceptance, incident declaration or closure, offensive testing authorization, and production action.
+## Possible Uses
 
-## Possible uses
+- Produce GRC packages from supplied policies, control mappings, exceptions, and evidence.
+- Review security architecture, identity, cloud, network, data, container, and automation designs.
+- Run static threat modeling, secure design review, supply-chain review, release-readiness support, and PSIRT planning.
+- Prioritize supplied findings and draft remediation or hardening plans.
+- Design telemetry, detections, triage paths, threat-hunt plans, and SOC quality reviews.
+- Prepare incident command artifacts, DFIR plans, containment plans, recovery coordination, and lessons learned.
+- Plan explicitly authorized validation, rules of engagement, deconfliction, retest, and Purple Team assurance.
+- Review resilience, ransomware recovery, OT/ICS, IoT, embedded, AI, firmware, cryptographic agility, and critical infrastructure security.
 
-- Risk and compliance assessment using supplied policies, control evidence, and framework mappings.
-- Security architecture and engineering review for proposed designs and reference patterns.
-- Threat modeling, secure SDLC review, release-readiness support, and supply-chain evidence review.
-- Vulnerability prioritization, remediation planning, and hardening governance from provided findings.
-- Detection engineering, telemetry coverage review, SOC triage methods, and threat-hunt planning.
-- Incident-response readiness, DFIR planning, evidence governance, recovery planning, and lessons learned.
-- Authorized offensive assessment planning, rules of engagement review, validation planning, and retest assurance.
-- Resilience exercises, ransomware recovery planning, specialized technology review, and independent assurance.
+## Platform Compatibility
 
-## Platform compatibility
+Validated on 2026-07-21 against current OpenAI Codex documentation for ChatGPT desktop app, Codex CLI, and Codex IDE extension.
 
-Product surface: OpenAI Codex CLI/IDE project AGENTS.md, .codex/config.toml, subagent configuration, Skills, hooks, and documented permissions.
+Supported repository-local surfaces in this package:
 
-Validated documentation date: 2026-07-21. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+- `AGENTS.md` area instructions.
+- `.codex/config.toml` project-scoped config layers.
+- `.codex/agents/*.toml` custom agent files.
+- `.agents/skills/<skill>/SKILL.md` repository Skills.
+
+Not used:
+
+- `.codex/commands/`, because Codex custom prompts are deprecated, user-home based, and should be replaced by Skills.
+- `.codex/skills/`, because Codex repository Skill discovery uses `.agents/skills`.
+- Project-local provider/auth/profile/telemetry settings, because Codex ignores those keys in trusted project config.
+- Hooks and MCP servers, because this baseline must not execute commands or connect external services by default.
 
 ## Prerequisites
 
-Codex CLI/IDE with a trusted repository; project-local .codex config ignored until trusted; no provider credentials stored here.
+- ChatGPT desktop app with Codex, Codex CLI, or Codex IDE extension.
+- A trusted project if you want `.codex/config.toml`, custom agents, hooks, or other project `.codex/` layers to load.
+- The selected area directory used as the current working directory for area-local config and Skills.
+- No API key, MCP server, connector, scanner, cloud account, or production credential is required for this package.
 
-Do not place credentials, tokens, keys, private endpoints, personal data, confidential customer data, or live system access material in this package. Connectors, MCP servers, cloud accounts, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, identity providers, and hosted tools are disabled or absent unless a retained native file explicitly documents a human-approved external configuration.
+Do not commit credentials, private keys, tokens, private endpoints, personal data, confidential customer data, or unredacted incident evidence.
 
-## Installation or import
+## Installation Or Import
 
-Keep this tree in the repository and open Codex from codex/cybersecurity/<area>/ for area-local discovery. Do not create project-local profiles; use human-managed user-level profiles outside the repository only.
+Use one area at a time. From the repository root, change into the selected area and start Codex:
 
-Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
+```bash
+cd codex/cybersecurity/application-product-devsecops-security
+codex
+```
 
-## Working directory and discovery
+For IDE use, open the selected area folder or start the IDE chat with that folder as the active workspace. Trust the project only after reviewing the local `.codex/config.toml` and confirming it contains only intended safe settings.
 
-Codex walks from the working directory to the project root and loads AGENTS.md and trusted .codex layers. Closest AGENTS.md/config wins for overlapping guidance.
+To use a custom agent, ask Codex to use the named agent or to delegate to it, for example:
 
-When a platform supports upward discovery, the nearest area-level instructions take precedence for that area. When a platform requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
+```text
+Use the requirements-threat-modeling-agent to review the supplied checkout-service design notes. Scope is static review only. Exclude live testing and production access. Return a threat model with evidence gaps, assumptions, recommended controls, and independent-review requirements.
+```
 
-## Area map
+To invoke a Skill explicitly, mention it with `$`, for example `$threat-modeling`, or use `/skills` where available.
 
-- `codex/cybersecurity/governance-risk-compliance-assurance/` - Governance, Risk, Compliance, and Assurance: governance, cyber risk, compliance mapping, policies, assurance, exceptions, and risk-decision support.
-- `codex/cybersecurity/security-architecture-engineering/` - Security Architecture and Engineering: security architecture, engineering patterns, identity, network, cloud, data, platform, and control design review.
-- `codex/cybersecurity/application-product-devsecops-security/` - Application, Product, and DevSecOps Security: product security, secure SDLC, threat modeling, code/design review, CI/CD, supply chain, PSIRT, and release assurance.
-- `codex/cybersecurity/exposure-vulnerability-hardening/` - Exposure, Vulnerability, and Hardening: asset exposure, vulnerability triage, prioritization, hardening, remediation governance, and validation evidence.
-- `codex/cybersecurity/defensive-security-operations-detection-intelligence/` - Defensive Security Operations, Detection, and Intelligence: SOC operating model, telemetry, detection engineering, alert triage, hunting, intelligence, and coverage quality.
-- `codex/cybersecurity/incident-response-dfir-recovery/` - Incident Response, DFIR, and Recovery: incident planning, evidence governance, DFIR analysis planning, containment planning, recovery coordination, and lessons learned.
-- `codex/cybersecurity/offensive-security-authorized-validation/` - Offensive Security and Authorized Validation: explicitly authorized assessment planning, rules of engagement, emulation governance, retest planning, and safety review.
-- `codex/cybersecurity/cyber-resilience-specialized-technologies/` - Cyber Resilience and Specialized Technologies: resilience, ransomware recovery planning, specialized technology review, cryptography, critical infrastructure, OT/IoT/cloud edge, and transition assurance.
+## Working Directory And Discovery
 
-## Native components
+Launch from the selected area directory, such as `codex/cybersecurity/governance-risk-compliance-assurance/`. Codex discovers project configuration by walking from the project root to the current working directory; closer config and guidance win for overlapping settings.
 
-- `governance-risk-compliance-assurance/`: `AGENTS.md`, `.codex/`
-- `security-architecture-engineering/`: `AGENTS.md`, `.codex/`
-- `application-product-devsecops-security/`: `AGENTS.md`, `.codex/`
-- `exposure-vulnerability-hardening/`: `AGENTS.md`, `.codex/`
-- `defensive-security-operations-detection-intelligence/`: `AGENTS.md`, `.codex/`
-- `incident-response-dfir-recovery/`: `AGENTS.md`, `.codex/`
-- `offensive-security-authorized-validation/`: `AGENTS.md`, `.codex/`
-- `cyber-resilience-specialized-technologies/`: `AGENTS.md`, `.codex/`
+Auto-discovered or applicable when the selected area is in scope:
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+- `AGENTS.md`: Codex reads guidance from the project root down to the current directory.
+- `.codex/config.toml`: loaded only when the project is trusted; closest config wins.
+- `.codex/agents/*.toml`: project-scoped custom agents.
+- `.agents/skills/<skill>/SKILL.md`: repository Skills scanned from the current working directory upward to the repository root.
 
-## How to use the department
+Not auto-discovered as shipped:
 
-Select the area that owns the requested work, open or import that area according to the platform rules above, and provide authorized scope, exclusions, accountable owner, requester, intended audience, decision needed, evidence inventory, assumptions, constraints, reviewer, and approver role.
+- `codex/cybersecurity/README.md` as runtime instructions.
+- `.codex/commands/` custom prompts; they were removed because they are not the current repo-native mechanism.
+- Hooks, MCP servers, connectors, scanners, SIEM/EDR/XDR/SOAR tools, ticketing systems, cloud accounts, and production tools.
 
-Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur.
+## Area Map
 
-## Permissions and safety
+- `governance-risk-compliance-assurance/`: governance, policy, control mapping, compliance, risk records, exceptions, assurance, evidence, suppliers, maturity, and reporting.
+- `security-architecture-engineering/`: security architecture, engineering patterns, identity, cloud, network, data, containers, infrastructure as code, automation, and architecture assurance.
+- `application-product-devsecops-security/`: product security, secure SDLC, threat modeling, secure code/design review, CI/CD, software supply chain, PSIRT, release readiness, and appsec assurance.
+- `exposure-vulnerability-hardening/`: exposure management, vulnerability triage, prioritization, hardening, remediation governance, validation, and reporting.
+- `defensive-security-operations-detection-intelligence/`: SOC governance, telemetry, detection engineering, triage, hunting, intelligence, malware-analysis planning, automation review, and coverage quality.
+- `incident-response-dfir-recovery/`: incident command, evidence governance, DFIR planning, containment planning, recovery coordination, scenarios, crisis review, and corrective action.
+- `offensive-security-authorized-validation/`: authorization, scope, rules of engagement, assessment planning, deconfliction, emulation, Purple Team validation, findings, cleanup, retest, and safety review.
+- `cyber-resilience-specialized-technologies/`: resilience programs, ransomware recovery, backups, specialized technology security, OT/ICS, IoT, embedded, AI systems, firmware, cryptographic agility, critical infrastructure, and transition governance.
 
-Default behavior is read-only and static. Repository writes, where a platform technically allows them, must stay inside the selected `codex/cybersecurity/<area>/` directory and require an explicit user task to update static artifacts. Shell, network, installation, deployment, scanning, exploitation, recovery execution, remote Git operations, MCP connections, hosted tools, and external connectors are prohibited by default.
+## Native Components
 
-AI components cannot self-approve, accept enterprise risk, authorize offensive testing, approve production changes, close incidents, certify compliance, make legal determinations, or conceal residual risk. Human review is mandatory for approvals, exceptions, risk acceptance, release or closure decisions, incident command, offensive authorization, external reporting, and production actions.
+Each area contains:
 
-## Configuration and customization
+- `AGENTS.md`: always-relevant area instructions.
+- `.codex/config.toml`: trusted project config with `sandbox_mode = "read-only"` and `approval_policy = "on-request"`.
+- `.codex/agents/*.toml`: custom agents with required `name`, `description`, and `developer_instructions`, plus read-only sandbox settings.
+- `.agents/skills/<skill>/SKILL.md`: reusable Skills with required `name` and `description` frontmatter.
 
-Organizations may add policies, frameworks, asset context, risk appetite, service-level targets, tool names, responsible roles, approved integrations, sector requirements, and evidence templates as static files in the relevant area after human review. Keep values organization-neutral in shared packages, redact sensitive information, and document any integration without enabling it by default.
+No hooks are included because Codex hooks can execute commands during lifecycle events. No MCP servers are included because this baseline must not connect external systems by default.
+
+## How To Use The Department
+
+Select the area that owns the work, start Codex from that area, and provide:
+
+- authorized scope and explicit exclusions;
+- accountable owner, requester, reviewer, approver role, and intended audience;
+- evidence inventory with provenance, period, freshness, and limitations;
+- decision needed, assumptions, constraints, and required output.
+
+Expected output is a scoped artifact with evidence tables, findings separated by evidence state, assumptions, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact, closure-facing, exception, release, incident, offensive, or external-facing outputs must go to an independent reviewer that did not create the artifact.
+
+Stop when authorization is missing, evidence is unredacted or insufficient, scope is unclear, a live action is requested, an output would self-review, or a human-only decision is requested.
+
+## Permissions And Safety
+
+Area `.codex/config.toml` files request `sandbox_mode = "read-only"` and `approval_policy = "on-request"`. These settings rely on Codex project trust and the user's active client policy. They do not override provider credentials, profile selection, telemetry routing, notifications, or user/global policy.
+
+The package does not configure MCP, hooks, shell allowlists, network access, scanners, write permissions, deployment tools, or production integrations. If the user has broader global Codex settings, review them before relying on this package for static-only work.
+
+Human approval is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, and critical finding closure.
+
+## Configuration And Customization
+
+### Project-dependent configuration
+
+Adapt repository paths, source directories, application architecture, build systems, languages, deployment model, cloud provider, CI/CD structure, telemetry locations, asset inventory, data-flow scope, threat-model scope, vulnerability evidence, approved test scope, area-specific working directories, and repository-specific policies per project.
+
+### User/organization-dependent configuration
+
+Supply or approve account access, user identity, organization policies, regulatory frameworks, risk appetite, asset criticality, SLAs, escalation contacts, approval authorities, permitted tools, permitted integrations, API credentials, MCP endpoints, cloud accounts, SIEM/EDR/XDR/SOAR systems, ticketing systems, incident contacts, authorized offensive-testing scope, retention rules, and legal/privacy constraints outside this repository. Do not commit secrets or confidential values.
+
+### Fixed baseline configuration
+
+Keep area ownership boundaries, independent review, no self-approval, no automatic risk acceptance, evidence requirements, read-only defaults, prohibited unauthorized actions, stop conditions, no live integrations by default, and human approval gates intact.
 
 ## Validation
 
-Static validation can check file syntax, native paths, frontmatter, JSON/TOML/YAML parsing, prompt references, Skill structure, duplicate or obsolete files, empty artifacts, broken links, and absence of secrets or active integrations. Live system behavior, connector access, model behavior, scanner operation, incident action, recovery, and production integration require a separate authorized environment and were not exercised by this repository package.
+Repository validation can parse TOML, check Markdown frontmatter, confirm all eight areas exist, verify custom agent required fields, verify `.agents/skills` discovery paths, confirm no `.codex/commands` or `.codex/skills` remain, confirm no hooks or MCP servers are included, and scan for temporary residue or secrets.
+
+Runtime behavior, model availability, project trust prompts, subagent spawning, hooks, MCP, connector behavior, live tool access, scanner output, incident actions, recovery, and production changes require a separately authorized Codex environment and were not executed.
 
 ## Troubleshooting
 
-- If instructions are ignored, confirm the platform was opened from the documented working directory or the files were manually imported into the correct Project, Skill, agent, or rule location.
-- If an agent or Skill is unavailable, verify the platform feature is enabled for the plan/workspace and that the directory name and native filename match the current product documentation.
-- If permissions appear broader than intended, inspect platform settings before use and deny shell, network, MCP, connector, deployment, scanner, and remote Git access.
-- If paths fail to resolve, use paths relative to the selected area package unless the platform documentation states otherwise.
-- If a platform preview feature changes, re-check official documentation and update `codex/cybersecurity/NATIVE_SOURCES.md` before relying on it.
+- If a custom agent is unavailable, confirm the project is trusted and the file exists under the selected area's `.codex/agents/`.
+- If Skills are unavailable, confirm they are under `.agents/skills/<skill>/SKILL.md`, not `.codex/skills/`.
+- If old slash command instructions are expected, use the corresponding Skill instead; repository `.codex/commands/` prompt files are not retained.
+- If config appears ignored, confirm project trust and check whether the setting is one of the project-local keys Codex intentionally ignores.
+- If permissions appear broader than this README states, inspect user-level Codex config, managed policy, MCP, hooks, sandbox mode, and approval policy before proceeding.
 
-## Removal or uninstall
+## Removal Or Uninstall
 
-Remove the imported Project, GPT, Skill, agent, rule, command, workflow, or workspace configuration from the platform UI or delete the selected `codex/cybersecurity/` directory from the repository. Remove any manually uploaded knowledge files from the platform. Do not delete organizational evidence or platform-global settings unless a human owner explicitly authorizes that cleanup.
+To remove repository-local configuration, stop opening the selected area as a Codex workspace or delete the selected `codex/cybersecurity/<area>/` directory from the repository. To remove copied user-global Skills or custom agents, delete only the specific cybersecurity files from the user's Codex or `.agents` locations after confirming they are not used elsewhere.
 
 ## Limitations
 
-This package is a static professional baseline. It is not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing tool, incident-response platform, legal opinion, compliance certification, or production-control system. Platform support and schema details can change, especially for preview agent, Skill, hook, and permission features.
+This package is a static professional baseline, not a managed security service, scanner, SIEM, SOAR, EDR/XDR integration, penetration-testing platform, incident command system, recovery orchestrator, legal opinion, compliance certification, or production-control system. Codex schemas and feature availability can change, especially around custom agents, Skills, hooks, MCP, permissions, and model access.
 
-## Security notice
+## Security Notice
 
-Offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and use of sensitive evidence require explicit authorization, validated scope, and human control. Do not use these components to bypass approval, access secrets, contact external systems, or claim live execution without evidence.
+Explicit authorization and human control are mandatory for offensive testing, incident actions, production changes, external integrations, live scans, exploitation, deployment, recovery, publication, and sensitive evidence handling. Do not use this package to bypass approval, access secrets, contact external systems, or claim execution without evidence.
