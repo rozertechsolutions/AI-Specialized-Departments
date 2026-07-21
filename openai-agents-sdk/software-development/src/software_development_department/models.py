@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
-from typing import Any, Protocol
 
 
 class RiskLevel(str, Enum):
@@ -24,20 +23,13 @@ class RoleSlug(str, Enum):
 
 
 class FinalState(str, Enum):
-<<<<<<< HEAD
-    COMPLETED = "COMPLETED"
-    PAUSED = "PAUSED"
-    STOPPED = "STOPPED"
-    BLOCKED = "BLOCKED"
-=======
     PAUSED = "paused"
     STOPPED = "stopped"
     BLOCKED = "blocked"
     COMPLETED = "completed"
->>>>>>> feature/software-development
 
 
-class ApprovalDecisionValue(str, Enum):
+class ApprovalDecision(str, Enum):
     APPROVED = "approved"
     REJECTED = "rejected"
     PENDING = "pending"
@@ -60,29 +52,6 @@ class ToolActionType(str, Enum):
 
 
 @dataclass(frozen=True)
-class TaskScope:
-    authorized_paths: tuple[str, ...]
-    exclusions: tuple[str, ...] = ()
-    prohibited_actions: tuple[ToolActionType, ...] = (
-        ToolActionType.GIT,
-        ToolActionType.DEPLOY,
-        ToolActionType.PUBLISH,
-        ToolActionType.RELEASE,
-        ToolActionType.SIGN,
-        ToolActionType.EXTERNAL_COMMUNICATION,
-        ToolActionType.CREDENTIAL,
-    )
-
-
-@dataclass(frozen=True)
-class TaskRequest:
-    objective: str
-    scope: TaskScope
-    acceptance_criteria: tuple[str, ...]
-    risk_level: RiskLevel = RiskLevel.MEDIUM
-
-
-@dataclass(frozen=True)
 class DepartmentTask:
     objective: str
     authorized_scope: tuple[str, ...]
@@ -91,22 +60,6 @@ class DepartmentTask:
     risk_level: RiskLevel = RiskLevel.MEDIUM
     workspace_root: Path | None = None
 
-    def to_request(self) -> TaskRequest:
-        return TaskRequest(
-            objective=self.objective,
-            scope=TaskScope(self.authorized_scope, self.exclusions),
-            acceptance_criteria=self.acceptance_criteria,
-            risk_level=self.risk_level,
-        )
-
-
-@dataclass(frozen=True)
-class SpecialistInput:
-    task: TaskRequest
-    requested_focus: str
-    available_evidence: tuple[str, ...] = ()
-    approved_paths: tuple[str, ...] = ()
-
 
 @dataclass(frozen=True)
 class EvidenceItem:
@@ -114,50 +67,6 @@ class EvidenceItem:
     source: str
     observed: bool
     limitation: str | None = None
-
-
-@dataclass(frozen=True)
-class RequirementsAcceptanceCriteria:
-    requirements: tuple[str, ...]
-    acceptance_criteria: tuple[str, ...]
-    unresolved_questions: tuple[str, ...] = ()
-
-
-@dataclass(frozen=True)
-class ImplementationPlan:
-    steps: tuple[str, ...]
-    validation_steps: tuple[str, ...]
-    required_specialists: tuple[RoleSlug, ...]
-    approval_checkpoints: tuple[str, ...] = ()
-
-
-@dataclass(frozen=True)
-class ArchitectureDecision:
-    decisions: tuple[str, ...]
-    contracts: tuple[str, ...]
-    migration_implications: tuple[str, ...]
-    compatibility_notes: tuple[str, ...] = ()
-
-
-@dataclass(frozen=True)
-class ImplementationChangeProposal:
-    changed_paths: tuple[str, ...]
-    change_summary: str
-    approved_scope_reference: str
-    validation_notes: tuple[str, ...] = ()
-
-
-@dataclass(frozen=True)
-class ValidationEvidence:
-    role: RoleSlug
-    summary: str
-    evidence: tuple[EvidenceItem, ...]
-    passed_checks: tuple[str, ...] = ()
-    failed_checks: tuple[str, ...] = ()
-    untested_areas: tuple[str, ...] = ()
-    assumptions: tuple[str, ...] = ()
-    limitations: tuple[str, ...] = ()
-    checks_not_run: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -172,83 +81,58 @@ class SpecialistResult:
 
 @dataclass(frozen=True)
 class RequirementsOutput(SpecialistResult):
-    requirements_result: RequirementsAcceptanceCriteria = field(
-        default_factory=lambda: RequirementsAcceptanceCriteria((), ())
-    )
-    plan: ImplementationPlan = field(default_factory=lambda: ImplementationPlan((), (), ()))
+    requirements: tuple[str, ...] = ()
+    acceptance_criteria: tuple[str, ...] = ()
+    plan: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
 class ArchitectureOutput(SpecialistResult):
-    architecture: ArchitectureDecision = field(default_factory=lambda: ArchitectureDecision((), (), ()))
+    decisions: tuple[str, ...] = ()
+    contracts: tuple[str, ...] = ()
+    migration_notes: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
 class ImplementationEvidence(SpecialistResult):
-    proposal: ImplementationChangeProposal | None = None
+    changed_paths: tuple[str, ...] = ()
+    validation_notes: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
-class CodeQualityReview:
-    approved: bool
+class ValidationEvidence(SpecialistResult):
+    passed_checks: tuple[str, ...] = ()
+    failed_checks: tuple[str, ...] = ()
+    untested_areas: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class CodeReviewOutput(SpecialistResult):
+    approved: bool = False
     findings: tuple[str, ...] = ()
     blocking_findings: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
-class CodeReviewOutput(SpecialistResult):
-    review: CodeQualityReview = field(default_factory=lambda: CodeQualityReview(False))
-
-
-@dataclass(frozen=True)
-class EngineeringRiskReview:
-    approved: bool
+class RiskReviewOutput(SpecialistResult):
+    approved: bool = False
     risks: tuple[str, ...] = ()
     required_mitigations: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
-class RiskReviewOutput(SpecialistResult):
-    review: EngineeringRiskReview = field(default_factory=lambda: EngineeringRiskReview(False))
-
-
-@dataclass(frozen=True)
-class DocumentationReleaseReadinessResult:
-    documentation_updates: tuple[str, ...]
-    release_readiness: str
+class DocumentationReadinessOutput(SpecialistResult):
+    documentation_updates: tuple[str, ...] = ()
+    release_readiness: str = "not_assessed"
     stop_before_release: bool = True
 
 
 @dataclass(frozen=True)
-<<<<<<< HEAD
-<<<<<<< HEAD
-class DocumentationReadinessOutput(SpecialistResult):
-    readiness: DocumentationReleaseReadinessResult = field(
-        default_factory=lambda: DocumentationReleaseReadinessResult((), "not_assessed", True)
-    )
-
-
-@dataclass(frozen=True)
-class ApprovalDecisionRecord:
-=======
-class HumanDecision:
->>>>>>> feature/software-development
-    subject: str
-    decision: ApprovalDecisionValue
-=======
 class ApprovalDecisionRecord:
     subject: str
     action: str
     decision: ApprovalDecision
->>>>>>> feature/software-development
     evidence: str
-
-
-@dataclass(frozen=True)
-class InterruptionState:
-    pending_count: int
-    pending_subjects: tuple[str, ...]
-    resume_available: bool
 
 
 @dataclass(frozen=True)
@@ -262,80 +146,28 @@ class ProposedToolAction:
 @dataclass(frozen=True)
 class ToolApprovalResult:
     action: ProposedToolAction
-    decision: ApprovalDecisionValue
+    decision: ApprovalDecision
     message: str
-
-
-@dataclass(frozen=True)
-class ReadToolResult:
-    path: str
-    content: str
-    observed: bool = True
-
-
-@dataclass(frozen=True)
-class WriteToolResult:
-    path: str
-    applied: bool
-    message: str
-
-
-@dataclass(frozen=True)
-class ApprovalDecision:
-    approved: bool
-    reason: str
 
 
 @dataclass(frozen=True)
 class LeadFinalRecord:
     objective: str
-    requirements_result: RequirementsOutput | None
-    implementation_plan: ImplementationPlan | None
-    architecture_result: ArchitectureOutput | None
-    required_specialist_roles: tuple[RoleSlug, ...]
-    specialist_completion_order: tuple[RoleSlug, ...]
-    completed_requirements: tuple[str, ...]
-    unmet_requirements: tuple[str, ...]
+    requirements: RequirementsOutput | None
+    plan: tuple[str, ...]
     implementation_evidence: ImplementationEvidence | None
     validation_evidence: ValidationEvidence | None
-    code_quality_review_result: CodeReviewOutput | None
-    engineering_risk_review_result: RiskReviewOutput | None
-    documentation_release_readiness_result: DocumentationReadinessOutput | None
-    approvals_and_rejections: tuple[ApprovalDecisionRecord, ...]
-    remaining_risks: tuple[str, ...]
+    code_review: CodeReviewOutput | None
+    risk_review: RiskReviewOutput | None
+    documentation_release_readiness: DocumentationReadinessOutput | None
     limitations: tuple[str, ...]
-<<<<<<< HEAD
-    checks_not_executed: tuple[str, ...]
-    final_state: FinalState
-=======
     approval_decisions: tuple[ApprovalDecisionRecord, ...]
     final_state: FinalState = FinalState.STOPPED
     checks_not_run: tuple[str, ...] = field(default_factory=tuple)
->>>>>>> feature/software-development
 
     def has_independent_review(self) -> bool:
         if self.implementation_evidence is None:
             return True
-<<<<<<< HEAD
-        return (
-            self.code_quality_review_result is not None
-            and self.code_quality_review_result.role is RoleSlug.CODE_REVIEW
-            and self.engineering_risk_review_result is not None
-            and self.engineering_risk_review_result.role is RoleSlug.RISK_REVIEW
-        )
-
-
-class RepositoryReader(Protocol):
-    async def read_text(self, path: str) -> str: ...
-
-
-class RepositoryWriter(Protocol):
-    async def write_text(self, path: str, content: str) -> None: ...
-
-
-class HumanApprovalProvider(Protocol):
-    async def pending_decisions(self, interruptions: tuple[Any, ...]) -> tuple[ApprovalDecision, ...]: ...
-=======
         return self.code_review is not None and self.code_review.role is RoleSlug.CODE_REVIEW
 
     def has_required_risk_review(self) -> bool:
@@ -343,4 +175,3 @@ class HumanApprovalProvider(Protocol):
             return True
         risky = self.implementation_evidence.validation_notes or self.risk_review is not None
         return not risky or (self.risk_review is not None and self.risk_review.role is RoleSlug.RISK_REVIEW)
->>>>>>> feature/software-development

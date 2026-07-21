@@ -2,7 +2,6 @@
 description: Implement approved features, fixes, refactors, and maintenance changes within the authorized scope and established repository conventions.
 mode: subagent
 permission:
-  task: deny
   edit: ask
   bash: deny
   webfetch: deny

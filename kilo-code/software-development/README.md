@@ -8,13 +8,9 @@ Use this department for stack-agnostic software work across backend services, AP
 
 ## Possible Uses
 
-<<<<<<< HEAD
-Specialists return bounded evidence to the primary agent, explicitly deny Task to prevent recursive delegation, cannot expand scope, and cannot claim final completion. Reviewers and planners deny edits, Bash, and web. The implementation specialist may request edits but may not use Task, Bash, web, MCP, Git mutation, deployment, publication, signing, or release actions.
-=======
 - Requirements analysis, acceptance criteria, constraints, risks, and planning.
 - New feature development, bug investigation, maintenance, and controlled refactoring.
 - Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, compatibility updates, and release-readiness review.
->>>>>>> feature/software-development
 
 ## Included Components
 

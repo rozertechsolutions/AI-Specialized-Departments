@@ -2,7 +2,6 @@
 description: Independently review software security, dependencies, supply chain, performance, concurrency, reliability, data integrity, and operational risk.
 mode: subagent
 permission:
-  task: deny
   edit: deny
   bash: deny
   webfetch: deny

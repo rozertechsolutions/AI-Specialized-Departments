@@ -13,7 +13,7 @@ This specialization covers fourteen capability areas: requirements analysis, arc
 
 ## Responsibility Routing
 
-The primary Cursor Agent is the Lead. Route specialist work through the seven native project subagents under `.cursor/agents/`: Requirements and Planning, Software Architect, Implementation and Maintenance, Test and Quality, Code Quality Review, Engineering Risk Review, and Documentation/Release Readiness.
+Route work through eight distinguishable phases without simulated repository agents: Lead, Requirements and Planning, Software Architect, Implementation and Maintenance, Test and Quality, Code Quality Review, Engineering Risk Review, and Documentation/Release Readiness.
 
 Implementation, independent code-quality review, engineering-risk review, and release-readiness assessment must remain separate. The same phase must not both implement and independently approve a substantive change.
 

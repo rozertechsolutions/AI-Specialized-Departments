@@ -14,15 +14,11 @@ Use this department for stack-agnostic software work across backend services, AP
 
 ## Included Components
 
-<<<<<<< HEAD
-Read-only specialists use `approvalMode: plan` and only `read_file`, `grep_search`, and `list_directory`. The implementation specialist uses `approvalMode: default` and only `read_file`, `grep_search`, `write_file`, and `replace`. All specialists disallow `run_shell_command` and omit MCP, browser, network, shell, Git, deployment, publication, signing, release, and external tools.
-=======
 - `QWEN.md`: native project memory/instructions for the main Lead session.
 - `.qwen/settings.json`: native project settings that keep tool approval mode at `default`.
 - `.qwen/agents/*.md`: seven native specialist subagents; there is intentionally no Lead subagent.
 - `.qwen/skills/*/SKILL.md`: native Agent Skills packages.
 - `.qwen/commands/*.md`: native Markdown custom commands with optional YAML frontmatter.
->>>>>>> feature/software-development
 
 ## Prerequisites
 

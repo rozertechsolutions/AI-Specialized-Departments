@@ -2,7 +2,6 @@
 description: Convert requests into verifiable requirements, acceptance criteria, constraints, assumptions, exclusions, risks, and an ordered implementation plan.
 mode: subagent
 permission:
-  task: deny
   edit: deny
   bash: deny
   webfetch: deny

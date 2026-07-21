@@ -6,7 +6,7 @@ The active Warp Agent reading this `WARP.md` is the Software Development Lead. W
 
 ## Native and manual-import boundary
 
-`WARP.md` is project guidance intended for the primary Warp Agent when the workspace supports it. `.agents/skills/` contains project Skills that Warp can automatically discover from the repository. `warp-drive/rules/` and `warp-drive/workflows/` remain labelled source material for manual import or for Warp Drive/account/product surfaces that explicitly support them. Do not claim workflow source files are automatically loaded in every repository.
+`WARP.md` is project guidance intended for the primary Warp Agent when the workspace supports it. `warp-drive/rules/`, `warp-drive/skills/`, and `warp-drive/workflows/` are labelled source material for manual import or for Warp Drive/account/product surfaces that explicitly support them. Do not claim these Warp Drive files are automatically loaded in every repository.
 
 ## Department scope
 

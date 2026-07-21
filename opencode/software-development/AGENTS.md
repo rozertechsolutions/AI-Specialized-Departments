@@ -41,7 +41,7 @@ No role may implement and independently approve the same substantive change. Spe
 
 ## OpenCode permission policy
 
-`opencode.jsonc` intentionally uses broad fallback `"*": "ask"`, requires approval for Task and edits, denies Bash, and denies web fetch. Every specialist subagent denies Task to prevent recursive delegation. Reviewers and planners deny edit, Bash, and web in their subagent permissions. The implementation specialist may request edits, but cannot use Task, Bash, web, Git, MCP, deployment, publication, signing, release, or external actions.
+`opencode.jsonc` intentionally uses broad fallback `"*": "ask"`, denies Bash, denies web fetch, and requires approval for edits. Reviewers and planners deny edit, Bash, and web in their subagent permissions. The implementation specialist may request edits, but cannot use Bash, web, Git, MCP, deployment, publication, signing, release, or external actions.
 
 Do not add MCP configuration, provider or model pins, endpoints, credentials, plugins, hooks, global paths, scripts, wrappers, or executable assets.
 

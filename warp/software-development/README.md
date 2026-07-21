@@ -4,18 +4,9 @@ The Software Development department is a human-reviewed Warp specialization for 
 
 ## Department Overview
 
-<<<<<<< HEAD
-- `WARP.md`: project guidance for the primary Warp Agent when the workspace supports project guidance loading.
-- `.agents/skills/`: fourteen repository Skills automatically discoverable by Warp from the project.
-- `warp-drive/rules/`: source material for Warp Drive rules or manual import.
-- `warp-drive/workflows/`: eleven differentiated workflow references for manual import or supported Warp Drive surfaces.
-
-Do not claim workflow source files are automatically loaded in every repository. Use `warp-drive/workflows/` only where the target Warp account/product surface explicitly supports them or import them manually.
-=======
 Use this department for stack-agnostic software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Web Development and Mobile Development remain separate. The package does not select a shell command, provider, model, endpoint, framework, database, or account.
 
 ## Possible Uses
->>>>>>> feature/software-development
 
 - Requirements analysis, acceptance criteria, constraints, risks, and planning.
 - Bug investigation, feature work, maintenance, and controlled refactoring.

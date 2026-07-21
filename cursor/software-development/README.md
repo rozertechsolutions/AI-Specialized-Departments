@@ -4,17 +4,6 @@ The Software Development department is a human-reviewed Cursor specialization fo
 
 ## Department Overview
 
-<<<<<<< HEAD
-- `AGENTS.md` makes the primary Cursor Agent the Software Development Lead.
-- `.cursor/agents/` contains the seven native Cursor project specialist subagents. There is no Lead subagent.
-- `.cursor/rules/` contains Cursor project rules.
-- `.cursor/skills/` contains static reusable Skills.
-- `docs/workflows/` contains auxiliary workflow references, not a guaranteed native workflow engine.
-
-## Project Subagents
-
-The primary Cursor Agent remains the Software Development Lead. It delegates to seven project subagents for requirements/planning, architecture, implementation/maintenance, test/quality, code-quality review, engineering-risk review, and documentation/release readiness. Only the implementation specialist is writable; the other six are read-only. Implementation must be followed by independent review before final evidence aggregation.
-=======
 Use this department for stack-agnostic software work across backend services, APIs, desktop apps, CLIs, libraries, SDKs, maintenance, debugging, controlled refactoring, tests, security, dependencies, performance, reliability, compatibility, migrations, and documentation. Browser-specific frontend work belongs in Web Development; mobile-platform work belongs in Mobile Development. The package does not select a framework, provider, database, model, or endpoint.
 
 ## Possible Uses
@@ -22,7 +11,6 @@ Use this department for stack-agnostic software work across backend services, AP
 - Requirements analysis, acceptance criteria, and implementation planning.
 - New feature development, bug investigation, correction, maintenance, and controlled refactoring.
 - Architecture review, API/library evolution, dependency review, security remediation, performance/reliability improvement, technical-debt reduction, and release-readiness review.
->>>>>>> feature/software-development
 
 ## Included Components
 
