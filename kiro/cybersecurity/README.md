@@ -23,14 +23,13 @@ Kiro can assist with drafting and review, but it is not authorized to accept ris
 
 ## Platform Compatibility
 
-Validated on 2026-07-21 against current Kiro documentation for IDE and CLI surfaces.
+Validated on 2026-07-22 against current Kiro documentation for IDE and CLI surfaces.
 
 Supported repository-local surfaces in this package:
 
 - Kiro CLI custom agents in each area at `.kiro/agents/*.json`.
 - Kiro workspace Skills in each area at `.kiro/skills/<skill>/SKILL.md`.
-- Kiro steering files in each area at `.kiro/steering/<area>.md`.
-- `AGENTS.md` in each area for the AGENTS.md standard that Kiro also loads as steering.
+- `AGENTS.md` in each area as the canonical always-included area baseline.
 
 Kiro IDE custom subagents are Markdown files in `.kiro/agents/*.md`; this package does not use that IDE subagent format. Kiro Specs are generated IDE artifacts based on `requirements.md` or `bugfix.md`, `design.md`, and `tasks.md`; this package does not ship prebuilt flat `.kiro/specs/*.md` prompt files. Hooks and MCP are supported by Kiro, but they are intentionally absent here.
 
@@ -66,26 +65,21 @@ Then choose an agent such as `requirements-threat-modeling-agent`, or start dire
 kiro-cli --agent requirements-threat-modeling-agent
 ```
 
-For Kiro IDE, open the selected area folder as the workspace if you want area-local `.kiro/skills/`, `.kiro/steering/`, and `AGENTS.md` to apply without mixing areas. Workspace Skills can also be imported through the Kiro Agent Steering & Skills panel by choosing a local Skill folder. The repository does not copy anything into `~/.kiro/`.
+For Kiro IDE, open the selected area folder as the workspace if you want area-local `.kiro/skills/` and `AGENTS.md` to apply without mixing areas. Workspace Skills can also be imported through the Kiro Agent Steering & Skills panel by choosing a local Skill folder. The repository does not copy anything into `~/.kiro/`.
 
 ## Working Directory And Discovery
 
 Launch Kiro from the selected area directory, for example `kiro/cybersecurity/governance-risk-compliance-assurance/`. Area isolation depends on this working directory.
 
-Kiro CLI local custom agents are discovered from `.kiro/agents/` in the current workspace and take precedence over same-named global agents. The retained JSON agents use current fields including `name`, `description`, `mcpServers`, `includeMcpJson`, `tools`, `allowedTools`, `resources`, and `prompt`.
+Kiro CLI local custom agents are discovered from `.kiro/agents/` in the current workspace and take precedence over same-named global agents. The retained JSON agents use current fields including `name`, `description`, `mcpServers`, `includeMcpJson`, `tools`, `allowedTools`, and `prompt`.
 
-Agent resources use workspace-relative paths:
-
-- `file://AGENTS.md` loads the area instruction file.
-- `skill://.kiro/skills/**/SKILL.md` exposes area Skills by metadata and loads full Skill content on demand.
-
-Kiro also loads default resources such as workspace steering, Skills, and `AGENTS.md` unless the user changes Kiro CLI default-resource inheritance settings. `AGENTS.md` and `.kiro/steering/<area>.md` are exact copies on purpose: `AGENTS.md` supports the always-included AGENTS.md standard, while `.kiro/steering/` is the Kiro-native workspace steering location.
+The package uses Kiro's default resource inheritance model. Current Kiro CLI custom agents inherit default resources, including workspace Skills and `AGENTS.md`, unless `chat.disableInheritingDefaultResources` is set to `true`. This package does not require that user or workspace setting and does not duplicate inherited resources in each custom-agent JSON file.
 
 Auto-discovered in this package when the area is the workspace:
 
 - `.kiro/agents/*.json` for Kiro CLI custom agents.
 - `.kiro/skills/<skill>/SKILL.md` for Kiro Skills.
-- `.kiro/steering/<area>.md` and `AGENTS.md` for area guidance.
+- `AGENTS.md` for area guidance.
 
 Not auto-discovered as shipped:
 
@@ -110,11 +104,10 @@ Not auto-discovered as shipped:
 Each area contains:
 
 - `AGENTS.md`: always-included area instructions and AGENTS.md standard compatibility.
-- `.kiro/steering/<area>.md`: Kiro-native steering copy of the same area instructions.
-- `.kiro/agents/*.json`: Kiro CLI custom agents with read-only `tools` and `allowedTools` set to `read`, no MCP servers, and `includeMcpJson: false`.
+- `.kiro/agents/*.json`: Kiro CLI custom agents with read-only `tools` and `allowedTools` set to `read`, no MCP servers, `includeMcpJson: false`, and no redundant declarations for default-inherited `AGENTS.md` or Skills.
 - `.kiro/skills/<skill>/SKILL.md`: Agent Skills with required `name` and `description` frontmatter.
 
-No hooks are included because Kiro hooks can execute shell commands or agent prompts automatically. No MCP servers are included because this baseline must not connect external systems by default.
+`.kiro/steering/<area>.md` copies were removed because they were byte-identical to `AGENTS.md`, had no inclusion-mode frontmatter, and would duplicate the same always-on baseline. No hooks are included because Kiro hooks can execute shell commands or agent prompts automatically. No MCP servers are included because this baseline must not connect external systems by default.
 
 ## How To Use The Department
 
@@ -139,7 +132,7 @@ Stop when authorization is missing, evidence is unredacted or insufficient, scop
 
 The retained custom agents only expose Kiro's `read` tool and allow only `read` without prompting. They do not define shell, write, network, scanner, deployment, MCP, or connector tools. `includeMcpJson` is set to `false` and `mcpServers` is empty.
 
-Kiro itself may have broader user or workspace capabilities outside this package. Before use, confirm the selected Kiro session has not inherited global MCP, hooks, write tools, shell tools, cloud accounts, or connectors that conflict with the requested static work.
+Kiro itself may have broader user or workspace capabilities outside this package. Before use, confirm the selected Kiro session has not inherited global MCP, hooks, write tools, shell tools, cloud accounts, or connectors that conflict with the requested static work. If a user or workspace sets `chat.disableInheritingDefaultResources = true`, custom agents will not receive default `AGENTS.md` or Skills; either unset that setting for this package or explicitly import only the needed area baseline and Skills after human review.
 
 Human approval is required for risk acceptance, exception approval, policy publication, architecture approval, release readiness, incident declaration or closure, external distribution, supplier decisions, offensive authorization, production recovery, and critical finding closure.
 
@@ -159,7 +152,7 @@ Keep area ownership boundaries, independent review, no self-approval, no automat
 
 ## Validation
 
-Repository validation can parse JSON, check Markdown frontmatter, confirm all eight areas exist, verify 41 Kiro CLI JSON agents, verify Skills have required frontmatter, resolve area-local `AGENTS.md` and Skill resource references, confirm no hooks or MCP servers are included, detect obsolete flat Specs, detect metadata-only settings, and scan for temporary residue or secrets.
+Repository validation can parse JSON, check Markdown frontmatter, confirm all eight areas exist, verify 41 Kiro CLI JSON agents, verify Skills have required frontmatter, confirm default-inherited area-local `AGENTS.md` and Skills exist, confirm no hooks or MCP servers are included, detect obsolete flat Specs, detect metadata-only settings, and scan for temporary residue or secrets.
 
 Runtime behavior, model availability, workspace trust prompts, IDE Spec creation, hooks, MCP, connector behavior, live tool access, scanner output, incident actions, recovery, and production changes require a separately authorized Kiro environment and were not executed.
 
@@ -168,13 +161,13 @@ Runtime behavior, model availability, workspace trust prompts, IDE Spec creation
 - If a custom agent is missing, confirm Kiro CLI was launched from the selected area directory and check `.kiro/agents/*.json`.
 - If a global agent shadows the intended one, use the area-local agent from the current workspace; local agents take precedence over global agents with the same name.
 - If Skills are not available, verify each Skill is under `.kiro/skills/<skill>/SKILL.md` and that frontmatter `name` matches the folder name.
-- If area instructions do not apply, confirm the area is the workspace root or manually import the area steering and Skills.
+- If area instructions do not apply, confirm the area is the workspace root and that default resource inheritance has not been disabled.
 - If Kiro Specs are needed, create them through the IDE Spec workflow; do not treat deleted flat prompt files as native Specs.
 - If permissions appear broader than this README states, inspect Kiro global settings, inherited resources, hooks, MCP configuration, and active model/tool permissions before proceeding.
 
 ## Removal Or Uninstall
 
-To remove repository-local configuration, delete or stop opening the selected `kiro/cybersecurity/<area>/` workspace. To remove imported Skills or steering, delete them through the Kiro Agent Steering & Skills panel or from the workspace `.kiro/skills/` and `.kiro/steering/` directories. To remove user-global imports, delete only the specific copied cybersecurity files from `~/.kiro/skills/`, `~/.kiro/steering/`, or `~/.kiro/agents/` after confirming they are not used elsewhere.
+To remove repository-local configuration, delete or stop opening the selected `kiro/cybersecurity/<area>/` workspace. To remove imported Skills, delete them through the Kiro Agent Steering & Skills panel or from the workspace `.kiro/skills/` directory. To remove user-global imports, delete only the specific copied cybersecurity files from `~/.kiro/skills/`, `~/.kiro/steering/`, or `~/.kiro/agents/` after confirming they are not used elsewhere.
 
 ## Limitations
 
