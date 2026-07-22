@@ -41,6 +41,6 @@ Removed or deprecated field handling:
 - Unsupported descriptive-only metadata is not treated as a permission control.
 - Obsolete `enable_experimental_hooks` config entries were removed; hooks remain absent unless configured through current hook files by an authorized user.
 - Unreferenced workflow-like prompt Markdown and exact duplicate prompt/agent pairs were removed after verifying retained prompts cover every `system_prompt_id`.
-- Two residual exact AGENTS/coordinator-prompt duplicate pairs were resolved by reducing the AppSec and Exposure `AGENTS.md` files to durable project baselines while preserving the required coordinator prompt targets.
+- Two residual exact AGENTS/coordinator-prompt duplicate pairs were resolved by retaining the AppSec and Exposure `AGENTS.md` files as durable project baselines and specializing the required coordinator prompt targets.
 - Platform-specific frontmatter and config fields must be verified against current vendor documentation before use.
 - For SDK packages, runtime API compatibility must be validated in an isolated environment without model calls before production use.
