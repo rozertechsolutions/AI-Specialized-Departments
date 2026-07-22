@@ -27,7 +27,7 @@ It does not authorize live scanning, exploitation, containment, recovery executi
 
 Product surface: Mistral Vibe Code CLI/VS Code surfaces, project `.vibe/config.toml`, native TOML agent profiles, project and user prompt directories, Skills, tool filters, permissions, hooks configuration, MCP settings, and update/telemetry settings.
 
-Validated documentation date: 2026-07-21. Validated package version: `mistral-vibe==2.21.0`. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+Validated documentation date: 2026-07-22. Current changelog reviewed through `mistral-vibe==2.22.0`; the existing native TOML and prompt-resolution model remains compatible with the prior `2.21.0` package inspection. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
 
 ## Prerequisites
 
@@ -54,9 +54,9 @@ Use project-local or repository-local setup only. Do not install tools globally 
 
 ## Working directory and discovery
 
-Mistral Vibe 2.21.0 resolves prompt IDs from discovered project prompt directories and from the user Vibe home prompt directory. The package source also honors `VIBE_HOME`, which normally defaults to `~/.vibe`; setting `VIBE_HOME="$PWD/.vibe"` while launched from an area keeps prompts, config-adjacent files, agents, and Skills repository-local for validation or manual use.
+Mistral Vibe resolves prompt IDs from discovered project prompt directories and from the user Vibe home prompt directory. The package source also honors `VIBE_HOME`, which normally defaults to `~/.vibe`; setting `VIBE_HOME="$PWD/.vibe"` while launched from an area keeps prompts, config-adjacent files, agents, and Skills repository-local for validation or manual use.
 
-Each retained `.vibe/agents/*.toml` has a `system_prompt_id` whose matching prompt file remains in that area. Unreferenced workflow-like prompt copies and exact duplicate prompt pairs were removed; reusable procedures live in `.vibe/skills/*/SKILL.md`.
+Each retained `.vibe/agents/*.toml` has a `system_prompt_id` whose matching prompt file remains in that area. Area `AGENTS.md` files provide durable project baseline instructions for default or non-coordinator use; coordinator-specific mission, role ownership, delegation, outputs, and completion details live in the referenced coordinator prompt. Unreferenced workflow-like prompt copies and exact duplicate prompt pairs were removed; reusable procedures live in `.vibe/skills/*/SKILL.md`.
 
 Default agents and delegation-only subagents remain area-local. Subagents cannot ask user questions; user-question tools are available only to primary agents where the config allows them.
 
