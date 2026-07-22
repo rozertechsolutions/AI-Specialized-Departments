@@ -1,30 +1,30 @@
-# Release-Readiness Review
+# API or Library Evolution
 
 ## Purpose
 
-Aggregate readiness evidence and stop before publication, deployment, signing, or release.
+Evolve public contracts with consumer impact, compatibility, versioning, deprecation, migration, and examples.
 
 ## Workflow-specific gates
 
-- acceptance evidence
-- unresolved defects and risks
-- documentation, changelog, and migration readiness
-- artifact and version implications
-- rollback readiness
-- explicit stop before publication, deployment, signing, or release
+- consumer impact
+- contract or schema changes
+- source, binary, and behavioral compatibility
+- versioning and deprecation
+- migration guidance
+- examples
 
 ## Risk triggers
 
-- missing evidence
-- known critical issue
-- unreviewed change
-- incomplete documentation
+- breaking change
+- external consumers
+- semantic versioning impact
+- deprecation
 
 Any trigger requires primary Lead classification, possible human approval, and engineering-risk review where relevant.
 
-## Workflow source boundary
+## Documentation boundary
 
-This is Warp Drive workflow source material for manual import or supported Warp Drive surfaces. It is not a claim of universal automatic repository loading.
+This is auxiliary Software Development process reference documentation. It is not a native Warp Drive Workflow object, not imported automatically, not auto-loaded as Project Rules or Skills, and not executable.
 
 ## Common lifecycle
 

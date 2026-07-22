@@ -1,29 +1,32 @@
-# New Feature Development
+# Architecture Change
 
 ## Purpose
 
-Deliver a new capability through validated requirements, architecture fit, implementation slices, integration evidence, and feature documentation.
+Change architecture only with decision evidence, migration controls, risk review, rollback, and independent architecture approval.
 
 ## Workflow-specific gates
 
-- validated user and system requirements
-- acceptance criteria for behavior, errors, integration, and documentation
-- architecture fit and dependency impact
-- implementation slices with integration evidence
-- feature-specific documentation
+- decision record
+- alternatives and trade-offs
+- boundaries and contracts
+- migration stages
+- compatibility plan
+- risk review
+- rollback
+- independent architecture approval
 
 ## Risk triggers
 
-- public behavior
-- new data flow
-- new dependency
-- architecture boundary
+- boundary change
+- new architectural pattern
+- migration
+- compatibility risk
 
 Any trigger requires primary Lead classification, possible human approval, and engineering-risk review where relevant.
 
-## Workflow source boundary
+## Documentation boundary
 
-This is Warp Drive workflow source material for manual import or supported Warp Drive surfaces. It is not a claim of universal automatic repository loading.
+This is auxiliary Software Development process reference documentation. It is not a native Warp Drive Workflow object, not imported automatically, not auto-loaded as Project Rules or Skills, and not executable.
 
 ## Common lifecycle
 

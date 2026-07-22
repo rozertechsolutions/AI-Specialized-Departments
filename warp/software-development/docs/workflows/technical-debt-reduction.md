@@ -21,9 +21,9 @@ Reduce prioritized debt within a bounded scope while preserving behavior and pre
 
 Any trigger requires primary Lead classification, possible human approval, and engineering-risk review where relevant.
 
-## Workflow source boundary
+## Documentation boundary
 
-This is Warp Drive workflow source material for manual import or supported Warp Drive surfaces. It is not a claim of universal automatic repository loading.
+This is auxiliary Software Development process reference documentation. It is not a native Warp Drive Workflow object, not imported automatically, not auto-loaded as Project Rules or Skills, and not executable.
 
 ## Common lifecycle
 

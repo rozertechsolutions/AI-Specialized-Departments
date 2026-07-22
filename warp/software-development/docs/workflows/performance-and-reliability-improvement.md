@@ -1,30 +1,30 @@
-# Bug Investigation and Correction
+# Performance and Reliability Improvement
 
 ## Purpose
 
-Identify root cause, make the smallest safe correction, and prove the symptom was not merely suppressed.
+Improve performance or resilience from an observed baseline or explicitly stated absence of one.
 
 ## Workflow-specific gates
 
-- observable symptom
-- reproducibility or explicit absence of reproduction
-- affected versions, paths, or configurations
-- root cause tied to evidence
-- minimal fix and regression evidence
-- confirmation symptoms were not merely suppressed
+- observed baseline or absence of baseline
+- hypothesis
+- resource, concurrency, and failure analysis
+- correctness guardrails
+- evidence
+- regression risk
 
 ## Risk triggers
 
-- security defect
-- data corruption
-- production impact
-- uncertain reproduction
+- concurrency
+- resource consumption
+- failure handling
+- data integrity
 
 Any trigger requires primary Lead classification, possible human approval, and engineering-risk review where relevant.
 
-## Workflow source boundary
+## Documentation boundary
 
-This is Warp Drive workflow source material for manual import or supported Warp Drive surfaces. It is not a claim of universal automatic repository loading.
+This is auxiliary Software Development process reference documentation. It is not a native Warp Drive Workflow object, not imported automatically, not auto-loaded as Project Rules or Skills, and not executable.
 
 ## Common lifecycle
 

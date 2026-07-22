@@ -1,32 +1,30 @@
-# Security Remediation
+# Release-Readiness Review
 
 ## Purpose
 
-Remediate a weakness with secret-safe handling, trust-boundary clarity, least-change correction, and disclosure-safe reporting.
+Aggregate readiness evidence and stop before publication, deployment, signing, or release.
 
 ## Workflow-specific gates
 
-- threat or weakness
-- affected trust boundary
-- exploitability assumptions
-- secret-safe handling
-- least-change remediation
-- regression evidence
-- disclosure-safe reporting
+- acceptance evidence
+- unresolved defects and risks
+- documentation, changelog, and migration readiness
+- artifact and version implications
+- rollback readiness
+- explicit stop before publication, deployment, signing, or release
 
 ## Risk triggers
 
-- credential exposure
-- authorization
-- injection
-- unsafe deserialization
-- sensitive data
+- missing evidence
+- known critical issue
+- unreviewed change
+- incomplete documentation
 
 Any trigger requires primary Lead classification, possible human approval, and engineering-risk review where relevant.
 
-## Workflow source boundary
+## Documentation boundary
 
-This is Warp Drive workflow source material for manual import or supported Warp Drive surfaces. It is not a claim of universal automatic repository loading.
+This is auxiliary Software Development process reference documentation. It is not a native Warp Drive Workflow object, not imported automatically, not auto-loaded as Project Rules or Skills, and not executable.
 
 ## Common lifecycle
 

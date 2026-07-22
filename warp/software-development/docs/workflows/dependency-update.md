@@ -1,32 +1,32 @@
-# Architecture Change
+# Dependency Update
 
 ## Purpose
 
-Change architecture only with decision evidence, migration controls, risk review, rollback, and independent architecture approval.
+Change dependencies only after need, provenance, maintenance, license, compatibility, lockfile, and rollback evidence are clear.
 
 ## Workflow-specific gates
 
-- decision record
-- alternatives and trade-offs
-- boundaries and contracts
-- migration stages
-- compatibility plan
-- risk review
+- demonstrated need
+- provenance and maintenance status
+- transitive changes
+- license signals
+- vulnerability context
+- compatibility
+- lockfile impact
 - rollback
-- independent architecture approval
 
 ## Risk triggers
 
-- boundary change
-- new architectural pattern
-- migration
-- compatibility risk
+- new transitive dependencies
+- major version
+- license change
+- security advisory
 
 Any trigger requires primary Lead classification, possible human approval, and engineering-risk review where relevant.
 
-## Workflow source boundary
+## Documentation boundary
 
-This is Warp Drive workflow source material for manual import or supported Warp Drive surfaces. It is not a claim of universal automatic repository loading.
+This is auxiliary Software Development process reference documentation. It is not a native Warp Drive Workflow object, not imported automatically, not auto-loaded as Project Rules or Skills, and not executable.
 
 ## Common lifecycle
 
