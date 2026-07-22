@@ -25,9 +25,9 @@ It does not authorize live scanning, exploitation, containment, recovery executi
 
 ## Platform compatibility
 
-Product surface: Cline IDE extension, TUI, CLI, project `.cline/` Rules, Skills, workflows/commands, hooks when separately configured, Cline-managed read-only subagents, Agent Teams on supported SDK/CLI/Kanban surfaces, MCP configuration when separately approved, and approval controls.
+Product surface: Cline IDE extension, TUI, CLI, `AGENTS.md` Rule sources, `.clinerules/workflows/` custom workflows, `.cline/skills/` Skills, hooks when separately configured, Cline-managed read-only subagents, Agent Teams on supported SDK/CLI/Kanban surfaces, MCP configuration when separately approved, and approval controls.
 
-Validated documentation date: 2026-07-21. Cline documents project Rules, Skills, commands/workflows, hooks, MCP, plugins, CLI/TUI usage, and Cline-managed experimental subagents. The current official documentation does not establish `.cline/agents/*.md` as a repository-native declarative custom-agent format for project-defined named subagents, so this package does not include that directory. Agent Teams apply to Cline SDK, CLI, and Kanban surfaces, not the VS Code or JetBrains extensions. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
+Validated documentation date: 2026-07-22. Cline documents `AGENTS.md` and `.clinerules/` as Rule sources, custom workflows under `.clinerules/workflows/`, project Skills, hooks, MCP, plugins, CLI/TUI usage, and Cline-managed experimental subagents. The current official documentation does not establish `.cline/agents/*.md` as a repository-native declarative custom-agent format for project-defined named subagents, so this package does not include that directory. Agent Teams apply to Cline SDK, CLI, and Kanban surfaces, not the VS Code or JetBrains extensions. Plan, account, workspace, IDE, CLI, SDK, and preview availability vary by vendor release and administrator policy. This package documents static, repository-local or manually importable components only.
 
 ## Prerequisites
 
@@ -41,18 +41,18 @@ Place the directory in the repository, open the repository as a trusted Cline wo
 
 ```text
 cd cline/cybersecurity/governance-risk-compliance-assurance
-cline -p "Review the supplied policy evidence against the governance-policy-frameworks workflow. Do not modify files."
+cline -p "/governance-policy-frameworks Review the supplied policy evidence. Do not modify files."
 ```
 
-In the IDE extension, open the repository, navigate to the selected `cline/cybersecurity/<area>/`, and ask Cline to use the area Rules, Skills, workflows, and `AGENTS.md` instructions. If a Skill is not shown in Cline's Skills UI, copy or import the specific area skill directory into the documented Cline skill location and keep the original repository copy as the source baseline.
+In the IDE extension, open the repository, navigate to the selected `cline/cybersecurity/<area>/`, and ask Cline to use the area's `AGENTS.md`, `.clinerules/workflows/`, and `.cline/skills/` assets. If a Skill is not shown in Cline's Skills UI, copy or import the specific area skill directory into the documented Cline skill location and keep the original repository copy as the source baseline.
 
 Use project-local or repository-local setup only. Do not install tools globally from this package, and do not authenticate services merely to import the instructions.
 
 ## Working directory and discovery
 
-Cline loads project configuration from `.cline/` under the trusted workspace. In this package, each area is intended to be used as the effective workspace root so that its local `.cline/rules/`, `.cline/skills/`, and `.cline/workflows/` assets describe that area without bleeding into another area.
+Cline loads Rule and project configuration from the trusted workspace. In this package, each area is intended to be used as the effective workspace root so that its local `AGENTS.md`, `.clinerules/workflows/`, and `.cline/skills/` assets describe that area without bleeding into another area.
 
-Current Cline subagents created through `use_subagents` are Cline-managed read-only research workers. They can read files, list files, search, run restricted read-only commands, and use Skills, but cannot edit files, use the browser, access MCP servers, perform web searches, or spawn nested subagents. Do not assume repository-defined named Cline subagents exist; use the retained Rules, Skills, workflows, and `AGENTS.md` instructions directly.
+Current Cline subagents created through `use_subagents` are Cline-managed read-only research workers. They can read files, list files, search, run restricted read-only commands, and use Skills, but cannot edit files, use the browser, access MCP servers, perform web searches, or spawn nested subagents. Do not assume repository-defined named Cline subagents exist; use the retained `AGENTS.md` baseline, workflows, and Skills directly.
 
 When upward discovery applies, the nearest area-level instructions take precedence for that area. When a surface requires manual import, treat each area as an isolated package and do not mix files across areas unless a human explicitly approves a cross-area handoff.
 
@@ -69,12 +69,11 @@ When upward discovery applies, the nearest area-level instructions take preceden
 
 ## Native components
 
-- Area `AGENTS.md` files for durable area ownership and safety instructions.
-- `.cline/rules/*.md` project Rules for always-on Cline guidance.
-- `.cline/skills/*/SKILL.md` Agent Skills for reusable area workflows.
-- `.cline/workflows/*.md` workflow entry points that delegate to the corresponding complete Skill or role contract.
+- Area `AGENTS.md` files for persistent area ownership and safety instructions.
+- `.clinerules/workflows/*.md` custom slash-command workflows.
+- `.cline/skills/*/SKILL.md` on-demand Skills.
 
-Unsupported native mechanisms are omitted rather than simulated. The package does not include `.cline/agents/*.md`, fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
+Workflows and Skills are distinct native mechanisms: workflows provide custom slash-command entry points, while Skills provide reusable on-demand procedural guidance. Unsupported native mechanisms are omitted rather than simulated. The package does not include `.cline/agents/*.md`, fake MCP servers, live hooks that execute security actions, hosted scanner integrations, cloud deployment automation, or credentials.
 
 ## How to use the department
 
@@ -83,7 +82,7 @@ Select the area that owns the requested work, open or import that area according
 Example prompt:
 
 ```text
-Use the exposure-lifecycle-triage Skill in cline/cybersecurity/exposure-vulnerability-hardening. Review these supplied scanner findings only as static evidence, classify prioritization confidence, identify missing asset context, and prepare a human remediation-decision package. Do not scan, connect to tools, or modify production.
+/exposure-lifecycle-triage Review these supplied scanner findings only as static evidence, classify prioritization confidence, identify missing asset context, and prepare a human remediation-decision package. Do not scan, connect to tools, or modify production.
 ```
 
 Expected outputs are scoped artifacts with evidence tables, assumptions, findings or recommendations separated by evidence state, limitations, confidence, residual risk, required human decisions, and completion criteria. High-impact outputs must be routed to an independent reviewer that did not create the work. Components stop when authorization is missing, sensitive data is unredacted, scope is unclear, a live action is requested, evidence is insufficient for a conclusion, or self-review would occur. Stop or disable the configuration by closing the Cline task, disabling `use_subagents` in Settings -> Features -> Agent when experimental subagents are not wanted, removing imported Skills from the Skills UI, or deleting the selected area package from the repository.
