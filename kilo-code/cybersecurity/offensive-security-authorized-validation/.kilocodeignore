@@ -1,4 +1,0 @@
-# Source-only package; runtime artifacts are not required.
-*.log
-dist/
-build/

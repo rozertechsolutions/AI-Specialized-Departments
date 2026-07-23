@@ -1,9 +1,0 @@
-{
-  "$schema": "https://kilo.ai/schema.json",
-  "instructions": [".kilo/rules/*.md"],
-  "permission": {
-    "*": "ask",
-    "bash": "deny",
-    "webfetch": "deny"
-  }
-}
