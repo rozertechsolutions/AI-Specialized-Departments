@@ -1,9 +1,0 @@
-manifest_type: tool
-schema: ../schemas/tool.schema.json
-id: static-discovery
-classification: native
-purpose: Discover files and references without executing project content.
-allowed_operations: [list_files, text_search, metadata_review]
-denied_operations: [run_build, run_test, run_scanner, install_dependency, start_service, network_probe]
-requires_human_approval: true
-output_requirements: [query, paths_examined, findings, limitations]

@@ -1,8 +1,0 @@
-manifest_type: policy
-schema: ../schemas/policy.schema.json
-id: security
-classification: native
-principles: [least_privilege, static_only, evidence_integrity, data_minimization, human_authority]
-required_controls: [scope_confirmation, source_provenance, assumption_tracking, limitation_tracking, residual_risk_tracking]
-prohibited_actions: [run_code, run_build, run_test, run_scanner, install_dependency, deploy, approve_release, accept_risk, disclose_issue]
-failure_mode: fail_closed

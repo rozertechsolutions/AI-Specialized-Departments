@@ -1,6 +1,0 @@
-name: independent-assurance-review
-description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
-procedure_ref: ../skills/independent-assurance-review/SKILL.md
-execution: manual_static_only
-live_actions_allowed: false
-requires_independent_review: true

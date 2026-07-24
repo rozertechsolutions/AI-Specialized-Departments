@@ -1,8 +1,0 @@
-schema_version: '1.0'
-id: safety
-rules:
-- no secrets, credentials, real endpoints, account IDs, subscription IDs, or project IDs
-- no execution of cloud CLIs, Docker, Kubernetes, Jenkins, Terraform, OpenTofu, Pulumi, Ansible, scanners, hooks, MCP servers, builds, tests, deployments, or generated configurations
-- integrations remain disabled by default
-
-- no plan/apply/provisioning execution, cloud authentication, production mutation, or destructive infrastructure action

@@ -1,6 +1,0 @@
-name: assurance-third-party-reporting
-description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
-procedure_ref: ../skills/assurance-third-party-reporting/SKILL.md
-execution: manual_static_only
-live_actions_allowed: false
-requires_independent_review: true

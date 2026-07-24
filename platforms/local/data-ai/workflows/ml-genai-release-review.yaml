@@ -1,4 +1,0 @@
-id: ml-genai-release-review
-owner: ml-genai-evaluation-reviewer
-steps: [run ml-genai-evaluation, review RAG and agent controls, identify blockers, report readiness]
-gates: [evaluation slices present, thresholds defined, safety tests present, fallback defined]

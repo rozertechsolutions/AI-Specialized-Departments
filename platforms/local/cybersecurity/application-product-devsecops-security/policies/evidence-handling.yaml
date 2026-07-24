@@ -1,8 +1,0 @@
-manifest_type: policy
-schema: ../schemas/policy.schema.json
-id: evidence-handling
-classification: native
-requirements: [cite_sources, preserve_context, distinguish_observation_from_inference, record_unavailable_evidence, avoid_sensitive_value_exposure]
-redaction: required_for_sensitive_values
-external_sharing: disabled_without_explicit_human_approval
-failure_mode: fail_closed

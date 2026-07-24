@@ -1,6 +1,0 @@
-name: risk-exceptions-remediation
-description: Provider-neutral static workflow for Governance, Risk, Compliance, and Assurance.
-procedure_ref: ../skills/risk-exceptions-remediation/SKILL.md
-execution: manual_static_only
-live_actions_allowed: false
-requires_independent_review: true

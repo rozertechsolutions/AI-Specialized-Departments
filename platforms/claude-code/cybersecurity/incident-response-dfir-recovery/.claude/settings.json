@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "deny": [
-      "Bash(*)",
-      "WebFetch(*)",
-      "mcp__*"
-    ]
-  }
-}

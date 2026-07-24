@@ -1,9 +1,0 @@
-manifest_type: tool
-schema: ../schemas/tool.schema.json
-id: project-read
-classification: native
-purpose: Read supplied project files as static evidence.
-allowed_operations: [read_text, list_files]
-denied_operations: [write_file, execute_file, change_permissions, delete_file, transmit_data]
-requires_human_approval: false
-output_requirements: [path, source_version, excerpt_summary, limitations]
